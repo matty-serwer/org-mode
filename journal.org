@@ -1,0 +1,15 @@
+#+title: journal
+#+author: Mattie
+#+date: 2026-02-26
+#+filetags: :journal:
+#+startup: overview
+
+* February
+** Thursday, February 26 2026  :emacs:org:
+:PROPERTIES:
+:ID:       7cc6442b-1720-4e86-ad53-1b1caa45c773
+:END:
+- Set up files for org mode
+- created yas snippets for org file `<header` and journal `<entry`
+- [[id:3150b19e-6a29-412d-afc9-258cee5d8f63][Org-Mode]]
+-

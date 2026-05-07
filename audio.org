@@ -1,0 +1,22 @@
+#+title: audio
+#+author: Mattie
+#+date: 2026-02-26
+#+filetags: :music:audioApplications:
+#+startup: overview
+
+* Songs
+* Audio Projects
+** Stem DJ
+** Ableton Live Org
+* Audio Applications
+** Ableton Live
+*** Sequences
+** UAD Luna
+*** Sequences
+** Logic Pro
+*** Sequences
+
+* Audio Plugins
+** UAD Plugins
+** Arturia Plugins
+** Soundtoys Plugins

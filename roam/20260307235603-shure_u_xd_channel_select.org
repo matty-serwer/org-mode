@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       285989e6-a426-4857-a43d-330bb84dc32c
+:END:
+#+title: Shure U-XD Channel Select
+#+filetags:
+
+* ULXD4Q — Setting Channels from Freq Sheet**
+
+- Power on receiver
+- Select Ch 1 → Menu → Radio Frequency → MHz
+- Dial to assigned frequency → ENTER
+- Power on transmitter → align IR windows → press Sync on receiver
+- Confirm SYNC DONE, verify freq matches on both displays
+- Repeat for Ch 2–4
+
+---
+
+** Appendix
+
+- IR sync pushes the frequency from receiver to transmitter — you set the MHz on the receiver side only, then sync
+- If the transmitter shows G:-- Ch:-- after sync, that's normal — the frequency is still correctly set even if it doesn't map to a named group/channel slot
+- Confirm your band (G50, H50, etc.) matches the frequencies on the sheet before you start — if they're out of range, nothing will work and it's not a setup error
+- On the ULXD4Q, each of the 4 channels has its own independent menu — make sure you're in the right channel's settings before dialing
+- If the coordinator is running Wireless Workbench on a network, they may push frequencies remotely — ask before manually setting anything so you don't conflict with their deployment

@@ -1,0 +1,19 @@
+#+title: tech
+#+author: Mattie
+#+date: 2026-02-26
+#+filetags: :macOS:software:applications:AV:emacs:terminal:cli:
+#+startup: overview
+
+* Command Line Interface
+** Neovim :nvim:
+* Mac OS
+* Applications
+** Raycast
+** Reflect
+* Emacs
+** Org-Mode
+:PROPERTIES:
+:ID:       3150b19e-6a29-412d-afc9-258cee5d8f63
+:END:
+*** My Commands
+SPC n l - create a link to current cursor position

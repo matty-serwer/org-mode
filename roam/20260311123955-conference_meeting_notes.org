@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       78b39cea-affb-46f7-8fe0-1f2241a6bbf7
+:END:
+#+title: Conference Meeting Notes
+#+filetags:
+
+- start

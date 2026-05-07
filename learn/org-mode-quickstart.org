@@ -1,0 +1,532 @@
+#+TITLE: Org-Mode Quickstart — Mattie Edition
+#+AUTHOR: Claude
+#+STARTUP: overview
+#+TODO: TODO IN-PROGRESS WAITING | DONE CANCELLED
+
+* 🗺️ What Even Is Org-Mode?
+Org-mode is a plain-text system built into Emacs for notes, todos,
+agendas, timers, spreadsheets, and literate programming — all in one
+~.org~ file. In Doom Emacs it's pre-configured and ready to go.
+
+The key idea: *everything is an outline*. Headings collapse. Tasks live
+inside headings. Code blocks run inside headings. Your whole life
+can (theoretically) live in a few ~.org~ files.
+
+** Key Doom Emacs Bindings (used throughout this guide)
+| Key              | Action                        |
+|------------------+-------------------------------|
+| ~TAB~            | Cycle heading collapse        |
+| ~S-TAB~          | Cycle all headings            |
+| ~SPC n a~        | Open agenda                   |
+| ~SPC n r f~      | Org-Roam find/create node     |
+| ~SPC n r i~      | Insert Org-Roam link          |
+| ~C-c C-t~        | Cycle TODO state              |
+| ~C-c C-s~        | Schedule a task               |
+| ~C-c C-d~        | Add deadline                  |
+| ~C-c C-c~        | Execute code block            |
+| ~C-c C-x C-i/o~ | Clock in / Clock out          |
+| ~SPC m h~        | Insert heading                |
+| ~M-RET~          | New heading / item at level   |
+
+* 📐 File Structure — How to Organize
+
+There's no single right way, but here's a battle-tested layout for
+someone juggling dev work, music, and life admin with ADHD:
+
+** Option A: One Big Life File (simple, low-friction)
+#+begin_example
+~/org/
+  life.org        ← inbox, daily log, random notes
+  work.org        ← dev tasks, projects, standup notes
+  music.org       ← song ideas, recording sessions, gear notes
+  home.org        ← chores, shopping, maintenance
+  habits.org      ← recurring tasks, routines
+  journal.org     ← daily entries
+#+end_example
+
+** Option B: Org-Roam (networked notes, more powerful)
+#+begin_example
+~/org/roam/
+  20240312120000-react-server-components.org
+  20240312130000-stem-separation-workflow.org
+  20240312140000-lupine-tech-lemr.org
+  ... (each note is a node, linked via [[id:...]] links)
+
+~/org/
+  inbox.org       ← capture everything here first
+  agenda.org      ← master task list (links into roam nodes)
+#+end_example
+
+For ADHD: *start with Option A*. You can migrate to Roam later.
+The friction of "which file does this go in" kills productivity.
+
+* ✅ TODOs — The Basics
+
+** Simple Tasks
+#+begin_src org
+* TODO Buy a new MIDI controller
+* TODO Fix the stem separation Python script
+* TODO Set up Doom Emacs                                   :personal:
+  CLOSED: [2024-03-12 Tue 14:00]
+#+end_src
+* TODO Eat Cereal
+yeah
+
+Cycle through states with ~C-c C-t~.
+
+** Task States (Doom default + custom)
+Your top-of-file ~#+TODO~ line (see top of this file) gives you:
+- ~TODO~ → ~IN-PROGRESS~ → ~WAITING~ → ~DONE~ / ~CANCELLED~
+
+** Tags and Properties
+#+begin_src org
+* TODO Write Phantom Power OAuth middleware          :dev:lemr:backend:
+  :PROPERTIES:
+  :EFFORT:   3h
+  :PROJECT:  PhantomPower
+  :END:
+  Implement refresh token rotation for the artist profile API.
+#+end_src
+
+Tags (~:dev:~) filter in the agenda. Properties are structured metadata.
+
+** Scheduling & Deadlines
+#+begin_src org
+* TODO Mix the "Cascade" demo
+  SCHEDULED: <2024-03-15 Fri>
+  DEADLINE: <2024-03-20 Wed>
+#+end_src
+
+Scheduled = when you plan to work on it.
+Deadline = when it must be done. Both show in the agenda.
+
+** Priority
+~[#A]~ / ~[#B]~ / ~[#C]~ — set with ~C-c ,~
+#+begin_src org
+* TODO [#A] Deploy LEMR staging environment
+* TODO [#B] Finish "Blue Cascade" arrangement
+* TODO [#C] Clean the studio desk
+#+end_src
+
+* 📅 The Agenda — Your Daily Dashboard
+
+~SPC n a~ opens the agenda dispatcher. Key views:
+
+| Key | View                         |
+|-----+------------------------------|
+| ~a~ | Week agenda                  |
+| ~t~ | All TODOs                    |
+| ~m~ | Match by tag (e.g. ~:dev:~)  |
+| ~s~ | Search                       |
+
+Your agenda pulls from all files listed in ~org-agenda-files~.
+In Doom, add to ~config.el~:
+
+#+begin_src emacs-lisp
+(setq org-agenda-files '("~/org/work.org"
+                          "~/org/music.org"
+                          "~/org/home.org"))
+#+end_src
+
+* 📥 Capture — The ADHD Secret Weapon
+
+Capture lets you throw a thought into org without losing your place.
+~SPC X~ (Doom) or ~C-c c~ opens the capture menu.
+
+** Setting Up Capture Templates (config.el)
+#+begin_src emacs-lisp
+(after! org
+  (setq org-capture-templates
+    '(("t" "Quick Task" entry
+       (file+headline "~/org/inbox.org" "Inbox")
+       "* TODO %?\n  Captured: %U\n  %i")
+
+      ("n" "Quick Note" entry
+       (file+headline "~/org/inbox.org" "Notes")
+       "* %?\n  %U\n  %i\n  From: %F")
+
+      ("m" "Music Idea" entry
+       (file+headline "~/org/music.org" "Ideas")
+       "* IDEA %?\n  %U\n  Key: \n  BPM: \n  Vibe: ")
+
+      ("d" "Dev Snippet" entry
+       (file+headline "~/org/work.org" "Snippets")
+       "* %?\n  %U\n  #+begin_src\n  %i\n  #+end_src")
+
+      ("j" "Journal" entry
+       (file+datetree "~/org/journal.org")
+       "* %?\n  %U\n"))))
+#+end_src
+
+Now ~SPC X m~ drops you into a music idea template instantly.
+Brain doesn't have to decide where to put it. Just type and go.
+
+* 📝 Notes + TODOs Together — The Real Power Move
+
+The magic of org is that *notes and tasks live in the same tree*.
+
+** Example: A Dev Project Note with Embedded Tasks
+
+#+begin_src org
+* Phantom Power — OAuth Refactor
+  :PROPERTIES:
+  :ROAM_ALIASES: "phantom-oauth"
+  :END:
+
+  Working on replacing the old JWT flow with refresh token rotation.
+  Reference: https://auth0.com/blog/refresh-tokens-what-are-they/
+
+** Context
+   The current implementation stores tokens in localStorage which is
+   insecure. Need to move to httpOnly cookies server-side.
+
+** TODO Research Next.js middleware token refresh pattern     :dev:backend:
+   SCHEDULED: <2024-03-15 Fri>
+
+** TODO Write unit tests for token rotation logic            :dev:testing:
+
+** TODO Update LEMR API to invalidate old refresh tokens     :dev:lemr:
+
+** Notes from 2024-03-12 session
+   Discovered that Next.js 14 middleware runs on the edge runtime —
+   can't use node crypto directly. Use the Web Crypto API instead:
+
+   #+begin_src javascript
+   const key = await crypto.subtle.importKey(
+     "raw",
+     encoder.encode(process.env.JWT_SECRET),
+     { name: "HMAC", hash: "SHA-256" },
+     false,
+     ["sign", "verify"]
+   );
+   #+end_src
+#+end_src
+
+Your tasks are *inside* the project context. The agenda shows the TODO
+items, and when you click them you land right in the note with all
+the context around them.
+
+* 🎵 Music Workflow Example
+
+#+begin_src org
+* Blue Cascade — Track Development
+  :PROPERTIES:
+  :BPM:      92
+  :KEY:      F minor
+  :DAW:      Ableton Live 12
+  :STATUS:   Mixing
+  :END:
+
+  Dark, cinematic. Started from a field recording of rain on the
+  studio window. Sounds like early James Blake meets Burial.
+
+** Arrangement Notes
+   - Intro: reversed piano, granular pad (Granulator III)
+   - Drop at bar 17: sub bass + filtered 909 kick
+   - Bridge: strip everything, just vocals + reverb tail
+
+** TODO [#A] Sidechain compression on the bass              :music:mixing:
+   DEADLINE: <2024-03-18 Mon>
+   Use LFO Tool in M4L, trigger from kick track.
+
+** TODO Send rough mix to vocalist Sarah                    :music:collab:
+   SCHEDULED: <2024-03-16 Sat>
+
+** Reference Tracks
+   - Burial — Archangel
+   - Thom Yorke — Default
+   - Four Tet — Parallel Jalebi
+
+** Session Log
+*** [2024-03-12 Tue]
+    Got the main chord progression locked in. F minor → Ab → Eb → Db.
+    Tried the Valhalla Shimmer trick for the pad — too washy. Using
+    OB-Xd through RC-20 instead.
+#+end_src
+
+* ⚙️ Literate Programming & Code Blocks — The Nerd Stuff
+
+This is where org gets genuinely wild. You can write and *execute* code
+directly in your notes. Results get stored inline.
+
+** Basic Code Block
+#+begin_src org
+  #+begin_src python
+  print("Hello from inside org-mode")
+  #+end_src
+#+end_src
+
+Hit ~C-c C-c~ inside the block to run it. The result appears below:
+~#+RESULTS:~
+
+** Enable Languages in Doom (~config.el~)
+#+begin_src emacs-lisp
+(after! org
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python     . t)
+     (js         . t)
+     (shell      . t)
+     (emacs-lisp . t)
+     (java       . t))))
+
+;; Don't ask for confirmation every time
+(setq org-confirm-babel-evaluate nil)
+#+end_src
+
+** Example: Analyze a Track's BPM Data (Python)
+
+#+begin_src org
+* BPM Analysis — Recent Sessions
+
+#+begin_src python :results output
+import statistics
+
+sessions = {
+    "Blue Cascade":     92,
+    "Grid Pressure":   138,
+    "Hollow Ground":    74,
+    "Signal Drift":    110,
+    "Cassette Static":  96,
+}
+
+bpms = list(sessions.values())
+print(f"Tracks analyzed: {len(sessions)}")
+print(f"Average BPM: {statistics.mean(bpms):.1f}")
+print(f"Range: {min(bpms)} – {max(bpms)}")
+print(f"Median: {statistics.median(bpms)}")
+print("\nBy BPM:")
+for name, bpm in sorted(sessions.items(), key=lambda x: x[1]):
+    bar = "█" * (bpm // 10)
+    print(f"  {bpm:3d} {bar}  {name}")
+#+end_src
+
+#+RESULTS:
+: Tracks analyzed: 5
+: Average BPM: 102.0
+: Range: 74 – 138
+: Median: 96.0
+:
+: By BPM:
+:   74 ███████  Hollow Ground
+:   92 █████████  Blue Cascade
+:   96 █████████  Cassette Static
+:  110 ███████████  Signal Drift
+:  138 █████████████  Grid Pressure
+#+end_src
+
+** Example: Quick Node.js API Health Check
+
+#+begin_src org
+#+begin_src js :results output
+const https = require('https');
+
+// Simulate checking API endpoints
+const endpoints = [
+  { name: 'LEMR Auth', status: 200 },
+  { name: 'LEMR Records API', status: 200 },
+  { name: 'Phantom Power Feed', status: 503 },
+];
+
+endpoints.forEach(ep => {
+  const icon = ep.status === 200 ? '✓' : '✗';
+  console.log(`${icon} ${ep.name}: ${ep.status}`);
+});
+#+end_src
+
+#+RESULTS:
+: ✓ LEMR Auth: 200
+: ✓ LEMR Records API: 200
+: ✗ Phantom Power Feed: 503
+#+end_src
+
+** Example: Shell — Check What's Running on Your Machine
+
+#+begin_src org
+#+begin_src shell :results output
+echo "=== Git Status: LEMR ==="
+cd ~/projects/lemr && git status --short
+
+echo ""
+echo "=== Node Processes ==="
+ps aux | grep node | grep -v grep | awk '{print $11, $12}'
+#+end_src
+#+end_src
+
+** Example: Generate a Chord Progression Reference Table
+
+#+begin_src org
+#+begin_src python :results output raw
+keys = ["C", "F", "Bb", "Eb", "Ab", "Db"]
+# ii-V-I in each key (jazz/neo-soul standard)
+print("| Key | ii | V | I |")
+print("|-----+----+---+---|")
+for k in keys:
+    # Simplified - just showing the concept
+    idx = keys.index(k)
+    print(f"| {k}   | {k}m7 | {k}7 | {k}maj7 |")
+#+end_src
+#+end_src
+
+** Tangle — Extract Code to Real Files
+
+You can write code in org and *tangle* it out to actual source files:
+
+#+begin_src org
+#+begin_src python :tangle ~/scripts/check_sessions.py
+#!/usr/bin/env python3
+"""Check Ableton session files and report their sizes."""
+import os
+import pathlib
+
+sessions_dir = pathlib.Path.home() / "Music" / "Ableton"
+for f in sessions_dir.glob("**/*.als"):
+    size_mb = f.stat().st_size / 1_000_000
+    print(f"{size_mb:.1f}MB  {f.name}")
+#+end_src
+#+end_src
+
+Run ~C-c C-v t~ to tangle — it writes the Python to the real file path.
+This is "literate programming" — the doc *is* the code.
+
+* ⏱️ Time Tracking — Clocking
+
+Org has built-in time tracking. Useful for freelance billing or just
+knowing where the day went.
+
+#+begin_src org
+* IN-PROGRESS Mix "Blue Cascade"
+  :LOGBOOK:
+  CLOCK: [2024-03-12 Tue 14:00]--[2024-03-12 Tue 16:23] => 2:23
+  CLOCK: [2024-03-13 Wed 10:00]--[2024-03-13 Wed 11:45] => 1:45
+  :END:
+  Total so far: 4h 8m
+#+end_src
+
+- ~C-c C-x C-i~ — Clock in (start timer on current heading)
+- ~C-c C-x C-o~ — Clock out
+- ~SPC n a~ then press ~R~ in the agenda for a clock report by week
+
+* 🔗 Org-Roam — Networked Notes
+
+Org-Roam turns your org files into a personal wiki / knowledge graph.
+
+** Creating a Node
+~SPC n r f~ → type a title → if it doesn't exist, creates it.
+
+Each node gets a unique ID:
+#+begin_src org
+:PROPERTIES:
+:ID: 7f3a2b1c-4d5e-6789-abcd-ef0123456789
+:END:
+#+end_src
+
+** Linking Between Notes
+~SPC n r i~ — insert a link to another node.
+
+#+begin_src org
+Working on the OAuth middleware for [[id:abc123][Phantom Power]].
+The approach is similar to what I did in [[id:def456][LEMR Auth System]].
+#+end_src
+
+** Roam for Music & Dev
+#+begin_src org
+,* Demucs Stem Separation
+  :PROPERTIES:
+  :ID: stem-sep-2024
+  :END:
+
+  Python library for AI-powered stem separation.
+  Used in my [[id:sample-workflow][Sample Flipping Workflow]].
+
+  #+begin_src shell :results output
+  demucs --two-stems=vocals path/to/track.mp3
+  #+end_src
+
+  Output goes to ~/separated/htdemucs/track-name/
+    - vocals.wav
+    - no_vocals.wav
+#+end_src
+
+** Roam Daily Notes
+~SPC n r d~ opens today's daily note — a journal + scratch pad.
+
+#+begin_src org
+,* 2024-03-12
+  :PROPERTIES:
+  :ID: daily-2024-03-12
+  :END:
+
+** Log
+   - Fixed the torchaudio import error in the Demucs script
+   - Started mixing Blue Cascade — working on the bass sidechain
+   - Had a weird idea: generative MIDI from git commit diffs?
+
+** Tasks Created Today
+   - [[id:task-1][Set up Python venv for audio scripts]]
+   - [[id:task-2][Write LEMR migration for v2.3]]
+
+** Notes / Links
+   Found this: [[https://github.com/facebookresearch/demucs][Demucs GitHub]]
+   Related: [[id:stem-sep-2024][Demucs Stem Separation]]
+#+end_src
+
+* 🧠 ADHD-Friendly Workflow Patterns
+
+** The Capture-First Rule
+*Never* stop what you're doing to file a thought properly.
+~SPC X~ → pick template → type → ~C-c C-c~ to save.
+Refine the inbox during a weekly review.
+
+** Weekly Review Template
+#+begin_src org
+* Weekly Review [2024-W11]
+** Inbox triage
+   - [ ] Process ~/org/inbox.org
+** Last week
+   - What got done?
+   - What got stuck?
+** This week priorities
+   1.
+   2.
+   3.
+** Projects check-in
+   - [ ] LEMR
+   - [ ] Phantom Power
+   - [ ] Music releases
+** Mind sweep (what's on my mind?)
+#+end_src
+
+** Context-Switching Helpers
+Use tags to filter agenda by context:
+
+| Tag       | When to use                         |
+|-----------+-------------------------------------|
+| ~:dev:~   | At the computer, dev mode           |
+| ~:music:~ | In the studio / creative mode       |
+| ~:home:~  | Around the house                    |
+| ~:phone:~ | Can be done from phone              |
+| ~:quick:~ | Under 5 minutes                     |
+| ~:deep:~  | Needs focus, no interruptions       |
+
+In agenda, press ~/ m :dev:~ to show only dev tasks.
+
+** Don't Let Perfect Be the Enemy of Done
+A messy org file is infinitely better than no org file.
+Write it wrong, file it wrong, you can always search with ~SPC n s s~.
+
+* 🚀 Next Steps
+
+1. *Install*: Doom Emacs has org ready. Run ~M-x org-version~ to confirm.
+2. *Start*: Create ~~/org/inbox.org~ and use it for one week.
+3. *Agenda*: Add files to ~org-agenda-files~, live in ~SPC n a~.
+4. *Capture*: Set up 2-3 capture templates in ~config.el~, ~doom/reload~.
+5. *Code blocks*: Add ~org-babel-load-languages~ to config, try a Python block.
+6. *Roam*: When the flat files feel limited, migrate to Org-Roam.
+
+** Useful Resources
+- [[https://orgmode.org/manual/][Official Org Manual]]
+- [[https://github.com/doomemacs/doomemacs/blob/master/modules/lang/org/README.org][Doom Emacs Org Module README]]
+- [[https://www.orgroam.com/manual.html][Org-Roam Manual]]
+- [[https://systemcrafters.net/getting-started-with-org-roam/][System Crafters: Org-Roam Guide]]
+- [[https://orgmode.org/worg/org-contrib/babel/][Org Babel Docs]]

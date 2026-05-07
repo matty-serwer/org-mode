@@ -1,0 +1,5 @@
+#+title: inbox
+#+author: Mattie
+#+date: 2026-02-26
+#+filetags: :inbox:
+#+startup: overview

@@ -1,0 +1,6 @@
+
+* 2025
+** 2025-10 October
+*** 2025-10-16 Thursday
+**** [2025-10-16 Thu 13:52]
+* This is my first moment in doom emacs. May it be a glorius, and quite fecetious reign!

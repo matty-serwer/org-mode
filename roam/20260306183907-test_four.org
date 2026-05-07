@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b8551456-ac39-4414-b465-a9232bb44e55
+:END:
+#+title: Test Four
+#+filetags:
+
+- Link to a new note, created in a buffer -pre/capture
+-  [[id:5ddf9fe3-5089-4ef1-90a1-2e70e0273930][Test Four Out]]

@@ -1,0 +1,8 @@
+* Inbox
+** [ ] Check font declaration in layout
+
+[[file:~/Developer/active-projects/lupine-tech-design/ltd-public-site-001/app/layout.tsx::const lora = Lora({]]
+** [ ] no way
+
+
+[[file:~/Developer/active-projects/lupine-tech-design/ltd-public-site-001/hooks][hooks]]
