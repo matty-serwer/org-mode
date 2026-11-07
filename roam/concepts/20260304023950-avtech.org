@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6b8f845c-ef74-4c8d-8196-67159300a5c3
+:REFLECT_ID: 46d3ec62b26c437f9abd1ec06c1490c3
+:CREATED:  [2026-03-04 Wed 02:39]
+:MODIFIED: [2026-03-15 Sun 20:32]
+:END:
+#+title: AVTech
+#+filetags: :concept:
+#+date: 2026-03-04
+

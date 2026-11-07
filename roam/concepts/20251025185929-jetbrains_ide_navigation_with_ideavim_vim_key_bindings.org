@@ -1,0 +1,70 @@
+:PROPERTIES:
+:ID:       d9c8a153-2339-4bb9-92f9-335caa56f564
+:REFLECT_ID: 904ca7c8173a4cf2bc150d7153f71238
+:CREATED:  [2025-10-25 Sat 18:59]
+:MODIFIED: [2025-10-25 Sat 19:01]
+:END:
+#+title: Jetbrains IDE Navigation With IdeaVim VIM Key Bindings
+#+filetags: :concept:
+#+date: 2025-10-25
+* [[id:82457c91-52fe-4f9c-941f-2f23713d51da][Jetbrains]] IDE Navigation With [[id:edb002bd-0bae-4a7f-9e6d-57786ce1e916][IdeaVim]] [[id:c9dedc12-3f58-46a4-984d-998ce809fa6f][VIM Key Bindings]]
+Common Vim Navigation in IdeaVim
+- v — Visual mode (start selecting text)
+- V — Visual line mode (select entire lines)
+- Ctrl-v — Visual block mode (column selection)
+- y — Yank (copy) selected text
+- p — Paste after cursor
+- d — Delete selected text
+- . — Repeat last command
+- gd — Go to definition (WebStorm action mapped via IdeaVim)
+- Ctrl-o and Ctrl-i — Jump backward and forward in jump history
+WebStorm-Specific Shortcuts to Use with IdeaVim
+- Select next occurrence of word (Duplicate selection):
+  - Map to Alt-J (macOS: ⌥J). This lets you select the next instance of the word under the cursor to edit all occurrences simultaneously.
+- Multi-caret editing:
+  - Ctrl-Click (or Cmd-Click on Mac) to add carets manually.
+- Find usages:
+  - Alt-F7 (macOS: ⌥F7)
+- Refactor (Rename):
+  - Shift-F6 (macOS: ⇧F6) /
+- Quick fix/show intention actions:
+  - Alt-Enter (macOS: ⌥⏎)
+- Format code:
+  - Ctrl-Alt-L (macOS: ⌃⌥L)
+- Open recent files:
+  - Ctrl-E (macOS: ⌘E)
+- Search everywhere:
+  - Shift Shift (press Shift twice)
+- Run code:
+  - Shift-F10 (macOS: ⌃R)
+- Open file structure popup:
+  - Ctrl-F12 (macOS: ⌘F12)
+Basic Vim Modes and Navigation
+- Normal mode: Default mode after pressing Esc. Cursor is a block.
+- Insert mode: Press i to enter insert mode for editing text (cursor changes to vertical line). Press Esc to exit insert mode.
+- Visual mode: Press v to select characters, or V to select whole lines.
+- Replace mode: Press R to overwrite text.
+Navigation Commands
+- h, j, k, l — Move left, down, up, right.
+- 0 — Move to beginning of line.
+- $ — Move to end of line.
+- gg — Go to the start of the file.
+- G — Go to the end of the file.
+- w, b, e — Move by words forward, backward, or to the end.
+- Ctrl-d / Ctrl-u — Scroll down/up half a screen.
+- Ctrl-f / Ctrl-b — Scroll down/up a full screen.
+- :action <IDE Action> — Run a JetBrains IDE action via the command line (see below).
+Editing and Text Manipulation
+- dd — Delete a whole line.
+- yy — Yank (copy) a line.
+- p — Paste after cursor.
+- P — Paste before cursor.
+- u — Undo.
+- Ctrl-r — Redo.
+- J — Join lines using smart IDE-aware join.
+- :%s/old/new/g — Search and replace throughout file.
+Switching Between Vim and IDE Shortcuts
+- In [[id:06a47b84-180d-44bb-935e-ca6678ea3117][WebStorm]]'s settings, you can configure which shortcuts are handled by Vim and which by the IDE to avoid conflicts (Settings → Keymap).
+- Optionally, create a shortcut to toggle IdeaVim on/off for quick mode switching.
+  - Sources
+  - [1] Vim in WebStorm - JetBrains [[https://www.jetbrains.com/help/webstorm/using-product-as-the-vim-editor.html][_https://www.jetbrains.com/help/webstorm/using-product-as-the-vim-editor.html_]]

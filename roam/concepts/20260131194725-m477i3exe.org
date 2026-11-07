@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a6553dfe-4631-4c2a-90be-331521860137
+:REFLECT_ID: 65caf6e4ed2b4ea4b75f33d1748ab77c
+:CREATED:  [2026-01-31 Sat 19:47]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: M477i3.exe
+#+filetags: :concept:
+#+date: 2026-01-31
+

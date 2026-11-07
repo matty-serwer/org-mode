@@ -1,0 +1,215 @@
+:PROPERTIES:
+:ID:       411b366d-0b06-4113-8df4-9d00b895bcb9
+:REFLECT_ID: 888d515d2bcb45a28bab375a5b313164
+:CREATED:  [2025-11-13 Thu 06:23]
+:MODIFIED: [2025-11-13 Thu 06:24]
+:END:
+#+title: Roadmap: Lupine Tech Design / 🌐 Portfolio Page Version 1A
+#+filetags: :project:planning:
+#+date: 2025-11-13
+* Roadmap: [[id:0844b62c-f496-457e-94ea-6c1b4407441f][Lupine Tech Design]] / [[id:2270ec16-0a33-4195-ad0b-3845ead5fe5a][🌐 Portfolio Page]] Version 1A
+** Tech Stack
+- Next.js 14.2.3
+- React 18.3.0
+- TypeScript 5.4
+- Tailwind CSS 3.4.4
+- shadcn/ui v0.2.5 (optional component library)
+- Node.js 20.x (runtime)
+- Vercel CLI 30.4.0 (deployment)
+- Optional backend: Next.js API routes or Express 6.0 + Prisma 4.14 (if database needed)
+  Detailed plan for today
+- initialize Next.js project with TypeScript template (npx create-next-app@latest --typescript)
+- install Tailwind CSS (npm install -D tailwindcss postcss autoprefixer+npx tailwindcss init -p)
+- configure global styles and import Tailwind directives
+- scaffold folder structure under/srcas above
+- build basic layout: Navbar + Footer components with placeholder links
+- create HeroSection component with name, title, and link to projects section
+- stub ProjectCard and display a dummy list of current projects inprojects.ts
+- commit and push initial scaffolding to GitHub
+  Planning: Sprint One
+  Day 1–2: Scaffold & Basic Deployment
+- Initialize Next.js app with Tailwind CSS.
+- Set up core folders & file structure:
+  - /src/app/[pages],/components,/styles, etc.
+  - Routing for Home, About, Applications, Phantom Power, Work, Resume, Contact, Blog.
+- Add basic site config (logo placeholder, colors, favicon).
+- Deploy initial scaffold to chosen hosting (Vercel, Netlify, or Render).
+  Deliverable: Live site skeleton, working navigation, basic branding.
+* Day 1-2: Huh?
+* Day 3–4: Core Components & Layout
+- Build shared layout: Navbar, Footer.
+- Create hero/header sections for Home & Applications.
+- Create AppCard/ProjectCard components for showcasing apps/work.
+- Implement ContactForm for contact page.
+- Set up Blog with simple MDX post support.
+  Deliverable: Site feels cohesive, users can easily browse main sections.
+* Day 5–6: Content Drafting & Research
+- Draft copy for Home (mission, tagline, Phantom Power teaser).
+- Write About (“About Us/Founder” bio & company origin).
+- Outline features/vision for Phantom Power on its dedicated (/applications/phantom-power) page.
+  - Unknown:
+    - Research similar SaaS/app landing pages for feature inspiration.
+    - Identify strengths/unique selling points for Phantom Power.
+    - Todo: Schedule meeting or personal brainstorming for stakeholder pitch content.
+- List past apps/projects for Applications (“other apps”) and Work.
+- Prepare initial Resume content (LinkedIn/CV import).
+- Plan blog topics (product updates, technical writeups, industry thoughts).
+  Deliverable: Draft content ready for review, initial research/notes for unknowns.
+* Day 7–9: UI/Styling Polish & Responsive Design
+- Style core components for clean, modern look (Tailwind utility work, hero images, cards).
+- Add suitable imagery/icons (can use placeholders/AI-generated for now).
+- Make sure pages are responsive and mobile-friendly.
+- Set up “dark mode” toggle (optional for polish).
+  Deliverable: Site looks professional, ready for content drop-in.
+* Day 10–12: Content Integration & Final Polish
+- Add finalized text, images, project/app showcase content.
+- Polish Phantom Power page for “stakeholder pitch” (features, demo screenshots, CTA).
+- About: Finalize founder/company bio, update for any revisions.
+- Resume: PDF upload/embed, skills grid, quick contact.
+- Contact: Test and validate contact form.
+- Blog: Publish one or two starter posts.
+  Deliverable: Site feels complete, most text/images filled, working blog/contact.
+* Day 13–14: Pre-Launch QA, Branding, Documentation, TODOs
+- Test all routes, links, forms, and responsive layouts.
+- Polish branding: logo swapping (Figma/Canva/etc), update favicon and site meta tags.
+- TODOs for post-sprint:
+  - Plan deeper stakeholder outreach or marketing for Phantom Power.
+  - Research testimonials/client feedback mechanism for future polish.
+  - Identify technical debt or wishlist features (SEO, analytics, video demo, careers page, CMS/blog admin).
+  - Make notes on gaps to prioritize for next sprint.
+    Deliverable: "Soft launch" site: public, shareable, and polished for employers, clients, or investors.
+* Pages & Sections
+** Home (Landing Page:/)
+Goal:Introduce your company and immediately spotlight "Phantom Power".
+- Hero Section:
+  - LuupTechDesign logo/name
+  - Tagline/one-liner (e.g. “Building smart, impactful web applications”)
+  - Eye-catching “Phantom Power” feature (image, short description, call-to-action)
+- What We Do/Our Mission:
+  - Brief company vision and story—what sets you apart, your values
+- Featured Application:
+  - Short cards/teasers for Phantom Power and other key apps
+  - Button/link to “Learn More” (Applications page, or straight to /applications/phantom-power)
+- Quick Links:
+  - CTA buttons: Hire Us, Explore Phantom Power, See Our Work, Contact
+- Footer:
+  - Social links, contact info, copyright
+** About (/about)
+Goal:Company background + your personal/professional bio.
+- Company Story:
+  - What is LuupTechDesign and why does it exist? (Vision/mission, how you started, what you want to achieve)
+- Founder Bio:
+  - Your picture, short bio, key skills, highlights from your career
+  - Optional: “Values” or “Philosophy” (why you build this way)
+- Company Timeline/Key Milestones
+- Option to Add Team/Contributors Later
+** Applications (/applications)
+Goal:Overview of flagship product(s) and other applications.
+- Phantom Power (as featured application):
+  - App icon/logo, tagline (e.g. “The modern power automation platform”)
+  - 2-3 sentence elevator pitch
+  - CTA: “Learn more” (to/applications/phantom-power)
+- Other Applications:
+  - Brief list/cards for Rutherford Diagnostics, Other Apps, etc.
+  - Each with CTA (to subpage or modal)
+** Phantom Power Application Feature (/applications/phantom-power)
+Goal:Dedicated landing page for Phantom Power—pitch to stakeholders, users, and partners.
+- What is Phantom Power?
+  - Extended pitch, vision, and what problems it solves
+- Key Features/Benefits:
+  - Bulleted list or icons/brief descriptions
+- Screenshots/Demo:
+  - Images, GIFs, or (future) video
+- Product Roadmap/Status:
+  - What’s live, what’s coming, invite to collaborate/partner
+- Call to Action:
+  - “Get in Touch,” “Request Access,” “Join as Stakeholder,” etc.
+** Work/Projects (/work)
+Goal:Past work, client projects, case studies.
+- Headline:
+  - “Selected Projects” or “Our Work”
+- Featured Case Studies or Client Work:
+  - Cards for contract projects, freelance work, impressive company roles, etc.
+  - If limited, focus on quality, impact, or learning
+- Optional Testimonials:
+  - Quotes from collaborators or clients (add as you get them!)
+** Services (optional) (/services)
+Goal:What you/your company offer—consulting, development, etc.
+- Service List:
+  - Web Application Development
+  - Tech Consulting
+  - Prototyping, Product Strategy
+  - Custom Services
+- How to Engage:
+  - How you work, engagement models, contact for estimate/discovery call
+** Blog (/blog)
+Goal:Share expertise, product updates, technical writeups, company news.
+- Blog Index:
+  - List or cards for posts
+  - Mix product dev updates, explainers, industry commentary, milestone announcements
+- Individual Posts:
+  - MDX page(s) for content
+** Resume / For Recruiters (/resume)
+Goal:Enable recruiters/hiring managers to quickly access your CV and critical info.
+- Intro:
+  - “Open to Opportunities,” short professional statement
+- Downloadable Resume:
+  - PDF or online embed
+- Skills & Experience Summary:
+  - Clean, scannable bullets or grid
+- Contact Info:
+  - Email, LinkedIn
+** Contact (/contact)
+Goal:Simple, barrier-free way to start a conversation.
+- Contact Form:
+  - Name, Email, Message
+- Direct Email/Links:
+  - Your email, LinkedIn, Twitter, etc.
+General Page Sections/Components Used Throughout:
+- Navbar:
+  - Logo, main links (Home, Applications, About, Resume, Contact, [Work/Blog])
+** Footer:
+- Social icons, copyright
+** Project/App Cards:
+- For quick teasers of what you’ve built
+  Frontend directory overview for scaffolding
+Directory
+#+begin_src text
+/
+├── public/                   # Static assets (images, etc.)
+└── src/
+    ├── app/
+    │   ├── layout.tsx        # Root layout (page shell)
+    │   ├── page.tsx          # Home: LuupTechDesign intro, Phantom Power tease
+    │   ├── about/
+    │   │   └── page.tsx      # About/team: founder, mission, story
+    │   ├── applications/
+    │   │   ├── page.tsx      # Applications overview
+    │   │   ├── phantom-power/
+    │   │   │   └── page.tsx  # Phantom Power: full feature/pitch page
+    │   │   ├── rutherford-diagnostics/
+    │   │   │   └── page.tsx  # Rutherford Diagnostics: product subpage
+    │   │   └── other-apps/
+    │   │       └── page.tsx  # Small projects/experiments
+    │   ├── work/
+    │   │   └── page.tsx      # Freelance/contracts/case studies
+    │   ├── services/
+    │   │   └── page.tsx      # Consulting/services
+    │   ├── blog/
+    │   │   ├── page.tsx      # Blog index
+    │   │   └── [slug].mdx    # Individual blog post
+    │   ├── resume/
+    │   │   └── page.tsx      # Recruiter-focused resume/CV page
+    │   └── contact/
+    │       └── page.tsx      # Contact form/page
+    ├── components/           # Shared UI (nav, footer, cards, etc.)
+    ├── styles/               # Global and custom stylesheets
+    ├── lib/                  # Utilities, helpers
+    ├── data/                 # Static/config data, content
+    ├── hooks/                # React hooks
+    └── types/                # TypeScript types/interfaces
+next.config.js
+tsconfig.json
+tailwind.config.js
+package.json
+#+end_src

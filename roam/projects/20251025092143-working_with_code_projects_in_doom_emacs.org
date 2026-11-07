@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       b531653a-302d-4032-8282-b9c992a9c782
+:REFLECT_ID: cadd0579c07941e3b5877ffaf5f8811d
+:CREATED:  [2025-10-25 Sat 09:21]
+:MODIFIED: [2026-01-28 Wed 05:05]
+:END:
+#+title: 💾 💥 Working with Code Projects in Doom Emacs
+#+filetags: :project:sequence:
+#+date: 2025-10-25
+* 💾 💥 Working with [[id:f2b909aa-190a-47d2-92f4-089f6da157ca][Code Projects]] in [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]]
+-  
+** Open an Existing Project
+- Launch [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]]
+- Press =SPC p p= to open Projectile's project finder
+- Select your project directory
+- If [[id:cf99828a-1122-49e1-80d4-d4b1193a7e0e][LSP]] isn't auto-starting, press =SPC c l= in a source file
+- Verify setup by opening a key file with =SPC p f=
+** Add an Existing Project
+- Launch [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] (not in an existing project)
+- Navigate to the project directory:
+  - Press =SPC .= for fuzzy search
+  - Or use =SPC o o= for ace-window
+- Open a file in the project directory
+- Press =SPC p a= to add as a known project
+- Switch to the project with =SPC p p=
+- Verify by searching files with =SPC p f=
+** Ensuring Project Persistence
+- [[id:24a11107-00af-41a1-935c-ecde27f80958][Projectile]] stores projects in cache files
+- Projects persist across sessions
+- Use =SPC p i= to invalidate and reindex if cache seems outdated
+- Remove projects with =SPC p d= if needed
+[[https://www.youtube.com/watch?v=Rx3wRl5d-J0][https://www.youtube.com/watch?v=Rx3wRl5d-J0]]
+** Efficient Window Layout for Coding
+- *Setup process*
+  - [[id:a3eec4af-4e99-48ce-b2bc-987be6125579][File explorer]]
+    - Toggle [[id:26b60faa-68c9-469e-a596-79e5136bf998][Treemacs]]: =SPC o t=
+    - Navigate project directories
+  - *Window splitting*
+    - Horizontal split: =SPC 2=
+    - Vertical split: =SPC 3=
+    - Focus single window: =SPC 1=
+    - Switch [[id:446e09da-6a91-4ae5-a217-0ab3b9cf35fe][buffers]]: =SPC b b=
+  - *Terminal integration*
+    - Open [[id:6f427d68-0ecc-4e4a-a0a1-9ebcd673d3d9][vterm]]: =SPC o T=
+    - Open [[id:d3a0d0c2-2492-4163-9894-a5946f6016bb][eshell]]: =SPC '=
+    - Run development servers
+    - Resize windows: =SPC o e= or mouse drag
+  - *Additional tools*
+    - [[id:91c71ea3-9f3f-40e3-a5c2-4f2d53bb5ff9][Git]] ([[id:4ef42f00-0571-4a76-ab3a-74cac5b84d3e][Magit]]): =SPC g g=
+    - [[id:f0d522c2-ec16-4591-9c69-8c5620ae0563][REPL]]: =SPC m s i=
+  - *Layout management*
+    - Reopen project: =SPC p p=
+    - Switch perspectives: =SPC p P=
+** Sources
+1. [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]][[https://noelwelsh.com/posts/doom-emacs/][ Workflows - Noel Welsh]]
+1. [[https://docs.doomemacs.org/latest/][Documentation - ]][[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]][[https://docs.doomemacs.org/latest/][ v21.12 documentation]]
+1. [[https://github.com/niyumard/Doom-Emacs-Cheat-Sheet][niyumard/Doom-Emacs-Cheat-Sheet - GitHub]]
+1. [[https://emacs-lsp.github.io/lsp-mode/tutorials/reactjs-tutorial/][React JavaScript Tutorial in Emacs - LSP Mode]]
+1. [[https://allenhansrisuk.com/posts/2025-01-14/][Minimal Config for ]][[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]][[https://allenhansrisuk.com/posts/2025-01-14/][ as a React/TS IDE]]
+1. [[https://jwill.dev/blog/2022/01/18/EmacsAsIDE-Setup.html][Emacs as an IDE: Setup]]
+1. [[https://www.youtube.com/watch?v=AL1ypvJ5yAQ][Emacs Doom E04 - Buffers, Windows and Basic Navigation - YouTube]]
+1. [[https://discourse.doomemacs.org/t/how-to-manage-the-windows-layout-configuration-in-doom/4419][How to manage the windows layout configuration in Doom?]]
+1. [[https://www.reddit.com/r/DoomEmacs/comments/vv3slb/how_to_work_with_reactjs_typescript/][How to work with React.js + typescript? - r/DoomEmacs - Reddit]]
+1. [[https://dev.to/viglioni/how-i-set-up-my-emacs-for-typescript-3eeh][How I set up my emacs for TypeScript + React - DEV Community]]
+1. [[https://www.youtube.com/watch?v=26gFIhHM09E][Getting Started With ]][[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]][[https://www.youtube.com/watch?v=26gFIhHM09E][ - YouTube]]
+1. [[https://www.youtube.com/watch?v=ELOmzi0RW_8][Setting up Emacs for Typescript React projects with lsp-mode - YouTube]]

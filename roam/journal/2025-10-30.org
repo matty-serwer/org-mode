@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       c2ce8b5f-249a-4c9a-9965-03f2b82d82b7
+:REFLECT_ID: 30102025
+:CREATED:  [2025-10-30 Thu 15:05]
+:MODIFIED: [2025-10-30 Thu 17:58]
+:END:
+#+title: Thu, October 30th, 2025
+#+filetags: :daily:
+#+date: 2025-10-30
+- [[id:82c2a45f-83c0-47c0-9502-1150f13142ab][Check It Out!]] [[id:64678f28-ad48-483b-b9d7-c73aa49a6b4d][Mac OS]] [[id:ea46c0a2-7e68-4ad7-9d44-7b51949665e0][Apps]]
+  - [[id:3bb34a9b-59b1-48e7-86b7-1f3a2ced3d91][Notch Nook]]
+    - in particular the Tray feature!
+  - [[id:2d214790-4cb1-4461-ace3-15409681fb74][Cheatsheet]]
+  - Only Office
+    - Microsoft Office Sub

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d27b492f-a706-4de7-8021-70a84e262aa9
+:REFLECT_ID: 22adc3c5c5c944f681d8e1df176fe585
+:CREATED:  [2026-01-17 Sat 08:03]
+:MODIFIED: [2026-03-13 Fri 23:21]
+:END:
+#+title: Matti3-org
+#+filetags: :concept:
+#+date: 2026-01-17
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       be3ff83e-4a7f-4e6f-9534-49a7badcf3e8
+:REFLECT_ID: 3463cf7f146a4c6497870f980debaabd
+:CREATED:  [2026-04-08 Wed 02:13]
+:MODIFIED: [2026-04-08 Wed 02:13]
+:END:
+#+title: M365
+#+filetags: :concept:
+#+date: 2026-04-08
+

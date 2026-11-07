@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       695de0a8-ed01-4897-92fc-e7f7a99afe06
+:REFLECT_ID: 97821bb94c434814bb589b802957a502
+:CREATED:  [2026-03-08 Sun 00:35]
+:MODIFIED: [2026-03-12 Thu 15:31]
+:END:
+#+title: Pfizer March 2026 Orlando
+#+filetags: :concept:
+#+date: 2026-03-08
+

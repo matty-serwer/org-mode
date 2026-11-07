@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5350e22e-10e9-43e2-b6dc-7a382d1989e2
+:REFLECT_ID: d6690a040cdb4182b2929d020430ab55
+:CREATED:  [2026-01-17 Sat 08:04]
+:MODIFIED: [2026-01-17 Sat 08:04]
+:END:
+#+title: fuck
+#+filetags: :concept:
+#+date: 2026-01-17
+

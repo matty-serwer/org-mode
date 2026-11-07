@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bc41dbc4-6ef3-4587-a4ff-70b0ec3f4bb1
+:REFLECT_ID: c2d44304172249bcb7d89a9dd7d8b55e
+:CREATED:  [2025-11-24 Mon 07:42]
+:MODIFIED: [2026-01-15 Thu 12:07]
+:END:
+#+title: Perplexity Desktop
+#+filetags: :concept:
+#+date: 2025-11-24
+

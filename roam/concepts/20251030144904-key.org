@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0e4ee938-4f28-4114-a414-8a224af101cd
+:REFLECT_ID: ceae10bcbccf4f32b95a029d4294221c
+:CREATED:  [2025-10-30 Thu 14:49]
+:MODIFIED: [2025-10-30 Thu 14:49]
+:END:
+#+title: Key
+#+filetags: :concept:
+#+date: 2025-10-30
+

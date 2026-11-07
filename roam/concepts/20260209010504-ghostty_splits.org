@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4aec6e2b-66b4-4b2e-8080-d97c948a5d7d
+:REFLECT_ID: 3ccdbe8295d6409d908e861284bbab9c
+:CREATED:  [2026-02-09 Mon 01:05]
+:MODIFIED: [2026-02-09 Mon 01:05]
+:END:
+#+title: Ghostty Splits
+#+filetags: :concept:
+#+date: 2026-02-09
+

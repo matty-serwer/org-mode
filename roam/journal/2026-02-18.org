@@ -1,0 +1,374 @@
+:PROPERTIES:
+:ID:       e9b37dcd-f8d9-42eb-8641-14cd6b150664
+:REFLECT_ID: 18022026
+:CREATED:  [2026-02-18 Wed 05:59]
+:MODIFIED: [2026-04-08 Wed 20:21]
+:END:
+#+title: Wed, February 18th, 2026
+#+filetags: :daily:
+#+date: 2026-02-18
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - Don't do that. Whatever. It sucks.
+- [[id:d3e88702-5e09-4e8e-ad52-966b7c55cf7d][Ghostty Config]]
+  - updated font
+  - fixed theme and background rendering by dark mode
+- [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]]
+  - [[id:e1cc1fcd-1b1d-4ccb-81be-2d7105e8ff27][Work Sweet Prisma 7 Update (Perplexity)]]
+    - Perfect! Now I have the information I need about Prisma 7's new setup. Let me create the updated document for you.
+      Updated Sprint Planning Document for Prisma ORM 7
+      Here's the rewritten section with updated Prisma 7 instructions:
+      -----
+      
+      Issue #1: Project Scaffolding & Configuration
+      *Milestone:* Node.js API Setup
+      *Estimate:* 1 hour
+      *Labels:* =setup=, =backend=, =day-1=
+      Description
+      Set up Node.js project with Express, Prisma ORM 7, and PostgreSQL configuration.
+      Acceptance Criteria
+      Implementation Steps
+      Step 1: Initialize Node.js Project
+      
+      #+begin_src bash
+      cd backend
+      
+      # Initialize package.json
+      npm init -y
+      
+      # Install dependencies
+      npm install express cors dotenv bcryptjs jsonwebtoken
+      npm install @prisma/client
+      
+      # Install dev dependencies
+      npm install -D typescript @types/node @types/express @types/cors @types/bcryptjs @types/jsonwebtoken
+      npm install -D tsx prisma nodemon
+      
+      # Initialize TypeScript
+      npx tsc --init
+      #+end_src
+      Step 2: Configure TypeScript
+      =backend/tsconfig.json=:
+      
+      #+begin_src json
+      {
+        "compilerOptions": {
+          "target": "ES2020",
+          "module": "commonjs",
+          "lib": ["ES2020"],
+          "outDir": "./dist",
+          "rootDir": "./src",
+          "strict": true,
+          "esModuleInterop": true,
+          "skipLibCheck": true,
+          "forceConsistentCasingInFileNames": true,
+          "resolveJsonModule": true,
+          "moduleResolution": "node"
+        },
+        "include": ["src/**/*", "prisma/**/*"],
+        "exclude": ["node_modules"]
+      }
+      #+end_src
+      Step 3: Configure package.json Scripts
+      =backend/package.json= (update scripts section):
+      
+      #+begin_src json
+      {
+        "name": "work-sweet-backend",
+        "version": "1.0.0",
+        "description": "Work Sweet API - Node.js + Express + Prisma ORM 7",
+        "main": "dist/index.js",
+        "scripts": {
+          "dev": "nodemon --exec tsx src/index.ts",
+          "build": "tsc",
+          "start": "node dist/index.js",
+          "prisma:generate": "prisma generate",
+          "prisma:migrate": "prisma migrate dev",
+          "prisma:studio": "prisma studio",
+          "prisma:seed": "tsx prisma/seed.ts"
+        },
+        "keywords": ["express", "typescript", "prisma", "postgresql"],
+        "author": "Mattie",
+        "license": "MIT"
+      }
+      #+end_src
+      Step 4: Create Environment Configuration
+      =backend/.env=:
+      
+      #+begin_src env
+      # Server
+      NODE_ENV=development
+      PORT=8080
+      
+      # Database
+      DATABASE_URL="postgresql://worksweet:worksweet_dev_pass@localhost:5432/worksweet?schema=public"
+      
+      # JWT
+      JWT_SECRET=WorkSweetSuperSecretKeyThatIsAtLeast256BitsLongForHS256Algorithm
+      JWT_EXPIRES_IN=24h
+      
+      # CORS
+      CORS_ORIGIN=http://localhost:3000
+      #+end_src
+      =backend/.env.example=:
+      
+      #+begin_src env
+      NODE_ENV=development
+      PORT=8080
+      DATABASE_URL="postgresql://user:password@localhost:5432/worksweet?schema=public"
+      JWT_SECRET=your-super-secret-key-here
+      JWT_EXPIRES_IN=24h
+      CORS_ORIGIN=http://localhost:3000
+      #+end_src
+      Step 5: Initialize Prisma ORM 7
+      
+      #+begin_src bash
+      # Initialize Prisma with PostgreSQL
+      npx prisma init --datasource-provider postgresql
+      
+      # This creates:
+      # - prisma/schema.prisma (WITHOUT url field in datasource block)
+      # - prisma.config.ts (NEW in Prisma 7 - contains datasource URL)
+      # - .env (if not exists)
+      #+end_src
+      *⚠️ IMPORTANT: Prisma 7 Changes*
+      In Prisma ORM 7, the database connection URL is configured in =prisma.config.ts= instead of in the =schema.prisma= file. The =prisma init= command now automatically creates this configuration file.
+      Step 6: Configure Prisma Config (NEW in Prisma 7)
+      =backend/prisma.config.ts=:
+      
+      #+begin_src typescript
+      import 'dotenv/config'
+      import { defineConfig, env } from 'prisma/config'
+      
+      export default defineConfig({
+        schema: 'prisma/schema.prisma',
+        migrations: {
+          path: 'prisma/migrations',
+          seed: 'tsx prisma/seed.ts',
+        },
+        datasource: {
+          url: env('DATABASE_URL'),
+        },
+      })
+      #+end_src
+      *Key Points:*
+      Step 7: Configure Prisma Schema
+      =backend/prisma/schema.prisma=:
+      
+      #+begin_src prisma
+      generator client {
+        provider = "prisma-client-js"
+      }
+      
+      // ✅ NOTE: In Prisma 7, the 'url' field is NOT defined here
+      // It's configured in prisma.config.ts instead
+      datasource db {
+        provider = "postgresql"
+        // NO url field here in Prisma 7+
+      }
+      
+      model User {
+        id            String    @id @default(cuid())
+        name          String
+        email         String    @unique
+        password      String
+        avatarColor   String    @default("#3B82F6")
+        active        Boolean   @default(true)
+        createdAt     DateTime  @default(now())
+        updatedAt     DateTime  @updatedAt
+      
+        projects      Project[]
+        createdTasks  Task[]    @relation("TaskCreator")
+        assignedTasks Task[]    @relation("TaskAssignee")
+      
+        @@map("users")
+      }
+      
+      model Project {
+        id          String    @id @default(cuid())
+        name        String
+        description String?
+        color       String    @default("#3B82F6")
+        archived    Boolean   @default(false)
+        createdAt   DateTime  @default(now())
+        updatedAt   DateTime  @updatedAt
+      
+        ownerId     String
+        owner       User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+        
+        tasks       Task[]
+      
+        @@map("projects")
+      }
+      
+      enum TaskStatus {
+        TODO
+        IN_PROGRESS
+        DONE
+      }
+      
+      enum TaskPriority {
+        NONE
+        LOW
+        NORMAL
+        HIGH
+        URGENT
+      }
+      
+      model Task {
+        id              String        @id @default(cuid())
+        title           String
+        description     String?
+        status          TaskStatus    @default(TODO)
+        priority        TaskPriority  @default(NORMAL)
+        position        Int           @default(0)
+        dueDate         DateTime?
+        createdAt       DateTime      @default(now())
+        updatedAt       DateTime      @updatedAt
+      
+        projectId       String
+        project         Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+      
+        createdById     String
+        createdBy       User          @relation("TaskCreator", fields: [createdById], references: [id], onDelete: Cascade)
+      
+        assignedToId    String?
+        assignedTo      User?         @relation("TaskAssignee", fields: [assignedToId], references: [id], onDelete: SetNull)
+      
+        checklistItems  ChecklistItem[]
+      
+        @@map("tasks")
+      }
+      
+      model ChecklistItem {
+        id          String    @id @default(cuid())
+        text        String
+        completed   Boolean   @default(false)
+        position    Int       @default(0)
+        createdAt   DateTime  @default(now())
+        updatedAt   DateTime  @updatedAt
+      
+        taskId      String
+        task        Task      @relation(fields: [taskId], references: [id], onDelete: Cascade)
+      
+        @@map("checklist_items")
+      }
+      #+end_src
+      Step 8: Run Prisma Migration
+      
+      #+begin_src bash
+      # Start database
+      cd ../
+      docker-compose up -d
+      
+      # Back to backend
+      cd backend
+      
+      # Create and run migration
+      npx prisma migrate dev --name init
+      
+      # Generate Prisma Client
+      npx prisma generate
+      #+end_src
+      Step 9: Create Basic Express Server
+      =backend/src/index.ts=:
+      
+      #+begin_src typescript
+      import express, { Express, Request, Response } from 'express';
+      import cors from 'cors';
+      import dotenv from 'dotenv';
+      
+      dotenv.config();
+      
+      const app: Express = express();
+      const port = process.env.PORT || 8080;
+      
+      // Middleware
+      app.use(cors({
+        origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+        credentials: true
+      }));
+      app.use(express.json());
+      app.use(express.urlencoded({ extended: true }));
+      
+      // Health check endpoint
+      app.get('/api/health', (req: Request, res: Response) => {
+        res.json({
+          status: 'UP',
+          service: 'Work Sweet API',
+          timestamp: new Date().toISOString()
+        });
+      });
+      
+      // Start server
+      app.listen(port, () => {
+        console.log(`⚡️ [server]: Server is running at http://localhost:${port}`);
+        console.log(`📊 [database]: Connected to PostgreSQL`);
+        console.log(`🚀 [health]: http://localhost:${port}/api/health`);
+      });
+      
+      export default app;
+      #+end_src
+      Step 10: Create Prisma Client Utility
+      =backend/src/config/prisma.ts=:
+      
+      #+begin_src typescript
+      import { PrismaClient } from '@prisma/client';
+      
+      const prisma = new PrismaClient({
+        log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+      });
+      
+      export default prisma;
+      #+end_src
+      Testing
+      
+      #+begin_src bash
+      # Start the application
+      npm run dev
+      
+      # In another terminal, test health endpoint
+      curl http://localhost:8080/api/health
+      
+      # Expected response:
+      # {
+      #   "status": "UP",
+      #   "service": "Work Sweet API",
+      #   "timestamp": "2025-01-28T..."
+      # }
+      #+end_src
+      Commit
+      
+      #+begin_src bash
+      git add .
+      git commit -m "Issue #1: Initial Node.js + Express setup with Prisma ORM 7 and PostgreSQL"
+      git push origin main
+      #+end_src
+      -----
+      
+      Summary of Prisma 7 Changes
+      What's Different in Prisma 7:
+      Migration from Prisma 6 to 7:
+      If you're upgrading from Prisma 6:
+      This updated documentation reflects the new Prisma ORM 7 architecture and should work perfectly with your Work Sweet project! The rest of the sprint plan remains the same - all the service, controller, and route implementations will work identically.
+      Sources
+      - [ ] Node.js project initialized with TypeScript
+      - [ ] Express server running
+      - [ ] Prisma ORM 7 configured with =prisma.config.ts=
+      - [ ] PostgreSQL database running locally
+      - [ ] Application connects to database successfully
+      - [ ] Application starts without errors on =http://localhost:8080=
+      - =dotenv/config= is imported to load environment variables
+      - =defineConfig= helper provides type safety
+      - =env()= function safely loads environment variables
+      - Database URL is configured here, NOT in schema.prisma
+      - No =engine= property (removed in Prisma 7)
+      1. *New Configuration File*: =prisma.config.ts= is now automatically created by =prisma init=
+      1. *Database URL Location*: The =url= field moved from =schema.prisma= to =prisma.config.ts=
+      1. *TypeScript Configuration*: Uses =defineConfig= helper for type-safe configuration
+      1. *Environment Variables*: Uses =env()= function from =prisma/config= package
+      1. *No Engine Property*: The =engine= property has been removed (was used in earlier versions)
+      1. *Dotenv Integration*: Automatically imports =dotenv/config= in the config file
+      - Remove the =url= field from the =datasource= block in =schema.prisma=
+      - Create =prisma.config.ts= with the structure shown above
+      - Move your =DATABASE_URL= configuration to the config file using =env()=
+- 

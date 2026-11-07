@@ -1,0 +1,84 @@
+:PROPERTIES:
+:ID:       86c00c9f-f24a-4270-91ce-ba000527ef03
+:REFLECT_ID: c59693fa7c22432593045250ca2e9415
+:CREATED:  [2025-12-11 Thu 23:42]
+:MODIFIED: [2026-04-18 Sat 18:57]
+:END:
+#+title: 👩🏻‍🎤 Audio Sampling TrackList
+#+filetags: :concept:audio:
+#+date: 2025-12-11
+* [[id:09060d0b-267e-40eb-8ae7-d6459adf339d][👩🏻‍🎤 Audio]] Sampling TrackList
+* [[id:3e034156-5257-4087-96b8-01bbd5218a18][Songs]] to sample with [[id:512918b0-24ae-42bb-88fb-a18090e08bc3][Stem Separation]]  etc.
+- [[id:2de94f26-8518-4e56-8ce6-c246f6060280][Peter Gabriel]]
+  - That Voice Again (Album So..)
+    - Epic [[id:f1ceca38-b5c3-4fd7-a5c0-9c28295da41b][Drum Fills]]
+- [[id:02798ad2-79df-4092-aebc-22538b212430][Aphex Twin]]
+  - Come To Daddy 🍕
+  - Flim 🍕
+  - Come To Daddy (Little Lord Faulteroy Mix) 🍕
+- Songs from the [[id:3773aff4-317e-42af-80f4-0d865daf7b10][Lost In Translation]] Soundtrack
+  - Death In Vegas
+    - Girls 🍕
+- [[id:40ba81d0-fce0-4e99-9cf9-9b5003119738][Juvenile]]
+  - Back That Azz Up
+    - That Chord Progression Tho
+- [[id:b2c38cdf-f85d-4136-9e6f-ccd11ac97f06][Amyl & The Sniffers]]
+  -  Hertz
+- [[id:9a56e9e8-f2d8-40f9-8e06-edc924bdd99c][Elastica]]
+  - Connection 🍕
+- [[id:ae6d4ec6-20ac-475a-bdb8-cf2ede9fe11a][Underworld]]
+  - Dark And Long (Dark Train) 🍕
+- [[id:a7cc1d6b-af65-473f-ac83-9758f5c22dfd][Unrest]]
+  - Teenage Suicide 🍕
+- [[id:c5169e58-2d0f-471f-8081-cb02e81bea5f][Kiesza]]
+  - Hideaway 🍕
+- [[id:cb6519f1-6de2-4d4f-bd60-0ddec4b22e62][M83]]
+  - Don't Save Us From The Flames 🍕
+- Lucille Bogan
+- [[id:a0f27f29-5275-44a8-aca6-180cb9e0a806][The Cure]]
+  - 121 - 128 bpm [(Dance)
+    - A Night Like this
+    - M
+    - Disintegration
+  - 75 BPM
+    - Trust – The Cure (150 BPM half‑time)[1]
+    - This Is a Lie – The Cure (150 BPM half‑time)[2]
+  - 80 BPM
+    - Play for Today – The Cure[3][4]
+    - A Forest – The Cure (often counted around 80 BPM)[5]
+  - 83–84 BPM
+    - Another Journey by Train – Group Home Instrumental Demo 1/80 – The Cure (167 BPM half‑time)[6]
+  - 142 BPM
+    - Sinking – The Cure[7]
+  - 143 BPM
+    - In Between Days – The Cure[8]
+  - 169 BPM
+    - Boys Don’t Cry – The Cure[9]
+  - 170 BPM
+    - Disintegration – Remastered – The Cure[10]
+    - Fascination Street – Remastered – The Cure[11]
+  - Joy division
+    - No love lost
+  - Flour
+    - Doot Doot
+  - THINGS to sample
+    - Intro of [[id:4fb1ac5a-9aca-4fd7-aa8c-96df5f43aded][The Prodigy]] - The Law (live)
+      - But make the intro drop, a real drop. From live to record
+    - Islanders
+      - Woo
+      - Goal song chords
+-  [[id:cdb98e1d-640a-4abc-ad49-833cdc278c21][the Go-Gos]]
+  - Our lips are seals
+- [[id:68e2e6dc-fe95-43c0-8116-d22194f7e8a0][The Smashing Pumpkins]]
+  - I am one
+    - Beat
+- [[id:30f9db45-8c96-442d-8343-af6c18c1e1ee][The Cranberries]]
+  - Salvation
+- [[id:c1f48d18-6eda-48b6-a22b-80776f657f5b][D4NC3 M477i3]] Playlist
+  - Qobuz
+- [[id:a9885865-af71-4fb6-93b0-632284e5f51f][The Streets]]
+  - Blinded By The Lights
+    - Synth stab, speed it up, dnb?
+- [[id:fa265437-9cfa-4a86-b3e2-54eb0673091a][Kid Cudi]]
+  - HAVE U BN 2 HEAVEN @ NITE? - EP
+    - Any of the 4 tracks, take the vocal, make it bang

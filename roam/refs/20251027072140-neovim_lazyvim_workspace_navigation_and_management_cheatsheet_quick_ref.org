@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       767e3ae7-6ca4-4bf8-ae62-b389d60bd800
+:REFLECT_ID: b7637e7095e24eaab22d6e0e3bc2ee51
+:CREATED:  [2025-10-27 Mon 07:21]
+:MODIFIED: [2025-11-30 Sun 09:12]
+:END:
+#+title: ⌘ NeoVim LazyVim Workspace Navigation and Management Cheatsheet
+#+filetags: :ref:quick_ref:vim_keybindings:
+#+date: 2025-10-27
+* ⌘ [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] [[id:294115ff-c1e7-433f-9ac2-c3488273a3bd][LazyVim]] Workspace Navigation and Management Cheatsheet
+ 
+* Neovim Shortcuts
+** Opening a Project
+- =nvim .= - Open current directory as workspace root
+- =<space>e= - Open file explorer (Neo-tree)
+- =<space><space>= or =<space>ff= - Trigger [[id:54afa4b5-c138-4c24-ad34-39f7e42fc94e][Telescope]] fuzzy finder
+- =<space>fp= - List and switch to recent projects
+** Setting Up Workspace
+- =<space>fn= - Create a new file in current directory
+- =<space>-= - Split window horizontally (below)
+- =<space>|= - Split window vertically (right)
+- =<space><tab><tab>= - Create a new tab
+- =<space>fT= - Toggle Terminal Buffer
+- =<C-s>= - Save current file
+** Navigating Workspace
+- =k/j/h/l= - Move cursor up/down/left/right
+- =gg= - Jump to top of file
+- =G= - Jump to bottom of file
+- =Shift+h= or =Shift+l= - Switch to previous/next buffer
+- =<space>,= - Browse all buffers
+- =<C-w>h/j/k/l= - Navigate between windows (left/down/up/right)
+- =]d= or =[d= - Go to next/previous diagnostic
+- =/= - Quick search within file
+- =<space>sg= - Project-wide grep search
+- =<C-Up>/<C-Down>= - Increase/decrease window height
+- =<C-Left>/<C-Right>= - Adjust window width
+** Basic Editing and Coding Actions
+- =i= - Enter insert mode before cursor
+- =a= - Enter insert mode after cursor
+- =Esc= - Exit to normal mode
+- =u= - Undo
+- =<C-r>= - Redo
+- =v= then =y= - Select and copy text
+- =p= - Paste
+- =dd= - Delete line
+- =<space>cf= - Format code
+- =gd= - Go to definition
+** Closing and Quitting
+- =<space>bd= - Close current buffer
+- =<space>qq= - Quit all windows
+- =<space>bo= - Delete other buffers

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f54233a5-c86d-4132-9a3a-d63e0fc49d4b
+:REFLECT_ID: 964b4359ca9a4a35ad719a35b7e5f2bf
+:CREATED:  [2025-12-12 Fri 22:51]
+:MODIFIED: [2025-12-12 Fri 22:51]
+:END:
+#+title: Mark Harrison
+#+filetags: :ref:author:
+#+date: 2025-12-12
+- Type: 

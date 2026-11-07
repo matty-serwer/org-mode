@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       51a798a7-232d-4c93-9992-a61531b1d1b1
+:REFLECT_ID: 22e82ce3375249c3b37bf12d07b5d0f7
+:CREATED:  [2026-01-28 Wed 23:35]
+:MODIFIED: [2026-04-16 Thu 02:07]
+:END:
+#+title: Terminal Shortcuts
+#+filetags: :concept:
+#+date: 2026-01-28
+- Applications
+  - Musikcube
+    - =musikcube=
+      - PATH command
+    - 

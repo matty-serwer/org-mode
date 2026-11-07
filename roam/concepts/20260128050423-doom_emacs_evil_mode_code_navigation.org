@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6460e754-82f4-4f5b-97c5-532412667851
+:REFLECT_ID: 1e53eaf66f5045719a986768c729a665
+:CREATED:  [2026-01-28 Wed 05:04]
+:MODIFIED: [2026-01-28 Wed 05:04]
+:END:
+#+title: Doom Emacs (Evil Mode) Code Navigation[
+#+filetags: :concept:
+#+date: 2026-01-28
+

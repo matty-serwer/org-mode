@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b973f250-69bc-49c1-998e-80d9ba9dc080
+:REFLECT_ID: cc211ead90964dc1a027c7ea39639773
+:CREATED:  [2026-02-03 Tue 10:07]
+:MODIFIED: [2026-02-03 Tue 10:07]
+:END:
+#+title: Childish Gambino
+#+filetags: :concept:
+#+date: 2026-02-03
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       22d4fafe-1143-432e-a3ba-f07987a7b5f0
+:REFLECT_ID: b7ef1f24fba842d6b62b667c6fe7bb37
+:CREATED:  [2025-12-09 Tue 13:40]
+:MODIFIED: [2025-12-09 Tue 13:40]
+:END:
+#+title: 2nd of the Month
+#+filetags: :concept:
+#+date: 2025-12-09
+

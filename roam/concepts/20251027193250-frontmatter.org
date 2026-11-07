@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a23f18f4-36ac-4706-9152-b326b5944649
+:REFLECT_ID: 6e711122e9104d539b6221ffaebe4a51
+:CREATED:  [2025-10-27 Mon 19:32]
+:MODIFIED: [2025-10-27 Mon 19:32]
+:END:
+#+title: Frontmatter
+#+filetags: :concept:
+#+date: 2025-10-27
+

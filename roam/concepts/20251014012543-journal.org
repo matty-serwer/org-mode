@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b75c342e-dc4a-4bdd-a4ac-53adc0f07c0d
+:REFLECT_ID: journal
+:CREATED:  [2025-10-14 Tue 01:25]
+:MODIFIED: [2026-02-26 Thu 10:30]
+:END:
+#+title: Journal
+#+filetags: :concept:
+#+date: 2025-10-14
+- 

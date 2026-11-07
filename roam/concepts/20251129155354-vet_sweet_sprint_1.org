@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       5280015a-5219-45b3-8e15-62deb6c6d5a6
+:REFLECT_ID: 6d426897207a4fcd9ab532c1e56278e4
+:CREATED:  [2025-11-29 Sat 15:53]
+:MODIFIED: [2025-12-01 Mon 00:03]
+:END:
+#+title: Vet Sweet #sprint 1
+#+filetags: :concept:sprint:
+#+date: 2025-11-29
+* [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]]  1
+- *Issue 1 – Initialize Monorepo & Core Tech Stack*
+  *Lift: 6*
+  - Set up monorepo with frontend and backend workspaces.
+  - Configure Next.js with TypeScript and Tailwind CSS for the frontend.
+  - Set up Spring Boot (Java 21) with Spring Security for the backend.
+  - Add shared linting, Prettier, and strict TypeScript configuration across workspaces.
+- *Issue 2 – Database, Storage & Deployment Pipelines*
+  *Lift: 6*
+  - Create and connect a PostgreSQL instance on Render for the backend services.
+  - Set up a Backblaze B2 bucket for file and attachment storage.
+  - Configure Vercel deployment pipeline for the Next.js frontend.
+  - Configure Render deployment pipeline for the Spring Boot backend.
+  - Implement environment configuration management and a basic CI/CD workflow for automated tests.
+- *Issue 3 – JWT Authentication Backend & Core Flow*
+  *Lift: 5*
+  - Implement JWT issuance, validation, and refresh endpoints in Spring Boot.
+  - Build registration, login, and password-reset (token-only) REST endpoints.
+  - Configure Spring Security with password hashing and secure authentication filters.
+- *Issue 4 – Authentication Frontend & Protected Routes*
+  *Lift: 3*
+  - Build login, registration, and password-reset pages in Next.js.
+  - Create an auth context/provider with secure token storage and session handling.
+  - Add route middleware for protected pages, including logout and redirect behavior.
+- *Issue 5 – Role-Based Access Control System*
+  *Lift: 3*
+  - Design roles and permissions schema and seed initial roles (Admin, Vet, Tech, Reception).
+  - Add backend guards and frontend role-based route protection aligned with the permission model.
+- *Issue 6 – Client Entity & CRUD API*
+  *Lift: 5*
+  - Design full client entity schema with contact info, communication preferences, referral source, multi-pet support hooks, and financial placeholders.
+  - Implement complete client CRUD API endpoints with validation and error handling.
+- *Issue 7 – Client Management UI – List & Search*
+  *Lift: 3*
+  - Build client list page with search, filtering, sorting, and pagination.
+  - Add quick-add client action and indicators for multi-pet households in the list view.
+- *Issue 8 – Client Detail & Edit Forms*
+  *Lift: 2*
+  - Implement client detail view wired to the client API.
+  - Build create/edit form with full validation and communication preference toggles.
+- *Issue 9 – Patient Entity, CRUD API & Core UI*
+  *Lift: 7*
+  - Design patient schema linked to client (species, breed, demographics, demeanor, microchip, vaccination placeholders, etc.).
+  - Implement full patient CRUD API with validation and linkage to client records.
+  - Build patient list with quick lookup and a basic patient profile page.
+  - Implement patient create/edit forms with vaccination schedule placeholder section.

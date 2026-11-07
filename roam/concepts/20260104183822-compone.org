@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       74b28079-e815-4c5c-a1a0-640783b2dab8
+:REFLECT_ID: ab23e7e4d6cd409cb54d6724c4d4ad65
+:CREATED:  [2026-01-04 Sun 18:38]
+:MODIFIED: [2026-01-04 Sun 18:43]
+:END:
+#+title: compone
+#+filetags: :concept:
+#+date: 2026-01-04
+- 

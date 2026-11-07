@@ -1,0 +1,297 @@
+:PROPERTIES:
+:ID:       c2fe7370-1a27-4abf-9763-fc8bd2434a4d
+:REFLECT_ID: 8c94b0e45fcf436fadbc24b38a16708c
+:CREATED:  [2026-01-28 Wed 06:51]
+:MODIFIED: [2026-01-28 Wed 06:52]
+:END:
+#+title: Issue 007: Testing & Deployment Prep
+#+filetags: :concept:
+#+date: 2026-01-28
+*Estimate:* 2 hours
+*Labels:* =backend=, =testing=, =deployment=, =day-1=
+*** Tasks
+**** 1. Create Comprehensive Postman Collection
+Create =backend/docs/postman-collection.json=:
+#+begin_src json
+{
+  "info": {
+    "name": "Work Sweet API",
+    "description": "Full API documentation for Work Sweet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@worksweet.dev\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {"raw": "http://localhost:8080/api/auth/register"}
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@worksweet.dev\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {"raw": "http://localhost:8080/api/auth/login"}
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:8080"},
+    {"key": "token", "value": ""}
+  ]
+}
+
+#+end_src
+**** 2. Add API Documentation to README
+Update =backend/README.md=:
+#+begin_src markdown
+# Work Sweet Backend API
+
+Spring Boot REST API for Work Sweet project management.
+
+## Quick Start
+
+```bash
+# Start database
+docker-compose up -d
+
+# Run application
+./mvnw spring-boot:run
+
+#+end_src
+** API Endpoints
+*** Authentication
+#+begin_src markup
+POST   /api/auth/register  - Register new user
+POST   /api/auth/login     - Login and get JWT
+
+#+end_src
+*** Projects
+#+begin_src markup
+GET    /api/projects           - List user's projects
+POST   /api/projects           - Create project
+GET    /api/projects/{id}      - Get project by ID
+PUT    /api/projects/{id}      - Update project
+DELETE /api/projects/{id}      - Archive project
+
+#+end_src
+*** Tasks
+#+begin_src markup
+GET    /api/tasks              - List tasks (with filters)
+POST   /api/tasks              - Create task
+GET    /api/tasks/{id}         - Get task by ID
+PUT    /api/tasks/{id}         - Update task
+PUT    /api/tasks/{id}/position - Update position (drag & drop)
+DELETE /api/tasks/{id}         - Delete task
+
+#+end_src
+*** Query Parameters for GET /api/tasks
+- =projectId= - Filter by project
+- =status= - Filter by status (TODO, IN_PROGRESS, DONE)
+- =priority= - Filter by priority (NONE, LOW, NORMAL, HIGH, URGENT)
+- =assignedToId= - Filter by assigned user
+** Environment Variables
+#+begin_src properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/worksweet
+spring.datasource.username=worksweet
+spring.datasource.password=worksweet_dev_pass
+app.jwt.secret=[your-secret-key]
+
+#+end_src
+** Tech Stack
+- Java 17
+- Spring Boot 3.x
+- PostgreSQL 15
+- JWT Authentication
+- Lombok
+#+begin_src markup
+
+#### 3. Deploy Backend to Railway
+
+Create `backend/railway.json`:
+
+```json
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "./mvnw clean package -DskipTests"
+  },
+  "deploy": {
+    "startCommand": "java -jar target/backend-0.0.1-SNAPSHOT.jar",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  }
+}
+
+#+end_src
+*Deployment Steps:*
+1. Go to [[https://railway.app/][railway.app]]
+1. Sign in with GitHub
+1. New Project → Deploy from GitHub repo
+1. Select =work-sweet= repository
+1. Add PostgreSQL service
+1. Add environment variables:
+  
+  #+begin_src markup
+  SPRING_DATASOURCE_URL=postgresql://[railway-postgres-url]SPRING_DATASOURCE_USERNAME=[from-railway]SPRING_DATASOURCE_PASSWORD=[from-railway]APP_JWT_SECRET=WorkSweetProductionSecretKeyThatIsAtLeast256BitsLongForHS256APP_CORS_ALLOWED_ORIGINS=https://work-sweet.vercel.app
+  
+  #+end_src
+1. Deploy!
+**** 4. Create Seed Data Script (Optional but Recommended)
+=backend/src/main/java/com/worksweet/util/DataSeeder.java=:
+#+begin_src java
+package com.worksweet.util;
+
+import com.worksweet.model.*;
+import com.worksweet.repository.ProjectRepository;
+import com.worksweet.repository.TaskRepository;
+import com.worksweet.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+
+@Component
+@Profile("dev") // Only runs in dev profile
+@RequiredArgsConstructor
+@Slf4j
+public class DataSeeder implements CommandLineRunner {
+
+    private final UserRepository userRepository;
+    private final ProjectRepository projectRepository;
+    private final TaskRepository taskRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    @Override
+    public void run(String... args) {
+        if (userRepository.count() == 0) {
+            seedData();
+        }
+    }
+
+    private void seedData() {
+        log.info("Seeding demo data...");
+
+        // Create demo user
+        User demo = User.builder()
+                .name("Demo User")
+                .email("demo@worksweet.dev")
+                .password(passwordEncoder.encode("demo123"))
+                .avatarColor("#8B5CF6")
+                .active(true)
+                .build();
+        demo = userRepository.save(demo);
+
+        // Create demo project
+        Project project = Project.builder()
+                .name("Work Sweet MVP")
+                .description("Building the initial version")
+                .color("#3B82F6")
+                .owner(demo)
+                .archived(false)
+                .build();
+        project = projectRepository.save(project);
+
+        // Create demo tasks
+        Task task1 = Task.builder()
+                .title("Design database schema")
+                .description("Plan out the data models")
+                .status(TaskStatus.DONE)
+                .priority(TaskPriority.HIGH)
+                .project(project)
+                .createdBy(demo)
+                .position(0)
+                .build();
+
+        Task task2 = Task.builder()
+                .title("Build authentication")
+                .description("Implement JWT auth with Spring Security")
+                .status(TaskStatus.DONE)
+                .priority(TaskPriority.URGENT)
+                .project(project)
+                .createdBy(demo)
+                .position(1)
+                .build();
+
+        Task task3 = Task.builder()
+                .title("Create task CRUD endpoints")
+                .description("Full CRUD with filters")
+                .status(TaskStatus.IN_PROGRESS)
+                .priority(TaskPriority.HIGH)
+                .project(project)
+                .createdBy(demo)
+                .dueDate(LocalDate.now().plusDays(2))
+                .position(0)
+                .build();
+
+        Task task4 = Task.builder()
+                .title("Build QuickTaskInput component")
+                .description("The signature frictionless task creation UI")
+                .status(TaskStatus.TODO)
+                .priority(TaskPriority.HIGH)
+                .project(project)
+                .createdBy(demo)
+                .position(0)
+                .build();
+
+        taskRepository.save(task1);
+        taskRepository.save(task2);
+        taskRepository.save(task3);
+        taskRepository.save(task4);
+
+        log.info("Demo data seeded successfully!");
+        log.info("Login with: demo@worksweet.dev / demo123");
+    }
+}
+
+#+end_src
+Enable dev profile in =application.properties=:
+#+begin_src properties
+# Add at the bottom
+spring.profiles.active=dev
+
+#+end_src
+*** Final Testing Checklist
+#+begin_src bash
+# Restart application with seed data
+./mvnw spring-boot:run
+
+# Test full workflow:
+# 1. Register user
+# 2. Login (get token)
+# 3. Create project
+# 4. Create 3 tasks
+# 5. Update task status
+# 6. Filter by status
+# 7. Delete a task
+
+# All should work!
+
+#+end_src
+*** Final Commit
+#+begin_src bash
+git add .
+git commit -m "Day 1 Complete: Backend API fully functional with auth, projects, and tasks"
+git push origin main
+
+#+end_src

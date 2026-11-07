@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5d0d91fb-d879-4e88-aa50-73b8a76584e3
+:REFLECT_ID: e5e9b5ad290a48d0a8f123362c2fa4be
+:CREATED:  [2026-04-10 Fri 06:41]
+:MODIFIED: [2026-04-10 Fri 06:41]
+:END:
+#+title: Samples
+#+filetags: :concept:
+#+date: 2026-04-10
+

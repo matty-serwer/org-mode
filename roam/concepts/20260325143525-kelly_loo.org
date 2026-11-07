@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       819f861c-3219-42f0-8652-9e98bcbdcd0f
+:REFLECT_ID: 5f258e5a29174d4b9dc158808a94d3a0
+:CREATED:  [2026-03-25 Wed 14:35]
+:MODIFIED: [2026-03-25 Wed 14:35]
+:END:
+#+title: Kelly Loo
+#+filetags: :concept:
+#+date: 2026-03-25
+

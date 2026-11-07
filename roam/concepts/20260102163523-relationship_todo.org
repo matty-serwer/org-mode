@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ffae779e-1d61-4a71-be6e-5687f1edcff2
+:REFLECT_ID: 9102a73d1ab94d5e8e0045582b0934d2
+:CREATED:  [2026-01-02 Fri 16:35]
+:MODIFIED: [2026-01-02 Fri 16:35]
+:END:
+#+title: Relationship TODO
+#+filetags: :concept:
+#+date: 2026-01-02
+

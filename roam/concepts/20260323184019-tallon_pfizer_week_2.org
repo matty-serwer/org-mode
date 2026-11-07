@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a833eac2-59ef-42b4-b8c6-cebe37eb1d08
+:REFLECT_ID: cfefc462b5d3482791d640d000ef86a4
+:CREATED:  [2026-03-23 Mon 18:40]
+:MODIFIED: [2026-03-30 Mon 17:46]
+:END:
+#+title: Tallon Pfizer Week 2
+#+filetags: :concept:
+#+date: 2026-03-23
+

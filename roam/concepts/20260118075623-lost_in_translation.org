@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3773aff4-317e-42af-80f4-0d865daf7b10
+:REFLECT_ID: 927265cc91b1471294342b0c9348601c
+:CREATED:  [2026-01-18 Sun 07:56]
+:MODIFIED: [2026-01-18 Sun 07:56]
+:END:
+#+title: Lost In Translation
+#+filetags: :concept:
+#+date: 2026-01-18
+

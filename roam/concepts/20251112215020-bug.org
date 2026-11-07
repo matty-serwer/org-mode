@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       44ec7201-2e52-4eff-bd3d-d5e0a2846b44
+:REFLECT_ID: 5c9dcb834b3e41e2b383ccff14ee5bb7
+:CREATED:  [2025-11-12 Wed 21:50]
+:MODIFIED: [2025-11-12 Wed 21:50]
+:END:
+#+title: Bug
+#+filetags: :concept:
+#+date: 2025-11-12
+

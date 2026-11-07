@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       9a8e62d0-dedd-4a66-9e7b-263cbb94480d
+:REFLECT_ID: 06032026
+:CREATED:  [2026-01-17 Sat 14:45]
+:MODIFIED: [2026-04-08 Wed 20:24]
+:END:
+#+title: Fri, March 6th, 2026
+#+filetags: :daily:
+#+date: 2026-01-17
+-
+  - Following [[id:24524799-537f-4d3c-8c8c-039cb0120522][org-Roam]] tutorial 
+    [[https://www.youtube-nocookie.com/embed/AyhPmypHDEw][youtube: https://www.youtube-nocookie.com/embed/AyhPmypHDEw]]
+  - Having trouble linking nodes. when creating a link to an existiong note, the appp wants to write over the old one and just asks which template to use. This of course causes crashs besids being 
+- [[id:fdfae022-6d52-4b1d-94ba-e7f3ab1fe118][mind]]
+  - When something happens, instead of asking
+    - "Why me!?"
+  - Ask:
+    - "What does this showing me about myself?
+    - "What is this here to teach me about me?"
+- [[id:1edef3a2-fc0f-4fd7-95f6-c814e63ab8f9][Account]]
+  - [[id:8a047f75-c457-46a4-a613-0e198c96c995][Atomic Mail]]
+    - Login
+      - [[mailto:mattie.aran@atomicmail.io][mattie.aran@atomicmail.io]]
+    - Pass
+      - In [[id:f0bc146c-bc65-4766-b310-1912e7e09857][Apple Password app]]
+    - Seed Phrase
+      - easy minor valve fossil decline joke empower say transfer stem theory biology
+      - For account recovery
+  - [[id:ee45e1c7-6d2e-45b5-8a64-bcdf1edeb36c][📼 Pfizer Convention A/V Technician Job Info, via Eric Latoure]]
+    - [[id:5b676a4d-9c12-42c2-aeaf-f36f04146901][Shure ULXD wireless sync]]
+- [[id:8489bf84-66fa-449f-81b2-fd16927c99aa][Emacs Dired]] Doom Commands
+  • *Open Dired*: SPC f d (or M-x dired)
+  • *Create Directory*: + m (or d to create a new directory)
+  • *Delete File/Directory*: d (mark for deletion), then x to execute
+  • *Rename File/Directory*: R
+  • *Copy File/Directory*: C
+  • *Move File/Directory*: M
+  • *Open File*: RET
+  • *View File*: v
+  • *Toggle Mark*: m
+  • *Revert Dired Buffer*: g
+  • *Search Files*: / (followed by search term)
+  • *Sort Files*: s (then choose sorting method)
+  • *Toggle Hidden Files*: h
+  • *Edit File*: e
+  • *Refresh Dired*: g (to refresh the current directory)
+  • *Open in External App*: ! (followed by the command)

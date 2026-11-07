@@ -1,0 +1,74 @@
+#+TITLE: Tasks
+#+TODO: TODO | DONE CANCELLED
+#+STARTUP: overview
+#+PROPERTY: LIFT_ALL 1 2 3 5 8
+
+* Ideas
+:PROPERTIES:
+:TM_LOCATION: idea
+:END:
+
+* Inbox
+:PROPERTIES:
+:TM_LOCATION: inbox
+:END:
+** TODO Ideation for Music Productivity Application
+:PROPERTIES:
+:ID:       e1943abf-d124-4d03-9f6b-f1607f11ff6f
+:CREATED:  [2026-11-02 Mon 17:39]
+:INBOX_SINCE: [2026-11-02 Mon 17:39]
+:CATEGORY: Code
+:ORDER:    3000
+:END:
+*** TODO Type up concept wish-list, what-if list in Logseq
+:PROPERTIES:
+:ID:       74f86279-e7c6-45a6-a50b-015c879bca55
+:CREATED:  [2026-11-02 Mon 17:40]
+:END:
+*** TODO Discuss possible feature list in a Claude Chat
+:PROPERTIES:
+:ID:       11d246d6-c6d6-4e57-a6d2-e4c355e02f94
+:CREATED:  [2026-11-02 Mon 17:41]
+:END:
+
+* On Deck
+:PROPERTIES:
+:TM_LOCATION: ondeck
+:END:
+** TODO Research for restarting my code career
+SCHEDULED: <2026-11-07 Sat>
+:PROPERTIES:
+:ID:       897ad811-518d-43d0-8a0e-ec01ebf3f625
+:CREATED:  [2026-11-02 Mon 17:35]
+:CATEGORY: Career
+:ORDER:    1000
+:ROLLOVERS: 5
+:ROLLED_FROM: [2026-11-02 Mon]
+:END:
+** TODO Update Programming Resume for right now
+SCHEDULED: <2026-11-07 Sat>
+:PROPERTIES:
+:ID:       fcb24b0c-b76c-488b-999c-974ec837b57f
+:CREATED:  [2026-11-02 Mon 17:37]
+:CATEGORY: Career
+:LIFT:     5
+:ORDER:    2000
+:ROLLOVERS: 4
+:ROLLED_FROM: [2026-11-03 Tue]
+:END:
+** TODO Geoffrey is a nerd
+SCHEDULED: <2026-11-07 Sat>
+:PROPERTIES:
+:ID:       34d230a8-177a-408a-8525-fc4e34af873e
+:CREATED:  [2026-11-02 Mon 18:00]
+:CATEGORY: Leisure
+:LIFT:     1
+:ORDER:    4000
+:ROLLOVERS: 5
+:ROLLED_FROM: [2026-11-02 Mon]
+:END:
+
+* Backlog
+:PROPERTIES:
+:TM_LOCATION: backlog
+:END:

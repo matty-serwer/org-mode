@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       771a41da-60b9-4e33-af7a-74ad92a81f09
+:REFLECT_ID: 20e4bd7d2577450abda9848b325f8737
+:CREATED:  [2026-04-09 Thu 08:21]
+:MODIFIED: [2026-04-09 Thu 08:21]
+:END:
+#+title: Shein
+#+filetags: :concept:
+#+date: 2026-04-09
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       504e6b59-d0cc-4780-a880-4c18559a2545
+:REFLECT_ID: 61c4d622c3bb43a29bab79b37690b9a2
+:CREATED:  [2026-04-07 Tue 17:51]
+:MODIFIED: [2026-04-07 Tue 17:51]
+:END:
+#+title: Work Sweet
+#+filetags: :concept:
+#+date: 2026-04-07
+

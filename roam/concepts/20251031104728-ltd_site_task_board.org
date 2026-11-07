@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       77a48f9c-6fce-41af-84b1-03419c0e2269
+:REFLECT_ID: d2a4486cd97c46e0aea591eac53fe7af
+:CREATED:  [2025-10-31 Fri 10:47]
+:MODIFIED: [2026-01-28 Wed 04:49]
+:END:
+#+title: LTD Site: Task Board
+#+filetags: :concept:
+#+date: 2025-10-31
+- [[id:48eba0a5-625e-4deb-8cac-c8bdf947d843][Vercel]] Deployments & App Setup
+  - [X] It runs
+  - [X] It’s up!
+- Style
+  - [X] Get them fonts into global.css
+  - [X] Set the color theme 
+  - [X] Test and install [[id:522853c2-b75b-4bc6-b8fa-76b03dace8ab][shadcn/ui]] [[id:719631ff-1591-45d2-939c-822c8afb9d8c][Components]]

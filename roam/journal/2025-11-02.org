@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       0de0b98d-9b98-49dd-a0a5-5e6e50b29d53
+:REFLECT_ID: 02112025
+:CREATED:  [2025-10-30 Thu 15:05]
+:MODIFIED: [2026-04-12 Sun 00:26]
+:END:
+#+title: Sun, November 2nd, 2025
+#+filetags: :daily:
+#+date: 2025-10-30
+- [[id:64678f28-ad48-483b-b9d7-c73aa49a6b4d][Mac OS]] [[id:4b3a70ca-d1bc-4ec6-9034-1f9437781c90][Modifier Keys]] [[id:0a80946a-c26a-4b43-a4b9-b87a9285ccf6][ASCII Characters]]
+  - *Option (⌥), Command (⌘), Control (⌃), and Shift (⇧)*
+  - *⌘⌥⌃⇧*
+  - *⌥p*
+  - I’m //.saw
+  - *⌘*
+  - *⌃*
+  - *⇧*
+  - ⏎
+- Working on [[id:0844b62c-f496-457e-94ea-6c1b4407441f][Lupine Tech Design]] [[id:2270ec16-0a33-4195-ad0b-3845ead5fe5a][🌐 Portfolio Page]]
+  - Linked [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]] To [[id:3245e58b-3be2-44d8-bf38-abca730e7e66][Linear App]]
+    - Connected to our Project and was able to read a Document.
+- Success!
+  - [[id:3245e58b-3be2-44d8-bf38-abca730e7e66][Linear App]] and [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]] are connected!
+  - ALL Issues created for Page!
+- Planning for [[id:bb1eef74-7582-4baa-9175-8d5bd71f25b8][Fender Jaguar Bass]]: [[id:39ae6e58-1e36-482e-ae28-4311c52d4138][🎸 Bass Guitar Rewire Project]]

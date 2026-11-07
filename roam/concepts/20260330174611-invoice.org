@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       61e60138-13e9-4670-b092-467b6392ce4e
+:REFLECT_ID: 7b798bf2681b41c4ab01b0c53ad0440f
+:CREATED:  [2026-03-30 Mon 17:46]
+:MODIFIED: [2026-03-30 Mon 17:46]
+:END:
+#+title: Invoice
+#+filetags: :concept:
+#+date: 2026-03-30
+

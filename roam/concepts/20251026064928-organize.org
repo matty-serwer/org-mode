@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6457f63f-ed2d-4570-9d06-788e61d2607a
+:REFLECT_ID: a638333083354233b8c3ea49fc4569f6
+:CREATED:  [2025-10-26 Sun 06:49]
+:MODIFIED: [2025-10-26 Sun 06:49]
+:END:
+#+title: organize
+#+filetags: :concept:
+#+date: 2025-10-26
+

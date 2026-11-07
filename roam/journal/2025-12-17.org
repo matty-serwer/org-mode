@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       3cecd429-a6dc-463f-8e1a-e73dbf36d269
+:REFLECT_ID: 17122025
+:CREATED:  [2025-12-17 Wed 15:42]
+:MODIFIED: [2025-12-17 Wed 15:45]
+:END:
+#+title: Wed, December 17th, 2025
+#+filetags: :daily:journal:
+#+date: 2025-12-17
+-  Sat at a cafe in [[id:154b8813-6748-4830-a6fa-11f927e5a365][Stamford, Connecticut]]
+  - configured [[id:f0791caf-f65c-4189-96ca-da0e7d7dd2b4][Helm]] completion helper, file finder for [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]]
+  - 

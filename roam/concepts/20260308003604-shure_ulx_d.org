@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       528fa7c0-8c25-4bf2-ab80-155a22ff9f1a
+:REFLECT_ID: 450fd9c977e94268b9e4690e5d2eb3bf
+:CREATED:  [2026-03-08 Sun 00:36]
+:MODIFIED: [2026-03-08 Sun 00:36]
+:END:
+#+title: Shure ULX-D
+#+filetags: :concept:
+#+date: 2026-03-08
+

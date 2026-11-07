@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2afb8211-162f-44e6-a799-3d2be6c60924
+:REFLECT_ID: e82be2a4c15c44759587318927f65bbb
+:CREATED:  [2025-10-27 Mon 19:02]
+:MODIFIED: [2025-10-27 Mon 19:32]
+:END:
+#+title: Sorting
+#+filetags: :concept:
+#+date: 2025-10-27
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7ca1af46-a95e-4537-ac05-9a9c92e0d934
+:REFLECT_ID: e29c0d43f88d45c196293959121f9214
+:CREATED:  [2026-03-13 Fri 23:50]
+:MODIFIED: [2026-03-13 Fri 23:50]
+:END:
+#+title: Microsoft Windows
+#+filetags: :concept:
+#+date: 2026-03-13
+

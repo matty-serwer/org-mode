@@ -1,0 +1,74 @@
+:PROPERTIES:
+:ID:       c73d8ada-cd15-40e2-a28a-a1f633668628
+:REFLECT_ID: 31122025
+:CREATED:  [2025-12-31 Wed 14:29]
+:MODIFIED: [2025-12-31 Wed 17:28]
+:END:
+#+title: Wed, December 31st, 2025
+#+filetags: :daily:
+#+date: 2025-12-31
+- [[id:a2ed4822-b4be-4ca0-acab-e4e59abe45c1][Job Interview]] Notes 
+  [[https://www.youtube-nocookie.com/embed/T__1QViXUxk][youtube: https://www.youtube-nocookie.com/embed/T__1QViXUxk]]
+- "How Are You?"
+  - You're always "Great!, How are you?"
+  - This is a test on how well you are regulated for big moments
+- "Why do you want to work here?"
+  - The answer should tell them about what YOU can do for THEM
+  - "I've outgrown my current job, I'm looking for a specific challenge. Based on what I've seen about this team's goals, I know I can help you solve X."
+- We're shifting the energy from audition, to a meeting of TWO parties that have something to contribute to each other
+- "Where do you see yourself in 5 years?"
+  - "I see myself here, I see myself becoming an expert in this area and a valuable part of this team. This role aligns with where I want to go because..." Then connect with something specific about the job.
+- "Why are you looking for a new opportunity?"
+  - Nothing negative. Don't be a risk.
+  - "I've outgrown my current role, and I'm looking for a new challenge"
+- "How do you feel about your current manager?"
+  - Say nothing about your co-workers, nothing about leadership, nothing negative ever. Ew. But you don't know who's interviewing you, or what their style is.
+  - Turn it instead into positive
+  - Something positive about manager > Something you got out of it > Bring that something to the new company. 
+- "Hobbies?"
+  - Be memmorable. Give them something to work with.
+  - I make shoegazey electronic music. I recently started acting at the neighborhood theater. I do in-home pet sitting. I love to cook. 
+- "Your job title and description?"
+  - Claim work you do above your paygrade.
+  - Don't wait for title or permission.
+  - "While my title was X, I did Z. This required me to ..."
+- Resume Gaps
+  - Don't stress!
+  - They saw it. You still got the interview, so it's not a deal breaker
+  - Just don't make it weird! Don't be defensive or appologetic.
+  - Follow up with how you kept your skills sharp.
+- "Do you have any questions fo us?"
+  - Don't say no!
+    - Communicates that you're not interested, haven't thought beyond today, and are just trying to get through this.
+  - Have at least 2, 3 questions ready
+    - Why is this position open?
+    - What would you consider to be successful in the first 3 and 6 months in this position.
+    - Can you tell me a little about the dynamic between this team and the teams they generally collaborate with?
+    - What do you think is the most immediate challange the person in this role would need to tackle in their first month or so?
+  - Don't negotiate (remote work. vacation)
+- [[id:3eca63c6-f7fb-4416-bb70-6e5a767112d4][Time Management]] 
+  [[https://www.youtube-nocookie.com/embed/KTOVuUKIHVw][youtube: https://www.youtube-nocookie.com/embed/KTOVuUKIHVw]]
+  - When you wake up, brain dump
+    - Get everything out of your brain until it’s empty
+  - Todo meditation
+    - 10 minute meditation with a pen and paper
+    - If something pops into your head, write it down sloppily with your eyes closed.
+    - After, add to todo list
+  - Prioritize the list
+    - Circle the top 3
+    - Put those 3 on blast
+    - They get done first
+  - Master Your Schedule
+    - Write it out
+    - Time Blocking
+      1. Block out unmovable things.
+        - Meetings
+        - Appointments
+        - Calls
+      1. Look at the remaining things on the todo list and add them in
+        - Eating
+        - Working Out
+        - Planning
+        - Catch Ups
+        - Code Block
+        - Guitar Riff

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       76227ec7-1a94-4d5d-bb23-05f2ad59af85
+:REFLECT_ID: fed66552cd3b4a1889f10a7e2ab1ef6f
+:CREATED:  [2026-03-31 Tue 02:41]
+:MODIFIED: [2026-03-31 Tue 02:41]
+:END:
+#+title: VSC Ventures
+#+filetags: :concept:
+#+date: 2026-03-31
+

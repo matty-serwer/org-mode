@@ -3,13 +3,17 @@
 #+date: 2026-02-26
 #+filetags: :journal:
 #+startup: overview
+* 2026
+** 2026-06 June
+*** 2026-06-24 Wednesday
 
-* February
-** Thursday, February 26 2026  :emacs:org:
-:PROPERTIES:
-:ID:       7cc6442b-1720-4e86-ad53-1b1caa45c773
-:END:
-- Set up files for org mode
-- created yas snippets for org file `<header` and journal `<entry`
-- [[id:3150b19e-6a29-412d-afc9-258cee5d8f63][Org-Mode]]
--
+**** [2026-06-24 Wed 16:22]
+- Notes about linking in Emacs org mode (vanilla)
+  - Is there linking?
+  - Can you link to specific lines in an org doc, given most notes are written within the same category org doc as what you would want to link
+
+**** [2026-06-24 Wed 16:28] 
+- I can tell the difference between margarine and butter.
+- I can say sasketchewan without starting to stutter
+  - 
+

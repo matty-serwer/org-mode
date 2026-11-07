@@ -1,0 +1,332 @@
+:PROPERTIES:
+:ID:       8e2c5c2e-ade8-4888-9f57-ca3c3adb56dc
+:REFLECT_ID: f3f5d8ec3db64d07a3f1c17dd2fbd4c3
+:CREATED:  [2025-11-11 Tue 22:47]
+:MODIFIED: [2025-11-30 Sun 09:36]
+:END:
+#+title: TMUX Setup One for Java Spring Boot
+#+filetags: :concept:schema:sequence:
+#+date: 2025-11-11
+* [[id:5fb663da-f5aa-4105-b67e-7a46705b234c][TMUX]] Setup One for [[id:955b2370-4415-4b4f-95af-fe3b9907d72b][Java]] [[id:672ad6e2-8193-4c05-b5a2-3f6cab162ede][Spring Boot]]
+** Modern TMUX Setup for Spring Boot Development
+*** Step 1: Initial TMUX Configuration
+First, let's create a modern TMUX config that addresses your "cumbersome navigation" concern:
+#+begin_src bash
+# Create TMUX config directory
+mkdir -p ~/.config/tmux
+
+# Create main config file
+touch ~/.config/tmux/tmux.conf
+
+# Create TMUX plugin directory
+mkdir -p ~/.tmux/plugins
+
+#+end_src
+Now add this optimized configuration to =~/.config/tmux/tmux.conf=:
+#+begin_src bash
+# Modern TMUX Config for Full-Stack Development
+# Optimized for Spring Boot + Neovim workflow
+
+# ============================================
+# Core Settings
+# ============================================
+
+# Enable true color support (important for Neovim themes)
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+# Set prefix to Ctrl-Space (easier than Ctrl-b)
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# Enable mouse support
+set -g mouse on
+
+# Faster command sequences (no delay after prefix)
+set -sg escape-time 0
+
+# Increase history limit
+set -g history-limit 10000
+
+# Start windows and panes at 1 (more intuitive)
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Renumber windows when one is closed
+set -g renumber-windows on
+
+# ============================================
+# Navigation Keys (Simplified)
+# ============================================
+
+# Split panes using | and - (more intuitive)
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+unbind '"'
+unbind %
+
+# Navigate panes with Alt + Arrow keys (no prefix needed!)
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Navigate panes with Alt + hjkl (Vim-style, no prefix needed!)
+bind -n M-h select-pane -L
+bind -n M-l select-pane -R
+bind -n M-k select-pane -U
+bind -n M-j select-pane -D
+
+# Switch windows with Shift + Arrow
+bind -n S-Left previous-window
+bind -n S-Right next-window
+
+# Quick window switching with Alt + Number
+bind -n M-1 select-window -t 1
+bind -n M-2 select-window -t 2
+bind -n M-3 select-window -t 3
+bind -n M-4 select-window -t 4
+bind -n M-5 select-window -t 5
+
+# Resize panes with Ctrl + Arrow
+bind -n C-Left resize-pane -L 5
+bind -n C-Right resize-pane -R 5
+bind -n C-Up resize-pane -U 5
+bind -n C-Down resize-pane -D 5
+
+# ============================================
+# Session Management
+# ============================================
+
+# Create new window with current path
+bind c new-window -c "#{pane_current_path}"
+
+# Session navigation
+bind s choose-tree -Zs
+
+# Quick session switching
+bind -n M-s switch-client -n
+bind -n M-S switch-client -p
+
+# ============================================
+# Copy Mode (Vim-style)
+# ============================================
+
+setw -g mode-keys vi
+bind -T copy-mode-vi v send -X begin-selection
+bind -T copy-mode-vi y send -X copy-selection-and-cancel
+bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-selection-and-cancel
+
+# ============================================
+# Status Bar (Modern & Minimal)
+# ============================================
+
+set -g status-position top
+set -g status-style 'bg=#1e1e2e fg=#cdd6f4'
+set -g status-left '#[fg=#89b4fa,bold] #S #[fg=#cdd6f4]│ '
+set -g status-right '#[fg=#cdd6f4]│ #[fg=#f9e2af]󰥔 %H:%M #[fg=#cdd6f4]│ #[fg=#94e2d5]#(echo $USER)@#h '
+set -g status-left-length 50
+set -g status-right-length 50
+
+# Window status
+setw -g window-status-current-format '#[fg=#1e1e2e,bg=#89b4fa,bold] #I:#W #F '
+setw -g window-status-format '#[fg=#cdd6f4,bg=#313244] #I:#W #F '
+
+# ============================================
+# Pane borders
+# ============================================
+
+set -g pane-border-style 'fg=#313244'
+set -g pane-active-border-style 'fg=#89b4fa'
+
+# ============================================
+# Plugins (using TPM)
+# ============================================
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Resurrect settings (session persistence)
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-nvim 'session'
+
+# Continuum settings (automatic save/restore)
+set -g @continuum-restore 'on'
+set -g @continuum-save-interval '15'
+
+# Initialize TPM (keep at bottom)
+run '~/.tmux/plugins/tpm/tpm'
+
+#+end_src
+*** Step 2: Install TMUX Plugin Manager
+#+begin_src bash
+# Clone TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Start TMUX
+tmux
+
+# Install plugins: Press Ctrl-Space + I (capital i)
+# This will install all plugins defined in the config
+
+#+end_src
+*** Step 3: Create Spring Boot Development Session Script
+Create a reusable session template:
+#+begin_src bash
+# Create scripts directory
+mkdir -p ~/.config/tmux/scripts
+
+# Create Spring Boot session script
+cat > ~/.config/tmux/scripts/spring-dev.sh << 'EOF'
+#!/bin/bash
+
+SESSION="spring-dev"
+PROJECT_DIR="${1:-$(pwd)}"
+
+# Check if session exists
+tmux has-session -t $SESSION 2>/dev/null
+
+if [ $? != 0 ]; then
+    # Create new session with Neovim in main window
+    tmux new-session -d -s $SESSION -n "editor" -c "$PROJECT_DIR"
+    tmux send-keys -t $SESSION:editor "nvim ." Enter
+    
+    # Create second window for Spring Boot server
+    tmux new-window -t $SESSION -n "server" -c "$PROJECT_DIR"
+    tmux send-keys -t $SESSION:server "# Run: ./mvnw spring-boot:run" Enter
+    
+    # Create third window with 3 panes for various tasks
+    tmux new-window -t $SESSION -n "terminal" -c "$PROJECT_DIR"
+    
+    # Split horizontally first
+    tmux split-window -h -t $SESSION:terminal -c "$PROJECT_DIR"
+    
+    # Split the right pane vertically
+    tmux split-window -v -t $SESSION:terminal.2 -c "$PROJECT_DIR"
+    
+    # Set up each terminal pane
+    tmux send-keys -t $SESSION:terminal.1 "# Git/Maven operations" Enter
+    tmux send-keys -t $SESSION:terminal.1 "git status" Enter
+    
+    tmux send-keys -t $SESSION:terminal.2 "# Database/Testing" Enter
+    tmux send-keys -t $SESSION:terminal.2 "# psql or mvn test" Enter
+    
+    tmux send-keys -t $SESSION:terminal.3 "# General/Troubleshooting" Enter
+    tmux send-keys -t $SESSION:terminal.3 "clear" Enter
+    
+    # Create fourth window for logs/monitoring
+    tmux new-window -t $SESSION -n "logs" -c "$PROJECT_DIR"
+    tmux send-keys -t $SESSION:logs "# tail -f logs/spring.log" Enter
+    
+    # Select initial window and pane
+    tmux select-window -t $SESSION:editor
+fi
+
+# Attach to session
+tmux attach-session -t $SESSION
+EOF
+
+# Make script executable
+chmod +x ~/.config/tmux/scripts/spring-dev.sh
+
+#+end_src
+*** Step 4: Add Convenient Aliases
+Add these to your =~/.zshrc=:
+#+begin_src bash
+# TMUX aliases
+alias t='tmux'
+alias ta='tmux attach -t'
+alias tls='tmux list-sessions'
+alias tks='tmux kill-session -t'
+alias tkall='tmux kill-server'
+
+# Development session shortcuts
+alias dev-spring='~/.config/tmux/scripts/spring-dev.sh'
+alias dev-next='tmux new-session -s next-dev -n editor \; send-keys "nvim ." Enter \; new-window -n server \; send-keys "npm run dev" Enter \; new-window -n terminal'
+
+# Quick TMUX session creation
+tns() {
+    if [ -z "$1" ]; then
+        echo "Usage: tns <session-name>"
+    else
+        tmux new-session -s "$1" -c "$(pwd)"
+    fi
+}
+
+# Reload zsh config
+source ~/.zshrc
+
+#+end_src
+*** Step 5: Essential TMUX Commands Reference
+Create a quick reference card:
+#+begin_src bash
+cat > ~/.config/tmux/cheatsheet.md << 'EOF'
+# TMUX Quick Reference
+
+## Session Management
+- `tmux new -s name`      : Create new session
+- `tmux attach -t name`   : Attach to session
+- `tmux detach`          : Detach (or Ctrl-Space + d)
+- `tmux ls`              : List sessions
+- `Alt + s`              : Switch to next session
+
+## Window Management (Tabs)
+- `Ctrl-Space + c`       : New window
+- `Shift + ←/→`          : Navigate windows
+- `Alt + 1-5`            : Jump to window number
+- `Ctrl-Space + ,`       : Rename window
+- `Ctrl-Space + &`       : Kill window
+
+## Pane Management
+- `Ctrl-Space + |`       : Split vertical
+- `Ctrl-Space + -`       : Split horizontal
+- `Alt + Arrow/hjkl`     : Navigate panes (no prefix!)
+- `Ctrl + Arrow`         : Resize panes
+- `Ctrl-Space + z`       : Zoom pane (toggle)
+- `Ctrl-Space + x`       : Kill pane
+
+## Copy Mode
+- `Ctrl-Space + [`       : Enter copy mode
+- `v`                    : Start selection
+- `y`                    : Copy selection
+- `Ctrl-Space + ]`       : Paste
+
+## Session Persistence
+- Sessions auto-save every 15 minutes
+- `Ctrl-Space + Ctrl-s`  : Manual save
+- `Ctrl-Space + Ctrl-r`  : Manual restore
+EOF
+
+#+end_src
+*** Step 6: First Run - Spring Boot Project
+#+begin_src bash
+# Navigate to your Spring Boot project
+cd ~/your-spring-boot-project
+
+# Start the Spring Boot development session
+dev-spring
+
+# Or start from anywhere by passing the project path
+dev-spring ~/your-spring-boot-project
+
+#+end_src
+** Your Optimized Workflow
+With this setup:
+1. *Window 1 (Editor)*: Neovim with your full project
+1. *Window 2 (Server)*: Dedicated for =mvn spring-boot:run=
+1. *Window 3 (Terminal)*: 3 panes for Git/Maven, Database/Testing, and General use
+1. *Window 4 (Logs)*: For monitoring application logs
+*Navigation is now streamlined:*
+- =Alt + Arrow/hjkl= to move between panes (no prefix!)
+- =Shift + Arrow= to switch windows
+- =Alt + 1-4= to jump directly to any window
+- Mouse support for clicking between panes
+*Session persistence is automatic:*
+- Auto-saves every 15 minutes
+- Survives system restarts
+- =tmux attach -t spring-dev= to reconnect anytime
+This setup eliminates the complexity you mentioned while giving you more power than Ghostty splits. You can still use Ghostty tabs for non-project work while TMUX handles all project-related terminals!

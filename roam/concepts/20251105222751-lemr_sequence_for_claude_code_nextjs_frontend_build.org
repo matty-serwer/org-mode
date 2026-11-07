@@ -1,0 +1,271 @@
+:PROPERTIES:
+:ID:       6df549ea-2da5-4395-92dc-9c1f12d65bb2
+:REFLECT_ID: ed731571be314b8eb5ab4284992e6ace
+:CREATED:  [2025-11-05 Wed 22:27]
+:MODIFIED: [2025-11-05 Wed 22:29]
+:END:
+#+title: LEMR #sequence for Claude Code NextJS Frontend Build
+#+filetags: :concept:sequence:
+#+date: 2025-11-05
+* [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]]  for [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]] [[id:17254b57-edb8-4076-956f-2c7d5369e8e2][NextJS]] [[id:6ee82a2e-0524-4c94-8522-b7c34204a385][Frontend]] Build
+/Based on recent community commentary and official best practices, here is a comprehensive step-by-step instruction plan to build a basic Next.js frontend with Claude Code that your partner can present to potential stakeholders tomorrow./
+** Overview
+Your goal is to build a *proof-of-concept frontend* using Claude Code CLI with Next.js 16, Chakra UI, Tailwind CSS, Zustand, and React Query. This will be a minimal, functional prototype that demonstrates the core patient lookup feature from the LEMR requirements.
+-----
+
+** Phase 1: Project Setup & Environment Preparation
+*** Step 1: Initialize a New Next.js 16 Project
+Use Claude Code to scaffold the project:
+#+begin_src bash
+npx create-next-app@latest lemr-frontend --typescript --tailwind --app --no-eslint
+cd lemr-frontend
+#+end_src
+*** Step 2: Install Required Dependencies
+Have Claude Code install the tech stack:
+#+begin_src bash
+npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion zustand @tanstack/react-query axios
+#+end_src
+*** Step 3: Create [[CLAUDE.md][CLAUDE.md]] Context File
+This is critical for keeping Claude Code on track. Create a file named =CLAUDE.md= in your project root with the following structure[1]:
+#+begin_src markdown
+# LEMR Frontend - Context & Standards
+
+## Project Overview
+- Building a proof-of-concept medical records lookup system
+- Tech Stack: Next.js 16, Chakra UI, Tailwind CSS, Zustand, React Query, TypeScript
+- Target: Stakeholder demo tomorrow (functional prototype)
+- Single focus: Patient/Person lookup feature
+
+## Code Style & Standards
+- Use TypeScript with strict typing
+- Use ES modules (import/export), not CommonJS
+- Destructure imports when possible
+- Use functional components with hooks
+- Format: Prettier, 2-space indentation
+- Use `'use client'` directive for interactive components
+
+## Architecture Decisions
+- State Management: Zustand for global app state (search results, selected patient)
+- Data Fetching: React Query for API calls (even if mocked initially)
+- UI Components: Chakra UI + Tailwind CSS
+- File structure: Keep components modular (separate folders for pages, components, hooks, services)
+
+## Bash Commands
+- npm run dev: Start development server
+- npm run build: Build for production
+- npm run typecheck: Run TypeScript type checker
+
+## Key Workflow
+1. Use Plan Mode before writing features
+2. Break tasks into small, focused components
+3. Test each component in isolation
+4. Create reusable hooks for state management
+5. Mock API responses using React Query
+
+## Constraints for MVP
+- Single-page demo (no complex routing needed)
+- Patient lookup uses fuzzy search on mock data
+- UI should be clean, professional, and stakeholder-ready
+- No complex animations; focus on functionality
+#+end_src
+-----
+
+** Phase 2: Architecture & Store Setup
+*** Step 4: Set Up Zustand Store
+Prompt Claude Code with this specific instruction:
+#+begin_quote
+"Create a Zustand store for LEMR at =src/store/searchStore.ts=. The store should manage:
+- searchQuery (string): The current search input
+- selectedPerson (object | null): The selected patient record
+- searchResults (array): Results from patient lookup
+- setSearchQuery(query: string): Updates search term
+- setSelectedPerson(person: object): Stores selected patient
+- setSearchResults(results: array): Stores lookup results
+Use TypeScript interfaces for Person and SearchStore. Export the hook as useSearchStore."
+#+end_quote
+*Expected output*: A clean Zustand store file with TypeScript types.
+*** Step 5: Configure React Query
+Prompt Claude Code:
+#+begin_quote
+"Create a React Query configuration file at =src/lib/queryClient.ts=. Set up:
+- QueryClient with sensible defaults
+- Default query options: 5-minute staleTime, 10-minute cacheTime
+- Export a custom hook =usePatientSearch(query: string)= that uses useQuery to fetch patients based on search input
+For now, mock the API with a sample dataset of 10 patient records (varying ages, names, medical histories). Return data in 500ms to simulate network latency."
+#+end_quote
+*Expected output*: Query client setup and a custom hook ready for API integration.
+*** Step 6: Set Up Chakra UI Theme
+Prompt Claude Code:
+#+begin_quote
+"Configure Chakra UI in =src/app/layout.tsx=.
+- Wrap the application with ChakraProvider
+- Use a professional healthcare-themed color palette (blues and greens)
+- Include a custom theme with typography and spacing
+- Ensure Tailwind CSS is compatible (use Chakra components for consistency)"
+#+end_quote
+-----
+
+** Phase 3: Core Components
+*** Step 7: Create the Patient Search Input Component
+Prompt Claude Code:
+#+begin_quote
+"Build a SearchInput component at =src/components/SearchInput.tsx=. Deliverables:
+- Input field with placeholder: 'Search patients (name, age, medical history...)'
+- Real-time debounced search (300ms delay)
+- Uses Zustand store (useSearchStore) to update searchQuery
+- Triggers React Query to fetch results on input change
+- Clear button to reset search
+- Use Chakra UI Input and Button components
+- Full TypeScript typing
+The component should feel like a professional medical search interface."
+#+end_quote
+*Expected output*: A clean, functional search input with debouncing and Zustand integration.
+*** Step 8: Create the Patient Results List Component
+Prompt Claude Code:
+#+begin_quote
+"Build a PatientResults component at =src/components/PatientResults.tsx=. Deliverables:
+- Displays list of patients from React Query results
+- Each patient card shows: name, age, last visit date, key medical history
+- Clicking a patient card selects them and stores in Zustand (selectedPerson)
+- Use Chakra UI Box, Card, VStack, HStack
+- Show 'No results' state when search is empty
+- Show loading state while fetching
+- Show error state if query fails
+- Responsive design (mobile-friendly)
+Full TypeScript typing for all props and state."
+#+end_quote
+*Expected output*: A reusable patient results component with multiple states handled.
+*** Step 9: Create the Patient Detail View Component
+Prompt Claude Code:
+#+begin_quote
+"Build a PatientDetail component at =src/components/PatientDetail.tsx=. Deliverables:
+- Displays full record of selected patient from Zustand (selectedPerson)
+- Shows: full name, age, gender, medical history (bulleted list), last visit, contact info
+- Back button to clear selection and return to search
+- Use Chakra UI Badge, Divider, Heading, Text
+- Professional, clean layout
+- Responsive design
+Full TypeScript typing."
+#+end_quote
+*Expected output*: A professional patient detail display component.
+*** Step 10: Create the Main Page Layout
+Prompt Claude Code:
+#+begin_quote
+"Build the main page at =src/app/page.tsx=. Deliverables:
+- Header with LEMR branding and title 'Patient Lookup System'
+- SearchInput component
+- Two-column layout (or stacked on mobile): left side = PatientResults, right side = PatientDetail
+- Integrate Zustand store (useSearchStore) to show/hide PatientDetail
+- Use Chakra UI Grid, Container
+- Responsive design (Chakra's responsive props)
+- Professional, healthcare-appropriate styling
+Use TypeScript."
+#+end_quote
+*Expected output*: A polished, responsive main page.
+-----
+
+** Phase 4: Testing & Refinement
+*** Step 11: Mock API Data Setup
+Prompt Claude Code:
+#+begin_quote
+"Create mock patient data at =src/mocks/patientData.ts=. Provide:
+- Array of 15 diverse patient records with: id, firstName, lastName, age, gender, dateOfBirth, lastVisitDate, medicalHistory (array of conditions), contactInfo
+- Include varied data (different ages, conditions, visit dates) to test search functionality
+- Export a function =searchPatients(query: string)= that performs fuzzy matching on name, age, and medical history
+- Return results sorted by relevance
+Full TypeScript interfaces for Patient, MedicalHistory."
+#+end_quote
+*Expected output*: Realistic mock data for demo purposes.
+*** Step 12: Test the Full Flow
+Prompt Claude Code (using Plan Mode first[2]):
+#+begin_quote
+"Shift+Tab twice to enable Plan Mode. Create a test plan for the complete patient lookup flow:
+1. User types in SearchInput
+1. Results appear in PatientResults
+1. User clicks a patient card
+1. Patient detail view appears on the right
+1. Verify all Zustand state updates correctly
+1. Test responsive design on mobile
+After planning, execute the test and report any issues found."
+#+end_quote
+*** Step 13: Styling & Polish Pass
+Prompt Claude Code:
+#+begin_quote
+"Review all components and apply final polish:
+- Ensure consistent spacing and alignment using Chakra UI spacing scale
+- Make header professional and branded (add LEMR logo placeholder)
+- Ensure all buttons and interactive elements have hover states
+- Test color contrast for accessibility (WCAG AA)
+- Add subtle shadows and borders for depth
+- Verify mobile responsiveness at 320px, 768px, 1024px breakpoints
+Use Tailwind CSS for utility classes where appropriate, but keep primary structure in Chakra UI."
+#+end_quote
+-----
+
+** Phase 5: Deployment Preparation
+*** Step 14: Environment Setup for Vercel
+Prompt Claude Code:
+#+begin_quote
+"Prepare the project for Vercel deployment:
+- Create =.env.local= with placeholder variables (API_BASE_URL, etc.)
+- Ensure all absolute imports use =@/= path alias
+- Run =npm run build= to verify no TypeScript errors
+- Create a =vercel.json= for deployment configuration if needed
+- Document environment variables needed for production in a README"
+#+end_quote
+*** Step 15: Deploy to Vercel
+Run manually (not Claude Code):
+#+begin_src bash
+npm install -g vercel
+vercel --prod
+#+end_src
+This deploys to Vercel and gives your partner a shareable URL for tomorrow's demo.
+-----
+
+** Key Instructions to Keep Claude Code On Track
+*Before each prompt, remind Claude Code*:
+1. *Reference *[[CLAUDE.md][*CLAUDE.md*]]: "Reference the coding standards in [[CLAUDE.md][CLAUDE.md]] for style and architecture decisions."
+1. *Specify deliverables clearly[3]*: Always state exactly what files, components, and functionality you expect.
+1. *Use Plan Mode for complex tasks[2]*: Before multi-step features, have Claude create and review a plan first (Shift+Tab twice).
+1. *Break tasks into small components*: Don't ask for entire pages; build piece by piece.
+1. *TypeScript first*: Always request full TypeScript typing in prompts.
+1. *Test as you go*: After each component, verify it renders and integrates with the store.
+1. *Use specific examples*: If describing behavior, give concrete examples (e.g., "like searching for 'John, 25 years old, shoulder injury'").
+-----
+
+** Timeline for Tomorrow
+- *Phases 1–3* (Setup + Components): 2–3 hours
+- *Phase 4* (Testing + Polish): 1 hour
+- *Phase 5* (Deployment): 30 minutes
+- *Buffer*: 30 minutes for fixes
+*Total*: ~4.5 hours of Claude Code work, which your partner can monitor and guide.
+-----
+
+** Resources Referenced
+Use these resources if Claude Code needs clarification[4][5][2][1]:
+- *Claude Code Best Practices* (Anthropic official)[1]: Context management and workflow optimization
+- *Claude Code for React Development* (Apidog guide)[5]: Component generation and API integration
+- *Claude Code Workflow Best Practices* (SideTool)[2]: Plan Mode and permission management
+- *Next.js 15 Claude Code Configs* (Reddit community)[4]: Pre-built configurations for Next.js
+-----
+
+This plan keeps Claude Code focused and ensures your partner has a polished, professional prototype to show stakeholders by tomorrow. Good luck with the demo!
+Sources
+[1] Claude Code: Best practices for agentic coding - Anthropic [[https://www.anthropic.com/engineering/claude-code-best-practices][https://www.anthropic.com/engineering/claude-code-best-practices]]
+[2] Unlocking Efficiency: Claude Code Workflow Best Practices Explained [[https://www.sidetool.co/post/unlocking-efficiency-claude-code-workflow-best-practices-explained/][https://www.sidetool.co/post/unlocking-efficiency-claude-code-workflow-best-practices-explained/]]
+[3] Building Faster with V0 and Claude Code - Strapi [[https://strapi.io/blog/building-faster-with-v0-and-claude-code-lessons-learned-from-vibe-coding][https://strapi.io/blog/building-faster-with-v0-and-claude-code-lessons-learned-from-vibe-coding]]
+[4] Claude Code Configurations for Next.js 15 Development! : r/nextjs [[https://www.reddit.com/r/nextjs/comments/1mop8u2/opensource_claude_code_configurations_for_nextjs/][https://www.reddit.com/r/nextjs/comments/1mop8u2/opensource_claude_code_configurations_for_nextjs/]]
+[5] How to Build React Apps with Claude Code - Apidog [[https://apidog.com/blog/build-react-apps-with-claude-code/][https://apidog.com/blog/build-react-apps-with-claude-code/]]
+[6] Build Apps Faster with Claude Code + React Native - YouTube 
+[[https://www.youtube-nocookie.com/embed/nlMyplRL8V8][youtube: https://www.youtube-nocookie.com/embed/nlMyplRL8V8]]
+
+[7] General tips for developing a large project using Claude - Reddit [[https://www.reddit.com/r/ClaudeAI/comments/1fl5j3t/general_tips_for_developing_a_large_project_using/][https://www.reddit.com/r/ClaudeAI/comments/1fl5j3t/general_tips_for_developing_a_large_project_using/]]
+[8] How AI Makes Next.js Migration SUPER Easy in 2025 - YouTube 
+[[https://www.youtube-nocookie.com/embed/ZvDqWG0yK5A][youtube: https://www.youtube-nocookie.com/embed/ZvDqWG0yK5A]]
+
+[9] 20 Tips to Master Claude Code in 35 Minutes (Build a Real App) [[https://creatoreconomy.so/p/20-tips-to-master-claude-code-in-35-min-build-an-app][https://creatoreconomy.so/p/20-tips-to-master-claude-code-in-35-min-build-an-app]]
+[10] Cooking with Claude Code: The Complete Guide - Sid Bharath [[https://www.siddharthbharath.com/claude-code-the-complete-guide/][https://www.siddharthbharath.com/claude-code-the-complete-guide/]]
+#+begin_quote
+- context
+  - [[id:975332d2-0975-4dc8-b2d0-834aa2b1550e][11/5/2025]] Wednesday night before [[id:6df57ef6-178b-420e-b995-7a9d5d4ba65b][Aaron]] meeting with possible stakeholder. Let's go on this.
+#+end_quote

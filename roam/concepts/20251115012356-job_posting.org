@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       deba9514-24f4-4b29-a0d4-656d38d181f1
+:REFLECT_ID: 7e69cbb76b624b03aac33df8be724f74
+:CREATED:  [2025-11-15 Sat 01:23]
+:MODIFIED: [2025-11-15 Sat 01:23]
+:END:
+#+title: Job Posting
+#+filetags: :concept:
+#+date: 2025-11-15
+

@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       7602af97-f1e8-4afd-b0b3-9a6a5307a843
+:REFLECT_ID: 23032026
+:CREATED:  [2026-03-22 Sun 22:26]
+:MODIFIED: [2026-03-25 Wed 13:46]
+:END:
+#+title: Mon, March 23rd, 2026
+#+filetags: :daily:
+#+date: 2026-03-22
+- [[id:a833eac2-59ef-42b4-b8c6-cebe37eb1d08][Tallon Pfizer Week 2]]
+  - [[https://talleninc.files.com/f/b6706f4d2077af1f][https://talleninc.files.com/f/b6706f4d2077af1f]]
+  - My IP
+    - 192.168.0.186
+  - [[id:54aed35a-040a-4cf4-98a8-ec4d498c5d58][Call Cut Times]] 
+    - Tuesday 8 - 6 Cut
+    - Wednesday 8 - (6?)

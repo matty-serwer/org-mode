@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9672d97b-fdc5-4b89-82c9-8c03e81f7dae
+:REFLECT_ID: 6beae86dd78d48a187cd591b6c67b7e2
+:CREATED:  [2025-10-27 Mon 14:16]
+:MODIFIED: [2026-02-03 Tue 17:22]
+:END:
+#+title: Matthew Serwer
+#+filetags: :concept:
+#+date: 2025-10-27
+

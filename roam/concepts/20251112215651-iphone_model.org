@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       69435ace-a583-4bae-a2ef-bae970421282
+:REFLECT_ID: 078a2d617b6146d4ac5ea240231f97b6
+:CREATED:  [2025-11-12 Wed 21:56]
+:MODIFIED: [2025-11-12 Wed 21:56]
+:END:
+#+title: iPhone Model
+#+filetags: :concept:
+#+date: 2025-11-12
+

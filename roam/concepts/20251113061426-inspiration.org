@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d689500e-c27c-48c1-85db-58ad37086d7e
+:REFLECT_ID: ab6a826f321a4a02a089d16f61e0078f
+:CREATED:  [2025-11-13 Thu 06:14]
+:MODIFIED: [2025-11-13 Thu 06:14]
+:END:
+#+title: Inspiration
+#+filetags: :concept:
+#+date: 2025-11-13
+

@@ -1,0 +1,106 @@
+:PROPERTIES:
+:ID:       d8d41968-7b0f-4a73-a2cf-4323739999b2
+:REFLECT_ID: 3a79d6f7dec849e7a3c63661d6c95520
+:CREATED:  [2025-11-30 Sun 07:40]
+:MODIFIED: [2025-11-30 Sun 09:58]
+:END:
+#+title: Note Sweet Claude Code
+#+filetags: :concept:rules:
+#+date: 2025-11-30
+* [[id:95ed315f-208f-40a1-97b5-325433227189][Note Sweet]] [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]]
+** Project Overview
+A *macOS-first Roam Research clone* with bullet-based editing, two-way linking, and local-first SQLite storage via Tauri.
+** Tech Stack (Locked Versions)
+Package Version Notes React 19.1.0 Hooks only, no class components Vite 7.0.0 With =@vitejs/plugin-react= Remirror 3.0.0 ProseMirror-based editor Zustand 5.0.8 State management Tauri 2.x Desktop framework (Rust backend) TypeScript 5.6+ Strict mode enabled Tailwind CSS 3.4.1 Utility-first styling
+*Do not upgrade or change these versions without explicit instruction.*
+** Coding Conventions
+*** TypeScript
+- Strict mode is mandatory (=strict: true=)
+- Use =noUncheckedIndexedAccess= and =noImplicitAny=
+- Prefer type inference where obvious; explicit types for function signatures
+- Use =interface= for object shapes, =type= for unions/intersections
+*** React
+- Functional components only (React 19 hooks)
+- Prefer =useReducer= for complex state logic
+- Co-locate component-specific hooks in the same file
+- Use =useCallback= and =useMemo= only when profiling shows need
+*** State Management (Zustand)
+- One store per domain: =notesStore=, =editorStore=, =linksStore=
+- Use =devtools= middleware in development
+- Actions are async when calling Tauri IPC
+*** Remirror Editor
+- Extensions live in =src/components/Editor/extensions/=
+- Each extension is a single file with clear responsibility
+- Store editor content as ProseMirror JSON schema
+*** Tauri IPC
+- Commands defined in =src-tauri/src/commands/=
+- Frontend calls via =invoke()= from =@tauri-apps/api=
+- Always handle errors with =.map_err()= in Rust
+- Return =Result<T, String>= from all commands
+*** File Naming
+- React components: =PascalCase.tsx=
+- Hooks: =useCamelCase.ts=
+- Utilities: =camelCase.ts=
+- Rust files: =snake_case.rs=
+*** Styling
+- Tailwind utilities in JSX
+- Minimal custom CSS (only for editor-specific overrides)
+- Dark mode via Tailwind's =dark:= prefix
+** Architecture Rules
+1. *Local-first*: All data lives in SQLite. No network requests for core functionality.
+1. *Tauri boundary*: React never touches filesystem directly. All persistence goes through Tauri commands.
+1. *Link graph*: Two-way links are stored in the =links= table, not embedded in note content.
+1. *Auto-save*: Notes save on blur and on a 5-second debounce interval.
+** What NOT to Do
+- No class components
+- No =any= types (use =unknown= if truly unknown)
+- No direct filesystem access from React
+- No Electron patterns (this is Tauri)
+- No Server Components (this is a local app)
+- No external API calls for core features
+- No inline styles (use Tailwind)
+** Key Patterns
+*** Creating a Tauri Command (Rust)
+#+begin_src rust
+#[tauri::command]
+pub async fn command_name(
+    param: String,
+    db: State<'_, Database>,
+) -> Result<ReturnType, String> {
+    // Implementation
+    Ok(result)
+}
+
+#+end_src
+*** Calling Tauri from React
+#+begin_src typescript
+import { invoke } from '@tauri-apps/api';
+
+const result = await invoke<ReturnType>('command_name', { param: 'value' });
+
+#+end_src
+*** Zustand Store Pattern
+#+begin_src typescript
+export const useStore = create<StoreType>()(
+  devtools(
+    (set, get) => ({
+      // state
+      // actions
+    }),
+    { name: 'store-name' }
+  )
+);
+
+#+end_src
+** Testing Focus
+- Unit tests for link parsing (=linkParser.ts=)
+- Unit tests for Zustand stores
+- Integration tests for Tauri commands (Rust tests)
+- Manual testing for editor behavior
+** Context7 Library References
+When looking up documentation, use these IDs:
+- React: =/facebook/react=
+- Vite: =/vitejs/vite=
+- Zustand: =/pmndrs/zustand=
+- Tauri: =/tauri-apps/tauri=
+- Remirror: =/remirror/remirror=

@@ -1,0 +1,167 @@
+:PROPERTIES:
+:ID:       c672f2f3-69a1-41ab-a2e3-792ec1f3009f
+:REFLECT_ID: 76aa4f3f3a144330843d27e2423455d0
+:CREATED:  [2025-11-13 Thu 06:15]
+:MODIFIED: [2025-11-13 Thu 06:23]
+:END:
+#+title: Perplexity CLI
+#+filetags: :concept:
+#+date: 2025-11-13
+#+begin_quote
+- These are Notes from October 14th as we attempted to use the following tools
+- This attempt was unsuccesful
+#+end_quote
+** [[id:37efca2f-003b-46e4-9d81-b47efcde8b53][pplx-cli]]
+In [[id:37efca2f-003b-46e4-9d81-b47efcde8b53][pplx-cli]], “note management” refers to both legacy and modern systems for handling your project notes and developer knowledge. It is a fully *inclusive system*—notes are stored (and searched!) locally within a unified SQLite database, not simply linked to an outside note tool. The CLI supports creating, searching, listing, migrating, and exporting notes, all integrated with “Retrieval Augmented Generation” (RAG) vector search technology[1][2].
+**** Top Features & Workflow Improvements for Developers
+- *Unified, Local Knowledge Base*: Store, manage, and search all your notes (and chat history) instantly with semantic, vector-enabled search—improves recall across your code knowledge, config, and solutions[1][2].
+- *Instant Semantic Retrieval*: Use =perplexity rag= to find content by meaning, not just keywords, surfacing forgotten ideas, code snippets, or design docs[1][2].
+- *Seamless Migration*: Automatically migrate existing notes and chat history into the new RAG database to make all prior knowledge instantly accessible[1][2].
+- *Offline, Privacy-Centric*: All storage and search is local; your notes and indexed data never leave your device[1][2].
+- *Export and Backup*: Easily export conversations or notes in Markdown, JSON, or Excel for backup or further archival/analysis[2].
+- *Rich Search Modes and Metadata*: Combine semantic, vector, or exact keyword search—including filtering by notes/chats, detailed metadata, and content chunking for high-precision recall[1][2].
+** [[id:161bea19-2c20-48ac-b14e-37292720d8e3][llm-perplexity]] and File System/Codebase Context
+The llm-perplexity plugin for the =llm= CLI tool sends your queries (and optionally a prompt file or selected snippet) to the Perplexity AI API. *However, it does not automatically “understand” or index your entire codebase context just from being run in a project directory.* Like most LLM tools, it needs the relevant file or data as context—streamed, pasted, or referenced explicitly—unless otherwise extended by integrations or custom scripting[3][4].
+*If you want Perplexity to analyze UI components, Tailwind variables, or other source artifacts using llm-perplexity, you must:*
+- Pipe a file (=cat component.tsx | llm -m sonar-pro …=)
+- Use CLI utilities to batch context into the prompt (=llm -m sonar-pro < myComponentList.md=)
+- Explore advanced integrations—or use a specialized tool (like pplx-cli) with project/document vector indexing and semantic retrieval
+So, =llm-perplexity= does not internally crawl your project directory for semantic context; it works per input, treating your command as a single prompt plus optional file/stdin. To enable context-aware codebase queries, orbital tools like pplx-cli (with RAG on all docs in a folder) are superior for fully “code-aware” semantic search[1][2][3][4].
+-----
+
+* [[id:161bea19-2c20-48ac-b14e-37292720d8e3][llm-perplexity]]
+- REDACTED
+  - *wavemekanix-plexi-api-key-001*
+* [[id:71e80e35-3949-4cb5-a402-38174fd87b0b][Python]] Upgrade Fiasco
+Good catch! Let me clarify what's happening here:
+*There is no Python 4.0 yet* (and probably won't be for a very long time, if ever). The =<4.0= in the version requirements just means "less than version 4.0"—it's future-proofing to say the package works with Python 3.12+ but hasn't been tested with a hypothetical Python 4.x[1][2].
+Your error means *pplx-cli requires Python 3.12 or newer*, and your current Python version is older than 3.12[3][4].
+-----
+
+*** Here's How to Fix This on macOS with ZSH:
+**** Check Your Current Python Version
+#+begin_src bash
+python3 --version
+#+end_src
+If it shows anything below 3.12 (like 3.9, 3.10, or 3.11), you need to upgrade.
+-----
+
+*** Option 1: Install Python 3.12+ via Homebrew (Recommended for Mac)
+*1. Update Homebrew:*
+#+begin_src bash
+brew update
+#+end_src
+*2. Install Python 3.12:*
+#+begin_src bash
+brew install python@3.12
+#+end_src
+*3. Verify the installation:*
+#+begin_src bash
+python3.12 --version
+#+end_src
+*4. Install pplx-cli using Python 3.12:*
+#+begin_src bash
+python3.12 -m pip install pplx-cli
+#+end_src
+*5. (Optional) Make Python 3.12 your default:*
+Add to your =~/.zshrc=:
+#+begin_src bash
+alias python3='python3.12'
+alias pip3='python3.12 -m pip'
+#+end_src
+Then reload:
+#+begin_src bash
+source ~/.zshrc
+#+end_src
+-----
+
+*** Option 2: Use pyenv (For Managing Multiple Python Versions)
+If you want more control over Python versions:
+*1. Install pyenv via Homebrew:*
+#+begin_src bash
+  brew install pyenv
+#+end_src
+*2. Add pyenv to your shell (add to* =~/.zshrc=*):*
+#+begin_src bash
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+#+end_src
+*3. Reload your shell:*
+#+begin_src bash
+source ~/.zshrc
+#+end_src
+*4. Install Python 3.12:*
+#+begin_src bash
+pyenv install 3.12
+pyenv global 3.12
+#+end_src
+*5. Verify:*
+#+begin_src bash
+python --version
+#+end_src
+*6. Install pplx-cli:*
+#+begin_src bash
+pip install pplx-cli
+#+end_src
+-----
+
+** Note deuce
+* Perplexity CLI Setup: pplx-cli in a ZSH terminal
+Here’s a step-by-step guide to set up pplx-cli in a ZSH terminal (like Ghostty) now that you have your API key ready:
+-----
+
+*** pplx-cli: ZSH Terminal Setup Workflow
+1. *Open Your ZSH Terminal*Launch Ghostty or your terminal app running ZSH.
+1. *(Optional) Activate a Python Environment*If you use virtualenv/pyenv/conda for project isolation, activate your environment now. For system-wide install, skip this.
+1. *Install pplx-cli*Run:
+  
+  #+begin_src bash
+  pipx install pplx-cli --python python3.12
+  #+end_src
+  (If using a system with both pip and pip3, use =pip3 install pplx-cli=.)
+1. *Set Your API Key*Choose EITHER method:
+  - *Interactive Setup*:Run:
+    
+    #+begin_src bash
+    perplexity setup
+    #+end_src
+    Paste your API key when prompted.
+  - *Environment Variable (persistent)*:Add to your =~/.zshrc= file:
+    
+    #+begin_src text
+    export PERPLEXITY_API_KEY="your-api-key-here"
+    #+end_src
+    Reload your shell with:
+    
+    #+begin_src text
+    source ~/.zshrc
+    #+end_src
+1. *Verify Installation*Run:
+  
+  #+begin_src text
+  perplexity ask "Hello world"
+  #+end_src
+  You should receive a reply. If not, check your API key and pip install logs.
+1. *Get Started with Key Commands*Try the following:
+  - Ask a quick question:
+    
+    #+begin_src bash
+    perplexity ask "How do I debounce a function in JavaScript?"
+    #+end_src
+  - RAG (local AI search) if you have notes/doc chunks:
+    
+    #+begin_src text
+    perplexity rag "macos zsh theme setup"
+    #+end_src
+  - List available help:
+    
+    #+begin_src text
+    perplexity --help
+    #+end_src
+1. *(Optional, Power Users) Integrate with ZSH Scripts*You can use pplx-cli inside shell functions or scripts to AI-assist your development/config tasks.
+** Notes:
+- Required Python3 update from 3.11 to 3.12
+- Ran brew upgrade: [[id:772d31af-8c73-4d1a-b4e0-2cdc6c65d9f7][Homebrew]]
+-----

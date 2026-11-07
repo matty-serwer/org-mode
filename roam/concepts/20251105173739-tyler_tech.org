@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bc9f89e3-6630-44d3-8bdb-3655468dca1d
+:REFLECT_ID: 75baaddae85b44e3a8609f2020d2c8be
+:CREATED:  [2025-11-05 Wed 17:37]
+:MODIFIED: [2025-11-05 Wed 17:37]
+:END:
+#+title: Tyler Tech
+#+filetags: :concept:
+#+date: 2025-11-05
+

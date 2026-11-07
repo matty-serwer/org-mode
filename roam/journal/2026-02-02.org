@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       15ad7e6a-9465-4664-bbc1-05691a9c016f
+:REFLECT_ID: 02022026
+:CREATED:  [2026-02-03 Tue 04:31]
+:MODIFIED: [2026-02-03 Tue 04:33]
+:END:
+#+title: Mon, February 2nd, 2026
+#+filetags: :daily:
+#+date: 2026-02-03
+- [[id:bc749ddc-3746-4007-80d6-78c65d383399][Therapy Notes]]
+  - My insecurities are killing me
+    - Lost the idea
+    - I

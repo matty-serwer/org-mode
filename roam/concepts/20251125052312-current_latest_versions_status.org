@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       baab4ada-bbd2-486c-9d41-1c916ab413ee
+:REFLECT_ID: 1fbb3f6fbf3f4169887561e26c5a7058
+:CREATED:  [2025-11-25 Tue 05:23]
+:MODIFIED: [2025-11-25 Tue 05:24]
+:END:
+#+title: Current Latest Versions
+#+filetags: :concept:status:
+#+date: 2025-11-25
+* Current [[id:3a57a91d-6af4-453c-9f37-f6366e9d72a7][Latest Version]]s
+#+begin_quote
+- /Last Updated: /[[id:a1af7f76-a7af-4767-8650-e7467b62693a][11/25/2025]]
+#+end_quote
+- Frontend
+  - Next.js
+    - 16.0.3
+- UI Components
+  - Storybook
+    - 10
+- UI Library
+  - Shadcn UI
+    - 3.5.0
+- Styling
+  - Tailwind CSS
+    - 4.1
+- Backend
+  - Java 
+    - 21
+  - Spring Boot
+    - 4.0
+- Auth
+  - Spring Security (JWT)
+  - 7.0.0
+- Database
+  - PostgreSQL
+  - 18.1
+  - [[http://Render.com][Render.com]]
+- File Storage
+  - Backblaze B2
+- Email
+  - Mailgun
+  - API v3
+- Payments
+  - Stripe
+  - API 2025-11-17 (latest stable)
+- Hosting (Frontend)
+  - [[http://Vercel.com][Vercel.com]]
+- Hosting (Backend & DB)
+  - [[Render.com][Render.com]]

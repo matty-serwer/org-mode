@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       77c3f393-0c73-4633-9193-cb14ff584ec4
+:REFLECT_ID: c83d3d96711d4e969c4d0006b3142e30
+:CREATED:  [2025-11-30 Sun 09:56]
+:MODIFIED: [2025-11-30 Sun 09:56]
+:END:
+#+title: Bass Gu
+#+filetags: :concept:
+#+date: 2025-11-30
+

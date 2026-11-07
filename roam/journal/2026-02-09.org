@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       be88b586-0c5a-4a30-ac12-ca1c0574f7d5
+:REFLECT_ID: 09022026
+:CREATED:  [2026-02-06 Fri 05:31]
+:MODIFIED: [2026-02-09 Mon 21:38]
+:END:
+#+title: Mon, February 9th, 2026
+#+filetags: :daily:
+#+date: 2026-02-06
+- [[id:d3e88702-5e09-4e8e-ad52-966b7c55cf7d][Ghostty Config]]
+  - Set working key bindings for [[id:4aec6e2b-66b4-4b2e-8080-d97c948a5d7d][Ghostty Splits]]
+    - [[id:b46c05d8-29f6-4cb3-9bec-25301ba909f2][New Split]]
+      - Command + Option + Shift + h/j/k/l
+    - [[id:36b052ab-6991-4a90-a277-db7bf2c38d0d][Navigate To Split]]
+      - Command + Option + h/j/k/l
+- [[id:c8e8746b-faee-4d3b-81ad-c82edb39725a][Homemade Cleaner]]
+  - 1 cup baking soda
+  - 1/4 cup water
+  - ½ cup vinegar

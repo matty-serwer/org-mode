@@ -1,0 +1,2541 @@
+:PROPERTIES:
+:ID:       6f45ac2d-fad1-4757-803c-c21c93224791
+:REFLECT_ID: 88cd113d5d3e4a5fa8a020d1f80ad094
+:CREATED:  [2026-01-28 Wed 06:31]
+:MODIFIED: [2026-04-08 Wed 20:21]
+:END:
+#+title: 💾 Work Sweet - Day 1 Sprint Plan (Complete Original )
+#+filetags: :project:
+#+date: 2026-01-28
+* [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]] - Day 1 Sprint Plan (Complete Original )
+*Project:* Work Sweet (Keyboard-first Project Management)
+*Sprint:* Day 1 - Backend Foundation
+*Duration:* 8-10 hours
+*Stack:* Java Spring Boot 3.x + PostgreSQL
+-----
+
+** Repository Setup
+*** GitHub Repository Structure
+#+begin_src bash
+# Create the monorepo
+mkdir work-sweet
+cd work-sweet
+git init
+
+# Create backend structure
+mkdir -p backend/src/main/java/com/worksweet
+mkdir -p backend/src/main/resources
+mkdir -p backend/src/test/java/com/worksweet
+
+# Create frontend placeholder (Day 2)
+mkdir -p frontend
+
+# Root files
+touch README.md
+touch .gitignore
+touch docker-compose.yml
+
+# Initialize git
+git add .
+git commit -m "Initial commit: Project structure"
+
+# Create GitHub repo (do this on github.com)
+# Repository name: work-sweet
+# Description: Keyboard-first project management tool - Full-stack with Next.js + Spring Boot
+# Public or Private: Your choice (I recommend Public for portfolio)
+
+# Link and push
+git remote add origin git@github.com:YOUR_USERNAME/work-sweet.git
+git branch -M main
+git push -u origin main
+
+#+end_src
+*** =.gitignore= (Root)
+#+begin_src gitignore
+# Backend (Java/Spring Boot)
+backend/target/
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+backend/.idea/
+backend/*.iml
+backend/.DS_Store
+backend/application-local.properties
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+frontend/.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+#+end_src
+*** =README.md= (Root - Quick Version)
+#+begin_src markdown
+# Work Sweet
+
+**Keyboard-first project management that doesn't suck.**
+
+## Project Structure
+
+#+end_src
+work-sweet/ ├── backend/ # Spring Boot API ├── frontend/ # Next.js 16 App └── docker-compose.yml
+#+begin_src markup
+
+## Quick Start
+
+### Backend (Spring Boot)
+```bash
+cd backend
+./mvnw spring-boot:run
+
+#+end_src
+*** Frontend (Next.js)
+#+begin_src bash
+cd frontend
+npm install
+npm run dev
+
+#+end_src
+** Tech Stack
+*Backend:* Java 17, Spring Boot 3.x, PostgreSQL, JWT
+*Frontend:* Next.js 16, React 19, TypeScript, Tailwind 4, Lupine UI
+-----
+
+*Built by Mattie | Full-Stack Developer*
+#+begin_src markup
+
+### `docker-compose.yml` (Root)
+
+```yaml
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: worksweet-db
+    environment:
+      POSTGRES_DB: worksweet
+      POSTGRES_USER: worksweet
+      POSTGRES_PASSWORD: worksweet_dev_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U worksweet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
+#+end_src
+-----
+
+** Milestone 1: Spring Boot API Setup
+*Goal:* Running authenticated Spring Boot API with database connection
+*Duration:* 4 hours
+*Outcome:* Can register/login via Postman, JWT working
+-----
+
+** Issue #1: Project Scaffolding & Configuration
+*Milestone:* Spring Boot API Setup
+*Estimate:* 1 hour
+*Labels:* =setup=, =backend=, =day-1=
+*** Description
+Set up Spring Boot project with dependencies, database configuration, and basic security setup.
+*** Acceptance Criteria
+- [ ] Spring Boot project created with correct dependencies
+- [ ] PostgreSQL database running locally
+- [ ] Application connects to database successfully
+- [ ] Basic security configuration in place
+- [ ] Application starts without errors on =http://localhost:8080=
+*** Technical Specifications
+*Dependencies Required:*
+- Spring Web
+- Spring Security
+- Spring Data JPA
+- PostgreSQL Driver
+- Lombok
+- JWT (jjwt)
+- Validation
+*** Implementation Steps
+**** Step 1: Create Spring Boot Project
+Go to [[https://start.spring.io/][start.spring.io]] or use Spring Initializr in IntelliJ:
+*Settings:*
+- Project: Maven
+- Language: Java
+- Spring Boot: 3.2.x (latest stable)
+- Java: 17
+- Packaging: Jar
+- Group: com.worksweet
+- Artifact: backend
+- Name: Work Sweet API
+- Package name: com.worksweet
+*Dependencies:*
+- Spring Web
+- Spring Security
+- Spring Data JPA
+- PostgreSQL Driver
+- Lombok
+- Validation
+Download, extract to =backend/= directory.
+**** Step 2: Add JWT Dependency
+Add to =backend/pom.xml=:
+#+begin_src xml
+<!-- Add inside <dependencies> section -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.11.5</version>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId>
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>
+
+#+end_src
+**** Step 3: Configure Database Connection
+Create =backend/src/main/resources/application.properties=:
+#+begin_src properties
+# Application
+spring.application.name=Work Sweet API
+server.port=8080
+
+# Database
+spring.datasource.url=jdbc:postgresql://localhost:5432/worksweet
+spring.datasource.username=worksweet
+spring.datasource.password=worksweet_dev_pass
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA/Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# JWT Configuration
+app.jwt.secret=WorkSweetSuperSecretKeyThatIsAtLeast256BitsLongForHS256Algorithm
+app.jwt.expiration=86400000
+
+# CORS (allow frontend)
+app.cors.allowed-origins=http://localhost:3000
+
+# Logging
+logging.level.com.worksweet=DEBUG
+logging.level.org.springframework.security=DEBUG
+
+#+end_src
+**** Step 4: Start Database
+#+begin_src bash
+# From project root
+docker-compose up -d
+
+# Verify it's running
+docker ps
+
+# Check logs
+docker logs worksweet-db
+
+#+end_src
+**** Step 5: Create Base Package Structure
+#+begin_src bash
+cd backend/src/main/java/com/worksweet
+
+# Create package structure
+mkdir -p config controller dto exception model repository security service util
+
+#+end_src
+**** Step 6: Create Main Application Class
+=backend/src/main/java/com/worksweet/WorkSweetApplication.java=:
+#+begin_src java
+package com.worksweet;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+@SpringBootApplication
+@EnableJpaAuditing
+public class WorkSweetApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WorkSweetApplication.class, args);
+    }
+}
+
+#+end_src
+**** Step 7: Create Basic Health Check Controller
+=backend/src/main/java/com/worksweet/controller/HealthController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/health")
+public class HealthController {
+
+    @GetMapping
+    public Map<String, Object> health() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "UP");
+        response.put("service", "Work Sweet API");
+        response.put("timestamp", LocalDateTime.now());
+        return response;
+    }
+}
+
+#+end_src
+*** Testing
+#+begin_src bash
+# Start the application
+cd backend
+./mvnw spring-boot:run
+
+# In another terminal, test health endpoint
+curl http://localhost:8080/api/health
+
+# Expected response:
+# {
+#   "status": "UP",
+#   "service": "Work Sweet API",
+#   "timestamp": "2025-01-28T..."
+# }
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #1: Initial Spring Boot setup with PostgreSQL connection"
+git push origin main
+
+#+end_src
+-----
+
+** Issue #2: User Entity & Authentication Models
+*Milestone:* Spring Boot API Setup
+*Estimate:* 1.5 hours
+*Labels:* =backend=, =models=, =security=, =day-1=
+*** Description
+Create User, Task, Project, and ChecklistItem entities with proper relationships and auditing.
+*** Acceptance Criteria
+- [ ] User entity with authentication fields
+- [ ] Task entity with all required fields
+- [ ] Project entity
+- [ ] ChecklistItem entity
+- [ ] Proper JPA relationships configured
+- [ ] Auditing fields (createdAt, updatedAt)
+- [ ] Database tables created automatically
+*** Implementation
+**** Step 1: Create Base Auditing Entity
+=backend/src/main/java/com/worksweet/model/BaseEntity.java=:
+#+begin_src java
+package com.worksweet.model;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
+
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+@Getter
+@Setter
+public abstract class BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private LocalDateTime updatedAt;
+}
+
+#+end_src
+**** Step 2: Create User Entity
+=backend/src/main/java/com/worksweet/model/User.java=:
+#+begin_src java
+package com.worksweet.model;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "users", uniqueConstraints = {
+    @UniqueConstraint(columnNames = "email")
+})
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class User extends BaseEntity {
+
+    @NotBlank
+    @Size(max = 100)
+    @Column(nullable = false)
+    private String name;
+
+    @NotBlank
+    @Email
+    @Size(max = 100)
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @NotBlank
+    @Size(max = 255)
+    @Column(nullable = false)
+    private String password;
+
+    @Column(length = 20)
+    private String avatarColor; // For user initials badge color
+
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Project> projects = new HashSet<>();
+
+    @OneToMany(mappedBy = "assignedTo")
+    private Set<Task> assignedTasks = new HashSet<>();
+
+    @Column(nullable = false)
+    @Builder.Default
+    private Boolean active = true;
+}
+
+#+end_src
+**** Step 3: Create Project Entity
+=backend/src/main/java/com/worksweet/model/Project.java=:
+#+begin_src java
+package com.worksweet.model;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "projects")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Project extends BaseEntity {
+
+    @NotBlank
+    @Size(max = 100)
+    @Column(nullable = false)
+    private String name;
+
+    @Size(max = 500)
+    private String description;
+
+    @Size(max = 7)
+    @Column(length = 7)
+    @Builder.Default
+    private String color = "#3B82F6"; // Blue 500 default
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id", nullable = false)
+    private User owner;
+
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Task> tasks = new HashSet<>();
+
+    @Column(nullable = false)
+    @Builder.Default
+    private Boolean archived = false;
+}
+
+#+end_src
+**** Step 4: Create Task Entity with Enums
+=backend/src/main/java/com/worksweet/model/TaskStatus.java=:
+#+begin_src java
+package com.worksweet.model;
+
+public enum TaskStatus {
+    TODO,
+    IN_PROGRESS,
+    DONE
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/model/TaskPriority.java=:
+#+begin_src java
+package com.worksweet.model;
+
+public enum TaskPriority {
+    NONE,    // Gray
+    LOW,     // Gray 400
+    NORMAL,  // Blue 500
+    HIGH,    // Orange 500
+    URGENT   // Red 500
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/model/Task.java=:
+#+begin_src java
+package com.worksweet.model;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "tasks")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Task extends BaseEntity {
+
+    @NotBlank
+    @Size(max = 255)
+    @Column(nullable = false)
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    @Builder.Default
+    private TaskStatus status = TaskStatus.TODO;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    @Builder.Default
+    private TaskPriority priority = TaskPriority.NORMAL;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_id", nullable = false)
+    private Project project;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "assigned_to_id")
+    private User assignedTo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "created_by_id", nullable = false)
+    private User createdBy;
+
+    private LocalDate dueDate;
+
+    @Column(nullable = false)
+    private Integer position; // For drag & drop ordering within column
+
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("position ASC")
+    @Builder.Default
+    private List<ChecklistItem> checklistItems = new ArrayList<>();
+}
+
+#+end_src
+**** Step 5: Create ChecklistItem Entity
+=backend/src/main/java/com/worksweet/model/ChecklistItem.java=:
+#+begin_src java
+package com.worksweet.model;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+
+@Entity
+@Table(name = "checklist_items")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ChecklistItem extends BaseEntity {
+
+    @NotBlank
+    @Size(max = 500)
+    @Column(nullable = false)
+    private String text;
+
+    @Column(nullable = false)
+    @Builder.Default
+    private Boolean completed = false;
+
+    @Column(nullable = false)
+    private Integer position;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "task_id", nullable = false)
+    private Task task;
+}
+
+#+end_src
+*** Testing
+#+begin_src bash
+# Restart application
+./mvnw spring-boot:run
+
+# Check logs for table creation
+# Should see:
+# Hibernate: create table users (...)
+# Hibernate: create table projects (...)
+# Hibernate: create table tasks (...)
+# Hibernate: create table checklist_items (...)
+
+# Verify in database
+docker exec -it worksweet-db psql -U worksweet -d worksweet
+
+# In psql:
+\dt    # List tables
+\d users    # Describe users table
+\q    # Quit
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #2: Create User, Task, Project, ChecklistItem entities with relationships"
+git push origin main
+
+#+end_src
+-----
+
+** Issue #3: JWT Configuration & Authentication Service
+*Milestone:* Spring Boot API Setup
+*Estimate:* 1.5 hours
+*Labels:* =backend=, =security=, =auth=, =day-1=
+*** Description
+Implement JWT token generation, validation, and Spring Security configuration for authentication.
+*** Acceptance Criteria
+- [ ] JWT utility class for token generation/validation
+- [ ] JWT authentication filter
+- [ ] Security configuration with public/protected endpoints
+- [ ] Password encoding configured
+- [ ] CORS configuration for frontend
+*** Implementation
+**** Step 1: Create JWT Utility Class
+=backend/src/main/java/com/worksweet/security/JwtUtils.java=:
+#+begin_src java
+package com.worksweet.security;
+
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Component;
+
+import java.security.Key;
+import java.util.Date;
+
+@Component
+@Slf4j
+public class JwtUtils {
+
+    @Value("${app.jwt.secret}")
+    private String jwtSecret;
+
+    @Value("${app.jwt.expiration}")
+    private int jwtExpirationMs;
+
+    private Key getSigningKey() {
+        return Keys.hmacShaKeyFor(jwtSecret.getBytes());
+    }
+
+    public String generateJwtToken(Authentication authentication) {
+        UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
+
+        return Jwts.builder()
+                .setSubject(userPrincipal.getEmail())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    public String generateTokenFromEmail(String email) {
+        return Jwts.builder()
+                .setSubject(email)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    public String getEmailFromJwtToken(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
+
+    public boolean validateJwtToken(String authToken) {
+        try {
+            Jwts.parserBuilder()
+                    .setSigningKey(getSigningKey())
+                    .build()
+                    .parseClaimsJws(authToken);
+            return true;
+        } catch (SecurityException e) {
+            log.error("Invalid JWT signature: {}", e.getMessage());
+        } catch (MalformedJwtException e) {
+            log.error("Invalid JWT token: {}", e.getMessage());
+        } catch (ExpiredJwtException e) {
+            log.error("JWT token is expired: {}", e.getMessage());
+        } catch (UnsupportedJwtException e) {
+            log.error("JWT token is unsupported: {}", e.getMessage());
+        } catch (IllegalArgumentException e) {
+            log.error("JWT claims string is empty: {}", e.getMessage());
+        }
+        return false;
+    }
+}
+
+#+end_src
+**** Step 2: Create UserDetails Implementation
+=backend/src/main/java/com/worksweet/security/UserDetailsImpl.java=:
+#+begin_src java
+package com.worksweet.security;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.worksweet.model.User;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.Collections;
+
+@Data
+@AllArgsConstructor
+public class UserDetailsImpl implements UserDetails {
+
+    private Long id;
+    private String name;
+    private String email;
+    
+    @JsonIgnore
+    private String password;
+
+    public static UserDetailsImpl build(User user) {
+        return new UserDetailsImpl(
+                user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getPassword()
+        );
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.emptyList(); // No roles for now
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+}
+
+#+end_src
+**** Step 3: Create UserDetails Service
+=backend/src/main/java/com/worksweet/security/UserDetailsServiceImpl.java=:
+#+begin_src java
+package com.worksweet.security;
+
+import com.worksweet.model.User;
+import com.worksweet.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@RequiredArgsConstructor
+public class UserDetailsServiceImpl implements UserDetailsService {
+
+    private final UserRepository userRepository;
+
+    @Override
+    @Transactional
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+
+        return UserDetailsImpl.build(user);
+    }
+}
+
+#+end_src
+**** Step 4: Create JWT Authentication Filter
+=backend/src/main/java/com/worksweet/security/AuthTokenFilter.java=:
+#+begin_src java
+package com.worksweet.security;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+@Component
+@RequiredArgsConstructor
+@Slf4j
+public class AuthTokenFilter extends OncePerRequestFilter {
+
+    private final JwtUtils jwtUtils;
+    private final UserDetailsServiceImpl userDetailsService;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
+        try {
+            String jwt = parseJwt(request);
+            if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
+                String email = jwtUtils.getEmailFromJwtToken(jwt);
+
+                UserDetails userDetails = userDetailsService.loadUserByUsername(email);
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+        } catch (Exception e) {
+            log.error("Cannot set user authentication: {}", e.getMessage());
+        }
+
+        filterChain.doFilter(request, response);
+    }
+
+    private String parseJwt(HttpServletRequest request) {
+        String headerAuth = request.getHeader("Authorization");
+
+        if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer ")) {
+            return headerAuth.substring(7);
+        }
+
+        return null;
+    }
+}
+
+#+end_src
+**** Step 5: Create Security Configuration
+=backend/src/main/java/com/worksweet/config/SecurityConfig.java=:
+#+begin_src java
+package com.worksweet.config;
+
+import com.worksweet.security.AuthTokenFilter;
+import com.worksweet.security.UserDetailsServiceImpl;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.List;
+
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+@RequiredArgsConstructor
+public class SecurityConfig {
+
+    private final UserDetailsServiceImpl userDetailsService;
+    private final AuthTokenFilter authTokenFilter;
+
+    @Value("${app.cors.allowed-origins}")
+    private String allowedOrigins;
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/health").permitAll()
+                        .anyRequest().authenticated()
+                );
+
+        http.authenticationProvider(authenticationProvider());
+        http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of(allowedOrigins.split(",")));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setAllowCredentials(true);
+        
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+}
+
+#+end_src
+**** Step 6: Create User Repository
+=backend/src/main/java/com/worksweet/repository/UserRepository.java=:
+#+begin_src java
+package com.worksweet.repository;
+
+import com.worksweet.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
+    Boolean existsByEmail(String email);
+}
+
+#+end_src
+*** Testing
+#+begin_src bash
+# Restart application
+./mvnw spring-boot:run
+
+# Should start without errors
+# Security filter chain should be initialized
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #3: Implement JWT authentication and Spring Security configuration"
+git push origin main
+
+#+end_src
+-----
+
+** Issue #4: Authentication Endpoints (Register & Login)
+*Milestone:* Spring Boot API Setup
+*Estimate:* 1 hour
+*Labels:* =backend=, =auth=, =api=, =day-1=
+*** Description
+Create DTOs and endpoints for user registration and login with JWT token response.
+*** Acceptance Criteria
+- [ ] POST =/api/auth/register= creates new user
+- [ ] POST =/api/auth/login= returns JWT token
+- [ ] Proper validation and error handling
+- [ ] Password is hashed before storage
+- [ ] Can test with Postman successfully
+*** Implementation
+**** Step 1: Create DTOs
+=backend/src/main/java/com/worksweet/dto/SignupRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class SignupRequest {
+    
+    @NotBlank(message = "Name is required")
+    @Size(min = 2, max = 100, message = "Name must be between 2 and 100 characters")
+    private String name;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email must be valid")
+    @Size(max = 100)
+    private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, max = 40, message = "Password must be between 6 and 40 characters")
+    private String password;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/LoginRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class LoginRequest {
+    
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email must be valid")
+    private String email;
+
+    @NotBlank(message = "Password is required")
+    private String password;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/JwtResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class JwtResponse {
+    private String token;
+    private String type = "Bearer";
+    private Long id;
+    private String name;
+    private String email;
+    private String avatarColor;
+
+    public JwtResponse(String token, Long id, String name, String email, String avatarColor) {
+        this.token = token;
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.avatarColor = avatarColor;
+    }
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/MessageResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class MessageResponse {
+    private String message;
+}
+
+#+end_src
+**** Step 2: Create Auth Service
+=backend/src/main/java/com/worksweet/service/AuthService.java=:
+#+begin_src java
+package com.worksweet.service;
+
+import com.worksweet.dto.JwtResponse;
+import com.worksweet.dto.LoginRequest;
+import com.worksweet.dto.SignupRequest;
+import com.worksweet.exception.EmailAlreadyExistsException;
+import com.worksweet.model.User;
+import com.worksweet.repository.UserRepository;
+import com.worksweet.security.JwtUtils;
+import com.worksweet.security.UserDetailsImpl;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Random;
+
+@Service
+@RequiredArgsConstructor
+public class AuthService {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
+    private final JwtUtils jwtUtils;
+
+    private static final String[] AVATAR_COLORS = {
+            "#EF4444", "#F97316", "#F59E0B", "#10B981", 
+            "#3B82F6", "#6366F1", "#8B5CF6", "#EC4899"
+    };
+
+    @Transactional
+    public User registerUser(SignupRequest signupRequest) {
+        if (userRepository.existsByEmail(signupRequest.getEmail())) {
+            throw new EmailAlreadyExistsException("Email already in use: " + signupRequest.getEmail());
+        }
+
+        User user = User.builder()
+                .name(signupRequest.getName())
+                .email(signupRequest.getEmail())
+                .password(passwordEncoder.encode(signupRequest.getPassword()))
+                .avatarColor(getRandomAvatarColor())
+                .active(true)
+                .build();
+
+        return userRepository.save(user);
+    }
+
+    public JwtResponse authenticateUser(LoginRequest loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        loginRequest.getEmail(),
+                        loginRequest.getPassword()
+                )
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = jwtUtils.generateJwtToken(authentication);
+
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+
+        return new JwtResponse(
+                jwt,
+                userDetails.getId(),
+                userDetails.getName(),
+                userDetails.getEmail(),
+                userRepository.findById(userDetails.getId())
+                        .map(User::getAvatarColor)
+                        .orElse(AVATAR_COLORS[0])
+        );
+    }
+
+    private String getRandomAvatarColor() {
+        return AVATAR_COLORS[new Random().nextInt(AVATAR_COLORS.length)];
+    }
+}
+
+#+end_src
+**** Step 3: Create Custom Exception
+=backend/src/main/java/com/worksweet/exception/EmailAlreadyExistsException.java=:
+#+begin_src java
+package com.worksweet.exception;
+
+public class EmailAlreadyExistsException extends RuntimeException {
+    public EmailAlreadyExistsException(String message) {
+        super(message);
+    }
+}
+
+#+end_src
+**** Step 4: Create Global Exception Handler
+=backend/src/main/java/com/worksweet/exception/GlobalExceptionHandler.java=:
+#+begin_src java
+package com.worksweet.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(EmailAlreadyExistsException.class)
+    public ResponseEntity<Map<String, String>> handleEmailAlreadyExists(EmailAlreadyExistsException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<Map<String, String>> handleBadCredentials(BadCredentialsException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "Invalid email or password");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, String>> handleGenericException(Exception ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "An unexpected error occurred");
+        error.put("details", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    }
+}
+
+#+end_src
+**** Step 5: Create Auth Controller
+=backend/src/main/java/com/worksweet/controller/AuthController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import com.worksweet.dto.JwtResponse;
+import com.worksweet.dto.LoginRequest;
+import com.worksweet.dto.MessageResponse;
+import com.worksweet.dto.SignupRequest;
+import com.worksweet.service.AuthService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthController {
+
+    private final AuthService authService;
+
+    @PostMapping("/register")
+    public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signupRequest) {
+        authService.registerUser(signupRequest);
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(new MessageResponse("User registered successfully"));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+        JwtResponse jwtResponse = authService.authenticateUser(loginRequest);
+        return ResponseEntity.ok(jwtResponse);
+    }
+}
+
+#+end_src
+*** Testing with Postman
+#+begin_src bash
+# Start application
+./mvnw spring-boot:run
+
+#+end_src
+*Test 1: Register User*
+#+begin_src markup
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Mattie",
+  "email": "mattie@worksweet.dev",
+  "password": "password123"
+}
+
+Expected: 201 Created
+{
+  "message": "User registered successfully"
+}
+
+#+end_src
+*Test 2: Login*
+#+begin_src markup
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "mattie@worksweet.dev",
+  "password": "password123"
+}
+
+Expected: 200 OK
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "type": "Bearer",
+  "id": 1,
+  "name": "Mattie",
+  "email": "mattie@worksweet.dev",
+  "avatarColor": "#3B82F6"
+}
+
+#+end_src
+*Test 3: Protected Endpoint*
+#+begin_src markup
+GET http://localhost:8080/api/health
+Authorization: Bearer [paste token from login]
+
+Expected: 200 OK
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #4: Implement register and login endpoints with JWT"
+git push origin main
+
+#+end_src
+-----
+
+** 🎯 CHECKPOINT - Milestone 1 Complete!
+At this point you should have:
+- ✅ Spring Boot application running
+- ✅ PostgreSQL database connected
+- ✅ User authentication working
+- ✅ JWT tokens generating
+- ✅ Can register and login via Postman
+*Take a 15-minute break. Stretch. Hydrate. You're crushing it!* 💪
+-----
+
+** Milestone 2: API Endpoints
+*Goal:* Full CRUD operations for Projects and Tasks
+*Duration:* 4 hours
+*Outcome:* Can create projects, create tasks, update tasks, filter tasks
+-----
+
+** Issue #5: Project CRUD Endpoints
+*Milestone:* API Endpoints
+*Estimate:* 1.5 hours
+*Labels:* =backend=, =api=, =projects=, =day-1=
+*** Description
+Implement full CRUD operations for Projects with proper authorization.
+*** Acceptance Criteria
+- [ ] GET =/api/projects= - List user's projects
+- [ ] POST =/api/projects= - Create new project
+- [ ] PUT =/api/projects/{id}= - Update project
+- [ ] DELETE =/api/projects/{id}= - Delete project (soft delete/archive)
+- [ ] Proper authorization (users can only access their own projects)
+*** Implementation
+**** Step 1: Create Project Repository
+=backend/src/main/java/com/worksweet/repository/ProjectRepository.java=:
+#+begin_src java
+package com.worksweet.repository;
+
+import com.worksweet.model.Project;
+import com.worksweet.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ProjectRepository extends JpaRepository<Project, Long> {
+    List<Project> findByOwnerAndArchivedFalseOrderByCreatedAtDesc(User owner);
+    List<Project> findByOwnerOrderByCreatedAtDesc(User owner);
+    Optional<Project> findByIdAndOwner(Long id, User owner);
+}
+
+#+end_src
+**** Step 2: Create Project DTOs
+=backend/src/main/java/com/worksweet/dto/ProjectRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class ProjectRequest {
+    
+    @NotBlank(message = "Project name is required")
+    @Size(min = 1, max = 100, message = "Project name must be between 1 and 100 characters")
+    private String name;
+
+    @Size(max = 500, message = "Description must be less than 500 characters")
+    private String description;
+
+    @Pattern(regexp = "^#([A-Fa-f0-9]{6})$", message = "Color must be a valid hex color (e.g., #3B82F6)")
+    private String color;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/ProjectResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.Project;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProjectResponse {
+    private Long id;
+    private String name;
+    private String description;
+    private String color;
+    private Long ownerId;
+    private String ownerName;
+    private Integer taskCount;
+    private Boolean archived;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public static ProjectResponse fromEntity(Project project) {
+        return ProjectResponse.builder()
+                .id(project.getId())
+                .name(project.getName())
+                .description(project.getDescription())
+                .color(project.getColor())
+                .ownerId(project.getOwner().getId())
+                .ownerName(project.getOwner().getName())
+                .taskCount(project.getTasks() != null ? project.getTasks().size() : 0)
+                .archived(project.getArchived())
+                .createdAt(project.getCreatedAt())
+                .updatedAt(project.getUpdatedAt())
+                .build();
+    }
+}
+
+#+end_src
+**** Step 3: Create Project Service
+=backend/src/main/java/com/worksweet/service/ProjectService.java=:
+#+begin_src java
+package com.worksweet.service;
+
+import com.worksweet.dto.ProjectRequest;
+import com.worksweet.dto.ProjectResponse;
+import com.worksweet.exception.ResourceNotFoundException;
+import com.worksweet.model.Project;
+import com.worksweet.model.User;
+import com.worksweet.repository.ProjectRepository;
+import com.worksweet.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class ProjectService {
+
+    private final ProjectRepository projectRepository;
+    private final UserRepository userRepository;
+
+    private User getCurrentUser() {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    }
+
+    public List<ProjectResponse> getAllProjects(boolean includeArchived) {
+        User currentUser = getCurrentUser();
+        List<Project> projects = includeArchived 
+                ? projectRepository.findByOwnerOrderByCreatedAtDesc(currentUser)
+                : projectRepository.findByOwnerAndArchivedFalseOrderByCreatedAtDesc(currentUser);
+        
+        return projects.stream()
+                .map(ProjectResponse::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public ProjectResponse createProject(ProjectRequest request) {
+        User currentUser = getCurrentUser();
+
+        Project project = Project.builder()
+                .name(request.getName())
+                .description(request.getDescription())
+                .color(request.getColor() != null ? request.getColor() : "#3B82F6")
+                .owner(currentUser)
+                .archived(false)
+                .build();
+
+        Project savedProject = projectRepository.save(project);
+        return ProjectResponse.fromEntity(savedProject);
+    }
+
+    @Transactional
+    public ProjectResponse updateProject(Long id, ProjectRequest request) {
+        User currentUser = getCurrentUser();
+        Project project = projectRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + id));
+
+        if (request.getName() != null) {
+            project.setName(request.getName());
+        }
+        if (request.getDescription() != null) {
+            project.setDescription(request.getDescription());
+        }
+        if (request.getColor() != null) {
+            project.setColor(request.getColor());
+        }
+
+        Project updatedProject = projectRepository.save(project);
+        return ProjectResponse.fromEntity(updatedProject);
+    }
+
+    @Transactional
+    public void deleteProject(Long id) {
+        User currentUser = getCurrentUser();
+        Project project = projectRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + id));
+
+        // Soft delete - just archive it
+        project.setArchived(true);
+        projectRepository.save(project);
+    }
+
+    public ProjectResponse getProjectById(Long id) {
+        User currentUser = getCurrentUser();
+        Project project = projectRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + id));
+        
+        return ProjectResponse.fromEntity(project);
+    }
+}
+
+#+end_src
+**** Step 4: Create ResourceNotFoundException
+=backend/src/main/java/com/worksweet/exception/ResourceNotFoundException.java=:
+#+begin_src java
+package com.worksweet.exception;
+
+public class ResourceNotFoundException extends RuntimeException {
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+}
+
+#+end_src
+Update =GlobalExceptionHandler.java=:
+#+begin_src java
+// Add this method to GlobalExceptionHandler
+@ExceptionHandler(ResourceNotFoundException.class)
+public ResponseEntity<Map<String, String>> handleResourceNotFound(ResourceNotFoundException ex) {
+    Map<String, String> error = new HashMap<>();
+    error.put("error", ex.getMessage());
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+}
+
+#+end_src
+**** Step 5: Create Project Controller
+=backend/src/main/java/com/worksweet/controller/ProjectController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import com.worksweet.dto.MessageResponse;
+import com.worksweet.dto.ProjectRequest;
+import com.worksweet.dto.ProjectResponse;
+import com.worksweet.service.ProjectService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/projects")
+@RequiredArgsConstructor
+public class ProjectController {
+
+    private final ProjectService projectService;
+
+    @GetMapping
+    public ResponseEntity<List<ProjectResponse>> getAllProjects(
+            @RequestParam(required = false, defaultValue = "false") boolean includeArchived
+    ) {
+        List<ProjectResponse> projects = projectService.getAllProjects(includeArchived);
+        return ResponseEntity.ok(projects);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProjectResponse> getProjectById(@PathVariable Long id) {
+        ProjectResponse project = projectService.getProjectById(id);
+        return ResponseEntity.ok(project);
+    }
+
+    @PostMapping
+    public ResponseEntity<ProjectResponse> createProject(@Valid @RequestBody ProjectRequest request) {
+        ProjectResponse project = projectService.createProject(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(project);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ProjectResponse> updateProject(
+            @PathVariable Long id,
+            @Valid @RequestBody ProjectRequest request
+    ) {
+        ProjectResponse project = projectService.updateProject(id, request);
+        return ResponseEntity.ok(project);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<MessageResponse> deleteProject(@PathVariable Long id) {
+        projectService.deleteProject(id);
+        return ResponseEntity.ok(new MessageResponse("Project archived successfully"));
+    }
+}
+
+#+end_src
+*** Testing with Postman
+*Test 1: Create Project*
+#+begin_src markup
+POST http://localhost:8080/api/projects
+Authorization: Bearer [your-token]
+Content-Type: application/json
+
+{
+  "name": "Work Sweet Development",
+  "description": "Building the MVP",
+  "color": "#8B5CF6"
+}
+
+Expected: 201 Created
+
+#+end_src
+*Test 2: List Projects*
+#+begin_src markup
+GET http://localhost:8080/api/projects
+Authorization: Bearer [your-token]
+
+Expected: 200 OK with array of projects
+
+#+end_src
+*Test 3: Update Project*
+#+begin_src markup
+PUT http://localhost:8080/api/projects/1
+Authorization: Bearer [your-token]
+Content-Type: application/json
+
+{
+  "name": "Work Sweet MVP",
+  "color": "#10B981"
+}
+
+Expected: 200 OK
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #5: Implement Project CRUD endpoints with authorization"
+git push origin main
+
+#+end_src
+-----
+
+** Issue #6: Task CRUD Endpoints with Filters
+*Milestone:* API Endpoints
+*Estimate:* 2.5 hours
+*Labels:* =backend=, =api=, =tasks=, =day-1=
+*** Description
+Implement full CRUD operations for Tasks with filtering by status, priority, project, and assignee.
+*** Acceptance Criteria
+- [ ] GET =/api/tasks= - List tasks with filters (status, priority, projectId, assignedTo)
+- [ ] GET =/api/tasks/{id}= - Get single task with checklist items
+- [ ] POST =/api/tasks= - Create new task
+- [ ] PUT =/api/tasks/{id}= - Update task
+- [ ] DELETE =/api/tasks/{id}= - Delete task
+- [ ] PUT =/api/tasks/{id}/position= - Update task position (for drag & drop)
+*** Implementation
+**** Step 1: Create Task Repository
+=backend/src/main/java/com/worksweet/repository/TaskRepository.java=:
+#+begin_src java
+package com.worksweet.repository;
+
+import com.worksweet.model.Task;
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import com.worksweet.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface TaskRepository extends JpaRepository<Task, Long> {
+    
+    @Query("SELECT t FROM Task t WHERE t.project.owner = :user " +
+           "AND (:projectId IS NULL OR t.project.id = :projectId) " +
+           "AND (:status IS NULL OR t.status = :status) " +
+           "AND (:priority IS NULL OR t.priority = :priority) " +
+           "AND (:assignedToId IS NULL OR t.assignedTo.id = :assignedToId) " +
+           "ORDER BY t.position ASC, t.createdAt DESC")
+    List<Task> findTasksWithFilters(
+            @Param("user") User user,
+            @Param("projectId") Long projectId,
+            @Param("status") TaskStatus status,
+            @Param("priority") TaskPriority priority,
+            @Param("assignedToId") Long assignedToId
+    );
+
+    @Query("SELECT t FROM Task t WHERE t.project.owner = :user AND t.id = :id")
+    Optional<Task> findByIdAndOwner(@Param("id") Long id, @Param("user") User user);
+
+    @Query("SELECT MAX(t.position) FROM Task t WHERE t.project.id = :projectId AND t.status = :status")
+    Integer findMaxPositionByProjectAndStatus(@Param("projectId") Long projectId, @Param("status") TaskStatus status);
+}
+
+#+end_src
+**** Step 2: Create Task DTOs
+=backend/src/main/java/com/worksweet/dto/TaskRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+import java.time.LocalDate;
+
+@Data
+public class TaskRequest {
+    
+    @NotBlank(message = "Title is required")
+    @Size(min = 1, max = 255, message = "Title must be between 1 and 255 characters")
+    private String title;
+
+    private String description;
+
+    private TaskStatus status;
+
+    private TaskPriority priority;
+
+    @NotNull(message = "Project ID is required")
+    private Long projectId;
+
+    private Long assignedToId;
+
+    private LocalDate dueDate;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/TaskResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.Task;
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class TaskResponse {
+    private Long id;
+    private String title;
+    private String description;
+    private TaskStatus status;
+    private TaskPriority priority;
+    private Long projectId;
+    private String projectName;
+    private String projectColor;
+    private Long assignedToId;
+    private String assignedToName;
+    private String assignedToAvatarColor;
+    private Long createdById;
+    private String createdByName;
+    private LocalDate dueDate;
+    private Integer position;
+    private List<ChecklistItemResponse> checklistItems;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public static TaskResponse fromEntity(Task task) {
+        return TaskResponse.builder()
+                .id(task.getId())
+                .title(task.getTitle())
+                .description(task.getDescription())
+                .status(task.getStatus())
+                .priority(task.getPriority())
+                .projectId(task.getProject().getId())
+                .projectName(task.getProject().getName())
+                .projectColor(task.getProject().getColor())
+                .assignedToId(task.getAssignedTo() != null ? task.getAssignedTo().getId() : null)
+                .assignedToName(task.getAssignedTo() != null ? task.getAssignedTo().getName() : null)
+                .assignedToAvatarColor(task.getAssignedTo() != null ? task.getAssignedTo().getAvatarColor() : null)
+                .createdById(task.getCreatedBy().getId())
+                .createdByName(task.getCreatedBy().getName())
+                .dueDate(task.getDueDate())
+                .position(task.getPosition())
+                .checklistItems(task.getChecklistItems() != null 
+                        ? task.getChecklistItems().stream()
+                                .map(ChecklistItemResponse::fromEntity)
+                                .collect(Collectors.toList())
+                        : List.of())
+                .createdAt(task.getCreatedAt())
+                .updatedAt(task.getUpdatedAt())
+                .build();
+    }
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/ChecklistItemResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.ChecklistItem;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ChecklistItemResponse {
+    private Long id;
+    private String text;
+    private Boolean completed;
+    private Integer position;
+
+    public static ChecklistItemResponse fromEntity(ChecklistItem item) {
+        return ChecklistItemResponse.builder()
+                .id(item.getId())
+                .text(item.getText())
+                .completed(item.getCompleted())
+                .position(item.getPosition())
+                .build();
+    }
+}
+
+#+end_src
+**** Step 3: Create Task Service
+=backend/src/main/java/com/worksweet/service/TaskService.java=:
+#+begin_src java
+package com.worksweet.service;
+
+import com.worksweet.dto.TaskRequest;
+import com.worksweet.dto.TaskResponse;
+import com.worksweet.exception.ResourceNotFoundException;
+import com.worksweet.model.*;
+import com.worksweet.repository.ProjectRepository;
+import com.worksweet.repository.TaskRepository;
+import com.worksweet.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class TaskService {
+
+    private final TaskRepository taskRepository;
+    private final ProjectRepository projectRepository;
+    private final UserRepository userRepository;
+
+    private User getCurrentUser() {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    }
+
+    public List<TaskResponse> getAllTasks(Long projectId, TaskStatus status, TaskPriority priority, Long assignedToId) {
+        User currentUser = getCurrentUser();
+        List<Task> tasks = taskRepository.findTasksWithFilters(
+                currentUser,
+                projectId,
+                status,
+                priority,
+                assignedToId
+        );
+
+        return tasks.stream()
+                .map(TaskResponse::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    public TaskResponse getTaskById(Long id) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        return TaskResponse.fromEntity(task);
+    }
+
+    @Transactional
+    public TaskResponse createTask(TaskRequest request) {
+        User currentUser = getCurrentUser();
+
+        // Verify project belongs to user
+        Project project = projectRepository.findByIdAndOwner(request.getProjectId(), currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + request.getProjectId()));
+
+        // Get assigned user if specified
+        User assignedTo = null;
+        if (request.getAssignedToId() != null) {
+            assignedTo = userRepository.findById(request.getAssignedToId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + request.getAssignedToId()));
+        }
+
+        // Calculate position (add to end of column)
+        TaskStatus status = request.getStatus() != null ? request.getStatus() : TaskStatus.TODO;
+        Integer maxPosition = taskRepository.findMaxPositionByProjectAndStatus(project.getId(), status);
+        int newPosition = (maxPosition != null) ? maxPosition + 1 : 0;
+
+        Task task = Task.builder()
+                .title(request.getTitle())
+                .description(request.getDescription())
+                .status(status)
+                .priority(request.getPriority() != null ? request.getPriority() : TaskPriority.NORMAL)
+                .project(project)
+                .assignedTo(assignedTo)
+                .createdBy(currentUser)
+                .dueDate(request.getDueDate())
+                .position(newPosition)
+                .build();
+
+        Task savedTask = taskRepository.save(task);
+        return TaskResponse.fromEntity(savedTask);
+    }
+
+    @Transactional
+    public TaskResponse updateTask(Long id, TaskRequest request) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        if (request.getTitle() != null) {
+            task.setTitle(request.getTitle());
+        }
+        if (request.getDescription() != null) {
+            task.setDescription(request.getDescription());
+        }
+        if (request.getStatus() != null) {
+            // If status changed, recalculate position
+            if (!task.getStatus().equals(request.getStatus())) {
+                Integer maxPosition = taskRepository.findMaxPositionByProjectAndStatus(
+                        task.getProject().getId(),
+                        request.getStatus()
+                );
+                task.setPosition((maxPosition != null) ? maxPosition + 1 : 0);
+            }
+            task.setStatus(request.getStatus());
+        }
+        if (request.getPriority() != null) {
+            task.setPriority(request.getPriority());
+        }
+        if (request.getAssignedToId() != null) {
+            User assignedTo = userRepository.findById(request.getAssignedToId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+            task.setAssignedTo(assignedTo);
+        }
+        if (request.getDueDate() != null) {
+            task.setDueDate(request.getDueDate());
+        }
+
+        Task updatedTask = taskRepository.save(task);
+        return TaskResponse.fromEntity(updatedTask);
+    }
+
+    @Transactional
+    public void deleteTask(Long id) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        taskRepository.delete(task);
+    }
+
+    @Transactional
+    public TaskResponse updateTaskPosition(Long id, Integer newPosition, TaskStatus newStatus) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        if (newStatus != null && !task.getStatus().equals(newStatus)) {
+            task.setStatus(newStatus);
+        }
+        
+        task.setPosition(newPosition);
+        Task updatedTask = taskRepository.save(task);
+        return TaskResponse.fromEntity(updatedTask);
+    }
+}
+
+#+end_src
+**** Step 4: Create Task Controller
+=backend/src/main/java/com/worksweet/controller/TaskController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import com.worksweet.dto.MessageResponse;
+import com.worksweet.dto.TaskRequest;
+import com.worksweet.dto.TaskResponse;
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import com.worksweet.service.TaskService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/tasks")
+@RequiredArgsConstructor
+public class TaskController {
+
+    private final TaskService taskService;
+
+    @GetMapping
+    public ResponseEntity<List<TaskResponse>> getAllTasks(
+            @RequestParam(required = false) Long projectId,
+            @RequestParam(required = false) TaskStatus status,
+            @RequestParam(required = false) TaskPriority priority,
+            @RequestParam(required = false) Long assignedToId
+    ) {
+        List<TaskResponse> tasks = taskService.getAllTasks(projectId, status, priority, assignedToId);
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TaskResponse> getTaskById(@PathVariable Long id) {
+        TaskResponse task = taskService.getTaskById(id);
+        return ResponseEntity.ok(task);
+    }
+
+    @PostMapping
+    public ResponseEntity<TaskResponse> createTask(@Valid @RequestBody TaskRequest request) {
+        TaskResponse task = taskService.createTask(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(task);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TaskResponse> updateTask(
+            @PathVariable Long id,
+            @Valid @RequestBody TaskRequest request
+    ) {
+        TaskResponse task = taskService.updateTask(id, request);
+        return ResponseEntity.ok(task);
+    }
+
+    @PutMapping("/{id}/position")
+    public ResponseEntity<TaskResponse> updateTaskPosition(
+            @PathVariable Long id,
+            @RequestBody Map<String, Object> updates
+    ) {
+        Integer newPosition = (Integer) updates.get("position");
+        String statusStr = (String) updates.get("status");
+        TaskStatus newStatus = statusStr != null ? TaskStatus.valueOf(statusStr) : null;
+
+        TaskResponse task = taskService.updateTaskPosition(id, newPosition, newStatus);
+        return ResponseEntity.ok(task);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<MessageResponse> deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
+        return ResponseEntity.ok(new MessageResponse("Task deleted successfully"));
+    }
+}
+
+#+end_src
+*** Testing with Postman
+*Test 1: Create Task*
+#+begin_src markup
+POST http://localhost:8080/api/tasks
+Authorization: Bearer [your-token]
+Content-Type: application/json
+
+{
+  "title": "Implement QuickTaskInput component",
+  "description": "The signature frictionless task creation feature",
+  "status": "TODO",
+  "priority": "HIGH",
+  "projectId": 1
+}
+
+Expected: 201 Created
+
+#+end_src
+*Test 2: List Tasks with Filters*
+#+begin_src markup
+GET http://localhost:8080/api/tasks?status=TODO&priority=HIGH
+Authorization: Bearer [your-token]
+
+Expected: 200 OK with filtered tasks
+
+#+end_src
+*Test 3: Update Task Status (Drag & Drop)*
+#+begin_src markup
+PUT http://localhost:8080/api/tasks/1/position
+Authorization: Bearer [your-token]
+Content-Type: application/json
+
+{
+  "position": 0,
+  "status": "IN_PROGRESS"
+}
+
+Expected: 200 OK
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #6: Implement Task CRUD endpoints with filtering and positioning"
+git push origin main
+
+#+end_src
+-----
+
+** Milestone 2 "Flex" Section: Testing & Deployment Prep
+*Estimate:* 2 hours
+*Labels:* =backend=, =testing=, =deployment=, =day-1=
+*** Tasks
+**** 1. Create Comprehensive Postman Collection
+Create =backend/docs/postman-collection.json=:
+#+begin_src json
+{
+  "info": {
+    "name": "Work Sweet API",
+    "description": "Full API documentation for Work Sweet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@worksweet.dev\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {"raw": "http://localhost:8080/api/auth/register"}
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@worksweet.dev\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {"raw": "http://localhost:8080/api/auth/login"}
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:8080"},
+    {"key": "token", "value": ""}
+  ]
+}
+
+#+end_src
+**** 2. Add API Documentation to README
+Update =backend/README.md=:
+#+begin_src markdown
+# Work Sweet Backend API
+
+Spring Boot REST API for Work Sweet project management.
+
+## Quick Start
+
+```bash
+# Start database
+docker-compose up -d
+
+# Run application
+./mvnw spring-boot:run
+
+#+end_src
+** API Endpoints
+*** Authentication
+#+begin_src markup
+POST   /api/auth/register  - Register new user
+POST   /api/auth/login     - Login and get JWT
+
+#+end_src
+*** Projects
+#+begin_src markup
+GET    /api/projects           - List user's projects
+POST   /api/projects           - Create project
+GET    /api/projects/{id}      - Get project by ID
+PUT    /api/projects/{id}      - Update project
+DELETE /api/projects/{id}      - Archive project
+
+#+end_src
+*** Tasks
+#+begin_src markup
+GET    /api/tasks              - List tasks (with filters)
+POST   /api/tasks              - Create task
+GET    /api/tasks/{id}         - Get task by ID
+PUT    /api/tasks/{id}         - Update task
+PUT    /api/tasks/{id}/position - Update position (drag & drop)
+DELETE /api/tasks/{id}         - Delete task
+
+#+end_src
+*** Query Parameters for GET /api/tasks
+- =projectId= - Filter by project
+- =status= - Filter by status (TODO, IN_PROGRESS, DONE)
+- =priority= - Filter by priority (NONE, LOW, NORMAL, HIGH, URGENT)
+- =assignedToId= - Filter by assigned user
+** Environment Variables
+#+begin_src properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/worksweet
+spring.datasource.username=worksweet
+spring.datasource.password=worksweet_dev_pass
+app.jwt.secret=[your-secret-key]
+
+#+end_src
+** Tech Stack
+- Java 17
+- Spring Boot 3.x
+- PostgreSQL 15
+- JWT Authentication
+- Lombok
+#+begin_src markup
+
+#### 3. Deploy Backend to Railway
+
+Create `backend/railway.json`:
+
+```json
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "./mvnw clean package -DskipTests"
+  },
+  "deploy": {
+    "startCommand": "java -jar target/backend-0.0.1-SNAPSHOT.jar",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  }
+}
+
+#+end_src
+*Deployment Steps:*
+1. Go to [[https://railway.app/][railway.app]]
+1. Sign in with GitHub
+1. New Project → Deploy from GitHub repo
+1. Select =work-sweet= repository
+1. Add PostgreSQL service
+1. Add environment variables:
+  
+  #+begin_src markup
+  SPRING_DATASOURCE_URL=postgresql://[railway-postgres-url]SPRING_DATASOURCE_USERNAME=[from-railway]SPRING_DATASOURCE_PASSWORD=[from-railway]APP_JWT_SECRET=WorkSweetProductionSecretKeyThatIsAtLeast256BitsLongForHS256APP_CORS_ALLOWED_ORIGINS=https://work-sweet.vercel.app
+  
+  #+end_src
+1. Deploy!
+**** 4. Create Seed Data Script (Optional but Recommended)
+=backend/src/main/java/com/worksweet/util/DataSeeder.java=:
+#+begin_src java
+package com.worksweet.util;
+
+import com.worksweet.model.*;
+import com.worksweet.repository.ProjectRepository;
+import com.worksweet.repository.TaskRepository;
+import com.worksweet.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+
+@Component
+@Profile("dev") // Only runs in dev profile
+@RequiredArgsConstructor
+@Slf4j
+public class DataSeeder implements CommandLineRunner {
+
+    private final UserRepository userRepository;
+    private final ProjectRepository projectRepository;
+    private final TaskRepository taskRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    @Override
+    public void run(String... args) {
+        if (userRepository.count() == 0) {
+            seedData();
+        }
+    }
+
+    private void seedData() {
+        log.info("Seeding demo data...");
+
+        // Create demo user
+        User demo = User.builder()
+                .name("Demo User")
+                .email("demo@worksweet.dev")
+                .password(passwordEncoder.encode("demo123"))
+                .avatarColor("#8B5CF6")
+                .active(true)
+                .build();
+        demo = userRepository.save(demo);
+
+        // Create demo project
+        Project project = Project.builder()
+                .name("Work Sweet MVP")
+                .description("Building the initial version")
+                .color("#3B82F6")
+                .owner(demo)
+                .archived(false)
+                .build();
+        project = projectRepository.save(project);
+
+        // Create demo tasks
+        Task task1 = Task.builder()
+                .title("Design database schema")
+                .description("Plan out the data models")
+                .status(TaskStatus.DONE)
+                .priority(TaskPriority.HIGH)
+                .project(project)
+                .createdBy(demo)
+                .position(0)
+                .build();
+
+        Task task2 = Task.builder()
+                .title("Build authentication")
+                .description("Implement JWT auth with Spring Security")
+                .status(TaskStatus.DONE)
+                .priority(TaskPriority.URGENT)
+                .project(project)
+                .createdBy(demo)
+                .position(1)
+                .build();
+
+        Task task3 = Task.builder()
+                .title("Create task CRUD endpoints")
+                .description("Full CRUD with filters")
+                .status(TaskStatus.IN_PROGRESS)
+                .priority(TaskPriority.HIGH)
+                .project(project)
+                .createdBy(demo)
+                .dueDate(LocalDate.now().plusDays(2))
+                .position(0)
+                .build();
+
+        Task task4 = Task.builder()
+                .title("Build QuickTaskInput component")
+                .description("The signature frictionless task creation UI")
+                .status(TaskStatus.TODO)
+                .priority(TaskPriority.HIGH)
+                .project(project)
+                .createdBy(demo)
+                .position(0)
+                .build();
+
+        taskRepository.save(task1);
+        taskRepository.save(task2);
+        taskRepository.save(task3);
+        taskRepository.save(task4);
+
+        log.info("Demo data seeded successfully!");
+        log.info("Login with: demo@worksweet.dev / demo123");
+    }
+}
+
+#+end_src
+Enable dev profile in =application.properties=:
+#+begin_src properties
+# Add at the bottom
+spring.profiles.active=dev
+
+#+end_src
+*** Final Testing Checklist
+#+begin_src bash
+# Restart application with seed data
+./mvnw spring-boot:run
+
+# Test full workflow:
+# 1. Register user
+# 2. Login (get token)
+# 3. Create project
+# 4. Create 3 tasks
+# 5. Update task status
+# 6. Filter by status
+# 7. Delete a task
+
+# All should work!
+
+#+end_src
+*** Final Commit
+#+begin_src bash
+git add .
+git commit -m "Day 1 Complete: Backend API fully functional with auth, projects, and tasks"
+git push origin main
+
+#+end_src
+-----
+
+** 🎉 DAY 1 COMPLETE!
+*** What You've Built:
+✅ *Spring Boot API* running on =http://localhost:8080=
+✅ *PostgreSQL database* with full schema
+✅ *JWT Authentication* with register/login
+✅ *Project Management* - Full CRUD
+✅ *Task Management* - Full CRUD with filters
+✅ *Drag & Drop Support* - Position updates
+✅ *Authorization* - Users can only see their own data
+✅ *Seed Data* - Demo content for testing
+✅ *Postman Collection* - Full API documentation
+✅ *Ready for Deployment* - Railway config included
+*** Tomorrow (Day 2):
+- Next.js 16 frontend
+- Your component library integration
+- QuickTaskInput (the showpiece)
+- Slash command menu
+- Kanban board with drag & drop
+- Visual color system
+- Deploy to Vercel
+*** Tonight:
+*Celebrate!* You just built a production-grade API in one day. 🚀
+*Get rest.* Tomorrow is the visual magic.
+-----
+
+*Want me to review your code at any checkpoint? Just send a screenshot or ask questions. I'm here as your accountability partner!* 💪

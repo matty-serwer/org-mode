@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       82348d62-33d7-45a8-b643-7248ac4a79c6
+:REFLECT_ID: 60fa71670b97429589c050bdc42dfe8f
+:CREATED:  [2026-04-02 Thu 19:10]
+:MODIFIED: [2026-04-02 Thu 19:10]
+:END:
+#+title: Trainspotting
+#+filetags: :concept:
+#+date: 2026-04-02
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1f6b1fd6-d3c7-4fa7-9b30-46c5bd11c6ca
+:REFLECT_ID: 0ce8941a5d4247ecb076afb562446588
+:CREATED:  [2026-03-14 Sat 03:42]
+:MODIFIED: [2026-03-14 Sat 03:42]
+:END:
+#+title: tree command
+#+filetags: :concept:
+#+date: 2026-03-14
+

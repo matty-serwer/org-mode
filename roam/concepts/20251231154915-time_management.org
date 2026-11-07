@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3eca63c6-f7fb-4416-bb70-6e5a767112d4
+:REFLECT_ID: 8b4f4b4ecd394c498d52bf4cbb013fc1
+:CREATED:  [2025-12-31 Wed 15:49]
+:MODIFIED: [2025-12-31 Wed 15:49]
+:END:
+#+title: Time Management
+#+filetags: :concept:
+#+date: 2025-12-31
+

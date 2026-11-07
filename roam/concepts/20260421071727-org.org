@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2063c1d1-cad0-41e5-908b-c9f827c336b8
+:REFLECT_ID: acd5d570449a40ad88d4e3f091d6d39d
+:CREATED:  [2026-04-21 Tue 07:17]
+:MODIFIED: [2026-04-21 Tue 07:17]
+:END:
+#+title: org
+#+filetags: :concept:
+#+date: 2026-04-21
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       97c10566-6fdd-4d83-b21c-e024bc113f39
+:REFLECT_ID: f822bb6202d644d09de14b983698e4ba
+:CREATED:  [2026-01-14 Wed 15:52]
+:MODIFIED: [2026-01-14 Wed 15:52]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-01-14
+

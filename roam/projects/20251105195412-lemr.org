@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       ed1a7a1f-dbb5-445f-b451-b447a2b9a230
+:REFLECT_ID: 079c644115fd4ecaa8b3a6b53702bd66
+:CREATED:  [2025-11-05 Wed 19:54]
+:MODIFIED: [2026-04-08 Wed 21:33]
+:END:
+#+title: 💾 LEMR
+#+filetags: :project:
+#+date: 2025-11-05
+- LEMR TODO
+  - [ ] Create new planning documents with a focus on backend efficiency & internet usage
+  - [ ] Spring Boot MVP
+  - [ ] Next.JS Frontend MVP
+    - [ ] Integrate LTD UI Components
+    - [ ] Variable input, from notepad to SOAP notes
+- LEMR Notes
+  - [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]]
+    - [[id:cc881a95-aa7e-4252-a6e5-d6eec35de697][LEMR Techstack #schema #app-doc]]
+    - [[id:4b177f4e-aa41-45fb-bbe2-dbb919f2e278][LEMR Basic Data Types & Road Map]]

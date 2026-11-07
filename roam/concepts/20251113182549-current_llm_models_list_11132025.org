@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       3b3cb617-fe42-4b84-bc23-508380a55aca
+:REFLECT_ID: 64a4c67154da4b028a2ac9174dc0fee3
+:CREATED:  [2025-11-13 Thu 18:25]
+:MODIFIED: [2025-11-13 Thu 18:36]
+:END:
+#+title: Current LLM Models List 11/13/2025
+#+filetags: :concept:
+#+date: 2025-11-13
+* Current [[id:775bdfad-4e61-4c2a-9139-ea01f1e8514d][LLM]] Models List [[id:a486d836-9471-48ab-bdaa-44b1cd98a7f1][11/13/2025]]
+- Anthropic
+  - Claude
+    - 4.1/Opus, 4.5 Sonnet, Haiku 4.5
+    - 3.7 Sonnet, Sonnet 4
+- OpenAI
+  - GPT
+    - 5
+    - 4o
+    - 4.1
+    - o3-mini
+    - gpt-oss-120B
+- Grok (xAI)
+  - Grok
+    - 4 / 4 Heavy
+    - 3 / 3 Mini
+    - 2 Image
+- Google
+  - Gemini
+    - 2.5 Pro
+    - 2.0 Flash / Pro
+    - 1.5 Pro
+- Perpetuity / Agentic
+  - PARIS
+- Alibaba
+  - Qwen
+    - 3-235B-2507
+    - 2.5
+- Meta
+  - Llama
+    - 4 Scout
+    - 3.1
+- DeepSeek
+  - DeepSeek
+    - V3
+    - R1
+- Mistral
+  - Mixtral
+    - Large 2
+- OpenAI (Open Source)
+  - gpt-oss-120B
+- Microsoft
+  - Phi-3
+    - Mini
+    - Medium
+- Databricks
+  - DBRX
+- Falcon
+  - Falcon
+    - 180B

@@ -1,0 +1,386 @@
+:PROPERTIES:
+:ID:       ba8ecef1-5cbe-42a0-9781-06bbd3bb5504
+:REFLECT_ID: c70a9d1e959a46b29647367be27969f0
+:CREATED:  [2025-11-16 Sun 19:24]
+:MODIFIED: [2025-11-16 Sun 19:35]
+:END:
+#+title: Functional Properties of Roam Research: User Story Perspective
+#+filetags: :concept:schema:
+#+date: 2025-11-16
+* Functional Properties of [[id:26ab52b3-41fc-4633-8f5a-c98908ea41b9][Roam Research]]: User Story Perspective
+*** *1. Bi-directional Linking & Page Creation*[1][2][3]
+- *Create pages on-the-fly with double brackets* =[[Page Name]]=[4][1]
+  - Automatically generates new pages when wrapping text in =[[brackets]]=
+  - Creates instant bi-directional connections between pages
+  - Pages update automatically when renamed (global auto-update)[5][6]
+- *Create pages with hashtags* =#PageName=[7][3]
+  - Alternative syntax for page creation and linking
+  - Functions identically to bracket notation
+- *Linked References display*[8][2][1]
+  - Automatically aggregates all explicit links to current page[9]
+  - Shows context of where each reference appears
+  - Displays page-level and block-level references[3]
+- *Unlinked References detection*[10][9]
+  - Identifies plain text mentions without explicit links
+  - Convert unlinked to linked references with one click[9]
+  - Searches for page title variations across database
+*** *2. Block-Level Operations*[11][1][8]
+- *Block References* =((=[12][13][1]
+  - Reference individual blocks across the entire database
+  - Type =((= to search and link to any block ever written
+  - Right-click bullet to copy block reference[12]
+  - Referenced blocks are read-only displays[14]
+  - Updates synchronize when original block changes[15][11]
+- *Block Embeds*[13][11][14]
+  - Embed editable copies of blocks elsewhere
+  - Use =/embed= or ={{embed: ((block-id))}}=
+  - Pulls in all child/nested blocks underneath[13][14]
+  - Changes to embedded blocks update original source[13]
+  - Fully editable in-place[14]
+- *Block-level structure*[16]
+  - Every bullet point has unique identifier
+  - Blocks are reusable and remixable anywhere[12]
+  - Organize information at granular paragraph level
+*** *3. Daily Notes & Journaling*[2][17][18][19]
+- *Automatic daily page creation*[17][18]
+  - New dated page generated each day automatically
+  - Opens to today's date by default[19]
+  - Chronological organization by temporal order[20][21]
+- *Interstitial journaling*[21][22]
+  - Capture thoughts throughout the day
+  - Time-stamped entries within daily notes
+  - Link to people, projects, and topics inline[19]
+- *Daily Notes as central capture point*[23][24]
+  - Primary inbox for all information
+  - Tasks, meetings, and ideas captured in one place[23]
+  - Content auto-organizes via links and references[19]
+*** *4. Search & Navigation*[25][2][17]
+- *Global search* (=Cmd/Ctrl + U=)[26][27][17]
+  - Fuzzy search across entire database[6][5]
+  - Search by page titles and content
+  - Create new pages directly from search[17]
+  - Open search results in sidebar with =Shift + Enter=[27][28]
+- *Page-level search* (=Cmd/Ctrl + F=)[27]
+  - Find text within current page only
+  - Browser search function as alternative[29]
+- *Page navigation shortcuts*[28][27]
+  - Jump to Daily Notes (=Ctrl + Shift + D=)[28][27]
+  - Back/forward navigation between pages[30]
+  - =Ctrl + O= to follow link under cursor[27][28]
+  - =Ctrl + Shift + O= to open link in sidebar[28][27]
+*** *5. Filtering & Queries*[31][32][8][2]
+- *Page-level filters*[8][2][31]
+  - Filter icon shows/hides blocks with specific tags[2]
+  - Include or exclude specific references[33]
+  - Boolean logic (AND, OR, NOT) support[34][2]
+  - Filter linked references by combinations[31]
+- *Embedded queries* ={{query: }}=[32][35][36]
+  - Search entire database inline on any page[32]
+  - Boolean operators: =and:=, =or:=, =not:=[36][2][32]
+  - Date range queries with =between:=[36][32]
+  - Results display dynamically on page[34][32]
+  - Filter tasks by tags, dates, and criteria[37][32]
+- *Query syntax examples*[32][34][36]
+  - ={{query: {and: [[TODO]]}}}=[32]
+  - ={{query: {and: [[TODO]] {not: [[someday]]}}}=[32]
+  - ={{query: {and: [[TODO]] {between: [[date1]] [[date2]]}}}=[32]
+*** *6. Sidebar Management*[38][39][8]
+- *Left sidebar navigation*[38][17]
+  - Access Daily Notes, Graph Overview, All Pages
+  - Shortcuts section for favorited pages[2][17]
+  - Toggle visibility with =Cmd/Ctrl + /=[38][2]
+- *Right sidebar for parallel viewing*[39][40][8][38]
+  - =Shift + Click= to open page in sidebar[39][8][38]
+  - View and edit multiple pages simultaneously[40][39]
+  - Sidebars display full editable page content[39]
+  - Changes sync in real-time across panels[39]
+  - Pin pages to always show in sidebar[40]
+  - Open unlimited pages in sidebar stack[40][38]
+  - Drag to resize sidebar width[39]
+- *Context without navigation loss*[2][38]
+  - Access research while writing on main page[38]
+  - Compare different pages side-by-side[40]
+*** *7. Task Management*[41][42][1][2]
+- *TODO creation* (=Cmd/Ctrl + Enter=)[1][27][2]
+  - Convert any block to task checkbox instantly
+  - Type =/TODO= for same functionality[1]
+  - Toggle between TODO and DONE states[27][28]
+- *Automatic task aggregation*[41][1]
+  - All TODOs appear on =[[TODO]]= page automatically[1]
+  - Completed tasks collected on =[[DONE]]= page[1]
+  - Shows context of where each task lives[1]
+- *Task queries and filtering*[42][37][32]
+  - Query tasks by tags, dates, status[42][32]
+  - Create custom task views (unscheduled, later, someday)[32]
+  - Time-based queries for overdue/upcoming tasks[37]
+- *Task organization approaches*[43][41][42]
+  - Scatter tasks throughout graph contextually[1]
+  - Centralized task pages with queries[42][32]
+  - Daily planning and review workflows[42]
+*** *8. Graph Visualization*[44][45][17][2]
+- *Graph Overview*[45][46][17]
+  - Visual network of all pages and connections[44][2]
+  - Node size indicates connection density[44]
+  - Click nodes to highlight connected pages[17]
+  - Double-click to open corresponding page[17]
+- *Filter graph views*[47][45]
+  - Show only wiki-link connections between pages[45][47]
+  - Show content and connections combined[47]
+  - Toggle content/connection visibility[47]
+- *Pattern discovery*[48][45][44]
+  - Identify unexpected relationships between notes[44]
+  - Visual representation of knowledge structure[45][44]
+  - Topical cluster identification[45][47]
+*** *9. Templates & Metadata*[49][50][51][52]
+- *Template creation* =#roam/templates=[51]
+  - Create reusable content structures[51]
+  - Format: TemplateTrigger + #roam/templates + content[51]
+  - Nested blocks auto-insert with template[51]
+- *Template insertion* =;;trigger=[51]
+  - Type =;;= followed by trigger name[51]
+  - Auto-complete dropdown appears[51]
+  - Instant insertion of full template structure
+- *Attributes for metadata* =attribute::=[50][52][53]
+  - Create structured data fields (Author::, Year::, etc.)[52][50]
+  - Attributes function as searchable pages[50]
+  - Build attribute tables with ={{table}}=[53][54]
+  - Query by attribute values[52][53]
+*** *10. Namespaces & Organization*[55][56][26][50]
+- *Namespace syntax* =category/page-name=[56][55]
+  - Create hierarchical organization structure[55]
+  - Forward slash separates namespace levels[55]
+  - Example: =Book/Title= or =Project/Name=[50]
+- *Namespace visibility toggle* (=Ctrl + C + L=)[50][55]
+  - Hide namespace prefix for cleaner display[55]
+  - Links turn green when namespace hidden[55]
+  - Toggle multiple times to cycle visibility[50]
+- *Namespace benefits*[56]
+  - Export creates folder structure automatically[56]
+  - Avoids file system naming conflicts[56]
+  - Prevents ambiguous page titles[26][55]
+  - Groups related pages logically[57]
+*** *11. Text Formatting*[58][49][27]
+- *Markdown support*[59][49][17]
+  - Bold: =**text**= or =Cmd/Ctrl + B=[58][27]
+  - Italic: =*text*= or =Cmd/Ctrl + I=[58][27]
+  - Highlight: =^^text^^= or =Cmd/Ctrl + H=[58][27]
+  - Strikethrough: =Cmd/Ctrl + Y=[27][58]
+  - Inline code: backticks[27]
+  - LaTeX math: =$$formula$$=[58]
+- *Headings* (=Ctrl/Cmd + Alt + 1-3=)[28][27]
+  - Three heading levels (H1, H2, H3)[27]
+  - Reset to paragraph with =Ctrl/Cmd + Alt + 0=[28][27]
+  - Headers require slash menu or keyboard shortcut[49]
+- *Format after selection*[58]
+  - Select text first, then apply formatting[58]
+  - Keyboard shortcuts work on selected text[58]
+*** *12. Block Structure & Outlining*[16][2][27]
+- *Indentation control*[28][27]
+  - =Tab= to indent block[27]
+  - =Shift + Tab= to un-indent[27]
+  - Unlimited nesting depth[16]
+- *Block manipulation*[28][27]
+  - =Ctrl/Cmd + Shift + Up/Down= to move blocks[27]
+  - =Enter= creates new block/bullet[27]
+  - =Shift + Enter= for line break within block[27]
+  - =Esc= to exit block editing mode[60]
+- *Block selection*[60][28][27]
+  - =Shift + Up/Down= selects adjacent blocks[27]
+  - =Ctrl/Cmd + A= selects current block text[27]
+  - =Ctrl/Cmd + Shift + A= selects all blocks[27]
+- *Zoom and focus*[28][27]
+  - =Ctrl/Cmd + .= zoom into block (focus view)[27]
+  - =Ctrl/Cmd + ,= zoom out to normal view[27]
+  - Collapse children with =Ctrl/Cmd + Up=[27]
+  - Expand children with =Ctrl/Cmd + Down=[27]
+*** *13. Data Export & Import*[61][62][5][25]
+- *Export formats*[5][25][61]
+  - JSON format (full data structure)[25][61]
+  - Markdown (human-readable)[62][61][25]
+  - EDN format[61]
+  - Flat Markdown option[61]
+- *Export scopes*[63][61]
+  - Export single page[63][61]
+  - Export entire database (Export All)[62][25][61]
+  - Three-dot menu access[25][61][17]
+- *Data portability*[64][2]
+  - Export preserves bi-directional links[25]
+  - Block references maintained in exports[64]
+  - Markdown exports unzip to folder structure[65][62]
+*** *14. Special Components & Extensions*[66][29][2]
+- *Slash commands* =/=[2][27]
+  - Menu of core functions[28][27]
+  - =/TODO=, =/embed=, =/query=, =/diagram=[29][1][32]
+  - =/drawing= for sketches[29]
+  - Calculator component[2]
+- *Custom components*[26][29]
+  - Enable in Roam Settings[26]
+  - Render with ={{[[roam/render]]}}=[26]
+  - Clojure code blocks for custom functionality[26]
+- *Page-level features*[8][29]
+  - Version control for blocks (=Ctrl + ,=)[29]
+  - Block edit history tracking[27]
+  - Collaborative editing indicators[27]
+*** *15. Page Management*[17][29][2]
+- *All Pages view*[17][26]
+  - List of every page created[17]
+  - Sort by recency, word count, last updated[26]
+  - Shows creation and modification dates[38]
+- *Page operations*[29][50]
+  - Rename pages (updates all references)[6][5][1]
+  - Merge pages by renaming to existing name[29]
+  - Delete pages[29]
+  - Star pages to add to shortcuts[38][17]
+- *Page creation methods*[17][27]
+  - Type =[[text]]= inline while writing[4][1]
+  - Create from search bar[17][27]
+  - Auto-created when referenced[7][1]
+This outline covers Roam Research's fundamental functionality organized by major feature categories, with each feature broken down into specific user-facing capabilities.[18][22][10][3][11]
+Sources
+[1] A Thorough Beginner's Guide to Roam Research - The Sweet Setup [[https://thesweetsetup.com/a-thorough-beginners-guide-to-roam-research/][https://thesweetsetup.com/a-thorough-beginners-guide-to-roam-research/]]
+[2] A Beginner's Guide to Roam Research - SitePoint [[https://www.sitepoint.com/roam-research-beginners-guide/][https://www.sitepoint.com/roam-research-beginners-guide/]]
+[3] Bi-directional links - how is it different from tagging? : r/RoamResearch [[https://www.reddit.com/r/RoamResearch/comments/giei3w/bidirectional_links_how_is_it_different_from/][https://www.reddit.com/r/RoamResearch/comments/giei3w/bidirectional_links_how_is_it_different_from/]]
+[4] Roam Research Basics: Bi Directional Links - YouTube 
+[[https://www.youtube-nocookie.com/embed/2aqfNSWyMFA][youtube: https://www.youtube-nocookie.com/embed/2aqfNSWyMFA]]
+
+[5] Roam Research, new web-based outliner that supports transclusion ... [[https://talk.dynalist.io/t/roam-research-new-web-based-outliner-that-supports-transclusion-wiki-features-thoughts/5911][https://talk.dynalist.io/t/roam-research-new-web-based-outliner-that-supports-transclusion-wiki-features-thoughts/5911]]
+[6] Roam Research and automatic bidirectional relationships between ... [[https://talk.dynalist.io/t/roam-research-and-automatic-bidirectional-relationships-between-nodes/6857][https://talk.dynalist.io/t/roam-research-and-automatic-bidirectional-relationships-between-nodes/6857]]
+[7] Roam Research Bidirectional Links - Questions - Bubble Forum [[https://forum.bubble.io/t/roam-research-bidirectional-links/183445][https://forum.bubble.io/t/roam-research-bidirectional-links/183445]]
+[8] Roam Research: a new way of working with qualitative research data [[https://uxdesign.cc/roam-research-a-new-way-of-working-with-qualitative-research-data-96534b9cd951][https://uxdesign.cc/roam-research-a-new-way-of-working-with-qualitative-research-data-96534b9cd951]]
+[9] Roam Research, new web-based outliner that supports transclusion ... [[https://talk.dynalist.io/t/roam-research-new-web-based-outliner-that-supports-transclusion-wiki-features-thoughts/5911?page=2][https://talk.dynalist.io/t/roam-research-new-web-based-outliner-that-supports-transclusion-wiki-features-thoughts/5911?page=2]]
+[10] Beginner's Guide to Roam Research - YouTube 
+[[https://www.youtube-nocookie.com/embed/A_7_8AAkV7M][youtube: https://www.youtube-nocookie.com/embed/A_7_8AAkV7M]]
+
+[11] Kinneyzhang/roam-block: An all-purpose block ref and ... - GitHub [[https://github.com/Kinneyzhang/roam-block][https://github.com/Kinneyzhang/roam-block]]
+[12] How to Use BLOCK REFERENCES in Roam Research - for Beginners 
+[[https://www.youtube-nocookie.com/embed/WJO7l10xO3g][youtube: https://www.youtube-nocookie.com/embed/WJO7l10xO3g]]
+
+[13] Block References - Making the most of Roam Research - YouTube 
+[[https://www.youtube-nocookie.com/embed/AeR2kHlcljw][youtube: https://www.youtube-nocookie.com/embed/AeR2kHlcljw]]
+
+[14] Block Embed vs Block Reference : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/gjskxo/block_embed_vs_block_reference/][https://www.reddit.com/r/RoamResearch/comments/gjskxo/block_embed_vs_block_reference/]]
+[15] Addicted to Block References MS Office vs. Roam vs. Obsidian [[https://www.zsolt.blog/2021/05/Addicted-to-block-references.html][https://www.zsolt.blog/2021/05/Addicted-to-block-references.html]]
+[16] Roaming through contexts with Roam: How I use it [[https://www.strategicstructures.com/?p=2357][https://www.strategicstructures.com/?p=2357]]
+[17] A beginner's guide to Roam Research: gettings started in 5 easy steps [[https://nesslabs.com/roam-research-beginner-guide][https://nesslabs.com/roam-research-beginner-guide]]
+[18] How to Keep a Journal in Roam Research - [[MarkMcElroy.com][MarkMcElroy.com]] [[https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/][https://markmcelroy.com/how-to-keep-a-journal-in-roam-research/]]
+[19] Notes on a year using Roam Research - by Casey Newton - Substack [[https://substack.com/@platformer/note/p-39370476][https://substack.com/@platformer/note/p-39370476]]
+[20] The killer feature of Roam : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/gojefe/the_killer_feature_of_roam/][https://www.reddit.com/r/RoamResearch/comments/gojefe/the_killer_feature_of_roam/]]
+[21] Organizing Your Notes in Roam - Understanding Pages, Blocks ... [[https://www.zsolt.blog/2021/02/organizing-your-notes-in-roam.html][https://www.zsolt.blog/2021/02/organizing-your-notes-in-roam.html]]
+[22] Interstitial journaling: combining notes, to-do & time tracking [[https://nesslabs.com/interstitial-journaling][https://nesslabs.com/interstitial-journaling]]
+[23] How I Use Roam Research for Journaling - The Sweet Setup [[https://thesweetsetup.com/how-i-use-roam-research-for-journaling/][https://thesweetsetup.com/how-i-use-roam-research-for-journaling/]]
+[24] How to Daily note-taking? : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/rbott0/how_to_daily_notetaking/][https://www.reddit.com/r/RoamResearch/comments/rbott0/how_to_daily_notetaking/]]
+[25] Import from Roam Research - Obsidian Help [[https://help.obsidian.md/import/roam][https://help.obsidian.md/import/roam]]
+[26] How to list namespaces and find more in Roam Research [[https://lifehacky.net/how-to-list-namespaces-and-find-more-in-roam-research-5c25d9f24556][https://lifehacky.net/how-to-list-namespaces-and-find-more-in-roam-research-5c25d9f24556]]
+[27] Keyboard shortcuts for Roam Research → UseTheKeyboard [[https://usethekeyboard.com/roam/][https://usethekeyboard.com/roam/]]
+[28] Roam Research keyboard shortcuts - DefKey [[https://defkey.com/roam-research-shortcuts][https://defkey.com/roam-research-shortcuts]]
+[29] 100 tips to use RoamResearch like a pro - alvistor [[https://alvistor.com/100-tips-to-use-roamresearch-like-a-pro/][https://alvistor.com/100-tips-to-use-roamresearch-like-a-pro/]]
+[30] Navigation on Roam Desktop : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/jl07wy/navigation_on_roam_desktop/][https://www.reddit.com/r/RoamResearch/comments/jl07wy/navigation_on_roam_desktop/]]
+[31] Roam: Why I Love It and How I Use It | Nat Eliason [[https://www.nateliason.com/blog/roam][https://www.nateliason.com/blog/roam]]
+[32] Using Roam Research for GTD-Style Task Management [[https://thesweetsetup.com/using-roam-research-for-gtd-style-task-management/][https://thesweetsetup.com/using-roam-research-for-gtd-style-task-management/]]
+[33] Filters: Fundamentals of Roam Research - YouTube 
+[[https://www.youtube-nocookie.com/embed/wBqUySIvUZc][youtube: https://www.youtube-nocookie.com/embed/wBqUySIvUZc]]
+
+[34] Roam Research vs DEVONthink – Part 5 of 5 – Discovery, Filters ... [[https://www.kouroshdini.com/roam-research-vs-devonthink-part-5-of-5-discovery-filters-and-queries/][https://www.kouroshdini.com/roam-research-vs-devonthink-part-5-of-5-discovery-filters-and-queries/]]
+[35] Deep Dive Into Roam's Data Structure - Why Roam is Much More ... [[https://www.zsolt.blog/2021/01/Roam-Data-Structure-Query.html][https://www.zsolt.blog/2021/01/Roam-Data-Structure-Query.html]]
+[36] Roam Research Search Queries - YouTube 
+[[https://www.youtube-nocookie.com/embed/HoccqyiHvPw][youtube: https://www.youtube-nocookie.com/embed/HoccqyiHvPw]]
+
+[37] Roam + Task Manager? : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/1fh9h42/roam_task_manager/][https://www.reddit.com/r/RoamResearch/comments/1fh9h42/roam_task_manager/]]
+[38] Roam Research: Understanding the Sidebars in Roam - YouTube 
+[[https://www.youtube-nocookie.com/embed/URUXbv1DDxM][youtube: https://www.youtube-nocookie.com/embed/URUXbv1DDxM]]
+
+[39] Making the most of Roam Research: Basics: Using the sidebar 
+[[https://www.youtube-nocookie.com/embed/0EhxAKUpzlo][youtube: https://www.youtube-nocookie.com/embed/0EhxAKUpzlo]]
+
+[40] Next Level Functions in Roam Research (To do's, Sidebar, Block ... 
+[[https://www.youtube-nocookie.com/embed/Eintd95hWjc][youtube: https://www.youtube-nocookie.com/embed/Eintd95hWjc]]
+
+[41] Tasks and notes: A match made in Roam - R.J. Nestor [[https://rjnestor.com/home/tasks-and-notes-a-match-made-in-roam/][https://rjnestor.com/home/tasks-and-notes-a-match-made-in-roam/]]
+[42] Better Task Management in Roam Research - Daniel Wirtz [[https://danielwirtz.com/blog/roam-research-task-management][https://danielwirtz.com/blog/roam-research-task-management]]
+[43] Simple Task Management in Roam Research [[https://www.roamresearchtips.com/simple-task-management-in-roam-research/][https://www.roamresearchtips.com/simple-task-management-in-roam-research/]]
+[44] A Detailed Comparison Of Roam Research vs Obsidian — Otio Blog [[https://otio.ai/blog/roam-research-vs-obsidian][https://otio.ai/blog/roam-research-vs-obsidian]]
+[45] Visualize Connections between Your Notes with Roam Research ... [[https://noduslabs.com/cases/visualize-connections-notes-roam-research-infranodus/][https://noduslabs.com/cases/visualize-connections-notes-roam-research-infranodus/]]
+[46] Roam Research: New Graph Overview - YouTube 
+[[https://www.youtube-nocookie.com/embed/F-xnDulxvaw][youtube: https://www.youtube-nocookie.com/embed/F-xnDulxvaw]]
+
+[47] How to Import and Visualize Your Roam Research, Obsidian and ... [[https://support.noduslabs.com/hc/en-us/articles/360015660099-How-to-Import-and-Visualize-Your-Roam-Research-Obsidian-and-Zettelkasten-Markdown-Format-Notes][https://support.noduslabs.com/hc/en-us/articles/360015660099-How-to-Import-and-Visualize-Your-Roam-Research-Obsidian-and-Zettelkasten-Markdown-Format-Notes]]
+[48] Visualize and Analyze your Roam Research Notes' Content as a ... 
+[[https://www.youtube-nocookie.com/embed/iMk5VNLCxHo][youtube: https://www.youtube-nocookie.com/embed/iMk5VNLCxHo]]
+
+[49] Roam Research Templates - Questions and Help [[https://community.blaze.today/t/roam-research-templates/4529][https://community.blaze.today/t/roam-research-templates/4529]]
+[50] Easily-editable metadata/keywords template - RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/hrnwhg/easilyeditable_metadatakeywords_template/][https://www.reddit.com/r/RoamResearch/comments/hrnwhg/easilyeditable_metadatakeywords_template/]]
+[51] How to use templates in Roam Research [[roam ... - Ness Labs [[https://nesslabs.com/roam-research-templates-tutorial][https://nesslabs.com/roam-research-templates-tutorial]]
+[52] Roam Research | Techiavellian [[https://techiavellian.com/tags/roam-research/][https://techiavellian.com/tags/roam-research/]]
+[53] How to organize highlights and notes in Roam, using attributes and ... 
+[[https://www.youtube-nocookie.com/embed/6NaUrWFejng][youtube: https://www.youtube-nocookie.com/embed/6NaUrWFejng]]
+
+[54] Future Proof Attributes for Roam Research: Academic Workflow Demo 
+[[https://www.youtube-nocookie.com/embed/7A_KMK4qILo][youtube: https://www.youtube-nocookie.com/embed/7A_KMK4qILo]]
+
+[55] Namespaces in Roam Research - Fork My Brain [[https://notes.nicolevanderhoeven.com/Namespaces+in+Roam+Research][https://notes.nicolevanderhoeven.com/Namespaces+in+Roam+Research]]
+[56] Using Namespaces Instead of Prefixes in Roam Research [[http://ruudhein.com/roam-namespaces][http://ruudhein.com/roam-namespaces]]
+[57] Implementing Hierarchies/Namespaces in org-roam (V2) - Discourse [[https://org-roam.discourse.group/t/implementing-hierarchies-namespaces-in-org-roam-v2/1504][https://org-roam.discourse.group/t/implementing-hierarchies-namespaces-in-org-roam-v2/1504]]
+[58] The Roaman Way: IV.i. Text Formatting - YouTube 
+[[https://www.youtube-nocookie.com/embed/9_oKsCJX-zc][youtube: https://www.youtube-nocookie.com/embed/9_oKsCJX-zc]]
+
+[59] Roam Research Compatibility - Quartz 4 [[https://quartz.jzhao.xyz/features/Roam-Research-compatibility][https://quartz.jzhao.xyz/features/Roam-Research-compatibility]]
+[60] Top 10 Roam Shortcuts for Beginners - YouTube 
+[[https://www.youtube-nocookie.com/embed/hWeU14NAgyw][youtube: https://www.youtube-nocookie.com/embed/hWeU14NAgyw]]
+
+[61] How to export your data from Roam Research in many formats 
+[[https://www.youtube-nocookie.com/embed/gLnql1ANCxo][youtube: https://www.youtube-nocookie.com/embed/gLnql1ANCxo]]
+
+[62] How to switch from Roam Research to Obsidian - Ness Labs [[https://nesslabs.com/roam-to-obsidian][https://nesslabs.com/roam-to-obsidian]]
+[63] Import from Roam Research - Craft Help Site [[https://support.craft.do/hc/en-us/articles/15314378779548-Import-from-Roam-Research][https://support.craft.do/hc/en-us/articles/15314378779548-Import-from-Roam-Research]]
+[64] Can I effectively import block references from Roam Research so ... [[https://discuss.logseq.com/t/can-i-effectively-import-block-references-from-roam-research-so-they-link-across-pages/4290][https://discuss.logseq.com/t/can-i-effectively-import-block-references-from-roam-research-so-they-link-across-pages/4290]]
+[65] Cancelling and exporting roam graph : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/18wucex/cancelling_and_exporting_roam_graph/][https://www.reddit.com/r/RoamResearch/comments/18wucex/cancelling_and_exporting_roam_graph/]]
+[66] The 5 Most Fun and Useful Functions in Roam - YouTube 
+[[https://www.youtube-nocookie.com/embed/YnxBHiImmcA][youtube: https://www.youtube-nocookie.com/embed/YnxBHiImmcA]]
+
+[67] Any free guides on how to use Roam? : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/orwlck/any_free_guides_on_how_to_use_roam/][https://www.reddit.com/r/RoamResearch/comments/orwlck/any_free_guides_on_how_to_use_roam/]]
+[68] Roam Research – A note taking tool for networked thought. [[https://roamresearch.com][https://roamresearch.com]]
+[69] How I use Roam Research [[https://blog.kowalczyk.info/article/2af6a10ab74d43a58053b709badb4ad0/how-i-use-roam-research.html][https://blog.kowalczyk.info/article/2af6a10ab74d43a58053b709badb4ad0/how-i-use-roam-research.html]]
+[70] Bidirectional links (similar to Roam Research) - support - HUGO [[https://discourse.gohugo.io/t/bidirectional-links-similar-to-roam-research/26966][https://discourse.gohugo.io/t/bidirectional-links-similar-to-roam-research/26966]]
+[71] Advantages of 'fully horizontal' note-taking in Roam Research [[https://www.facebook.com/groups/p2p.open/posts/3863143463729804/][https://www.facebook.com/groups/p2p.open/posts/3863143463729804/]]
+[72] Querying your discourse graph | RoamResearch ... - GitBook [[https://oasis-lab.gitbook.io/roamresearch-discourse-graph-extension/guides/querying-your-discourse-graph][https://oasis-lab.gitbook.io/roamresearch-discourse-graph-extension/guides/querying-your-discourse-graph]]
+[73] Recreating Roam's block-reference capabilities - Development [[https://org-roam.discourse.group/t/recreating-roams-block-reference-capabilities/1538][https://org-roam.discourse.group/t/recreating-roams-block-reference-capabilities/1538]]
+[74] How to use filters in Roam Research - YouTube 
+[[https://www.youtube-nocookie.com/embed/hx9AmzNUCZY][youtube: https://www.youtube-nocookie.com/embed/hx9AmzNUCZY]]
+
+[75] Gkroam new feature: Implement a roam research like sidebar. - Reddit [[https://www.reddit.com/r/orgmode/comments/iv9q0r/gkroam_new_feature_implement_a_roam_research_like/][https://www.reddit.com/r/orgmode/comments/iv9q0r/gkroam_new_feature_implement_a_roam_research_like/]]
+[76] Roam Research - [[davidyat.es][davidyat.es]] [[https://davidyat.es/2020/05/23/roam-research/][https://davidyat.es/2020/05/23/roam-research/]]
+[77] Running a Query That Returns Results for That Page Only - Reddit [[https://www.reddit.com/r/RoamResearch/comments/q3bdpb/running_a_query_that_returns_results_for_that/][https://www.reddit.com/r/RoamResearch/comments/q3bdpb/running_a_query_that_returns_results_for_that/]]
+[78] How do I convert from Roam Research to Markdown? - Jimmy [[https://marph91.github.io/jimmy/formats/roam_research/][https://marph91.github.io/jimmy/formats/roam_research/]]
+[79] Visualize PKM knowledge graphs: Obsidian, RoamResearch, Logseq [[https://infranodus.com/use-case/visualize-knowledge-graphs-pkm][https://infranodus.com/use-case/visualize-knowledge-graphs-pkm]]
+[80] Graphing/Chart creation Roam directly? : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/101kynm/graphingchart_creation_roam_directly/][https://www.reddit.com/r/RoamResearch/comments/101kynm/graphingchart_creation_roam_directly/]]
+[81] Markdown Highlighter – From Dynalist to Roam Research to Obsidian [[https://forum.obsidian.md/t/markdown-highlighter-from-dynalist-to-roam-research-to-obsidian/8294][https://forum.obsidian.md/t/markdown-highlighter-from-dynalist-to-roam-research-to-obsidian/8294]]
+[82] Regarding Roam Research – Graph Overview (canvas, d3, react) [[https://stackoverflow.com/questions/72816485/regarding-roam-research-graph-overview-canvas-d3-react][https://stackoverflow.com/questions/72816485/regarding-roam-research-graph-overview-canvas-d3-react]]
+[83] Searching for pages in Roam? : r/RoamResearch - Reddit [[https://www.reddit.com/r/RoamResearch/comments/z021sw/searching_for_pages_in_roam/][https://www.reddit.com/r/RoamResearch/comments/z021sw/searching_for_pages_in_roam/]]
+[84] Hotkeys: how to customize your shortcuts in Roam Research [[https://nesslabs.com/roam-research-hotkeys-keyboard-shortcuts][https://nesslabs.com/roam-research-hotkeys-keyboard-shortcuts]]
+[85] Roam Research Keyboard Shortcuts [[https://keycombiner.com/collections/roam-research/][https://keycombiner.com/collections/roam-research/]]
+[86] How does the Readwise to Roam export integration work? [[https://docs.readwise.io/readwise/docs/exporting-highlights/roam][https://docs.readwise.io/readwise/docs/exporting-highlights/roam]]
+[87] Writing with Roam - by Ivo Velitchkov - Link & Think [[https://www.linkandth.ink/p/writing-with-roam][https://www.linkandth.ink/p/writing-with-roam]]
+[88] Making the most of Roam Research: Tasks: Working with Tasks 
+[[https://www.youtube-nocookie.com/embed/UBo27WrWacM][youtube: https://www.youtube-nocookie.com/embed/UBo27WrWacM]]
+
+[89] What's the point of namespaces without queries : r/RoamResearch [[https://www.reddit.com/r/RoamResearch/comments/tvdjsh/whats_the_point_of_namespaces_without_queries/][https://www.reddit.com/r/RoamResearch/comments/tvdjsh/whats_the_point_of_namespaces_without_queries/]]
+[90] My Experience with Roam Research for Project Management [[https://www.analyticvizion.com/post/my-experience-with-roam-research-for-project-management/][https://www.analyticvizion.com/post/my-experience-with-roam-research-for-project-management/]]
+[91] Can Wiki-link gather notes like Roam Research did for internal link? [[https://discourse.devontechnologies.com/t/can-wiki-link-gather-notes-like-roam-research-did-for-internal-link/56468][https://discourse.devontechnologies.com/t/can-wiki-link-gather-notes-like-roam-research-did-for-internal-link/56468]]
+[92] Annoying formatting issues: bold, highlight, italic do not play well ... [[https://www.reddit.com/r/RoamResearch/comments/fa4m05/annoying_formatting_issues_bold_highlight_italic/][https://www.reddit.com/r/RoamResearch/comments/fa4m05/annoying_formatting_issues_bold_highlight_italic/]]
+[93] The Roaman Way: I.iii. Linked & Unlinked References - YouTube 
+[[https://www.youtube-nocookie.com/embed/A5YpP097eMk][youtube: https://www.youtube-nocookie.com/embed/A5YpP097eMk]]
+
+[94] Roam Research vs DEVONthink – Part 3 of 5 – Writing and Pages [[https://www.kouroshdini.com/roam-research-vs-devonthink-part-3-of-5-writing-and-pages/][https://www.kouroshdini.com/roam-research-vs-devonthink-part-3-of-5-writing-and-pages/]]
+[95] Making the most of Roam Research: Basics: Linking and Tagging 
+[[https://www.youtube-nocookie.com/embed/piwB_XOsA9w][youtube: https://www.youtube-nocookie.com/embed/piwB_XOsA9w]]
+
+[96] 70+ Roam Shortcuts - Ultimate Cheat Sheet - Bernard Burch [[https://bernardburch.com/ultimate-roam-shortcuts-cheat-sheet/][https://bernardburch.com/ultimate-roam-shortcuts-cheat-sheet/]]
+[97] Plain-text vs Outliner Focused Features Discussion - Org-roam [[https://org-roam.discourse.group/t/plain-text-vs-outliner-focused-features-discussion/110][https://org-roam.discourse.group/t/plain-text-vs-outliner-focused-features-discussion/110]]
+[98] Roam Research: a simple input to output flow - Ness Labs [[https://nesslabs.com/roam-research-input-output][https://nesslabs.com/roam-research-input-output]]
+[99] Roam Research shortcuts for Mac [[https://www.pie-menu.com/shortcuts/roamResearch][https://www.pie-menu.com/shortcuts/roamResearch]]
+[100] Roam Research Formatting Tips - YouTube 
+[[https://www.youtube-nocookie.com/embed/sgK8rKcrACY][youtube: https://www.youtube-nocookie.com/embed/sgK8rKcrACY]]
+
+[101] Differences between [[id:a5ed306a-385f-45fc-868e-87468b0bd3eb][page link]] and a #tag (Technical and for ... [[https://www.reddit.com/r/RoamResearch/comments/h8v3uk/differences_between_page_link_and_a_tag_technical/][https://www.reddit.com/r/RoamResearch/comments/h8v3uk/differences_between_page_link_and_a_tag_technical/]]
+[102] Roam Research Cheat Sheet - Ness Labs [[https://nesslabs.com/roam-research-cheat-sheet][https://nesslabs.com/roam-research-cheat-sheet]]
+[103] Roam Research: A note-taking tool for networked thought - Off Topic [[https://discuss.kakoune.com/t/roam-research-a-note-taking-tool-for-networked-thought/1503][https://discuss.kakoune.com/t/roam-research-a-note-taking-tool-for-networked-thought/1503]]1 

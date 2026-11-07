@@ -1,0 +1,991 @@
+:PROPERTIES:
+:ID:       8fafb0ae-12aa-436d-a983-b2dcd2ab1e54
+:REFLECT_ID: 9705a47ddfea4e69bdefdc565771b8f3
+:CREATED:  [2025-11-18 Tue 05:45]
+:MODIFIED: [2025-11-24 Mon 07:42]
+:END:
+#+title: Perplexity Research for LEMR Data Types (Typescripy Interface), Functional Concerns
+#+filetags: :concept:
+#+date: 2025-11-18
+* Perplexity Research for [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]] [[id:e056c9d6-0ada-43d3-b0b2-0f9bef20cc60][Data Types]] ([[id:2bfd8ca3-1334-4985-91d7-8215bdb86cac][Typescripy Interface]]), Functional Concerns
+Based on my research into humanitarian medical missions, emergency medical records systems, and QR code-based patient tracking, I've compiled comprehensive recommendations for your application. Let me break this down into detailed sections:
+** 1. Additional Features, Functions & Safety Recommendations
+*** ✅ *Validated Feature Ideas*
+*A. Offline-First Architecture (CRITICAL)*
+- Research shows humanitarian settings often have *zero internet connectivity*
+- The app MUST function completely offline with periodic syncing when internet becomes available
+- Store all data locally first, sync to cloud when connection detected
+- This is the #1 reason similar apps fail in the field
+*B. Tiered Data Entry System*
+- *Quick Registration Mode*: Minimal fields (name, age, gender, chief complaint, urgency level)
+- *Standard Mode*: Core medical data (allergies, medications, conditions)
+- *Comprehensive Mode*: Full SOAP notes and detailed history
+- This addresses Aaron's concern about cumbersome entry during high-volume emergencies
+*C. Photo Attachment with Compression*
+- Despite limited internet, photos are EXTREMELY valuable for:
+  - Patient identification in low-literacy populations
+  - Visual documentation of wounds, rashes, conditions
+  - Verification across language barriers
+- Solution: Heavy compression (reduce file size 80-90%), store locally, optional cloud sync
+- Research shows this is used successfully in similar humanitarian apps
+*D. Medical Translation Support*
+- Pre-loaded common medical phrases in major humanitarian languages (Arabic, French, Spanish, Haitian Creole, etc.)
+- Symptom/diagnosis terminology in multiple languages
+- Visual symptom charts for non-verbal communication
+*E. Treatment & Medication Tracking*
+- Record what was administered, dosage, date/time
+- Flag drug interactions based on known allergies
+- Track incomplete treatment courses (critical for antibiotics)
+*F. Handoff/Transfer Notes*
+- Specific section for "Transfer Instructions" when patient moves between zones
+- Required fields: Destination, Reason for Transfer, Critical Actions Needed
+- WHO Emergency Medical Team standards require this
+*G. SOAP Note Templates*
+- Pre-structured SOAP (Subjective, Objective, Assessment, Plan) format
+- This is the international standard used in emergency medicine
+- Makes notes consistent across different providers
+*H. Triage Priority System*
+- Visual color-coded urgency levels (Red=Immediate, Yellow=Urgent, Green=Delayed, Black=Deceased)
+- Follows START triage system used in disaster medicine
+- Helps in mass casualty situations
+*I. Medication Allergy Warnings*
+- Prominently display known allergies at top of profile
+- Pop-up alert when entering medications if allergy match detected
+*J. Immunization Tracking*
+- Record vaccinations given during visit
+- Critical for disease outbreak prevention in humanitarian settings
+*** ⚠️ *Critical Concerns & Solutions*
+*CONCERN 1: QR Code Data Embedding*
+#+begin_quote
+"Perhaps a QR Code would literally have information built into it"
+#+end_quote
+*Analysis*: Technically feasible but NOT recommended as primary solution
+- QR codes can store ~4,000 alphanumeric characters max
+- Medical records quickly exceed this (especially with multiple visits)
+- *Problem*: If patient loses paper, data is completely gone
+- *Problem*: Can't update QR code after printed
+*SOLUTION*: Hybrid approach
+- QR code contains: *Unique Patient ID + Basic Emergency Info*
+- Emergency info embedded: Name, Age, Blood Type, Critical Allergies, Emergency Contact
+- Full medical record stored in app database, retrieved via Patient ID
+- This way: QR works offline for ID lookup, critical info readable even if database unavailable
+*CONCERN 2: Patient Authentication*
+#+begin_quote
+"Any verification would be too difficult to enforce"
+#+end_quote
+*Analysis*: You're correct - traditional authentication won't work
+- Patients may be unconscious, children, non-literate, or don't speak local language
+- No consistent ID documents in humanitarian crises
+*SOLUTION*: Zero-Knowledge Patient Access
+- NO password/authentication required to VIEW patient data via QR scan
+- Anyone with QR can instantly see medical info (this is intentional - saves lives)
+- *Security through obscurity*: Only people with physical QR card can access
+- Patient can't "log in" - they only possess the QR card
+*CONCERN 3: Data Privacy & Security*
+*SOLUTION*: Tiered Access Control for Medical Staff
+- *Doctors MUST authenticate* with password/biometric to:
+  - Create new patient profiles
+  - Edit existing patient data
+  - Print QR codes
+  - Export/share data
+- Track which doctor made which changes (audit log)
+- Encrypt data at rest and in transit
+- Comply with HIPAA-equivalent humanitarian standards
+*CONCERN 4: Duplicate Patient Records*
+- Risk: Same patient scanned by different doctors = multiple profiles
+*SOLUTION*:
+- Photo-matching assistance (optional AI flagging of similar photos)
+- Search before creating: Name + approximate age + gender
+- Merge duplicate profiles function
+- Each QR code has globally unique identifier (UUID)
+*CONCERN 5: Data Loss*
+- Phone lost/broken = patient data gone?
+*SOLUTION*:
+- Automatic backup to secure cloud when internet available
+- Doctor can access their data from any device (login to account)
+- Patient QR codes work across all devices (ID is universal)
+*CONCERN 6: Battery & Device Failure*
+- In field, can't always charge devices
+*SOLUTION*:
+- Extremely battery-efficient offline mode
+- Print backup summary sheets with QR code (human-readable key info)
+*** 🆕 *Additional Feature Recommendations*
+*K. Follow-Up Scheduling*
+- Flag patients needing return visit
+- Set reminder dates
+- Track who didn't return (lost to follow-up)
+*L. Chronic Disease Management*
+- Special profiles for diabetes, hypertension, HIV/AIDS
+- Track key metrics over time (blood sugar, blood pressure, CD4 counts)
+*M. Vaccination Campaign Mode*
+- Bulk processing mode for mass vaccination events
+- Quick scan, verify eligibility, record vaccination, next patient
+*N. Multi-Language UI*
+- App interface in multiple languages for doctors from different countries
+*O. Offline Map Integration*
+- Pre-download maps of refugee camp/operational area
+- Tag patient location for outbreak tracking
+*P. Report Generation*
+- Daily summary: # patients seen, conditions treated, supplies used
+- Required by WHO Emergency Medical Team standards
+- Export to PDF/CSV for reporting to coordination centers
+*Q. Supply Tracking Integration*
+- Reduce medication inventory when dispensed to patient
+- Alert when supplies running low
+-----
+
+** 2. Complete Data Schema - TypeScript Interfaces
+Based on WHO Emergency Medical Team Minimum Dataset, HL7 FHIR standards, and humanitarian medicine best practices:
+#+begin_src typescript
+// =====================================================
+// CORE ENTITIES
+// =====================================================
+
+/**
+ * User - Medical Provider/Doctor
+ */
+interface User {
+  // Identity
+  userId: string; // UUID
+  email: string;
+  passwordHash: string; // Never store plain text
+  
+  // Profile
+  firstName: string;
+  lastName: string;
+  credentials: string; // "MD", "RN", "EMT", etc.
+  specialty?: string; // "Emergency Medicine", "Pediatrics", etc.
+  
+  // Organization
+  organization?: string; // "Doctors Without Borders", "Red Cross", etc.
+  licenseNumber?: string;
+  licenseCountry?: string;
+  
+  // Contact
+  phoneNumber?: string;
+  preferredLanguage: string; // ISO 639-1 code (e.g., "en", "fr", "es")
+  
+  // System
+  createdAt: Date;
+  lastLoginAt: Date;
+  isActive: boolean;
+  
+  // Preferences
+  settings: UserSettings;
+}
+
+interface UserSettings {
+  defaultTriageSystem: 'START' | 'JumpSTART' | 'SALT';
+  autoBackupEnabled: boolean;
+  offlineMode: boolean;
+  uiLanguage: string; // ISO 639-1 code
+  measurementSystem: 'metric' | 'imperial';
+}
+
+/**
+ * Patient/Individual - Core patient record
+ */
+interface Patient {
+  // ============ IDENTIFIERS ============
+  patientId: string; // UUID - globally unique, permanent
+  qrCodeId: string; // UUID - encoded in QR code
+  alternateIds?: AlternateIdentifier[]; // Other ID systems
+  
+  // ============ DEMOGRAPHICS ============
+  // Names - flexible for different cultures
+  givenName: string; // First name
+  familyName?: string; // Last name (optional - some cultures use single names)
+  middleName?: string;
+  nickname?: string; // Preferred name
+  
+  // Basic demographics
+  dateOfBirth?: Date; // May be unknown
+  estimatedAge?: number; // Used when DOB unknown
+  ageUnit?: 'years' | 'months' | 'days'; // For infants/children
+  gender: 'male' | 'female' | 'other' | 'unknown';
+  sex?: 'male' | 'female' | 'intersex'; // Sex assigned at birth
+  
+  // ============ PHYSICAL CHARACTERISTICS ============
+  bloodType?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-' | 'unknown';
+  weight?: Measurement;
+  height?: Measurement;
+  
+  // ============ CONTACT & LOCATION ============
+  currentLocation?: Location;
+  permanentAddress?: Address;
+  phoneNumber?: string;
+  
+  // Emergency contacts
+  emergencyContacts?: EmergencyContact[];
+  
+  // ============ LANGUAGE & COMMUNICATION ============
+  primaryLanguage?: string; // ISO 639-1 code
+  secondaryLanguages?: string[];
+  needsInterpreter?: boolean;
+  communicationNotes?: string; // "Deaf", "Non-verbal", etc.
+  
+  // ============ PHOTOS & IDENTIFICATION ============
+  photos?: PatientPhoto[];
+  
+  // ============ CRITICAL MEDICAL INFO ============
+  // This section appears prominently in UI
+  criticalAllergies?: Allergy[]; // Life-threatening allergies
+  criticalConditions?: string[]; // Active serious conditions
+  
+  // ============ MEDICAL HISTORY ============
+  allergies?: Allergy[];
+  chronicConditions?: Condition[];
+  pastSurgeries?: Surgery[];
+  immunizations?: Immunization[];
+  medications?: Medication[];
+  
+  // ============ SOCIAL & CONTEXTUAL ============
+  pregnancyStatus?: PregnancyStatus;
+  socialHistory?: SocialHistory;
+  
+  // ============ CLINICAL ENCOUNTERS ============
+  encounters?: Encounter[]; // All visits/interactions
+  
+  // ============ ADMINISTRATIVE ============
+  // Triage & Priority
+  currentTriageLevel?: TriageLevel;
+  
+  // Tracking
+  registrationDate: Date;
+  registeredBy: string; // userId
+  lastUpdated: Date;
+  lastUpdatedBy: string; // userId
+  
+  // Status
+  status: 'active' | 'transferred' | 'discharged' | 'deceased' | 'lost-to-followup';
+  
+  // Flags
+  requiresFollowUp?: boolean;
+  followUpDate?: Date;
+  flaggedForReview?: boolean;
+  flagNotes?: string;
+  
+  // ============ AUDIT & COMPLIANCE ============
+  accessLog?: AccessLog[]; // Who viewed this record when
+  consentGiven?: boolean;
+  consentDate?: Date;
+  
+  // ============ METADATA ============
+  dataQuality?: 'complete' | 'partial' | 'minimal';
+  notes?: string; // General notes about patient record
+}
+
+/**
+ * Encounter - Single clinical visit/interaction
+ * Based on SOAP note structure (international standard)
+ */
+interface Encounter {
+  encounterId: string; // UUID
+  patientId: string; // Foreign key
+  
+  // ============ ENCOUNTER METADATA ============
+  encounterDate: Date;
+  providerId: string; // userId of doctor
+  providerName: string; // Cached for offline viewing
+  
+  location?: Location;
+  encounterType: EncounterType;
+  
+  // ============ TRIAGE ============
+  triageLevel?: TriageLevel;
+  chiefComplaint: string; // Primary reason for visit
+  
+  // ============ SOAP NOTE ============
+  // Subjective - What patient reports
+  subjective: SubjectiveData;
+  
+  // Objective - What provider observes/measures
+  objective: ObjectiveData;
+  
+  // Assessment - Provider's diagnosis
+  assessment: AssessmentData;
+  
+  // Plan - Treatment plan
+  plan: PlanData;
+  
+  // ============ OUTCOMES ============
+  disposition: Disposition;
+  
+  // ============ FOLLOW-UP ============
+  followUpRequired?: boolean;
+  followUpDate?: Date;
+  followUpInstructions?: string;
+  
+  // ============ TRANSFER/REFERRAL ============
+  transferInfo?: TransferInfo;
+  
+  // ============ METADATA ============
+  duration?: number; // Visit duration in minutes
+  createdAt: Date;
+  lastModified: Date;
+  isSynced: boolean; // Has this been backed up to cloud?
+}
+
+// =====================================================
+// SUPPORTING TYPES
+// =====================================================
+
+interface AlternateIdentifier {
+  system: string; // "national-id", "refugee-unhcr", "hospital-mrn"
+  value: string;
+  issuer?: string;
+}
+
+interface Measurement {
+  value: number;
+  unit: 'kg' | 'lb' | 'cm' | 'in' | 'ft';
+  measuredDate?: Date;
+  measuredBy?: string; // userId
+}
+
+interface Location {
+  facilityName?: string; // "Camp 3 Medical Tent", "Mobile Clinic Site A"
+  campName?: string; // "Zaatari Refugee Camp"
+  zone?: string; // "Sector B", "Block 7"
+  tentNumber?: string;
+  gpsCoordinates?: {
+    latitude: number;
+    longitude: number;
+  };
+  city?: string;
+  region?: string;
+  country: string; // ISO 3166-1 alpha-2
+}
+
+interface Address {
+  street?: string;
+  city?: string;
+  region?: string;
+  postalCode?: string;
+  country?: string; // ISO 3166-1 alpha-2
+  description?: string; // Free-text for informal addresses
+}
+
+interface EmergencyContact {
+  name: string;
+  relationship: string; // "spouse", "parent", "sibling", "friend"
+  phoneNumber?: string;
+  alternateContact?: string;
+  notes?: string;
+}
+
+interface PatientPhoto {
+  photoId: string;
+  imageData: string; // Base64 encoded image (compressed)
+  captureDate: Date;
+  capturedBy: string; // userId
+  photoType: 'identification' | 'clinical' | 'wound' | 'rash' | 'other';
+  notes?: string;
+}
+
+interface Allergy {
+  allergen: string; // "Penicillin", "Peanuts", "Latex"
+  allergyType: 'medication' | 'food' | 'environmental' | 'other';
+  severity: 'mild' | 'moderate' | 'severe' | 'life-threatening';
+  reaction?: string; // "Hives", "Anaphylaxis", "Rash"
+  onsetDate?: Date;
+  notes?: string;
+  verifiedBy?: string; // userId
+  verifiedDate?: Date;
+}
+
+interface Condition {
+  conditionName: string; // "Type 2 Diabetes", "Hypertension", "HIV/AIDS"
+  icd10Code?: string; // International Classification of Diseases code
+  diagnosisDate?: Date;
+  status: 'active' | 'resolved' | 'in-remission' | 'chronic';
+  severity?: 'mild' | 'moderate' | 'severe';
+  notes?: string;
+  diagnosedBy?: string; // userId
+}
+
+interface Surgery {
+  procedureName: string;
+  procedureDate?: Date;
+  location?: string; // Hospital/facility where performed
+  surgeon?: string;
+  indication?: string; // Why surgery was done
+  complications?: string;
+  notes?: string;
+}
+
+interface Immunization {
+  vaccineName: string; // "Measles", "Polio", "Tetanus", "COVID-19"
+  vaccineCode?: string; // CVX code
+  doseNumber?: number;
+  totalDosesInSeries?: number;
+  administrationDate: Date;
+  expirationDate?: Date;
+  lotNumber?: string;
+  manufacturer?: string;
+  site?: string; // "Left deltoid", "Right thigh"
+  route?: 'intramuscular' | 'subcutaneous' | 'oral' | 'intranasal';
+  administeredBy: string; // userId
+  location?: Location;
+  nextDoseDate?: Date;
+  adverseReaction?: string;
+  notes?: string;
+}
+
+interface Medication {
+  medicationName: string; // "Amoxicillin", "Metformin", "Lisinopril"
+  medicationCode?: string; // RxNorm code
+  dosage: string; // "500mg", "10ml"
+  route: 'oral' | 'IV' | 'IM' | 'subcutaneous' | 'topical' | 'inhaled' | 'rectal' | 'other';
+  frequency: string; // "twice daily", "every 8 hours", "as needed"
+  startDate: Date;
+  endDate?: Date;
+  prescribedBy: string; // userId
+  indication?: string; // Why medication prescribed
+  status: 'active' | 'completed' | 'discontinued' | 'on-hold';
+  notes?: string;
+  dispensedQuantity?: number;
+  refillsRemaining?: number;
+}
+
+interface PregnancyStatus {
+  isPregnant: boolean;
+  estimatedDueDate?: Date;
+  gestationalAge?: number; // In weeks
+  gravida?: number; // Total pregnancies
+  para?: number; // Live births
+  complications?: string[];
+  lastMenstrualPeriod?: Date;
+  prenatalCareReceived?: boolean;
+  notes?: string;
+}
+
+interface SocialHistory {
+  occupation?: string;
+  livingConditions?: string; // "Tent", "Shelter", "Host family"
+  householdSize?: number;
+  smokingStatus?: 'never' | 'former' | 'current' | 'unknown';
+  alcoholUse?: 'none' | 'occasional' | 'moderate' | 'heavy' | 'unknown';
+  substanceUse?: string;
+  nutritionStatus?: 'adequate' | 'inadequate' | 'malnourished';
+  waterAccess?: 'adequate' | 'limited' | 'none';
+  sanitationAccess?: 'adequate' | 'limited' | 'none';
+  exposureToViolence?: boolean;
+  displacementStatus?: 'refugee' | 'internally-displaced' | 'local' | 'other';
+  notes?: string;
+}
+
+type TriageLevel = 
+  | { level: 'immediate'; color: 'red'; description: 'Life-threatening' }
+  | { level: 'urgent'; color: 'yellow'; description: 'Serious, not life-threatening' }
+  | { level: 'delayed'; color: 'green'; description: 'Minor injuries' }
+  | { level: 'expectant'; color: 'black'; description: 'Deceased or unsurvivable' }
+  | { level: 'none'; color: 'white'; description: 'Not yet triaged' };
+
+type EncounterType = 
+  | 'initial-registration'
+  | 'follow-up'
+  | 'emergency'
+  | 'routine-care'
+  | 'vaccination'
+  | 'chronic-disease-management'
+  | 'prenatal-care'
+  | 'mental-health'
+  | 'wound-care'
+  | 'other';
+
+// ============ SOAP NOTE COMPONENTS ============
+
+interface SubjectiveData {
+  chiefComplaint: string; // Primary symptom/reason
+  historyOfPresentIllness?: string; // Detailed symptom description
+  symptomOnset?: Date;
+  symptomDuration?: string; // "3 days", "2 weeks"
+  associatedSymptoms?: string[];
+  
+  // Review of systems (optional but helpful)
+  reviewOfSystems?: {
+    constitutional?: string; // Fever, fatigue, weight loss
+    cardiovascular?: string;
+    respiratory?: string;
+    gastrointestinal?: string;
+    genitourinary?: string;
+    musculoskeletal?: string;
+    neurological?: string;
+    psychiatric?: string;
+    skin?: string;
+  };
+  
+  painAssessment?: PainAssessment;
+  patientConcerns?: string; // What worries the patient most
+  functionalStatus?: string; // Can they work, walk, eat?
+}
+
+interface PainAssessment {
+  hasPain: boolean;
+  location?: string;
+  scale1to10?: number;
+  quality?: string; // "Sharp", "Dull", "Burning", "Aching"
+  radiation?: string; // Does pain spread elsewhere?
+  timing?: string; // "Constant", "Intermittent"
+  aggravatingFactors?: string;
+  relievingFactors?: string;
+}
+
+interface ObjectiveData {
+  // Vital signs - CRITICAL
+  vitalSigns?: VitalSigns;
+  
+  // Physical exam
+  generalAppearance?: string; // "Alert", "Distressed", "Lethargic"
+  physicalExam?: PhysicalExam;
+  
+  // Clinical observations
+  observations?: string;
+  
+  // Lab results (if available)
+  labResults?: LabResult[];
+  
+  // Diagnostic tests
+  diagnosticTests?: DiagnosticTest[];
+  
+  // Clinical photos
+  clinicalPhotos?: string[]; // Array of photoIds
+}
+
+interface VitalSigns {
+  temperature?: {
+    value: number;
+    unit: 'celsius' | 'fahrenheit';
+    site?: 'oral' | 'axillary' | 'rectal' | 'tympanic' | 'temporal';
+  };
+  heartRate?: {
+    value: number; // beats per minute
+    rhythm?: 'regular' | 'irregular';
+  };
+  respiratoryRate?: {
+    value: number; // breaths per minute
+    effort?: 'normal' | 'labored' | 'shallow';
+  };
+  bloodPressure?: {
+    systolic: number;
+    diastolic: number;
+    unit: 'mmHg';
+    position?: 'sitting' | 'standing' | 'lying';
+  };
+  oxygenSaturation?: {
+    value: number; // percentage
+    onOxygen?: boolean;
+    oxygenFlow?: number; // L/min
+  };
+  consciousnessLevel?: 'alert' | 'verbal' | 'pain' | 'unresponsive'; // AVPU scale
+  
+  measuredAt: Date;
+  measuredBy: string; // userId
+}
+
+interface PhysicalExam {
+  head?: string;
+  eyes?: string;
+  ears?: string;
+  nose?: string;
+  throat?: string;
+  neck?: string;
+  cardiovascular?: string;
+  respiratory?: string;
+  abdomen?: string;
+  extremities?: string;
+  neurological?: string;
+  skin?: string;
+  psychiatric?: string;
+  notes?: string;
+}
+
+interface LabResult {
+  testName: string;
+  testCode?: string; // LOINC code
+  value: string;
+  unit?: string;
+  referenceRange?: string;
+  abnormalFlag?: 'high' | 'low' | 'critical' | 'normal';
+  collectionDate: Date;
+  resultDate?: Date;
+  performedBy?: string;
+  notes?: string;
+}
+
+interface DiagnosticTest {
+  testType: 'xray' | 'ultrasound' | 'ct' | 'mri' | 'ecg' | 'rapid-test' | 'other';
+  testName: string;
+  performedDate: Date;
+  findings: string;
+  interpretation?: string;
+  imageIds?: string[]; // References to stored images
+  performedBy?: string;
+}
+
+interface AssessmentData {
+  // Primary diagnosis
+  primaryDiagnosis: Diagnosis;
+  
+  // Additional diagnoses
+  differentialDiagnoses?: Diagnosis[];
+  
+  // Problem list
+  problemList?: string[];
+  
+  // Clinical impression
+  clinicalImpression: string;
+  
+  // Severity assessment
+  severityAssessment?: 'mild' | 'moderate' | 'severe' | 'critical';
+  
+  // Prognosis
+  prognosis?: string;
+}
+
+interface Diagnosis {
+  condition: string;
+  icd10Code?: string;
+  confidence: 'confirmed' | 'suspected' | 'rule-out';
+  onset?: Date;
+  notes?: string;
+}
+
+interface PlanData {
+  // Treatment provided
+  treatmentsProvided?: Treatment[];
+  
+  // Medications prescribed/dispensed
+  medicationsPrescribed?: Medication[];
+  
+  // Procedures performed
+  proceduresPerformed?: Procedure[];
+  
+  // Orders (tests, imaging, etc.)
+  orders?: Order[];
+  
+  // Patient education
+  patientEducation?: string[];
+  
+  // Follow-up plan
+  followUpPlan?: string;
+  
+  // Referrals
+  referrals?: Referral[];
+  
+  // Special instructions
+  instructions?: string;
+  
+  // Return precautions
+  returnPrecautions?: string; // "Return if fever >39°C"
+}
+
+interface Treatment {
+  treatmentType: string; // "Wound cleaning", "IV fluids", "Oxygen"
+  description: string;
+  providedBy: string; // userId
+  providedAt: Date;
+  quantity?: string;
+  notes?: string;
+}
+
+interface Procedure {
+  procedureName: string;
+  procedureCode?: string; // CPT code
+  performedBy: string; // userId
+  assistants?: string[]; // userIds
+  performedAt: Date;
+  indication: string;
+  technique?: string;
+  findings?: string;
+  complications?: string;
+  specimens?: string; // "Sent to lab"
+  notes?: string;
+}
+
+interface Order {
+  orderType: 'lab' | 'imaging' | 'medication' | 'referral' | 'other';
+  orderName: string;
+  indication: string;
+  priority: 'routine' | 'urgent' | 'stat';
+  orderedBy: string; // userId
+  orderedAt: Date;
+  status: 'pending' | 'in-progress' | 'completed' | 'cancelled';
+  results?: string;
+  notes?: string;
+}
+
+interface Referral {
+  referralTo: string; // "Surgical clinic", "Mental health services"
+  referralReason: string;
+  urgency: 'routine' | 'urgent' | 'emergency';
+  providedDate: Date;
+  expectedDate?: Date;
+  contactInfo?: string;
+  notes?: string;
+}
+
+type Disposition = 
+  | 'discharged-home'
+  | 'admitted'
+  | 'transferred'
+  | 'referred'
+  | 'left-against-advice'
+  | 'deceased'
+  | 'follow-up-scheduled'
+  | 'other';
+
+interface TransferInfo {
+  transferDate: Date;
+  transferredFrom?: Location;
+  transferredTo: Location;
+  transferReason: string;
+  urgency: 'routine' | 'urgent' | 'emergency';
+  transportMethod?: string; // "Ambulance", "Helicopter", "Walking"
+  accompaniedBy?: string;
+  handoffTo?: string; // Name of receiving provider
+  
+  // Critical information for receiving team
+  criticalActions?: string; // "Continue IV antibiotics"
+  medicalEquipment?: string[]; // "Oxygen tank", "Wheelchair"
+  transferSummary: string;
+  
+  // Status
+  transferStatus: 'pending' | 'in-transit' | 'completed' | 'cancelled';
+  transferCompletedAt?: Date;
+  
+  notes?: string;
+}
+
+interface AccessLog {
+  accessedBy: string; // userId
+  accessedAt: Date;
+  action: 'viewed' | 'created' | 'edited' | 'exported' | 'printed-qr';
+  details?: string;
+}
+
+// =====================================================
+// QR CODE DATA STRUCTURE
+// =====================================================
+
+/**
+ * Data embedded in QR code
+ * Keep minimal - only essential emergency info
+ */
+interface QRCodeData {
+  // Version for future compatibility
+  version: string; // "1.0"
+  
+  // Patient lookup ID
+  patientId: string; // UUID to lookup full record in database
+  
+  // Emergency critical info (readable even if database unavailable)
+  emergency: {
+    name: string;
+    age?: number;
+    gender: string;
+    bloodType?: string;
+    criticalAllergies?: string[]; // Max 3-5 most important
+    criticalConditions?: string[]; // Max 3-5 most important
+  };
+  
+  // Metadata
+  issueDate: Date;
+  issuingFacility?: string;
+  
+  // Verification
+  checksum?: string; // To detect tampering/corruption
+}
+
+// =====================================================
+// SYNC & BACKUP
+// =====================================================
+
+interface SyncRecord {
+  syncId: string;
+  userId: string;
+  syncDate: Date;
+  recordsUploaded: number;
+  recordsDownloaded: number;
+  conflicts?: SyncConflict[];
+  status: 'success' | 'partial' | 'failed';
+  errorMessage?: string;
+}
+
+interface SyncConflict {
+  recordType: 'patient' | 'encounter';
+  recordId: string;
+  localVersion: any;
+  remoteVersion: any;
+  resolution?: 'local-wins' | 'remote-wins' | 'manual-merge';
+  resolvedAt?: Date;
+  resolvedBy?: string;
+}
+
+// =====================================================
+// REPORTING & ANALYTICS
+// =====================================================
+
+interface DailySummaryReport {
+  reportDate: Date;
+  facility: Location;
+  providerId: string;
+  
+  statistics: {
+    totalPatientsRegistered: number;
+    totalEncounters: number;
+    newPatients: number;
+    followUpPatients: number;
+    
+    encountersByType: Record<EncounterType, number>;
+    patientsByTriageLevel: Record<string, number>;
+    
+    commonDiagnoses: { diagnosis: string; count: number }[];
+    
+    medicationsDispensed: { medication: string; quantity: number }[];
+    
+    referralsMade: number;
+    transfersOut: number;
+    
+    deaths: number;
+  };
+  
+  generatedAt: Date;
+  generatedBy: string;
+}
+
+// =====================================================
+// SYSTEM CONFIGURATION
+// =====================================================
+
+interface SystemConfiguration {
+  // Deployment info
+  deploymentId: string;
+  deploymentName: string; // "Haiti Relief Mission 2025"
+  organization: string;
+  
+  // Operational details
+  startDate: Date;
+  endDate?: Date;
+  locations: Location[];
+  
+  // Medical protocols
+  triageProtocol: string;
+  medicalProtocols?: string[]; // Links to protocol documents
+  
+  // Available resources
+  availableMedications?: string[];
+  availableTests?: string[];
+  
+  // Custom fields
+  customPatientFields?: CustomField[];
+  customEncounterFields?: CustomField[];
+}
+
+interface CustomField {
+  fieldId: string;
+  fieldName: string;
+  fieldType: 'text' | 'number' | 'date' | 'select' | 'multiselect' | 'boolean';
+  options?: string[]; // For select/multiselect
+  required: boolean;
+  defaultValue?: any;
+  validationRules?: any;
+}
+#+end_src
+-----
+
+** Summary of Key Design Decisions
+*** ✅ *Why This Schema Works for Humanitarian Settings:*
+1. *Flexible Demographics*: Accounts for unknown dates of birth, single names, lack of formal addresses
+1. *Offline-First*: All data structures designed to work without internet
+1. *SOAP Note Structure*: International standard, familiar to doctors worldwide
+1. *Minimal QR Data*: Only critical emergency info embedded, full record in database
+1. *Photo Support*: Compressed images for identification and clinical documentation
+1. *Audit Trail*: Track who did what when for accountability
+1. *Transfer Documentation*: Special focus on patient handoffs between facilities
+1. *Triage System*: Built-in emergency prioritization
+1. *WHO Compliance*: Follows Emergency Medical Team Minimum Dataset standards
+1. *Extensible*: Custom fields allow adaptation to specific mission needs
+*** 🎯 *Implementation Priority (MVP)*
+*Phase 1 (Weeks 1-4):*
+- User authentication
+- Basic patient registration (name, age, gender, photo)
+- QR code generation and scanning
+- Single encounter (chief complaint, basic vitals, assessment, plan)
+- Offline storage
+*Phase 2 (Weeks 5-8):*
+- Full SOAP notes
+- Medication/allergy tracking
+- Triage system
+- Multiple encounters per patient
+- Cloud backup/sync
+*Phase 3 (Weeks 9-12):*
+- Transfer notes
+- Immunization tracking
+- Advanced search/filtering
+- Reporting dashboard
+- Multi-language support
+This application could genuinely save lives in humanitarian crises. The key is keeping the MVP simple while building on a foundation that scales to comprehensive medical records. Happy to discuss specific implementation details or technical architecture questions!
+Sources
+[1] NDMS Patient Movement Program [[https://aspr.hhs.gov/NDMS/Pages/patient-mvmt.aspx][https://aspr.hhs.gov/NDMS/Pages/patient-mvmt.aspx]]
+[2] My ER File - App Store - Apple [[https://apps.apple.com/cy/app/my-er-file/id1574572051][https://apps.apple.com/cy/app/my-er-file/id1574572051]]
+[3] [PDF] Transforming Patient Check-in/Registration with a Fast Healthcare ... [[https://digital.sandiego.edu/cgi/viewcontent.cgi?article=1008&context=nursing-student][https://digital.sandiego.edu/cgi/viewcontent.cgi?article=1008&context=nursing-student]]
+[4] Short-Term Medical Service Trips: A Systematic Review of the ... [[https://pmc.ncbi.nlm.nih.gov/articles/PMC4056244/][https://pmc.ncbi.nlm.nih.gov/articles/PMC4056244/]]
+[5] ICE Medical Reports - Emergency Medical Information Management [[https://www.medicalreports.app][https://www.medicalreports.app]]
+[6] Can QR Codes Be Used for Patient Documentation in Healthcare? [[https://referralmd.com/can-qr-codes-be-used-for-patient-documentation-in-healthcare/][https://referralmd.com/can-qr-codes-be-used-for-patient-documentation-in-healthcare/]]
+[7] Medical Humanitarian Missions: A Vacation With a Purpose [[https://www.aanp.org/news-feed/medical-humanitarian-missions-a-vacation-with-a-purpose][https://www.aanp.org/news-feed/medical-humanitarian-missions-a-vacation-with-a-purpose]]
+[8] VA launches offline mobile app to support HBPC teams in remote ... [[https://news.va.gov/143198/va-launches-mobile-app-hbpc-teams-remote-areas/][https://news.va.gov/143198/va-launches-mobile-app-hbpc-teams-remote-areas/]]
+[9] Improving Patient Identification with GS1 QR Codes in Healthcare [[https://digital-link-qr-code.com/pa/patient-identification-gs1-qr-code][https://digital-link-qr-code.com/pa/patient-identification-gs1-qr-code]]
+[10] Rugged EMR for Remote Clinics - BackpackEMR [[https://www.backpackemr.com/home/][https://www.backpackemr.com/home/]]
+[11] Best PHR App: MyDigiRecords (MDR) | Your Ultimate Health ... [[https://mydigirecords.ai/best-phr-app-mydigirecords-mdr-your-ultimate-health-companion/][https://mydigirecords.ai/best-phr-app-mydigirecords-mdr-your-ultimate-health-companion/]]
+[12] Using QR Codes to Connect Patients to Health Information - PMC [[https://pmc.ncbi.nlm.nih.gov/articles/PMC5422091/][https://pmc.ncbi.nlm.nih.gov/articles/PMC5422091/]]
+[13] [PDF] Standards for Medical Mission Partnerships and Practices - PQMD [[https://www.pqmd.org/wp-content/uploads/2019/11/PQMD-HSS-Medical-Mission-Guidelines-2019.pdf][https://www.pqmd.org/wp-content/uploads/2019/11/PQMD-HSS-Medical-Mission-Guidelines-2019.pdf]]
+[14] Medical Records - Health Logs - Apps on Google Play [[https://play.google.com/store/apps/details?id=com.medical.medicalrecords&hl=en_US][https://play.google.com/store/apps/details?id=com.medical.medicalrecords&hl=en_US]]
+[15] QR Codes in Healthcare: Why Are More Practices Going Digital with ... [[https://www.healthasyst.com/checkinasyst/faster-safer-convenient-heres-how-qr-codes-are-transforming-patient-intake/][https://www.healthasyst.com/checkinasyst/faster-safer-convenient-heres-how-qr-codes-are-transforming-patient-intake/]]
+[16] World Medical Missions: Delivering Healthcare to the Underserved [[https://www.scmmedicalmissions.org/world-medical-missions/][https://www.scmmedicalmissions.org/world-medical-missions/]]
+[17] Digital health platform combining your medical records in one place [[https://onerecord.com][https://onerecord.com]]
+[18] How QR Codes Improve Patient Data Management in Healthcare [[https://blog.autonix.io/articles/how-qr-codes-improve-patient-data-management-in-healthcare][https://blog.autonix.io/articles/how-qr-codes-improve-patient-data-management-in-healthcare]]
+[19] International Medical Relief: Doctors Without Borders | Medical ... [[https://internationalmedicalrelief.org][https://internationalmedicalrelief.org]]
+[20] Patient Medical Record App - GoCanvas [[https://www.gocanvas.com/mobile-forms-apps/27-Patient-Records/show_type][https://www.gocanvas.com/mobile-forms-apps/27-Patient-Records/show_type]]
+[21] WHO EMT Data Set: Tropical Cyclone Idai, Mozambique Response [[https://pmc.ncbi.nlm.nih.gov/articles/PMC9726470/][https://pmc.ncbi.nlm.nih.gov/articles/PMC9726470/]]
+[22] VA App Brings Offline Access to Rural Veterans' Health Records [[https://www.meritalk.com/articles/va-app-brings-offline-access-to-rural-veterans-health-records/][https://www.meritalk.com/articles/va-app-brings-offline-access-to-rural-veterans-health-records/]]
+[23] SOAP notes: The gold standard in medical documentation - Noki [[https://noki.ai/everything-you-should-know-about-soap-notes/][https://noki.ai/everything-you-should-know-about-soap-notes/]]
+[24] Implementation of the World Health Organization Minimum Dataset ... [[https://pubmed.ncbi.nlm.nih.gov/39196270/][https://pubmed.ncbi.nlm.nih.gov/39196270/]]
+[25] Tamanu | Free and open-source | Electronic Health Record [[https://www.bes.au/products/tamanu/][https://www.bes.au/products/tamanu/]]
+[26] SOAP Notes: A Resource Guide for Therapists (Free Template) [[https://www.nethealth.com/blog/what-is-soap-note/][https://www.nethealth.com/blog/what-is-soap-note/]]
+[27] [PDF] Implementation of the World Health Organization Minimum Dataset ... [[https://medinform.jmir.org/2024/1/e59651/PDF][https://medinform.jmir.org/2024/1/e59651/PDF]]
+[28] Mobile Forms: an indispensable tool in Healthcare - Teamscope [[https://www.teamscopeapp.com/use-cases/medical-forms][https://www.teamscopeapp.com/use-cases/medical-forms]]
+[29] How to Communicate with Emergency Services Using a SOAP Note [[https://www.nols.edu/blog/how-to-communicate-with-emergency-services-using-a-soap-note/][https://www.nols.edu/blog/how-to-communicate-with-emergency-services-using-a-soap-note/]]
+[30] Classification and minimum standards for emergency medical teams [[https://www.who.int/publications/i/item/9789240029330][https://www.who.int/publications/i/item/9789240029330]]
+[31] SOAP Notes - StatPearls - NCBI Bookshelf [[https://www.ncbi.nlm.nih.gov/books/NBK482263/][https://www.ncbi.nlm.nih.gov/books/NBK482263/]]
+[32] WHO data principles - World Health Organization (WHO) [[https://www.who.int/data/principles][https://www.who.int/data/principles]]
+[33] VA launches offline mobile app to support HBPC teams in remote ... [[https://myairforcebenefits.us.af.mil/VA-launches-offline-mobile-app-to-support-HBPC-teams-in-remote-areas][https://myairforcebenefits.us.af.mil/VA-launches-offline-mobile-app-to-support-HBPC-teams-in-remote-areas]]
+[34] SOAP Notes - Purdue OWL [[https://owl.purdue.edu/owl/subject_specific_writing/healthcare_writing/soap_notes/index.html][https://owl.purdue.edu/owl/subject_specific_writing/healthcare_writing/soap_notes/index.html]]
+[35] The Blue Book - Classification and minimum standards for ... - PAHO [[https://www.paho.org/en/documents/blue-book-classification-and-minimum-standards-emergency-medical-teams][https://www.paho.org/en/documents/blue-book-classification-and-minimum-standards-emergency-medical-teams]]
+[36] myUnity Mobile - App Store [[https://apps.apple.com/vg/app/myunity-mobile/id1401503069][https://apps.apple.com/vg/app/myunity-mobile/id1401503069]]
+[37] Best Guide to Writing a SOAP Note with Free Examples & Template [[https://www.socialworkportal.com/soap-progress-note/][https://www.socialworkportal.com/soap-progress-note/]]
+[38] Other Data Standards and Sources - [[EMS.gov][EMS.gov]] [[https://www.ems.gov/issues/using-ems-data/other-data-standards-and-sources][https://www.ems.gov/issues/using-ems-data/other-data-standards-and-sources]]
+[39] Simplify Offline Data Collection With Offline Mobile Forms [[https://www.formsonfire.com/blog/offline-data-collection][https://www.formsonfire.com/blog/offline-data-collection]]
+[40] Components of the Medical Record: Top 10 Essential Insights [[https://americanretrieval.com/blog/components-of-the-medical-record/][https://americanretrieval.com/blog/components-of-the-medical-record/]]
+[41] Data Model - Personal Health Records v1.0.0-ballot2 [[https://build.fhir.org/ig/HL7/personal-health-record-format-ig/datamodel.html][https://build.fhir.org/ig/HL7/personal-health-record-format-ig/datamodel.html]]
+[42] Adoption of Electronic Medical Records for Chronic Disease Care in ... [[https://mhealth.jmir.org/2023/1/e43878][https://mhealth.jmir.org/2023/1/e43878]]
+[43] The 10 Components of Medical Records | Your Complete Guide [[https://www.ditstek.com/blog/10-components-of-medical-records][https://www.ditstek.com/blog/10-components-of-medical-records]]
+[44] HL7 FHIR Data Model: A Deep Dive Explanation - Kodjin [[https://kodjin.com/blog/introduction-to-fhir-data-model/][https://kodjin.com/blog/introduction-to-fhir-data-model/]]
+[45] The need for standardised methods of data collection, sharing of ... [[https://gh.bmj.com/content/7/Suppl_8/e007249][https://gh.bmj.com/content/7/Suppl_8/e007249]]
+[46] Medical History - StatPearls - NCBI Bookshelf [[https://www.ncbi.nlm.nih.gov/books/NBK534249/][https://www.ncbi.nlm.nih.gov/books/NBK534249/]]
+[47] Understanding the FHIR Data Model: A Comprehensive Guide [[https://www.suretysystems.com/insights/understanding-the-fhir-data-model-a-comprehensive-guide/][https://www.suretysystems.com/insights/understanding-the-fhir-data-model-a-comprehensive-guide/]]
+[48] Use in humanitarian settings - EmONC [[https://emonc.org/en/usage/humanitarian-settings/][https://emonc.org/en/usage/humanitarian-settings/]]
+[49] Clinical Profile Guide- A snapshot of the patient's health status [[https://help.elationemr.com/articles/Knowledge/clinical-profile-record-patient-medical-history][https://help.elationemr.com/articles/Knowledge/clinical-profile-record-patient-medical-history]]
+[50] Understanding the Structure of HL7 FHIR Resources - YouTube 
+[[https://www.youtube-nocookie.com/embed/7q8EpeubhA8][youtube: https://www.youtube-nocookie.com/embed/7q8EpeubhA8]]
+
+[51] Sijilli: A Scalable Model of Cloud-Based Electronic Health Records ... [[https://www.jmir.org/2020/8/e18183/][https://www.jmir.org/2020/8/e18183/]]
+[52] Best Practice Recommendations for the Collection of Key Patient ... [[https://www.naham.org/page/ConnectionsBest-Practice-Recommendations-for-the-Collection-of-Key-Patient-Data-Attributes][https://www.naham.org/page/ConnectionsBest-Practice-Recommendations-for-the-Collection-of-Key-Patient-Data-Attributes]]
+[53] FHIR Patient Resource | Structure, Use Cases, and Validation ... [[https://www.interfaceware.com/fhir/resources/patient][https://www.interfaceware.com/fhir/resources/patient]]
+[54] Innovation is needed in creating electronic health records for ... [[https://pmc.ncbi.nlm.nih.gov/articles/PMC9590647/][https://pmc.ncbi.nlm.nih.gov/articles/PMC9590647/]]
+[55] [PDF] Recommended Data Elements for Capture in the Master Patient ... [[https://ahima.org/media/blfdriqj/326_21_namingpolicywhitepaper_final.pdf?oid=302787][https://ahima.org/media/blfdriqj/326_21_namingpolicywhitepaper_final.pdf?oid=302787]]
+[56] FHIR Patient resource - [[HL7.org][HL7.org]] [[https://www.hl7.org/fhir/patient.html][https://www.hl7.org/fhir/patient.html]]
+[57] Electronic medical records in humanitarian... | F1000Research [[https://f1000research.com/articles/5-1477][https://f1000research.com/articles/5-1477]]
+[58] Electronic Health Records - CMS [[https://www.cms.gov/priorities/key-initiatives/e-health/records][https://www.cms.gov/priorities/key-initiatives/e-health/records]]
+[59] Patient - FHIR v6.0.0-ballot3 [[https://build.fhir.org/patient.html][https://build.fhir.org/patient.html]]

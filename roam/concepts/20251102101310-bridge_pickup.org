@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b3ff0950-bc6e-40cf-af4b-7bff1a38028c
+:REFLECT_ID: 956fe604aef14915ab075aba1a027520
+:CREATED:  [2025-11-02 Sun 10:13]
+:MODIFIED: [2025-11-02 Sun 10:13]
+:END:
+#+title: Bridge Pickup
+#+filetags: :concept:
+#+date: 2025-11-02
+

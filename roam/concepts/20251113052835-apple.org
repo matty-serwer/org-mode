@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       36496b9d-0738-4c03-80c7-feeb4e6d172a
+:REFLECT_ID: 50b9cbc0852a4d148b9211e5a8f4d5ae
+:CREATED:  [2025-11-13 Thu 05:28]
+:MODIFIED: [2025-11-13 Thu 05:28]
+:END:
+#+title: Apple
+#+filetags: :concept:
+#+date: 2025-11-13
+

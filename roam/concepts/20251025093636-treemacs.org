@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       26b60faa-68c9-469e-a596-79e5136bf998
+:REFLECT_ID: 6dfdcb6f050d453c9934dede57fa29e8
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-11-05 Wed 14:00]
+:END:
+#+title: Treemacs
+#+filetags: :concept:
+#+date: 2025-10-25
+

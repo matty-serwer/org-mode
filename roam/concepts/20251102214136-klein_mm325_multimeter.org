@@ -1,0 +1,77 @@
+:PROPERTIES:
+:ID:       9bbb6b6a-191d-4e74-8ef2-257ab4520966
+:REFLECT_ID: cc6b2f16d2944f6888a73d4021e81025
+:CREATED:  [2025-11-02 Sun 21:41]
+:MODIFIED: [2025-11-02 Sun 21:41]
+:END:
+#+title: Klein MM325 Multimeter
+#+filetags: :concept:
+#+date: 2025-11-02
+To test your bass guitar wiring using the Klein Tools MM325 multimeter, you'll mostly be using resistance (ohm), continuity, and occasionally voltage checks. Each type of reading uses a specific dial setting and port choice.
+*** Pickup Resistance (Ohms)
+- *Purpose:* Confirm if pickups are functioning and matches expected resistance.
+- *Red Probe Port:* Micro-amp port (not the 10A).
+- *Dial Setting:* Set to the Ohms range, usually indicated by $$\Omega$$ (on MM325: "2k-2M").
+- *Where to Touch Probes:* Insert one probe into the tip (hot) of your bass jack, the other to the sleeve (ground) of the jack or directly to the pickup leads.
+- *Other Settings:* Make sure the instrument is disconnected from amps/power.
+- *What You Should See:* A reading of a few kΩ (e.g., 7kΩ for single coil, 10–15kΩ for humbucker). If the reading is very high (infinite) or zero, there's likely a wiring fault or dead pickup[1][2][3].
+*** Continuity Test
+- *Purpose:* Check for proper connections (e.g. verify ground, hot wire paths, check for shorts).
+- *Red Probe Port:* Micro-amp port.
+- *Dial Setting:* Set to continuity mode (looks like a sound wave icon, or set the MM325 to "2k-2M" ohm setting).
+- *Where to Touch Probes:* Place one probe on ground and the other on suspected connection points.
+- *Other Settings:* The meter will beep for a good connection. No beep = bad/absent connection.
+- *What You Should See:* Beep or near-zero reading confirms continuity[1][3].
+*** Output Jack and Switches
+- *Purpose:* Confirm wiring connectivity and switch function.
+- *Red Probe Port:* Micro-amp port.
+- *Dial Setting:* Continuity or resistance as above.
+- *Where to Touch Probes:* Test tip and sleeve at output jack in different switch positions; you should see changes matching your wiring/switch logic.
+- *Other Settings:* Test with all control knobs at maximum for best signal[4][1].
+*** Battery Voltage (For Active Pickups)
+- *Purpose:* Check battery health if your instrument uses a battery.
+- *Red Probe Port:* Micro-amp port (never 10A for voltage).
+- *Dial Setting:* DC voltage (V==), select a range higher than your battery (e.g., V==200m for a 9V battery).
+- *Where to Touch Probes:* Place probes across battery terminals—red to positive, black to negative.
+- *What You Should See:* Battery voltage (should be close to 9V for a new battery)[4].
+*** DC Current Measurement
+- *Not commonly used in passive bass wiring.*
+- *If testing current (not normal for pickups/wiring unless troubleshooting battery drain):*
+  - *Red Probe Port:* Use the 10A port only when measuring high currents.
+  - *Dial Setting:* "10A=="
+  - *Where to Touch Probes:* In series with the circuit.
+  - *Warning:* DO NOT touch pickup wires with meter set to Amps unless you know the current is low and safe for the pickup[5].
+** Quick Reference Table
+Test Type Red Probe Port Dial Setting What to Touch Expected Result Resistance Micro-amp 2k-2M ($$\Omega$$) Pickup hot/ground, jack tip/sleeve Typical kΩ reading Continuity Micro-amp 2k-2M ($$\Omega$$), beep Ground to connection points Beep or near-zero reading Voltage (Battery) Micro-amp V==200m/600 Battery terminals Voltage near battery rating Current 10A 10A== In series (rare for bass) Amps/µA (unused for pickups)
+To sum up: use the micro-amp port for almost all guitar wiring tests, stick to ohms and continuity for pickups, and only use the 10A port and setting for actual current measurements (rare for bass wiring). Always start with the correct dial setting and port, as incorrect settings can damage your meter or instrument[6][7][4][1][2][3].
+Consult the [[https://data.kleintools.com/sites/all/product_assets/documents/instructions/klein/MM325%20Instructions_web.pdf][Klein MM325 manual]] for full safety warnings and usage instructions.
+Sources
+[1] How to test the Resistance of your Guitar Pickups with a Multimeter ... 
+[[https://www.youtube-nocookie.com/embed/hysRKxqMQ1g][youtube: https://www.youtube-nocookie.com/embed/hysRKxqMQ1g]]
+
+[2] How to Test Guitar Pickups with a Multimeter - Seymour Duncan [[https://www.seymourduncan.com/blog/latest-updates/how-to-test-guitar-pickups-with-a-multimeter][https://www.seymourduncan.com/blog/latest-updates/how-to-test-guitar-pickups-with-a-multimeter]]
+[3] How to test a pickup? - Gear - BassBuzz Forum [[https://forum.bassbuzz.com/t/how-to-test-a-pickup/36739][https://forum.bassbuzz.com/t/how-to-test-a-pickup/36739]]
+[4] Find Faults Fast! How to Use a Multimeter on Guitar Electronics 
+[[https://www.youtube-nocookie.com/embed/NJugJsZaB7M][youtube: https://www.youtube-nocookie.com/embed/NJugJsZaB7M]]
+
+[5] How to Use the Klein Tools MM325 Digital Multimeter - YouTube 
+[[https://www.youtube-nocookie.com/embed/2P_uGetfKss][youtube: https://www.youtube-nocookie.com/embed/2P_uGetfKss]]
+
+[6] [PDF] MM325 Instructions - Klein Tools [[https://data.kleintools.com/sites/all/product_assets/documents/instructions/klein/MM325%20Instructions_web.pdf][https://data.kleintools.com/sites/all/product_assets/documents/instructions/klein/MM325%20Instructions_web.pdf]]
+[7] Digital Multimeter, Manual-Ranging, 600V - MM325 - Klein Tools [[https://www.kleintools.com/catalog/multimeters/digital-multimeter-manual-ranging-600v-0][https://www.kleintools.com/catalog/multimeters/digital-multimeter-manual-ranging-600v-0]]
+[8] [PDF] mm325-manual.pdf - [[http://www.GlobalTestSupply.com][www.GlobalTestSupply.com]] [[https://www.globaltestsupply.com/pdfs/cache/www.globaltestsupply.com/mm325/manual/mm325-manual.pdf][https://www.globaltestsupply.com/pdfs/cache/www.globaltestsupply.com/mm325/manual/mm325-manual.pdf]]
+[9] How To Use The Basic Functions Of A Digital Multimeter - Klein Tools [[https://www.kleintools.com/videos/how-use-basic-functions-digital-multimeter][https://www.kleintools.com/videos/how-use-basic-functions-digital-multimeter]]
+[10] User manual Klein Tools MM325 (English - 36 pages) [[https://www.manua.ls/klein-tools/mm325/manual][https://www.manua.ls/klein-tools/mm325/manual]]
+[11] Klein MM325 Multimeter for Guitar Work - YouTube 
+[[https://www.youtube-nocookie.com/embed/JkBfcBxY8kc][youtube: https://www.youtube-nocookie.com/embed/JkBfcBxY8kc]]
+
+[12] Using A Multimeter To Check Pickup Health - YouTube 
+[[https://www.youtube-nocookie.com/embed/oESPBOZTBKo][youtube: https://www.youtube-nocookie.com/embed/oESPBOZTBKo]]
+
+[13] KLEIN MM325 CHEAP-O Multimeter Review & Teardown! - YouTube 
+[[https://www.youtube-nocookie.com/embed/p0OUicY-suo][youtube: https://www.youtube-nocookie.com/embed/p0OUicY-suo]]
+
+[14] Klein Tools 600-Volt Digital Multi-Meter, Manual-Ranging MM325 [[https://www.homedepot.com/p/Klein-Tools-600-Volt-Digital-Multi-Meter-Manual-Ranging-MM325/320822947][https://www.homedepot.com/p/Klein-Tools-600-Volt-Digital-Multi-Meter-Manual-Ranging-MM325/320822947]]
+[15] How To Use The Basic Meter Function (Types of Voltage Selection) [[https://www.kleintools.com/videos/how-use-basic-meter-function-types-voltage-selection][https://www.kleintools.com/videos/how-use-basic-meter-function-types-voltage-selection]]
+[16] How do I test a p bass pickup with a multimeter? - Basschat [[https://www.basschat.co.uk/topic/490536-how-do-i-test-a-p-bass-pickup-with-a-multimeter/][https://www.basschat.co.uk/topic/490536-how-do-i-test-a-p-bass-pickup-with-a-multimeter/]]
+[17] Klein Tools MM325 Multimeter, Digital Manual-Ranging 600V AC ... [[https://hausoftools.com/products/klein-tools-mm325-multimeter-digital-manual-ranging-600v-ac-dc-voltage-tester-tests-batteries-current-resistance-diodes-and-continuity][https://hausoftools.com/products/klein-tools-mm325-multimeter-digital-manual-ranging-600v-ac-dc-voltage-tester-tests-batteries-current-resistance-diodes-and-continuity]]

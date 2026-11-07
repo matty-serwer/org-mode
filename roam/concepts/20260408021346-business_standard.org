@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7852ce40-3750-40d4-a87e-60cbb6cbfb93
+:REFLECT_ID: 378b9dc175ad465d9c523a0e144cb235
+:CREATED:  [2026-04-08 Wed 02:13]
+:MODIFIED: [2026-04-08 Wed 02:13]
+:END:
+#+title: Business Standard
+#+filetags: :concept:
+#+date: 2026-04-08
+

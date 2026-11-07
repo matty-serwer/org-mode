@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       6db213c8-aabb-4bfa-90b6-bb3d157897f3
+:REFLECT_ID: 25012026
+:CREATED:  [2026-01-25 Sun 16:55]
+:MODIFIED: [2026-01-25 Sun 16:55]
+:END:
+#+title: Sun, January 25th, 2026
+#+filetags: :daily:
+#+date: 2026-01-25
+- My issues
+  - Not personal
+  - Their mine
+  - It’s ok that I have them

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       ce4f5075-ecd2-49cb-bba4-2727fae69f6c
+:REFLECT_ID: 02032026
+:CREATED:  [2026-03-03 Tue 03:44]
+:MODIFIED: [2026-03-03 Tue 03:44]
+:END:
+#+title: Mon, March 2nd, 2026
+#+filetags: :daily:
+#+date: 2026-03-03
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - a shoegaze version of Somebody by Depeche Mode as a song idea.
+- 

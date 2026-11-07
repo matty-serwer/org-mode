@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1dbeda88-b4b3-4539-9cf9-f3ed1daeff28
+:REFLECT_ID: 120d9de56b2b485184e7a10d842e9bf5
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: Persistence
+#+filetags: :concept:
+#+date: 2025-10-25
+

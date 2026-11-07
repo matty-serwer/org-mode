@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       f23a728f-5f8e-45aa-9d65-243f164961ee
+:REFLECT_ID: 6d1f3381b9df4098932047319ba2e47c
+:CREATED:  [2025-11-14 Fri 06:27]
+:MODIFIED: [2025-11-14 Fri 06:33]
+:END:
+#+title: Guitar Tunings
+#+filetags: :concept:
+#+date: 2025-11-14
+- D Standard
+  - D - G - C - F - A - D

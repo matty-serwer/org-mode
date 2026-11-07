@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a1ae6251-5200-4315-a995-d7bede79f53f
+:REFLECT_ID: f33bb23b47fc4955bded931c102f3ebc
+:CREATED:  [2026-01-31 Sat 19:54]
+:MODIFIED: [2026-01-31 Sat 19:54]
+:END:
+#+title: Mac OS Filesystem
+#+filetags: :concept:
+#+date: 2026-01-31
+

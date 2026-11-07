@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       00f7badb-d922-4939-9385-cd7f92b78cd8
+:REFLECT_ID: 7bfc80b070654e5bafdd95fd940c7581
+:CREATED:  [2026-01-02 Fri 16:12]
+:MODIFIED: [2026-01-02 Fri 16:12]
+:END:
+#+title: Conflict Resoultion
+#+filetags: :concept:
+#+date: 2026-01-02
+

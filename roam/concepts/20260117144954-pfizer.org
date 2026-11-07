@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       d9656786-1fd3-4713-a596-66371e4fdef1
+:REFLECT_ID: ad850f9fda80423782af92eb52437fe0
+:CREATED:  [2026-01-17 Sat 14:49]
+:MODIFIED: [2026-03-08 Sun 00:35]
+:END:
+#+title: Pfizer
+#+filetags: :concept:company:
+#+date: 2026-01-17
+-  
+- Domain: 
+- Link: 

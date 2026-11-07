@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d75cc79d-da3c-45fb-9e51-69e3c1145a04
+:REFLECT_ID: 9deb7c9674984df8bf18bc5af2d6ea89
+:CREATED:  [2026-04-21 Tue 07:20]
+:MODIFIED: [2026-04-21 Tue 07:20]
+:END:
+#+title: Mini Jack
+#+filetags: :concept:
+#+date: 2026-04-21
+

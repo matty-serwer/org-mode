@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3e09cf90-0ceb-4672-bc5a-c70db365eb87
+:REFLECT_ID: f94d2d808de64139878f6b70d1360a1f
+:CREATED:  [2026-04-21 Tue 07:21]
+:MODIFIED: [2026-04-21 Tue 07:21]
+:END:
+#+title: Power Adapters
+#+filetags: :concept:
+#+date: 2026-04-21
+

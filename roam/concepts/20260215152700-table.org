@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f6d9d634-64ff-454e-a8f6-096c74b373ba
+:REFLECT_ID: 4e62cc49e2c6463bb90a0936701c02ff
+:CREATED:  [2026-02-15 Sun 15:27]
+:MODIFIED: [2026-02-15 Sun 15:27]
+:END:
+#+title: Table
+#+filetags: :concept:
+#+date: 2026-02-15
+

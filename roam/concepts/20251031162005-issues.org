@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8d57344f-4d17-4467-8fcb-40935c51ad9f
+:REFLECT_ID: 0fbf5b01d8b648529d8cf1b237d479ac
+:CREATED:  [2025-10-31 Fri 16:20]
+:MODIFIED: [2025-10-31 Fri 16:20]
+:END:
+#+title: Issues
+#+filetags: :concept:
+#+date: 2025-10-31
+

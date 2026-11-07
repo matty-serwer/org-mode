@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       91c71ea3-9f3f-40e3-a5c2-4f2d53bb5ff9
+:REFLECT_ID: 2780ff5732ad4954adec4c8e939ea85c
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-11-13 Thu 06:20]
+:END:
+#+title: Git
+#+filetags: :concept:
+#+date: 2025-10-25
+

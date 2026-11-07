@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6cf7e814-afcd-4ccb-bd8c-f3e9188fd5f7
+:REFLECT_ID: 07c03904af074ce09932d0f456c268ad
+:CREATED:  [2025-11-13 Thu 06:11]
+:MODIFIED: [2025-11-13 Thu 06:11]
+:END:
+#+title: Backblaze
+#+filetags: :concept:
+#+date: 2025-11-13
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cdb98e1d-640a-4abc-ad49-833cdc278c21
+:REFLECT_ID: 1f8c681bedf84b32be7b18457cca865b
+:CREATED:  [2026-02-08 Sun 16:21]
+:MODIFIED: [2026-02-08 Sun 16:21]
+:END:
+#+title: the Go-Gos
+#+filetags: :concept:
+#+date: 2026-02-08
+

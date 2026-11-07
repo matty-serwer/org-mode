@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4e5b0d78-73e5-4565-9b4f-48aac9d967ea
+:REFLECT_ID: 2f886e0397a044609f3a16e073937f41
+:CREATED:  [2026-01-31 Sat 09:03]
+:MODIFIED: [2026-01-31 Sat 09:03]
+:END:
+#+title: Macbook Pro 14
+#+filetags: :concept:
+#+date: 2026-01-31
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0336e3da-2e61-42e2-bc26-8c98e9c32f30
+:REFLECT_ID: 3a32342955624f9a925a3075c8385dc3
+:CREATED:  [2025-12-11 Thu 17:30]
+:MODIFIED: [2025-12-11 Thu 17:30]
+:END:
+#+title: The Thermostat Argument
+#+filetags: :concept:
+#+date: 2025-12-11
+

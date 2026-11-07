@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fb9a5244-df2b-417b-b7cd-3b82fa08cfc9
+:REFLECT_ID: 32727342aaeb42239e8436abe60e0af5
+:CREATED:  [2026-02-11 Wed 20:49]
+:MODIFIED: [2026-02-11 Wed 20:49]
+:END:
+#+title: Operation Mattress
+#+filetags: :concept:
+#+date: 2026-02-11
+

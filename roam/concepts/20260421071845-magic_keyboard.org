@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8d5ea9ba-0b1e-47a3-a2bf-3faf928e85f2
+:REFLECT_ID: 69f55067257a4c89b4f3cf1e67385d65
+:CREATED:  [2026-04-21 Tue 07:18]
+:MODIFIED: [2026-04-21 Tue 07:18]
+:END:
+#+title: Magic Keyboard
+#+filetags: :concept:
+#+date: 2026-04-21
+

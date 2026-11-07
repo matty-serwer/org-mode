@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ee5dea5c-a81e-4ca1-90eb-bd4ea771ae0d
+:REFLECT_ID: c3209e84bb75428bb773669cb4567a47
+:CREATED:  [2026-04-16 Thu 03:27]
+:MODIFIED: [2026-04-16 Thu 03:27]
+:END:
+#+title: Ableton Note
+#+filetags: :concept:
+#+date: 2026-04-16
+

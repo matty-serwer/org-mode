@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       c2024c61-ce42-4d0d-b944-473c77f8fa7e
+:REFLECT_ID: 10e2fcae76064dad808aecf6b70673c5
+:CREATED:  [2025-12-12 Fri 00:27]
+:MODIFIED: [2025-12-12 Fri 00:37]
+:END:
+#+title: Navigating Doom Emacs Notes
+#+filetags: :concept:
+#+date: 2025-12-12
+- Finding & Opening FIles
+  - Find File
+    - =SPC f f= → main “find file” prompt (usually =find-file= via your completion system).
+    - =SPC f r= → recent files list.
+    - =SPC f p= → opens to the doom directory? Useful, but unsure why or how this is so
+  - Project-based file opening
+    - =SPC p f= → =projectile-find-file= in the current project
+    - =SPC p p= → switch project!
+  - Browsing directories (Dired and friends)
+    - =SPC .= → open a Dired buffer (Currently the same as =SPC f f= )
+    - =SPC f d= FF to navigate to a directory - to look at the directory in it's own buffer
+  - Other useful entry points
+    - =SPC b b= → switch to another buffer (often how you “open” files already visited).
+    - =SPC h r r= → reload Doom config, frequently used after editing =config.el= opened via =SPC f c=.

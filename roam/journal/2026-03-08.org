@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       dcd4485d-64e9-4d06-8231-6af0209f4800
+:REFLECT_ID: 08032026
+:CREATED:  [2026-03-08 Sun 11:47]
+:MODIFIED: [2026-03-09 Mon 01:56]
+:END:
+#+title: Sun, March 8th, 2026
+#+filetags: :daily:
+#+date: 2026-03-08
+- [[id:441e5974-b2fb-49c2-a6b1-dc5751ced4d4][Allen & Heath SQ-5]]ss-_
+  - *Channel Setup (per input)*
+    - Select channel via *Sel* key → channel appears on touchscreen
+    - *Processing* → set *Gain* (preamp level)
+    - *Processing* → enable *HPF* (~80–100Hz) on all speech channels
+    - *Processing* → *Gate* → set threshold to eliminate bleed between speakers
+    - *Processing* → *PEQ* → apply any provided frequency cut sheets
+    - *Processing* → *Compressor* → apply light settings for speech consistency
+    - *Routing* screen → verify channel is assigned to *LR*
+  - *Outputs / Scene*
+    - *Routing* screen → confirm LR output patching is correct
+    - Save scene: *Utility* → *USB Data* → *Show Manager* → *Store New*
+  - *AMM (Automatic Mic Mixer — speech specific)*
+    - Built-in AMM is ideal for multi-presenter panels
+    - *Touchscreen* → *Processing* → *AMM* → assign relevant channels
+    - Automatically rides gain to prevent open mic stacking and feedback
+  - *Appendix / Key Notes*
+    - *GEQ/Frequency sheets* are applied on the *LR output bus*, not individual channels → *Processing* on master strip → *GEQ*
+    - *HPF on every speech channel is non-negotiable* — eliminates handling noise and low-end feedback buildup
+    - SQ-5 has *6 fader layers* — verify correct layer if a channel appears missing
+    - Set *gate thresholds conservatively* — talent should not need to yell to open them
+    - *AMM and gates can conflict* — confirm preferred approach with house engineer
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - Thanks for watching!

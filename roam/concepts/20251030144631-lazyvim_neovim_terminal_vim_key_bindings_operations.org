@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       e019d6ec-649e-4d61-8d50-f4b671fbc56a
+:REFLECT_ID: 9fa948532b33430eb28fbdb04dcb2a21
+:CREATED:  [2025-10-30 Thu 14:46]
+:MODIFIED: [2025-10-30 Thu 14:51]
+:END:
+#+title: LazyVim NeoVim Terminal VIM Key Bindings & Operations
+#+filetags: :concept:
+#+date: 2025-10-30
+* [[id:294115ff-c1e7-433f-9ac2-c3488273a3bd][LazyVim]] [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] [[id:e8a5b689-875d-488f-a5e8-ea5821b7cfc1][Terminal]] [[id:c9dedc12-3f58-46a4-984d-998ce809fa6f][VIM Key Bindings]] & Operations
+** Built-in Neovim Commands
+- =:tabnew= - Opens a new tab
+- =:split= - Opens a horizontal split
+- =:vsplit= - Opens a vertical split
+- =:terminal= - Opens a terminal in the current window
+** LazyVim's Default Keybindings
+=<leader>ft= - Often mapped to open a floating terminal
+=<leader>tn= - Often mapped to open a new terminal tab (config dependent)
+** Common Approach: Terminal with Split
+=:vsplit=
+:=terminal=
+- Or combined:
+  :=vsplit | terminal=
+** Finding Your Keybindings
+Check your config files at:
+=~/.config/nvim/lua/config/keymaps.lua=
+- Or list all mappings:
+  :=map=
+** Toggleterm Plugin (if installed)
+=<leader>tf= - Toggle floating terminal
+=<leader>tv= - Toggle vertical terminal
+=<leader>th= - Toggle horizontal terminal

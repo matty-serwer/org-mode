@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       15cf34c2-2ea0-4054-8e71-af76fa1e291b
+:REFLECT_ID: 485e5319eb434ebea027347476a5a194
+:CREATED:  [2026-02-11 Wed 15:38]
+:MODIFIED: [2026-02-11 Wed 15:39]
+:END:
+#+title: ADHD Motivation
+#+filetags: :concept:
+#+date: 2026-02-11
+

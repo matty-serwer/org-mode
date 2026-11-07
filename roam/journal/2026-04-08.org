@@ -1,0 +1,131 @@
+:PROPERTIES:
+:ID:       a4b21eb0-b55f-4c96-b02b-080f5e262b09
+:REFLECT_ID: 08042026
+:CREATED:  [2026-04-08 Wed 00:10]
+:MODIFIED: [2026-04-08 Wed 22:23]
+:END:
+#+title: Wed, April 8th, 2026
+#+filetags: :daily:116:
+#+date: 2026-04-08
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - Thank you.
+  - What's up?
+Since you’re a coder, *MIDIMonster* is arguably the most satisfying route. It’s a wildly lightweight, open-source C daemon that routes and translates multi-channel absolute-value-based protocols. You define the routing using simple =.cfg= text files (and you can even write Lua scripts for dynamic event generation if you want to get complex).
+* Get MIDIMonster Running on macOS to Emulate an MCU Surface for LUNA
+- 1. The Repository & Installation
+  - The project lives here: [[https://github.com/cbdevnet/midimonster][cbdevnet/midimonster on GitHub]].[1]
+  - On a Mac, you can build it easily using Homebrew to grab the dependencies:[2]
+    - #+begin_src markup
+         brew install pkg-config lua openssl jack python3
+      #+end_src
+      
+      #+begin_src markup
+      
+      #+end_src
+  - Then clone the repo, run =make=, and you'll get the binary.
+  - *The macOS Caveat:* Native CoreMIDI support isn't MIDIMonster's primary backend.
+    - On macOS, it relies on JACK (JACK Audio Connection Kit) to handle local MIDI routing.
+    - You will need to install JACK for macOS and run it in the background to bridge your physical USB controller to MIDIMonster, and then route MIDIMonster's virtual output into LUNA.[1]
+- 2. How the Configuration Works
+  - MIDIMonster configs define =[backend]= instances and then a =[map]= section to connect them.
+  - Here is a conceptual example of what your =midimonster.cfg= will look like to translate an X-Touch Mini to MCU:
+    - #+begin_src markup
+      ; Define your physical input (X-Touch Mini) via JACK
+      [jack my_controller]
+      client = xtouch_mini
+      ; Define the virtual output that LUNA will connect to
+      [jack virtual_mcu]
+      client = virtual_mcu_out
+      [map]
+      ; -- TRANSPORT BUTTONS --
+      ; MCU expects specific Note On messages on MIDI Channel 1 (ch 0 in MIDIMonster)
+      ; Let's say your X-Touch Mini button sends Note 20, map it to MCU Play (Note 94)
+      my_controller.note0.20 > virtual_mcu.note0.94
+      ; Map X-Touch Note 21 to MCU Stop (Note 93)
+      my_controller.note0.21 > virtual_mcu.note0.93
+      ; -- FADERS --
+      ; MCU doesn't use CCs for faders; it uses 14-bit Pitch Bend (pw)
+      ; Fader 1 = Pitch Bend on Channel 1, Fader 2 = Pitch Bend on Channel 2, etc.
+      ; Map your generic controller's CC 10 (on ch 1) to MCU Fader 1
+      my_controller.cc0.10 > virtual_mcu.pw0
+      ; Map CC 11 to MCU Fader 2 (Pitch Bend on Channel 2)
+      my_controller.cc0.11 > virtual_mcu.pw1
+      #+end_src
+- 3. The Mackie Control (MCU) Protocol Cheat Sheet
+  - MCU operates entirely on Channel 1 for buttons/knobs, and uses individual channels for the faders.
+  - To map this out, you need to know what LUNA expects to receive.
+  - Faders
+    - Faders (1–8): Pitch Bend messages on Channels 1 through 8
+    - Master Fader: Pitch Bend on Channel 9
+  - Transport (Note On, Ch 1)
+    - Rewind = Note 91
+    - Fast Forward = Note 92
+    - Stop = Note 93
+    - Play = Note 94
+    - Record = Note 95
+  - Channel Controls (Note On, Ch 1)
+    - Channel Selects: Notes 24 to 31
+    - Channel Mutes: Notes 16 to 23
+    - Channel Solos: Notes 8 to 15
+  - V-Pots / Pan Knobs (CC, Ch 1)
+    - CC 16 to 23
+    - MCU expects /relative/ encoder data here, not absolute 0–127 values
+    - If your generic controller only sends absolute CCs, you can use MIDIMonster's Lua backend to script a conversion from absolute to relative
+- The Alternative: *Bome MIDI Translator Pro*
+  - If you find the JACK audio routing on macOS too annoying to deal with (which happens often on modern macOS versions), the industry standard fallback is Bome MIDI Translator Pro
+  - Has native CoreMIDI virtual ports
+  - Handles absolute-to-relative conversions effortlessly
+  - Doesn't require a background audio server
+  - Costs ~$65, but it is the bulletproof way to do custom MCU mapping on a Mac if the open-source route gets bogged down in dependencies
+- Sources
+  - [1] GitHub - cbdevnet/midimonster: Multi-protocol control & translation — [[https://github.com/cbdevnet/midimonster][https://github.com/cbdevnet/midimonster]]
+  - [2] Building the MIDIMonster — [[https://kb.midimonster.net/dev/Building.html][https://kb.midimonster.net/dev/Building.html]]
+  - [3] [Question] MIDI into MidiMonster on Mac OS X? · Issue  - GitHub — [[https://github.com/cbdevnet/midimonster/issues/116][https://github.com/cbdevnet/midimonster/issues/116]]
+  - [4] Download - MIDIMonster — [[https://midimonster.net/download.html][https://midimonster.net/download.html]]
+  - [5] Releases · cbdevnet/midimonster - GitHub — [[https://github.com/cbdevnet/midimonster/releases][https://github.com/cbdevnet/midimonster/releases]]
+  - [6] Get started - MIDIMonster — [[https://midimonster.net/getStarted.html][https://midimonster.net/getStarted.html]]
+  - [7] Mackie control as supported MIDI controller - Zynthian Discourse — [[https://discourse.zynthian.org/t/mackie-control-as-supported-midi-controller/11717][https://discourse.zynthian.org/t/mackie-control-as-supported-midi-controller/11717]]
+  - [8] midimonster - Multi-protocol translation software - cbcdn services — [[https://git.services.cbcdn.com/midimonster/log/README.md?h=kinet&id=c038fee6bd4888749691299456f8e95611677e43][https://git.services.cbcdn.com/midimonster/log/README.md?h=kinet&id=c038fee6bd4888749691299456f8e95611677e43]]
+  - [9] MIDI Learn, Mackie Control and HUI Protocol Support - YouTube — [[https://www.youtube.com/watch?v=OcYzNpOKprY][https://www.youtube.com/watch?v=OcYzNpOKprY]]
+  - [10] Impossible to use MIDIMonster on Mac M1 Monterey : r/lightingdesign — [[https://www.reddit.com/r/lightingdesign/comments/vl7idj/impossible_to_use_midimonster_on_mac_m1_montery/][htt]][[https://www.reddit.com/r/lightingdesign/comments/vl7idj/impossible_to_use_midimonster_on_mac_m1_montery/￼][ps://www.reddit.com/r/lightingdesign/comments/vl7idj/impossible_to_use_midimonster_on_mac_m1_montery/]]
+-----
+
+- [[id:b42566da-4387-4def-bd67-1bf6c02a7db5][C-Note]] MCP [[id:9688b22d-4a6c-4194-bd0d-db6b9d2715c6][Fix]] [[id:df0bb3d5-1575-44ca-95e4-65ca56600691][Ticket]] — Reference Routing
+  - Problem
+    - The MCP currently routes all notes into =topics/= regardless of whether they are personal working notes or external reference material.
+    - The =reference/= directory exists in the vault structure and has defined subcategories in the tag taxonomy, but the MCP does not route to it automatically.
+  - Expected Behavior
+    - Notes that are external/pasted reference material — docs, how-tos, technical overviews, tutorials — should route to the appropriate =reference/= subdirectory:
+    - Code snippets, imports, function defs
+      - Routes to =reference/code/=
+    - Install/setup/configure docs
+      - Routes to =reference/software/=
+    - Audio/DAW/plugin references
+      - Routes to =reference/audio/=
+    - Everything else reference
+      - Routes to =reference/general/=
+  - Current Behavior
+    - All notes land in =topics/= under the closest category match.
+    - Reference material ends up in =topics/dev/general/= etc. instead of =reference/software/= etc.
+  - Example
+    - =microsoft-intune-autopilot-technical-reference.md= was filed to =topics/dev/general/=
+      - Should have gone to =reference/software/=
+      - It is a technical overview doc with no personal working context.
+  - Fix Needed
+    - Update routing logic in =cnote-mcp-server.py= to detect reference-type content and route to =reference/= subdirectories
+    - Reference detection should key off =note_type == reference= and/or keyword detection already defined in tag taxonomy
+      - =#ref/code=
+      - =#ref/software=
+      - =#ref/audio=
+      - =#ref/general=
+    - Existing =topics/dev/general/microsoft-intune-autopilot-technical-reference.md= should be moved to =reference/software/= when fix is applied
+  - =#dev/general= =#type/log= =#audio/plugin= =#status/wip= =#follow-up=
+-----
+
+-
+  - Organized [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]]
+    - added [[id:cad7d70a-70d5-4809-a005-afb1caee9c2e][🌱 APRIL 🍀]] and pinned it
+      - a focus for the month, to be updated
+    - updated [[id:66089ec0-9f2a-437a-8153-ee903fba5164][👩🏻‍💻 Active Project Board 👩🏻‍💻]]
+    - updated [[id:9e874ee4-a7d7-41f6-a60c-3391c9469c9c][👩🏻‍🎤 Ableton Live Stem Set]]
+    - updated a few other things

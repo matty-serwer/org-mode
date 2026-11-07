@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a5ed306a-385f-45fc-868e-87468b0bd3eb
+:REFLECT_ID: 7d199956232e4f7394a1c6226b860898
+:CREATED:  [2025-11-16 Sun 19:24]
+:MODIFIED: [2025-11-16 Sun 19:24]
+:END:
+#+title: page link
+#+filetags: :concept:
+#+date: 2025-11-16
+

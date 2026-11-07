@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ed0306b2-bb14-4e2c-84e6-1f1ee26d3cb8
+:REFLECT_ID: e6670f171c294f268161f2dfba7433d4
+:CREATED:  [2026-03-17 Tue 18:10]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Music Production
+#+filetags: :concept:
+#+date: 2026-03-17
+

@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       85e3ae1d-781b-4993-b2fc-868a4d67fc7a
+:REFLECT_ID: 15042026
+:CREATED:  [2026-04-15 Wed 16:55]
+:MODIFIED: [2026-04-16 Thu 03:50]
+:END:
+#+title: Wed, April 15th, 2026
+#+filetags: :daily:
+#+date: 2026-04-15
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - You
+- [[id:924b8142-e9e5-453b-8baf-adedb1dd9f38][CLI Commands]]
+  - Write files to a text file. 
+    - in this example, we are listing all flac files in the current directory, children inclusive, in alphabetical order, case-insensitive, skip dupes.
+    - #+begin_src markup
+      find . -type f -name "*.flac" -exec basename {} ; | sort -fu > 001-flac-song-list.txt
+      #+end_src
+- [[roam:Song idea]]
+-
+  -
+    - A song called turning up the volume, where I keep cranking it and cranking it, I can’t be heard. Like a bad dream when your sick

@@ -1,0 +1,217 @@
+:PROPERTIES:
+:ID:       88ce5f59-43f2-4e7f-a7e9-7357378b50de
+:REFLECT_ID: 13032026
+:CREATED:  [2026-01-17 Sat 14:45]
+:MODIFIED: [2026-03-14 Sat 21:26]
+:END:
+#+title: Fri, March 13th, 2026
+#+filetags: :daily:
+#+date: 2026-01-17
+- [[id:4dd8e0dc-4cfc-4818-9e36-dca5c68dba89][👩🏻‍🎤 💿 Operation: M477i3.exe]]
+  - [ ] Follow one [[id:1e7de44d-3bc2-45ca-9ba4-24a67b2a77e1][Serum]] [[id:acbe6e18-669c-462f-a597-b1056114e402][Tutorial]] using the [[id:5d55e7ce-1a0b-4737-8c82-7ed45cd6e732][U-he Diva Synth]]
+    - Use plugins instead of Serum FX
+- [[id:c1c9c66e-93b3-4e2f-8a9f-227d20821fc7][Audio File System Organization]]
+  - [[id:ac05fe49-4cbb-4c48-bbc6-09414425b721][Record Crate]] [[id:b97b115d-34d1-427d-9677-5f4bf4a139d2][File System]] [[id:61373a92-a293-4e24-a38e-b4bc1a805a5f][Organization]]
+    - [ ] [[id:4c4f930a-65d2-4960-916e-5508accb512f][Research]] How the ideal file system for [[id:1f4bbf0e-052b-409e-b494-a1c20e899fa3][Algoriddim DJay]] & [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]]
+      - [ ] Print out the current file system
+      - [ ] [[id:b42ab017-a31b-4742-bb11-6739d926fae3][Prompt]] [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]]
+        - I am looking to re-organize my DJ and Audio production audio files. They are principally used in Algoriddim DJay Pro, for DJaying and personal listening, as well as Ableton Live for DJaying, Sampling, and other creative purposes. [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]]
+        - I have some tracks that are stem separated, for use in Ableton Live. I would like these tracks, which consist of about 4 files, to be as easily accessible as possible
+        - Useful folders will only be one or two levels deep I think, as Algoriddim DJay generally previews files one directory at a time. 
+        - I would not like tracks or albums to be separated by their own folder. It's a pain digging. 
+        - I currently have tracks organized by genre, and occasionally utility. I'm open to any suggestions here, of either restructuring/renaming the genres or a similar organization/naming convention. I don't know exactly, but i do like to keep tracks for certain DJ circumstances clustered together
+        - I'm thinking of possibly a thorough naming convention that will work for all tracks, so that the tracks can be organized mostly by file name, and much less by folder. Additionally, if there is an album of tracks, or several tracks from the same album, the naming convention should allow the tracks to be clustered together. 
+        - What do you think? Feel free to ask me one set of questions if you need clarification. 
+        - *Included: *The current file system. 
+    - [ ] [[id:ae972f89-3e9c-4252-916b-8f8780dae7bd][Restructure]] the [[id:ac05fe49-4cbb-4c48-bbc6-09414425b721][Record Crate]] [[id:b97b115d-34d1-427d-9677-5f4bf4a139d2][File System]]
+      - [ ] [[id:b42ab017-a31b-4742-bb11-6739d926fae3][Prompt]] [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]]
+        - What is the most efficient way to go about restructuring the Record Crate file system from my original setup, to the suggested setup. 
+        - Give me a list of steps in a bullet outline
+        - Preference is towards using the terminal (Oh My zsh, in Ghostty on my Macbook Pro M2, Mac OS Sequoia), or doom emacs, should either ultimately be the most efficient for the task. 
+- [[id:2c4f9123-31e7-44f9-a792-663d2f27373b][Information Technology]]
+  - [[id:309fd4f4-67c8-466a-992d-dd5f28fb7298][418 Audio Laptop Fleet Sync]]
+    - [X] Research how to do the task for Alex
+      - [X] [[id:b42ab017-a31b-4742-bb11-6739d926fae3][Prompt]] [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]]
+        - One of my new bosses, in my new [[id:e64142ee-53d3-4fa8-b19f-a39ae7d40e5b][Audio Tech]] [[id:1ea984dd-11a6-42c4-81d0-33666882beaa][Career]] [[id:aeefafa8-d6b3-4689-88af-de9714c5b8f1][Alex Triana]], has a need to clean his force of 50 [[id:7ca1af46-a95e-4537-ac05-9a9c92e0d934][Microsoft Windows]] laptops after each job, update and/or install software, and other files, all from one central source. I feel like, as a computer programmer, I have been on systems that were controlled and maintained in such a way, but I'm not sure the specific software system that has been used. 
+        - Can you please recommend the best two options for accomplishing this task. 
+        - Include pricing information
+        - Include difficulty, the time it should take for me to complete the job, and how much I should charge. I have not done this particular job before, but I believe I have more than enough technological aptitude to accomplish it professionaly. 
+        - I get paid $600 a day as an audio tech by [[id:aeefafa8-d6b3-4689-88af-de9714c5b8f1][Alex Triana]]
+      - [[id:cf7f92ab-f3ea-45ea-ba21-07d19eaefe73][Claude Response]] [[id:5555e733-cf0f-465a-9f1e-dc4f47c019dc][Email Text]] to send to [[id:aeefafa8-d6b3-4689-88af-de9714c5b8f1][Alex Triana]]
+        - Subject: Quick Questions — Laptop Fleet Management
+          Hey Alex,
+          I've been researching options for centralizing the management of your laptop fleet. Before I put a recommendation together, I have a few quick questions:
+          • Do you have a dedicated Windows Server, or are the laptops standalone machines?
+          • When you need to update or clean the laptops, are they physically in the same location, or spread across multiple sites?
+          • Do you currently pay for Microsoft 365 for your business?
+          • Do you prefer a one-time setup cost with no ongoing fees, or is a low monthly subscription acceptable if it means less hands-on maintenance?
+          • What matters most to you — wiping/resetting laptops between jobs, pushing software and updates, or being able to manage everything remotely without physical access to the machines?
+          Once I have your answers, I'll put together a written side-by-side comparison of the best solutions for your specific setup — covering cost, what's required to get it running, and what day-to-day management looks like — so you have a clear basis for making a decision.
+          Thanks,
+          Mattie
+          Lupine Tech Design
+      - Sent email to [[id:aeefafa8-d6b3-4689-88af-de9714c5b8f1][Alex Triana]] Friday night. Edited from what claude suggested. Here' the text:
+        - Hello there Alex,
+          
+          I've been researching options for centralizing the management of your laptop fleet. There are several options, but costs vary depending on the licensing model for the software, and ongoing maintenance overhead, and required hardware (which you may already have). For instan e, Microsoft Intune is around $8 per laptop per month I believe (as the most expensive), NinjaOne starts at $1.50 per laptop per month, but scales up depending on services. And then there's a handful of solutions that aren't SaaS (Monthly) but have various degrees of setup time and maintenance.
+          
+          So if I know exactly what you have, and looking to do, we can zoom in on the most cost effective & time effective solution. You basically told me, but I want to iron it out real quick, if you have the time. 
+          
+          • Do you have a dedicated Windows Server, or are the laptops standalone machines?
+          
+          • When you need to update or clean the laptops, are they physically in the same location, or spread across multiple sites? (I think you said spread out)
+          
+          • Do you currently pay for Microsoft 365 for your business?
+          • If you could, being very general, list what you want to be able to do, and in order of importance or upside. I was thinking:
+          
+          1. Wiping/resetting laptops between jobs
+          
+          2. Pushing software and updates
+          
+          3. Being able to manage everything remotely without physical access to the machines
+          
+          but that's off the cuff based on our short conversation. Maybe I have something wrong, or you could just use my list as an example. 
+          
+          Thanks,
+          Mattie
+          Lupine Tech Design
+- [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]]
+  -----
+  - Reflect Notes & AI LLMs
+    - 🔑 The Big News: Reflect's Official MCP Server (Beta)
+      - Reflect now has an official MCP server (currently in beta) that allows AI coding assistants like Claude Code, Codex, and Cursor to search, read, and write to your Reflect notes directly from the terminal or chat interface.
+      - This is the *most direct path* and the thing you probably most want to know about.
+      - What you can do with it
+        - Search notes by text, tag, date, or backlinks
+        - Retrieve any note or your daily note
+        - Create new notes and append to your daily note
+        - Browse and manage tags
+      - How to set it up for Claude Code
+        - First, enable the MCP server in Reflect's desktop app settings.
+        - Then, for Claude Code, run this command in your terminal:
+          - #+begin_src markup
+                 claude mcp add --scope user --transport http reflect-notes http://127.0.0.1:7676/mcp
+              - Reflect also offers a downloadable setup guide markdown file you can upload directly to Claude Code to have it configure itself.
+            #+end_src
+        - This is a local HTTP MCP server that Reflect's desktop app runs on =127.0.0.1:7676=
+          - Reflect's desktop app must be open and running for Claude Code to connect to it.
+          - This *bypasses the E2EE limitation* of the REST API because it talks to the local app, not Reflect's servers.
+    - 🔒 The Core Limitation: End-to-End Encryption
+      - This is the fundamental constraint you need to understand about every other approach.
+      - All note-related REST API endpoints are write-only (append only).
+        - Your notes' contents are end-to-end encrypted — Reflect's servers can't read the contents of your notes, so they can't serve them up in the API.
+      - The REST API cannot read your notes — it's append/write only for note content.
+      - The local MCP server is significant because it sidesteps this entirely by communicating with your local app.
+    - 🤖 Reflect's REST API — What It Actually Does
+      - Reflect's REST API lets you append data to your notes, return a list of bookmarked links, and a few other things.
+      - Endpoints from the OpenAPI schema
+        - Append to a daily note (with optional list targeting and date)
+        - Create a new note
+        - List bookmarked links
+        - List graphs (your "workspaces")
+        - Get user/graph info
+        - List Kindle highlights
+      - Authentication
+        - Uses OAuth 2 with support for PKCE extension so you can build a client without shipping secret keys.
+        - You can also generate a simple access token (essentially an API key) from the developer portal.
+      - Bottom line on the REST API
+        - Good for piping data /into/ Reflect from other tools.
+        - Not useful for reading or analyzing your notes.
+    - 🛠️ The Third-Party MCP Server (adstastic/reflect-mcp)
+      - A community-built Python MCP server on GitHub that wraps the REST API.
+      - Installable via =uvx reflect-mcp= with config for Claude Desktop.
+      - Tools included
+        - =create_note=
+        - =append_daily_note=
+        - =create_link=
+        - =list_graphs=
+        - =get_default_graph=
+        - =list_links=
+        - OAuth2 authentication flow
+      - Works in Claude Desktop, unlike Reflect's official MCP which targets Claude Code.
+      - Since it's built on the REST API, it still cannot /read/ your notes — it's write-only.
+      - Setup for Claude Desktop
+        - #+begin_src markup
+          {
+            "mcpServers": {
+              "reflect": {
+                "command": "uvx",
+                "args": ["reflect-mcp"],
+                "env": {
+                  "REFLECT_ACCESS_TOKEN": "your_access_token"
+                }
+              }
+            }
+          }
+            - ## 🧠 Reflect's Built-In AI Features — Full Picture
+          #+end_src
+      - You've only been using a fraction of what's available.
+      - AI Palette (in-editor, per note)
+        - Activate with =cmd+j= (or =ctrl+j= on Windows) after highlighting text.
+        - Built-in prompts include: list action items, key takeaways, fix grammar/spelling, generate outlines, summarize articles, and more.
+        - You can ask anything freeform and save custom prompts.
+        - This is what you've been using for single-note editing.
+        - Reflect's AI tools let you choose between GPT-4o and Claude 3.5 Sonnet, toggled in preferences.
+      - AI Chat with Your Notes
+        - Reflect's advanced search lets you chat with your notes using AI.
+        - If you have filters selected within the search, the chat function will call on those notes specifically.
+          - Filter by the =#person= tag and ask about people in your CRM.
+          - Ask about major themes in your notes from the past week.
+          - Search a topic and have AI summarize your knowledge on it.
+        - This is *cross-note AI* and it's already available to you.
+        - The filter-first workflow is the key — you're essentially scoping a RAG query to a subset of your notes.
+      - Custom Prompt Templates
+        - Reflect added a dedicated Prompt Templates tab in preferences where you can create, copy, edit, and delete custom AI prompt templates.
+      - Backlink Decoration via AI
+        - Highlight text, open the AI palette with =cmd+j=, and select "Decorate my writing with backlinks."
+        - AI automatically adds backlinks to your existing notes throughout the selection.
+    - 📦 Built-In Integrations Summary
+      - Calendar & Contacts
+        - Google Contacts, Google Calendar, iCal, and Office 365 — pulls in meetings and contacts automatically.
+      - Zapier
+        - No-code connector to hundreds of apps.
+        - Add Trello cards, Asana tasks, Google Docs, Slack notes, emails, and tweets to Reflect.
+        - Sync Strava data and much more.
+      - Readwise
+        - Syncs all your Kindle highlights, bookmarks, Twitter saves, podcast highlights, and read-it-later content into Reflect automatically.
+      - Also available
+        - Kindle direct sync
+        - Chrome/browser extension for saving web links (with AI summary generation)
+        - Whisper-based voice transcription
+    - 🗺️ The Decision Map
+      - Read + search + analyze notes with Claude
+        - Reflect's official MCP → Claude Code
+      - Write/append to notes from Claude Desktop
+        - adstastic/reflect-mcp in Claude Desktop config
+      - Cross-note AI Q&A right now
+        - Reflect's built-in AI Chat + filters
+      - Automate piping external data in
+        - Zapier + REST API
+      - Read notes in Claude Desktop
+        - Not possible via REST API; requires official MCP + Claude Code
+      - The most interesting work ahead is *setting up Reflect's official MCP in Claude Code*, which would finally give you read access.
+  -
+    - 
+- [[id:86c00c9f-f24a-4270-91ce-ba000527ef03][👩🏻‍🎤 Audio Sampling TrackList]]
+  - Smut
+    - Syd Sweeny is [[https://music.apple.com/us/album/syd-sweeney/1799297545?i=1799297547][https://music.apple.com/us/album/syd-sweeney/1799297545?i=1799297547]]
+- [[id:b97b115d-34d1-427d-9677-5f4bf4a139d2][File System]]
+  - [[id:e8a5b689-875d-488f-a5e8-ea5821b7cfc1][Terminal]]
+    - [[id:aa8cb14a-41fa-43f5-8527-be3a40525e41][Print Folder Structure]] from bash terminal
+      - [[id:1f6b1fd6-d3c7-4fa7-9b30-46c5bd11c6ca][tree command]]
+        - *Method 1 — All files & folders, full depth*
+          - =tree --dirsfirst -a > tree_full.txt=
+          - Includes hidden files (=-a=) and all folders/files with no depth limit
+          - Safe version that excludes heavy dirs: =tree --dirsfirst -a -I 'node_modules|.git|.next|target|build' > tree_full.txt=
+        - *Method 2 — Folders only, full depth*
+          - =tree -d --dirsfirst > tree_dirs.txt=
+          - =-d= flag limits output to directories only, no files shown
+          - Safest to run from broad roots like =~/Projects=
+        - *Method 3 — Files & folders, 2 levels deep*
+          - =tree -L 2 --dirsfirst > tree_2levels.txt=
+          - =-L 2= limits recursion to 2 generations
+          - Adjust depth as needed: =-L 1=, =-L 3=, etc.
+        - *Bonus — add timestamp + path to output*
+          - =echo "$(date) | $(pwd)" > tree_2levels.txt && tree -L 2 --dirsfirst >> tree_2levels.txt=
+        - *Install tree if needed*
+          - =brew install tree=

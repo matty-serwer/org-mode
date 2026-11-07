@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       11eeda98-caf4-4a38-a499-7669cb6327c2
+:REFLECT_ID: e52be963f68942de8b1d2ba43e42a13e
+:CREATED:  [2025-11-05 Wed 17:10]
+:MODIFIED: [2025-11-05 Wed 17:10]
+:END:
+#+title: Experience
+#+filetags: :concept:
+#+date: 2025-11-05
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       467be791-bd94-4c5b-8e16-c71707469c4d
+:REFLECT_ID: d8e96576f96742f988578d5caa5061ad
+:CREATED:  [2025-10-25 Sat 13:47]
+:MODIFIED: [2025-10-25 Sat 13:47]
+:END:
+#+title: Me
+#+filetags: :concept:
+#+date: 2025-10-25
+

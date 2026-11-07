@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d05d4949-6130-4a09-8e33-70f5454cf753
+:REFLECT_ID: 5f89dea8ee99488a9df2da5f329fc5d8
+:CREATED:  [2026-01-28 Wed 05:25]
+:MODIFIED: [2026-01-28 Wed 05:25]
+:END:
+#+title: Shedule
+#+filetags: :concept:
+#+date: 2026-01-28
+

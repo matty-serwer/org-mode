@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1b92d315-2020-47bc-b14e-8a0fdb54a75a
+:REFLECT_ID: aa134e055b5540b9946c6cb99a30e4ab
+:CREATED:  [2025-10-27 Mon 20:43]
+:MODIFIED: [2025-10-27 Mon 20:44]
+:END:
+#+title: art
+#+filetags: :concept:
+#+date: 2025-10-27
+

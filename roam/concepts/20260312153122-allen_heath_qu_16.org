@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       da696f9a-4ef0-44e9-9e6f-3d64e859c2c3
+:REFLECT_ID: cdc9b67f69f04790a6167c48f28143e8
+:CREATED:  [2026-03-12 Thu 15:31]
+:MODIFIED: [2026-03-12 Thu 15:31]
+:END:
+#+title: Allen & Heath QU-16
+#+filetags: :concept:
+#+date: 2026-03-12
+

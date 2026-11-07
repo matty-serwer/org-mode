@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3ba9e73d-8bfb-450b-92c9-7563502dcaf4
+:REFLECT_ID: 4dfd7699981044808580aa9e7e348813
+:CREATED:  [2026-04-03 Fri 17:59]
+:MODIFIED: [2026-04-12 Sun 12:02]
+:END:
+#+title: Letter
+#+filetags: :concept:
+#+date: 2026-04-03
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       695e99e8-0c05-450b-a90f-8efa850693cd
+:REFLECT_ID: d9487c9cb12f430495df4c19724f39a2
+:CREATED:  [2026-03-18 Wed 14:26]
+:MODIFIED: [2026-03-18 Wed 14:26]
+:END:
+#+title: Arranging
+#+filetags: :concept:
+#+date: 2026-03-18
+

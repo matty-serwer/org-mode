@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9c7b1d95-f7a1-4394-b3bd-ae89ac29589d
+:REFLECT_ID: d3d907bea16f4ceaaa0e053714f9b620
+:CREATED:  [2026-04-21 Tue 07:19]
+:MODIFIED: [2026-04-21 Tue 07:19]
+:END:
+#+title: Busted HDD
+#+filetags: :concept:
+#+date: 2026-04-21
+

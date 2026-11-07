@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       0267483d-3bd3-4a20-ba44-6bb98a8af64a
+:REFLECT_ID: 6e77173b148f4b12a32b27f9d318379d
+:CREATED:  [2026-01-17 Sat 14:47]
+:MODIFIED: [2026-01-17 Sat 14:48]
+:END:
+#+title: Tallon
+#+filetags: :concept:company:
+#+date: 2026-01-17
+-  
+- Domain: 
+- Link: 
+[[id:4e9b7b2a-af1e-4e24-84a3-a531d5144e54][AV]] Contractor

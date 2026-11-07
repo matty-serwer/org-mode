@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a16dea3a-65c0-4166-a589-2b15ef296528
+:REFLECT_ID: 476afbe3da4d4794b69b3f1e5b93b23d
+:CREATED:  [2025-10-29 Wed 16:15]
+:MODIFIED: [2025-11-24 Mon 07:42]
+:END:
+#+title: Formatting
+#+filetags: :concept:
+#+date: 2025-10-29
+

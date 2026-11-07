@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       81550d6c-7fc2-4eb1-93d3-d08738616019
+:REFLECT_ID: addcde028a084792b81ac62c000dae8a
+:CREATED:  [2025-12-09 Tue 17:33]
+:MODIFIED: [2026-04-08 Wed 20:22]
+:END:
+#+title: 🈺 Job Search
+#+filetags: :project:career:
+#+date: 2025-12-09
+ 
+- Log
+  - Sunday December 7th - Saturday December 13th
+    - [[id:2c72c0da-dfd6-4c85-a93d-4b5440c0db4e][12/9/2025]]
+      - Created this [[id:a73def42-2736-46be-888f-6fc9ec6db354][Job Search]] Page.
+      - [X] Create Job Search Daily Template
+        - Applications Sent : Target 3
+      - 
+  - Sunday December 14th - Saturday December 20th
+  - Sunday December 21st - Saturday December 27th

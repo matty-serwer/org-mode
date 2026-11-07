@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c87005c2-6662-4df9-b860-e5667c734214
+:REFLECT_ID: 9b1af3646db34e0c88711919e3ca5d19
+:CREATED:  [2026-04-22 Wed 01:20]
+:MODIFIED: [2026-04-22 Wed 01:20]
+:END:
+#+title: UTM
+#+filetags: :concept:
+#+date: 2026-04-22
+

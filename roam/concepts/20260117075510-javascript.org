@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b5afe009-0805-4f5e-aec6-cf82938f8c68
+:REFLECT_ID: fc305b4ff3dd446fbda03bebf6653a0c
+:CREATED:  [2026-01-17 Sat 07:55]
+:MODIFIED: [2026-01-17 Sat 07:55]
+:END:
+#+title: Javascript
+#+filetags: :concept:
+#+date: 2026-01-17
+

@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       c6ffd5cf-134e-4ac3-b403-20bc0f06caa6
+:REFLECT_ID: 40a5cfcdb9314453a67deed93f26039b
+:CREATED:  [2026-01-17 Sat 04:33]
+:MODIFIED: [2026-01-28 Wed 04:55]
+:END:
+#+title: Reflect Index
+#+filetags: :concept:
+#+date: 2026-01-17
+- Random
+  - =#maddie=
+    - Girl fashion & Makeup
+  - 

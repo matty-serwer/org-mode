@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1ba68893-491c-496c-ab93-04ce7175ff5c
+:REFLECT_ID: c520a3035f1b4897b60df0cd2cc915c7
+:CREATED:  [2025-10-27 Mon 19:03]
+:MODIFIED: [2025-10-27 Mon 19:03]
+:END:
+#+title: Rules
+#+filetags: :concept:
+#+date: 2025-10-27
+

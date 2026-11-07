@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3a437311-36ab-49f4-b271-752efe0809a3
+:REFLECT_ID: 261bbbd896d042ef82d3b69424db91c0
+:CREATED:  [2025-12-04 Thu 17:26]
+:MODIFIED: [2025-12-04 Thu 17:26]
+:END:
+#+title: G2i
+#+filetags: :concept:
+#+date: 2025-12-04
+

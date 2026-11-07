@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9d8a70ba-5d6a-4070-85c7-3ef52c3372eb
+:REFLECT_ID: 6399d21e4db54ef08c7ac6ad819c2179
+:CREATED:  [2025-11-15 Sat 01:33]
+:MODIFIED: [2025-11-15 Sat 01:33]
+:END:
+#+title: Edna's Way
+#+filetags: :concept:
+#+date: 2025-11-15
+

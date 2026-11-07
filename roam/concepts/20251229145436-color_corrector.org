@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f1cc79a1-bd8f-4b3f-a5a7-cb9494553118
+:REFLECT_ID: 249135ecbc0946ad9b04826f843ceba1
+:CREATED:  [2025-12-29 Mon 14:54]
+:MODIFIED: [2025-12-29 Mon 14:54]
+:END:
+#+title: Color Corrector
+#+filetags: :concept:
+#+date: 2025-12-29
+

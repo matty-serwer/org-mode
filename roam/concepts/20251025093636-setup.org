@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b8da9525-62fd-48fe-8751-e7de3c327288
+:REFLECT_ID: 212a9880e96c4c748c006e7ddd074016
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: Setup
+#+filetags: :concept:
+#+date: 2025-10-25
+

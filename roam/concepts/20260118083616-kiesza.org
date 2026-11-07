@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c5169e58-2d0f-471f-8081-cb02e81bea5f
+:REFLECT_ID: ba2ef08ae0924716af687693b1e3bd51
+:CREATED:  [2026-01-18 Sun 08:36]
+:MODIFIED: [2026-01-18 Sun 08:36]
+:END:
+#+title: Kiesza
+#+filetags: :concept:
+#+date: 2026-01-18
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       893bf345-3c36-4bf5-b141-817c2a71e7f5
+:REFLECT_ID: 403c3abae0454a5288e46401cebbe2a0
+:CREATED:  [2025-10-27 Mon 20:43]
+:MODIFIED: [2025-10-27 Mon 20:43]
+:END:
+#+title: Manga
+#+filetags: :concept:
+#+date: 2025-10-27
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bce80747-69fe-43c9-9062-b1dde5ba0f39
+:REFLECT_ID: b54aff5f80024fb2830895ba71c7c267
+:CREATED:  [2026-02-03 Tue 10:07]
+:MODIFIED: [2026-02-03 Tue 10:07]
+:END:
+#+title: 50 Cent
+#+filetags: :concept:
+#+date: 2026-02-03
+

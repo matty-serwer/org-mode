@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       a0d5f763-bbfd-4fe9-bdc8-60c3916cd8e0
+:REFLECT_ID: eef6c269479f4bc8bd4c932b27d29865
+:CREATED:  [2025-11-12 Wed 22:42]
+:MODIFIED: [2025-11-12 Wed 23:18]
+:END:
+#+title: #shpeal  about the Coding Economy of Property Management and Protections
+#+filetags: :concept:shpeal:
+#+date: 2025-11-12
+* about the [[id:9bf52e07-a5d8-4e91-8281-16b69ec62541][Coding]] Economy of Property Management and Protections
+- So I’m going to give you a quick rundown of how coding USUALLY works as a business, and this is without taking the healthcare specifics into account, as I wouldn’t know. 
+- Your concerns may be Spot On. But for most markets serviced by the tech community, the emphasis is generally on How your application does it, How it integrates, How initiative, How it works with my specific Needs and Infrastructure requirements. 
+- It very rarely revolves around What the application is/does. Unless you really are filling a need that doesn’t exist, which we might be to an extent, but it comes with the understanding that, as soon as there is even buzz, not even success, people can and will copy What we’re doing with ease.
+- But the competition would come from: what personal networks are we serving. How well we’re doing that. How well does the app scale (
+- Scaling is actually the most important financial concern for any app, 100% of the time. All the biggies in scope like YouTube and Amazon and Tik tok etc. with billions of users, are successful because when they got buzz, and people piled in, their system didn’t crumble, the organization stuck, the accounts remained as they moved from American servers to Chinese banks to their own warehouses. 
+- They’re were always plenty of competitors. most  the apps you’ve heard of, but they failed in the scale. they re user experience usually had only one fatal flaw, or they couldn’t get enough clients to monetize for them
+- Now our experience will obviously have a much lower ceiling than big corporate apps, in scope and $$$. But the principals tend to be the same.
+- General Info About Modern Code & Intellectual Property
+  - Very little about how 90% of apps work is available to patent, or copyright, except for the literal code itself, kinda the way literature can be copywritten: conceptual of course, where it’s a particular arrangement of words, which can be obvious when copied, but it is very rarely the functions of the application which are protected by law.
+  - 

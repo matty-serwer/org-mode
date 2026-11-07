@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6c704288-9dda-4cea-9c8e-01a9a794de22
+:REFLECT_ID: ca9d075e0eb34d4ea8303c68974bf4b0
+:CREATED:  [2025-10-30 Thu 14:34]
+:MODIFIED: [2025-10-30 Thu 14:34]
+:END:
+#+title: File Search
+#+filetags: :concept:
+#+date: 2025-10-30
+

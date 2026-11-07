@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a38538d6-6065-4053-894b-e6e28ff63017
+:REFLECT_ID: f31fa6d625c745abb0136baba79744da
+:CREATED:  [2026-04-12 Sun 12:04]
+:MODIFIED: [2026-04-12 Sun 12:04]
+:END:
+#+title: Aaron Hackman-Zimmermann
+#+filetags: :concept:
+#+date: 2026-04-12
+

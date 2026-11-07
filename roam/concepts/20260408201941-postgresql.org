@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ff6f6a8c-fdb6-4b98-a9f7-24574b5608b4
+:REFLECT_ID: 29acb462edc34d9f8a2d31756800b5ff
+:CREATED:  [2026-04-08 Wed 20:19]
+:MODIFIED: [2026-04-08 Wed 20:19]
+:END:
+#+title: PostgreSQL
+#+filetags: :concept:
+#+date: 2026-04-08
+

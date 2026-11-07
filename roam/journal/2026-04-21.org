@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       6b993c31-5273-432e-9bc5-f6449c7f3959
+:REFLECT_ID: 21042026
+:CREATED:  [2026-04-18 Sat 03:00]
+:MODIFIED: [2026-04-22 Wed 01:20]
+:END:
+#+title: Tue, April 21st, 2026
+#+filetags: :daily:
+#+date: 2026-04-18
+- [[id:5dbbb160-bac4-41dd-8749-683be7ff1d36][Operation BorG Mode]]
+  - [[id:2063c1d1-cad0-41e5-908b-c9f827c336b8][org]] [[id:1f3f04cf-bc62-4fe7-8e77-f7b7103dfd7d][Locations]]
+    -
+      - Updated [[id:6b993c31-5273-432e-9bc5-f6449c7f3959][4/21/2026]]
+    - [[id:7734f13a-d350-4ef8-8446-759bf85e79ce][Computer Bag]] / Columbia Backpack
+      - [[id:8d5ea9ba-0b1e-47a3-a2bf-3faf928e85f2][Magic Keyboard]]
+      - [[id:9ed5ba94-c9e6-4bc0-bfe2-b91b346d31f1][Magic Trackpad]]
+      - [[id:24cbc1a9-1244-46fa-90aa-39d504219de3][Portable Audio Interface]]
+      - [[id:9c7b1d95-f7a1-4394-b3bd-ae89ac29589d][Busted HDD]]
+      - USB Cables
+    - [[id:d2566467-ec19-4b90-bdc4-3b5deaeab156][Cable Bag]]
+      - Left to Right
+        - RCA Cables
+        - [[id:d75cc79d-da3c-45fb-9e51-69e3c1145a04][Mini Jack]] TRS Cables & Extensions
+        - Standard Power Cables
+        - Balanced Cables
+        - Instrument Cables
+      - Pouches Left to Right
+        - [[id:3e09cf90-0ceb-4672-bc5a-c70db365eb87][Power Adapters]]
+        - Adapters & Wall Power Adapter
+        - Car Power Adapter
+    - [[id:a90da8c7-dec2-4a13-abe2-65538383b06b][Green Headphone Bag]]
+      - Headphone cables
+      - TRS Adapters
+      - Thunderbold Cable
+- [[id:35b39f4c-44d9-40b2-b5e0-eca8276623e0][Install and run Windows 11 ARM on M2 Mac via UTM (free)]]
+  -
+    - [ ] install windows on the mac today
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - You shitty, faceless, backstabbing beauty. End quote.
+- [[id:b8d5145c-1d4b-4124-8a04-2564293cf525][Windows 11]] Local [[id:bd7519d2-c5c8-4f65-af21-d5f82ea3e2f9][Virtual Machine]]
+  - Running on [[id:c87005c2-6662-4df9-b860-e5667c734214][UTM]] App
+  - p: =P!zza=

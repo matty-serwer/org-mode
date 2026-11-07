@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       83ca8b6b-7b59-481c-810e-47706dcd2f51
+:REFLECT_ID: 34353d494c1940e9a8ac5a3344d94732
+:CREATED:  [2025-11-02 Sun 08:32]
+:MODIFIED: [2026-04-08 Wed 21:41]
+:END:
+#+title: Claude Desktop
+#+filetags: :project:application:
+#+date: 2025-11-02
+- Type:  
+- Description: Mac OS version of Antrhopic's Claude LLM Service
+- Executable: [[https://hookmark.net/hm/hook/file/11vRomtqG?p=Ly9BcHBsaWNhdGlvbnM=&n=Claude%2Eapp][Claude.app]]
+- Application Support: [[https://hookmark.net/hm/hook/file/11vVkIIdG?p=TGlicmFyeS9BcHBsaWNhdGlvbiBTdXBwb3J0&n=Claude-Application-support-folder][Claude]]
+- Documents Location: [[https://docs.claude.com/en/home][https://docs.claude.com/en/home]]

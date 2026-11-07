@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8cd679e6-643f-45d1-bc75-e1fe3ea68171
+:REFLECT_ID: 32ac80b1fa6742f49069fd8ec2b3afbe
+:CREATED:  [2026-02-16 Mon 22:26]
+:MODIFIED: [2026-02-16 Mon 22:26]
+:END:
+#+title: i am the element
+#+filetags: :concept:
+#+date: 2026-02-16
+

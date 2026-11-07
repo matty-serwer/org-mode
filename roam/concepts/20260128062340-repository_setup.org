@@ -1,0 +1,139 @@
+:PROPERTIES:
+:ID:       38f05256-cc71-4727-b43e-84a617b7ba7b
+:REFLECT_ID: 6408d0c212874675a3d5d99f26274cdb
+:CREATED:  [2026-01-28 Wed 06:23]
+:MODIFIED: [2026-01-28 Wed 09:04]
+:END:
+#+title: Repository Setup
+#+filetags: :concept:
+#+date: 2026-01-28
+** Repository Setup
+*** GitHub Repository Structure
+#+begin_src bash
+# Create the monorepo
+mkdir work-sweet
+cd work-sweet
+git init
+
+# Create backend structure
+mkdir -p backend/src/{config,controllers,middleware,routes,services,utils}
+mkdir -p backend/prisma
+
+# Create frontend placeholder (Day 2)
+mkdir -p frontend
+
+# Root files
+touch README.md
+touch .gitignore
+touch docker-compose.yml
+
+# Initialize git
+git add .
+git commit -m "Initial commit: Project structure"
+
+# Create GitHub repo (do this on github.com)
+# Repository name: work-sweet
+# Description: Keyboard-first project management tool - Full-stack with Next.js + Node.js
+# Public or Private: Your choice (I recommend Public for portfolio)
+
+# Link and push
+git remote add origin git@github.com:YOUR_USERNAME/work-sweet.git
+git branch -M main
+git push -u origin main
+#+end_src
+*** =.gitignore= (Root)
+#+begin_src gitignore
+# Backend (Node.js)
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+frontend/.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+#+end_src
+*** =README.md= (Root - Quick Version)
+#+begin_src markdown
+# Work Sweet
+
+**Keyboard-first project management that doesn't suck.**
+
+## Project Structure
+
+#+end_src
+work-sweet/ ├── backend/ # Node.js + Express API ├── frontend/ # Next.js 16 App └── docker-compose.yml
+#+begin_src markup
+
+## Quick Start
+
+### Backend (Node.js)
+```bash
+cd backend
+npm install
+npm run dev
+#+end_src
+*** Frontend (Next.js)
+#+begin_src bash
+cd frontend
+npm install
+npm run dev
+#+end_src
+** Tech Stack
+*Backend:* Node.js, Express, Prisma, PostgreSQL, JWT
+*Frontend:* Next.js 16, React 19, TypeScript, Tailwind 4, Lupine UI
+-----
+
+*Built by Mattie | Full-Stack Developer*
+#+begin_src markup
+
+```yaml
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: worksweet-db
+    environment:
+      POSTGRES_DB: worksweet
+      POSTGRES_USER: worksweet
+      POSTGRES_PASSWORD: worksweet_dev_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U worksweet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+#+end_src

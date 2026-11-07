@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       179b7c7d-9f34-40f7-b26d-9668e831ba57
+:REFLECT_ID: 759ba29fd7324e3e897e2ec02a5faf89
+:CREATED:  [2026-04-08 Wed 03:01]
+:MODIFIED: [2026-04-08 Wed 03:01]
+:END:
+#+title: yea
+#+filetags: :concept:
+#+date: 2026-04-08
+Awesome. So looking over everything, I feel like it should essentially take 4 days to set up. Generally:
+- *Day 1:* Licensing upgrade and Intune configuration
+- *Day 2:* Enroll all 42 laptops
+- *Day 3:* Software push setup and reset testing
+- *Day 4:* Verification, handoff, and training
+  - Where I'd show you how to add and update software, etc.
+*This will cover*:
+- Wiping/resetting laptops between jobs
+- Pushing software and updates
+- Handling the entire post-gig reset cycle remotely
+In this timeline, you or someone with an admin account would have to be available morning of day 1, or prior (if an understanding of user roles and permissions), to set up a temporary Intune Admin Account for the job only. And then also present for at least the afternoon of Day 4, to learn how to execute all of the functions. If there are some other things that we may want to cover, remote desktop usage, or something else, then a 5th day could be added. 
+This is also assuming we are going the route of upgrading from Microsoft 365 Business Standard to Business Premium, as it relates to the proposed timeline. 
+*Price per user/month*
+- Business Standard: $12.50
+- Business Premium: $22.00
+- Difference: +$9.50
+I just have a few questions that could affect things, but not tremendously; 
+- Does each laptop currently have its own Microsoft365 License? If you're not sure, what do you pay? it should be like 12.50 per user on Business Standard.There are some ways to save on having 5 laptops per license, but I think they're likely too limiting (not for the things we are setting up with InTune in this Job, but for the general use), but if this was possible for you, you'd probably already be doing it. 
+- Which OS version? I recall Windows Pro 10? but that's off the top of my head. 
+- Are the Thinkpads newer than 2016? I'd assume they are, but if not, there may be something we need to check for compatibility. 
+That's it actually. Everything else can be discussed in-between. 
+I'm available for most of the month of April, I have something right at May 1st-4th. A couple other things in May, but they aren't official yet, though looking to be a busy month. But let me know when is good for you, and I'm sure we can figure something out. 
+Also, if anything in this general "proposal" seems off, let me know now, and we can figure out which of my assumptions might be incorrect. 

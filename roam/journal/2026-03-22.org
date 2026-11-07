@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       996398be-1703-46b3-91e8-a168e7a1120b
+:REFLECT_ID: 22032026
+:CREATED:  [2026-03-22 Sun 17:19]
+:MODIFIED: [2026-03-22 Sun 22:30]
+:END:
+#+title: Sun, March 22nd, 2026
+#+filetags: :daily:
+#+date: 2026-03-22
+- Slides out audio
+- Mix minus into switcher 
+- Salons 4/5 WiFi router
+  - LTP-Link AX1800 WiFi 6 router
+  - ForNetwork
+    - /TP-Link_CA4D-s34
+    - 80041559 C a Pop 
+  - 

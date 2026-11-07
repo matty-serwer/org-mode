@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7cf339ee-ef13-4dca-a31d-ff59ea79d6df
+:REFLECT_ID: 63eb1e93fff64b4886a41ed1c3f664b9
+:CREATED:  [2025-10-31 Fri 18:09]
+:MODIFIED: [2025-10-31 Fri 18:09]
+:END:
+#+title: Radical Topaz
+#+filetags: :concept:
+#+date: 2025-10-31
+

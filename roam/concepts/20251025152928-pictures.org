@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e420cd5c-e88c-4b14-8343-7563cad9218f
+:REFLECT_ID: 13459c1456824dda855f90707d1e2569
+:CREATED:  [2025-10-25 Sat 15:29]
+:MODIFIED: [2025-10-25 Sat 15:29]
+:END:
+#+title: Pictures
+#+filetags: :concept:
+#+date: 2025-10-25
+

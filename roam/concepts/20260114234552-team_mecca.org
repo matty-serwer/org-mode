@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       70a7cc32-f8a1-4b60-87c7-4ba1876a6b5b
+:REFLECT_ID: 0a017e8024734483a882a22e882f541a
+:CREATED:  [2026-01-14 Wed 23:45]
+:MODIFIED: [2026-01-14 Wed 23:56]
+:END:
+#+title: TEAM MECCA
+#+filetags: :concept:
+#+date: 2026-01-14
+- If we're going to make it, we MUST act positively. 
+- I have a saratonin issue with my brain
+- The following things shut down my ability to do complex work, maintain a positive demeanor, and accurately reason
+  - Arguments
+  - Insults
+  - Accusations & Blame
+    - right or wrong
+  - Panicking
+  - 

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b0103b5c-ebe7-40cf-a8d2-823b81113071
+:REFLECT_ID: b941d9c35184433cb3a3cca33af734cd
+:CREATED:  [2026-03-17 Tue 07:27]
+:MODIFIED: [2026-03-17 Tue 07:27]
+:END:
+#+title: Stems
+#+filetags: :concept:
+#+date: 2026-03-17
+

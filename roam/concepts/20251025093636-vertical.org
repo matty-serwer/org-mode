@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       279998e7-b2ba-486c-a157-2f0cec58a928
+:REFLECT_ID: bc0bcc8dc8834c3084bd010b382af6c1
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: Vertical
+#+filetags: :concept:
+#+date: 2025-10-25
+

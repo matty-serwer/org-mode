@@ -1,0 +1,154 @@
+:PROPERTIES:
+:ID:       ee45e1c7-6d2e-45b5-8a64-bcdf1edeb36c
+:REFLECT_ID: 7e329f8c553f424281f8ae53fc4fc98e
+:CREATED:  [2026-01-17 Sat 00:14]
+:MODIFIED: [2026-04-08 Wed 20:24]
+:END:
+#+title: 📼 Pfizer Convention A/V Technician Job Info, via Eric Latoure
+#+filetags: :concept:
+#+date: 2026-01-17
+* 📼 [[id:d9656786-1fd3-4713-a596-66371e4fdef1][Pfizer]] Convention [[id:1569dc5d-a763-4144-8ba3-4936514eac71][A/V Technician]] [[id:996bf856-b6e7-43aa-8495-5a8f02805292][Job Info]], via [[id:e22eaf66-51be-4256-9773-187c16cd3215][Eric Latoure]]
+** Project Overview
+- Client
+  - [[id:d9656786-1fd3-4713-a596-66371e4fdef1][Pfizer]]
+- *Location*
+  - Orlando, Florida
+- *Dates*
+  - Second and fourth week of March Thank you.
+  - [[id:9a8e62d0-dedd-4a66-9e7b-263cbb94480d][3/6/2026]] - [[id:88ce5f59-43f2-4e7f-a7e9-7357378b50de][3/13/2026]]
+  - [[id:9408d4b1-9f95-424b-a441-b802af9df53d][3/20/2026]] - [[id:bd1be713-fc23-43d8-9dde-e3b9d44315fb][3/27/2026]]
+- *Client Structure*: Supported by Tallon
+  - [[id:0267483d-3bd3-4a20-ba44-6bb98a8af64a][Tallon]]
+    - Contractor?
+  - [[id:aeefafa8-d6b3-4689-88af-de9714c5b8f1][Alex Triana]]
+    - Gets hired by Tallon
+    - Assembles a staff
+  - Responsibilities include:
+    - Determining gear needs and positions
+    - Managing client expectations
+    - Aligning with talent brand requirements
+** Schedule & Workflow
+- *Day 1*: Sort gear and get to location
+- *Day 2*: Setup and prepare equipment to be ready
+- *Day 3*: Rehearsal
+** Key Personnel
+*** [[id:aeefafa8-d6b3-4689-88af-de9714c5b8f1][Alex Triana]]
+- Top authority on this project
+- Hot seat position, also running the company
+- Doesn't typically like dealing with people
+- Important feedback: watch the fader
+- Understanding the mutual nature of the working relationship is key
+*** Greg
+- Overemployed individual
+- "Just a guy"
+- Brother of Richard, who's in charge of things
+- Keep in touch with him
+*** John Retoria
+- Taught Eric about engineering
+- Family guy
+- Loves what he does
+*** Carlos
+- Sets up audio frequencies
+- Potential room to help/support this person
+*** Other Contacts
+- Sevan
+- Lighting director (role mentioned)
+Here is a fleshed-out version of your notes, with the two audio units described at a similar “working operator” level as the ATEM section.
+** Technical Equipment & Skills
+*** Audio Equipment
+- *QSC TouchMix Series*
+  - Compact, touchscreen‑driven digital mixers (e.g., TouchMix‑8/16/30) designed for small to mid‑sized productions where you may be both engineer and system tech.[1][2]
+  - *Core concept*: Treat it like a “tablet with a full digital console inside” — most routing, EQ, and dynamics live on the main touch UI, with physical encoders for fine adjustments.[2][1]
+  - *Workflow goals*:
+    - Be able to build a basic show file quickly: patch inputs, name channels, set basic EQ/comp, and create at least 4–6 monitor mixes.
+    - Use Simple vs Advanced modes: Simple for rapid deployment, Advanced when you need full control of EQ, dynamics, and routing.[3][2]
+  - *Channel processing & tools*:
+    - Every input has 4‑band fully parametric EQ, HPF/LPF, gate, and compressor; each output has parametric/graphic EQ, useful for ring‑out and system tuning.[1][2]
+    - Built‑in “wizards” (Anti‑Feedback and Room Tuning) plus RTA help quickly stabilize PA and monitors without external analyzers.[2][3]
+  - *Monitoring & mixes*:
+    - Multiple Aux mixes (up to 10 on the 16) for wedges/IEMs; each mix can have its own processing and can be controlled from phones/tablets for musician self‑mix.[4][2]
+    - Goal: Confidently flip between FOH mix and aux mixes without getting lost in the UI; know how to solo a bus and verify what you’re actually sending.
+  - *Recording & playback*:
+    - Direct multitrack recording to external USB drive plus stereo or multitrack playback for virtual soundcheck and post‑show content.[1][2]
+    - Goal: Build a habit of capturing multitrack when allowed, so you can refine your mixes and create reference material.
+- *Allen & Heath SQ‑5 Digital Mixer*
+  - 48‑input, 96 kHz digital console built on the XCVI FPGA engine, with very low latency and a more “big‑desk” workflow than the TouchMix.[5][6]
+  - *Surface & layers*:
+    - 17 motorized faders (16 + master) across 6 layers; you can freely assign channels, DCAs, FX returns, and mixes to keep “live” things on the top layer.[7][5]
+    - Goal: Standardize your own layer layout (e.g., Layer 1 = core inputs, Layer 2 = band inputs, Layer 3 = FX/returns/DCAs) so you can walk up to any SQ‑5 and feel oriented fast.
+  - *Mix architecture*:
+    - Up to 12 stereo mixes (auxes or groups) plus LR and 3 stereo matrices, giving plenty of outputs for PA, delays, fills, and IEMs.[5][7]
+    - SLink port for remote stageboxes and a 64‑channel I/O port for Dante/other network audio when the rigs get more complex.[6][5]
+  - *Processing & FX*:
+    - Full channel strip on every input: HPF, 4‑band parametric EQ, compressor, gate; similar processing on mixes and matrices for system shaping.[8][6]
+    - Eight stereo FX engines with dedicated returns; typical use is verbs, delays, and special FX without eating up input channels.[6][5]
+  - *Control & apps*:
+    - 7" capacitive touchscreen plus dedicated encoders and 8 assignable SoftKeys for mutes, tap tempo, scene recall, or FX toggles.[5][6]
+    - SQ MixPad app for wireless control and offline show prep; SQ4You for performers to manage their own monitor sends.[7][5]
+  - *Recording & redundancy*:
+    - 32×32 USB interface for multitrack recording to DAW plus SQ‑Drive for direct recording to a USB stick — useful as a backup or for quick board mixes.[7][5]
+    - Goal: Be comfortable setting up a show so you can simultaneously mix FOH, feed a livestream bus (post‑fader), and print a clean multitrack.
+*** Video Equipment
+- *Black Magic Design ATEM Switcher* (Critical – read the manual)
+  - Goal: Be fluent with the ME structure, keying, and macro recalls by the second gig so you can call and cut a show confidently, not just “button push.”
+  - Models range from 1‑ME to 4‑ME, giving multiple independent program/preview environments for different outputs.
+  - *Mix Environment (ME) Concept*:
+    - Think of each ME as a separate “video console” — a self‑contained mix layer that doesn’t automatically spill into others.
+    - ME‑1 is typically your primary Program environment; background video must be in ME‑1, and cameras should all live in a single ME like a VCA bucket.
+    - Sources/graphics assigned to an ME stay in that ME; if you need them elsewhere, they must be re‑routed or duplicated.
+  - *Graphics & Alpha Feed*:
+    - Use keyers and DSKs to layer graphics (titles, bugs, lower thirds) over camera mixes; one ME can be composited over another using key/fill (alpha) channels.
+    - Cameras remain highest‑priority; graphics should never obscure critical action or client deliverables.
+  - *Lower Thirds & Graphics*:
+    - Build repeatable lower‑third templates with pre‑defined positions, safe‑title margins, and fade‑in/out behavior.
+    - Use timers or macros so common elements (e.g., name straps, info ticker) auto‑fade after ~5 seconds instead of relying on manual kills.
+*** Control Surfaces
+- *Elgato Stream Deck*
+  - Use with Bitfocus Companion or similar to create scene presets and macros for both ATEM and audio consoles (e.g., “Start Show”, “Break Bump”, “All Mute”).
+- *Calling the Cameras*
+  - Treat it as a separate responsibility: shot calling, anticipation of moves, and clear comms to ops so cuts feel intentional, not reactive.
+** Compensation & Expectations
+*** Pay Structure
+- *$600/day* for an A1 position
+- *$750* cap (sometimes)
+- *Up to $1000/day* for local work
+- *This gig*: $4,800 total
+  - Note: Taxes and contractor status to consider
+*** Travel Compensation
+- Full rate for travel days
+- Booking and invoicing options:
+  - You can book and invoice, or
+  - They could handle it
+- Get earliest flight out with fewest stops
+*** Professional Expectations
+- Don't need to come looking for you
+- Avoid "what's that guy doing?" situations
+- Be proactive and self-sufficient
+** Role Expectations & Questions to Ask
+- Will you be isolated or working with other people around?
+- What are the expectations for managing clients?
+  - Not expected right away
+- These are business guys (client type)
+** Career Development
+- Question raised: Plan to get deeper into this work?
+Sources
+[1] TouchMix® Overview | Digital Mixers | Products - QSC [[https://www.qscaudio.com/products-solutions/mixers/touchmix-series-compact-digital-mixers/][https://www.qscaudio.com/products-solutions/mixers/touchmix-series-compact-digital-mixers/]]
+[2] TouchMix®-16 | Digital Mixers | Products - QSC [[https://www.qscaudio.com/products-solutions/mixers/touchmix-series-compact-digital-mixers/touchmix-16/?L=][https://www.qscaudio.com/products-solutions/mixers/touchmix-series-compact-digital-mixers/touchmix-16/?L=]]
+[3] Course: TouchMix Training - QSC Training [[https://training.qsc.com/course/view.php?id=23][https://training.qsc.com/course/view.php?id=23]]
+[4] QSC TouchMix - Sweetwater [[https://www.sweetwater.com/qsc-touchmix/series][https://www.sweetwater.com/qsc-touchmix/series]]
+[5] Allen & Heath SQ-5 48-channel Digital Mixer - Sweetwater [[https://www.sweetwater.com/store/detail/SQ5--allen-and-heath-sq-5-digital-mixer][https://www.sweetwater.com/store/detail/SQ5--allen-and-heath-sq-5-digital-mixer]]
+[6] SQ-5 - Allen & Heath [[https://www.allen-heath.com/hardware/sq/sq-5/][https://www.allen-heath.com/hardware/sq/sq-5/]]
+[7] [PDF] sq-5 - digital mixer - Allen & Heath [[https://www.allen-heath.com/content/uploads/2023/05/SQ-5-Cut-Sheet.pdf][https://www.allen-heath.com/content/uploads/2023/05/SQ-5-Cut-Sheet.pdf]]
+[8] How to use the A&H SQ5 - In-depth Tutorial - YouTube 
+
+[[https://www.youtube-nocookie.com/embed/p5FnHOEdt9g][youtube: https://www.youtube-nocookie.com/embed/p5FnHOEdt9g]]
+[9] QSC TouchMix-16 22-Channel Digital Mixer: Quick Overview 
+[[https://www.youtube-nocookie.com/embed/fVXwslHyYLI][youtube: https://www.youtube-nocookie.com/embed/fVXwslHyYLI]]
+[10] Overview - QSC Training [[https://training.qsc.com/mod/book/tool/print/index.php?id=600][https://training.qsc.com/mod/book/tool/print/index.php?id=600]]
+[11] [OC] QSC TouchMix in-depth Overview - Which touch-based mixers ... [[https://www.reddit.com/r/livesound/comments/5wa9v2/oc_qsc_touchmix_indepth_overview_which_touchbased/][https://www.reddit.com/r/livesound/comments/5wa9v2/oc_qsc_touchmix_indepth_overview_which_touchbased/]]
+[12] How we configure our Audio Mixer for most bands (Allen & Heath SQ5) 
+[[https://www.youtube-nocookie.com/embed/QtIt0d28Ehc][youtube: https://www.youtube-nocookie.com/embed/QtIt0d28Ehc]]
+[13] Allen & Heath SQ5 Setup - YouTube 
+[[https://www.youtube-nocookie.com/embed/dJDZk2qgz-w][youtube: https://www.youtube-nocookie.com/embed/dJDZk2qgz-w]]
+[14] QSC TOUCHMIX-30 PRO TouchMix Series 32-Channel ... - ADI [[https://www.adiglobaldistribution.us/Product/QB-TOUCHMX30][https://www.adiglobaldistribution.us/Product/QB-TOUCHMX30]]
+[15] Allen-Heath SQ-5 Digital Mixer Stage Rig - [[ProSoundGear.com][ProSoundGear.com]] [[https://www.prosoundgear.com/shop/bundles/recording-rhegwfadqsaDS][https://www.prosoundgear.com/shop/bundles/recording-rhegwfadqsaDS]]=[[https://www.prosoundgear.com/shop/bundles/recording-bundles/allen-heath-sq-5-digital-mixer-stage-rig/][bundles/allen-heath-sq-5-digital-mixer-stage-rig/]]

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4cd1e5e8-17d4-4a83-91ba-aadcf580a60c
+:REFLECT_ID: ba7c0bb5f6d04c54aff625af6329fdf6
+:CREATED:  [2025-11-12 Wed 04:43]
+:MODIFIED: [2025-11-12 Wed 04:43]
+:END:
+#+title: LazyVim Extras
+#+filetags: :concept:
+#+date: 2025-11-12
+

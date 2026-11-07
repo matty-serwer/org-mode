@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       edb002bd-0bae-4a7f-9e6d-57786ce1e916
+:REFLECT_ID: 26b2fa918c6b4e51b04a45bd34da826f
+:CREATED:  [2025-10-25 Sat 19:01]
+:MODIFIED: [2025-10-25 Sat 19:01]
+:END:
+#+title: IdeaVim
+#+filetags: :concept:
+#+date: 2025-10-25
+

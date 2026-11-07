@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1fea598b-be44-45fe-b569-8058ce2806e6
+:REFLECT_ID: a53a1be0d6c14181b0e95f21947ed8af
+:CREATED:  [2026-03-17 Tue 06:15]
+:MODIFIED: [2026-03-17 Tue 06:15]
+:END:
+#+title: Ultimate Vocal
+#+filetags: :concept:
+#+date: 2026-03-17
+

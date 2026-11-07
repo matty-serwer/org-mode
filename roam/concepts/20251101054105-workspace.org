@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2eee1bef-61e4-420f-803c-d0d187cdbd0c
+:REFLECT_ID: 90712bcb49e1487b9531e6f93c31499e
+:CREATED:  [2025-11-01 Sat 05:41]
+:MODIFIED: [2025-12-01 Mon 07:11]
+:END:
+#+title: Workspace
+#+filetags: :concept:
+#+date: 2025-11-01
+

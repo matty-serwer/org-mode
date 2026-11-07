@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       968e2a21-665c-4f21-b3e3-604d9101cfb1
+:REFLECT_ID: 503151dda3634ccdaedc49b884895476
+:CREATED:  [2025-10-29 Wed 19:01]
+:MODIFIED: [2025-12-03 Wed 17:49]
+:END:
+#+title: App Router
+#+filetags: :concept:
+#+date: 2025-10-29
+

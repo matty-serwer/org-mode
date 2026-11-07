@@ -1,0 +1,68 @@
+:PROPERTIES:
+:ID:       ece1400f-5f79-499a-be44-f3e3b18ce05a
+:REFLECT_ID: b0d05ba82c80489d9fa9745845061c93
+:CREATED:  [2025-11-13 Thu 06:20]
+:MODIFIED: [2025-11-13 Thu 06:20]
+:END:
+#+title: Git Branch Naming Conventions
+#+filetags: :concept:schema:
+#+date: 2025-11-13
+* [[id:91c71ea3-9f3f-40e3-a5c2-4f2d53bb5ff9][Git]] [[id:2ae0b2e1-9006-490e-ab04-0fde4ec449f7][Branch]] Naming Conventions
+** Standard Branch Prefixes
+- Feature work
+  - feature/user-authentication
+  - feature/payment-integration
+  - feature/dashboard-redesign
+- Bug fixes
+  - bugfix/login-redirect-loop
+  - bugfix/checkout-validation
+- Hotfixes (urgent production fixes)
+  - hotfix/payment-gateway-timeout
+  - hotfix/security-patch
+- Experiments/Research
+  - experiment/new-ui-framework
+  - experiment/performance-optimization
+- Refactoring
+  - refactor/api-client-structure
+  - refactor/component-library
+- Documentation
+  - docs/api-documentation
+  - docs/setup-guide
+- Releases (if needed)
+  - release/v1.2.0
+** Enhanced Naming for Team Collaboration
+- Add ticket numbers or usernames for clarity
+  - feature/JIRA-123-user-authentication
+  - feature/john-dashboard-redesign
+  - bugfix/TICKET-456-login-error
+** Personal/WIP Branches
+- For experimental or personal work in progress
+  - wip/testing-new-approach
+  - spike/evaluate-cms-options
+  - john/debug-api-issue
+** Naming Best Practices
+- Use lowercase with hyphens
+  - ✅ feature/user-profile-page
+  - ❌ feature/User_Profile_Page
+- Be descriptive but concise
+  - ✅ bugfix/navbar-mobile-overflow
+  - ❌ bugfix/fix-the-thing
+  - ❌ bugfix/navbar-has-overflow-issue-on-mobile-devices-below-768px
+- Avoid special characters
+  - Stick to alphanumeric characters, hyphens, and forward slashes
+- Include context when helpful
+  - feature/checkout-stripe-integration
+  - bugfix/ios-safari-date-picker
+** Example Workflow
+#+begin_src bash
+# Create new feature branch
+git checkout develop
+git pull origin develop
+git checkout -b feature/product-catalog
+
+# Work on your feature...
+
+# Push and create PR
+git push origin feature/product-catalog
+
+#+end_src

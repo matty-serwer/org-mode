@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d2bb8ff7-efaf-4a1f-869c-120f1f67c236
+:REFLECT_ID: 6a5f0aa305f843dc81c1299ade771fdd
+:CREATED:  [2026-01-11 Sun 21:53]
+:MODIFIED: [2026-01-11 Sun 21:55]
+:END:
+#+title: Paid
+#+filetags: :concept:
+#+date: 2026-01-11
+

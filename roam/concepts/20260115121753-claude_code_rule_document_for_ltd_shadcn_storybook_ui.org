@@ -1,0 +1,117 @@
+:PROPERTIES:
+:ID:       c59631d6-58f6-4982-86e0-1c5680963db9
+:REFLECT_ID: 8ff50baf7c094c15bbc78529b6b81a14
+:CREATED:  [2026-01-15 Thu 12:17]
+:MODIFIED: [2026-01-15 Thu 12:26]
+:END:
+#+title: Claude Code Rule Document for LTD Shadcn Storybook UI
+#+filetags: :concept:
+#+date: 2026-01-15
+Project Rule Document – =storybook-shadcn-lab=
+** 1. Project Goal
+- Build and maintain a *Next.js 16* + *Tailwind CSS 4.x* app that uses *shadcn/ui (CLI 3.x)* and *Storybook 10 (Next.js + Vite framework)* to:
+  - Display and edit shadcn components in isolation via Storybook stories.
+  - Keep component stories consistent with the live app environment (providers, theming, Tailwind, routing).
+All work Claude Code performs in this repository must directly support this goal.
+-----
+
+** 2. Version & Tooling Requirements (Hard Constraints)
+Claude Code must *always* assume and enforce these versions/configs unless explicitly updated by the human:
+- *Next.js*
+  - Use *Next.js 16.1+* (app router, =app/= directory).
+  - Use official Next.js 16 upgrade/docs when in doubt.
+- *Storybook*
+  - Use *Storybook 10+* with the =@storybook/nextjs-vite= framework (Next.js + Vite).
+  - Do *not* configure legacy =@storybook/nextjs= (webpack) unless the human explicitly asks for Webpack.
+- *shadcn/ui*
+  - Use the *new shadcn CLI*: =npx shadcn@latest= with =init= and =add= commands.
+  - Do *not* use deprecated =shadcn-ui= npm packages or older CLI syntax.
+- *Tailwind CSS*
+  - Use *Tailwind CSS 4.x* with the official Next.js integration guide for configuration.
+  - Ensure =globals.css= (or the unified Tailwind entry file) is imported *both* in:
+    - =app/layout.tsx= (application)
+    - =.storybook/preview= (Storybook)
+- *Node / Runtime*
+  - Assume *Node.js 18+* is available at all times.
+If any template, blog post, or example suggests older versions (Next.js 13–15, Storybook 7, old shadcn CLI, Tailwind 3), Claude Code must treat those as *outdated* and adapt them to the versions above.
+-----
+
+** 3. Source-of-Truth Docs (When Claude Code Looks Things Up)
+When it needs documentation or examples, Claude Code should prioritize *these sources in this order*:
+1. *Next.js 16*
+  - Official docs and upgrade guide for Next 16.
+1. *Storybook 10 + Next.js + Vite*
+  - Storybook Next.js Vite framework docs.
+1. *shadcn/ui CLI 3.x*
+  - shadcn CLI / changelog and CLI docs (init/add, new registry behavior).
+1. *Tailwind CSS with Next.js*
+  - Tailwind official Next.js installation guide (latest).
+If Claude Code encounters conflicting instructions between a blog and these official docs, it must follow the *official docs* above.
+-----
+
+** 4. Behavioral Rules for Claude Code
+*** 4.1 Project Scope Discipline
+Claude Code must:
+- Only create or modify files that:
+  - Configure Next.js 16, Tailwind 4.x, shadcn/ui, or Storybook 10.
+  - Add, update, or organize Storybook stories for shadcn components.
+  - Support theming, providers, or documentation related to the above.
+- Avoid:
+  - Building unrelated features (APIs, dashboards, auth systems, etc.) unless explicitly requested.
+  - Migrating to new frameworks or experimental packages without explicit human approval.
+If unsure whether a change is in scope, Claude Code must *ask for clarification* before proceeding.
+*** 4.2 Storybook Rules
+- Always use:
+  - Storybook *CSF3* format for stories.
+  - =tags: ['autodocs']= in meta for documented components.
+  - The *Next.js + Vite* framework configuration.
+- All stories for shadcn components must:
+  - Live in =stories/**/*.stories.tsx=.
+  - Include *3–5 variants* per component demonstrating realistic states (default, disabled, error, loading, etc.).
+  - Use the same theming/providers and Tailwind styling as the Next.js app.
+*** 4.3 shadcn/ui Rules
+- Component operations must use:
+  - =npx shadcn@latest init= for initial setup.
+  - =npx shadcn@latest add <component>= for components.
+- Install components into =components/ui/= using *shadcn defaults* unless otherwise specified.
+If shadcn CLI suggests config changes (Tailwind/theme adjustments), Claude Code should prefer the CLI's recommended changes when they remain compatible with Tailwind 4 and Next.js 16.
+-----
+
+** 5. Workflow & Commit Checkpoints
+Claude Code should follow a *short-burst, checkpoint-oriented workflow*:
+1. *Core Setup Phase*
+  - Create/maintain Next.js 16 + Tailwind 4.x base app.
+  - Initialize shadcn/ui CLI and verify it runs.
+1. *Storybook Integration Phase*
+  - Add Storybook 10 with =@storybook/nextjs-vite=.
+  - Import =globals.css= in Storybook preview and wire providers.
+1. *Components & Stories Phase*
+  - Install shadcn components via CLI.
+  - Build stories in =stories/= using CSF3 + autodocs.
+1. *Theming & Verification Phase*
+  - Configure global theme and (optional) theme toggle (e.g., via =@storybook/addon-themes= or current recommended addon).
+  - Run =npm run storybook=, verify all components render and autodocs generate.
+After each major phase, Claude Code should:
+- Present a concise summary of:
+  - Files changed.
+  - Any commands to re-run.
+- Then *pause* for a human to review and optionally commit before continuing.
+-----
+
+** 6. Safety & Consistency Rules
+- Do *not* downgrade or remove:
+  - Next.js 16.x.
+  - Storybook 10.x.
+  - Tailwind 4.x.
+  - shadcn CLI 3.x behavior.
+- When copying examples from older docs:
+  - Update imports, config options, and file locations to match:
+    - Next.js 16 app router conventions.
+    - Storybook 10 + Vite framework config.
+    - shadcn CLI =init= / =add= commands.
+- If a choice is required and not specified:
+  - Prefer *shadcn defaults* for components, styles, and theme structure.
+  - Prefer the most recent *official documentation* listed in Section 3.
+-----
+
+You can save this as =docs/claude-rules.md= (or similar) and paste it into Claude Code at the start of each session to keep it aligned with this project and its versions.

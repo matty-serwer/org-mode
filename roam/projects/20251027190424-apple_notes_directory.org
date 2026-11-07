@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       756c169a-6a5c-47e4-b01d-2dfd40b66e02
+:REFLECT_ID: 97bef09663db4547bb18d1b273bd86d1
+:CREATED:  [2025-10-27 Mon 19:04]
+:MODIFIED: [2025-10-27 Mon 19:08]
+:END:
+#+title: Apple Notes Directory
+#+filetags: :project:current_state:organization:
+#+date: 2025-10-27
+  '
+- Folder DIrectory
+#+begin_src markup
+
+/Note-Sort-2025-10-27/
+├── 1-Projects/ (37 files)
+│ ├── Music/ (32)
+│ ├── Dev/ (5)
+│ ├── Life/ (0)
+│ └── _Archive-Completed/ (0)
+│
+├── 2-Areas/ (16 files)
+│ ├── Music Production/ (6)
+│ ├── Software Development/ (10)
+│ ├── Knowledge Management/ (0)
+│ ├── Health/ (0)
+│ ├── Relationships/ (0)
+│ ├── Finances/ (0)
+│ └── Home & Admin/ (0)
+│
+├── 3-Resources/ (268 files)
+│ ├── Creative Writing/ (241)
+│ ├── Music Reference/ (16)
+│ ├── Dev Reference/ (11)
+│ ├── Culture & Criticism/ (0)
+│ ├── Productivity/ (0)
+│ └── Psychology/ (0)
+│
+├── 4-Archives/ (352 files)
+│ ├── Historical Personal/ (273)
+│ ├── Old Reference/ (79)
+│ └── Projects - Completed/ (0)
+│
+├── 00-Triage/ (256 files)
+│ ├── Passwords-Security/ (52) ⚠️
+│ ├── Maybe-Projects/ (118)
+│ ├── Needs-Context/ (52)
+│ └── Maybe-Resources/ (34)
+│
+└── Delete/ (43 files)
+#+end_src
+```

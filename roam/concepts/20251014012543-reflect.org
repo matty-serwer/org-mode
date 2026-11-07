@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       56254a81-4ae8-45d0-a0b3-c61f2e847161
+:REFLECT_ID: reflect
+:CREATED:  [2025-10-14 Tue 01:25]
+:MODIFIED: [2025-10-29 Wed 16:41]
+:END:
+#+title: Reflect
+#+filetags: :concept:company:
+#+date: 2025-10-14
+- type: 
+- domain: [[http://reflect.app][reflect.app]]

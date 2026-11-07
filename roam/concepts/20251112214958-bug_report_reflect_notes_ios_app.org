@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       3835a549-6315-465c-bb96-2388a779d39e
+:REFLECT_ID: 2174a0b05d8f4a07a137f18114c26606
+:CREATED:  [2025-11-12 Wed 21:49]
+:MODIFIED: [2025-11-13 Thu 04:20]
+:END:
+#+title: Bug Report: Reflect Notes iOS App
+#+filetags: :concept:
+#+date: 2025-11-12
+* [[id:44ec7201-2e52-4eff-bd3d-d5e0a2846b44][Bug]] Report: [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]] [[id:05e26e54-93de-4a9c-8814-fbf57a49e0ee][iOS App]]
+- Environment
+  - [[id:4388d7a5-c95f-419a-9204-827eb6c6d3a3][iOS Version]]
+    - 26.2
+    - Beta (23C5027f)
+  - [[id:69435ace-a583-4bae-a2ef-bae970421282][iPhone Model]]
+    - 14 Pro
+  - Application
+    - [[id:5ff64318-9695-47d2-a12d-e032b7bcb7c0][Reflect Notes iOS App]] 
+      - Version
+        - 1.0.36
+- Summary
+  - While typing in my phone number, mid setence, the [[id:99346e02-c7cf-4eb7-bd60-934bc3682cbf][iOS]] [[id:123ee993-cc2c-4b24-966b-f734ae63be8b][Virtual Keyboard]] correctly suggested my phone number. Pressing this suggestion caused the 

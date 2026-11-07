@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       4f38d26d-d82c-4be5-b712-57927b52f796
+:REFLECT_ID: 06022026
+:CREATED:  [2026-02-06 Fri 17:01]
+:MODIFIED: [2026-02-06 Fri 21:41]
+:END:
+#+title: Fri, February 6th, 2026
+#+filetags: :daily:
+#+date: 2026-02-06
+- [[id:f0838510-41f9-4b63-bce3-ab7850b09807][Fidium]] [[id:bdad001c-85b2-4ec5-b0f4-47b40e866326][🗄️ Subscription Service #list]]
+  - Account Number
+    - [[tel:137844007810][*137844007810*]]
+  - One Time Pay
+    - [[https://fi.dm/pay-fidium][https://fi.dm/pay-fidium]]
+    - [[tel:1-844-434-3486][1-844-434-3486]]

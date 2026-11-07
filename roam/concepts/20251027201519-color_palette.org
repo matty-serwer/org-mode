@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7b4786e4-f06e-4443-8c49-f921082fd213
+:REFLECT_ID: 7556b55933334a2ca1daa4651264b46e
+:CREATED:  [2025-10-27 Mon 20:15]
+:MODIFIED: [2025-10-31 Fri 18:09]
+:END:
+#+title: Color Palette
+#+filetags: :concept:
+#+date: 2025-10-27
+

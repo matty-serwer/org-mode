@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       13b93bf7-8350-4606-91eb-a31495db4d02
+:REFLECT_ID: aa1fdcf053534bdba1d168562530d2a9
+:CREATED:  [2026-03-18 Wed 14:27]
+:MODIFIED: [2026-03-18 Wed 14:27]
+:END:
+#+title: 2 Loop Rule
+#+filetags: :concept:
+#+date: 2026-03-18
+

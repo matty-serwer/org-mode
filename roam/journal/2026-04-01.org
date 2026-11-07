@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       a5d6b7b5-8c87-4065-9363-2b8a7a0b61a5
+:REFLECT_ID: 01042026
+:CREATED:  [2026-04-01 Wed 11:53]
+:MODIFIED: [2026-04-08 Wed 22:22]
+:END:
+#+title: Wed, April 1st, 2026
+#+filetags: :daily:
+#+date: 2026-04-01
+- [[id:01575bbd-2100-4910-8b98-a97e00428026][Bullet Journal Concept]]
+  - Index
+    - Page number - title
+  - Future Log
+    - 4 pages
+    - Divided by 3
+    - One section per month
+- Live 12.4 is coming – with Link Audio, updated devices and more
+  - Ableton Live 12.4 is now in [[https://help.ableton.com/hc/en-us/articles/115001663870-Live-Beta-FAQ][public beta]]
+    - Free for all Live 12 users
+    - Introduces new ways to create and collaborate in [[https://www.ableton.com/en/release-notes/live-12-beta/][Live]]
+    - Plus improvements for [[https://www.ableton.com/en/release-notes/push-12-beta/][Push]], [[https://www.ableton.com/en/release-notes/move-1-beta/][Move]] and [[https://apps.apple.com/us/app/ableton-note/id1633243177][Note]]
+    - [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/2700822edefa42a0ac9524e66f70dbf2/84cad4ba-fdef-4cf8-bde5-c746efbf0b09?key=00a857d22c0bef2503bedbadf2563a243fc073b4c14ef62c1f4b9742b616e92a][image]]
+      - Jump to:
+        - [[https://www.ableton.com/en/blog/live-12-4-is-coming/#linkaudio][Link Audio]]
+        - [[https://www.ableton.com/en/blog/live-12-4-is-coming/#updateddevices][Updated devices]]
+        - [[https://www.ableton.com/en/blog/live-12-4-is-coming/#stem][Stem Separation]]
+        - [[https://www.ableton.com/en/blog/live-12-4-is-coming/#learn][Learn View]]
+        - [[https://www.ableton.com/en/blog/live-12-4-is-coming/#push][Push]]
+        - [[https://www.ableton.com/en/blog/live-12-4-is-coming/#move][Move and Note]]
+  - Link Audio
+    - Live 12.4 adds *Link Audio*, letting you and your peers stream audio between Link Audio-enabled devices on a local network in real time
+    - Audio from other players appears directly as an input in Live
+      - Monitor and record external devices and apps without additional hardware, cables, or manual latency compensation
+    - Read more about how Link Audio works on Push, Move and Note below
+  - Updated devices
+    - Erosion
+      - Live's classic signal degradation effect, now available on Move and Note for the first time
+      - Gets a revamp on Live and Push
+        - Real-time spectrum visualization
+        - Ability to smoothly blend between sine and noise modulation
+        - Ability to smoothly blend between mono and stereo noise
+      - Updates come in the form of a new device
+      - The previous version, now named Erosion Legacy, will be accessible in older Live Sets
+    - [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/0885471aac5b45a5a374c94c90a69835/8c593aa1-50a0-4bd2-b8d8-7ec875304636?key=7484908b1d4b541384b3cf75e105b5de67b167225445eadcf61205893dad3b4b][image]]
+    - Chorus-Ensemble
+      - Now offers more control over delay time and structure
+      - Makes it easier to create smooth, musical chorus sounds
+        - Especially effective on guitar and bass
+-----

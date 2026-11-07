@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6bcda9c8-2a29-4c02-9d05-430fcb115fb0
+:REFLECT_ID: f165205345e54b97807b40d895a92e80
+:CREATED:  [2025-11-17 Mon 03:57]
+:MODIFIED: [2025-11-30 Sun 09:44]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-11-17
+

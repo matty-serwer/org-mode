@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1153ecd1-e7e3-43ad-96d2-cda2a643cc2a
+:REFLECT_ID: a7b3d1f1a67b44f08449d73d2c182658
+:CREATED:  [2025-11-07 Fri 16:22]
+:MODIFIED: [2025-11-07 Fri 16:22]
+:END:
+#+title: Dashboard
+#+filetags: :concept:
+#+date: 2025-11-07
+

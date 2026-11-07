@@ -1,0 +1,165 @@
+:PROPERTIES:
+:ID:       5ef36dd7-0976-4815-bbd0-5f65f6070117
+:REFLECT_ID: 5d8b070619704bd49c6ac03f3c152977
+:CREATED:  [2026-01-15 Thu 12:15]
+:MODIFIED: [2026-01-28 Wed 05:21]
+:END:
+#+title: List Of Claude Code Prompts For LTD Shadcn Storybook UI
+#+filetags: :concept:
+#+date: 2026-01-15
+* List Of Claude Code Prompts For [[id:119f025b-6371-44c1-9866-497aea2a119a][LTD Shadcn Storybook UI]]
+** Prompt 1 – Create base Next + Tailwind + shadcn project
+#+begin_quote
+You are connected to my local terminal in an empty directory.
+Create a new *Next.js 16* app using this directory as its root, with:
+- TypeScript
+- App Router
+- Tailwind CSS (latest, 4.x compatible)
+- ESLint enabled
+  Name the app =storybook-shadcn-lab=.
+After the project is created:
+1. Install and configure *Tailwind CSS* following the latest official Next.js guide, using a single =globals.css= entry file and Tailwind 4+ conventions.[1]
+1. Initialize *shadcn/ui* with the latest CLI:
+  - Use =npx shadcn@latest init= and let it auto-detect the Next.js + Tailwind setup.[2][3]
+  - Use default paths and shadcn defaults wherever reasonable.
+1. Run the dev server once with =npm run dev= to confirm the app builds.
+When finished, summarize all created/modified files, show =package.json= scripts, and stop the dev server so we can commit. Suggest a commit message in plain english, in two sentences. 
+#+end_quote
+-----
+
+** Prompt 2 – Add Storybook 10 with Next.js Vite framework
+#+begin_quote
+In the existing =storybook-shadcn-lab= Next.js 16 project:
+1. Install *Storybook 10* using the latest CLI:
+  - Run =npx storybook@latest init=.
+  - When prompted, choose the *Next.js + Vite* framework (=@storybook/nextjs-vite=) as recommended.
+1. Ensure the Storybook framework configuration is using the Vite-based Next.js integration (no legacy webpack-only config).
+1. Verify that =package.json= includes =storybook= and =build-storybook= scripts and that Storybook config files are under =.storybook/=.
+Do not start Storybook yet.
+Show the resulting =.storybook/main.ts= and =.storybook/preview.tsx= (or =.tsx=/=.ts= variants) and explain how the framework and builder are configured so we can commit this state.
+#+end_quote
+-----
+
+** Prompt 3 – Wire Tailwind + globals.css + Next providers into Storybook
+#+begin_quote
+In the same project, configure Storybook so components render with the same styles and providers as the Next.js app:
+1. In =.storybook/preview.tsx= (or =.storybook/preview.ts=), import the app’s =globals.css= so Tailwind and shadcn theme variables apply inside stories.[3][1]
+1. Add any necessary decorators/providers used by the app (for example, =ThemeProvider=, =NextThemesProvider=, or other layout-level wrappers if present), so stories mirror the app environment. If such providers do not yet exist, create a minimal =ThemeProvider= consistent with shadcn defaults and use it as a Storybook decorator.
+1. Ensure Storybook parameters are set up for React / Next best practices (e.g., controls, actions, layout).
+After updating the config, show the full =preview= and =main= files so we can review and commit this configuration checkpoint.
+#+end_quote
+-----
+
+** Prompt 4 – Install the top 20 shadcn components
+#+begin_quote
+In this project, use the *latest shadcn CLI* to add the following components in one or more commands:
+- =button= =card= =input= =select= =form= =label= =dialog= =dropdown-menu= =tabs= =alert=
+- =badge= =checkbox= =switch= =textarea= =table= =avatar= =progress= =tooltip= =alert-dialog= =sheet=
+Requirements:
+1. Use =npx shadcn@latest add ...= with the current CLI syntax (not the deprecated =shadcn-ui= package).[7][2][3]
+1. Ensure all components are added under =components/ui/= using shadcn defaults.
+1. If the CLI suggests any Tailwind or config updates, accept them and keep things aligned with Tailwind 4 and Next.js 16.
+When finished, list all files created or modified under =components/ui/= so we can confirm the 20 components and then commit.
+#+end_quote
+-----
+
+** Prompt 5 – Create Storybook stories folder and base Storybook config
+#+begin_quote
+Configure the stories structure for these shadcn components:
+1. Create a top-level =stories/= directory in the project root if it does not already exist.
+1. Update =.storybook/main.ts= so the =stories= glob points to:
+  - =stories/**/*.stories.@(ts|tsx)=
+    and ensure *CSF3* and *autodocs* are enabled globally.[8][4]
+1. Add a short README comment block at the top of =stories= (e.g., =stories/README.md=) explaining this folder is for shadcn UI component stories.
+Show the updated =main.ts= and a brief tree of the =stories/= folder for review before we commit.
+#+end_quote
+-----
+
+** Prompt 6 – Generate Story templates for a subset of components
+#+begin_quote
+In the =stories/= folder, create Storybook CSF3 stories for these shadcn components as a pattern to reuse:
+- =Button=
+- =Input=
+- =Card=
+- =Dialog=
+Requirements for each component:
+1. Create a file named =ComponentName.stories.tsx= (e.g., =Button.stories.tsx=) in =stories/=.
+1. Use *CSF3* syntax with typed =Meta= and =StoryObj= for React.
+1. Include =tags: ['autodocs']= in the default meta so autodocs are generated.[8]
+1. Add *3–5 variants* per component that demonstrate realistic states:
+  - Button: default, variant styles, disabled, loading.
+  - Input: default, with placeholder, with default value, invalid/error state.
+  - Card: simple card, card with header/footer, card showcasing content layout.
+  - Dialog: closed by default, open state, with long content.
+Keep styling/examples minimal but representative of shadcn defaults.
+After creating these four story files, show their TypeScript signatures and one example story definition from each file so we can validate the pattern before committing.
+#+end_quote
+-----
+
+** Prompt 7 – Bulk-generate stories for remaining shadcn components
+#+begin_quote
+Following the patterns from the existing =Button=, =Input=, =Card=, and =Dialog= stories:
+1. Create CSF3 story files in =stories/= for each of the remaining shadcn components:
+  - =Select=, =Form=, =Label=, =DropdownMenu=, =Tabs=, =Alert=, =Badge=, =Checkbox=, =Switch=,
+    =Textarea=, =Table=, =Avatar=, =Progress=, =Tooltip=, =AlertDialog=, =Sheet=
+1. Use the same conventions:
+  - File name: =ComponentName.stories.tsx=.
+  - Typed =Meta= and =StoryObj=.
+  - =tags: ['autodocs']=.
+  - At least *3 variants* per component showing common props and states.
+1. Keep implementations aligned with shadcn usage examples and defaults.
+After generation, print a condensed summary: a table or list mapping each component to its story file and the variant names defined in that file, so we can spot-check and then commit.
+#+end_quote
+-----
+
+** Prompt 8 – Global theme + dark mode integration for Storybook
+#+begin_quote
+Enhance the theming setup for consistent shadcn styling in Storybook:
+1. Ensure the app’s =globals.css= contains the shadcn CSS variables and base theme required by the CLI initialization.[3]
+1. Confirm that =globals.css= is imported in both =app/layout.tsx= (for the app) and =.storybook/preview.tsx= (for stories).
+1. Install and configure =@storybook/addon-themes= (or the current recommended theming addon for Storybook 10) and integrate a *light/dark* theme toggle in Storybook’s toolbar.[6][9][4]
+1. Wire the theme selection to whatever theme provider is used for shadcn (e.g., a =ThemeProvider= that toggles =data-theme= / =class= on =html= or =body=), so switching themes in Storybook actually changes the look of components.
+Show the updated =preview= config, any new theme provider code, and the =main= addon configuration so we can test and commit.
+#+end_quote
+-----
+
+** Prompt 9 – Test Storybook and validate all components
+#+begin_quote
+From the project root:
+1. Run =npm run storybook= and ensure Storybook starts without build errors.
+1. Verify that all 20 shadcn components appear in the Storybook sidebar under sensible groupings (e.g., =UI/Button=, =UI/Input=, etc.).
+1. Confirm visually that:
+  - Tailwind styling is applied to all components.[1]
+  - Each story file’s variants render correctly in light and dark themes.
+  - Autodocs pages render for each component thanks to the =autodocs= tag.[8]
+1. If any story or component fails to render, create minimal fixes (import paths, props, wrappers) and re-run Storybook.
+When done, provide a brief checklist of what passed, any fixes made, and confirm the project is ready for a final commit.
+#+end_quote
+-----
+
+** Prompt 10 – Environment + usage recap for Mattie
+#+begin_quote
+In the existing repo, create a short =docs/claude-code-usage.md= (or similar) file that explains, in a concise checklist:
+1. Environment requirements (Node 18+, terminal permissions).[1]
+1. How to start Claude Code in this project directory and provide it with the full instruction set.
+1. The high-level phases it will execute (Setup → Storybook config → Components → Stories → Theming → Verification).
+1. What “defaults” Claude Code should pick when asked (always use shadcn defaults unless specified).
+1. Rough expected total setup time (5–10 minutes).
+After creating the doc, show its contents so it can be reviewed and then committed as the final checkpoint.
+#+end_quote
+Sources
+[1] Install Tailwind CSS with Next.js [[https://tailwindcss.com/docs/guides/nextjs][https://tailwindcss.com/docs/guides/nextjs]]
+[2] Changelog - shadcn/ui [[https://ui.shadcn.com/docs/changelog][https://ui.shadcn.com/docs/changelog]]
+[3] init - Shadcn UI [[https://ui.shadcn.com/docs/cli][https://ui.shadcn.com/docs/cli]]
+[4] Storybook for Next.js with Vite [[https://storybook.js.org/docs/get-started/frameworks/nextjs-vite][https://storybook.js.org/docs/get-started/frameworks/nextjs-vite]]
+[5] @storybook/nextjs-vite - npm [[https://www.npmjs.com/package/@storybook/nextjs-vite][https://www.npmjs.com/package/@storybook/nextjs-vite]]
+[6] Storybook 10 [[https://storybook.js.org/blog/storybook-10/][https://storybook.js.org/blog/storybook-10/]]
+[7] npx shadcnui@latest init button input is not working - Stack Overflow [[https://stackoverflow.com/questions/78988083/npx-shadcnuilatest-init-button-input-is-not-working][https://stackoverflow.com/questions/78988083/npx-shadcnuilatest-init-button-input-is-not-working]]
+[8] Migration guide for Storybook 10 | Storybook docs [[https://storybook.js.org/docs/releases/migration-guide][https://storybook.js.org/docs/releases/migration-guide]]
+[9] Framework support | Storybook docs [[https://storybook.js.org/docs/configure/integration/frameworks][https://storybook.js.org/docs/configure/integration/frameworks]]
+[10] Storybook for Next.js with Webpack [[https://storybook.js.org/docs/get-started/frameworks/nextjs][https://storybook.js.org/docs/get-started/frameworks/nextjs]]
+[11] storybookjs/vite-plugin-storybook-nextjs - GitHub [[https://github.com/storybookjs/vite-plugin-storybook-nextjs][https://github.com/storybookjs/vite-plugin-storybook-nextjs]]
+[12] Install Tailwind CSS with Next.js [[https://v2.tailwindcss.com/docs/guides/nextjs][https://v2.tailwindcss.com/docs/guides/nextjs]]
+[13] Integrate Next.js and Storybook automatically : r/reactjs - Reddit [[https://www.reddit.com/r/reactjs/comments/zg6gwr/integrate_nextjs_and_storybook_automatically/][https://www.reddit.com/r/reactjs/comments/zg6gwr/integrate_nextjs_and_storybook_automatically/]]
+[14] Tailwind V4 migration : r/nextjs - Reddit [[https://www.reddit.com/r/nextjs/comments/1ilo0o7/tailwind_v4_migration/][https://www.reddit.com/r/nextjs/comments/1ilo0o7/tailwind_v4_migration/]]
+[15] Releases · shadcn-ui/ui - GitHub [[https://github.com/shadcn-ui/ui/releases][https://github.com/shadcn-ui/ui/releases]]

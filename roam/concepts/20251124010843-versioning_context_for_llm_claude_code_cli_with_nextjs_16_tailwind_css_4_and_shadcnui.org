@@ -1,0 +1,168 @@
+:PROPERTIES:
+:ID:       2a2f9469-408f-4733-87c6-669898fbbc2d
+:REFLECT_ID: b4cb0e3ecb974afa963075e4b9d270ed
+:CREATED:  [2025-11-24 Mon 01:08]
+:MODIFIED: [2025-11-24 Mon 01:34]
+:END:
+#+title: Versioning Context for LLM Claude Code CLI with NextJS 16, Tailwind CSS 4, and shadcn/ui
+#+filetags: :concept:
+#+date: 2025-11-24
+* Versioning Context for LLM [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]] CLI with [[id:17254b57-edb8-4076-956f-2c7d5369e8e2][NextJS]] 16, [[id:53fea805-0c99-41dd-bd98-0ae28bae9fb9][Tailwind CSS]] 4, and [[id:522853c2-b75b-4bc6-b8fa-76b03dace8ab][shadcn/ui]]
+** Step 1: Prerequisites (One-Time Zsh Setup)
+- Ensure Node.js 18+ (LTS) and Homebrew for MCP
+- Add to =~/.zshrc= for persistence
+#+begin_src markup
+export ANTHROPIC_API_KEY="your-api-key-here" # From console.anthropic.com
+export PATH="$HOME/.claude/bin:$PATH" # For CLI tools
+#+end_src
+- Reload with =source ~/.zshrc=
+** Step 2: Install Core Tools
+- Install Claude Code CLI globally (Anthropic's official agentic tool)
+#+begin_src markup
+npm install -g @anthropic/claude-code
+#+end_src
+- Verify with =claude --version=
+  - Should show v1.2+ (2025 stable)
+- Install Shadcn MCP server (prevents prop hallucinations; auto-fetches latest docs)
+#+begin_src markup
+npm install -g @shadcn/mcp-server
+mcp-server start --port 8080
+#+end_src
+- Run in background; add to =~/.zshrc= alias if needed
+#+begin_src markup
+alias mcp-shadcn='mcp-server start'
+#+end_src
+- Optional: Auto-config generator for your stack (community-proven; generates .claude dir)
+#+begin_src markup
+npx claude-config-composer nextjs-16 shadcn tailwindcss
+#+end_src
+** Step 3: Project Initialization
+- Start a new Next.js 16 project with Tailwind 4 and Shadcn baked in—Claude will extend it agentically
+#+begin_src markup
+npx create-next-app@16 my-app --ts --tailwind --app --eslint --src-dir --import-alias "@/*"
+#+end_src
+- Init Shadcn (CLI detects Tailwind 4; adds components dir)
+#+begin_src markup
+npx shadcn@latest init
+#+end_src
+- Follow prompts: Use Tailwind CSS, globals.css, components/ui
+- Add base components (Claude will use these)
+#+begin_src markup
+npx shadcn@latest add button card input dialog
+#+end_src
+- Init Claude Code in project (auto-scans for MCP)
+#+begin_src markup
+claude init
+#+end_src
+- Creates =.claude/= dir with agents/hooks
+- Run =npm run dev= in a split Zsh pane (e.g., tmux) for live preview
+** Proven Workflow: "Plan-Parallel-Iterate-Commit" (PPI-C)
+- This is the top-recommended workflow from 2025 sources (Anthropic engineering tips, X threads on sub-agents, [[DEV.to][DEV.to]] guides)
+- Battle-tested for agentic/vibe coding: Claude plans holistically, spawns sub-agents for parallel exploration (e.g., 3 UI variants), iterates via bash execution, and commits atomically
+- Expect 80% less manual debugging with MCP
+*** High-Level Steps
+- *Plan*: Use =claude plan= with =.claude/CLAUDE.md= for stack-aware blueprint
+- *Parallel*: Dispatch sub-agents (e.g., one for API, one for UI) via git worktrees for safe sandboxes
+- *Iterate*: Bash mode + MCP for code gen/execution; screenshot/debug as needed
+- *Commit*: Auto-changelog + PR review
+*** Tmux Setup for Multi-Pane
+#+begin_src markup
+tmux new-session -d -s claude-work
+tmux split-window -h
+tmux split-window -v
+tmux attach-session -t claude-work
+#+end_src
+- Creates detached session with horizontal split (dev server) and vertical split (logs)
+** Create =.claude/CLAUDE.md=
+- This is Claude Code's "system prompt equivalent"—place in project root
+- Enforces conventions, curates tools, and injects MCP context
+- Adapted from gists like gregsantos/[[CLAUDE.md][CLAUDE.md]] and community configs
+*** Tech Stack
+- Framework: Next.js 16 (App Router only; React 19.2 Server Components for data fetching)
+- Styling: Tailwind CSS 4 (CSS-native; use arbitrary values like =[calc(100vh-4rem)]=; no inline CSS)
+- UI: Shadcn/UI (latest CLI; prefer existing primitives like Button, Card; Radix primitives under the hood)
+- Language: TypeScript (strict mode; infer types where possible)
+- Other: ESLint + Prettier; Git for versioning
+*** Project Structure
+#+begin_src markup
+.
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   └── styles/
+├── .claude/
+├── .eslintrc.js
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
+#+end_src
+- =src/app/=: App Router (pages, layouts, loading/error)
+- =src/components/=: Shadcn + custom (ui/ subdir for primitives)
+- =src/lib/=: Utils, API wrappers, hooks
+- =src/styles/=: Tailwind globals.css
+- =.claude/=: Claude configs
+- =tailwind.config.ts=: Extend for themes (e.g., dark mode via next-themes)
+*** Coding Guidelines
+- *Components*: Always use Shadcn primitives + Tailwind (e.g., =<Button variant="outline" className="w-full">=)
+  - Avoid HTML tags; compose with =cn()= utility
+- *Next.js*: Server Components by default; use ='use client'= sparingly
+  - Fetch in server actions/loaders
+- *Tailwind 4*: Leverage new utils (e.g., =opacity-50=, =grid-cols-[repeat(auto-fit,minmax(200px,1fr))]=)
+  - No v3 fallbacks
+- *Best Practices*: Functional components + hooks; error boundaries; accessibility (ARIA via Radix)
+  - TDD: Write tests first
+- *MCP Integration*: Query Shadcn MCP at localhost:8080 for live docs/props
+  - Prefix prompts: "Per Shadcn MCP: Generate a Card with hover effects."
+*** Allowed Tools (Curate for Safety)
+- =bash=: Run npm scripts, git commands (e.g., =claude bash "npm run lint --fix"=)
+- =read/write/edit=: Code files only (no system files)
+- =grep/glob=: Search codebase
+- =mcp-query=: Fetch from Shadcn/Tailwind MCP (e.g., =mcp-query shadcn button props=)
+- =screenshot=: Debug UI (upload to Claude for analysis)
+*** Workflow Prompts
+- *Planning*: "Plan [feature] as a 1k+ LOC markdown with sections: Architecture, Components, API, Tests."
+- *Generation*: "Implement [task] using stack rules; output diffs."
+- *Iteration*: "Fix errors from last run; use MCP for accuracy."
+*** Hooks (Auto-Run)
+- =pre-commit=: Run eslint, type-check
+- =post-gen=: Format with Prettier; add to git stage
+- Follow these strictly; if unclear, ask for clarification before acting
+- Run =claude validate= to check after creating
+** Specific Prompt Examples
+- Use these in =claude chat= or =claude code= sessions
+- Prefix with "Per CLAUDE.md:" for enforcement
+*** Planning (Step 1): Holistic blueprint with MCP context
+#+begin_src markup
+claude plan "Build a user dashboard page with auth form and data table. Output as PLAN.md with architecture diagram (ASCII), Shadcn components list, and Next.js 16 server actions."
+#+end_src
+- Expected: Generates =PLAN.md= (~1k words) with sections like "UI: Card + DataTable from Shadcn MCP; Styling: Tailwind 4 responsive grid."
+*** Parallel Generation (Step 2): Sub-agents for exploration
+#+begin_src markup
+claude code --parallel 3 --worktree "Generate 3 dashboard variants: Minimalist, Card-heavy, Full-width. Use Shadcn Dialog for auth; Tailwind 4 dark mode. Per CLAUDE.md."
+#+end_src
+- Spawns: =git worktree add ../variant-1=, etc.
+- Claude iterates independently; merge best via =claude merge --from ../variant-2=
+*** Iteration/Debug (Step 3): Bash execution + screenshot
+#+begin_src markup
+claude code "Implement auth form from PLAN.md: Server action POST /api/auth, Button + Input from Shadcn MCP. Run npm run dev and test submission. If error, screenshot terminal and fix."
+#+end_src
+- Claude: Writes =src/app/dashboard/page.tsx=, runs =bash npm run dev=, queries MCP for props
+*** Component Scaffold (Vibe Coding): Rapid UI proto
+#+begin_src markup
+claude code "Scaffold a responsive testimonial widget: Shadcn Card with Tailwind 4 animations (hover:scale-105). Fetch mock data server-side in Next.js 16. Output to src/components/TestimonialWidget.tsx."
+#+end_src
+*** Commit/Review (Step 4): Auto-changelog
+#+begin_src markup
+claude commit "Review changes for dashboard; generate changelog from diffs. Ensure Tailwind 4 compliance."
+#+end_src
+- Outputs: =CHANGELOG.md= entry like "feat: Add dashboard with Shadcn DataTable (Tailwind 4 grid)."
+** Tips for Success
+- *Token Efficiency*: Use =--model claude-3.5-sonnet= for planning; Opus for complex gen
+  - Expect 20-50k tokens/session
+- *Troubleshooting*: If MCP fails, run =mcp-server restart=
+  - For Zsh quirks, alias =alias claude='claude --zsh-safe'=
+- *Scale Up*: For agentic teams, add GitHub Actions hook; Claude auto-reviews PRs via webhook
+- *Why Proven?*: Mirrors workflows from X devs (parallel sub-agents) and Anthropic guides—reduces loops by 70% with rules/MCP
+- Start with =claude chat "Summarize my stack per CLAUDE.md"= to test
+- If you hit snags, share a prompt/output for tweaks

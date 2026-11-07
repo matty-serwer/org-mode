@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       7c01dfd4-dc2f-4919-bba9-66396d68608e
+:REFLECT_ID: c6d28640173c4a1a9a95c36fdbdb203b
+:CREATED:  [2025-11-15 Sat 02:20]
+:MODIFIED: [2025-12-10 Wed 09:02]
+:END:
+#+title: Matthew Serwer
+371 Preble Street, Apt. 3
+South Portland, ME 04106
+(631) 645-4625
+Matthew.Serwer@gmail.com
+#+filetags: :concept:
+#+date: 2025-11-15
+* Matthew Serwer
+371 Preble Street, Apt. 3
+South Portland, ME 04106
+[[tel:(631) 645-4625][(631) 645-4625]]
+[[mailto:Matthew.Serwer@gmail.com][Matthew.Serwer@gmail.com]]
+November 14, 2025
+Preble Street Human Resources
+55 Portland Street
+Portland, ME 04101
+Dear Hiring Manager,
+I am writing to apply for the Client Support Staff position at Elena's Way. With over a decade of experience creating safe, trauma-informed spaces for vulnerable populations in high-pressure overnight environments, I am drawn to Preble Street's commitment to low-barrier, dignity-centered care. Throughout my career—from managing a hostel serving adventurers to folks in dire straits, in the Balkans to six years as a trusted key-holding manager in Brooklyn's late-night hospitality scene—I have developed extensive real-world crisis intervention skills through thousands of one-on-one interactions with individuals experiencing acute distress, grief, mental health challenges, and life transitions. 
+I have consistently provided compassionate stabilization through active listening and thoughtful de-escalation, while maintaining professional boundaries and connecting people to appropriate resources when situations exceeded informal support. My approach mirrors the trauma-informed principles central to Elena's Way: meeting people where they are, without judgment, and providing reliable presence during their most difficult moments.
+What I bring to this role is unwavering reliability paired with genuine commitment to community care. During my entire six-year tenure at The Whiskey Company, I maintained perfect attendance, serving as the overnight key-holder responsible for safety protocols, crisis response, and team coordination—understanding that consistency matters most when people are at their most vulnerable. I thrive in the focused quiet of overnight shifts, and my experience as both an Eagle Scout and active temple community member reflects a lifelong dedication to pragmatic, respectful mutual aid. I am eager to contribute my crisis intervention experience, strong de-escalation skills, and steadfast reliability to Elena's Way's mission of providing comprehensive, trauma-aware support to individuals navigating homelessness and complex health needs.
+Sincerely,
+Matthew Serwer

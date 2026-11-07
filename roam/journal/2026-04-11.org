@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       3f17cea5-b3b8-4ac0-9c69-b44c36c934eb
+:REFLECT_ID: 11042026
+:CREATED:  [2026-04-10 Fri 20:57]
+:MODIFIED: [2026-04-12 Sun 00:26]
+:END:
+#+title: Sat, April 11th, 2026
+#+filetags: :daily:
+#+date: 2026-04-10
+- [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]]
+  - [[id:055cd2a6-17b4-4b4e-bf14-fb22e9f71e7f][Ghostty]]
+    - Close current tab:  ⌘ + W  (Command + W)
+    - *⌘⌥⌃⇧*
+    - [[id:eb2da4c0-7734-4f40-8cf5-0c0bd3360a8f][Splits]]
+      - *Open NEW*
+        - *⌘⌥ + ⇧ + H/J/K/L*
+      - *Navigate*
+        - *⌘⌥ + H/J/K/L*
+- [[id:1edef3a2-fc0f-4fd7-95f6-c814e63ab8f9][Account]]
+  - [[id:56fecd45-fde2-4cd8-a725-e9fbd34706a2][Rectangle Pro]] [[id:edb9ead2-d2af-4c26-97ce-e776dbdd0709][Window Manager]]
+    - [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]]
+      -   *⌘⌥⌃⇧*
+      - *Maxxi3-Mize: ⌃⌥ + M*
+        - that sweet spot (should be)
+    -
+      - Inconsistent results. Sometimes going twice works
+    - TODO
+      - [ ] Setup Layouts for multiple windows / App specifics
+        - I think this should be done with Stage Manager off, as their list of apps saves with EVERYTHING that's open.
+    - Credentials
+      - [[id:564eeb54-7dcf-4bca-a9f9-d37e670c0506][Matthew.Serwer@gmail.com]]
+      - 10493309-F171E10E-BF73ED0E-ACEFC57E-EB11B953

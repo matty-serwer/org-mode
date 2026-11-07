@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       772d31af-8c73-4d1a-b4e0-2cdc6c65d9f7
+:REFLECT_ID: 0689f06c87214922b7caaa76a9f9e637
+:CREATED:  [2025-11-13 Thu 06:22]
+:MODIFIED: [2025-11-13 Thu 06:22]
+:END:
+#+title: Homebrew
+#+filetags: :concept:
+#+date: 2025-11-13
+

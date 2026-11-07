@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       5be5c372-3e95-4173-9e49-b5737d31f155
+:REFLECT_ID: e577bbc64f254882b6227760ee0606a7
+:CREATED:  [2025-11-05 Wed 20:38]
+:MODIFIED: [2025-11-17 Mon 19:33]
+:END:
+#+title: LEMR Application Requirements Assessment
+#+filetags: :ref:app_doc:
+#+date: 2025-11-05
+* [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]] Application Requirements Assessment
+*** /A patient logging support system/
+- Core Functional Requirements
+  - A _Staff_ member should be able to simply open an account for an individual with "whatever" information they are able to get from an Individual 
+  - A _Staff_ member should principally be able to look up an _Individual_ via a _LEMR QR Code_
+  - The system must allow clinicians (users) to search for and retrieve patient (person) records using natural language or descriptive queries—even without a specific patient identifier or QR code. For example, a doctor should be able to search for a patient by recalling contextual details such as age, medical history, or prior diagnoses.
+  - The software should feature robust patient lookup functionality that is superior to current paper and ledger-based systems, making clinicians prefer this digital solution over existing methods.
+- Technical and Data Requirements
+  - The platform needs to operate as an internet-based application, easily accessible to medical professionals who might lack traditional EHRs (Electronic Health Records).
+  - Data should be accessible, exportable, and potentially monetizable—supporting structured collection suitable for selling medical data points, e.g., to startups purchasing data from African hospitals.
+  - Security and privacy considerations are important, especially as there is discussion of NDAs and non-competes; the system should be audit-capable and compliant with relevant privacy regulations.
+  - Self-hosting on a Linux server should be supported, accommodating organizations that prefer local control over data and minimizing dependency on third parties.
+- User Experience and Adoption Requirements
+  - Usability is critical: the interface should support clinicians’ workflow, including easy patient lookups and minimal friction compared to analog methods.
+  - There should be flexibility to update or change contact and notification settings (such as for emails or phone numbers), for user manageability.
+  - The software must track and audit usage in a way that is at least as trustworthy as or better than paper records, giving confidence to both clinicians and administrators.
+- Business and Stakeholder Considerations
+  - The system’s business model should account for sales or licensing based on data points (e.g., $1 per data point), with features that streamline legal protections like NDAs for organizational users.
+  - The terminology choice ("user" vs. "person") should remain adaptable at both surface and system levels, to protect the project and stakeholders legally.
+  - The software should aim to fill a clear gap: digitizing and making accessible patient records for organizations relying on paper, Excel, or Word docs—nothing like this currently exists for internet-based use in the target regions.
+These requirements are synthesized from the key themes, needs, and concerns expressed in the correspondence. They should provide a solid foundation for both feature brainstorming and the technical design of the LEMR Medical Social Support System.
+#+begin_quote
+- context
+  - Based on the correspondence between Aaron and Matty, the requirements for the LEMR Medical Social Support System software should address both the practical needs of clinicians and the broader business goals for data gathering and usability. Here are the key requirements you should document
+#+end_quote

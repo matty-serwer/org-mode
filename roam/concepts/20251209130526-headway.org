@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6ab15631-8909-402a-9cdb-083b0c73ef9d
+:REFLECT_ID: 2a6a9c86a1f3415f92eef9c5aafd82a6
+:CREATED:  [2025-12-09 Tue 13:05]
+:MODIFIED: [2025-12-09 Tue 13:05]
+:END:
+#+title: Headway
+#+filetags: :concept:
+#+date: 2025-12-09
+

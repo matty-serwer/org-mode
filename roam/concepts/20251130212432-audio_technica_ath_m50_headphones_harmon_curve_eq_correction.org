@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       85e82dd8-4800-4d92-a7c8-941fb001c6ba
+:REFLECT_ID: 2055e2c46ea544e08a8797d490d2b071
+:CREATED:  [2025-11-30 Sun 21:24]
+:MODIFIED: [2026-03-13 Fri 23:49]
+:END:
+#+title: Audio Technica ATH-M50 Headphones Harmon Curve EQ Correction
+#+filetags: :concept:
+#+date: 2025-11-30
+* Audio Technica ATH-M50 [[id:d13f8a44-f637-4d1a-8fee-af1a35bdc515][Headphones]] [[id:f06e612f-a44b-4011-b784-791e27f7014e][Harmon Curve]] [[id:6ff9c8fa-dc92-4390-a8dd-8d92f9eb22a6][EQ Correction]]
+#+begin_quote
+- Using "Parametric EQ" in Audio Hijack
+- Data obtained from: 
+  - [[https://autoeq.app/][https://autofffeq.app/]]
+#+end_quote
+
+- ATH-M50xBT2 Harman EQ Settings
+  - *Preamp:* -5.5 dB
+  - Filter 1: Low Shelf
+    - Frequency: 105 Hz
+    - Q: 0.70
+    - Gain: +5.2 dB
+  - Filter 2: Peaking
+    - Frequency: 96 Hz
+    - Q: 0.36
+    - Gain: -5.2 dB
+  - Filter 3: Peaking
+    - Frequency: 281 Hz
+    - Q: 1.38
+    - Gain: +6.3 dB
+  - Filter 4: Peaking
+    - Frequency: 326 Hz
+    - Q: 2.85
+    - Gain: +2.2 dB
+  - Filter 5: Peaking
+    - Frequency: 1145 Hz
+    - Q: 1.38
+    - Gain: -1.9 dB
+  - Filter 6: Peaking
+    - Frequency: 3697 Hz
+    - Q: 5.63
+    - Gain: +3.4 dB
+  - Filter 7: Peaking
+    - Frequency: 5635 Hz
+    - Q: 3.33
+    - Gain: +5.6 dB
+  - Filter 8: Peaking
+    - Frequency: 9705 Hz
+    - Q: 1.58
+    - Gain: -4.7 dB
+  - Filter 9: High Shelf
+    - Frequency: 10000 Hz
+    - Q: 0.70
+    - Gain: -7.3 dB

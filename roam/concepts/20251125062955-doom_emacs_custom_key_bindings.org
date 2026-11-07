@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       45d20238-8123-4773-ba54-63fee153601a
+:REFLECT_ID: 7c5ad5b206d84d3b8c51339382a7b8c6
+:CREATED:  [2025-11-25 Tue 06:29]
+:MODIFIED: [2025-11-25 Tue 06:30]
+:END:
+#+title: Doom Emacs Custom Key Bindings
+#+filetags: :concept:
+#+date: 2025-11-25
+* [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Custom [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]]

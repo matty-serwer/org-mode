@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1d8ec1a0-4a67-4351-934c-2f6f472455c0
+:REFLECT_ID: 1113b0de336e4a4c99e2daca100eab85
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: window
+#+filetags: :concept:
+#+date: 2025-10-25
+

@@ -1,0 +1,58 @@
+:PROPERTIES:
+:ID:       db8e0e2e-ca5c-47fd-8ada-c53240918ee9
+:REFLECT_ID: e8337d70c68d46e783a8cc5825d48e2c
+:CREATED:  [2025-11-24 Mon 07:19]
+:MODIFIED: [2025-11-24 Mon 08:05]
+:END:
+#+title: Vet Sweet Road Map
+#+filetags: :concept:prompt:
+#+date: 2025-11-24
+* [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]] [[id:ba430817-d7ff-487b-8a65-15899e5111cc][Road Map]]
+- Road Map: Vet Sweet v1
+  - We will be making our own "Version" or "Approximation" of the ezy-vet software (check the ezy-vet-software-breakdown document) as laid out in the breakdown document.
+  - This Project will cover the Tier 1 and Tier 2 Systems and features listed in the breakdown document.
+  - We will be using the tech stack in the vet_sweet-tech-stack document, also included with this "Space"s Files.
+  - This will be a Demo project for my portfolio, so make this a consideration when planning, and allow for certain items to be omited, but marked with an * note.
+  - With this in mind you should leave out tasks that require the following:
+    - A sum of money more than $20 (except for basic services from vercel, render, or BackBlaze, which are listed in the Tech Stack)
+    - Call for a disproportionate amount of work or commitment, generally tasks required for scalability, items needed for a "Real" version of the app that aren't very noticable in a "Demo" application
+    - Tasks for features that just don't belong in a solo, proof of concept, yet impressive, application.
+    - Are excessive infrastructure based items for a solo coder.
+  - The Road Map should be broken down into Agile Sprints, where we can build the App incrementally, getting basic features mostly functional early on, pacing the backend, frontend, and services to support each other as we go. 
+  - Each Sprint should be in support of an MVP, with a single Sprint at the end for flex items.
+  - Do not refer to Days and Weeks. We will use a Linear style planning system that qulifies each Task by "Lift", represented as a 1, 2, 3, 5, or 7.  
+  - Each sprint will represent one Epic. An Epic will be broken down into Milestones. and a Milestone should be broken into Tasks.
+  - This is a genearlized overview document, of the type that can be gone over in a business meeting with stakeholders to discuss, and THEN create more technically specific planning docs
+  - The tasks in this Road Map should be general and in support of the big picture. The typical task on this document will eventually be broken into several "Issues" to be assigned to a Developer. 
+  - Do not include any actual code or command prompts in this document. That type of instruction is too specific for this type of document. 
+  - Road Map Format:
+    - Response Format
+      - Use dashes (=-=) for every line; no blank lines between bullets
+      - Start response with a dash; every item becomes a bullet
+      - Hierarchy: 2-space indents per level (maximum 3 levels)
+      - End response with =---=
+    - Headers
+      - Headers attach to bullets: =- # Title=, =- ## Subtitle=, =- ### Sub-subtitle=
+      - Use =- #= for singular topics; =- ##= for lists/multiple top-level items
+      - Maximum header depth: =- ###= (demote deeper headers)
+    - Content Rules
+      - Infer and create natural hierarchy from content structure
+      - Remove ALL blank lines; each bullet connects directly to the next
+      - No blank lines before/after sections, lists, or code blocks
+      - Keep all content within the bullet outline (code blocks, quotes, everything)
+    - Bold Style
+      - Use bold sparingly, only for genuinely important/exciting items
+      - Never use bold for repetitive labeling or subject headers
+      - If a line has bold labels + content (e.g., =**label**: content=), split into separate bullets:
+        - First bullet: the label/item name (no bold)
+        - Second bullet, indented: the description
+      - Remove existing repetitive bold styling when restructuring
+    - Quality Check
+      - Starts with a dash
+      - Every item starts with a dash
+      - Hierarchy is consistent and clear through indentation
+      - No blank lines anywhere
+      - Bold used strategically, never repetitively
+      - Ends with =-=—
+    - *Do NOT include any Emojis
+  - Save ALL comments and questions for a separate section to appear AFTER the Road Map in a section called "Comments And Questions". Only include this section if necessary. 

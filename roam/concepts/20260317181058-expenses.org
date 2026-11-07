@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0673cdb6-f373-40e7-9b21-b114865a418a
+:REFLECT_ID: 74354aee4cd04ad9abc3758a9d9a726a
+:CREATED:  [2026-03-17 Tue 18:10]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Expenses
+#+filetags: :concept:
+#+date: 2026-03-17
+

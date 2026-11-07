@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9bd64272-628e-4461-bf38-b8269ba4c67f
+:REFLECT_ID: c6c4bc31ab694c3d985a5dda1ac15969
+:CREATED:  [2025-10-25 Sat 19:28]
+:MODIFIED: [2025-10-25 Sat 19:28]
+:END:
+#+title: Table Folder
+#+filetags: :concept:
+#+date: 2025-10-25
+

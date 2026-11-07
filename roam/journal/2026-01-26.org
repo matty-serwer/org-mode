@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       fce80c2b-17a7-43ff-8197-7bd07c7a032c
+:REFLECT_ID: 26012026
+:CREATED:  [2026-01-26 Mon 07:18]
+:MODIFIED: [2026-01-26 Mon 12:37]
+:END:
+#+title: Mon, January 26th, 2026
+#+filetags: :daily:
+#+date: 2026-01-26
+- [[id:1dd43b8b-5091-41a3-9254-6f00416e15ed][Footy]] rant on VAR
+  - Also the Pats are back in the Super Bowl? Hard pass. I’m starting to hate a m football. Man U invested heavily in Africans. Maybe I’ll jump back in to footy. But even they do the VAR shit that adds nothing. It’s like they saw how the nfl robbed its fan if most of the joy so the refs could watch a 19th century cinema zeotrope, And FIFA said, oh we can easily take the 1 or 2 times these miserable people have to be happy away, let’s have a look at that! The game never stops but we can time it no go right in the middle of the match.
+- [[id:2a0e069e-82be-42ac-9ea6-82b345d1f9cb][Ableton Live Org January 2026]]
+  - [[id:343b8ddc-7ad8-4bb0-8e8e-682bc1aa2398][Ableton Live MPlayer Template]]
+    - This is the get started for the yet Started
+- [[id:0dc20605-da5e-48ec-8055-113b68bb6f97][Operation 26 26]]
+  - Planning

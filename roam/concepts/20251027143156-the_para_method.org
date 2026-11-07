@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d10c703f-7ddf-447f-8f0a-0e08386c3c39
+:REFLECT_ID: c1632dcaa25a42ac9a7118c69f9d8398
+:CREATED:  [2025-10-27 Mon 14:31]
+:MODIFIED: [2025-10-27 Mon 14:31]
+:END:
+#+title: The PARA Method
+#+filetags: :concept:
+#+date: 2025-10-27
+

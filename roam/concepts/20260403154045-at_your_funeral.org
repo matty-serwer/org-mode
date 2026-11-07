@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       be4ef9ed-a4f9-4c63-a036-c59e9fa85f96
+:REFLECT_ID: 8cd81924eb47425fb8e27a9b85def406
+:CREATED:  [2026-04-03 Fri 15:40]
+:MODIFIED: [2026-04-03 Fri 15:40]
+:END:
+#+title: At Your Funeral
+#+filetags: :concept:
+#+date: 2026-04-03
+

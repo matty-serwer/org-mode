@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       11b4987f-47fd-460c-8b2c-8a4fc0c76150
+:REFLECT_ID: 00d8c20f4cce4a18a7d800eb54225b0e
+:CREATED:  [2025-10-25 Sat 09:14]
+:MODIFIED: [2026-04-16 Thu 06:59]
+:END:
+#+title: Doom Emacs
+#+filetags: :concept:
+#+date: 2025-10-25
+

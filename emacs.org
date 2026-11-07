@@ -1,0 +1,427 @@
+#+title: Emacs
+#+author: Mattie Aran
+#+date: 2026-06-24
+#+filetags: :
+#+startup: overview
+
+* Doom Emacs — Vim / Evil Editing & Navigation
+Standard Vim motions, operators, and text objects via Evil, plus Doom's
+additions. Normal mode unless noted. ★ = your custom binding from =config.el=.
+** Modes
+- ~Esc~ / ~C-g~ :: Return to normal mode
+- ~i~ :: Insert mode
+- ~v~ :: Visual (charwise)
+- ~V~ :: Visual line
+- ~C-v~ :: Visual block
+- ~R~ :: Replace (overtype) mode
+- ~:~ :: Ex command line
+** Enter insert mode
+- ~i~ / ~a~ :: Insert before / after cursor
+- ~I~ / ~A~ :: Insert at first non-blank / end of line
+- ~o~ / ~O~ :: Open new line below / above
+- ~gi~ :: Resume insert at last insert spot
+- ~C-r {reg}~ :: (in insert) paste register without leaving insert
+** Motions — within a line
+- ~h j k l~ :: Left / down / up / right
+- ~0~ :: Start of line
+- ~^~ :: First non-blank char
+- ~$~ :: End of line
+- ~g_~ :: Last non-blank char
+- ~w~ / ~W~ :: Next word / WORD start
+- ~e~ / ~E~ :: Next word / WORD end
+- ~b~ / ~B~ :: Previous word / WORD start
+- ~ge~ :: End of previous word
+** Motions — find a char in the line
+- ~f {c}~ / ~F {c}~ :: To next / previous occurrence of char
+- ~t {c}~ / ~T {c}~ :: Till just before next / previous char
+- ~;~ / ~,~ :: Repeat last f/t/snipe forward / backward
+** Motions — across the document
+- ~gg~ :: First line
+- ~G~ :: Last line ( ~{n}G~ jumps to line n )
+- ~{~ / ~}~ :: Previous / next paragraph
+- ~(~ / ~)~ :: Previous / next sentence
+- ~%~ :: Jump to matching bracket / pair
+- ~H~ / ~M~ / ~L~ :: Top / middle / bottom of window
+** Scrolling
+- ~C-d~ / ~C-u~ :: Half page down / up
+- ~C-f~ / ~C-b~ :: Full page forward / back
+- ~C-e~ / ~C-y~ :: Scroll one line down / up
+- ~zz~ :: Center current line
+- ~zt~ / ~zb~ :: Current line to top / bottom
+** Snipe (Doom default — overrides Vim's ~s~)
+- ~s {c}{c}~ :: Jump forward to a 2-char match
+- ~S {c}{c}~ :: Jump backward to a 2-char match
+- ~;~ / ~,~ :: Repeat snipe forward / backward
+- (For Vim's old ~s~ "substitute char", use ~cl~ instead)
+** Operators (combine with any motion or text object)
+- ~d~ :: Delete
+- ~c~ :: Change (delete then insert)
+- ~y~ :: Yank (copy)
+- ~>~ / ~<~ :: Indent / outdent
+- ~=~ :: Re-indent
+- ~gu~ / ~gU~ :: Lowercase / uppercase
+- =g~= :: Toggle case
+- ~gc~ :: Comment / uncomment (Doom: evil-nerd-commenter)
+- Double the operator to act on the whole line: ~dd~ ~cc~ ~yy~ ~>>~ ~gcc~ ~guu~
+- Examples: ~dw~ delete word, ~ci"~ change inside quotes, ~d$~ delete to EOL, ~>ip~ indent paragraph
+** Text objects (after an operator, or in visual mode)
+- ~iw~ / ~aw~ :: Inner / a word
+- ~iW~ / ~aW~ :: Inner / a WORD
+- ~is~ / ~as~ :: Inner / a sentence
+- ~ip~ / ~ap~ :: Inner / a paragraph
+- ~i"~ ~a"~  ~i'~  ~i`~ :: Inside / around quotes
+- ~i(~  ~ib~ :: Inside parentheses
+- ~i{~  ~iB~ :: Inside braces
+- ~i[~ :: Inside brackets
+- ~i<~ :: Inside angle brackets
+- ~it~ / ~at~ :: Inner / around an HTML/XML tag
+- Examples: ~ci(~ change inside parens, ~dap~ delete a paragraph, ~yi"~ yank inside quotes
+** Editing in normal mode
+- ~x~ / ~X~ :: Delete char under / before cursor
+- ~r {c}~ :: Replace single char with {c}
+- ~R~ :: Replace mode (overtype)
+- =~= :: Toggle case of char under cursor
+- ~J~ :: Join line below (with a space)
+- ~gJ~ :: Join without a space
+- ~D~ :: Delete to end of line ( = ~d$~ )
+- ~C~ :: Change to end of line ( = ~c$~ )
+- ~Y~ :: Yank line ( = ~yy~ )
+- ~.~ :: Repeat last change
+- ~u~ :: Undo
+- ~C-r~ :: Redo
+** Yank & paste
+- ~yy~ / ~Y~ :: Yank line
+- ~p~ / ~P~ :: Paste after / before cursor
+- ~"{reg} y~ :: Yank into named register {reg}
+- ~"{reg} p~ :: Paste from register {reg}
+- ~"+ y~ / ~"+ p~ :: Yank / paste via system clipboard
+- ~"0 p~ :: Paste the last yank (skips deletes)
+** Visual mode
+- ~v~ / ~V~ / ~C-v~ :: Char / line / block selection
+- ~o~ :: Jump to the other end of the selection
+- ~gv~ :: Reselect the last visual selection
+- ~d~ ~c~ ~y~ :: Delete / change / yank the selection
+- ~>~ / ~<~ :: Indent / outdent selection
+- ~u~ / ~U~ :: Lowercase / uppercase selection
+- ~gc~ :: Comment the selection
+- ~r {c}~ :: Replace every selected char with {c}
+- (block) ~I~ / ~A~ :: Insert / append on every line, then ~Esc~
+** Search in buffer
+- ~/ {pat}~ / ~? {pat}~ :: Search forward / backward
+- ~n~ / ~N~ :: Next / previous match
+- ~*~ / ~#~ :: Search word under cursor forward / backward
+** Marks & jumps
+- ~m {a}~ :: Set mark {a}
+- ~` {a}~ :: Jump to mark {a} (exact spot)
+- ~' {a}~ :: Jump to mark {a} (line)
+- ~`` ~ / ~'' ~ :: Jump back to where you were before the last jump
+- ~C-o~ / ~C-i~ :: Older / newer position in the jump list
+- ~g;~ / ~g,~ :: Older / newer change position
+- ~gd~ :: Go to definition (Doom)
+- ~gD~ :: Go to references (Doom)
+- ~gf~ :: Go to file at point
+- ~K~ :: Look up documentation at point (Doom)
+** Macros & repeat
+- ~q {reg}~ :: Start recording into register {reg}; press ~q~ again to stop
+- ~@ {reg}~ :: Play macro {reg}
+- ~@@~ :: Replay the last macro
+- ~.~ :: Repeat the last edit
+** Multiple cursors — ~gz~ prefix (Doom: evil-mc)
+- ~gzm~ :: Place a cursor at every match of the symbol / selection
+- ~gzz~ :: Toggle a cursor at point
+- ~gzj~ / ~gzk~ :: Add a cursor and move down / up
+- ~gzn~ / ~gzN~ :: Add a cursor at the next / previous match
+- ~gzu~ :: Remove all extra cursors
+- (Exact evil-mc keys can be confirmed live with which-key under ~gz~)
+** Folding
+- ~za~ :: Toggle fold under cursor
+- ~zo~ / ~zc~ :: Open / close fold
+- ~zr~ / ~zm~ :: Open / close one fold level everywhere
+- ~zR~ / ~zM~ :: Open all / close all folds
+** Custom — window navigation ★
+- ~s-h~ / ~s-j~ / ~s-k~ / ~s-l~ :: Move to window left / down / up / right (Cmd+hjkl; works in normal, visual, and insert) ★
+** Custom — org-mode editing ★ (inside org buffers)
+- ~RET~ (insert) :: New list item when inside a list, otherwise a normal newline ★
+- ~M-]~ / ~M-[~ :: Demote / promote heading or list item ★
+- ~s-]~ / ~s-[~ :: Demote / promote (Cmd+brackets) ★
+- ~SPC~ (insert) :: Typing ~- ** ~ at line start auto-converts the bullet into a heading ★
+* Doom Emacs — Leader (SPC) Keybindings
+Evil mode, ~SPC~ leader. Bindings marked ★ come from your =config.el= and are
+placed in the section they belong to. C-c / Control equivalents are omitted by
+design.
+** Conventions
+- ~SPC~ — global leader.
+- ~SPC m~ — local leader (major-mode commands; in org buffers, the big org menu).
+- Press ~SPC~ and pause — which-key shows live menus for any prefix below.
+** General / Top-level
+- ~SPC SPC~ :: Find file in project
+- ~SPC .~ :: Find file
+- ~SPC ,~ :: Switch buffer (current workspace)
+- ~SPC <~ :: Switch buffer (all)
+- ~SPC `~ :: Switch to last buffer
+- ~SPC :~ :: M-x (run command)
+- ~SPC ;~ :: Eval expression
+- ~SPC u~ :: Universal argument
+- ~SPC /~ :: Search project
+- ~SPC *~ :: Search project for symbol at point
+- ~SPC RET~ :: Jump to bookmark
+- ~SPC x~ :: Pop up scratch buffer
+- ~SPC X~ :: *Org capture* ★ (bound to org-capture)
+** Buffers — ~SPC b~
+- ~SPC b b~ :: Switch workspace buffer
+- ~SPC b B~ :: Switch buffer (all)
+- ~SPC b [~ / ~]~ :: Previous / next buffer
+- ~SPC b k~ / ~d~ :: Kill buffer
+- ~SPC b n~ :: New empty buffer
+- ~SPC b r~ :: Revert buffer
+- ~SPC b s~ :: Save buffer
+- ~SPC b S~ :: Save all buffers
+- ~SPC b z~ :: Bury buffer
+- ~SPC b x~ :: Pop up scratch buffer
+** Files — ~SPC f~
+- ~SPC f f~ :: Find file
+- ~SPC f F~ :: Find file from here
+- ~SPC f r~ :: Recent files
+- ~SPC f s~ :: Save file
+- ~SPC f S~ :: Save file as
+- ~SPC f d~ :: Find directory
+- ~SPC f D~ :: Delete this file
+- ~SPC f R~ :: Rename / move file
+- ~SPC f y~ :: Copy file path
+- ~SPC f p~ :: Find file in private config
+- ~SPC f P~ :: Browse private config dir
+** Project — ~SPC p~
+- ~SPC p p~ :: Switch project
+- ~SPC p f~ :: Find file in project
+- ~SPC p a~ :: Add known project
+- ~SPC p d~ :: Remove known project
+- ~SPC p D~ :: Discover projects — scans ~/Developer/ (3 levels)
+- ~SPC p b~ :: Switch project buffer
+- ~SPC p c~ :: Compile in project
+- ~SPC p i~ :: Invalidate cache
+- ~SPC p k~ :: Kill project buffers
+- ~SPC p r~ :: Recent project files
+- ~SPC p t~ :: List project tasks (TODO/FIXME)
+** Search — ~SPC s~
+- ~SPC s b~ :: Search current buffer
+- ~SPC s B~ :: Search all open buffers
+- ~SPC s d~ :: Search current directory
+- ~SPC s D~ :: Search another directory
+- ~SPC s i~ :: Jump to symbol (imenu)
+- ~SPC s p~ :: Search project
+- ~SPC s s~ :: Search buffer (consult-line)
+- ~SPC s j~ :: Jump to bookmark
+** Code / LSP — ~SPC c~
+- ~SPC c a~ :: LSP code action
+- ~SPC c c~ :: Compile
+- ~SPC c C~ :: Recompile
+- ~SPC c d~ :: Jump to definition
+- ~SPC c D~ :: Jump to references
+- ~SPC c i~ :: Find implementations
+- ~SPC c t~ :: Find type definition
+- ~SPC c j~ :: Jump to symbol in buffer
+- ~SPC c J~ :: Jump to symbol in workspace
+- ~SPC c k~ :: Jump to documentation
+- ~SPC c f~ :: Format buffer / region
+- ~SPC c r~ :: LSP rename
+- ~SPC c x~ :: List errors (flycheck)
+- ~SPC c w~ :: Delete trailing whitespace
+Java (lsp-java/jdtls) and Prisma tooling load automatically per your =config.el=.
+** Window — ~SPC w~
+- ~SPC w w~ :: Other window
+- ~SPC w h/j/k/l~ :: Move to window left / down / up / right
+- ~SPC w s~ / ~SPC w -~ :: Split below (horizontal)
+- ~SPC w v~ / ~SPC w /~ :: Split right (vertical)
+- ~SPC w d~ / ~SPC w c~ :: Delete window
+- ~SPC w o~ / ~SPC w m~ :: Delete other windows (maximize)
+- ~SPC w =~ :: Balance windows
+- ~SPC w H/J/K/L~ :: Move window in direction
+- ~SPC w u~ :: Undo window config
+#+begin_quote
+★ (non-leader, for reference): ~Cmd-h/j/k/l~ (~s-hjkl~) also moves between
+windows in normal/visual/insert states.
+#+end_quote
+** Splits & Visual — ~SPC v~ ★ custom prefix ("ltd visual")
+- ~SPC v v~ :: Vertical split with new buffer ★
+- ~SPC v -~ :: Horizontal split with new buffer ★
+- ~SPC v d~ :: Delete line / region *without* touching clipboard ★
+** Toggle — ~SPC t~
+- ~SPC t c~ :: *Toggle code suggestions* — Corfu auto-popup ★
+- ~SPC t s~ :: Toggle spell check (flyspell, aspell)
+- ~SPC t l~ :: Line numbers
+- ~SPC t w~ :: Soft line wrapping
+- ~SPC t f~ :: Flycheck
+- ~SPC t F~ :: Frame fullscreen
+- ~SPC t z~ :: Zen / writeroom mode
+- ~SPC t r~ :: Read-only mode
+** Open — ~SPC o~
+- ~SPC o A~ :: *Org agenda menu* (see below)
+- ~SPC o p~ :: Toggle project sidebar
+- ~SPC o t~ :: Toggle terminal (vterm)
+- ~SPC o T~ :: Open terminal here
+- ~SPC o e~ :: Eshell
+- ~SPC o -~ :: Dired (this directory)
+- ~SPC o f~ :: Reveal in Finder (macOS)
+- ~SPC o b~ :: Open in browser
+** Org-mode
+Global org bindings live on the leader; the deep menu lives on the local
+leader ~SPC m~ *inside org buffers*.
+*** Global
+- ~SPC X~ :: Org capture ★ — i inbox, t inbox TODO, j journal, m music, s someday
+- ~SPC n l~ :: *Create + copy ID link to current heading* ★
+*** Local leader — ~SPC m~ (inside an org buffer)
+- ~SPC m t~ :: Cycle TODO state (TODO → NEXT → WAIT → DONE → KILL)
+- ~SPC m d d~ :: Set deadline
+- ~SPC m d s~ :: Schedule
+- ~SPC m d t~ :: Insert timestamp
+- ~SPC m q~ :: Set tags
+- ~SPC m p~ :: Set priority
+- ~SPC m r~ :: Refile
+- ~SPC m l l~ :: Insert link
+- ~SPC m o~ :: Set property
+- ~SPC m e~ :: Export dispatch
+- ~SPC m '~ :: Edit special (code block / table)
+- ~SPC m h~ :: Toggle heading
+- ~SPC m y~ :: *Copy entire buffer to clipboard* ★
+#+begin_quote
+Smart-edit helpers from your config (no keybinding — they fire automatically):
+insert-mode ~RET~ makes a new list item inside a list; ~M-]~ / ~M-[~ and
+~Cmd-]~ / ~Cmd-[~ demote / promote headings; typing ~- ** ~ at line start
+converts a bullet into a heading; drag/paste an image to auto-save it to
+~/org/attachments/ and link it inline.
+#+end_quote
+** Org Agenda — ~SPC o A~
+- ~SPC o A a~ :: Agenda (day/week view)
+- ~SPC o A t~ :: Global TODO list
+- ~SPC o A m~ :: Match tags
+- ~SPC o A M~ :: Match tags (all TODOs)
+Your custom *Dashboard* view (=org-agenda-custom-commands=, key ~d~): run the
+agenda dispatcher (~M-x org-agenda~) and press ~d~ — it stacks today's agenda +
+Next actions + Waiting-on + all TODOs in one buffer.
+Agenda scope: every top-level =.org= file in ~/org/ (non-recursive). Drop a new
+file in ~/org/ and it appears automatically.
+** Notes — ~SPC n~
+- ~SPC n l~ :: Create + copy ID link to current heading ★
+- ~SPC n n~ :: Capture / org notes
+(org-roam bindings are gone — roam was removed from your config.)
+** Reference Files — ~SPC r~ ★ custom prefix ("ltd reference")
+- ~SPC r c~ :: Fuzzy-find CSS reference (~/.config/ref/css/) ★
+- ~SPC r j~ :: Fuzzy-find Java reference (~/.config/ref/java/) ★
+- ~SPC r r~ :: Fuzzy-find React TS reference (~/.config/ref/ts/react/) ★
+** Git — ~SPC g~
+- ~SPC g g~ :: Magit status
+- ~SPC g /~ :: Magit dispatch
+- ~SPC g b~ :: Magit blame
+- ~SPC g C~ :: Magit clone
+- ~SPC g t~ :: Git time machine
+- ~SPC g ]~ / ~[~ :: Next / previous hunk
+- ~SPC g r~ :: Revert hunk
+- ~SPC g s~ :: Stage hunk
+** Help — ~SPC h~
+- ~SPC h f~ :: Describe function
+- ~SPC h v~ :: Describe variable
+- ~SPC h k~ :: Describe key
+- ~SPC h m~ :: Describe mode
+- ~SPC h o~ :: Describe symbol
+- ~SPC h b~ :: Search bindings
+- ~SPC h r r~ :: *Reload Doom config*
+- ~SPC h t~ :: Load theme
+** Insert — ~SPC i~
+- ~SPC i s~ :: Insert snippet
+- ~SPC i u~ :: Insert unicode char
+- ~SPC i e~ :: Insert emoji
+- ~SPC i y~ :: Insert from kill ring
+- ~SPC i f~ :: Insert file contents
+** Quit / Session — ~SPC q~
+- ~SPC q q~ :: Quit Emacs
+- ~SPC q Q~ :: Quit without saving
+- ~SPC q r~ :: Restart Emacs
+- ~SPC q R~ :: Restart and restore session
+- ~SPC q s~ :: Save session
+- ~SPC q l~ :: Load session
+** Workspaces — ~SPC TAB~
+- ~SPC TAB n~ :: New workspace
+- ~SPC TAB d~ :: Delete workspace
+- ~SPC TAB r~ :: Rename workspace
+- ~SPC TAB ]~ / ~[~ :: Next / previous workspace
+- ~SPC TAB 1..9~ :: Switch to workspace N
+- ~SPC TAB .~ :: Switch workspace
+* Config Overview
+** Locations
+- Config: ~/.config/doom/ (config.el, init.el, packages.el)
+- Doom install: ~/.config/emacs/
+- doom binary: ~/.config/emacs/bin/doom
+- Org files: ~/org/
+- Snippets: ~/.config/doom/snippets/
+** Sync workflow
+- Edit init.el or packages.el → must run: doom sync → restart Emacs
+- Edit config.el only → just restart (SPC q r) or eval
+- Health check: doom doctor
+* Completion
+** Minibuffer: Vertico
+- Vertical list for find-file, M-x, buffer switch
+- (Helm was removed)
+** In-buffer: Corfu
+- Auto-popup OFF by default
+- Toggle auto-popup: SPC t c
+- Manual trigger: C-SPC
+- (Company was removed)
+* Spell Check
+- OFF by default, backend is aspell
+- Toggle in any buffer: SPC t s
+* Org Mode
+** Capture (SPC X)
+- i inbox note, t inbox TODO, j journal, m music idea, s someday
+- File the capture: C-c C-c   |   cancel: C-c C-k
+** Agenda
+- Reads TODOs/dates from all ~/org/*.org
+- SPC o a agenda, SPC o t all TODOs, SPC o A then d = Dashboard
+*** TODO Do a run through of Agenda mode with our now current TODOs
+** DONE states
+CLOSED: [2026-06-25 Thu 19:00]
+:LOGBOOK:
+- State "DONE"       from "NEXT"       [2026-06-25 Thu 19:00]
+:END:
+- TODO → NEXT → WAIT → DONE → KILL
+- Cycle: SPC m t
+** Links
+- Same file: [[*Heading Name]]
+- Other file: [[file:tech.org::*Heading]]
+- Open link: C-c C-o
+** Visuals
+- org-modern (headings, bullets, tag pills, tables)
+- org-appear (emphasis markers reveal on cursor)
+- org-download (drag/paste images → ~/org/attachments/)
+** New file headers
+- Auto-inserted via file-template (~/.config/doom/snippets/org-mode/__)
+* Languages
+** Java
+- LSP via Eclipse JDT (jdtls)
+- Install/update server: M-x lsp-install-server RET jdtls
+- Standalone .java file → prompts to create a project (choose i)
+- Needs JAVA_HOME set; JDK 21
+- If classpath confused: M-x lsp-workspace-folders-remove, reopen
+** Prisma
+- prisma-mode loads on .prisma files
+* Git: Magit
+- Status: SPC g g
+- (the core git UI — stage, commit, push from here)
+* Custom Keybindings (LTD)
+** Windows
+- s-h/j/k/l move between windows
+- SPC v v vertical split (new buffer), SPC v - horizontal split
+** Reference files
+- SPC r c CSS, SPC r j Java, SPC r r React (~/.config/ref/)
+** Utilities
+- SPC m y copy entire buffer to clipboard
+- SPC n l copy ID-link to current heading
+* Troubleshooting Log
+** Frozen Emacs
+- C-g repeatedly, or C-] to abort recursive edit
+- From terminal: pkill -SIGUSR2 Emacs (interrupt without killing)
+** "Cannot open load file" on a package
+- A use-package! block exists but no matching (package! ...) in packages.el
+- Fix: add the package! line + doom sync
+** Corrupt LSP server download
+- rm -rf ~/.config/emacs/.local/etc/lsp/ then reinstall
+EOF -*- mode: snippet -*-

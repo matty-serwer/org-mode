@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e8eea4da-a54e-4465-8a03-ffe1ba5f1b55
+:REFLECT_ID: fe0696b3fe1740c1b1c72f04ce1f789e
+:CREATED:  [2025-11-11 Tue 07:34]
+:MODIFIED: [2025-11-24 Mon 20:14]
+:END:
+#+title: MCP Server
+#+filetags: :concept:
+#+date: 2025-11-11
+

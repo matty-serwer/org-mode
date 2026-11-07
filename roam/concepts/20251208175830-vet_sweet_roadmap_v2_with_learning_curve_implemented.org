@@ -1,0 +1,373 @@
+:PROPERTIES:
+:ID:       e7b40d88-af55-4da4-b02a-00eade0423c3
+:REFLECT_ID: 049a838101c849ae83f21f3cbfd6a393
+:CREATED:  [2025-12-08 Mon 17:58]
+:MODIFIED: [2025-12-08 Mon 18:01]
+:END:
+#+title: Vet Sweet Roadmap V2 with learning curve implemented
+#+filetags: :concept:claude:
+#+date: 2025-12-08
+* [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]] [[id:0489f8fe-575c-4288-98df-749b7f228400][Roadmap]] V2 with learning curve implemented
+ [[https://claude.ai/share/0ae9a7e9-81b6-46f0-ada4-4091d1153276][https://claude.ai/share/0ae9a7e9-81b6-46f0-ada4-4091d1153276]]
+** Application Overview
+*“VetPractice”* - Multi-tenant SaaS for veterinary clinics to manage patients, appointments, medical records, and billing.
+*Core Entities*: Clinic (tenant), User (staff), Pet, Owner (client), Appointment, MedicalRecord, Invoice
+-----
+
+** Phase 1: Foundation & Core CRUD (Week 1-2)
+*Goal*: Solid Spring Boot fundamentals and proper architecture
+*** Features to Build:
+**** 1.1 Project Setup & Configuration
+- Initialize Spring Boot 3.x project (Web, Data JPA, PostgreSQL, Security, Validation)
+- Database connection configuration
+- Environment profiles (dev, prod)
+- Docker Compose for local PostgreSQL
+- *Skills*: Project structure, dependency management, configuration management
+**** 1.2 Pet Management API
+- Create Pet entity (name, species, breed, dateOfBirth, weight, clinicId)
+- Pet CRUD endpoints: POST /api/v1/pets, GET /api/v1/pets, GET /api/v1/pets/{id}, PUT /api/v1/pets/{id}, DELETE /api/v1/pets/{id}
+- Proper controller → service → repository layering
+- *Skills*:
+  - RESTful API design
+  - Spring MVC annotations (@RestController, @RequestMapping)
+  - Dependency injection (@Autowired, constructor injection)
+  - JPA basics (@Entity, @Id, @GeneratedValue)
+  - HTTP status codes & ResponseEntity
+**** 1.3 Owner (Client) Management
+- Owner entity (firstName, lastName, email, phone, address, clinicId)
+- Owner CRUD endpoints
+- One-to-Many relationship: Owner → Pets
+- *Skills*:
+  - JPA relationships (@OneToMany, @ManyToOne)
+  - Cascade operations
+  - Lazy vs Eager loading
+  - Understanding bi-directional relationships
+**** 1.4 DTOs & Validation
+- Create separate DTOs for request/response (PetCreateDTO, PetResponseDTO, OwnerDTO)
+- Add validation annotations (@NotNull, @Email, @Pattern, @Size)
+- Custom validation messages
+- *Skills*:
+  - DTO pattern (why separate from entities)
+  - Bean Validation API
+  - Mapping between entities and DTOs (manually or MapStruct)
+  - Input validation best practices
+**** 1.5 Exception Handling
+- Custom exceptions (ResourceNotFoundException, ValidationException)
+- Global exception handler with @ControllerAdvice
+- Standardized error response format
+- *Skills*:
+  - Spring exception handling hierarchy
+  - @ExceptionHandler
+  - HTTP error codes (400, 404, 500)
+  - Error response structure
+*Milestone*: You can create, read, update, delete Pets and Owners with proper validation and error handling. Clean code structure that’s testable.
+-----
+
+** Phase 2: Security & Multi-Tenancy (Week 3)
+*Goal*: Secure the API and isolate tenant data
+*** Features to Build:
+**** 2.1 User Authentication
+- User entity (email, password, role, clinicId)
+- User registration endpoint
+- Password encryption with BCrypt
+- Login endpoint (username/password → JWT)
+- *Skills*:
+  - Spring Security basics
+  - Password encoding
+  - JWT generation (using jjwt library)
+  - Authentication flow
+**** 2.2 JWT-Based Authorization
+- JWT token generation on login
+- JWT validation filter (JwtAuthenticationFilter)
+- Extract user info from JWT
+- Secure endpoints with @PreAuthorize
+- *Skills*:
+  - Spring Security filter chain
+  - JWT structure (header, payload, signature)
+  - Token expiration handling
+  - SecurityContext and Authentication objects
+**** 2.3 Role-Based Access Control
+- Define roles: CLINIC_ADMIN, VETERINARIAN, RECEPTIONIST
+- Role-based endpoint protection
+- Different permissions per role (e.g., only ADMIN can delete)
+- *Skills*:
+  - @PreAuthorize(“hasRole(‘ADMIN’)”)
+  - Method-level security
+  - Authorization vs authentication
+  - Role hierarchy
+**** 2.4 Multi-Tenant Data Isolation
+- Clinic entity (name, address, subscriptionTier, isActive)
+- Add clinicId to all relevant entities
+- Tenant context holder (extract clinicId from JWT)
+- JPA filter to auto-scope queries by clinicId
+- *Skills*:
+  - Multi-tenancy patterns (shared database, row-level)
+  - Hibernate @Filter or custom JPA specifications
+  - ThreadLocal for tenant context
+  - Data isolation security (critical for SaaS)
+**** 2.5 Clinic Registration Flow
+- New clinic signup endpoint
+- Create default admin user for clinic
+- Transactional operation (both succeed or both fail)
+- *Skills*:
+  - @Transactional annotation
+  - Transaction boundaries
+  - Rollback scenarios
+  - Database constraints (unique email)
+*Milestone*: Secure API where users must authenticate, data is isolated by clinic, and roles control access.
+-----
+
+** Phase 3: Complex Features & Relationships (Week 4-5)
+*Goal*: Handle real-world complexity
+*** Features to Build:
+**** 3.1 Appointment Scheduling
+- Appointment entity (petId, veterinarianId, scheduledTime, duration, status, notes)
+- Create appointment with validation (no double-booking)
+- List appointments (filter by date range, vet, status)
+- Update appointment status (SCHEDULED → IN_PROGRESS → COMPLETED)
+- *Skills*:
+  - Complex queries with JPA Specifications or Criteria API
+  - Date/time handling (LocalDateTime, time zones)
+  - Business logic validation in service layer
+  - Enum types (AppointmentStatus)
+**** 3.2 Medical Records
+- MedicalRecord entity (petId, veterinarianId, appointmentId, diagnosis, treatment, prescriptions, createdAt)
+- Create medical record (linked to appointment)
+- Get pet’s medical history (paginated, sorted by date)
+- File attachments (lab results, X-rays) - store file metadata
+- *Skills*:
+  - Complex entity relationships (Medical Record → Pet → Owner)
+  - Pagination (Pageable, Page<T>)
+  - Sorting (Sort)
+  - Eager fetch optimization (JOIN FETCH)
+**** 3.3 File Upload Service
+- Upload endpoint for medical record attachments
+- Store files in AWS S3 (or local filesystem for learning)
+- Return file URL/reference
+- Download endpoint with proper headers
+- *Skills*:
+  - Multipart file upload (@RequestParam MultipartFile)
+  - AWS SDK integration (if using S3)
+  - File storage patterns
+  - Content-Type handling
+**** 3.4 Search & Filtering
+- Search pets by name, species, owner name (fuzzy search)
+- Filter appointments by date range, vet, status
+- Combine multiple filter criteria
+- *Skills*:
+  - JPA Specifications (dynamic query building)
+  - JPQL custom queries
+  - Performance considerations (indexes)
+  - Query optimization
+**** 3.5 Audit Trail
+- Track who created/modified entities and when
+- Add createdBy, createdAt, lastModifiedBy, lastModifiedAt to entities
+- Use Spring Data JPA auditing (@CreatedDate, @LastModifiedDate)
+- *Skills*:
+  - JPA Auditing
+  - @EntityListeners(AuditingEntityListener.class)
+  - @CreatedBy, @CreatedDate annotations
+  - AuditorAware interface
+*Milestone*: Complex business features working with proper validation, search, and audit trails. API handles real veterinary workflows.
+-----
+
+** Phase 4: Performance & Background Jobs (Week 5-6)
+*Goal*: Production-level performance and async operations
+*** Features to Build:
+**** 4.1 Caching Layer
+- Cache frequently accessed data (pet details, clinic info)
+- Redis integration with Spring Cache
+- Cache eviction strategies (on update/delete)
+- *Skills*:
+  - @Cacheable, @CacheEvict, @CachePut
+  - Redis configuration
+  - Cache hit/miss monitoring
+  - When to cache vs when not to
+**** 4.2 Appointment Reminders (Scheduled Jobs)
+- Daily job to find appointments in next 24 hours
+- Send reminder emails to pet owners
+- Track reminder status (sent, failed)
+- *Skills*:
+  - @Scheduled annotation
+  - Cron expressions
+  - Spring Task Executor
+  - Async operations (@Async)
+**** 4.3 Email Service
+- Email template system (using Thymeleaf)
+- Send appointment confirmations
+- Send appointment reminders
+- Email service abstraction (easy to swap providers)
+- *Skills*:
+  - JavaMailSender
+  - Template engines
+  - HTML emails
+  - Service abstraction patterns
+**** 4.4 Batch Operations
+- Bulk import pets from CSV
+- Process asynchronously with CompletableFuture
+- Progress tracking
+- *Skills*:
+  - Async processing patterns
+  - CompletableFuture
+  - Batch inserts (JPA batch size)
+  - Memory management for large datasets
+**** 4.5 Query Optimization
+- Identify N+1 query problems
+- Fix with JOIN FETCH or @EntityGraph
+- Add database indexes on foreign keys and search fields
+- Query performance profiling
+- *Skills*:
+  - Hibernate query logging
+  - Understanding N+1 queries
+  - @EntityGraph annotation
+  - Database indexing strategy
+*Milestone*: API performs well under load, handles background jobs, and uses caching effectively.
+-----
+
+** Phase 5: Production Readiness (Week 6-7)
+*Goal*: Deploy-ready application with monitoring and docs
+*** Features to Build:
+**** 5.1 Database Migrations
+- Set up Flyway
+- Create migration scripts for all schema changes
+- Version control database changes
+- Rollback strategy
+- *Skills*:
+  - Flyway configuration
+  - Migration naming conventions (V1__initial_schema.sql)
+  - Repeatable migrations
+  - Database version management
+**** 5.2 API Documentation
+- Swagger/OpenAPI integration (SpringDoc)
+- Document all endpoints with @Operation, @ApiResponse
+- Request/response examples
+- Interactive API docs at /swagger-ui
+- *Skills*:
+  - OpenAPI 3.0 specification
+  - SpringDoc annotations
+  - API documentation best practices
+  - Consumer-friendly docs
+**** 5.3 Logging & Monitoring
+- Structured logging with SLF4J/Logback
+- Log levels by environment (DEBUG in dev, INFO in prod)
+- Request/response logging
+- Spring Actuator endpoints (/health, /metrics, /info)
+- *Skills*:
+  - Logging best practices
+  - Logback configuration
+  - Spring Actuator
+  - Application monitoring basics
+**** 5.4 Testing Suite
+- Unit tests for services (with Mockito)
+- Integration tests for repositories (with @DataJpaTest)
+- API integration tests (with MockMvc)
+- Test containers for PostgreSQL
+- *Skills*:
+  - JUnit 5
+  - Mockito for mocking
+  - @WebMvcTest, @DataJpaTest, @SpringBootTest
+  - Testcontainers
+  - Test coverage goals
+**** 5.5 Dockerization & Deployment
+- Multi-stage Dockerfile for Spring Boot app
+- Docker Compose with app + PostgreSQL + Redis
+- Environment variable configuration
+- Deploy to Railway/Render
+- *Skills*:
+  - Docker best practices for Java
+  - Docker Compose orchestration
+  - Cloud deployment (Railway CLI)
+  - Environment-based configuration
+**** 5.6 API Versioning
+- Implement /api/v1 versioning strategy
+- Document versioning approach
+- Plan for v2 with breaking changes
+- *Skills*:
+  - API versioning strategies
+  - Backward compatibility
+  - Deprecation headers
+  - Semantic versioning
+*Milestone*: Production-grade application with tests, docs, monitoring, and deployment pipeline.
+-----
+
+** Phase 6: Advanced Features (Week 7-8, Optional)
+*Goal*: Differentiate with advanced capabilities
+*** Features to Build:
+**** 6.1 Invoice & Billing
+- Invoice entity (appointmentId, items, totalAmount, status)
+- Calculate invoice from appointment and services
+- Payment tracking (PENDING → PAID → OVERDUE)
+- *Skills*:
+  - Complex business logic
+  - Financial calculations
+  - State machines
+**** 6.2 Reporting API
+- Generate practice reports (appointments per month, revenue, patient growth)
+- Aggregate queries with JPA
+- Export to PDF (using iText or similar)
+- *Skills*:
+  - Aggregate functions (COUNT, SUM, AVG)
+  - GROUP BY queries
+  - Data export formats
+  - PDF generation
+**** 6.3 Real-time Notifications
+- WebSocket integration for live updates
+- Notify when appointment status changes
+- In-app notification system
+- *Skills*:
+  - WebSocket with Spring
+  - STOMP protocol
+  - Real-time architectures
+  - Alternative: Server-Sent Events (SSE)
+**** 6.4 Rate Limiting
+- Implement request rate limiting (per user/clinic)
+- Use Bucket4j or custom implementation
+- Return 429 Too Many Requests
+- *Skills*:
+  - Rate limiting algorithms (token bucket)
+  - Distributed rate limiting with Redis
+  - API abuse prevention
+-----
+
+** Tech Stack Summary
+*Backend*:
+- Spring Boot 3.2+
+- Java 17+
+- PostgreSQL
+- Redis (caching)
+- Flyway (migrations)
+- JWT (jjwt library)
+*Development Tools*:
+- Gradle or Maven
+- Docker & Docker Compose
+- Postman/Insomnia for API testing
+- IntelliJ IDEA or Neovim + Language Server
+*Deployment*:
+- Railway or Render
+- AWS S3 (optional, for file storage)
+*Testing*:
+- JUnit 5
+- Mockito
+- Testcontainers
+- MockMvc
+-----
+
+** Build Order Cheat Sheet
+1. *Week 1-2*: Pets + Owners CRUD with validation and error handling
+1. *Week 3*: Add authentication, authorization, and multi-tenancy
+1. *Week 4*: Appointments + Medical Records + Search
+1. *Week 5*: Caching + Background jobs + Performance tuning
+1. *Week 6*: Tests + Docs + Deployment
+1. *Week 7-8*: Invoicing + Reporting (optional polish)
+-----
+
+** Success Criteria
+By the end, you should be able to confidently explain:
+- ✅ How you structured a Spring Boot application
+- ✅ How you implemented authentication and authorization
+- ✅ How you handled multi-tenancy and data isolation
+- ✅ How you optimized database queries
+- ✅ How you implemented caching
+- ✅ How you handled background jobs
+- ✅ How you tested and deployed the application
+Want me to help you kick off Phase 1? I can generate the initial project structure, application.yml configuration, and the first entity/controller/service for Pets.​​​​​​​​​​​​​​​​

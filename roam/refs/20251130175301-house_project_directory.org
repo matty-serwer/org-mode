@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       72ad9d5c-518a-4a6e-bf27-81a3473db9f5
+:REFLECT_ID: ffea22822fba4a86b0478b0f03ab6a73
+:CREATED:  [2025-11-30 Sun 17:53]
+:MODIFIED: [2025-11-30 Sun 17:53]
+:END:
+#+title: House Project
+#+filetags: :ref:directory:
+#+date: 2025-11-30
+* House [[id:8b648222-fceb-4cdc-bdc3-a68456225989][Project]]
+- Odds and ends
+  - Felt feet on coffee table

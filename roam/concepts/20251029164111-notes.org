@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       95002b53-58e8-4910-89b1-5237523a77c2
+:REFLECT_ID: 07a20096a59d4326bd383ce791e6076f
+:CREATED:  [2025-10-29 Wed 16:41]
+:MODIFIED: [2025-10-29 Wed 16:41]
+:END:
+#+title: Notes
+#+filetags: :concept:
+#+date: 2025-10-29
+

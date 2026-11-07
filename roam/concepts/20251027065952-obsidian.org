@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       505eb1b7-1edf-4220-a1ff-ba0fe21f04ba
+:REFLECT_ID: b80c89f8773a400984bbfb02f84c380b
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2026-04-08 Wed 21:41]
+:END:
+#+title: Obsidian
+#+filetags: :concept:
+#+date: 2025-10-27
+

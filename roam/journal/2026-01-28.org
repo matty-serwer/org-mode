@@ -1,0 +1,68 @@
+:PROPERTIES:
+:ID:       0b872182-44ce-41d5-aca8-ca79dd658ba6
+:REFLECT_ID: 28012026
+:CREATED:  [2026-01-28 Wed 05:27]
+:MODIFIED: [2026-04-08 Wed 20:21]
+:END:
+#+title: Wed, January 28th, 2026
+#+filetags: :daily:
+#+date: 2026-01-28
+- [[id:51a798a7-232d-4c93-9992-a61531b1d1b1][Terminal Shortcuts]]
+- [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]]
+  [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/5fa43d154c494c49a8c44142acd5cc5c/56be0ed7-43ba-4f1c-bea9-9d3e802af037?key=8ccfa5854f972ef77a50d0c1a105ceca1d8f8a5aaaef24d22aa94c4e26e83d11][Work Sweet Sprint 1 (Node).pdf]]
+  - Built road map. Working in [[id:505eb1b7-1edf-4220-a1ff-ba0fe21f04ba][Obsidian]]
+  - wote a bunch of backend.
+  - BUG: prisma client is being looked for in the wrong place?
+  - Error:
+    
+    #+begin_src markup
+    	
+    lupin  …/work-sweet/backend   auth/jwt !?   v22.20.0  ♥ 23:39  npm run dev
+    
+    > backend@1.0.0 dev
+    > nodemon --exec tsx src/index.ts
+    
+    [nodemon] 3.1.11
+    [nodemon] to restart at any time, enter `rs`
+    [nodemon] watching path(s): *.*
+    [nodemon] watching extensions: ts,json
+    [nodemon] starting `tsx src/index.ts`
+    node:internal/modules/cjs/loader:1383
+      const err = new Error(message);
+                  ^
+    
+    Error: Cannot find module '.prisma/client/default'
+    Require stack:
+    - /Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/@prisma/client/default.js
+    - /Users/lupin/Developer/active-projects/work-sweet/backend/src/config/prisma.ts
+    - /Users/lupin/Developer/active-projects/work-sweet/backend/src/services/authService.ts
+    - /Users/lupin/Developer/active-projects/work-sweet/backend/src/controllers/authController.ts
+    - /Users/lupin/Developer/active-projects/work-sweet/backend/src/routes/authRoutes.ts
+    - /Users/lupin/Developer/active-projects/work-sweet/backend/src/index.ts
+        at node:internal/modules/cjs/loader:1383:15
+        at nextResolveSimple (/Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/tsx/dist/register-D46fvsV_.cjs:4:1004)
+        at /Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/tsx/dist/register-D46fvsV_.cjs:3:2630
+        at /Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1542
+        at resolveTsPaths (/Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/tsx/dist/register-D46fvsV_.cjs:4:760)
+        at /Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/tsx/dist/register-D46fvsV_.cjs:4:1102
+        at m._resolveFilename (file:///Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/tsx/dist/register-B7jrtLTO.mjs:1:789)
+        at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+        at Function._load (node:internal/modules/cjs/loader:1192:37) {
+      code: 'MODULE_NOT_FOUND',
+      requireStack: [
+        '/Users/lupin/Developer/active-projects/work-sweet/backend/node_modules/@prisma/client/default.js',
+        '/Users/lupin/Developer/active-projects/work-sweet/backend/src/config/prisma.ts',
+        '/Users/lupin/Developer/active-projects/work-sweet/backend/src/services/authService.ts',
+        '/Users/lupin/Developer/active-projects/work-sweet/backend/src/controllers/authController.ts',
+        '/Users/lupin/Developer/active-projects/work-sweet/backend/src/routes/authRoutes.ts',
+        '/Users/lupin/Developer/active-projects/work-sweet/backend/src/index.ts'
+      ]
+    }
+    
+    Node.js v22.20.0
+    [nodemon] app crashed - waiting for file changes before starting...
+    #+end_src
+    - emacs was a pain today, especially after trying Java. went to VIM instead
+  - [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]] Project Location
+    - /Users/lupin/Developer/active-projects/work-sweet/backend

@@ -1,0 +1,370 @@
+:PROPERTIES:
+:ID:       a6cf6802-d908-46fc-8ed4-6086894c5d98
+:REFLECT_ID: 46b1746c1c044bc6b9589f84ec0ca30c
+:CREATED:  [2026-01-17 Sat 08:19]
+:MODIFIED: [2026-01-17 Sat 08:20]
+:END:
+#+title: Java 300 Line Cheatsheet
+#+filetags: :concept:
+#+date: 2026-01-17
+* [[id:955b2370-4415-4b4f-95af-fe3b9907d72b][Java]] 300 Line [[id:2d214790-4cb1-4461-ace3-15409681fb74][Cheatsheet]]
+#+begin_src markup
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.*;
+
+public class JavaCheatSheet {
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        Set<Integer> set = new HashSet<>(list);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("one", 1);
+        map.put("two", 2);
+        map.putIfAbsent("three", 3);
+        map.merge("one", 1, Integer::sum);
+        map.computeIfAbsent("four", k -> 4);
+
+        list.forEach(System.out::println);
+        list.stream().map(x -> x * 2).forEach(System.out::println);
+        List<Integer> filtered = list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
+        int sum = list.stream().reduce(0, Integer::sum);
+        Optional<Integer> max = list.stream().max(Integer::compareTo);
+        long count = list.stream().filter(x -> x > 2).count();
+        boolean anyMatch = list.stream().anyMatch(x -> x > 3);
+        boolean allMatch = list.stream().allMatch(x -> x > 0);
+
+        List<Integer> sorted = list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        Map<Boolean, List<Integer>> partitioned = list.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0));
+        Map<Integer, Long> counted = list.stream().collect(Collectors.groupingBy(x -> x % 2, Collectors.counting()));
+        String joined = list.stream().map(String::valueOf).collect(Collectors.joining(", "));
+
+        int[][] matrix = {{1, 2}, {3, 4}, {5, 6}};
+        List<Integer> flattened = Arrays.stream(matrix).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList());
+
+        String str = "hello world";
+        String upper = str.toUpperCase();
+        String[] words = str.split(" ");
+        String joined2 = String.join("-", words);
+        String trimmed = "  text  ".trim();
+        String replaced = str.replaceAll("world", "universe");
+        boolean contains = str.contains("world");
+        boolean starts = str.startsWith("hello");
+        String substring = str.substring(0, 5);
+        char[] chars = str.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        sb.append("Hello").append(" ").append("World");
+        String reversed = new StringBuilder(str).reverse().toString();
+
+        Function<Integer, Integer> double1 = x -> x * 2;
+        BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+        Predicate<Integer> isEven = x -> x % 2 == 0;
+        Consumer<String> print = System.out::println;
+        Supplier<Double> random = Math::random;
+
+        Function<Integer, Function<Integer, Integer>> curried = a -> b -> a + b;
+        int result = curried.apply(5).apply(3);
+    }
+
+    public static int fibonacci(int n) {
+        return fibonacci(n, new HashMap<>());
+    }
+
+    public static int fibonacci(int n, Map<Integer, Integer> memo) {
+        if (n <= 1) return n;
+        if (memo.containsKey(n)) return memo.get(n);
+        int result = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+        memo.put(n, result);
+        return result;
+    }
+
+    public static int factorial(int n) {
+        return n <= 1 ? 1 : n * factorial(n - 1);
+    }
+
+    public static int binarySearch(int[] arr, int target) {
+        return binarySearch(arr, target, 0, arr.length - 1);
+    }
+
+    public static int binarySearch(int[] arr, int target, int left, int right) {
+        if (left > right) return -1;
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) return mid;
+        return arr[mid] > target
+            ? binarySearch(arr, target, left, mid - 1)
+            : binarySearch(arr, target, mid + 1, right);
+    }
+
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    public static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
+    }
+
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int[] leftArr = Arrays.copyOfRange(arr, left, mid + 1);
+        int[] rightArr = Arrays.copyOfRange(arr, mid + 1, right + 1);
+        int i = 0, j = 0, k = left;
+        while (i < leftArr.length && j < rightArr.length) {
+            arr[k++] = leftArr[i] <= rightArr[j] ? leftArr[i++] : rightArr[j++];
+        }
+        while (i < leftArr.length) arr[k++] = leftArr[i++];
+        while (j < rightArr.length) arr[k++] = rightArr[j++];
+    }
+
+    public static <K, V> Map<K, List<V>> groupBy(List<V> list, Function<V, K> keyExtractor) {
+        return list.stream().collect(Collectors.groupingBy(keyExtractor));
+    }
+
+    public static <T> List<List<T>> chunk(List<T> list, int size) {
+        return IntStream.range(0, (list.size() + size - 1) / size)
+            .mapToObj(i -> list.subList(i * size, Math.min((i + 1) * size, list.size())))
+            .collect(Collectors.toList());
+    }
+
+    public static List<Integer> flatten(List<List<Integer>> list) {
+        return list.stream().flatMap(List::stream).collect(Collectors.toList());
+    }
+}
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+
+class LinkedListOps {
+    public static ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    public static boolean hasCycle(ListNode head) {
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return true;
+        }
+        return false;
+    }
+
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left, right;
+
+    TreeNode(int val) {
+        this.val = val;
+    }
+}
+
+class TreeOps {
+    public static List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        inorderHelper(root, result);
+        return result;
+    }
+
+    private static void inorderHelper(TreeNode node, List<Integer> result) {
+        if (node == null) return;
+        inorderHelper(node.left, result);
+        result.add(node.val);
+        inorderHelper(node.right, result);
+    }
+
+    public static List<Integer> bfs(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            result.add(node.val);
+            if (node.left != null) queue.offer(node.left);
+            if (node.right != null) queue.offer(node.right);
+        }
+        return result;
+    }
+
+    public static List<Integer> dfs(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+        result.add(root.val);
+        result.addAll(dfs(root.left));
+        result.addAll(dfs(root.right));
+        return result;
+    }
+
+    public static int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    }
+
+    public static boolean isValidBST(TreeNode root, Long min, Long max) {
+        if (root == null) return true;
+        if (root.val <= min || root.val >= max) return false;
+        return isValidBST(root.left, min, (long) root.val) &&
+               isValidBST(root.right, (long) root.val, max);
+    }
+}
+
+class InterviewProblems {
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
+            }
+            map.put(nums[i], i);
+        }
+        return new int[]{};
+    }
+
+    public static boolean isPalindrome(String s) {
+        String cleaned = s.toLowerCase().replaceAll("[^a-z0-9]", "");
+        int left = 0, right = cleaned.length() - 1;
+        while (left < right) {
+            if (cleaned.charAt(left++) != cleaned.charAt(right--)) return false;
+        }
+        return true;
+    }
+
+    public static int lengthOfLongestSubstring(String s) {
+        Map<Character, Integer> seen = new HashMap<>();
+        int max = 0, start = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (seen.containsKey(c) && seen.get(c) >= start) {
+                start = seen.get(c) + 1;
+            }
+            seen.put(c, i);
+            max = Math.max(max, i - start + 1);
+        }
+        return max;
+    }
+
+    public static boolean isValidParentheses(String s) {
+        Stack<Character> stack = new Stack<>();
+        Map<Character, Character> pairs = Map.of('(', ')', '[', ']', '{', '}');
+        for (char c : s.toCharArray()) {
+            if (pairs.containsKey(c)) {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty() || pairs.get(stack.pop()) != c) return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static int maxSubArray(int[] nums) {
+        int max = nums[0], current = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            current = Math.max(nums[i], current + nums[i]);
+            max = Math.max(max, current);
+        }
+        return max;
+    }
+
+    public static int[][] mergeIntervals(int[][] intervals) {
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+        List<int[]> result = new ArrayList<>();
+        result.add(intervals[0]);
+        for (int i = 1; i < intervals.length; i++) {
+            int[] last = result.get(result.size() - 1);
+            if (intervals[i][0] <= last[1]) {
+                last[1] = Math.max(last[1], intervals[i][1]);
+            } else {
+                result.add(intervals[i]);
+            }
+        }
+        return result.toArray(new int[result.size()][]);
+    }
+
+    public static int climbStairs(int n) {
+        if (n <= 2) return n;
+        int prev1 = 2, prev2 = 1;
+        for (int i = 3; i <= n; i++) {
+            int current = prev1 + prev2;
+            prev2 = prev1;
+            prev1 = current;
+        }
+        return prev1;
+    }
+
+    public static List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<>(), nums, new boolean[nums.length]);
+        return result;
+    }
+
+    private static void backtrack(List<List<Integer>> result, List<Integer> current,
+                                   int[] nums, boolean[] used) {
+        if (current.size() == nums.length) {
+            result.add(new ArrayList<>(current));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (used[i]) continue;
+            current.add(nums[i]);
+            used[i] = true;
+            backtrack(result, current, nums, used);
+            current.remove(current.size() - 1);
+            used[i] = false;
+        }
+    }
+}
+
+#+end_src

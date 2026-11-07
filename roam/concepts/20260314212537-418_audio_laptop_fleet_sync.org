@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       309fd4f4-67c8-466a-992d-dd5f28fb7298
+:REFLECT_ID: b30c37a32f3142de94b515a34a30e10b
+:CREATED:  [2026-03-14 Sat 21:25]
+:MODIFIED: [2026-04-08 Wed 00:10]
+:END:
+#+title: 418 Audio Laptop Fleet Sync
+#+filetags: :concept:
+#+date: 2026-03-14
+

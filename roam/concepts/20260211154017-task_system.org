@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3426426e-fa7a-4001-bc5e-590e60450e2f
+:REFLECT_ID: 6f248502bf394e47be9259b7da9d16b6
+:CREATED:  [2026-02-11 Wed 15:40]
+:MODIFIED: [2026-02-11 Wed 15:56]
+:END:
+#+title: Task System
+#+filetags: :concept:
+#+date: 2026-02-11
+

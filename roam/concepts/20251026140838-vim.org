@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b675ecf8-30e9-4861-bc6e-dd5a0e4bbbca
+:REFLECT_ID: e99a79af766842848daaae440ffaccd6
+:CREATED:  [2025-10-26 Sun 14:08]
+:MODIFIED: [2026-01-28 Wed 05:19]
+:END:
+#+title: Vim
+#+filetags: :concept:
+#+date: 2025-10-26
+

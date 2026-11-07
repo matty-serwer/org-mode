@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       09ab74af-e1e5-47cc-bf29-dbe4b6d3c550
+:REFLECT_ID: a51bf20c545044ea83e58236a664b45d
+:CREATED:  [2025-11-25 Tue 06:12]
+:MODIFIED: [2025-11-25 Tue 06:13]
+:END:
+#+title: Copy the Entire Buffer to the macOS Clipboard
+#+filetags: :concept:
+#+date: 2025-11-25
+- The quickest way inside Doom Emacs is to leverage Emacs' native copy commands:
+  - Run ⁠M-x mark-whole-buffer (or ⁠ggVG in Evil) so the entire buffer is selected.
+    - Then run ⁠M-x osx-clipboard-copy-region (built into Doom), or simply ⁠M-w while the selection is active.
+  - Doom ships with ⁠+osx-copy bindings, so ⁠SPC o c y also copies to the system clipboard.
+  - Everything is now on the macOS clipboard and ready to paste into Raycast AI Chat.
+- If you prefer shell commands, you can pipe the buffer through ⁠pbcopy:
+  - ⁠M-x shell-command-on-region, select the whole buffer as above, then enter ⁠pbcopy—this sends buffer contents straight to the clipboard.
+  - Alternatively, write the file and run ⁠pbcopy < path/to/file in a terminal (or via ⁠M-! pbcopy < %).
+- More Direct Doom-Specific Convenience
+  - Define a custom command in Doom's config:
+    - #+begin_src markup
+      (defun my/copy-buffer-to-clipboard ()
+          (interactive)
+          (kill-new (buffer-string))
+          (message "Buffer copied to clipboard"))
+      #+end_src
+  - Bind it (e.g., ⁠SPC m y) and you have a single keystroke to copy everything.
+  - If you often need this from Doom directly into Raycast, consider enabling ⁠osx-clipboard-mode (usually already active on macOS) so that every normal Emacs copy (⁠M-w, ⁠C-w, ⁠y) syncs with the system clipboard automatically.
+  - These approaches let you copy from Doom straight into Raycast AI Chat without extra intermediate steps.
+-----

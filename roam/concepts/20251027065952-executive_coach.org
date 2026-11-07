@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1df8d6fa-414b-45e7-aa12-f9c645bd5ec9
+:REFLECT_ID: cfb099fd38ca4d2cb1995fcab8447e24
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: Executive Coach
+#+filetags: :concept:
+#+date: 2025-10-27
+

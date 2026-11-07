@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       da2b4371-64cb-4a46-bf27-deb8f15281b4
+:REFLECT_ID: 1571150ad94743558d12cac08707e0b6
+:CREATED:  [2025-11-18 Tue 02:16]
+:MODIFIED: [2025-12-17 Wed 15:46]
+:END:
+#+title: Emacs
+#+filetags: :concept:
+#+date: 2025-11-18
+

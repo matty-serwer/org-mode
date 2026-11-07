@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8e1dc7d0-49cd-4b78-a717-08101d3da101
+:REFLECT_ID: e1fea4023e254f139ae4b090b245fa07
+:CREATED:  [2026-04-03 Fri 18:00]
+:MODIFIED: [2026-04-03 Fri 18:00]
+:END:
+#+title: Dan LaPlante
+#+filetags: :concept:
+#+date: 2026-04-03
+

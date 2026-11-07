@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8921660b-80b5-48c5-91b6-84f2ce8f7456
+:REFLECT_ID: d12af710f0304270b6a7cb38c1e4cce6
+:CREATED:  [2025-10-26 Sun 18:58]
+:MODIFIED: [2026-02-15 Sun 15:03]
+:END:
+#+title: Hookmark
+#+filetags: :concept:
+#+date: 2025-10-26
+

@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       d9fb03d1-7189-4215-8093-debfec1dedf4
+:REFLECT_ID: 0817ae7fd8d3409b8098e06e1b013635
+:CREATED:  [2026-01-28 Wed 04:47]
+:MODIFIED: [2026-04-08 Wed 20:22]
+:END:
+#+title: 🌊 Project Pool  🌊
+#+filetags: :project:
+#+date: 2026-01-28
+-
+  - /A List of Mid Level Projects, with a Backlog & Idea Space for Project Ideas/
+- Active
+  - [[id:77a48f9c-6fce-41af-84b1-03419c0e2269][LTD Site: Task Board]]
+  - [[id:1ec57823-df3f-499a-916f-81f2e8ff48a1][Morg]]
+    - [[https://hookmark.net/hm/hook/file/4274LXfl2?p=QnVja2V0cy8wNjBfc2lkZS1wcm9qZWN0cyBNT1JH&n=M477i3%2Eorg%20Format%20Guidelines%2Etxt][https://hookmark.net/hm/hook/file/4274LXfl2?p=QnVja2V0cy8wNjBfc2lkZS1wcm9qZWN0cyBNT1JH&n=M477i3%2Eorg%20Format%20Guidelines%2Etxt]]
+- Planned
+  - [[id:95ed315f-208f-40a1-97b5-325433227189][Note Sweet]]
+    - [[id:9231d009-5dd5-4c82-b8c1-0b017abe97a5][Note Sweet #planning start]]
+    - [[id:6af1a42a-49f7-4cc9-ba6b-33e543afa74b][Claude Code #sequence for Note Sweet]]
+      - [[id:d8d41968-7b0f-4a73-a2cf-4323739999b2][Note Sweet Claude Code #rules]]
+      - [[id:6fa28969-68fc-4b6b-85b7-adeaa4a76dd2][Note Sweet Claude Code project #directory]]
+    - [[id:9aca374d-a41f-4d13-9de6-3a3a3350aac6][🍰 SnipFlow]]
+      - A terminal based snippet solution for [[id:b675ecf8-30e9-4861-bc6e-dd5a0e4bbbca][Vim]]
+- Archived
+  - [[id:3f718396-42e7-4714-9bca-3b863c6ef8e6][Rutherford Diagnostics]]
+  - [[id:4e22b9de-e565-49f5-9b16-af87254c5bdc][Sell Reverend Guitar]]
+  - [[id:39ae6e58-1e36-482e-ae28-4311c52d4138][🎸 Bass Guitar Rewire Project]]

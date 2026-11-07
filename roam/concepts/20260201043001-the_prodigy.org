@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4fb1ac5a-9aca-4fd7-aa8c-96df5f43aded
+:REFLECT_ID: ee2bc6569f374cacafc58b3f641ffa0e
+:CREATED:  [2026-02-01 Sun 04:30]
+:MODIFIED: [2026-02-01 Sun 04:30]
+:END:
+#+title: The Prodigy
+#+filetags: :concept:
+#+date: 2026-02-01
+

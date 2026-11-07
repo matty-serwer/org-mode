@@ -1,0 +1,155 @@
+:PROPERTIES:
+:ID:       4a0634c7-2140-4c3b-adfe-a48d50dd1a47
+:REFLECT_ID: 29112025
+:CREATED:  [2025-11-24 Mon 20:14]
+:MODIFIED: [2025-12-05 Fri 23:33]
+:END:
+#+title: Sat, November 29th, 2025
+#+filetags: :daily:workflow:
+#+date: 2025-11-24
+- [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] covered [[id:4a0634c7-2140-4c3b-adfe-a48d50dd1a47][11/29/2025]]
+  - [[id:24a11107-00af-41a1-935c-ecde27f80958][Projectile]]
+    - setting search path in config
+      - seems to be working 50/50
+    - searching manually
+    - navigating projects
+  - Editing & Navigation
+    - o p - openining project side panel, treemacs (or whatever we have set I think)
+    - navigating back and forth
+    - g t - next tab! g T prev tab. 
+      - SPC b n works, but is not limited to the selected tabs
+  - [[id:446e09da-6a91-4ae5-a217-0ab3b9cf35fe][buffers]]
+    - SPC b b / SPC , - show open buffers in project
+    - SPC b B / SPC < - show all open buffers
+  - [[id:a738813b-a357-42cd-9b92-5a40f153d01c][window split]]
+    - SPC v - create vertical split
+- Simplify [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]]  
+  - Here’s a realistic, battle-tested minimal-but-powerful Ableton Live + Push workflow that most producers (even pros) end up living in 90% of the time. It’s deliberately tiny, instantly creative, and leaves just enough room for your favorite 3–5 third-party plugins without turning into a menu-diving mess.
+  - *Core Philosophy*
+    *The Minimal Rig (2025 edition)*
+    *1. Drum Engine (only one)*
+    *2. Synths (pick exactly 2)*
+    Option A – Pure stock (zero third-party)
+    Option B – Stock + one beloved third-party (most common real-world choice)
+    Rule: Delete every other software synth from your Places or make an “Archive” folder you never open.
+    *3. Bass*
+    Just use the same synth as above (Wavetable or your third-party). One instance, mono, sidechain. Done.
+    *4. Effects Chain (the only ones you’re allowed)*
+    Keep this exact default chain on your master bus and never think again:
+    Per-channel effects (max 3–4 you actually use):
+    That’s literally it.
+    *Push-Centric Template (save this as DefaultSet.als)*
+    Color code them and never add more tracks until you’ve bounced/frozen something.
+    *Extra Ruthless Tips That Actually Work*
+    *Example Super-Minimal Genre Kits*
+    Techno / House
+    Lo-fi / Bedroom Pop
+    Cinematic / Ambient
+    You’ll finish way more music with this. The moment you feel the itch to open Serum/Sylenth/Massive, ask yourself: “Could Wavetable/Vital do 90% of this in 30 seconds?” 99% of the time the answer is yes.
+    Want me to build you the exact .als template file with all this pre-set and color-coded? I can describe it step-by-step or even export one for you.
+    - Max 2 synths
+    - Max 1 drum machine / sampler
+    - Max 5–6 effects (stock + a couple of gems)
+    - Everything mappable to Push 2/3 in under 10 seconds
+    - All projects start from the same template
+    - Drum Rack + Simpler/Sampler inside it
+      Reason: One Drum Rack can hold kicks from Decent Sampler, melodic one-shots, 808s, whatever. You almost never need more than this.
+    - Wavetable (melodic leads, pads, basses)
+    - Operator (FM bells, plucks, aggressive basses)
+    - Wavetable (keep it, it’s still king)
+    - Vital or Pigments or Diva or Phase Plant (one big third-party monster for character)
+    1. Utility – stereo widening / mono bass
+    1. EQ Eight – gentle high-pass + surgical cuts
+    1. Saturation (Saturn 2 or The Oven or just stock Saturator)
+    1. Glue Compressor or The Glue (OTT-style if you want)
+    1. Optional final spice: Valhalla Supermassive or stock Hybrid Reverb
+    - Auto Filter (Push is incredible with this)
+    - Echo (still the best creative delay in existence)
+    - Erosion or Redux (for instant lo-fi grit)
+    - One third-party “character” effect you love (e.g. RC-20, ShaperBox 3, Thermal, etc.)
+    - 8 tracks only
+      Track 1: Drum Rack (already loaded with a tiny 8–16 pad kit)
+      Track 2: Wavetable (init patch)
+      Track 3: Your big third-party synth (init patch)
+      Track 4: Sampler (for chopping samples)
+      Track 5–7: Audio tracks pre-named “Vox / Guitar / Sample”
+      Track 8: Return A = Echo, Return B = Hybrid/Supermassive
+    1. Hide every stock device you don’t use: Right-click → Hide → you’ll never see Analog, Collision, Electric, Tension, etc. again.
+    1. Make a User Library folder called “GO-TO” and drag in only:
+    -
+      - Your 8 favorite Drum Rack kits
+      - 10–15 favorite Wavetable presets
+      - Your 5 best third-party presets
+      - 5 Max for Live essentials (LFO, Envelope Follower, Shaper, Expression Control, Instant Haus)
+    1. Turn off “Auto Open Plug-in Windows” in Preferences → you’ll stop getting distracted.
+    1. Use Push’s “Lock” envelopes for automation instead of drawing everything.
+    - Drum Rack (909 + 808 samples)
+    - Wavetable (one acid patch, one chord stab patch)
+    - Diva (one lush pad preset)
+    - Effects: Echo + Valhalla Supermassive on returns
+    - Drum Rack (MPC one-shots + vinyl knocks)
+    - Vital (warm pads + wobbly leads)
+    - RC-20 on every track send
+    - Wavetable + Pigments
+    - Sampler full of field recordings
+    - Supermassive + Hybrid Reverb only
+  - Here’s exactly how to make the Ableton Browser feel calm, fast, and actually useful instead of a chaotic plugin landfill. Do these steps once and you’ll never fight the browser again.
+    *1. Kill 95% of the clutter in under 5 minutes*
+    *2. Create the only folders you’ll ever need (exact structure I use)*
+    Make a new folder somewhere (e.g. Documents/Ableton User Library) and add these empty subfolders:
+    GO-TO User Library
+    ├── 01 Drums          → only your 8–12 best Drum Racks / kits
+    ├── 02 Synths         → only your 10–20 best presets for Wavetable + your one third-party synth
+    ├── 03 Samples        → chopped loops, one-shots, vocals you actually re-use
+    ├── 04 Effects        → only your 4–6 favorite Audio Effect Racks
+    ├── 05 Instruments    → Wavetable + your one third-party synth shortcut here
+    └── 06 Max for Live   → just the 5 M4L devices you actually use
+    Right-click each folder in the browser → “Add to Places” (they now live permanently at the top).
+    *3. Hide everything you never use (this is the magic step)*
+    In the browser’s Categories (left column):
+    They completely disappear forever (you can unhide later if you ever need them).
+    *4. Color-code the browser (Push users love this)*
+    In Places (top section):
+    Now you can spot what you want in half a second even on Push.
+    *5. One-click reset for when you inevitably install something new*
+    Create a blank text file called “Clean Browser Reset” with these steps, because new plugins will try to pollute everything again:
+    *6. Bonus: Make “Current Project” useless so you stop looking at it*
+    Preferences → Library → uncheck “Show Current Project in Browser”
+    It’s almost never helpful and just adds visual noise.
+    After doing all the above, my browser literally looks like this every time I open it:
+    Places
+    That’s it. No scrolling, no sub-sub-folders, no 400 Serum presets staring at me.
+    Takes 10 minutes to set up once and then you’re free forever. Want me to send you a ready-made empty User Library folder structure you can just drop in?
+    1. Go to Preferences → Library tab
+    1. Change “Content Locations” so it ONLY points to these folders:
+    -
+      - Packs (leave this – stock packs are good)
+      - Your one “GO-TO” User Library folder (create this if you haven’t)
+      - NOTHING ELSE (uncheck Samples, your old “Projects” folder, Downloads, etc.)
+    1. Now the browser literally can’t show anything except stock Packs and your own curated stuff.
+    - Right-click on anything you don’t use → “Hide from Browser”
+      Do this for:
+    -
+      - Analog
+      - Collision
+      - Electric
+      - Tension
+      - Drum Synth
+      - Instrument Rack (unless you love it)
+      - All the old Legacy devices
+      - MIDI Effects you never touch (Arpeggiator, Chord, etc.)
+    - Right-click each of your GO-TO folders → choose a bright color
+      Example:
+      Drums = Orange
+      Synths = Purple
+      Samples = Green
+      Effects = Blue
+    1. Rescan plugins
+    1. Immediately drag the new plugin into your GO-TO/05 Instruments or GO-TO/04 Effects folder
+    1. Delete the auto-created folder it made under “User Library” or “VST3”
+    1. Done – it never appears outside your curated zone again.
+    - Drums (orange)
+    - Synths (purple)
+    - Samples (green)
+    - Effects (blue)
+    - Packs (stock Ableton stuff)

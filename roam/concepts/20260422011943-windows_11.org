@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b8d5145c-1d4b-4124-8a04-2564293cf525
+:REFLECT_ID: 7130ee627026453cbd89f04817ef97cc
+:CREATED:  [2026-04-22 Wed 01:19]
+:MODIFIED: [2026-04-22 Wed 01:19]
+:END:
+#+title: Windows 11
+#+filetags: :concept:
+#+date: 2026-04-22
+

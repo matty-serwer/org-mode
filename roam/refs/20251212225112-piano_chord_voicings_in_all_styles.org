@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       ab670787-ab5a-462d-b8b9-d0d84462dd93
+:REFLECT_ID: 5ec2c866da4c456cb285aef00cba14a6
+:CREATED:  [2025-12-12 Fri 22:51]
+:MODIFIED: [2025-12-12 Fri 22:51]
+:END:
+#+title: Piano Chord Voicings in All Styles
+#+filetags: :ref:book:
+#+date: 2025-12-12
+- Type: 
+- ASIN: B0BFK3JRCS
+- Authors: [[id:f54233a5-c86d-4132-9a3a-d63e0fc49d4b][Mark Harrison]]
+- Highlights
+  - 
+- Notes
+  - 

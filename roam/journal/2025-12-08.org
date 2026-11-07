@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       0f0a3bbb-56f4-4b8c-932d-1cc09b084c26
+:REFLECT_ID: 08122025
+:CREATED:  [2025-12-08 Mon 15:23]
+:MODIFIED: [2026-01-26 Mon 19:28]
+:END:
+#+title: Mon, December 8th, 2025
+#+filetags: :daily:
+#+date: 2025-12-08
+- Tasks For Tasks - Monday
+  - [X] setup tasks in [[id:8b25c641-f991-4ba3-a223-1a7b73d72597][Actions App]]
+  - [X] Set Cancel Date [[id:3ed767e5-d38e-4746-b378-891e266f5ace][1/5/2026]] [[id:6a9d38f4-f9b9-4e51-9d23-245cb4230c5f][Tana App]]
+  - [X] Enter [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]] Into [[id:bdad001c-85b2-4ec5-b0f4-47b40e866326][Subscription Service #list]]
+  - [X] Edit [[id:bdad001c-85b2-4ec5-b0f4-47b40e866326][Subscription Service #list]]

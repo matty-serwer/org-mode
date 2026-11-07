@@ -1,0 +1,142 @@
+:PROPERTIES:
+:ID:       0afe6237-9363-4586-868f-c6fc9355cd60
+:REFLECT_ID: ee5d668456aa4d138db5f75f72e84e21
+:CREATED:  [2025-11-25 Tue 18:25]
+:MODIFIED: [2025-11-25 Tue 18:40]
+:END:
+#+title: Ableton Live 12 Features
+#+filetags: :concept:list:
+#+date: 2025-11-25
+* [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] 12 Features
+*1. *[[id:f5c88680-5509-42dc-bef9-bd8705c9313b][Ableton 12 MIDI Tools]]
+- *MIDI Generators (Rhythm, Seed, Shape, Stacks, Euclidean)*
+-
+  - Suite for procedural note/chord/rhythm creation within selections.
+- *MIDI Transformations (Arpeggiate, Chop, Connect, Glissando, LFO, Ornament, Quantize, Recombine, Span, Strum, Time Warp, Velocity Shaper)*
+-
+  - Effects to evolve existing patterns with timing, velocity, and articulation tweaks.
+- *Find and Select Notes*
+-
+  - Filter MIDI by pitch, velocity, duration, etc., for precise editing.
+- *Scale Awareness*
+-
+  - Global scale snapping/highlighting for tools and clips.
+- *Chop MIDI Tool*
+-
+  - Advanced slicing with patterns and randomization.
+- *Apply Grooves Instantly*
+-
+  - Auto-load grooves on new clips with global control.
+*2. Audio Processing & Manipulation (Sample Handling and FX)*
+- *Stem Separation*
+-
+  - AI splits audio into Vocals/Drums/Bass/Other tracks.
+- *Roar Saturator*
+-
+  - Dynamic distortion with modes like Delay Routing and MIDI sidechain.
+- *Auto Shift*
+-
+  - Real-time pitch correction with formant/vibrato and scale support.
+- *Bounce Tracks/Groups to Audio*
+-
+  - Render selections in-place or to new clips/tracks.
+- *Limiter Overhaul*
+-
+  - Redesigned with Mid/Side, Soft Clip, and Gain Reduction Link.
+- *Saturator Redesign*
+-
+  - Updated curves, Bass Enhancer, and EQ view.
+- *Auto Filter Redesign*
+-
+  - Stereo mod, new filter types (DJ/Comb), and sidechain EQ.
+- *Auto Pan-Tremolo*
+-
+  - Expanded modes with LFO shapes and frequency modulation.
+- *Echo Updates*
+-
+  - Smoother repitch and delay calcs.
+- *Envelope Follower*
+-
+  - Added sidechain and Attack Hold.
+*3. Instruments & Synths (Sound Generation)*
+- *Meld Synthesizer*
+-
+  - Bi-timbral MPE synth with modulation, chords, and evolving textures.
+- *Drum Sampler*
+-
+  - One-shot rack instrument with envelopes, filters, and velocity mod.
+- *Granulator III*
+-
+  - Updated granular synth with envelopes and MIDI mapping.
+- *Operator Updates*
+-
+  - Per-note pitch bend and 32-voice polyphony.
+- *Drift*
+-
+  - Hi-Quality mode for aliasing reduction.
+- *Tuner*
+-
+  - Tuning system support with reference adjustments.
+*4. Browser & Integration (Discovery and Asset Management)*
+- *Splice Integration*
+-
+  - In-browser search, preview, download, and “Search with Sound.”
+- *Similarity Search and Swapping*
+-
+  - AI finds/swaps similar samples/presets in devices.
+- *Auto Tagging*
+-
+  - Automatic labels for short samples.
+- *Full-Height Browser*
+-
+  - Expandable view for larger previews.
+- *Browser Redesign*
+-
+  - Tag filters, Quick Tags, sortable results, and MIDI filters.
+- *Tuning Systems*
+-
+  - Per-track alternative tunings with browser integration.
+- *New Packs*
+-
+  - Orchestral Strings, Chop and Swing, plus Splice/DECAP samples.
+- *Core Library Refinements*
+-
+  - Updated Drum Racks, presets, and tuning templates.
+*5. UI & Workflow (Navigation and Efficiency)*
+- *Device A/B Comparison*
+-
+  - Toggle/compare device states for tweaking.
+- *Undo History*
+-
+  - List-based multi-step recovery.
+- *Mixer in Arrangement View*
+-
+  - Toggleable panel with returns and navigation.
+- *Arrangement View Enhancements*
+-
+  - Vertical zoom, clip insertion, and comping.
+- *Session View Updates*
+-
+  - Scene Follow Actions and clip dragging.
+- *Clip View Tweaks*
+-
+  - Release Velocity lane and audio “Set 1.1.1 Here.”
+- *MIDI Editing Improvements*
+-
+  - Shortcuts for split/join, selection, and zoom.
+- *Accessibility Enhancements*
+-
+  - Screen reader support and UI zoom.
+- *CC Control*
+-
+  - MIDI CC utility with learn and banks.
+*6. Performance & Extensibility (Under-the-Hood and Customization)*
+- *Max for Live MIDI Tools*
+-
+  - Framework for custom Generators/Transformations.
+- *Control Surface Support*
+-
+  - New for Akai MPK, Novation Launch, Arturia KeyLab.
+- *Performance Tweaks*
+-
+  - Faster loads, GPU rendering, and CPU/memory optimizations.

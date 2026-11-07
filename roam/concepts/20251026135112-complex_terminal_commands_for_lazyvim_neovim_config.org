@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       2fa2a922-83b1-4395-9ac4-c2c0c1f40412
+:REFLECT_ID: 4eec570cb0cb4150887c027ec81e4dfa
+:CREATED:  [2025-10-26 Sun 13:51]
+:MODIFIED: [2025-10-27 Mon 07:30]
+:END:
+#+title: Complex Terminal Commands for LazyVim NeoVim Config
+#+filetags: :concept:vim_keybindings:
+#+date: 2025-10-26
+- Recon Command Sets
+  -  
+    
+    #+begin_src markup
+    cat /Users/lupin/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua | grep -A 1 '"<leader>c' | head -30
+    map({ "n", "x" }, "<leader>cf", function()
+      LazyVim.format({ force = true })
+    --
+    map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+    map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+    #+end_src

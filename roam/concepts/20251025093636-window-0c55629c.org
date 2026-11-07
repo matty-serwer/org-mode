@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0c55629c-b3a0-4469-a5d6-b03f628b7e3b
+:REFLECT_ID: 1a08aae6ef2841f6a0e8bbd6ec877ba2
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: Window
+#+filetags: :concept:
+#+date: 2025-10-25
+

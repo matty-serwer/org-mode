@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7734f13a-d350-4ef8-8446-759bf85e79ce
+:REFLECT_ID: 6a8ad8aea22546759edb3d75b3d7343d
+:CREATED:  [2026-04-21 Tue 07:17]
+:MODIFIED: [2026-04-21 Tue 07:18]
+:END:
+#+title: Computer Bag
+#+filetags: :concept:
+#+date: 2026-04-21
+- Columbia Backpack

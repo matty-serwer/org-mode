@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       1c8dc93b-03d2-4f9d-b104-62a53ee0125d
+:REFLECT_ID: 19042026
+:CREATED:  [2026-04-18 Sat 03:00]
+:MODIFIED: [2026-04-20 Mon 15:19]
+:END:
+#+title: Sun, April 19th, 2026
+#+filetags: :daily:
+#+date: 2026-04-18
+- *Morning*
+  - Wash face — CeraVe Hydrating Cleanser
+  - The Ordinary Niacinamide 10% + Zinc
+  - VaniCream
+  - EltaMD UV Clear SPF 46
+- *Evening*
+  - Wash face — CeraVe Hydrating Cleanser
+  - The Ordinary Azelaic Acid Suspension 10%
+  - VaniCream
+- *2-3x per week (evening, not on IPL days)*
+  *Stop using the apricot scrub entirely.*
+  - Swap the azelaic acid step for The Ordinary Glycolic Acid 7% Toning Solution on a cotton pad

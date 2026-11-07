@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ba90b381-3814-4a32-85fa-e0f9a094c0b0
+:REFLECT_ID: 620bf74c5a194b0baeb37ac7cf2cdd22
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: sessions
+#+filetags: :concept:
+#+date: 2025-10-25
+

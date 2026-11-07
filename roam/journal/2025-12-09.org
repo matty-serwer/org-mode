@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       2c72c0da-dfd6-4c85-a93d-4b5440c0db4e
+:REFLECT_ID: 09122025
+:CREATED:  [2025-12-09 Tue 00:05]
+:MODIFIED: [2026-01-04 Sun 18:43]
+:END:
+#+title: Tue, December 9th, 2025
+#+filetags: :daily:
+#+date: 2025-12-09
+- [[id:a73def42-2736-46be-888f-6fc9ec6db354][Job Search]]
+  - [[id:fbdd7685-ffb3-47da-8689-477255745edc][Preble Street]]
+    - Applied finally to edna's way
+    - [[id:c5c36e58-15dc-418f-9c9c-c12bcdc5aa3f][Project Focused Resume]]
+      - [[https://docs.google.com/document/d/1UMHKRs4Zt0j-knqavKfv0OLapOJ-NR35BxEhS1V_IsM/edit?tab=t.0#heading=h.bj6syqqbkl5h][https://docs.google.com/document/d/1UMHKRs4Zt0j-knqavKfv0OLapOJ-NR35BxEhS1V_IsM/edit?tab=t.0#heading=h.bj6syqqbkl5h]]
+      - 
+    - cover letter
+      - [[https://docs.google.com/document/d/1wgiC4ZCXpcQyaLCMkPqIgmRiEkpKxxo66ffi2nYmYfU/edit?tab=t.0][https://docs.google.com/document/d/1wgiC4ZCXpcQyaLCMkPqIgmRiEkpKxxo66ffi2nYmYfU/edit?tab=t.0]]
+  - References Used
+    - [[id:c7e84299-b033-407d-9a1b-a68bfda0bc02][Gavin Goldstein]]
+    - [[id:a0cf61f6-d8d6-4942-a4c3-7001d9124c99][Joel Brown]]
+    - [[id:d60e9d06-aeec-455a-bb76-270aedd37549][Rebecca Lucia]]
+- [[id:1c3d470b-eb01-473a-8505-7d1bba12882e][Lupine UI Component Library #code-project]]
+  - /Users/lupin/Developer/design-projects/ltd-next-custom-ui-components-001
+  - Created Featured [[id:17254b57-edb8-4076-956f-2c7d5369e8e2][NextJS]] application, for creating custom LTD Design library.

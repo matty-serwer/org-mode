@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       835325d7-dfa2-4292-b40c-f0653eedc0c0
+:REFLECT_ID: 0ce54aa1a77c47dc99df6c480e776eb8
+:CREATED:  [2026-04-21 Tue 16:41]
+:MODIFIED: [2026-04-21 Tue 16:42]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-04-21
+#+begin_src markup
+•	Install and run Windows 11 ARM on M2 Mac via UTM (free)
+•	Download UTM from utm.app (free) or Mac App Store ($9.99 — free version is identical, paid just supports the developer)
+•	Go to microsoft.com/en-us/software-download/windowsinsiderpreviewARM64 — requires free Microsoft account and Windows Insider Program enrollment
+•	Sign in and join the Insider Program if not already (Dev or Beta channel, either works)
+•	Download the Windows 11 ARM64 VHDX file (~7GB)
+•	Open UTM → click the + button → choose Virtualize
+•	Select Windows → check “Import VHDX Image” → browse to the downloaded VHDX → click Next
+•	Set RAM to at least 8GB if your Mac has 16GB+ → click Next
+•	Skip the shared storage step or add a shared folder if you want file access between Mac and VM → Continue
+•	Review summary → click Save
+•	Before starting — click the VM in the sidebar → Edit → go to the Display device and confirm it’s set to virtio-ramfb or virtio-gpu-gl (better performance)
+•	Click the Play button to boot the VM
+•	Windows will run first-time setup — go through OOBE (region, keyboard, account setup)
+•	For a local account instead of Microsoft account: at the sign-in screen click “Sign-in options” → “Domain join instead” — gives you a clean local account
+•	After desktop loads — install UTM Guest Tools (SPICE tools) from the UTM menu bar → it mounts a virtual disc drive inside Windows → run the installer inside Windows → reboot VM
+•	This enables copy/paste, dynamic resolution, and better integration
+•	VM is ready — snapshot it now via UTM’s snapshot button so you have a clean restore point before any testing​​​​​​​​​​​​​​​​
+#+end_src

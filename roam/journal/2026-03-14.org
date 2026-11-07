@@ -1,0 +1,95 @@
+:PROPERTIES:
+:ID:       a71932e5-309b-4fb6-94bc-e0b4b0a9af76
+:REFLECT_ID: 14032026
+:CREATED:  [2026-03-13 Fri 23:35]
+:MODIFIED: [2026-03-14 Sat 23:51]
+:END:
+#+title: Sat, March 14th, 2026
+#+filetags: :daily:
+#+date: 2026-03-13
+-
+  - [[id:309fd4f4-67c8-466a-992d-dd5f28fb7298][418 Audio Laptop Fleet Sync]]
+    - Requrements
+      - *Priority #1 is wiping/resetting between jobs* — that's the core requirement
+      - *No Windows Server* — but open to getting one if it makes sense
+      - *Laptops spread across sites* — but regularly return to the shop, so local management is viable some of the time
+      - *25 Microsoft 365 Business licenses* — this is a big one. Depending on which M365 plan he's on, *Intune may already be included at no extra cost*
+    - The list
+      -----
+      
+      Task 1 — Get Each Laptop Back to Pre-Show State
+      -----
+      
+      -----
+      
+      -----
+      
+      -----
+      
+      -----
+      
+      -----
+      
+      -----
+      
+      Task 2 — Remote Update and Management
+      /(★ = also handles Task 1 without significant additional effort)/
+      -----
+      
+      -----
+      
+      -----
+      
+      -----
+      
+      -----
+      
+      -----
+      - *PowerShell Cleanup Script (Option A)*
+        - Deletes designated folders (Documents, Desktop, Downloads, temp dirs) on shutdown or startup, logs what was removed, can be extended to cover edge cases as they're discovered
+        - Setup: write and test script +4–8hrs, deploy via USB or Group Policy +2–4hrs, no server needed; +free, maybe +$0–50 in your time materials
+        - Maintenance: ~free, occasional script updates as edge cases surface; low ongoing hours but not zero — edge cases will surface
+      - *Reboot Restore Rx / Deep Freeze — Local Only (Option C basic)*
+        - Freeze software installed on each machine, every reboot discards all session changes automatically, zero tech discipline required, very fast reset (reboot time only)
+        - Setup: install on 50 machines +1 day hands-on, free tier (Reboot Restore Rx) or +$30–50/machine one-time (Deep Freeze); no server required
+        - Maintenance: ~free ongoing; thaw/update/refreeze cycle required for any intentional change, manageable if machines come back to shop
+      - *Deep Freeze Cloud / Reboot Restore Rx Pro — Remote Capable (Option C enterprise)*
+        - Same as above plus push thaw, update, and refreeze commands remotely over internet without physical access — machines never need to come home for a reset
+        - Setup: +1 day install + cloud console config; +$40–60/machine/year (Deep Freeze Cloud), ~$15–25/machine/year (RRRx Pro)
+        - Maintenance: ~$2,000–3,000/yr for 50 machines; minimal hours once configured, update cycles require planned thaw windows
+      - *Clonezilla USB Imaging (Option B — manual)*
+        - Full drive restore to golden image via bootable USB, guaranteed clean slate, all software intact and consistent, client files and config drift completely eliminated
+        - Setup: create golden image +4–8hrs, create 50 bootable USBs +2–4hrs; ~free (Clonezilla is open source); no server required but someone must physically touch each machine
+        - Maintenance: free; +15–30 min per machine per restore cycle, image needs updating when software changes (+2–4hrs per update)
+      - *Clonezilla Server + PXE Boot — Local Network (Option B — networked)* /(requires local server)/
+        - Same full image restore as above but laptops boot from the network at the shop, no USB needed, can image multiple machines simultaneously, much faster at scale
+        - Setup: configure server + PXE environment +1–2 days, requires a dedicated machine or Windows Server at the shop; +free software, server hardware ~$300–800 if not already owned
+        - Maintenance: +free ongoing; still requires laptops to be physically at the shop on the local network; image updates +2–4hrs
+      - *Acronis Cyber Protect — Networked Imaging with UI (Option B — polished)* /(requires local server or cloud)/
+        - Same as Clonezilla networked but with a proper management dashboard, scheduled imaging, better error handling, more accessible for non-technical staff to run
+        - Setup: +1 day; +$50–80/machine/year or ~$500–800 flat for small business perpetual license
+        - Maintenance: ~$500–1,000/yr; minimal hands-on hours, image updates handled through GUI
+      - *Windows Update for Business + PowerShell Scripts — Free Tier*
+        - Centrally configure Windows Update policy, push scripts and files via scheduled tasks or Group Policy, no MDM subscription needed
+        - Setup: +1–2 days, Group Policy config + script library; +free, works with existing Windows Pro licenses
+        - Maintenance: ~free; moderate ongoing hours as needs evolve, no dashboard visibility
+      - *NinjaOne RMM*
+        - Remote monitoring, patch management, software deployment, scripting, remote desktop, health dashboards across all 50 machines from one console
+        - Setup: agent install on all machines +4–8hrs, console config +1 day; +$3.75/machine/month at 50 devices (+$190/mo)
+        - Maintenance: ~$190/mo; low ongoing hours, most tasks automated
+      - *Microsoft Intune — Standalone*
+        - Full MDM: remote wipe, software push, Windows Update enforcement, compliance policies, device enrollment; deep Windows integration
+        - Setup: +2–4 days, steeper learning curve than NinjaOne; +$8/user/month (~$400/mo for 25 users)
+        - Maintenance: ~$400/mo; low ongoing hours once configured
+      - *Microsoft Intune — Bundled via M365 Business Premium ★*
+        - Same as above but included in the M365 Business Premium license — if Alex upgrades or is already on Premium, this costs nothing additional; remote wipe capability directly addresses Task 1
+        - Setup: same +2–4 days; +$22/user/month total (~$550/mo for 25 users, replaces existing M365 cost)
+        - Maintenance: no additional cost beyond M365 subscription; covers Task 1 remote wipe cleanly
+      - *Deep Freeze Cloud ★*
+        - Already listed in Task 1 — remote thaw/update/refreeze from console handles both reset and content updates remotely; not a full MDM but covers the core of both tasks for this specific use case
+        - Setup: +1 day; +$40–60/machine/year
+        - Maintenance: ~$2,000–3,000/yr for 50 machines
+      - *Tactical RMM — Self Hosted ★*
+        - Open source NinjaOne alternative, full remote management suite, self-hosted on a VPS or local server, can trigger scripts including image restores if paired with imaging tools
+        - Setup: +2–4 days including Linux server/VPS config — needs your level of expertise or outside help; +$6–20/mo VPS hosting, software free
+        - Maintenance: ~$75–240/yr hosting; moderate ongoing hours, no vendor support, community-driven

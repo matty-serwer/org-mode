@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       53fea805-0c99-41dd-bd98-0ae28bae9fb9
+:REFLECT_ID: 3bf8bd5d0aa148b2b6d5a03b9df379d1
+:CREATED:  [2025-10-29 Wed 22:26]
+:MODIFIED: [2025-11-25 Tue 08:11]
+:END:
+#+title: Tailwind CSS
+#+filetags: :concept:
+#+date: 2025-10-29
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bcf50967-a59f-45ad-805f-44d021fb0ccc
+:REFLECT_ID: eb8fb1c06b7649dcb93c5a6738e79fd6
+:CREATED:  [2026-01-28 Wed 08:58]
+:MODIFIED: [2026-02-18 Wed 21:43]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-01-28
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d35d83af-fb98-476f-be5f-2fd0a53392d1
+:REFLECT_ID: f090944da3e64da4bfecc749fc111fc1
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: Projects
+#+filetags: :concept:
+#+date: 2025-10-25
+

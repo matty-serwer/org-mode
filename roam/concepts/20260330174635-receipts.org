@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f4b0a940-8191-4853-91ca-04c48e838357
+:REFLECT_ID: 7c0ba0fe01f04c9a8a08da685b30a0ff
+:CREATED:  [2026-03-30 Mon 17:46]
+:MODIFIED: [2026-03-30 Mon 17:46]
+:END:
+#+title: Receipts
+#+filetags: :concept:
+#+date: 2026-03-30
+

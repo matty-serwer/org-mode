@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       5f99f622-13a8-4824-b69a-fd40c2c20f7b
+:REFLECT_ID: 05032026
+:CREATED:  [2026-03-04 Wed 20:03]
+:MODIFIED: [2026-03-13 Fri 23:46]
+:END:
+#+title: Thu, March 5th, 2026
+#+filetags: :daily:concept:
+#+date: 2026-03-04
+- installed [[id:6f3bf93d-0a8a-4310-a643-7c25e0d0b2ea][mpv]] something for [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] music player [[id:c9dfcb21-e661-492e-bd46-38daf354478f][emm]] something 
+- Organizing [[id:ac05fe49-4cbb-4c48-bbc6-09414425b721][Record Crate]]
+  - Got most of it done
+  - its in audio/record-crate
+  - 000 - 999 system
+  - [X] Unify naming convention
+- [[id:01575bbd-2100-4910-8b98-a97e00428026][Bullet Journal Concept]]
+  - [[id:77daa61b-739e-4ccc-8bcd-c648b253a109][Bullet Journal Key]]  
+    - Item Types:
+      - notes
+      - task: todo
+      - task: completed
+      - task: migrated / scheduled
+      - event
+    - Qualifiers
+      - important
+      - urgent
+[[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/5295e7d255cd4d1c9a75a6c30b170ab5/aad429b4-5b5b-4a4b-9b1c-6f95ab0ec2c8?key=515652ee5227badfc9912e1ce4ea2009ade585ca7cd1718eee99600479e8f23d][THE NOTEBOOK — Player's Guide.pdf]]

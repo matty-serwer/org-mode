@@ -1,0 +1,104 @@
+:PROPERTIES:
+:ID:       43d16b45-b172-4c1a-ba15-49838aac8157
+:REFLECT_ID: 3a972de949d1435cadb98010cd7f60ce
+:CREATED:  [2025-11-13 Thu 11:01]
+:MODIFIED: [2026-01-28 Wed 05:15]
+:END:
+#+title: AppleScript: Batch Rename Audio Files
+#+filetags: :concept:
+#+date: 2025-11-13
+** The Script
+#+begin_src applescript
+tell application "Finder"
+    -- Get the selected files
+    set selectedFiles to selection as list
+    
+    if (count of selectedFiles) is 0 then
+        display dialog "No files selected. Please select audio files in Finder." buttons {"OK"} default button 1
+        return
+    end if
+    
+    -- Filter for only .aif, .aiff, and .wav files
+    set audioFiles to {}
+    repeat with aFile in selectedFiles
+        set fileName to name of aFile as string
+        if fileName ends with ".aif" or fileName ends with ".aiff" or fileName ends with ".wav" then
+            set end of audioFiles to aFile
+        end if
+    end repeat
+    
+    if (count of audioFiles) is 0 then
+        display dialog "No audio files (.aif, .aiff, or .wav) found in selection." buttons {"OK"} default button 1
+        return
+    end if
+    
+    -- Get user inputs
+    set instrumentName to text returned of (display dialog "Enter instrument name:" default answer "" buttons {"Cancel", "OK"} default button 2)
+    
+    if instrumentName is "" then
+        display dialog "Instrument name cannot be empty." buttons {"OK"} default button 1
+        return
+    end if
+    
+    set className to text returned of (display dialog "Enter class name:" default answer "" buttons {"Cancel", "OK"} default button 2)
+    
+    if className is "" then
+        display dialog "Class name cannot be empty." buttons {"OK"} default button 1
+        return
+    end if
+    
+    -- Rename files
+    set counter to 1
+    repeat with aFile in audioFiles
+        -- Get the original extension
+        set fileName to name of aFile as string
+        set fileExtension to name extension of aFile
+        
+        -- Create new name with zero-padded counter
+        set paddedCounter to text -3 thru -1 of ("000" & counter)
+        set newName to instrumentName & "-" & className & "-" & paddedCounter & "." & fileExtension
+        
+        -- Rename the file
+        set name of aFile to newName
+        set counter to counter + 1
+    end repeat
+    
+    display dialog "Renamed " & (count of audioFiles) & " files successfully!" buttons {"OK"} default button 1
+end tell
+
+#+end_src
+** Usage Methods
+*** Method 1: Script Editor
+Run directly from Script Editor for quick testing:
+- Open Script Editor (Applications > Utilities)
+- Paste the code above
+- Select your audio files in Finder
+- Run the script (⌘R)
+*** Method 2: Quick Action (Recommended)
+Create a right-click menu option in Finder:
+- Open Automator
+- Choose "Quick Action" (or "Service" on older macOS)
+- Set "Workflow receives current" to "files or folders" in "Finder"
+- Add a "Run AppleScript" action
+- Replace the default code with the script above
+- Save it with a name like "Rename Audio Files"
+- Access it by right-clicking selected files in Finder → Quick Actions → "Rename Audio Files"
+*** Method 3: Standalone Application
+Save as a double-clickable app:
+- In Script Editor, save the file as an Application
+- Double-click this app after selecting files in Finder
+** What It Does
+The script processes selected files with these features:
+- Filters for .aif, .aiff, and .wav files only
+- Prompts for instrument name (e.g., "Bass")
+- Prompts for class name (e.g., "Pluck")
+- Renames files as: ={instrument}-{class}-001.wav=, ={instrument}-{class}-002.wav=, etc.
+- Preserves original file extensions
+- Uses 3-digit zero-padding (001-999)
+- Shows confirmation when complete
+** Potential Modifications
+You could enhance this script by:
+- Changing to 4-digit padding (0001-9999) for larger libraries
+- Adding file sorting by name before renaming
+- Including additional file types
+- Adding more metadata fields (e.g., microphone, room)

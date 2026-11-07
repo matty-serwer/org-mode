@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       217c796b-74ed-4c64-9fe1-75afc787ab70
+:REFLECT_ID: cff724f22ab94368bf2ac719691846e2
+:CREATED:  [2025-11-05 Wed 17:37]
+:MODIFIED: [2025-11-05 Wed 17:37]
+:END:
+#+title: Tyler Technologies
+#+filetags: :concept:
+#+date: 2025-11-05
+

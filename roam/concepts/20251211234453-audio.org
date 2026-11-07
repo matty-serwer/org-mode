@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       09060d0b-267e-40eb-8ae7-d6459adf339d
+:REFLECT_ID: ff5570a0a85c4076b6c290555b56af7c
+:CREATED:  [2025-12-11 Thu 23:44]
+:MODIFIED: [2026-04-10 Fri 06:39]
+:END:
+#+title: 👩🏻‍🎤 Audio
+#+filetags: :concept:
+#+date: 2025-12-11
+- Audio Notes
+  - [[id:4dd8e0dc-4cfc-4818-9e36-dca5c68dba89][👩🏻‍🎤 💿 Operation: M477i3.exe]]
+  - [[id:51a75f17-2f06-4197-ae90-5c72e28137ca][👩🏻‍🎤 Audio Lyrics]]
+  - [[id:86c00c9f-f24a-4270-91ce-ba000527ef03][👩🏻‍🎤 Audio Sampling TrackList]]
+  - [[id:2f3b4a8e-fcf3-44b4-b53d-e5301c309e44][Audio Plug-ins]] TODO
+    - [ ] Draw from [[id:b8e19261-56b5-494d-a62c-05d8de0cb442][Audio Plug-ins: Active VST3s as of 11/13/2025]]
+  - [[id:43d16b45-b172-4c1a-ba15-49838aac8157][AppleScript: Batch Rename Audio Files]]
+- [[id:36406928-18b8-4ff8-b679-955fc4f90b8f][Audio Project]] to List Each Project

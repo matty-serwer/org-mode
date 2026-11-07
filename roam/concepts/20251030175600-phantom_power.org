@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       94292e8e-200e-4e96-a315-75de6842f70d
+:REFLECT_ID: 680d8c32df6c4551b477da80528d1a48
+:CREATED:  [2025-10-30 Thu 17:56]
+:MODIFIED: [2025-11-30 Sun 09:13]
+:END:
+#+title: Phantom Power
+#+filetags: :concept:
+#+date: 2025-10-30
+

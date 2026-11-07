@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6d41222a-46cd-4aa4-82d4-d26472b1092a
+:REFLECT_ID: a43c475dc49043c1be29e535f60748d8
+:CREATED:  [2026-03-04 Wed 20:32]
+:MODIFIED: [2026-03-04 Wed 20:32]
+:END:
+#+title: DJa
+#+filetags: :concept:
+#+date: 2026-03-04
+

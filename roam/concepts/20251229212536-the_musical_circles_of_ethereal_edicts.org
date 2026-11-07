@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cb0158e8-d5d7-4d0a-8365-13a644ab59bf
+:REFLECT_ID: 7e81382f474d467c8446b9ed4f5f998f
+:CREATED:  [2025-12-29 Mon 21:25]
+:MODIFIED: [2025-12-29 Mon 21:27]
+:END:
+#+title: The Musical Circles Of Ethereal Edicts
+#+filetags: :concept:
+#+date: 2025-12-29
+

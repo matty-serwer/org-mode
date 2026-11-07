@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       d3573ff7-3b3e-4115-aef9-62e85b13473d
+:REFLECT_ID: 24022026
+:CREATED:  [2026-02-23 Mon 08:36]
+:MODIFIED: [2026-02-25 Wed 02:16]
+:END:
+#+title: Tue, February 24th, 2026
+#+filetags: :daily:
+#+date: 2026-02-23
+- [[id:2a0e069e-82be-42ac-9ea6-82b345d1f9cb][Ableton Live Org 2026]]
+  - [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]] [[id:b42ab017-a31b-4742-bb11-6739d926fae3][Prompt]]
+    - I can see the core tension here: you want the creative immediacy you used to have, but you’re stuck in project archaeology when you’re already running on fumes. A few questions to help me give you a battle plan that actually fits:
+      1. The tired-but-creative sessions - When you’re in that state and you do want to make progress on new music (not just tweaking), what’s the ideal session flow? Like: “load template → pick a vibe → sketch for 20 min → save and done” or more like “jam on one synth → capture ideas → expand later” or something else entirely?
+      1. The drum commitment spectrum - You mentioned dance/DNB/indie rock/punk combo. Are you thinking mostly one-shots that you’ll re-program rhythms with, or are you more drawn to having pre-rendered loop/pattern variants (like: kick/snare/tops separated, but each is a 4 or 8-bar performance you can arrange)? And when you say “mix them” - do you mean you want individual level/EQ/compression control on K/S/T stems during arrangement, or just final mix tweaks?
+      1. The synth patch reality check - You’ve got patches across a dozen plugins, some from dead subscriptions. When you load an old project and a synth doesn’t load, does that kill your momentum, or do you usually just swap in something else and keep moving? Asking because this might determine whether the “convert everything to Diva/Sampler” project is actually solving a workflow problem or creating busywork.
+        I want to make sure the battle plan doesn’t become another creative procrastination project disguised as organization.​​​​​​​​​​​​​​​​
+    - Response
+      1. Load template every time. Then I generally feel I need “some kind of” beat, and I try to not spend too long on this, but it’s a big trap where I’m trying to get the vibe going too long and mixing a bit. This is why I was trying to have more of the beats just ready to go. Then I’d either load a synth preset (usually effects plugins included or at least Serum w fx) or open a synth to get a particular sound. It’s usually out to bad if I know what sound I’m going for, however I can often get stuck almost mixing here for vibe, and then lose the original idea a bit. Ideally I’ll get down a bass line at least,  id love to finish initial sessions with a melody and harmony, but I dung often get that far at first, and not at all lately. - Additional sessions would have me layering parts, often by this point I can get an intentional sonic picture going. It’s the sound design I’m good at, which may be why I end up spending too much time doing it. I would then try to create a few different parts with midi clips, a few different arranged loops. I’ll often have a session dedicated to arrangement only, and I try to rush this, but not out of laziness, but to get a fluid idea out. I can get hung up on transitions, especially when making edm style music. Their simple in concept, but all the little tweaks needed to make drops and breaks have feel take time, and usually require several subsequent sessions to hear the feel of the arrangement and “fix” what doesn’t work, speed up or slow down the evolutions. —- I also record guitar based music as well. These will often start with writing the drum parts in MIDI, with Steve Slate drums plugin, then bass and guitar parts recorded all in the first session. As a rock instrumentalist and former studio engineer this comes relatively easy for me. A second session will often include further arranging, before it after a vocal session. For vocals and sometimes bass, I will do at least one edit session, mostly selecting bits of takes. For any genre, a mix will take several sessions for ear freshness. This was done in Luna for a bit, but now I’m moving towards using a mix template in Ableton, the idea being less context change. The only reason I wouldn’t is Abletons horrible use of Apple silicon CPU, generally offering half or less plugins to be used simultaneously than most other daws. 
+      1. I mean loops or even bars that I will make or have made, available as a full kit clip, and stems limited to k/s/t. I already have lots of these, also extra hi hat add ride loops to draw from. I have often made just “live” parts with something like Steve slate drums, or edm parts with the samples and fx. I’d like to do a bit more of these for my current tastes, and then when I’m actually making a song, mixing and matching, edm kick with live snare part etc. 
+      1. I have the same worry. I haven’t made much music since I let my plugin alliance, slate digital, and ssl subscriptions expire. It throws me off quite a bit so far though. Parhaps if I had a target for what I needed minimally to be creative with all the different types of parts, bass, lead, pad, mids, plucks. And then decide what I need between fixing old patches or making new ones. I need a little sound design refresher, so I might burn through 10 diva patch tutorials in one sitting to catch up, and ideally that has me half there? I really want to use my real moog synth a lot more, I just don’t have time and space at the moment. The room is a mess and I need to be more in the box atm.
+      1. I’m adding 4, because I forgot to mention, I’m getting into stem splitting and arranging stems to get back into djing. I used to dj with ableton and I was planning to make every other session one where I play with dj ideas, possibly adding my own parts in, as a way to develop my set, while short of learning from the best, as I mix stems for daft punk and pendulum and 90s hip hop. Lolzzz I’m too much! 
+- TouchMCU Project: [[https://github.com/NicoG60/TouchMCU][https://github.com/NicoG60/TouchMCU]]
+  QuickStart
+  ∙ Go to the Releases section on the GitHub page and download the .tosc file variant that matches your DAW (there are DAW-specific builds)
+  ∙ On your Mac, download and install TouchOSC Bridge from [[hexler.net][hexler.net]] — it runs silently in the background and creates a virtual MIDI port called “TouchOSC Bridge”
+  ∙ Make sure your iPhone and Mac are on the same local Wi-Fi network
+  ∙ Open TouchOSC on your iPhone, tap the settings/connection panel, go to the Bridge section — your Mac should appear automatically; select it
+  ∙ In the MIDI section of TouchOSC connections, select <Bridge> as the MIDI output
+  ∙ Import the downloaded .tosc file into TouchOSC (you can AirDrop it to your phone or open it via Files and share to TouchOSC)
+  ∙ In LUNA, add a new control surface and select Mackie Control Universal — set input and output both to TouchOSC Bridge
+  ∙ Hit play and the layout should sync up — if faders don’t reflect current state, look for a “Reset” or “Re-sync” option in LUNA’s control surface settings
+  One heads-up: since you’re on iPhone rather than iPad, the layout will be cramped — TouchMCU was designed with iPad in mind. You may find yourself using it primarily for transport, fader banking, and the master fader rather than all 8 channels at once. Worth knowing before you dig in.​​​​​​​​​​​​​​​​
+- [[id:b42566da-4387-4def-bd67-1bf6c02a7db5][C-Note]]
+  - Claude Based Note Taking System
+    - Directory
+      - MCP Server
+        - /Users/lupin/Developer/services-and-scripts/cnote-mcp
+      - Notes Location
+        - /Users/lupin/_Workspace/Docs/C-Note
+    - [[id:1d8492fa-4209-419b-8d11-299c909d1f86][C-Note Reflect Import Claude Code Setup]]
+      - added [[http://IMPORT_RULES.md][IMPORT_RULES.md]] to the cnote-mcp directory
+
+- [[id:2a0e069e-82be-42ac-9ea6-82b345d1f9cb][Ableton Live Org 2026]]
+  - *Music Production Battle Plan*
+    - *Beat Starter Kit*
+      - Browse old projects, extract 20-30 drum arrangements you vibe with
+      - Bounce each as Full Mix + K/S/T stems, name by feel/genre
+      - Drop into one Ableton folder for quick drag-and-drop starts
+    - *The Diva Doctrine*
+      - Watch 10 Diva tutorials in one sitting, save one patch per category as you go
+      - Build a Diva Creative Template track (Diva → Soundtoys/UAD chain → sends)
+      - Add a pre-armed Moog Bus track to template so it's ready when you have space
+      - Broken patch in old project? Swap in Diva and move on — don't rescue the past
+    - *Mix Template* /(after 2-3 new sketches exist)/
+      - Build Ableton mix template with routing/busses pre-configured
+      - Test on a new sketch first — don't solve mixing problems you don't have yet
+    - *Stem DJ Sessions* /(anytime, no pressure)/
+      - Rip stems from reference tracks, remix/arrange for fun
+      - Steal arrangement ideas, stay in Ableton on low-energy days
+    - *Don't do yet*
+      - Convert synth patches to Sampler
+      - Organize all 500 projects
+      - Build a perfect template before making music

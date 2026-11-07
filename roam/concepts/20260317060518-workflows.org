@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       6874292a-d889-4627-be26-83bd55ff2339
+:REFLECT_ID: cde19f07aff845afa335c85b1e0109e1
+:CREATED:  [2026-03-17 Tue 06:05]
+:MODIFIED: [2026-04-08 Wed 20:15]
+:END:
+#+title: ⚙️ Workflows
+#+filetags: :concept:
+#+date: 2026-03-17
+- Current
+  - [[id:4e067981-46f8-43e2-8a24-0b65054d7845][Audio Systems]]
+    - [[id:512918b0-24ae-42bb-88fb-a18090e08bc3][Stem Separation]]

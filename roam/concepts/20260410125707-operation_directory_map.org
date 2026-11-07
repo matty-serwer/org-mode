@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       52149591-e1bf-4263-aa98-86470b8db981
+:REFLECT_ID: cc1ee417278541f092177b4c80149f2a
+:CREATED:  [2026-04-10 Fri 12:57]
+:MODIFIED: [2026-04-10 Fri 12:57]
+:END:
+#+title: Operation: Directory Map
+#+filetags: :concept:
+#+date: 2026-04-10
+

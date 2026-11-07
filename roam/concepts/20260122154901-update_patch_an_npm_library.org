@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       7019769a-769d-4fbe-b803-2f8020aee3c6
+:REFLECT_ID: c209d2577da94a618e7223bf065e6fc3
+:CREATED:  [2026-01-22 Thu 15:49]
+:MODIFIED: [2026-01-22 Thu 15:51]
+:END:
+#+title: Update (Patch) An NPM Library
+#+filetags: :concept:
+#+date: 2026-01-22
+- 1. Update the version number
+  - From your project root, run one of the following commands to increment the version in your =package.json= automatically:
+    - Patch (0.1.0 → 0.1.1)
+      - Use for small fixes like documentation or bug fixes.
+      - #+begin_src markup
+        npm version patch
+        #+end_src
+    - Minor (0.1.0 → 0.2.0)
+      - Use for adding new features that don't break current usage.
+      - #+begin_src markup
+        npm version minor
+        #+end_src
+    - Major (0.1.0 → 1.0.0)
+      - Use for breaking changes that require users to update their code.
+- 2. Publish the new version
+  - After the version is updated, run the publish command again. Since your package is scoped (=@lupine-tech-design=), you usually need the =--access public= flag if it's a public package:
+    - #+begin_src markup
+      npm publish --access public
+      #+end_src
+- 3. Verify the changes
+  - Once the command finishes, your new =README.md= content will be visible on the npm website. You can verify this by running:
+    - #+begin_src markup
+      npm view @lupine-tech-design/pedal-ui version
+      #+end_src
+  - This should return your new version number (e.g., =0.1.1=).
+-----

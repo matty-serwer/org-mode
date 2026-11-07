@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       d2f0c7f4-72f3-4cb1-9cfe-e74ce0c43b6a
+:REFLECT_ID: 4f3e47793f4a46a7b7b5922a32d08da7
+:CREATED:  [2025-11-24 Mon 01:47]
+:MODIFIED: [2025-11-25 Tue 07:31]
+:END:
+#+title: Vet Sweet
+#+filetags: :concept:schema:tech_stack:
+#+date: 2025-11-24
+* [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]]
+- Frontend
+  - Next.js
+    - 16.0.3
+- UI Components
+  - Storybook
+    - 10
+- UI Library
+  - Shadcn UI
+    - 3.5.0
+- Styling
+  - Tailwind CSS
+    - 4.1
+- Backend
+  - Java 
+    - 21
+  - Spring Boot
+    - 4.0
+- Auth
+  - Spring Security (JWT)
+  - 7.0.0
+- Database
+  - PostgreSQL
+  - 18.1
+- File Storage
+  - Backblaze B2
+- Email
+  - Mailgun
+  - API v3
+- Payments
+  - Stripe
+  - API 2025-11-17 (latest stable)
+- Hosting (Frontend)
+  - Vercel
+- Hosting (Backend & DB)
+  - [[Render.com][Render.com]]

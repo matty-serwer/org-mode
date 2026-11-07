@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       83fe2dfb-b24c-4925-b223-7250d7b5659e
+:REFLECT_ID: a04035c704024c59a30dd927f92f71d0
+:CREATED:  [2026-04-10 Fri 05:23]
+:MODIFIED: [2026-04-10 Fri 05:55]
+:END:
+#+title: File Sweet
+#+filetags: :concept:
+#+date: 2026-04-10
+

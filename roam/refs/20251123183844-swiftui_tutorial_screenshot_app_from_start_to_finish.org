@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       163a79c5-f30b-4a8a-9339-b2f2b667419c
+:REFLECT_ID: 45cf94404a8345028239671298a1970e
+:CREATED:  [2025-11-23 Sun 18:38]
+:MODIFIED: [2025-11-23 Sun 20:08]
+:END:
+#+title: SwiftUI #tutorial Screenshot App from Start to Finish
+#+filetags: :ref:bookmark:log:tutorial:
+#+date: 2025-11-23
+* [[id:17a0c11e-8892-484c-b527-f1c3154d8851][SwiftUI]]  Screenshot App from Start to Finish
+- [[https://hookmark.net/hm/hook/file/1sbaDHobP?p=4q2QIFByb2plY3RzIChDb2RlKS9zY3JlZW5zaG90&n=screenshotapp%2D001%2Excworkspace][screenshotapp-001.xcworkspace]]
+- Part 1:
+  [[https://www.youtube-nocookie.com/embed/WQNBtkNO0jY][youtube: https://www.youtube-nocookie.com/embed/WQNBtkNO0jY]]
+- Command Line Tools
+  - [[http://ss64.com][ss64.com]] / [[https://ss64.com/mac/][https://ss64.com/mac/]]  
+    - [[https://ss64.com/mac/screencapture.html][https://ss64.com/mac/screencapture.html]]  
+      - A place to look up [[id:64678f28-ad48-483b-b9d7-c73aa49a6b4d][Mac OS]] [[id:5eeefe41-2713-409f-9bb3-21de3d352c4d][CLI Function]]s
+- [[id:30f66191-8177-449f-b1b8-2d56efe91f75][11/23/2025]]  
+  - Created a button that executes the  [[id:5eeefe41-2713-409f-9bb3-21de3d352c4d][CLI Function]] [[id:6b43c1b1-988b-4ec2-be4e-4f837538577f][screencapture]]
+  - Added function =getImageFromPasteboard()=
+    - [[id:6b43c1b1-988b-4ec2-be4e-4f837538577f][screencapture]] loads the image into the clipboard, and =getImageFromPasteboard()= loads this into the application
+    - then assigns this to a slice of state =@State private var image: NSImage? = nil=
+  - Added line to plainly show the image in main view of the app 
+    
+    #+begin_src markup
+      if let image = image {
+                    Image(nsImage: image).resizable().scaledToFit()
+                }
+    #+end_src

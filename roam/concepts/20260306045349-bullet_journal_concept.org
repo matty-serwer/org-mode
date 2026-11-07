@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       01575bbd-2100-4910-8b98-a97e00428026
+:REFLECT_ID: 93bd1d172428463f8e5f27fd1bb42cc2
+:CREATED:  [2026-03-06 Fri 04:53]
+:MODIFIED: [2026-04-02 Thu 21:37]
+:END:
+#+title: Bullet Journal Concept
+#+filetags: :concept:
+#+date: 2026-03-06
+

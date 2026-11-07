@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       3627192e-95ac-496a-99b2-f4d8f0a0dea8
+:REFLECT_ID: 40adbbb3d32b4357a43a228614370c14
+:CREATED:  [2025-12-01 Mon 08:47]
+:MODIFIED: [2026-01-08 Thu 18:43]
+:END:
+#+title: Ableton Live 12 Minimal Setup 2025
+#+filetags: :concept:
+#+date: 2025-12-01
+* [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] 12 Minimal Setup 2025
+- Favourites
+  - Drums
+  - Bass
+  - Synth
+  - Samples
+  - Clips
+  - Effects
+  - Utilities
+    - Midi & Common plugs like Utility, & dry/whet
+Drums / Bass / Synth / Instruments (samples, clips) / Effects /Utilities (Midi & Common[dry wet etc])

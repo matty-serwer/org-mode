@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7be240e2-d85d-495b-8826-13f3cb6c319d
+:REFLECT_ID: 25f5aed8b0e9433d83f8c0fe32fbe7d8
+:CREATED:  [2025-10-26 Sun 14:08]
+:MODIFIED: [2025-10-26 Sun 14:08]
+:END:
+#+title: Bash
+#+filetags: :concept:
+#+date: 2025-10-26
+

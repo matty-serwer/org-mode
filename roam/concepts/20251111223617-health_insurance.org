@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       90ee7634-fd57-4816-be86-dd8c3d285e08
+:REFLECT_ID: e96e8ec6720a449c9f9599f39b5e60ee
+:CREATED:  [2025-11-11 Tue 22:36]
+:MODIFIED: [2025-11-11 Tue 22:36]
+:END:
+#+title: Health Insurance
+#+filetags: :concept:
+#+date: 2025-11-11
+

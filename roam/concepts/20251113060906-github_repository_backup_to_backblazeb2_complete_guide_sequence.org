@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       68977815-955c-4a4e-b19c-8f302b6d7257
+:REFLECT_ID: f7a3c6e28a84487d8e91b8faa33b7ecb
+:CREATED:  [2025-11-13 Thu 06:09]
+:MODIFIED: [2026-02-08 Sun 13:55]
+:END:
+#+title: GitHub Repository Backup to BackblazeB2: Complete Guide
+#+filetags: :concept:sequence:
+#+date: 2025-11-13
+* [[id:d9f651d6-6369-4da7-946a-485b0ebf35f9][GitHub]] [[id:9c439fae-097e-46a6-a6de-cd30663fd827][Repository]] Backup to [[id:6cf7e814-afcd-4ccb-bd8c-f3e9188fd5f7][Backblaze]]B2: Complete Guide
+- Prerequisites
+  - Install the [[id:82356de2-675e-4aad-8213-d4ee5c7481c1][Backblaze B2 CLI]](=b2=).
+  - Authenticate your B2 account (=b2 authorize-account <accountId> <applicationKey>=).
+  - Ensure you have local shell access and permissions to run git commands.
+  - Set up environment variables or manually enter bucket name and backup directory.
+- 2. Mirror the Repository
+  - Use =git clone --mirror= for a complete, bare backup including all refs, branches, and tags.
+  - Example command:
+    
+    #+begin_src markup
+    git clone --mirror git@github.com:<username>/<repo-name>.git /tmp/<repo-name>.git
+    #+end_src
+    - This creates a local directory with all repository data[1][2].
+- 3. Compress the Repository
+  - Compress the mirrored directory to save bandwidth and storage.
+  - Example command:
+    tar czf /tmp/<repo-name>-YYYYMMDDHHMMSS.git.tar.gz -C /tmp <repo-name>.git
+    
+    #+begin_src markup
+    - Replace the timestamp with the current date/time. Adjust paths as needed[1][2].
+    #+end_src
+- 4. Upload the Archive to Backblaze B2
+  - Use the B2 CLI =b2 upload-file= command:
+    
+    #+begin_src markup
+    b2 upload-file m477i3-developer /tmp/<repo-name>-YYYYMMDDHHMMSS.git.tar.gz <repo-name>-YYYYMMDDHHMMSS.git.tar.gz
+          - This uploads the compressed archive to your bucket, naming it clearly for future retrieval[1][2].
+    #+end_src
+- 5. Clean Up Local Files
+  - Remove temporary backup files and cloned directories with standard shell commands:
+    
+    #+begin_src markup
+    rm /tmp/<repo-name>-YYYYMMDDHHMMSS.git.tar.gz
+    rm -rf /tmp/<repo-name>.git
+          - This keeps local storage tidy and avoids accidental reruns or leaks[1][2].
+    #+end_src
+- 6. Automate and Schedule
+  - Place these steps in a shell script for repeat backups.
+  - Schedule with cron or another job manager for automation.
+- 7. Restore the Repository (When Needed)
+  - Download from B2, extract, and push to a new remote:
+    
+    #+begin_src markup
+    tar xzf <repo-name>-YYYYMMDDHHMMSS.git.tar.gz
+    cd <repo-name>.git
+    git push --mirror https://github.com/<username>/<new-repo>.git
+    #+end_src
+    - This restores the entire repository—including all branches, history, and tags[1].
+- Additional Tips
+  - You may optionally encrypt the archive before upload for added security.
+  - Do not mount B2 as a live file system or attempt direct git operations on B2—object storage is not designed for live [[id:a1ab112a-ec70-4bf9-ad94-39555378fecb][VCS]] access[3].
+  - Adjust script and file paths to suit your local workflow and system organization.
+  - This workflow mirrors current expert recommendations, and the process is widely used for robust, portable git backups to cloud object storage like Backblaze B2[1][2][3].

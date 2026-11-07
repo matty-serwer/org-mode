@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fdfae022-6d52-4b1d-94ba-e7f3ab1fe118
+:REFLECT_ID: 8c91ede800564560ad93f76a358aeecf
+:CREATED:  [2026-03-06 Fri 06:06]
+:MODIFIED: [2026-03-06 Fri 06:06]
+:END:
+#+title: mind
+#+filetags: :concept:
+#+date: 2026-03-06
+

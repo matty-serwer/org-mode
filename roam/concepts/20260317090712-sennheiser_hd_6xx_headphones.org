@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e1e967cc-de95-478e-a7e4-9af8fa051e6b
+:REFLECT_ID: ed306ccff23045c095006c416e6d9f38
+:CREATED:  [2026-03-17 Tue 09:07]
+:MODIFIED: [2026-03-17 Tue 09:07]
+:END:
+#+title: Sennheiser HD 6XX Headphones
+#+filetags: :concept:
+#+date: 2026-03-17
+

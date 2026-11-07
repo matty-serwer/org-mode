@@ -1,0 +1,679 @@
+:PROPERTIES:
+:ID:       925b92e6-a051-412f-8519-97dbfbd7a04e
+:REFLECT_ID: bc23d34a48604482b82e920652ac9d5e
+:CREATED:  [2026-01-28 Wed 05:37]
+:MODIFIED: [2026-04-08 Wed 20:22]
+:END:
+#+title: 💾 Work Sweet 🛠️
+#+filetags: :project:
+#+date: 2026-01-28
+- Work Sweet Documents
+  - [[id:e4937767-7962-433a-947c-13ab68c38c71][Work Sweet Sprint 1]]
+
+- The 2-Day MVP [[id:ba430817-d7ff-487b-8a65-15899e5111cc][Road Map]]: "Work Sweet"
+  -----
+  
+  -----
+  
+  Color Palette (Eye-Popping, Not Corporate Bland)
+  
+  #+begin_src css
+  /* Priority Colors - BOLD */
+  --priority-urgent: #EF4444    /* Red 500 */
+  --priority-high: #F97316      /* Orange 500 */
+  --priority-normal: #3B82F6    /* Blue 500 */
+  --priority-low: #9CA3AF       /* Gray 400 */
+  
+  /* Status Colors */
+  --status-todo: #8B5CF6        /* Purple 500 */
+  --status-progress: #F59E0B    /* Amber 500 */
+  --status-done: #10B981        /* Green 500 */
+  
+  /* Background */
+  --bg-primary: #0F172A         /* Slate 900 - Dark mode */
+  --bg-secondary: #1E293B       /* Slate 800 */
+  --bg-card: #334155            /* Slate 700 */
+  
+  /* Light mode */
+  --bg-primary-light: #F8FAFC   /* Slate 50 */
+  --bg-secondary-light: #F1F5F9 /* Slate 100 */
+  
+  #+end_src
+  Typography
+  
+  #+begin_src css
+  /* Make it readable */
+  font-family: 'Inter', system-ui, sans-serif
+  --text-lg: 1.125rem (titles)
+  --text-base: 1rem (body)
+  --text-sm: 0.875rem (meta)
+  
+  #+end_src
+  Card Design (Stands Out in Screenshots)
+  
+  #+begin_src tsx
+  <div className="
+    bg-slate-700 
+    border-l-4 border-blue-500    /* Priority color */
+    rounded-lg 
+    p-4 
+    shadow-lg                      /* Makes it pop */
+    hover:shadow-xl 
+    transition-shadow
+    hover:scale-[1.02]             /* Subtle grow */
+  ">
+    {/* Task content */}
+  </div>
+  
+  #+end_src
+  -----
+  
+  The Tech Stack (Finalized)
+  Frontend
+  
+  #+begin_src json
+  {
+    "dependencies": {
+      "next": "^15.1.3",
+      "react": "^19.0.0",
+      "tailwindcss": "^4.1.0",
+      "@tanstack/react-query": "^5.0.0",
+      "zustand": "^5.0.0",
+      "@dnd-kit/core": "^6.0.0",          // Drag and drop
+      "@tiptap/react": "^2.0.0",          // Slash commands
+      "date-fns": "^3.0.0",               // Date handling
+      "axios": "^1.6.0",
+      "lucide-react": "^0.300.0"          // Icons
+    }
+  }
+  
+  #+end_src
+  Backend
+  
+  #+begin_src xml
+  <dependencies>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-security</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>io.jsonwebtoken</groupId>
+          <artifactId>jjwt</artifactId>
+          <version>0.9.1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+      </dependency>
+  </dependencies>
+  
+  #+end_src
+  -----
+  
+  File Structure (For Your ADHD Brain)
+  
+  #+begin_src markup
+  taskflow-pro/
+  ├── backend/
+  │   └── src/main/java/com/taskflow/
+  │       ├── config/
+  │       │   ├── SecurityConfig.java
+  │       │   └── JwtConfig.java
+  │       ├── controller/
+  │       │   ├── AuthController.java
+  │       │   ├── TaskController.java
+  │       │   └── ProjectController.java
+  │       ├── model/
+  │       │   ├── User.java
+  │       │   ├── Task.java
+  │       │   ├── Project.java
+  │       │   └── ChecklistItem.java
+  │       ├── repository/
+  │       │   ├── UserRepository.java
+  │       │   ├── TaskRepository.java
+  │       │   └── ProjectRepository.java
+  │       ├── service/
+  │       │   ├── AuthService.java
+  │       │   ├── TaskService.java
+  │       │   └── ProjectService.java
+  │       └── dto/
+  │           ├── LoginRequest.java
+  │           ├── TaskRequest.java
+  │           └── TaskResponse.java
+  │
+  └── frontend/
+      └── src/
+          ├── app/
+          │   ├── (auth)/
+          │   │   ├── login/page.tsx
+          │   │   └── register/page.tsx
+          │   ├── (dashboard)/
+          │   │   ├── layout.tsx
+          │   │   ├── page.tsx (board view)
+          │   │   └── projects/[id]/page.tsx
+          │   └── api/ (Next.js API routes if needed)
+          ├── components/
+          │   ├── tasks/
+          │   │   ├── QuickTaskInput.tsx      ⭐ Your signature
+          │   │   ├── SlashCommandMenu.tsx     ⭐ Your signature
+          │   │   ├── TaskCard.tsx
+          │   │   ├── TaskBoard.tsx
+          │   │   └── FilterBar.tsx
+          │   ├── projects/
+          │   │   ├── ProjectSidebar.tsx
+          │   │   └── ProjectSelector.tsx
+          │   └── ui/
+          │       └── [your component library]
+          ├── lib/
+          │   ├── api.ts (axios instance)
+          │   ├── auth.ts
+          │   └── types.ts
+          └── stores/
+              ├── authStore.ts
+              └── taskStore.ts
+  
+  #+end_src
+  -----
+  
+  Hour-by-Hour Execution Checklist
+  Day 1 (Backend Day)
+  Day 2 (Frontend Day - The Magic)
+  -----
+  
+  The Demo Script (For Video/Proposals)
+  *30-Second Version:*
+  "Hi, I'm Mattie. This is Work Sweet - a project management tool I built to solve the cluttered-UI problem. Watch this: I type a task, hit enter, and it becomes a title. I can add details with slash commands. Everything's color-coded so you can parse your work at a glance. Built with Next.js and Java Spring Boot, deployed and ready to customize."
+  *2-Minute Version:*
+  -----
+  
+  README Template (Sells Itself)
+  
+  #+begin_src markdown
+  # Work Sweet
+  
+  **A modern, keyboard-first project management tool that doesn't suck.**
+  
+  ![TaskFlow Demo](./docs/demo.gif)
+  
+  ## ⚡ The Problem
+  
+  Traditional PM tools are cluttered. Creating a task requires clicking through 6 fields you don't need. The UI becomes unreadable with 20+ tasks.
+  
+  ## ✨ The Solution
+  
+  **Frictionless task creation**: Type, press enter, done. Title and description in one flow.
+  
+  **Slash commands**: Type `/priority` for quick actions. No hunting through menus.
+  
+  **Visual clarity**: Bold colors that actually help you parse information, not corporate beige.
+  
+  ![Task Creation](./docs/task-creation.gif)
+  
+  ## 🎯 Key Features
+  
+  ### 1. Intelligent Task Input
+  - Single textarea interface
+  - Press Enter to convert text to title
+  - Slash commands for quick properties
+  
+  ### 2. Slash Command Menu
+  - `/priority` - Set urgency level
+  - `/due` - Add deadline
+  - `/assign` - Assign team member
+  - `/checklist` - Create sub-tasks
+  
+  ### 3. Smart Filters
+  - Quick access to: All, My Tasks, Urgent, This Week
+  - One-click project filtering
+  
+  ### 4. Visual Priority System
+  - **Red**: Urgent - do now
+  - **Orange**: High - do today
+  - **Blue**: Normal - this week
+  - **Gray**: Low - when you can
+  
+  ## 🛠 Tech Stack
+  
+  **Frontend**
+  - Next.js 16 (App Router)
+  - React 19
+  - TypeScript
+  - Tailwind CSS 4
+  - React Query (data fetching)
+  - dnd-kit (drag & drop)
+  - Tiptap (rich text)
+  
+  **Backend**
+  - Java 17
+  - Spring Boot 3.x
+  - Spring Security (JWT)
+  - PostgreSQL
+  - JPA/Hibernate
+  
+  **Deployment**
+  - Frontend: Vercel
+  - Backend: Railway
+  - Database: Neon
+  
+  ## 🚀 Quick Start
+  
+  [Installation instructions]
+  
+  ## 📸 Screenshots
+  
+  ### Dashboard
+  ![Dashboard](./docs/dashboard.png)
+  
+  ### Task Creation
+  ![Task Creation](./docs/task-creation.png)
+  
+  ### Filters
+  ![Filters](./docs/filters.png)
+  
+  ## 🏗 Architecture
+  
+  
+  #+end_src
+  Frontend (Next.js) → API (Spring Boot) → Database (PostgreSQL) ↓ ↓ ↓ Vercel Railway Neon
+  
+  #+begin_src markup
+  
+  ## 🎨 Design Philosophy
+  
+  1. **Keyboard-first**: Power users shouldn't need a mouse
+  2. **Color-coded**: Information should be scannable
+  3. **Frictionless**: Remove unnecessary steps
+  4. **Fast**: No loading spinners
+  
+  ## 📝 API Documentation
+  
+  ### Authentication
+  
+  #+end_src
+  POST /api/auth/register POST /api/auth/login
+  
+  #+begin_src markup
+  
+  ### Tasks
+  
+  #+end_src
+  GET /api/tasks?status=todo&priority=urgent POST /api/tasks PUT /api/tasks/{id} DELETE /api/tasks/{id}
+  
+  #+begin_src markup
+  
+  ### Projects
+  
+  #+end_src
+  GET /api/projects POST /api/projects PUT /api/projects/{id}
+  
+  #+begin_src markup
+  
+  ## 🗺 Roadmap
+  
+  **Phase 2** (Future Enhancements)
+  - [ ] Keyboard shortcuts (Cmd+K command palette)
+  - [ ] Multiple view modes (Board, List, Calendar)
+  - [ ] Smart text import (paste list → auto-create tasks)
+  - [ ] Markdown formatting support
+  - [ ] Real-time collaboration
+  
+  ## 💼 About
+  
+  Built by **Mattie** as a portfolio project and freelance template.
+  
+  **Available for:**
+  - Custom implementations of this stack
+  - Full-stack development (React + Spring Boot)
+  - SaaS MVP development
+  - Enterprise application modernization
+  
+  📧 Contact: [your email]
+  🔗 Portfolio: [your site]
+  💼 LinkedIn: [your profile]
+  
+  ---
+  
+  ⭐ Star this repo if you found it useful!
+  
+  #+end_src
+  -----
+  
+  Post-Launch Strategy (Day 3+)
+  Day 3: Social Proof
+  Day 4-5: Portfolio Integration
+  Week 2: First Proposals
+  -----
+  
+  Why This Will Work
+  For Your ADHD:
+  ✅ *Hyperfocus target*: Building something you're actually excited about ✅ *Clear endpoint*: 2 days, defined features, then DONE ✅ *Instant gratification*: See results immediately ✅ *Low friction*: Using tools you know
+  For Clients:
+  ✅ *Proof of skill*: They see exactly what you can build ✅ *Modern stack*: Shows you know current tech ✅ *Original thinking*: The quick-input feature differentiates you ✅ *Production quality*: Deployed, working, professional
+  For You Long-term:
+  ✅ *Template*: Reuse for client projects ✅ *Confidence*: You built something impressive in 2 days ✅ *Story*: "Let me show you what I can do..." ✅ *Positioning*: "I build modern, user-focused tools"
+  -----
+  
+  The Pitch That Uses This
+  *Your new Upwork profile intro:*
+  I'm a full-stack developer who builds modern web applications that people actually enjoy using.
+  Recent project: TaskFlow Pro - a keyboard-first project management tool featuring frictionless task creation and slash commands. Built with Next.js 16 and Java Spring Boot. [Live demo →]
+  I specialize in: • Full-stack applications (React/Next.js + Spring Boot) • User-focused interface design • Clean, maintainable code • Fast delivery without sacrificing quality
+  5+ years experience including enterprise clients (Fortune 500). Available for MVP builds, feature development, and full-stack projects.
+  *Your proposals now start with:*
+  Hi [Name],
+  I just built a production SaaS starter [link to TaskFlow] showing the exact stack you need. The authentication, API structure, and deployment setup I used there would work perfectly for [their project].
+  Here's how I'd approach your project...
+  -----
+  
+  Final Checklist (Before You Start)
+  -----
+  
+  My Role (Your Accountability Partner)
+  *During your build:*
+  *After your build:*
+  -----
+  
+  Let's Go.
+  *When are you starting?* Give me a day/time and I'll check in.
+  Your "boring" project management idea is actually brilliant because you're solving *real problems you've experienced*. The quick-input feature alone will make clients go "oh shit, I want that."
+  You've got this. 🚀
+  - Core Philosophy (Your Vision)
+  - *"Keyboard-first, visually clear, frictionless task creation"*
+  - This differentiates you from every generic PM tool clone out there.
+  - What We're Building (Sprint Scope)
+    - *1. The Frictionless Task Creation (Your Idea #1)*
+      - Single textarea appears on "+" click
+      - Type text → hits Create = simple card with that text
+      - Type text → hits Enter = text becomes title, cursor moves to description
+      - *Why*: This is your signature feature. Instantly impressive. Easy to demo.
+      - *Complexity*: Medium, but worth it. 2-3 hours.
+    - *2. Slash Command Menu (Your Idea #2 - Simplified)*
+      - Type "/" in description → dropdown appears
+      - Options: =/priority=, =/due=, =/assign=, =/checklist=
+      - Select one → inline widget appears
+      - *Why*: Shows modern UX thinking. Notion/Linear vibes.
+      - *Complexity*: Medium. Use existing libraries (tiptap or slate). 3-4 hours.
+    - *3. Visual Clarity Through Color (Your Idea #6)*
+      - Priority-based color coding (Red=Urgent, Orange=High, Blue=Normal, Gray=Low)
+      - Status-based styling (Todo, In Progress, Done)
+      - Clean, bold colors that actually pop
+      - *Why*: Makes screenshots look professional. Easy win.
+      - *Complexity*: Low. 1 hour of good Tailwind work.
+    - *4. Quick Filters (Your Idea #3 - Simplified)*
+      - Bottom bar with: "All Tasks", "My Tasks", "Urgent", "This Week"
+      - Click to filter the board
+      - *Why*: Shows you understand real workflows. Easy to build.
+      - *Complexity*: Low. 1-2 hours.
+  - 🚀 PHASE 2 (Future Sprint) - The "Wow, You Built That?" Features
+    - *5. Keyboard Shortcuts & View Toggle (Your Idea #4)*
+      - =Cmd+K= → Quick search/command palette
+      - =Cmd+1/2/3= → Switch views (Board/List/Calendar)
+      - *Why*: Power users love this. Impresses technical clients.
+      - *When*: After you have 2-3 clients. This becomes your "premium" feature.
+    - *6. Smart Text Import (Your Idea #5)*
+      - Parse pasted text into tasks
+      - Detect keywords: "TODO:", "Sprint:", "- [ ]"
+      - *Why*: Brilliant for client demos. "Watch me paste this Slack message..."
+      - *When*: Sprint 2. Needs good parsing logic.
+    - *7. Markdown Support (Your Idea #2 - Full Version)*
+      - =#= = Priority, =@= = Assign, =!= = Due date, =[ ]= = Checklist
+      - *Why*: Power users will pay extra for this.
+      - *When*: Sprint 2-3. Polish feature.
+  - ❌ SKIP (For Now)
+    - Complex board animations
+    - Real-time collaboration (WebSockets)
+    - File attachments
+    - Time tracking
+    - Advanced permissions
+    - Mobile app
+  - The 2-Day Feature-Complete Build
+    - Day 1: Backend + Core Data (8-10 hours)
+      - Morning Session (4 hours)
+        - *Spring Boot API Setup*		
+          - #+begin_src markup
+            Hour 1: Project scaffolding
+            - Spring Initializr: Web, Security, JPA, PostgreSQL
+            - Basic project structure
+            - Docker Compose for local DB
+            
+            Hour 2-3: Data models
+            - User (id, email, password, name)
+            - Project (id, name, color, userId)
+            - Task (id, title, description, status, priority, dueDate, projectId, assignedTo)
+            - Checklist item (id, text, completed, taskId)
+            
+            Hour 4: Auth endpoints
+            - POST /api/auth/register
+            - POST /api/auth/login (returns JWT)
+            - JWT filter configuration
+            
+            #+end_src
+      - Afternoon Session (4 hours)
+        - *API Endpoints*
+          - #+begin_src markup
+            Hour 5-6: Task CRUD
+            - GET /api/tasks (with filters: status, priority, projectId)
+            - POST /api/tasks
+            - PUT /api/tasks/{id}
+            - DELETE /api/tasks/{id}
+            
+            Hour 7: Project endpoints
+            - GET /api/projects
+            - POST /api/projects
+            - PUT /api/projects/{id}
+            
+            Hour 8: Testing & seed data
+            - Postman collection
+            - Create demo data seeder
+            - Test all endpoints with auth
+            #+end_src
+      - Evening (2 hours - Optional)
+        - #+begin_src markup
+          - Clean up code
+          - Add basic error handling
+          - Write API documentation in README
+          - Deploy backend to Railway
+          #+end_src
+  - Day 2: Frontend Magic (10-12 hours)
+    - Morning Session (4-5 hours)
+      - *Foundation & Auth*
+        - #+begin_src markup
+          Hour 1: Next.js setup
+          - Create Next.js 16 project (App Router)
+          - Install: Tailwind, shadcn/ui, React Query, Zustand
+          - Set up your component library
+          - Auth store (Zustand)
+          
+          Hour 2: Auth pages
+          - /login - Clean, centered form
+          - /register - Same style
+          - JWT storage & axios interceptors
+          - Protected route wrapper
+          
+          Hour 3-4: Layout & Navigation
+          - Dashboard layout component
+          - Sidebar: Projects list, filters, user menu
+          - Top bar: Search, quick actions, profile
+          - Empty states with good copy
+          #+end_src
+    - Afternoon Session (5-6 hours) - *THE MONEY MAKER*
+      - *Your Signature Features*
+        - #+begin_src markup
+          Hour 5-6: The Frictionless Task Creator ⭐
+          Component: <QuickTaskInput />
+          
+          interface QuickTaskInputProps {
+            projectId?: string;
+            onTaskCreated: (task: Task) => void;
+          }
+          
+          Logic flow:
+          1. Single textarea, autofocused
+          2. User types: "Call Vermont people"
+          3. Presses Enter:
+             - "Call Vermont people" → title (bold, larger)
+             - Cursor now in description field
+             - Textarea expands
+          4. Presses Create:
+             - If only title: create simple task
+             - If title + description: create full task
+          
+          UI States:
+          - Empty: Placeholder "What needs to be done?"
+          - Typing title: Normal text
+          - After Enter: Title rendered above, description below
+          - With slash: Dropdown menu appears
+          
+          Time: 2.5 hours (this is your showpiece)
+          
+          Hour 7-8: Slash Command Menu ⭐
+          Component: <SlashCommandMenu />
+          
+          Commands:
+          - /priority → Dropdown: Urgent, High, Normal, Low
+          - /due → Date picker
+          - /assign → User selector
+          - /checklist → Converts to checklist mode
+          
+          Implementation:
+          - Use @tiptap/react (rich text editor)
+          - Or: Custom textarea with menu overlay
+          - State management: Show menu at cursor position
+          - Insert component on selection
+          
+          Time: 2 hours
+          
+          Hour 9: The Kanban Board
+          Columns: Todo, In Progress, Done
+          Cards show:
+          - Title (bold)
+          - Description preview
+          - Priority (color dot)
+          - Due date if exists
+          - Assigned avatar
+          
+          Features:
+          - Drag and drop (dnd-kit)
+          - Click to expand details
+          - Hover shows quick actions
+          
+          Time: 1.5 hours
+          
+          Hour 10: Color System ⭐
+          Your colors (these ACTUALLY pop):
+          - Urgent: bg-red-500 (not red-50, not red-100, ACTUAL RED)
+          - High: bg-orange-500
+          - Normal: bg-blue-500
+          - Low: bg-gray-400
+          - Done: bg-green-500 with strikethrough
+          
+          Implementation:
+          - Tailwind config with your palette
+          - Priority badge component
+          - Status indicator component
+          
+          Time: 30 min
+          #+end_src
+  - Evening Session (2 hours)
+    - *Quick Filters & Polish*
+      - #+begin_src markup
+        Hour 11: Bottom Filter Bar
+        <FilterBar />
+        Buttons:
+        - All Tasks (count)
+        - My Tasks (count)
+        - Urgent (count)
+        - This Week (count)
+        - [Project dropdown]
+        
+        Active state: Bold, underline, color
+        Updates board instantly
+        
+        Time: 1 hour
+        
+        Hour 12: Polish pass
+        - Loading states
+        - Error messages  
+        - Empty states
+        - Animations (smooth, not distracting)
+        - Dark mode toggle (quick win)
+        - Mobile responsive check
+        
+        Time: 1 hourThe Visual Design (What Makes Screenshots Pop)
+        #+end_src
+  - [ ] *9 AM*: Coffee. Music on. Spring Boot project created.
+  - [ ] *10 AM*: User/Task/Project models complete
+  - [ ] *11 AM*: Auth working (can register/login in Postman)
+  - [ ] *12 PM*: LUNCH. Walk. Clear head.
+  - [ ] *1 PM*: Task CRUD endpoints complete
+  - [ ] *2 PM*: Project endpoints complete
+  - [ ] *3 PM*: Test everything in Postman
+  - [ ] *4 PM*: Create demo data, test filters
+  - [ ] *5 PM*: Deploy to Railway. Test live.
+  - [ ] *6 PM*: DONE. Update backend README. Rest.
+  - [ ] *9 AM*: Coffee. Next.js project scaffolded. Libraries installed.
+  - [ ] *10 AM*: Auth pages complete. Can login.
+  - [ ] *11 AM*: Dashboard layout looking good
+  - [ ] *12 PM*: LUNCH.
+  - [ ] *1 PM*: QuickTaskInput component *IN PROGRESS* ⭐
+  - [ ] *2:30 PM*: QuickTaskInput *WORKING* ⭐
+  - [ ] *3 PM*: SlashCommandMenu *IN PROGRESS* ⭐
+  - [ ] *4:30 PM*: SlashCommandMenu *WORKING* ⭐
+  - [ ] *5 PM*: Kanban board rendering tasks
+  - [ ] *6 PM*: Filters working, colors popping
+  - [ ] *7 PM*: Polish pass, deploy to Vercel
+  - [ ] *8 PM*: Screenshots, demo video
+  - [ ] *9 PM*: DONE. Victory lap.
+  1. *Show the problem* (0:00-0:20)
+    - "Most PM tools are cluttered. Creating a task takes 6 clicks."
+  1. *Show your solution* (0:20-1:00)
+    - QuickTaskInput demo
+    - Slash command demo
+    - Drag a task across columns
+  1. *Show the tech* (1:00-1:30)
+    - "Full-stack: React frontend, Java Spring Boot backend"
+    - "Modern architecture, ready to customize"
+    - Quick code snippet
+  1. *The pitch* (1:30-2:00)
+    - "I built this in 2 days to show what I can do for your project"
+    - "Available for freelance work"
+    - Contact info
+  - [ ] LinkedIn post with demo GIF
+  - [ ] [[dev.to][dev.to]] article: "Building a Modern PM Tool in 2 Days"
+  - [ ] Tweet thread showing features
+  - [ ] Email 3 friends: "Hey, built this, thoughts?"
+  - [ ] Add to Upwork portfolio as featured work
+  - [ ] Update resume: "Personal project: Work Sweet"
+  - [ ] Create case study page on Lupine Tech Design site
+  - [ ] Use TaskFlow in every proposal:
+    "Here's a full-stack app I built recently. I can adapt this architecture to build [client's need]. The task creation system I developed here could be customized for [their use case]."
+  - [ ] Java 17+ installed
+  - [ ] Node 18+ installed
+  - [ ] PostgreSQL running (or Docker)
+  - [ ] Vercel account ready
+  - [ ] Railway account ready
+  - [ ] GitHub repo created: =taskflow-pro=
+  - [ ] Calendar blocked: 2 full days
+  - [ ] Phone in another room
+  - [ ] Music playlist ready
+  - [ ] Water bottle full
+  - Send me hourly updates (even just "Hour 3: Auth working ✓")
+  - Screenshot when you hit a win
+  - Message if you get stuck (I'll debug with you)
+  - Celebrate when you finish
+  - I'll review your README
+  - Suggest improvements
+  - Help write your first 3 proposals
+  - Keep you accountable on applications

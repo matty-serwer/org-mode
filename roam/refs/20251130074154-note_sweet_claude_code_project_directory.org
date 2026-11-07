@@ -1,0 +1,87 @@
+:PROPERTIES:
+:ID:       6fa28969-68fc-4b6b-85b7-adeaa4a76dd2
+:REFLECT_ID: ade18fe4d6f94f9ba327eb4ac0caa361
+:CREATED:  [2025-11-30 Sun 07:41]
+:MODIFIED: [2025-11-30 Sun 09:58]
+:END:
+#+title: Note Sweet Claude Code project
+#+filetags: :ref:directory:
+#+date: 2025-11-30
+* [[id:95ed315f-208f-40a1-97b5-325433227189][Note Sweet]] [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]] project
+#+begin_src markup
+note-sweet/
+├── .claude/
+│ └── CLAUDE.md # Claude Code rules (this project's conventions)
+│
+├── src/
+│ ├── components/
+│ │ ├── Editor/
+│ │ │ ├── BulletEditor.tsx # Main Remirror editor wrapper
+│ │ │ ├── BulletNode.tsx # Single bullet item component
+│ │ │ └── extensions/
+│ │ │ ├── BulletExtension.ts # Remirror extension: bullet lists
+│ │ │ ├── LinkExtension.ts # Remirror extension: wiki-links
+│ │ │ └── BacklinksExtension.ts # Remirror extension: backlink tracking
+│ │ │
+│ │ ├── Sidebar/
+│ │ │ ├── NotesTree.tsx # Hierarchical notes navigation
+│ │ │ └── BacklinksPanel.tsx # Shows notes linking to current note
+│ │ │
+│ │ └── Layout.tsx # Main app shell (sidebar + editor)
+│ │
+│ ├── store/
+│ │ ├── notesStore.ts # Zustand: notes CRUD + persistence
+│ │ ├── editorStore.ts # Zustand: editor UI state (selection, focus)
+│ │ └── linksStore.ts # Zustand: cached link graph
+│ │
+│ ├── hooks/
+│ │ ├── useLocalStorage.ts # Persist non-critical state locally
+│ │ └── useRemirrorEditor.ts # Remirror setup and config hook
+│ │
+│ ├── lib/
+│ │ ├── markdown.ts # Parse/serialize bullets to Markdown
+│ │ ├── linkParser.ts # Extract links from text content
+│ │ └── db.ts # Tauri invoke wrappers for DB commands
+│ │
+│ ├── types/
+│ │ └── index.ts # Shared TypeScript interfaces
+│ │
+│ ├── App.tsx # Root component, routes
+│ ├── main.tsx # React entry point
+│ └── index.css # Tailwind imports + minimal overrides
+│
+├── src-tauri/
+│ ├── src/
+│ │ ├── main.rs # Tauri app bootstrap
+│ │ ├── lib.rs # Module exports
+│ │ │
+│ │ ├── commands/
+│ │ │ ├── mod.rs # Command module exports
+│ │ │ ├── notes.rs # CRUD: create, read, update, delete notes
+│ │ │ ├── links.rs # Query outgoing links from a note
+│ │ │ └── backlinks.rs # Query incoming links to a note
+│ │ │
+│ │ ├── db/
+│ │ │ ├── mod.rs # Database module exports
+│ │ │ ├── schema.sql # SQLite table definitions
+│ │ │ └── migrations.rs # Database initialization logic
+│ │ │
+│ │ └── config.rs # App configuration (paths, settings)
+│ │
+│ ├── Cargo.toml # Rust dependencies
+│ ├── Cargo.lock # Rust lockfile
+│ ├── tauri.conf.json # Tauri config (window, permissions, build)
+│ └── icons/ # App icons for macOS
+│
+├── public/ # Static assets (favicon, etc.)
+│
+├── vite.config.ts # Vite configuration
+├── tsconfig.json # TypeScript config (strict mode)
+├── tsconfig.node.json # TypeScript for Vite config
+├── tailwind.config.ts # Tailwind configuration
+├── postcss.config.js # PostCSS for Tailwind
+├── package.json # npm dependencies
+├── package-lock.json # npm lockfile
+├── .gitignore # Git ignore patterns
+└── README.md # Project documentation
+#+end_src

@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       9437b206-6128-401f-8e60-ae1fdfa2daf0
+:REFLECT_ID: 14022026
+:CREATED:  [2026-02-11 Wed 15:33]
+:MODIFIED: [2026-02-14 Sat 07:58]
+:END:
+#+title: Sat, February 14th, 2026
+#+filetags: :daily:
+#+date: 2026-02-11
+- Build Offline Uncensored [[id:98cca3c3-2cac-410d-b120-02814ee6c853][Local LLM]]
+  1. *Introduction and Overview*
+  2. *Installing Ollama for Easy Local AI Models*
+  3. *Running Your First Local AI Model*
+  4. *Understanding Limitations of Basic Local Models*
+  5. *Setting Up Windows Subsystem for Linux (WSL)*
+  6. *Cloning Private GPT Repository*
+  7. *Setting Up Python Environment*
+  8. *Installing Poetry for Dependency Management*
+  9. *Installing Private GPT Dependencies*
+  10. *Running Private GPT*
+  11. *Uploading and Using Your Own Data with RAG*
+  12. *Fine-Tuning and Customizing*
+  -----
+  - Understand that the AI runs locally on your computer, is uncensored, and requires no internet connection.
+  - The goal is to have a private AI that does not share your data with external companies. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=10][(00:00:10)]]
+  - Download and install Ollama, which simplifies downloading and running AI models.
+  - Ollama is available for Mac, Linux, and Windows.
+  - Use the command =ollama run <model_name>= to run an uncensored AI model locally. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=150][(00:02:30)]]
+  - After installing Ollama, pull an uncensored model by running the appropriate command.
+  - Test the AI by giving it prompts; it will respond without internet or censorship.
+  - Example: Ask it to create a Python script or other tasks. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=225][(00:03:45)]]
+  - Note that models like LLaMA are trained on public data and do not have access to your private documents or notes.
+  - To have a private AI trained on your own data, you need a more advanced setup using RAG (Retrieval Augmented Generation). [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=320][(00:05:20)]]
+  - On Windows, install WSL to run Linux (Ubuntu by default).
+  - Open command line and type =wsl= to install and access Linux environment. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=370][(00:06:10)]]
+  - Clone the Private GPT GitHub repository using =git clone <repo_url>=.
+  - Navigate into the directory with =cd privateGPT=.
+  - Check configuration files like =settings.yaml= to set model preferences (e.g., LLaMA 3.1). [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=420][(00:07:00)]]
+  - Install =pyenv= for managing Python versions.
+  - Use =pyenv= to install and set Python 3.11.14, which is required for Private GPT.
+  - Export necessary environment variables to =.bashrc=. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=480][(00:08:00)]]
+  - Install Poetry via curl command to manage Python dependencies.
+  - Add Poetry’s bin directory to your PATH environment variable.
+  - Configure Poetry to use Python 3.11. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=540][(00:09:00)]]
+  - Use Poetry to install prerequisites for the UI, LLaMA embeddings, and vector stores (used for document ingestion and RAG).
+  - Ensure Ollama is installed inside WSL and download the desired LLaMA model using curl commands. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=600][(00:10:00)]]
+  - Run Private GPT with the appropriate command.
+  - Access the UI by navigating to =localhost:8001= in your browser.
+  - The UI can be customized (e.g., renaming from Private GPT to Hivemind AI). [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=660][(00:11:00)]]
+  - Upload personal documents, PDFs, notes, or any files to the RAG system.
+  - Query the AI about your private data; it will search, summarize, and generate text based on your ingested files.
+  - Example: Ask about contents of a PDF or general questions; the AI will respond using your private knowledge base. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=750][(00:12:30)]]
+  - Use RAG to fine-tune the AI on your specific data for more accurate and relevant results.
+  - Customize prompts and summaries as needed. [[https://www.youtube.com/watch?v=SkEUXfv9sEo&t=810][(00:13:30)]]

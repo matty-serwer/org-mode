@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       c7681916-2bee-43f7-9228-153352c3783d
+:REFLECT_ID: 95e7b346d4b8449a90e801931fc65270
+:CREATED:  [2025-11-05 Wed 17:36]
+:MODIFIED: [2025-11-05 Wed 17:40]
+:END:
+#+title: Software Engineer - Tyler Technologies
+#+filetags: :project:applied:career:
+#+date: 2025-11-05
+- Type: #jobPosting  
+- Title: [[id:7fe51f98-7b34-438e-a437-bb4e65e30c21][Software Engineer]]
+- Company: [[id:217c796b-74ed-4c64-9fe1-75afc787ab70][Tyler Technologies]]
+- Link: [[https://www.linkedin.com/jobs/view/4319500466/?alternateChannel=search&eBP=CwEAAAGaVPOTLJhW4cqwjR8FhTOWBscvFd4pGJLNneh0JCaCjavM75TRWaREAKIig5zXyfKP85ykorxSzphoYzy52O6TqPM9E1LXSLg1CK6C2Kt9c3E3tjGW6KDopG_Fdw41601L32WFJMVmuS-jYxPhcie6Kc9CyS5aE391W8Dfyoe356d5ler4Bk2U-W6_AwuBkCcn2pJos6jvCTNFRXcoHPuT6y4vFikIDGbbOtWpex0vH4NERPT-JQpK33aahUBXokD0ob7j337xFUTqmPpfWPjdlaRKd7HPa1wiYahLBCCQpKsFIno4bDsZFBwb9szSw1K54YqLzzp81mLmMne9DZXmjF6TXFlQrOQ4X7JrzzMgkqb_voTVjtkvaLvLBqrRSaCgk-fTJAqusWVj940MVTmD97wAHKOf0XfxzJurOs_DT527UyE2A1vs3V8auCkHqhYcmqUISnrW1LjXtnK8tj7P9OIebo1CdWHgHgAyWnQlgzzGmG83taWa15Q&refId=hUuXYtvvdoXmkTmNKlZ%2Bdg%3D%3D&trackingId=HWOz6QtWffdZ8tEWoZJFeQ%3D%3D][Linkedin]]
+- Application Date: [[id:975332d2-0975-4dc8-b2d0-834aa2b1550e][11/5/2025]]
+- Status:  
+- *About the job*
+  - *Responsibilities*
+    - Build out applications and infrastructure for the Tyler suite of products, with a strong focus on customer satisfaction. This will include the development and execution of software tests and automated tests to ensure product stability.
+    - Participate in both agile and waterfall development environments, assist in sprint ceremonies as needed
+    - Work in a collaborative fashion with product teams to bring tangible results to market
+    - Aid Technical Support and other departments for deployment and run-time issues as needed, including identifying and implementing automated tests to improve the client experience
+    - Contribute to the continuous improvement of the internal processes
+    - Contribute to cloud migration efforts
+  - Qualifications
+    - BS/BA in Computer Science, Software Engineering or equivalent experience
+    - Experience with, or aptitude for, .NET and/or C# coding and SQL Server integrations
+    - Experience with automated tests, continuous deployment, and/or test-driven development
+    - 1-3 years of software design and development experience with conventional technologies
+    - Superior communication, analytical, and problem-solving skills is a must
+    - Demonstrated ability for effective multi-tasking and tracking deliverables and timelines
+    - Ability to be successful working on highly visible deliverables
+    - Demonstrated ability to successfully collaborate across team or division boundaries
+    - Familiarity with Linux, HTML5, JavaScript, .NET, SQL, Angular, and REST APIs is beneficial
+    - Experience with data modeling tools and web services is beneficial

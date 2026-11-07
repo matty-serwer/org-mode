@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       84dbf28d-02d1-46a9-9d75-678cc6e51192
+:REFLECT_ID: 1c138b2a42264f6ba966958d9364d34b
+:CREATED:  [2025-12-09 Tue 14:46]
+:MODIFIED: [2026-03-26 Thu 15:58]
+:END:
+#+title: #cancelled Subscription Service List
+#+filetags: :concept:cancelled:
+#+date: 2025-12-09
+* Subscription Service List
+- [[id:82457c91-52fe-4f9c-941f-2f23713d51da][Jetbrains]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+  - Pay Day: [[id:11160376-1af4-4dc8-abc1-42e84047dbe1][1st of the Month]]
+  - Price: $31.54
+  - Account Info
+    - Login: [[id:564eeb54-7dcf-4bca-a9f9-d37e670c0506][Matthew.Serwer@gmail.com]]
+    - URL: [[https://account.jetbrains.com/profile-details][https://account.jetbrains.com/profile-details]]

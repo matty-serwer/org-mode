@@ -1,0 +1,62 @@
+:PROPERTIES:
+:ID:       89dd16fe-96e5-465d-9291-4ff8aa7aa296
+:REFLECT_ID: 48eaa5882cba41e39c0b71dd7362cd16
+:CREATED:  [2025-11-17 Mon 17:36]
+:MODIFIED: [2025-11-17 Mon 19:31]
+:END:
+#+title: Medical Volunteer Index of Terminology
+#+filetags: :concept:dictionary:
+#+date: 2025-11-17
+* [[id:b4a0831f-116c-439b-b18f-6f3b7ead03ee][Medical]] Volunteer Index of [[id:a766647b-b1b4-4162-a667-6b54b1d2ae96][Terminology]]
+*** Core Terms
+- *Volunteer* *Physician*
+  - A licensed medical doctor who offers services without compensation, often in underserved or crisis-affected areas.
+- *Medical Mission*
+  - A temporary deployment of healthcare providers to deliver medical care, usually coordinated by a nonprofit or religious organization.
+- *Humanitarian Aid*
+  - Material or logistical assistance provided for humanitarian purposes, typically in response to crises including natural disasters or conflict.
+- *Global Health*
+  - A field of study, research, and practice that places a priority on improving health and achieving equity in health for all people worldwide.
+- *Non-Governmental Organization (NGO)*
+  - An independent group that operates aid programs in global health and disaster relief.
+*** Program Types
+- *Short-Term Medical Mission (STMM)*
+  - A project in which medical volunteers work abroad for a brief period (from a week up to a few months).
+- *Long-Term Placement*
+  - Assignments lasting several months to years, often focusing on sustainable impact and capacity building.
+- *Disaster Response Team*
+  - A group of specialists deployed rapidly to provide immediate care during emergencies (e.g., after earthquakes or epidemics).
+*** Permitting and Credentialing
+- *Licensure*
+  - Verification that a medical provider is licensed to practice in their home country; often required by host countries.
+- *Temporary Registration*
+  - Provision by a host nation for short-term licensure of international medical volunteers.
+- *Credentialing*
+  - The process of validating a physician's qualifications and professional background by host organizations.
+*** Ethical and Legal Considerations
+- *Scope of Practice*
+  - The procedures, actions, and processes permitted by law for a particular health professional.
+- *Informed Consent*
+  - The process of providing patients with relevant information to make informed healthcare decisions.
+- *Cultural Competence*
+  - The ability to understand, communicate with, and effectively interact with people across cultures.
+- *Medical Liability*
+  - Legal responsibility incurred by physicians for patient outcomes during volunteer work.
+*** Organizational & Financial Terms
+- *Sponsoring Organization*
+  - The group (e.g., NGO, church, foundation) that organizes and supports volunteers.
+- *In-Country Partner*
+  - Local organization or healthcare facility collaborating with international volunteers.
+- *Cost-Sharing*
+  - Financial model where expenses (travel, lodging) are divided between volunteers and sponsors.
+- *Tax Deductible*
+  - Expenses that may be claimed as deductions under IRS rules for charitable work.
+*** Popular Organizations
+- *Doctors Without Borders (Médecins Sans Frontières/MSF)*
+  - International medical humanitarian organization.
+- *Operation Smile*
+  - Provides free cleft lip and palate surgery in low-resource countries.
+- *Project HOPE*
+  - Provides medical training and health education globally.
+- *Partners In Health*
+  - Focuses on providing a preferential option for the poor in health care.

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       51a75f17-2f06-4197-ae90-5c72e28137ca
+:REFLECT_ID: 34b3300d289f450caa2fa81af5be3ed7
+:CREATED:  [2025-12-12 Fri 00:37]
+:MODIFIED: [2026-01-31 Sat 19:44]
+:END:
+#+title: 👩🏻‍🎤 Audio Lyrics
+#+filetags: :concept:
+#+date: 2025-12-12
+* [[id:09060d0b-267e-40eb-8ae7-d6459adf339d][👩🏻‍🎤 Audio]] Lyrics

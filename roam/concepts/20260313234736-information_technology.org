@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2c4f9123-31e7-44f9-a792-663d2f27373b
+:REFLECT_ID: 2d56a9eb88d4442eb8c852dc5894f82e
+:CREATED:  [2026-03-13 Fri 23:47]
+:MODIFIED: [2026-03-13 Fri 23:47]
+:END:
+#+title: Information Technology
+#+filetags: :concept:
+#+date: 2026-03-13
+

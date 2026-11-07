@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f06e612f-a44b-4011-b784-791e27f7014e
+:REFLECT_ID: ec67491cf5474bb5beda59469aabdbb4
+:CREATED:  [2025-11-30 Sun 21:24]
+:MODIFIED: [2026-03-17 Tue 09:07]
+:END:
+#+title: Harmon Curve
+#+filetags: :concept:
+#+date: 2025-11-30
+

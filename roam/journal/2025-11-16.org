@@ -1,0 +1,146 @@
+:PROPERTIES:
+:ID:       35068cb6-fe37-4dd8-b6da-14c183dd10f4
+:REFLECT_ID: 16112025
+:CREATED:  [2025-11-16 Sun 17:37]
+:MODIFIED: [2025-11-16 Sun 22:51]
+:END:
+#+title: Sun, November 16th, 2025
+#+filetags: :daily:prompt:
+#+date: 2025-11-16
+- [[id:1ec57823-df3f-499a-916f-81f2e8ff48a1][Morg]] Brainstorming
+  - In task view, it will break down tasks by hooks automatically
+  - Inline bullet to task
+    - Next to each tag a plus and minus on hover
+    - Plus makes the task a tag category, which is a special more visually commanding list at the top of the task page.
+    - Minus removes tag from list contention, placing it in a bin of tags which are attached to tasks, but have been demoted, so they can easily be re added.
+    - 
+  -  Hooks, (tag, note reference combo)
+    - Hooks always act like tags, but upgraded every a note has the same name
+    - Hooks are automatically linked whenever they swear in the app. 
+    - A hook is a reference point. Whatever you context to it, the hook becomes that as well. Tag , Note pointer, task category
+  - Research for Making a [[id:1ec57823-df3f-499a-916f-81f2e8ff48a1][Morg]] App:
+    - [[id:ba8ecef1-5cbe-42a0-9781-06bbd3bb5504][Functional Properties of Roam Research: User Story Perspective #schema]]
+- Practicing [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]]
+  Tutorial Video. This is that writer guy.
+  [[https://www.youtube-nocookie.com/embed/bDlKJv0er_I][youtube: https://www.youtube-nocookie.com/embed/bDlKJv0er_I]]
+
+- [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] workflow research
+  -  3 [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] workflows
+    - SETUP: I am an emacs noob running Doom Emacs in Evil Mode. I am comming from VS Code and would like to know the earth shattering differences, both in workflow actions, and in how the workspace appears to the user.
+    - TASK: Can you give me a timeline demonstration of 3 dfferent workflows for software development. These workflows should be brief but center around tools that Full Stack developers prefer to use in Doom Emacs.
+    - I don't necessarily want to see a VS Code emulation, I want to wrap my head around the varying options for coding with file/directory navigation, window management, buffer management, terminal.
+    - Use this to demonstrate a user using various Doom Emacs native and common plugin tools
+    - Each workflow should show a different way that a full stack developer can accomplish the following Next.js JavaScript Project Issue: 
+      1. Create a new utility file =src/utils/greeting.js= that exports a function to generate a greeting message based on the current time of day (Good Morning, Good Afternoon, Good Evening)
+      1. Import and use this function in =src/pages/Home.jsx= to display the greeting
+      1. Update =src/styles/home.css= to style the welcome message with a larger font size and centered alignment
+      1. Run the development server
+      1. While the dev server is running, check for linting errors
+      1. Fix any linting errors that appear
+      1. Verify the greeting displays correctly on the home page in your browser
+      1. check the diff
+      1. Push to github
+    - Assume the user has already been working on this project in their doom emacs setup
+    - For each step that the user takes include the following:
+      - single line description
+      - key commands pressed (!Doom Emacs in Evil mode)
+      - a very basic text representation of what is on the User's screen. Whatever format will blend efficiency with my ability to understand what they woulde be looking at. 
+    - show these 3 for every step, even if the screen stays the same.
+    - do not dive into extra explanations of what each tool does in the workflow description. instead make a short dictionary at the bottom that states in one or two sentences what the tool does. 
+    - Please ask me one round of questions (3 max) before researching if we may be missing a key learning opportunity. 
+  - Ugh. Crap results. Link was broken and the outline i settled for was missing key steps. The following result is a hodgepodge and may or may not represent an accurate 3 workflows:
+    - Here’s an enhanced version of the bullet steps for each workflow, emphasizing *navigation actions*: how to change focus between windows and buffers, open/close splits, manage buffers, and move around efficiently in Doom Emacs with Evil mode. Each workflow covers the common navigation tasks you’ll need for full-stack work.
+      -----
+      
+      *Workflow 1: Treemacs + Vterm + Split Navigation*
+      -----
+      
+      *Workflow 2: Consult + LSP + Eshell Navigation*
+      -----
+      
+      *Workflow 3: Dired Navigation + Multi-window*
+      -----
+      
+      *Quick Navigation Tricks in Doom Evil Mode*
+      -----
+      
+      If you want a single “cheat sheet” for navigation hotkeys, just ask!
+      Sources
+      - *Switch to another window (split):*
+        - =C-w w= (cycle windows); or with Doom leader: =SPC w [h|j|k|l]= (move left/down/up/right)
+        - Highlights border of active window
+      - *Change to buffer in current window:*
+        - =SPC b b= (buffer list, use fuzzy search, press enter)
+        - New buffer shown in active window
+      - *Open a new buffer/file/split:*
+        - =SPC f f= (open file, fuzzy), or from Treemacs, select with arrow keys, =RET=
+        - Opens in present window by default
+      - *Create a new vertical/horizontal split:*
+        - Vertical: =SPC w v=; Horizontal: =SPC w s=
+        - Two windows, each shows buffer
+      - *Close current window/split:*
+        - =SPC w q=
+        - Removes that window, focus jumps to next
+      - *Close current buffer:*
+        - =:bd= (buffer delete); or =SPC b d=
+        - Buffer removes from list, window remains or closes to another buffer
+      - *Cycle through buffers:*
+        - =:bnext= / =:bprev= or =SPC b n= / =SPC b p=
+      - *Switch focus between Treemacs/sidebar and main:*
+        - Use =C-w w= repeatedly (or arrow key =SPC w h= to jump to left sidebar)
+      - *Quick jump with Evil:*
+        - =CTRL + o= (jump back), =CTRL + i= (jump forward)
+        - Moves cursor like Vim jumplist
+      - *Switch between open buffers:*
+        - =SPC b b= (consult, pick buffer), =SPC TAB= (toggle last buffer)
+        - Buffer jumps into active window
+      - *Create split and focus:*
+        - Vertical: =SPC w v=; Horizontal: =SPC w s=
+        - =SPC w h/j/k/l= to jump between splits
+      - *Open new file:*
+        - =SPC f f= (find file), enter name, press enter to open in active window
+        - For new file, =SPC f n= type filename
+      - *Close buffer (file):*
+        - =:bd= or =SPC b d=
+      - *Close window/split:*
+        - =SPC w q=
+      - *Move between windows:*
+        - Repeat =SPC w w=, or directional =SPC w h/j/k/l=
+      - *Jump to errors/lines from Flycheck/LSP:*
+        - Use =SPC e l= (to list errors) and =RET= to jump, or =:cnext=/=:cprev= for next/prev error
+      - *Focus Eshell and switch back:*
+        - After =SPC o e= (opens Eshell), change windows with above navigation or close Eshell with =exit=, or =SPC w q=
+      - *Navigate in Dired directory browser:*
+        - Move up/down: arrow keys or =j/k=
+        - Enter folder/visit file: =RET=
+        - Go up one directory: =-= or =u=
+      - *Open file in split:*
+        - Create split: vertical =SPC w v=, horizontal =SPC w s=
+        - Focus target window, open file with =RET= in Dired
+      - *Switch between splits:*
+        - =SPC w h/j/k/l= to move focus
+      - *Close current window/split:*
+        - =SPC w q=
+      - *Close buffer:*
+        - =:bd= or =SPC b d=
+      - *Cycle/open buffer:*
+        - =SPC b b= (buffer list)
+      - *Quick file creation in Dired:*
+        - =+= (new file/folder, in selected dir), type name, enter
+      - *Kill Dired buffer:*
+        - =:bd= or =SPC b d=
+      - *Switch focus with Evil mode:*
+        - Use =C-w w=; or leader directional =SPC w h/j/k/l=
+      - *Window cycling:* =C-w w=
+      - *Directional window move:* =SPC w h= (left), =SPC w l= (right), =SPC w k= (up), =SPC w j= (down)
+      - *Buffer prompt:* =SPC b b=
+      - *Close window:* =SPC w q=
+      - *Close buffer:* =SPC b d=
+      - *Split horizontally:* =SPC w s=
+      - *Split vertically:* =SPC w v=
+      - *Switch last buffer:* =SPC TAB=
+      - *Search project:* =SPC /=
+      - *Switch tab/workspace (if using tabs):* =SPC t n= (next tab), =SPC t p= (prev tab)
+      - *Undo window layout:* =SPC w u=
+  - Practice notes
+    - SPC f f > Find File:

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       29050242-02d1-4b05-b578-e882fe18cc87
+:REFLECT_ID: 1abf1bbcd81c4833b8fe355c276169c8
+:CREATED:  [2026-04-08 Wed 21:15]
+:MODIFIED: [2026-04-08 Wed 21:15]
+:END:
+#+title: MIDIMonster
+#+filetags: :concept:
+#+date: 2026-04-08
+

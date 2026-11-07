@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       98cca3c3-2cac-410d-b120-02814ee6c853
+:REFLECT_ID: 9a2c1c9def214239a8933f7ea2305cda
+:CREATED:  [2026-02-14 Sat 07:57]
+:MODIFIED: [2026-02-22 Sun 20:39]
+:END:
+#+title: Local LLM
+#+filetags: :concept:
+#+date: 2026-02-14
+

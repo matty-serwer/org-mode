@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0161d257-ce32-4a2b-ac05-b02bdabfc46d
+:REFLECT_ID: c4e5179223f44e659af63dfa576eadb0
+:CREATED:  [2026-03-09 Mon 18:09]
+:MODIFIED: [2026-03-09 Mon 18:09]
+:END:
+#+title: Walt Whitman
+#+filetags: :concept:
+#+date: 2026-03-09
+

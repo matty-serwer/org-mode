@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       9d8ef3aa-e3ec-4a2d-b1a3-23e04003f3a8
+:REFLECT_ID: 16012026
+:CREATED:  [2026-01-16 Fri 05:34]
+:MODIFIED: [2026-01-17 Sat 04:33]
+:END:
+#+title: Fri, January 16th, 2026
+#+filetags: :daily:
+#+date: 2026-01-16
+- [[id:40571aed-6eee-4172-aeb1-2637c61c3d18][Application Concept]]
+  - Intuitive note taking software
+    - Autocomplete links
+    -  

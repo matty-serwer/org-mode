@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5b676a4d-9c12-42c2-aeaf-f36f04146901
+:REFLECT_ID: 095a97fceea5486390cc2a87f9740f25
+:CREATED:  [2026-03-06 Fri 19:51]
+:MODIFIED: [2026-03-06 Fri 19:51]
+:END:
+#+title: Shure ULXD wireless sync
+#+filetags: :concept:
+#+date: 2026-03-06
+

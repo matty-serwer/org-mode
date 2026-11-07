@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bddcaced-ec14-42cb-a72a-8a6273f8b74f
+:REFLECT_ID: 5e79db6a2a534c29b773ad39d9d8eb90
+:CREATED:  [2025-11-01 Sat 06:57]
+:MODIFIED: [2025-11-01 Sat 06:57]
+:END:
+#+title: Keyboard Keys
+#+filetags: :concept:
+#+date: 2025-11-01
+

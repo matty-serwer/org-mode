@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       420774fd-0445-45b2-aed9-8163f8cbc7fb
+:REFLECT_ID: 4832a2c5ed2e4dadb961f00eb1b9060b
+:CREATED:  [2026-02-26 Thu 10:29]
+:MODIFIED: [2026-02-26 Thu 10:29]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-02-26
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8913796f-06b8-4c8f-88ec-33e2ca631938
+:REFLECT_ID: 2af13dd84d3246c78aea5bad1a7eb933
+:CREATED:  [2026-03-17 Tue 11:44]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Budget
+#+filetags: :concept:
+#+date: 2026-03-17
+

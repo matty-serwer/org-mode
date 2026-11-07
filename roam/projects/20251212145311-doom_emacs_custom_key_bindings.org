@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       9bf8f353-bd1f-4392-bcf2-ba438ea8d9c9
+:REFLECT_ID: a584e208557f4ffc8682c29001e82620
+:CREATED:  [2025-12-12 Fri 14:53]
+:MODIFIED: [2026-01-28 Wed 05:06]
+:END:
+#+title: 💾 💥 Doom Emacs Custom Key Bindings
+#+filetags: :project:
+#+date: 2025-12-12
+* 💾 💥 [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Custom Key Bindings
+- LTD Custom Key Bindings
+  - *Reference Prefix* (=SPC r=)
+    - =SPC r c= — CSS references
+    - =SPC r j= — Java references
+    - =SPC r r= — React TS refs
+  - *Visual/Window Prefix* (=SPC v=)
+    - =SPC v v= — Vertical split with new buffer
+    - =SPC v -= — Horizontal split with new buffer
+  - *Window Navigation* (global)
+    - =⌘-h= — Move to left window
+    - =⌘-j= — Move to down window
+    - =⌘-k= — Move to up window
+    - =⌘-l= — Move to right window

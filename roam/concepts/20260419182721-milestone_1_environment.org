@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fbc5505a-92f8-4670-a220-43f85fc5dc4a
+:REFLECT_ID: a203c48bdfd140cc8232dc40343daa7a
+:CREATED:  [2026-04-19 Sun 18:27]
+:MODIFIED: [2026-04-19 Sun 18:27]
+:END:
+#+title: Milestone 1: Environment
+#+filetags: :concept:
+#+date: 2026-04-19
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0f8e63e4-fe3f-47a2-9d28-26d7ef8420c5
+:REFLECT_ID: 423b165fdad14e7fa0ae2e086c446a92
+:CREATED:  [2025-11-02 Sun 10:29]
+:MODIFIED: [2025-11-02 Sun 10:29]
+:END:
+#+title: Manual
+#+filetags: :concept:
+#+date: 2025-11-02
+

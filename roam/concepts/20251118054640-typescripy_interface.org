@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2bfd8ca3-1334-4985-91d7-8215bdb86cac
+:REFLECT_ID: 40caa159377046c5af57132d30991b78
+:CREATED:  [2025-11-18 Tue 05:46]
+:MODIFIED: [2025-11-18 Tue 05:46]
+:END:
+#+title: Typescripy Interface
+#+filetags: :concept:
+#+date: 2025-11-18
+

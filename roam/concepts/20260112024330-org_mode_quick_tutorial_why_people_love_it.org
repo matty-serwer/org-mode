@@ -1,0 +1,314 @@
+:PROPERTIES:
+:ID:       76a6d0e7-146d-4539-8e55-8b5a6e7a6a04
+:REFLECT_ID: fafbd34157c841e9a38fbe046788b027
+:CREATED:  [2026-01-12 Mon 02:43]
+:MODIFIED: [2026-01-12 Mon 02:52]
+:END:
+#+title: Org Mode Quick Tutorial: Why People Love It
+#+filetags: :concept:
+#+date: 2026-01-12
+** The Basics
+*Quick Navigation & Folding*
+#+begin_src markup
+TAB          - Cycle visibility of current heading (folded → children → all)
+S-TAB        - Cycle visibility of entire document
+C-c C-n/p    - Next/previous heading
+C-c C-u      - Go up to parent heading
+
+#+end_src
+*Basic Structure* - Org files are just plain text with special markup:
+#+begin_src org
+* Top Level Heading
+** Second Level Heading
+*** Third Level
+Some content here
+
+- bullet list item
+- another item
+
+1. Numbered list
+2. Another item
+
+#+end_src
+-----
+
+* The "Killer Features" That Make People Rave
+** 1. *TODO Management & Task Tracking*
+#+begin_src org
+* TODO Set up authentication for Next.js app
+  DEADLINE: <2026-01-15 Wed>
+  :PROPERTIES:
+  :EFFORT:   2:00
+  :END:
+  
+** TODO Research Auth providers
+** DONE Set up NextAuth.js
+   CLOSED: [2026-01-10 Fri 14:30]
+** IN-PROGRESS Configure OAuth providers
+
+#+end_src
+*Quick commands:*
+- =SPC m t= (or =C-c C-t=) - Cycle TODO states (TODO → DONE → none)
+- =Shift + →/←= - Cycle through TODO states
+- =C-c C-d= - Set deadline
+- =C-c C-s= - Schedule a task
+-----
+
+* Core Org-Mode Magic
+Let me show you why people lose their minds over Org Mode:
+** 1. *Outlining & Folding* (The Gateway Drug)
+#+begin_src org
+* Project: Lupine Tech Portfolio
+** TODO Design landing page
+   DEADLINE: <2026-01-15>
+** IN-PROGRESS Build component library
+   - [X] Button components
+   - [ ] Form components
+   - [ ] Card components
+** DONE Research competitors
+   CLOSED: [2026-01-11]
+
+#+end_src
+*Try this now:*
+- =TAB= on a heading = collapse/expand that section
+- =S-TAB= (Shift+Tab) = cycle through folding levels for entire document
+- =za= in normal mode (or =TAB= on heading) = toggle fold/unfold
+This alone is game-changing for managing large documents.
+-----
+
+** 🎯 The Killer Features
+*** 1. *TODO Management That Actually Works*
+Type this in your org file:
+#+begin_src org
+* TODO Build user authentication
+** TODO Set up JWT tokens
+** TODO Create login form
+** DONE Research bcrypt
+   CLOSED: [2025-01-11 Sat 14:30]
+** IN-PROGRESS Implement password hashing
+
+#+end_src
+*Key commands:*
+- =SPC m t= (or =C-c C-t=) - Cycle through TODO states (TODO → DONE → none)
+- =SPC m d s= - Schedule a task (set a deadline)
+- =SPC m d d= - Add deadline
+- =C-c C-c= - Toggle checkbox =[ ]= to =[X]=
+Try this:
+#+begin_src org
+* TODO Fix the navbar bug
+  DEADLINE: <2026-01-15>
+  - [ ] Reproduce the issue
+  - [ ] Identify root cause
+  - [ ] Implement fix
+  - [ ] Test on mobile
+
+#+end_src
+*** What Makes It Magical:
+*1. TODO Management* - Press =SPC m t= (or =C-c C-t= in vanilla Emacs) to cycle through TODO states:
+#+begin_src markup
+* TODO Write documentation
+* DOING Write documentation  
+* DONE Write documentation
+
+#+end_src
+*2. Scheduling & Deadlines*
+#+begin_src org
+* TODO Fix authentication bug
+  SCHEDULED: <2025-01-15 Wed>
+  DEADLINE: <2025-01-20 Mon>
+
+#+end_src
+- =C-c C-s= to schedule
+- =C-c C-d= to set deadline
+- =C-c a a= to see your agenda view
+*3. Code Blocks (The Game Changer)* This is where Org Mode gets magical:
+#+begin_src org
+#+begin_src javascript
+const greeting = "Hello from Org Mode!";
+console.log(greeting);
+#+end_src
+
+#+end_src
+Hit =C-c C-c= inside a code block to *execute it directly* and see results inline. Works with dozens of languages.
+*4. Quick Capture (*=SPC X=*)*
+#+begin_src markup
+SPC X    - Opens capture menu
+- Pick a template
+- Type your note/task
+- Save it (C-c C-c)
+
+#+end_src
+*5. Agenda Views* (=SPC o A= or =SPC n a=) See all your TODOs, deadlines, and scheduled items across all your org files in one view.
+** ⚡ The "Aha!" Moments
+Here's what makes people rave:
+*** 1. *Outlining on Steroids*
+#+begin_src org
+* Project: Lupine Portfolio Site
+** NEXT Design homepage hero section
+   SCHEDULED: <2025-01-12 Sun>
+   - [ ] Choose color scheme
+   - [ ] Draft copy
+   - [X] Research competitor sites
+** TODO Implement authentication
+   DEADLINE: <2025-01-15 Wed>
+   :PROPERTIES:
+   :ESTIMATED: 4h
+   :END:
+*** DONE Research NextAuth options
+*** IN-PROGRESS Set up Clerk
+*** TODO Configure OAuth providers
+
+#+end_src
+*Why it's powerful*: Press =TAB= on any heading to fold/unfold. You can see just high-level structure or drill into details instantly.
+*** 2. *Task Management (TODO Items)*
+#+begin_src org
+* TODO Fix responsive nav on mobile
+  SCHEDULED: <2025-01-15 Wed>
+  :PROPERTIES:
+  :EFFORT: 2:00
+  :END:
+  
+* DONE Set up Vercel deployment
+  CLOSED: [2025-01-10 Fri 14:30]
+  
+* IN-PROGRESS Implement Zustand store
+  DEADLINE: <2026-01-15 Wed>
+
+#+end_src
+Key commands:
+- =C-c C-t= - Cycle through TODO states (TODO → DONE)
+- =C-c C-s= - Schedule a task
+- =C-c C-d= - Set a deadline
+- =C-c C-c= - Toggle checkboxes in lists
+*** 3. *Tables & Spreadsheet Calculations* 📊
+Org-mode has built-in spreadsheet capabilities:
+#+begin_src org
+| Item          | Price | Quantity | Total |
+|---------------+-------+----------|-------|
+| Coffee        |  3.50 |        5 | 17.50 |
+| Sandwich      |  8.00 |        2 | 16.00 |
+| Total         |       |          | 29.50 |
+#+TBLFM: @4$2=vsum(@2..@3)
+
+#+end_src
+*Navigation & Formatting shortcuts:*
+- =TAB= on a heading = fold/unfold
+- =M-RET= = new heading at same level
+- =M-<arrow>= = promote/demote/move headings
+- =C-c C-t= = cycle TODO states
+- =C-c C-c= = toggle checkboxes
+- =C-c C-s= = schedule a task
+- =C-c C-d= = set deadline
+** 3. 🔗 *Links & Navigation* (The "Everything is Connected" Magic)
+#+begin_src org
+* Project Alpha
+  [[file:~/projects/alpha/README.md][Project README]]
+  [[https://github.com/mattie/project][GitHub Repo]]
+  
+  See also: [[Related Notes]] and [[Meeting Notes 2024-01]]
+  
+  Jump to: [[*Implementation Details][Jump to Implementation]]
+  
+** Implementation Details
+   ...content here...
+
+#+end_src
+*Try this:*
+- =C-c C-l= - Insert a link
+- =C-c C-o= - Open link at cursor
+- =SPC m l l= - Insert link (Doom Emacs shortcut)
+Links can point to:
+- Other org files: =[[file:~/notes/project.org]]=
+- Headings in files: =[[file:notes.org::*Heading Name]]=
+- Web URLs: =[[https://example.com][Link Text]]=
+- Files: =[[file:~/Documents/report.pdf]]=
+** 4. *Tags & Properties* (Organization Superpower)
+#+begin_src org
+* Meeting with Client :work:urgent:
+  :PROPERTIES:
+  :CLIENT: Acme Corp
+  :BUDGET: $50000
+  :END:
+
+#+end_src
+- =C-c C-q= to add tags
+- =C-c C-x p= to set properties
+- Search by tag: =C-c \= or =C-c /=
+** 5. *Agenda Views* (The Game Changer)
+This is where Org Mode becomes magical. It aggregates ALL your TODO items and scheduled tasks across ALL your org files into one unified view.
+#+begin_src org
+* TODO Finish portfolio site
+  DEADLINE: <2025-01-15 Wed>
+  
+* MEETING Client call
+  SCHEDULED: <2025-01-12 Sun 10:00-11:00>
+
+#+end_src
+- =C-c C-s= to schedule an item
+- =C-c C-d= to set a deadline
+- =C-c a a= to open the agenda (shows your week at a glance)
+- =C-c a t= to see all TODOs across all files
+** 6. *Capture Templates* (Quick Inbox)
+Press =SPC X= (in Doom) to quickly capture a thought without breaking flow:
+#+begin_src elisp
+;; In your config
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/inbox.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("n" "Note" entry (file+headline "~/org/notes.org" "Notes")
+         "* %?\n  %i\n  %a")))
+
+#+end_src
+** 7. *Code Blocks* (Literate Programming)
+#+begin_src org
+#+BEGIN_SRC javascript
+function hello() {
+  console.log("Hello from Org Mode!");
+}
+#+END_SRC
+
+#+end_src
+- =C-c C-c= to execute code blocks
+- =C-c '= to edit in a proper JS buffer
+- Mix documentation with executable code!
+** 8. *Tables* (Spreadsheet-lite)
+#+begin_src org
+| Name   | Hours | Rate | Total |
+|--------+-------+------+-------|
+| Design |    40 |  150 |       |
+| Dev    |    80 |  175 |       |
+|--------+-------+------+-------|
+| Total  |       |      |       |
+#+TBLFM: $4=$2*$3::@4$4=vsum(@2..@3)
+
+#+end_src
+- =TAB= to move between cells and auto-format
+- =C-c C-c= to recalculate formulas
+- It's like Excel but in plain text!
+** 9. *Export* (One Source, Many Formats)
+=C-c C-e= opens the export dispatcher:
+- =h o= → Export to HTML and open
+- =l o= → Export to PDF via LaTeX
+- =m= → Export to Markdown
+- Many more formats available
+-----
+
+* Why People Rave About Org Mode
+1. *Plain text future-proofing*: Your data isn't locked in proprietary formats
+1. *Everything in one place*: TODOs, notes, code, documentation
+1. *The Agenda*: Unified view of your entire life across multiple files
+1. *Keyboard-driven workflow*: No context switching to mouse
+1. *Infinite customization*: It grows with you
+1. *Literate programming*: Mix docs and code seamlessly
+1. *Link everything*: Your knowledge base becomes interconnected
+-----
+
+* Your Next Steps
+1. Start simple with a =todo.org= file
+1. Use it for a week with just TODO items
+1. Add scheduling when you're comfortable
+1. Set up agenda views
+1. Then explore capture templates
+1. Graduate to advanced features as needed
+The beauty is you can start simple and progressively discover features. It's not about using everything at once—it's about having tools available when you need them.
+Want me to help you set up a specific workflow for your Vet Sweet project or show you more advanced features?

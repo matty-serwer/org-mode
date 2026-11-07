@@ -1,0 +1,104 @@
+:PROPERTIES:
+:ID:       9b1a4822-e5e8-4c4c-bec1-295960234410
+:REFLECT_ID: ce8ed93679e84598987bf96e8e864244
+:CREATED:  [2026-01-17 Sat 09:08]
+:MODIFIED: [2026-01-17 Sat 15:16]
+:END:
+#+title: AV show world index
+#+filetags: :concept:
+#+date: 2026-01-17
+* Core job titles
+- *A1 – lead audio engineer*
+  Primary mixer for the event; designs the PA, runs the console during show, and owns the overall sound experience.[2][5][1]
+- *A2 – audio assistant / stage audio*
+  Assists A1 with RF mics, IEMs, cable runs, comms, stage patching, quick fixes, and sometimes monitors.[4][5][1]
+- *V1 – video engineer / switcher op*
+  Designs and runs the video system: router, ATEM or other switcher, cameras, projectors/LED, and show record/stream feeds.[6][7][8][2][4]
+- *V2 – video tech*
+  Assists V1 with camera shading, cabling, projection, playback and general video setup/strike.[8][4]
+- *L1 – lighting director/lead*
+  Leads lighting system design, patching, programming and operation of the console.[3][5][8]
+- *LD – lighting designer/director*
+  Designs the look: cues, colors, focus, and runs or supervises the lighting console during the show.[5][3]
+- *TD – technical director*
+  Calls the show on comms, gives cues (standby… roll… fade…), and keeps audio, video, lighting, and stage in sync.[7][3][6]
+- *Show caller / producer*
+  Focuses on schedule, run‑of‑show, and communicating client needs to the technical crew.[3][6]
+- *AV tech / utility / stagehand*
+  Generalist who helps set, cable, label, strike, and solve problems across departments.[1][4][3]
+-----
+
+** Audio: consoles, positions, concepts
+- *FOH (front of house)*
+  Main audience mix position and the engineer working there; usually the A1 on these gigs.[1][3]
+- *Monitors / MON world*
+  Mix position and system for what talent hears on stage (wedges or IEMs).[3][1]
+- *QSC TouchMix / Allen & Heath SQ-5*
+  Digital live mixers used as FOH/monitor desks; scenes, layers, and buses are key concepts to learn on these.[2][1]
+- *Bus / aux / subgroup / matrix*
+  Different routing paths inside the console used for monitors, recordings, front fills, etc.[2][1]
+- *RF coordination*
+  Planning and tuning wireless mics/IEMs so frequencies don’t step on each other; often an A2 or specialist like “Carlos.”[5][1]
+-----
+
+** Video: switchers, M/Es, graphics
+- *ATEM switcher*
+  Blackmagic Design live video switcher used to cut between cameras, slides, and videos, and to key lower thirds.[9][10]
+- *Program (PGM) vs Preview (PVW)*
+  Program is what the audience/stream sees; preview is the “next shot” you’re lining up.[7][8]
+- *M/E (mix/effects bus)*
+  Independent mix layers on the switcher; each M/E can have its own program, keys, and transitions.[10][9]
+- *Key / downstream key (DSK)*
+  Layer used to put graphics (like lower thirds) on top of video, often using an alpha channel.[11][9][10]
+- *Alpha channel / RGBA still*
+  Graphics file with transparency, required for clean keyed lower thirds and bugs in ATEM media pool.[9][10][11]
+- *Lower third*
+  Name/ID bar near the bottom of the screen with fade‑in/fade‑out timing, often auto‑timed around 5 seconds.[10][11][9]
+- *Graphics / GFX op*
+  The person running slide software and other visual assets into the switcher.[4][8]
+-----
+
+** Control, macros, and automation
+- *Elgato Stream Deck*
+  Hardware button panel used to fire cues like camera cuts, graphics, and playback.[12][13][14]
+- *Bitfocus Companion*
+  Software that turns Stream Deck buttons into powerful macros that can hit multiple devices at once.[13][14][12]
+- *Macro*
+  A programmed sequence of actions (for example: cut to CAM 1, take lower third, fade it out after 5 seconds).[14][12][13]
+- *Calling cameras*
+  Giving clear, numbered instructions to camera ops over comms, often done by the TD or V1.[8][7]
+-----
+
+** Show flow and client-facing terms
+- *Run of show (ROS)*
+  Line‑by‑line schedule of cues: walk‑in, intros, keynotes, Q&A, walk‑out, etc.[6][7]
+- *General session (GS)*
+  Main big room where keynotes and major presentations happen.[5][8][3]
+- *Breakout room*
+  Smaller rooms for sessions that run alongside the general session.[8][3][5]
+- *Strike*
+  Tearing down and packing gear after the event ends.[4][1][3]
+- *Client / talent / show site*
+  Client = paying company, talent = presenters/performers, show site = venue where the event happens.[6][7][3]
+Sources
+[1] Common AV Audio Visual and Event Positions and Industry Terms [[https://www.mindwarpepr.com/blogs/audio-visual-industry-news/av-audio-visual-and-event-positions-industry-terms][https://www.mindwarpepr.com/blogs/audio-visual-industry-news/av-audio-visual-and-event-positions-industry-terms]]
+[2] Positions and Roles in Event Production Explained [[https://nvision360.com/frequently-asked-questions/event-positions-roles/][https://nvision360.com/frequently-asked-questions/event-positions-roles/]]
+[3] Meet the Team: Understanding the Roles of your A/V Crew [[https://www.vipav.com/blog/meet-the-team-understanding-the-roles-of-your-a-v-crew][https://www.vipav.com/blog/meet-the-team-understanding-the-roles-of-your-a-v-crew]]
+[4] What Do All The AV Labor Positions Do - Endless Events [[https://helloendless.com/av-labor-positions/][https://helloendless.com/av-labor-positions/]]
+[5] Services, Audio and Visual Labor Staffing for Trade-Shows, AV ... [[https://corporateavlabor.com/services/][https://corporateavlabor.com/services/]]
+[6] Live Event Production Team | Painlessly Demystified | Run Of Show [[https://repertoireproductions.com/2019/05/14/event-production-demystified/][https://repertoireproductions.com/2019/05/14/event-production-demystified/]]
+[7] What Does a Video Engineer (V1) Do? - LASSO [[https://www.lasso.io/articles/what-does-a-video-engineer-v1-do/][https://www.lasso.io/articles/what-does-a-video-engineer-v1-do/]]
+[8] Explore Key Event AV Production Roles - The AV Department [[https://theavdept.com/event-av-production-roles/][https://theavdept.com/event-av-production-roles/]]
+[9] ATEM Constellation – Software Control | Blackmagic Design [[https://www.blackmagicdesign.com/products/atemconstellation/softwarecontrol][https://www.blackmagicdesign.com/products/atemconstellation/softwarecontrol]]
+[10] Software Control - ATEM Mini - Blackmagic Design [[https://www.blackmagicdesign.com/products/atemmini/software][https://www.blackmagicdesign.com/products/atemmini/software]]
+[11] How to Create & Use a Lower 3rd Graphic [with alpha] for ... - YouTube 
+[[https://www.youtube-nocookie.com/embed/M2r7_nxRHBY][youtube: https://www.youtube-nocookie.com/embed/M2r7_nxRHBY]]
+
+[12] Bitfocus Companion is a Free Cross-Platform Open-Source app for ... 
+[[https://www.youtube-nocookie.com/embed/zakLajaUZYY][youtube: https://www.youtube-nocookie.com/embed/zakLajaUZYY]]
+
+[13] BitFocus is the power behind Stream Deck. Create 700+ actions with ... 
+[[https://www.youtube-nocookie.com/embed/fAkp_5VmkVg][youtube: https://www.youtube-nocookie.com/embed/fAkp_5VmkVg]]
+
+[14] How to control live events with Bitfocus Companion and Stream Deck [[https://www.linkedin.com/posts/luke-westlake-tractus_when-it-comes-to-live-events-with-the-push-activity-7359247991351779331-SUsk][https://www.linkedin.com/posts/luke-westlake-tractus_when-it-comes-to-live-events-with-the-push-activity-7359247991351779331-SUsk]]
+[15] Lower thirds with black graphics on ATEM downstream key - Facebook [[https://www.facebook.com/groups/propresenters/posts/10162108161249976/][https://www.facebook.com/groups/propresenters/posts/10162108161249976/]]

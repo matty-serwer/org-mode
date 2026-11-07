@@ -1,0 +1,56 @@
+:PROPERTIES:
+:ID:       bb41e82c-c01e-4f02-9856-eeea032c785e
+:REFLECT_ID: adcf78ebdd2d4ba5a3912252502ef117
+:CREATED:  [2025-11-13 Thu 17:22]
+:MODIFIED: [2026-04-03 Fri 16:40]
+:END:
+#+title: My Body Measurements for Clothing
+#+filetags: :concept:
+#+date: 2025-11-13
+* My Body [[id:b3d6e288-d523-4359-9b41-ff11cde7afa4][Measurements]] for [[id:6e1bcba8-2b7d-48e2-b632-9cb6d9a41ef9][Clothing]]
+- Inches
+  - Neck
+    - 17”
+    - Measured 16” tight, 16.5” comfortable
+  - Sleeve
+    - 38”
+      - Shoulder
+        - 9.5”
+      - To Elbow
+        - 16.25”
+      - To Waiste
+        - 12”
+  - Chest
+    - 39”
+  - Waist
+    - Men’s Pants Waist
+      - 32.5
+    - High Real Waist (Women’s)
+      - 30”
+  - Outseam
+    - 43”
+  - Inseam
+    - 33”
+- Centimeters
+  - Neck
+    - 43.18 cm
+    - Measured 40.64 cm tight, 41.91 cm comfortable
+  - Sleeve
+    - 96.52 cm
+      - Shoulder
+        - 24.13 cm
+      - To Elbow
+        - 41.28 cm
+      - To Waiste
+        - 30.48 cm
+  - Chest
+    - 99.06 cm
+  - Waist
+    - Men's Pants Waist
+      - 82.55 cm
+    - High Real Waist (Women's)
+      - 76.2 cm
+  - Outseam
+    - 109.22 cm
+  - Inseam
+    - 83.82 cm

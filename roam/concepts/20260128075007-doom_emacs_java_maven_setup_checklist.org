@@ -1,0 +1,94 @@
+:PROPERTIES:
+:ID:       6298d347-b3fa-477c-adc5-90526a3f75d9
+:REFLECT_ID: 58b3775075434388b7061858dd796d0f
+:CREATED:  [2026-01-28 Wed 07:50]
+:MODIFIED: [2026-01-28 Wed 07:50]
+:END:
+#+title: Doom Emacs Java Maven Setup Checklist
+#+filetags: :concept:
+#+date: 2026-01-28
+** Initial Setup
+- [ ] *Enable Java module in *=init.el=
+  - Uncomment =:lang java +lsp +tree-sitter=
+  - Run =doom sync= after changes
+- [ ] *Install LSP server*
+  - Eclipse JDT Language Server installs automatically on first Java file open
+  - Or manually: =M-x lsp-install-server RET jdtls=
+- [ ] *Configure Java in *=config.el=
+  
+  #+begin_src elisp
+  (after! lsp-java
+    (setq lsp-java-format-settings-url "path/to/eclipse-formatter.xml" ; optional
+          lsp-java-format-settings-profile "GoogleStyle" ; optional
+          lsp-java-save-actions-organize-imports t))
+  
+  #+end_src
+- [ ] *Install Maven CLI* (if not already)
+  - macOS: =brew install maven=
+  - Verify: =mvn --version=
+- [ ] *Set Java home* (in =config.el=)
+  
+  #+begin_src elisp
+  (setq lsp-java-java-path "/path/to/java"
+        lsp-java-configuration-runtimes '[(:name "JavaSE-17" :path "/path/to/jdk-17")])
+  
+  #+end_src
+- [ ] *Enable project management*
+  - Projectile works out-of-box with =pom.xml=
+  - Run =SPC p p= to test project detection
+** Essential Packages to Consider
+- [ ] *Enable magit* (Git integration) - usually enabled by default
+- [ ] *Enable format module* in =init.el= for auto-formatting
+- [ ] *Optional: Install *=mvn.el= for Maven tasks
+  
+  #+begin_src elisp
+  ;; In packages.el(package! mvn)
+  
+  #+end_src
+-----
+
+* Java Development Cheatsheet for Doom Emacs
+** Project Navigation (Coming from IntelliJ)
+Task IntelliJ Doom Emacs Open file =Cmd/Ctrl + Shift + N= =SPC .= or =SPC SPC= Find in project =Cmd/Ctrl + Shift + F= =SPC s p= Recent files =Cmd/Ctrl + E= =SPC f r= Project sidebar =Cmd/Ctrl + 1= =SPC o p= (neotree) or =SPC o P= (treemacs) Switch projects - =SPC p p=
+** Code Navigation
+Action Keybinding Notes Go to definition =g d= LSP-powered Go to implementation =g i= Find references =g r= Go back =C-o= Jump back in history Go forward =C-i= Jump forward Class outline =SPC s i= Shows methods/fields Symbol search =SPC s s= Current buffer Project-wide symbol =SPC s S=
+** Code Editing
+Action Keybinding Notes Auto-complete =C-SPC= or =TAB= Company-mode Show documentation =K= Hover docs (normal mode) Code actions =SPC c a= Refactoring, imports, etc. Organize imports =SPC c a= → select Auto-suggested Format buffer =SPC c f= Uses LSP formatter Rename symbol =SPC c r= Project-wide refactor Extract method =SPC c a= → Extract
+** Maven Operations
+*** Using LSP Commands
+- =SPC c x= - Execute command → search for "maven"
+- Common tasks via =M-x=:
+  - =lsp-java-spring-initializr= - Create Spring Boot project
+*** Using Terminal
+- =SPC o t= - Open terminal in project root
+- Run: =mvn clean install=, =mvn test=, etc.
+*** With mvn.el (if installed)
+- =M-x mvn-clean=
+- =M-x mvn-compile=
+- =M-x mvn-test=
+** Debugging
+Action Keybinding Start debugger =SPC o d= or =M-x +debugger/start= Toggle breakpoint =SPC c b= Step over =n= (in dap mode) Step into =i= Continue =c=
+*Setup DAP* (add to =config.el=):
+#+begin_src elisp
+(after! dap-mode
+  (require 'dap-java))
+
+#+end_src
+** Testing
+Action How Run test at point =SPC t t= Run all tests =SPC t a= Re-run last test =SPC t r=
+** Git (Magit)
+Action Keybinding Git status =SPC g g= Commit =c c= (in magit) Push =P p= (in magit) Pull =F p= (in magit) Diff file =SPC g d= Blame =SPC g b=
+** Workspace Management
+Action Keybinding Split vertical =SPC w v= Split horizontal =SPC w s= Close window =SPC w c= Switch window =SPC w w= or =C-w= + hjkl Switch buffer =SPC b b= Kill buffer =SPC b k=
+** Quick Tips for IntelliJ Users
+1. *Think in terms of prefixes*: =SPC c= = code actions, =SPC f= = file operations, =SPC g= = git, =SPC p= = project
+1. *Use *=SPC ?= to search all keybindings
+1. *Evil mode*: =i= to insert, =Esc= to normal mode (like IntelliJ's Vim plugin)
+1. *Maven builds*: Just use the terminal (=SPC o t=) - it's often fastest
+1. *Save often*: =:w= in normal mode or =SPC f s=
+** Common Gotchas
+- *First Java file takes time*: JDT Language Server downloads/indexes on first open
+- *Project not recognized*: Make sure =pom.xml= exists in project root
+- *LSP not starting*: =M-x lsp-doctor= to diagnose
+- *Slow completions*: JDT needs warmup time after startup
+Let me know if you need help configuring any specific workflow!

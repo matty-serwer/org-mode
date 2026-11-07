@@ -1,0 +1,154 @@
+:PROPERTIES:
+:ID:       4b177f4e-aa41-45fb-bbe2-dbb919f2e278
+:REFLECT_ID: fce8fe6776234037b0b25a10d728e3dc
+:CREATED:  [2025-11-30 Sun 09:32]
+:MODIFIED: [2025-11-30 Sun 09:33]
+:END:
+#+title: LEMR Basic Data Types & Road Map
+#+filetags: :concept:
+#+date: 2025-11-30
+* [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]] Basic [[id:e056c9d6-0ada-43d3-b0b2-0f9bef20cc60][Data Types]] & [[id:ba430817-d7ff-487b-8a65-15899e5111cc][Road Map]]
+- Tech Stack
+  - Next.js
+  - Zustand
+  - shadcn
+  - Spring Boot
+  - SA
+  - PostgreSQL
+*** Simplified data types (TypeScript)
+Use these minimal interfaces on the frontend and mirror them as JPA entities with UUID primary keys in Postgres for stable cross-device IDs and simple REST CRUD in Spring Boot [5][4].
+#+begin_src typescript
+// Core IDs are UUID strings for portability and collision resistance.
+export interface User {
+  id: string; // uuid
+  name: string;
+  email: string;
+  role: 'doctor' | 'nurse' | 'staff';
+}
+
+export interface Patient {
+  id: string; // uuid
+  name: string; // free text; keep single field for speed
+  dob?: string; // ISO date or undefined if unknown
+  sex?: 'male' | 'female' | 'other' | 'unknown';
+  language?: string; // e.g., "ar", "fr", "es"
+  allergies?: string[]; // free text list
+  photoUrl?: string; // optional hosted image
+  createdAt: string; // ISO datetime
+  createdBy: string; // userId
+}
+
+export interface Vitals {
+  tempC?: number;
+  hr?: number;
+  rr?: number;
+  sbp?: number; // systolic
+  dbp?: number; // diastolic
+  spo2?: number;
+  measuredAt: string; // ISO datetime
+}
+
+export interface Visit {
+  id: string; // uuid
+  patientId: string; // uuid
+  clinicianId: string; // userId
+  date: string; // ISO datetime
+  triage?: 'immediate' | 'urgent' | 'delayed' | 'expectant';
+  chiefComplaint: string;
+  notes?: string; // brief assessment/plan in one box for MVP
+  vitals?: Vitals;
+  medsGiven?: { name: string; dose: string; time: string }[]; // simple array
+  transfer?: { destination: string; reason: string; instructions?: string }; // optional
+}
+
+export interface QRCodePayload {
+  // Keep tiny: just a lookup key plus two critical fields for offline readability.
+  patientId: string; // uuid
+  name: string; // short
+  allergiesTop?: string[]; // up to 3
+  issuedAt: string; // ISO datetime
+}
+#+end_src
+*** Minimal build checklist
+- Frontend routes with Next.js App Router: /patients/new, /patients/[id], /patients/[id]/visits/new, /scan, and /print/[patientId] for a printable QR card, using the app directory and file-based routing for fast iteration [1].
+- State with Zustand: an auth store (user), a patient cache, and a lightweight sync queue for creating patients/visits optimistically before server confirmation, using minimal hook-based stores to avoid boilerplate [2].
+- UI with shadcn/ui: Form, Button, Input, Textarea, Select, Badge, Card, and a simple Table to list patients and visits, installed via the shadcn CLI to copy component code you can tweak quickly for your design [3][6].
+- QR code generation and scan:
+  - Backend: generate PNG/SVG for the QR payload using ZXing in Java for reliability and easy printing on a thermal printer [7][8].
+  - Frontend: scan route uses a QR scanner component to read patientId and navigate to the profile, keeping payload small for robust scanning on low-end devices [1].
+- Backend REST API with Spring Boot:
+  - Endpoints: POST /auth/login, POST /patients, GET /patients/:id, GET /patients?search=, POST /visits, GET /patients/:id/visits, GET /qr/:patientId to serve a QR image, and optional POST /upload for photo, implemented with @RestController and simple DTOs [4][9].
+- Database schema with Postgres UUID:
+  - Tables: users, patients, visits, optional patient_photos; use uuid columns as PKs and FKs and generate UUIDs either app-side or via the uuid-ossp/pgcrypto functions as needed [5][10].
+- Print-friendly QR page: server-rendered page that shows patient name, top allergies, and a high-contrast QR image ready for A6/label printing, wired to the same QR payload spec for consistency across devices [1].
+- Simple auth: session or token-based login to guard mutation endpoints while keeping GET patient by QR open for read in clinical contexts during MVP demos, aligning with fast Spring Boot REST patterns for quick delivery [4][9].
+*** Suggested file structure (frontend)
+Keep it tiny and aligned with App Router conventions to move quickly while remaining flexible to expand later [1].
+- app/
+  - patients/new/page.tsx
+  - patients/[id]/page.tsx
+  - patients/[id]/visits/new/page.tsx
+  - scan/page.tsx
+  - print/[patientId]/page.tsx [1].
+- lib/store/
+  - auth.ts, patients.ts, visits.ts with small Zustand stores and optional persist middleware for dev convenience [2].
+- components/ui/
+  - Form, Input, Select, Button, Card, Badge from shadcn for consistent UX and rapid forms [3][6].
+*** Minimal API contract (for wiring fast)
+Define small JSON payloads to keep forms trivial while enabling the end-to-end demo without complex validation flows [4][9].
+- POST /patients: { name, dob?, sex?, language?, allergies?: string[], photoUrl? } → { id } [4].
+- GET /patients/:id: returns Patient plus latest Visit summary for fast profile display in one call for MVP [4].
+- POST /visits: { patientId, clinicianId, date, chiefComplaint, triage?, notes?, vitals?, medsGiven?, transfer? } → { id } [4].
+- GET /qr/:patientId: returns image/png of QR with QRCodePayload so you can print or show on screen quickly [7][8].
+*** Postgres sketch (DDL quick-start)
+Use UUID PKs and simple indexes; add FKs later as needed once the demo flow is stable [5][10].
+- patients(id uuid pk, name text, dob date null, sex text null, language text null, allergies text[] null, photo_url text null, created_at timestamptz, created_by uuid) [5].
+- visits(id uuid pk, patient_id uuid, clinician_id uuid, date timestamptz, triage text null, chief_complaint text, notes text null, vitals jsonb null, meds_given jsonb null, transfer jsonb null) with index on patient_id for profile loads [5].
+*** Build order for a 24–48h MVP
+- Day 1 AM: Backend scaffolding, patients CRUD, visits create/list, UUID, QR endpoint with ZXing; verify with curl/postman and seed 2–3 patients for UI [4][5][7].
+- Day 1 PM: Next.js pages: register patient, patient profile, new visit form, QR print page; wire Zustand stores and shadcn forms for fast input and navigation [1][2][3].
+- Day 2 AM: Scan page to read QR and redirect, search by name, print styling; refine payload and show top allergies prominently on profile and print card [1][7].
+- Day 2 PM: Tighten validations, loading states, optimistic creates, and a minimal auth gate on mutations in Spring Boot to demonstrate protected writes in the demo [4][9].
+This keeps scope ruthlessly small while proving the end-to-end loop: create patient, record a visit, print a QR, scan to retrieve profile, and display critical info immediately with familiar Next.js routing, tiny Zustand stores, shadcn forms, Spring REST controllers, and UUID-backed rows in Postgres [1][2][3][4][5].
+Sources
+[1] Next.js Docs: App Router [[https://nextjs.org/docs/app][https://nextjs.org/docs/app]]
+[2] Zustand: Introduction [[https://zustand.docs.pmnd.rs][https://zustand.docs.pmnd.rs]]
+[3] Introduction - Shadcn UI [[https://ui.shadcn.com/docs][https://ui.shadcn.com/docs]]
+[4] Getting Started | Building a RESTful Web Service - Spring [[https://spring.io/guides/gs/rest-service][https://spring.io/guides/gs/rest-service]]
+[5] Documentation: 18: 8.12. UUID Type - PostgreSQL [[https://www.postgresql.org/docs/current/datatype-uuid.html][https://www.postgresql.org/docs/current/datatype-uuid.html]]
+[6] The Foundation for your Design System - shadcn/ui [[https://ui.shadcn.com][https://ui.shadcn.com]]
+[7] ZXing ("Zebra Crossing") barcode scanning library for Java, Android [[https://github.com/zxing/zxing][https://github.com/zxing/zxing]]
+[8] Generating Barcodes and QR Codes in Java - Baeldung [[https://www.baeldung.com/java-generating-barcodes-qr-codes][https://www.baeldung.com/java-generating-barcodes-qr-codes]]
+[9] Getting Started | Building an Application with Spring Boot [[https://spring.io/guides/gs/spring-boot][https://spring.io/guides/gs/spring-boot]]
+[10] Documentation: 18: F.49. uuid-ossp — a UUID generator - PostgreSQL [[https://www.postgresql.org/docs/current/uuid-ossp.html][https://www.postgresql.org/docs/current/uuid-ossp.html]]
+[11] Next.js Docs | Next.js [[https://nextjs.org/docs][https://nextjs.org/docs]]
+[12] Functions: useRouter - Next.js [[https://nextjs.org/docs/pages/api-reference/functions/use-router][https://nextjs.org/docs/pages/api-reference/functions/use-router]]
+[13] Next.js Docs: Pages Router [[https://nextjs.org/docs/pages][https://nextjs.org/docs/pages]]
+[14] Routing in Next.js – How to Use App Router in your Next Apps [[https://www.freecodecamp.org/news/routing-in-nextjs/][https://www.freecodecamp.org/news/routing-in-nextjs/]]
+[15] How to use Zustand - Refine dev [[https://refine.dev/blog/zustand-react-state/][https://refine.dev/blog/zustand-react-state/]]
+[16] Next.js Quickstart (App Router) - Clerk [[https://clerk.com/docs/getting-started/quickstart][https://clerk.com/docs/getting-started/quickstart]]
+[17] Learn Zustand Right Now in the Simplest Way! - DEV Community [[https://dev.to/joodi/learn-zustand-right-now-in-the-simplest-way-3ipg][https://dev.to/joodi/learn-zustand-right-now-in-the-simplest-way-3ipg]]
+[18] shadcn-ui/ui - GitHub [[https://github.com/shadcn-ui/ui][https://github.com/shadcn-ui/ui]]
+[19] Next.js application with app router | Uniform DXP documentation [[https://docs.uniform.app/docs/learn/tutorials/nextjs-app-router][https://docs.uniform.app/docs/learn/tutorials/nextjs-app-router]]
+[20] pmndrs/zustand: Bear necessities for state management in React [[https://github.com/pmndrs/zustand][https://github.com/pmndrs/zustand]]
+[21] shadcn-docs: Home [[https://shadcn-docs-nuxt.vercel.app][https://shadcn-docs-nuxt.vercel.app]]
+[22] Learn React State Management With Zustand - YouTube 
+[[https://www.youtube-nocookie.com/embed/-Y8brhQKvtA][youtube: https://www.youtube-nocookie.com/embed/-Y8brhQKvtA]]
+[23] Introduction - [[shadcn.io][shadcn.io]] [[https://www.shadcn.io/components][https://www.shadcn.io/components]]
+[24] Zustand Best Practices : r/reactjs - Reddit [[https://www.reddit.com/r/reactjs/comments/1je8mj0/zustand_best_practices/][https://www.reddit.com/r/reactjs/comments/1je8mj0/zustand_best_practices/]]
+[25] Docs - Introduction - Shadcn Studio [[https://shadcnstudio.com/docs/getting-started/introduction][https://shadcnstudio.com/docs/getting-started/introduction]]
+[26] Zustand [[https://zustand-demo.pmnd.rs][https://zustand-demo.pmnd.rs]]
+[27] Getting Started | Building REST services with Spring [[https://spring.io/guides/tutorials/rest][https://spring.io/guides/tutorials/rest]]
+[28] Spring - REST Controller - GeeksforGeeks [[https://www.geeksforgeeks.org/advance-java/spring-rest-controller/][https://www.geeksforgeeks.org/advance-java/spring-rest-controller/]]
+[29] Quick Guide to Spring Controllers | Baeldung [[https://www.baeldung.com/spring-controllers][https://www.baeldung.com/spring-controllers]]
+[30] Creating POST Endpoints with Spring Boot: A Quick Guide [[https://www.codementor.io/@noelkamphoa/creating-post-endpoints-with-spring-boot-a-quick-guide-2bwaf4xr2i][https://www.codementor.io/@noelkamphoa/creating-post-endpoints-with-spring-boot-a-quick-guide-2bwaf4xr2i]]
+[31] How to generate and read QR code with Java using ZXing Library [[https://www.geeksforgeeks.org/java/how-to-generate-and-read-qr-code-with-java-using-zxing-library/][https://www.geeksforgeeks.org/java/how-to-generate-and-read-qr-code-with-java-using-zxing-library/]]
+[32] Building REST APIs in Java with Spring Boot - foojay [[https://foojay.io/today/building-rest-apis-in-java-with-spring-boot/][https://foojay.io/today/building-rest-apis-in-java-with-spring-boot/]]
+[33] How to Use the PostgreSQL UUID Data Type - Vultr Docs [[https://docs.vultr.com/how-to-use-the-postgresql-uuid-data-type][https://docs.vultr.com/how-to-use-the-postgresql-uuid-data-type]]
+[34] Building RESTful APIs with Spring Boot: Controllers, Mapping, and ... [[https://blog.nashtechglobal.com/building-restful-apis-with-spring-boot-controllers-mapping-and-response-best-practices/][https://blog.nashtechglobal.com/building-restful-apis-with-spring-boot-controllers-mapping-and-response-best-practices/]]
+[35] Postgres UUID data type - Neon Docs [[https://neon.com/docs/data-types/uuid][https://neon.com/docs/data-types/uuid]]
+[36] Documentation: 18: 9.14. UUID Functions - PostgreSQL [[https://www.postgresql.org/docs/current/functions-uuid.html][https://www.postgresql.org/docs/current/functions-uuid.html]]
+[37] Reading QRCode with Zxing in Java - Stack Overflow [[https://stackoverflow.com/questions/18863466/reading-qrcode-with-zxing-in-java][https://stackoverflow.com/questions/18863466/reading-qrcode-with-zxing-in-java]]
+[38] Build a Spring Boot REST API with MySQL (Full CRUD Tutorial in 15 ... [[https://www.reddit.com/r/SpringBoot/comments/1ldkymr/build_a_spring_boot_rest_api_with_mysql_full_crud/][https://www.reddit.com/r/SpringBoot/comments/1ldkymr/build_a_spring_boot_rest_api_with_mysql_full_crud/]]
+[39] Java QR Code Generator - zxing example - DigitalOcean [[https://www.digitalocean.com/community/tutorials/java-qr-code-generator-zxing-example][https://www.digitalocean.com/community/tutorials/java-qr-code-generator-zxing-example]]
+[40] 8.12. UUID Type - PostgreSQL [[https://access.crunchydata.com/documentation/postgresql10/10.23/datatype-uuid.html][https://access.crunchydata.com/documentation/postgresql10/10.23/datatype-uuid.html]]

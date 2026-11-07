@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       5dbbb160-bac4-41dd-8749-683be7ff1d36
+:REFLECT_ID: f4a2a2f96e5c4278be36fa4dea7a61ef
+:CREATED:  [2026-04-21 Tue 07:16]
+:MODIFIED: [2026-04-21 Tue 07:16]
+:END:
+#+title: Operation BorG Mode
+#+filetags: :concept:
+#+date: 2026-04-21
+#+begin_quote
+- Organizing this office bedroom in [[id:28ef1d2f-e0e0-4878-8da4-99101e8dcaa7][South Portland]] 3 days before leaving
+#+end_quote

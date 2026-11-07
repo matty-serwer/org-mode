@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ac185314-f619-48fb-a339-fc573acf2082
+:REFLECT_ID: c547f13ee3624c3190a0f19dc09a29d9
+:CREATED:  [2026-04-10 Fri 05:21]
+:MODIFIED: [2026-04-10 Fri 05:21]
+:END:
+#+title: EQ Channel
+#+filetags: :concept:
+#+date: 2026-04-10
+

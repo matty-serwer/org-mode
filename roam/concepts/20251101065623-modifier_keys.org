@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       4b3a70ca-d1bc-4ec6-9034-1f9437781c90
+:REFLECT_ID: 492a30851aef44b1ba5b906bda7cf2e5
+:CREATED:  [2025-11-01 Sat 06:56]
+:MODIFIED: [2026-04-21 Tue 03:51]
+:END:
+#+title: Modifier Keys
+#+filetags: :concept:
+#+date: 2025-11-01
+[[id:64678f28-ad48-483b-b9d7-c73aa49a6b4d][Mac OS]] [[id:bddcaced-ec14-42cb-a72a-8a6273f8b74f][Keyboard Keys]]
+- *Modifier Keys: *
+  - *⌥ *
+  - *⌘*
+  - *⌃*
+  - *⇧*
+  - *🌐*
+  - all
+    - *⇧🌐⌃⌥⌘*
+- Combos
+  - *Control Option Command*
+    - *⌃⌥⌘*
+  - Function Control Option Shift
+    - *🌐⌃⌥⇧*

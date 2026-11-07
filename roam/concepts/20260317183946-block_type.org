@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f2e41440-ee3f-40c2-98bb-057f345c931f
+:REFLECT_ID: 1459e8d407574fae9da9e1a5afb42d20
+:CREATED:  [2026-03-17 Tue 18:39]
+:MODIFIED: [2026-03-17 Tue 18:39]
+:END:
+#+title: Block Type
+#+filetags: :concept:
+#+date: 2026-03-17
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3505e532-6899-462e-9dec-0cfff6cce976
+:REFLECT_ID: 7ececd4640734b41a46f75fff692d3be
+:CREATED:  [2026-03-18 Wed 16:06]
+:MODIFIED: [2026-03-18 Wed 16:06]
+:END:
+#+title: Song Arrangement Changes
+#+filetags: :concept:
+#+date: 2026-03-18
+

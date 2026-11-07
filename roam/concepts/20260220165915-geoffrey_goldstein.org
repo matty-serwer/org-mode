@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1cccce64-bf44-4c6f-88c6-84f42887e3f5
+:REFLECT_ID: 55c22537631f45c0b4ae7000c6337a15
+:CREATED:  [2026-02-20 Fri 16:59]
+:MODIFIED: [2026-02-20 Fri 16:59]
+:END:
+#+title: Geoffrey Goldstein
+#+filetags: :concept:
+#+date: 2026-02-20
+

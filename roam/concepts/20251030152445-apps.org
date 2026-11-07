@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ea46c0a2-7e68-4ad7-9d44-7b51949665e0
+:REFLECT_ID: 838266f48a2d449fafe6868eb3604d20
+:CREATED:  [2025-10-30 Thu 15:24]
+:MODIFIED: [2025-10-30 Thu 15:24]
+:END:
+#+title: Apps
+#+filetags: :concept:
+#+date: 2025-10-30
+

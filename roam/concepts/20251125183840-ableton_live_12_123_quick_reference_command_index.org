@@ -1,0 +1,90 @@
+:PROPERTIES:
+:ID:       ffeeeb1f-b486-4786-a833-105e79a5d998
+:REFLECT_ID: 09f0d277fdf847bc992baf52290e3c71
+:CREATED:  [2025-11-25 Tue 18:38]
+:MODIFIED: [2025-11-25 Tue 18:39]
+:END:
+#+title: Ableton Live 12 – 12.3β Quick-Reference Command Index
+#+filetags: :concept:
+#+date: 2025-11-25
+* [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]]* 12 – 12.3β Quick-Reference Command Index*
+(Keyboard shortcuts shown inline – macOS: ⌘/⌥/⇧/Ctrl — Windows: Ctrl/Alt/Shift/Ctrl)
+*1. MIDI Creation & Editing*
+- *MIDI Generators*
+-
+  - Rhythm
+  -
+    - Right-click empty clip → Generate → Rhythm
+    - Adjust Steps, Rate, Gate, Offset, Chance
+  - Seed
+  -
+    - Right-click empty clip → Generate → Seed
+    - Set Pitch Range, Velocity Range, Note Count, Polyphony
+  - Shape
+  -
+    - Right-click empty clip → Generate → Shape
+    - Draw shape curve in display
+  - Stacks
+  -
+    - Right-click empty clip → Generate → Stacks
+    - Choose chord quality, progression length, inversion
+  - Euclidean
+  -
+    - Right-click empty clip → Generate → Euclidean
+    - Set Steps, Fills, Offset per voice (up to 4)
+- *MIDI Transformations*
+-
+  - Arpeggiate → Right-click selected notes → Transform → Arpeggiate → Style, Rate, Gate, Steps, Distance, Repeats
+  - Chop → Right-click → Transform → Chop → Divisions (1–64), Pattern presets, Random Start/End
+  - Connect → Right-click → Transform → Connect → Density, Spread, Rate, Tie %
+  - Glissando (MPE) → Right-click → Transform → Glissando → Start %, Curve, Range ±48 semitones
+  - LFO (MPE) → Right-click → Transform → LFO → Target (Pitch/Slide/Pressure), Shape, Rate, Amount
+  - Ornament → Right-click → Transform → Ornament → Flam/Grace, Position, Velocity, Pitch offset
+  - Quantize → Right-click → Transform → Quantize → Grid or Swing %, Amount slider
+  - Recombine → Right-click → Transform → Recombine → Shuffle/Mirror/Rotate per parameter
+  - Span → Right-click → Transform → Span → Legato/Tenuto/Staccato, Offset, Variation
+  - Strum → Right-click → Transform → Strum → Strum Low/High, Tension curve
+  - Time Warp → Right-click → Transform → Time Warp → Draw acceleration curve
+  - Velocity Shaper (M4L) → Right-click → Transform → Velocity Shaper → Draw envelope, Min/Max, Loop length
+- *Find and Select Notes* → ⌘⇧F (mac) / Ctrl⇧F (win) → Filter by Pitch / Velocity / Duration / Chance / Inside Scale / Conditions
+- *Scale Awareness* → Click scale name top-right → Choose scale & key → All MIDI tools respect scale → Toggle Highlight In-Scale Notes (button next to scale)
+- *Chop MIDI Tool* → Select notes → ⌥⌘C → Divisions slider, Pattern buttons, Random %, Extend
+- *Apply Grooves Instantly* → Toggle button top-right (groove icon) → Global Groove Amount slider → Hot-swap groove on new clips
+*2. Audio Processing & Manipulation*
+- *Stem Separation* → Right-click audio clip → Separate to Stems → Vocals / Drums / Bass / Other → Creates grouped tracks instantly
+- *Roar* → Drop on track → Routing modes (Feedback, Shaper+Delay, Mid/Side) → MIDI Sidechain toggle → Curve display drag
+- *Auto Shift* → Drop on track → Live Mode (low latency) → Formant knob → Scale-aware toggle → Vibrato/LFO section
+- *Bounce Tracks/Groups to Audio*
+-
+  - Select tracks → Right-click → Bounce Tracks to Audio → New Tracks / In Place / Replace
+  - ⌘J (mac) / Ctrl J (win) after selection → Paste Bounced Audio
+- *Limiter* → Ceiling link button → True Peak / Soft Clip modes → Mid/Side toggle
+- *Saturator* → Bass Enhancer section → Hard Clip toggle → Expanded EQ view (click EQ button)
+- *Auto Filter* → New filter types (DJ, Comb+, Vowel, Morph) → Stereo LFO phase → Sidechain EQ button
+- *Auto Pan-Tremolo* → Mode switch Pan/Tremolo → Modulation Attack → FM amount → Shape/Harmonic/Vintage traits
+*3. Instruments & Synths*
+- *Meld* → MPE-enabled → Osc A / Osc B routing → Macro page → Chord detector → Noise generator
+- *Drum Sampler* → Drop samples directly into Drum Rack pad → Pitch-follow envelope → Velocity → Filter routing
+- *Granulator III* → File drag zone → Grain envelope editor → MIDI-mappable Position & Spray
+- *Operator* → Per-note Pitch Bend toggle → Voices up to 32
+- *Drift* → Hi-Quality mode toggle (reduces aliasing)
+- *Tuner* → Tuning system dropdown → Reference pitch knob
+*4. Browser & Integration*
+- *Splice Integration* → Browser → Splice tab → Search with Sound (drag clip in) → Preview in project tempo → Download selected
+- *Similarity Search* → Click magnifying glass on sample in Simpler/Drum Rack → Search Similar → Hot-swap arrows ← →
+- *Full-Height Browser* → Click upward arrow top-left of browser
+- *Tuning Systems* → Right-click track title → Tuning → Load .scl / .tun file → Bypass toggle per track
+*5. UI & Workflow*
+- *Device A/B Comparison* → Click A/B button on device title bar → Copy A→B / B→A buttons
+- *Undo History* → ⌘⇧Z repeatedly or click clock icon bottom-left → Click any step to jump
+- *Mixer in Arrangement* → View → Show Mixer (⌘⌥M / Ctrl Alt M) → Right-click mixer sections to hide/show
+- *Arrangement Enhancements*
+-
+  - Vertical waveform zoom → ⌥-drag up/down
+  - Insert empty MIDI clip → Double-click empty space + ⌘⇧M
+  - Set 1.1.1 Here on audio → Right-click time ruler → Set 1.1.1 Here
+- *Clip View Tweaks* → Release Velocity lane toggle in MIDI editor
+- *CC Control* → Drop device → Learn mode button → Bank left/right arrows
+*6. Performance & Extensibility*
+- *Max for Live MIDI Tools* → Browser → Max for Live → MIDI Tools → Drag any Generator/Transformation → Right-click → Edit to create custom ones
+- *Control Surface Additions* → Auto-detected: Akai MPK Mini Plus/IV, Novation Launchkey MK4, Launch Control XL MK3, Arturia KeyLab Essential/MK3

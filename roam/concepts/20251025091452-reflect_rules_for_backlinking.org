@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       7c5ca0e2-1a68-4542-9ae6-51e8a117a8ab
+:REFLECT_ID: 0103922cbfa7464bab129e7b28393c5e
+:CREATED:  [2025-10-25 Sat 09:14]
+:MODIFIED: [2025-10-25 Sat 09:16]
+:END:
+#+title: Reflect Rules for Backlinking
+#+filetags: :concept:
+#+date: 2025-10-25
+* [[id:56254a81-4ae8-45d0-a0b3-c61f2e847161][Reflect]] Rules for Backlinking
+- Backlink all Entities
+  - People
+  - Places
+  - Things
+  - Projects
+  - Events
+  - Ideas
+  - /if it starts with a Capital Letter, you should backlink it./
+- 

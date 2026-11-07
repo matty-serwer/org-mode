@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9f90a73c-771e-4ad9-bec3-6fd11d4e9eca
+:REFLECT_ID: 0a9e2c30071f4900a68837bcf252f42e
+:CREATED:  [2025-10-30 Thu 17:52]
+:MODIFIED: [2025-11-30 Sun 09:34]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-10-30
+

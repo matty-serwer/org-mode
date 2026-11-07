@@ -1,0 +1,99 @@
+:PROPERTIES:
+:ID:       0dde1fb6-d6cd-4faf-a61e-8a3efe9b4e2b
+:REFLECT_ID: 1567d95d28cc45b2b9a8aa532628f758
+:CREATED:  [2026-02-25 Wed 00:31]
+:MODIFIED: [2026-04-08 Wed 21:40]
+:END:
+#+title: C-Note MCP
+#+filetags: :concept:
+#+date: 2026-02-25
+* [[id:b42566da-4387-4def-bd67-1bf6c02a7db5][C-Note]] MCP
+- Personal knowledge vault + Claude MCP server for Mattie / Lupine Tech Design.
+- What This Is
+  - A plain-text markdown vault managed through a custom MCP server. Claude (in any chat) can:
+    - Route and file your notes intelligently
+    - Append to existing topic files when content is related
+    - File reference material with automatic category inference
+    - Search across all notes
+    - Pull up today's daily note
+  - You browse and read via Obsidian or Neovim. Git handles history.
+- Vault Location
+  - #+begin_src markup
+    /Users/lupin/_Workspace/Docs/C-Note
+    #+end_src
+- Quick Setup
+  - #+begin_src markup
+    cd /path/to/cnote-mcp
+    bash setup.sh
+    #+end_src
+  - Then add to =~/.claude/claude_desktop_config.json=:
+    - #+begin_src markup
+      {
+        "mcpServers": {
+          "cnote": {
+            "command": "python3",
+            "args": ["/path/to/cnote-mcp/server.py"]
+          }
+        }
+      }
+      #+end_src
+  - Restart Claude Desktop.
+- Available Tools
+  - cnote_add
+    - Add or append a note (routes to daily or topic file)
+  - cnote_file_reference
+    - File pasted reference content (auto-classifies)
+  - cnote_search
+    - Search index + file content
+  - cnote_get_note
+    - Read a specific note by path
+  - cnote_append
+    - Append directly to a known file
+  - cnote_get_index
+    - Get full or filtered vault index
+  - cnote_get_recent
+    - View recent activity log
+  - cnote_daily_today
+    - Get or create today's daily note
+- Categories
+  - Topic categories (for notes you write):
+    - =dev/lemr= · =dev/projects= · =dev/general=
+    - =music= · =audio=
+    - =career= · =home= · =personal=
+    - =daily= (forces drop into daily note)
+  - Reference categories (for pasted/external content):
+    - =ref/code= · =ref/software= · =ref/audio= · =ref/general=
+- Note Types
+  - =log= · =reference= · =snippet= · =roadmap= · =instructions= · =index= · =daily=
+- Tag Convention
+  - All tags are inline in the note body — no frontmatter. Example:
+    - #+begin_src markup
+         #dev/lemr  #type/log  #dev/nextjs
+      #+end_src
+      
+      #+begin_src markup
+      
+      #+end_src
+- How Routing Works
+  - When you call =cnote_add=:
+    - If category is =daily= → drops into today's daily note
+    - If a topic file in the same category shares keywords with the title → appends to it
+    - Otherwise → creates a new file in the category folder
+  - Use =force_new: true= to always create a fresh file.
+- Git Workflow
+  - #+begin_src markup
+    cd /Users/lupin/_Workspace/Docs/C-Note
+    git init
+    echo ".obsidian/workspace.json" >> .gitignore
+    git add .
+    git commit -m "init vault"
+    #+end_src
+  - For periodic commits, add a cron job or use the Obsidian Git plugin.
+- Neovim Tips
+  - Open the vault root with:
+    - #+begin_src markup
+      nvim /Users/lupin/_Workspace/Docs/C-Note
+      #+end_src
+  - With Telescope, =:Telescope find_files= and =:Telescope live_grep= give you full vault search.
+  - Consider =obsidian.nvim= for backlink support in nvim.
+-----

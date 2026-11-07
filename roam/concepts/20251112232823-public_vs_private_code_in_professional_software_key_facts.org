@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       49d3d659-06a4-40db-a3c3-f4ef1be65f73
+:REFLECT_ID: f543b3457cd84678a755b3443c781bf6
+:CREATED:  [2025-11-12 Wed 23:28]
+:MODIFIED: [2025-11-12 Wed 23:29]
+:END:
+#+title: Public vs Private Code in Professional Software: Key Facts
+#+filetags: :concept:
+#+date: 2025-11-12
+- Open source is everywhere: 97% of commercial applications use open source code but usually not for their entire product[web:7].
+- Most enterprise code is kept private: About 65% or more of professional code is stored in in-house or private repositories[web:1][web:3].
+- Only around 35% of all GitHub repositories are public; the rest are private or restricted, even for big companies[web:1][web:3].
+- Most businesses rely on public code, but only a minority (20–33%) contribute their own core software back as open source[web:7].
+- Security, compliance, and practicality are common reasons for keeping code private, not just competitive secrecy[web:6][web:11].
+- Keeping code private is standard, recommended, and often required for regulated industries and sensitive applications[web:6][web:11].
+- SaaS, low-code, and no-code platforms mean most new business apps (70% by 2025) are built with a mix of private and public components[web:8].
+- Most professional software combines open source (for innovation and speed) with private code (for control, security, and business needs)[web:6][web:7][web:11].

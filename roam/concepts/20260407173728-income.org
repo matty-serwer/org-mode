@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       27bb43f1-a309-4afa-b8e8-5ec678716260
+:REFLECT_ID: f4cc58b543274cd2857350d557e3961c
+:CREATED:  [2026-04-07 Tue 17:37]
+:MODIFIED: [2026-04-07 Tue 17:37]
+:END:
+#+title: income
+#+filetags: :concept:
+#+date: 2026-04-07
+

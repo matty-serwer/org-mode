@@ -1,0 +1,268 @@
+:PROPERTIES:
+:ID:       60a6bc51-5be2-4b8b-a2d0-1c70de1c711c
+:REFLECT_ID: 27102025
+:CREATED:  [2025-10-27 Mon 08:41]
+:MODIFIED: [2025-10-27 Mon 20:53]
+:END:
+#+title: Mon, October 27th, 2025
+#+filetags: :daily:log:manual:music:organization:productivity:reference:
+#+date: 2025-10-27
+- Dresser Drawers [[id:b3d6e288-d523-4359-9b41-ff11cde7afa4][Measurements]]
+  - 522.5” Width
+  - 14.5” Depth
+  - 5” height
+- Operation [[id:28875403-21f9-46d4-b371-2610abd8612a][Apple Notes]] Sort
+  [[id:7839f027-8d4a-4e84-a3fb-5458d3ef2534][Claude]]'s Initial Assessment of [[id:28875403-21f9-46d4-b371-2610abd8612a][Apple Notes]]
+  Vault Structure
+  Content Types Found
+  Recurring Themes
+  Note Length Statistics
+  Metadata & Organization
+  Temporal Patterns
+  Note Naming Patterns
+  Clear Clusters & Concentrations
+  Notable Patterns
+  Summary
+  -  
+  - The notes in their entirety have been imported into Obsidian. I have Claude Code waiting there.
+  - [[id:b42ab017-a31b-4742-bb11-6739d926fae3][Prompt]]
+    - #+begin_src markup
+      "You are my knowledge management assistant. I have just imported about 1000 unorganized Apple Notes into my Obsidian vault, spanning over a decade. I need a clear, high-level report about the current vault structure and my note-taking patterns.*
+      Please:
+      • Survey the vault and list the main types of content you find (for example: shopping lists, tutorials, letters, code snippets, song lyrics, collected data, personal ideas, etc).
+      • Identify any recurring themes or topics appearing frequently.
+      • Note the average and range of note lengths.
+      • Summarize what kinds of formats, metadata, or organization (if any) exist in the notes (e.g., use of tags, internal links, dates).
+      • Highlight any clear clusters or concentrations (such as notes around certain time periods or topics).
+      • Do not sort, move, or make suggestions yet—simply present factual findings about the vault's current state to help inform next steps."*
+      #+end_src
+  - /This is the first part of/ [[id:31f05c81-9a4f-448e-a1c3-f10293cabdee][Apple Note Sort 2025]]
+  - *Folder Distribution*
+    - Archive (Pre-May 2025): 799 notes (82%)
+    - Imports/ (root): 104 loose files (11%)
+    - Projects (one note per): 27 notes (3%)
+    - 2025 May: 23 notes (2%)
+    - Song Scribbles & Lyrics: 13 notes (1%)
+    - Web Development: 6 notes (1%)
+    - Code: Empty folder
+    - Untitled: Present
+  - *Key observation*: Major organizational break at May 2025, suggesting recent workflow shift
+  1. *Music Production Notes* (~15-20%, 80-100 notes)
+    - DAW shortcuts (Ableton Live, Logic Pro)
+    - Synthesis & mixing techniques
+    - Gear manuals (NUX MG300, Kontakt, Serum 2)
+    - Project-specific production notes
+    - Tags: , , 
+  1. *Personal Reflections* (~10-15%, 100-150 notes)
+    - Stream-of-consciousness thoughts
+    - Relationship processing (recurring: "Becca")
+    - Emotional reflections
+    - Cultural criticism essays
+  1. *Empty/Near-Empty Notes* (~10-15%, 100-150 notes)
+    - 37 completely empty files (0 bytes)
+    - 60 single-line notes
+    - 605 notes under 6 lines (62% of vault!)
+  1. *Code Snippets & Technical Docs* (~8-10%, 40-50 notes)
+    - React, Angular, Java Spring Boot
+    - API documentation
+    - Obsidian/Templater configuration
+    - Regex references
+  1. *Task Lists & To-Dos* (~6-8%, 60-80 notes)
+    - 1,284 total checkbox items across vault
+    - Many abandoned mid-completion
+  1. *Shopping Lists* (~5-6%, 50-60 notes)
+    - Grocery lists with checkboxes
+    - Household supplies
+    - Often incomplete
+  1. *Reference Manuals* (19+ notes)
+    - PDF links to manuals
+    - Quick reference sheets
+    - Concentrated in "2025 May" folder
+  1. *Passwords & Codes* (~3-4%, 30-40 notes)
+    - Software licenses
+    - API tokens
+    - Recovery phrases
+    - ⚠️ Security note: Contains sensitive information
+  1. *Song Lyrics* (13 notes)
+    - Highly fragmentary
+    - Many just titles or single lines
+  1. *Miscellaneous* (~20%, 200+ notes)
+    - Travel planning, financial notes, URLs, fragments
+  - *Music Production* (Primary)
+    - DAWs: Ableton Live (dominant), Logic Pro
+    - Genres: DNB, electronic, lofi
+    - Techniques: Synthesis, mixing, compression
+  - *Software Development*
+    - Frontend: React, Angular, Next.js
+    - Backend: Java Spring Boot, Node.js
+    - Tools: Cursor IDE, Git, npm
+  - *Personal Knowledge Management*
+    - Tools: Obsidian (recent focus), Logseq, Anytype
+    - Recent interest in properties, Dataview, templates
+  - *Life Admin*
+    - Shopping, meal planning, checklists
+    - Work notes (Cognizant references)
+    - Travel planning (Colorado, Maine state parks)
+  - *Lines per Note*
+    - Minimum: 0 lines
+    - Maximum: 1,004 lines (CSS stylesheet)
+    - Mean: 13.94 lines
+    - Median: 3 lines ⚠️
+    - Total: 13,550 lines across 972 notes
+  - *Words per Note*
+    - Minimum: 0 words
+    - Maximum: 6,542 words
+    - Mean: 91.06 words
+    - Median: 17 words
+  - *Distribution*
+    - 0-5 lines: 605 notes (62%)
+    - 6-50 lines: 310 notes (32%)
+    - 51+ lines: 57 notes (6%)
+    - 100+ lines: ~20 notes (2%)
+  - *Key insight*: Median of 3 lines indicates capture-heavy system with minimal elaboration
+  - *Current State* (Minimal)
+    - *Tags*:
+      - Only ~4% of notes have tags
+      - Most common:  (27),  (26),  (16)
+      - Mostly in music production notes
+    - *Internal Links*:
+      - 114 total [[id:7d8eab07-5f30-4d98-8285-aea0bf12bc6a][wiki-links]]
+      - Primarily linking to PDFs and images
+      - Very little note-to-note linking
+    - *Frontmatter/YAML*:
+      - Present in only 43 notes (4.4%)
+      - Inconsistent structure
+    - *Checkboxes*:
+      - 1,284 checkbox items total
+      - Mix of completed [x] and pending [ ]
+      - Heavy in shopping lists and task notes
+    - *Code Blocks*:
+      - Only 13 fenced code blocks found
+      - Minimal use of technical formatting
+    - *External Links*:
+      - 59 notes contain URLs (~6%)
+  - *Date Evidence*
+    - *Filename dates*:
+      - Span 2020-2025
+      - Explicit dates rare (e.g., "Grocery list Sunday feb 26")
+      - Most dates implicit or absent
+    - *Major Break Point*:
+      - Archive (Pre-May 2025): 799 notes (older, unorganized)
+      - 2025 May: 23 notes (newer, more structured)
+      - Suggests a recent reorganization effort
+    - *Recent Changes* (2025 May folder):
+      - More consistent tagging
+      - PDF manual links
+      - Reference materials
+      - Intentional organization emerging
+  - *Categories*:
+    1. Descriptive (30-40%): "Ableton Live Shortcuts", "Audio Mixing Quick Reference Sheet"
+    1. First-sentence-as-title (20-30%): "Things Becca said about me in arguments this week.md"
+    1. Numbers only (3-4%): "2328.md", "122.md", "93719918128.md"
+    1. Codes/passwords (20-30): "DIVA QVGU-06BJ-4QGU-5RW3-CIK2.md"
+    1. Random/corrupted (5-10%): "Dhutfdd%{{{grd!7;2.md", "-_-.md"
+    1. Short names (27%): 262 notes ≤10 characters
+  - *Apple Notes artifacts*:
+    - 79-character title truncation
+    - "…." suffix on long titles
+    - Character encoding issues
+  - No standardization present
+  - *Geographic Clustering*:
+    - *Archive folder* (82% concentration):
+      - Mixed content from entire decade
+      - Highest fragmentation
+      - Lowest metadata density
+    - *2025 May folder* (recent concentration):
+      - Reference manuals
+      - PDF links
+      - More structured approach
+      - Evolution toward intentional PKM
+    - *Projects folder*:
+      - Music projects primarily
+      - Mixed completion states
+  - *Thematic Clustering*:
+    - *Music production*:
+      - Distributed across Archive and Projects
+      - 27 notes tagged 
+      - Technical manuals concentrated in 2025 May
+    - *Code/development*:
+      - Web Development folder (6 notes)
+      - Scattered technical notes in Archive
+      - Recent Obsidian configuration notes
+    - *Personal/emotional*:
+      - Primarily in Archive
+      - No dedicated folder
+      - Mixed with all other content
+  - *Temporal Concentration*:
+    - No clear time-based organization detected in filenames or folder structure, aside from the Pre-May 2025 / May 2025 split
+  1. Capture-heavy, process-light: 62% of notes are ≤5 lines
+  1. Task abandonment: Many incomplete checklists
+  1. Low connectivity: Few internal links between notes
+  1. Minimal metadata: Only 4% have tags or frontmatter
+  1. Recent improvement: 2025 May shows intentional shift
+  1. Apple Notes legacy: Truncation and encoding artifacts visible
+  1. Security risk: Passwords and tokens in plain text
+  1. Empty note problem: 37 completely empty files
+  - Decade-long digital memory imported from Apple Notes
+  - Functions primarily as capture system with minimal post-processing
+  - Content highly fragmented (median 3 lines per note) and loosely organized
+  - 82% concentrated in single archive folder
+  - Dominant themes: music production, personal reflection, software development
+  - Mix of reference materials, quick captures, shopping lists, code snippets, emotional processing
+  - ~20% of content empty or near-empty
+  - Recent shift visible in "2025 May" folder toward intentional knowledge management
+  - Serves as both archive of lived experience and working repository
+  - Currently lacks structure for easy retrieval or actionability
+* 3:01pm
+** Sorting Apple Notes with Claude
+*** State Check For our Progress
+- Including a Directory and Rules
+- Apple Notes Directory
+- Apple Notes Sorting Rules
+*** Category Rules
+*1-Projects/*
+- Active work with defined endpoint
+- Has unchecked tasks or deliverables
+- Time-sensitive or goal-oriented
+*2-Areas/*
+- Ongoing responsibilities
+- No endpoint (continuous)
+- Standards to maintain
+*3-Resources/*
+- Reference material
+- Learning content
+- Future reference topics
+*4-Archives/*
+- Completed or inactive
+- Historical value only
+- No longer supports current work
+*00-Triage/*
+- Requires manual review
+- Uncertain classification
+- Passwords-Security: Immediate attention needed
+*Delete*
+- Marked for deletion
+- Review before permanent removal
+-----
+
+- Frontmatter
+  - Every note contains:
+  - Triage notes also include:
+    - triage_reason: [why needs review]
+  - Delete notes also include:
+    - delete_reason: [why marked for deletion]
+[[id:a23f18f4-36ac-4706-9152-b326b5944649][Frontmatter]] To Add For [[id:2afb8211-162f-44e6-a799-3d2be6c60924][Sorting]] These [[id:28875403-21f9-46d4-b371-2610abd8612a][Apple Notes]]
+• status: Can be values like “uncertain”, “reviewed”, “new”, “candidate-move”, or “finalized”. This lets you filter notes by their sort certainty and workflow stage.
+• tags: Useful for thematic, contextual, or priority markers.
+• confidence: A numeric or text field set by the LLM (“high”, “medium”, “low”) describing its confidence in the assigned category.
+• review_notes: Free-text for human or agentic comments about why a note was (or should be) moved.
+• history: Track the previous PARA assignments or categories—helps to see sorting patterns over time.
+• last_reviewed: Date of last manual or automated review.
+
+- Next.js 16.0.0 ([[https://nextjs.org/docs][https://nextjs.org/docs]])
+- TailwindCSS 4.1.16 ([[https://tailwindcss.com/docs][https://tailwindcss.com/docs]])
+- Framer Motion ([[https://www.framer.com/motion/][https://www.framer.com/motion/]])
+- Chakra UI ([[https://chakra-ui.com/docs/getting-started][https://chakra-ui.com/docs/getting-started]])
+- React Query ([[https://tanstack.com/query/v4][https://tanstack.com/query/v4]])
+- Lodash ([[https://lodash.com/docs/4.17.21][https://lodash.com/docs/4.17.21]])
+- Optional: Strapi v5 ([[https://strapi.io/documentation][https://strapi.io/documentation]])

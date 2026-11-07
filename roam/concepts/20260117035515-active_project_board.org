@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       66089ec0-9f2a-437a-8153-ee903fba5164
+:REFLECT_ID: 424bea47ab8a4b50a693616f42d87156
+:CREATED:  [2026-01-17 Sat 03:55]
+:MODIFIED: [2026-04-08 Wed 22:22]
+:END:
+#+title: 👩🏻‍💻 Active Project Board 👩🏻‍💻
+#+filetags: :concept:
+#+date: 2026-01-17
+- Code
+  - [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]]
+  - [[id:119f025b-6371-44c1-9866-497aea2a119a][💾 LTD Shadcn Storybook UI]]
+  - [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][💾 LEMR]]
+- Career
+  - [[id:e404c6e3-e400-4353-9819-bd4d0ba57c12][🈺 February Mega Plan]]
+  - [[id:a46f281b-74cd-4318-a277-0200633b5c34][🈺 Resume & Interview Master Source]]
+  - [[id:81550d6c-7fc2-4eb1-93d3-d08738616019][🈺 Job Search]] (TODO: clean up, use)
+- Music
+  - 👩🏻‍🎤 [[id:2a0e069e-82be-42ac-9ea6-82b345d1f9cb][Ableton Live Org January 2026]]
+  - [[id:9e874ee4-a7d7-41f6-a60c-3391c9469c9c][👩🏻‍🎤 Ableton Live Stem Set]]
+- Home
+  - [[id:d9fb03d1-7189-4215-8093-debfec1dedf4][🌊 Project Pool 🌊]]
+- Mac
+  - [[id:6d0ef264-36c0-4cf2-b32a-cc6179c08926][MacOS File System Org]]
+  - [[id:b42566da-4387-4def-bd67-1bf6c02a7db5][C-Note]]
+
+- Archived
+  - [[id:e991bfeb-532d-42d8-a607-9217cf996745][LTD UI Style Project]]
+    - Plain Next.js app built using Claude, with shadcn Styled components. 
+    - Claude started with a good few pages, but the fixes and changes turned out to be too much

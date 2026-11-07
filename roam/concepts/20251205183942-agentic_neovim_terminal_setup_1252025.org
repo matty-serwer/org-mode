@@ -1,0 +1,111 @@
+:PROPERTIES:
+:ID:       24c6606d-9244-4295-b189-9e5e3bf0668d
+:REFLECT_ID: 28e1d0962d7744128179f0ee684d360a
+:CREATED:  [2025-12-05 Fri 18:39]
+:MODIFIED: [2025-12-05 Fri 18:41]
+:END:
+#+title: Agentic NeoVim Terminal #setup 12/5/2025
+#+filetags: :concept:setup:
+#+date: 2025-12-05
+* Agentic [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] Terminal  [[id:dace6fca-7415-4dca-ac12-f640a60fdfee][12/5/2025]]
+*Grok: *[[https://grok.com/share/c2hhcmQtNQ_b836dbd3-2bb4-4b0f-bb2a-3d7fab6b0858][8f821df7-317d-4809-a135-7b7a032a1eae]]
+*Recommended Terminal Neovim Setup: AI-Powered Solo Dev Workflow*
+You’re welcome—love the enthusiasm! Based on your React/Spring Boot/Python stack, LazyVim base, and focus on non-agentic AI (Claude/OpenCode for scaffolding/reviews without auto-edits), here’s a *singular, streamlined setup* that’s terminal-native and ready for 2025 workflows. This prioritizes speed: instant startup, seamless context sharing (e.g., visual selections to AI), and diff-based reviews for full-app prototypes.
+We’ll use:
+- *OpenCode* (CLI/TUI agent): For heavy lifts like “scaffold React CRUD + Spring endpoints + Python migrations.” It’s model-agnostic (Claude default), privacy-first, and terminal-optimized.
+- *One Native-Running nvim Plugin*: sudo-tee/opencode.nvim – A lightweight bridge that runs OpenCode’s TUI /inside/ nvim (via embedded terminal) but adds nvim-native smarts like auto-sending selections/buffers as context. (It’s “native-running” as it embeds and hooks directly into nvim APIs for context/diffs, without external processes unless you toggle.)
+- *One Provider-Based nvim Plugin*: olimorris/codecompanion.nvim – Multi-provider chat/diff tool with Anthropic (Claude) adapter. Use it for quick, targeted prompts (e.g., “refactor this Python script”) that stream to buffers—provider-based means easy swaps (Claude today, local Ollama tomorrow).
+- *Other Essentials*: A minimal plugin suite for LSP/diffs/terminals, plus Tmux for multi-pane persistence (OpenCode in one pane, nvim in another if needed). No bloat—total plugins: ~8 new ones on LazyVim.
+This setup lets you: Select code in nvim → Send to OpenCode for full scaffolds (review diffs) → Tweak with codecompanion’s Claude chat → Ship solo. Community vibe (Reddit/X 2025 threads): This combo is “terminal godmode” for fireproofing—faster than Cursor, extensible for your langs. 2 5 22 34
+*High-Level Architecture*
+- *Terminal Layer*: Tmux (sessions: nvim main, OpenCode side-pane).
+- *Editor*: LazyVim with LSP pre-tuned for your stack.
+- *AI Flow*: OpenCode for agentic planning/edits (approval-only) → codecompanion for inline Claude tweaks.
+- *Hardware Prereqs*: macOS/Linux (assumed); Neovim 0.10+; 8GB+ RAM for local models if desired.
+- *Cost*: Free (OpenCode + plugins); Claude API key for heavy use (~$20/mo for Sonnet).
+*Setup Checklist: Get Coding Worry-Free Tomorrow*
+Follow this sequentially—+1-2 hours total. Test at each major step with a dummy React file. I’ve included exact commands/config snippets for LazyVim (your +/.config/nvim/lua/plugins/ dir).
+*1. Prep Your Terminal Environment (15 mins)*
+- Install Tmux: brew install tmux (macOS) or apt install tmux (Linux). Why? Persistent panes for nvim + OpenCode without context-switching.
+- Install OpenCode: curl -fsSL [[https://opencode.ai/install][https://opencode.ai/install]] | bash. Verify: opencode --version (should show v1.2+ as of Dec 2025).
+-
+  - Auth: opencode auth login → Select “anthropic” → Paste ANTHROPIC_API_KEY (get from console.anthropic.com).
+  - Quick Config (~/.opencode.json):
+    {
+  -   "defaultProvider": "anthropic",
+  -   "providers": { "anthropic": { "model": "claude-3-5-sonnet-20241022" } },
+  -   "agents": { "build": { "tools": ["edit", "bash", "lsp"] }, "plan": { "tools": ["read", "search"] } },
+  -   "lsp": { "autoLoad": true },
+  -   "ui": { "theme": "system" }  // Matches nvim dark mode
+  - }
+  - 
+  - Test: opencode → Prompt “Explain a basic React hook” → Approve/quit. LSP should detect TS if in a project.
+- Set Env: Add to +/.zshrc or +/.bashrc: export ANTHROPIC_API_KEY=sk-... and export PATH="$HOME/.opencode/bin:$PATH". Reload: source ~/.zshrc.
+- (Optional) Ollama for Local: brew install ollama; ollama pull llama3.2 – Add to OpenCode config for offline Python tweaks.
+*2. Tune LazyVim Base (10 mins)*
+- Update LazyVim: nvim → :Lazy sync. Ensure Treesitter/LSP for your stack: Run :TSInstall typescript java python and :Mason → Install typescript-language-server, jdtls (Spring), pyright.
+- Keymap Tweaks: In lua/config/keymaps.lua, add:
+  vim.keymap.set("n", "oc", ":ToggleTerm direction=horizontal name=OpenCode cmd=opencode", { desc = "Toggle OpenCode TUI" })
+- vim.keymap.set("v", "cc", ":'<,'>CodeCompanionChat", { desc = "Claude Chat Selection" })  -- For later
+- 
+-
+  - This pipes visual selections to AI without leaving modal mode.
+- Tmux Integration: Create ~/.tmux.conf:
+  set -g mouse on
+- bind-key C-a send-prefix  # Better than default C-b
+- new-session -d -s dev 'nvim'  # Auto-start nvim session
+- split-window -h -c '#{pane_current_path}' 'opencode'  # OpenCode side-pane
+- 
+-
+  - Launch: tmux attach -t dev. Test: Split works? Great—your “worry-free” base.
+*3. Install & Configure AI Plugins (20 mins)*
+- Create lua/plugins/ai.lua in your LazyVim config:
+  return {
+-   -- Native-Running: opencode.nvim (embeds TUI with nvim context)
+-   { "sudo-tee/opencode.nvim", opts = {
+-     ui = { icon_style = "nerdfonts" },  -- Matches LazyVim icons
+-     output = { tools = { show_output = true }, rendering = { markdown_debounce_ms = 250 } },
+-     input = { text = { wrap = false } },
+-     completion = { file_sources = { enabled = true } },  -- Auto-includes your React/Spring files
+-     prompt_guard = { enabled = true }  -- Blocks accidental sends
+-   }, keys = { { "oo", "OpencodeToggle", desc = "Toggle OpenCode" } } },
+- 
+-   -- Provider-Based: codecompanion.nvim (Claude chat/diffs)
+-   { "olimorris/codecompanion.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" }, config = function()
+-     require("codecompanion").setup({
+-       adapters = { anthropic = { api_key_name = "ANTHROPIC_API_KEY", model = "claude-3-5-sonnet-20241022" } },
+-       strategies = { chat = { adapter = "anthropic" } },  -- Default to Claude
+-       display = { open = "current" },  -- Inline buffers, no popups
+-       keymaps = { apply = "", toggle = "cc" }  -- Review/apply diffs
+-     })
+-   end, cmd = "CodeCompanionChat" },
+- 
+-   -- Essentials: Diffs, Terminals, Markdown (for AI outputs)
+-   { "sindrets/diffview.nvim", lazy = false },  -- Review OpenCode edits
+-   { "akinsho/toggleterm.nvim", version = "*", opts = { open_mapping = [[]], direction = "horizontal" } },  -- Embed OpenCode
+-   { "MeanderingProgrammer/render-markdown.nvim", ft = "markdown", opts = { file_types = { "markdown", "txt" } } },  -- Render AI plans
+- }
+- 
+- Sync: Restart nvim → :Lazy sync. Check health: :checkhealth opencode and :checkhealth codecompanion.
+- Test Native Plugin: Open a Python file → oo → “Plan: Optimize this script for Spring data import” → See context auto-sent? Diff output in buffer? Quit with q.
+- Test Provider Plugin: Visual-select React code → cc → “Refactor with hooks + TypeScript” → Streamed response? to apply hunk.
+*4. Workflow-Specific Tweaks for Your Stack (15 mins)*
+- LSP Prompts: In codecompanion config (above), add custom strategies:
+  strategies = {
+-   refactor = {
+-     adapter = "anthropic",
+-     prompt = { model = "claude-3-5-sonnet-20241022", system = "Refactor for React/TS (frontend), Spring Boot/Java (backend), Python (scripts). Include tests." }
+-   }
+- }
+- 
+-
+  - Keymap: Add vim.keymap.set("v", "cr", ":'<,'>CodeCompanionRefactor").
+- OpenCode for Full Apps: In Tmux pane: opencode build "Scaffold solo app: React UI + Spring API + Python DB seed". Approve edits → nvim auto-reloads files (via plugin hooks).
+- Diff Workflow: After AI gen, :DiffviewOpen → Stage hunks with motions → :w to commit.
+- Performance: Add to lua/config/options.lua: vim.opt.updatetime = 100 (faster LSP/AI feedback). For large Spring monorepos, limit OpenCode context: --max-files 10.
+*5. Validation & Daily Rituals (5 mins)*
+- Full Test: In a new dir, git init; mkdir src; touch src/App.tsx src/[[Controller.java][Controller.java]] src/[[migrate.py][migrate.py]]. Scaffold via OpenCode → Refactor snippet in codecompanion → Run npm start or mvn spring-boot:run in Tmux.
+- Backup: Git your config (git clone [[https://github.com/your/dotfiles).][https://github.com/your/dotfiles).]] Daily: :Lazy update weekly.
+- Edge Cases: If hallucinations (e.g., bad Java annotations), add to OpenCode prompt: “Use @RestController, validate with @Valid.” For privacy: Set prompt_guard to require explicit oo.
+- Scale: For teamsless apps, chain: OpenCode plan → Export MD → codecompanion inline edits.
+Boom—you’re set! Tomorrow: Fire up Tmux, oc for a quick Claude refactor, and prototype worry-free. This is battle-tested from 2025 X/Reddit shares (e.g., “opencode.nvim + codecompanion = perfect balance”). If a step glitches (e.g., LSP on Spring), drop the error—I’ll debug. What’s your first project: React dashboard or Python ETL?

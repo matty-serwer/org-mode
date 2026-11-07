@@ -1,0 +1,435 @@
+:PROPERTIES:
+:ID:       753030ad-44aa-4cad-bcf0-2f3ed79b9aae
+:REFLECT_ID: 206e832f01c74d0b9b981f34481706ca
+:CREATED:  [2025-11-24 Mon 09:32]
+:MODIFIED: [2025-12-08 Mon 17:58]
+:END:
+#+title: Vet Sweet Development Roadmap
+#+filetags: :project:planning:
+#+date: 2025-11-24
+** [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]] Development [[id:0489f8fe-575c-4288-98df-749b7f228400][Roadmap]]
+- Epic 1 Foundation and Core Client Management.
+  Epic 2 Appointment Scheduling and Calendar
+  Epic 3 Clinical Documentation and Workflows
+  Epic 4 Invoicing and Payment Processing
+  Epic 5 Inventory Management System
+  Epic 6 Client Portal and Self-Service
+  Epic 7 Communication System and Messaging
+  Epic 8 Financial Reporting and Analytics
+  Epic 9 Staff Management and Task System
+  Epic 10 Wellness Plans and Subscriptions
+  Epic 11 Advanced Features and Polish
+  Epic 12 Flex Sprint Optional Enhancements
+  - Establish project infrastructure and implement fundamental client-patient data management
+  - Lift 35
+    Milestone 1.1 Project Setup and Infrastructure
+    Milestone 1.2 Authentication and Authorization System
+    Milestone 1.3 Client Database Management
+    Milestone 1.4 Patient Records System
+    - Tech Stack
+      - [[id:d2f0c7f4-72f3-4cb1-9cfe-e74ce0c43b6a][Vet Sweet #tech-stack #schema]]
+    - Lift 12
+    - Initialize monorepo structure with frontend and backend workspaces
+    - Configure Next.js application with TypeScript and Tailwind CSS
+    - Set up Spring Boot application with Java 21 and Spring Security
+    - Create PostgreSQL database instance on Render
+    - Configure Backblaze B2 bucket for file storage
+    - Set up Vercel deployment pipeline for frontend
+    - Set up Render deployment pipeline for backend
+    - Implement environment configuration management for all services
+    - Create basic CI/CD workflow for automated testing
+    - Lift 8
+    - Design and implement JWT-based authentication flow
+    - Create user registration and login endpoints in Spring Boot
+    - Build login and registration UI components in Next.js
+    - Implement role-based access control structure with user roles
+    - Create authentication middleware for protected routes
+    - Build session management and token refresh logic
+    - Implement logout and session termination functionality
+    - Create password reset workflow via email
+    - Lift 10
+    - Design client entity schema with contact information and preferences
+    - Create client CRUD API endpoints in Spring Boot
+    - Build client list view with search and filtering
+    - Create client detail form with validation
+    - Implement client creation workflow
+    - Build client editing and update functionality
+    - Create multi-pet household relationship management
+    - Add referral source tracking fields
+    - Implement financial history placeholder structure
+    - Build communication preference toggles
+    - Lift 10
+    - Design patient entity schema linked to clients
+    - Create patient CRUD API endpoints
+    - Build patient list view with quick lookup functionality
+    - Create patient detail form with demographics
+    - Implement patient creation workflow linked to clients
+    - Build patient profile view with medical history placeholder
+    - Create patient demographic tracking fields
+    - Add patient demeanor status flags
+    - Implement species and breed categorization
+    - Build vaccination schedule placeholder structure
+  - Implement visual scheduling system with drag-and-drop capabilities and status management
+  - Lift 32
+    Milestone 2.1 Core Calendar Infrastructure
+    Milestone 2.2 Appointment Management Workflows
+    Milestone 2.3 Appointment Automation and Reminders
+    - Lift 10
+    - Design appointment entity schema with status tracking
+    - Create appointment CRUD API endpoints
+    - Integrate calendar library for Next.js frontend
+    - Build day, week, and month calendar views
+    - Implement appointment type configuration system
+    - Create customizable appointment duration settings
+    - Build color-coding system for appointment statuses
+    - Implement real-time calendar availability checking logic
+    - Lift 12
+    - Create appointment booking form with patient and client selection
+    - Build drag-and-drop appointment manipulation functionality
+    - Implement appointment status transitions
+    - Create check-in workflow for appointments
+    - Build in-progress status tracking
+    - Create discharge workflow
+    - Implement appointment rescheduling logic
+    - Build appointment cancellation with reason tracking
+    - Create appointment conflict detection system
+    - Implement multi-resource scheduling for rooms and staff
+    - Lift 10
+    - Integrate Mailgun API for email notifications
+    - Create email template system for appointment confirmations
+    - Build automated appointment reminder scheduling
+    - Implement reminder configuration settings
+    - Create SMS reminder structure with mock API integration
+    - Build appointment notification queue system
+    - Implement webhook support for appointment events
+    - Create appointment planning guide templates
+    - Build notification delivery tracking
+  - Implement comprehensive clinical note-taking with SOAP format and treatment tracking
+  - Lift 28
+    Milestone 3.1 SOAP Notes and Clinical Records
+    Milestone 3.2 Clinical Templates and Automation
+    Milestone 3.3 Treatment and Prescription Management
+    - Lift 10
+    - Design clinical note entity schema with SOAP structure
+    - Create clinical note CRUD API endpoints
+    - Build SOAP note entry form with structured sections
+    - Implement subjective findings entry
+    - Create objective data entry with validation
+    - Build assessment documentation section
+    - Create treatment plan entry section
+    - Implement clinical note approval workflow
+    - Build clinical note history view linked to patients
+    - Create timestamp tracking for all clinical entries
+    - Lift 8
+    - Design template entity schema with variable support
+    - Create template CRUD API endpoints
+    - Build clinical template creation interface
+    - Implement variable-driven template system
+    - Create procedure-specific templates
+    - Build template library management
+    - Implement automatic note population from templates
+    - Create tab-through data entry workflow
+    - Build template filtering by appointment type
+    - Lift 10
+    - Design treatment history entity schema
+    - Create treatment tracking API endpoints
+    - Build treatment entry form linked to clinical notes
+    - Implement prescription creation workflow
+    - Create medication dispensing interface
+    - Build prescription history tracking
+    - Implement medication dosage calculators
+    - Create prescription refill request structure
+    - Build restricted medication compliance tracking
+    - Add master problems list for ongoing diagnosis tracking
+  - Implement comprehensive billing system with Stripe integration and invoice management
+  - Lift 30
+    Milestone 4.1 Invoice Management System
+    Milestone 4.2 Payment Processing Integration
+    Milestone 4.3 Billing Automation and Triggers
+    - Lift 12
+    - Design invoice entity schema with line item structure
+    - Create invoice CRUD API endpoints
+    - Build invoice creation interface with drag-and-drop line items
+    - Implement real-time invoice calculation logic
+    - Create customizable invoice columns
+    - Build bulk discount functionality
+    - Implement partial payment support
+    - Create split billing capabilities
+    - Build estimate creation and conversion workflow
+    - Implement invoice status tracking
+    - Create draft invoice preview functionality
+    - Lift 10
+    - Integrate Stripe API for payment processing
+    - Create payment endpoint in Spring Boot
+    - Build payment form UI with Stripe Elements
+    - Implement payment method storage
+    - Create payment allocation to multiple invoices
+    - Build refund and credit management
+    - Implement payment reconciliation automation
+    - Create remote payment link generation
+    - Build payment history tracking
+    - Implement payment confirmation emails via Mailgun
+    - Lift 8
+    - Design billing trigger configuration system
+    - Create automatic charge capture from appointments
+    - Build service fee configuration interface
+    - Implement product bundle pricing
+    - Create time-based billing rules
+    - Build automatic invoice generation workflow
+    - Implement billing approval workflow
+    - Create unbilled services tracking
+    - Build invoice aging and overdue tracking
+  - Implement stock control, purchase orders, and pricing management with mobile support simulation
+  - Lift 30
+    Milestone 5.1 Stock Control and Tracking
+    Milestone 5.2 Purchase Order Management
+    Milestone 5.3 Pricing and Mobile Inventory
+    - Lift 10
+    - Design inventory entity schema with batch and lot tracking
+    - Create inventory CRUD API endpoints
+    - Build inventory list view with search and filtering
+    - Implement real-time inventory level tracking
+    - Create batch and lot number management
+    - Build expiration date monitoring with alerts
+    - Implement automatic reorder point notifications
+    - Create seasonal reorder point customization
+    - Build multi-location inventory support
+    - Implement FIFO rotation alert system
+    - Lift 10
+    - Design purchase order entity schema
+    - Create purchase order API endpoints
+    - Build purchase order creation interface
+    - Implement automated PO generation at thresholds
+    - Create supplier management system
+    - Build receiving workflow with inventory updates
+    - Implement backorder tracking
+    - Create invoice matching functionality
+    - Build purchase order approval workflow
+    - Lift 10
+    - Create product markup rules configuration
+    - Build multi-tier pricing structure
+    - Implement product bundle pricing
+    - Create dynamic pricing by appointment type
+    - Build inventory valuation calculations
+    - Design mobile inventory simulation interface
+    - Create barcode scanning simulation for inventory counts
+    - Build inventory transfer workflow between locations
+    - Implement wastage tracking for expired products
+    - Create stock movement reporting
+  - Build client-facing portal for appointment booking, invoice viewing, and record access
+  - Lift 28
+    Milestone 6.1 Client Portal Foundation
+    Milestone 6.2 Self-Service Appointment Booking
+    Milestone 6.3 Invoice and Records Access
+    - Lift 8
+    - Design client user authentication separate from staff
+    - Create client registration and login flow
+    - Build client portal dashboard layout
+    - Implement client session management
+    - Create client profile management interface
+    - Build password reset for client accounts
+    - Implement email verification for new clients
+    - Create client portal navigation structure
+    - Lift 10
+    - Create public appointment availability API
+    - Build client-facing appointment booking interface
+    - Implement configurable time slot display
+    - Create provider selection functionality
+    - Build appointment type differentiation
+    - Implement direct booking vs request modes
+    - Create appointment confirmation workflow
+    - Build appointment history view for clients
+    - Implement appointment modification requests
+    - Lift 10
+    - Create client invoice viewing API with security
+    - Build client invoice list and detail views
+    - Implement online payment through Stripe from portal
+    - Create prescription refill request interface
+    - Build pet medical record access view
+    - Implement vaccination schedule display
+    - Create appointment history view
+    - Build document download functionality for client records
+    - Implement privacy controls for sensitive information
+  - Implement multi-channel communication with templates and automated messaging
+  - Lift 25
+    Milestone 7.1 Email Communication System
+    Milestone 7.2 SMS Communication Integration
+    Milestone 7.3 Form Builder System
+    - Lift 8
+    - Design message template entity schema
+    - Create message template CRUD API endpoints
+    - Build email template editor with variable support
+    - Implement variable substitution engine
+    - Create automated email campaign system
+    - Build message delivery tracking
+    - Implement email broadcast functionality
+    - Create communication history log for clients
+    - Build unsubscribe management
+    - Lift 7
+    - Research SMS API options with free tier
+    - Implement mock SMS service for demonstration
+    - Create SMS template system
+    - Build SMS reminder automation
+    - Implement SMS delivery simulation
+    - Create two-way SMS capability structure
+    - Build SMS segment volume tracking
+    - Implement SMS opt-in and opt-out management
+    - Lift 10
+    - Design dynamic form entity schema
+    - Create form builder API endpoints
+    - Build drag-and-drop form designer interface
+    - Implement form field type library
+    - Create form variable auto-population system
+    - Build multi-page form support
+    - Implement form submission workflow
+    - Create automatic attachment to patient records
+    - Build form completion tracking
+    - Implement basic AI form generation using hosted model
+  - Build comprehensive reporting dashboard with financial, clinical, and inventory reports
+  - Lift 28
+    Milestone 8.1 Core Reporting Infrastructure
+    Milestone 8.2 Financial Reports
+    Milestone 8.3 Clinical and Inventory Reports
+    - Lift 8
+    - Design reporting query optimization structure
+    - Create report generation API endpoints
+    - Build report dashboard interface
+    - Implement custom date range selection
+    - Create export to CSV functionality
+    - Build report caching for performance
+    - Implement role-based report access control
+    - Create report scheduling structure
+    - Lift 10
+    - Create end of day totals report
+    - Build financial summary report with revenue and expenses
+    - Implement payment summary by type and method
+    - Create invoice revenue breakdown reports
+    - Build aged receivables report
+    - Implement taxable sales reporting
+    - Create payment reconciliation report
+    - Build revenue trend analysis
+    - Implement profit margin calculations
+    - Lift 10
+    - Create appointment status and type analysis report
+    - Build vaccination records report
+    - Implement unbilled consultation tracking report
+    - Create clinical note approval tracking
+    - Build inventory value and movement report
+    - Implement expired inventory alert report
+    - Create inventory ordering recommendations report
+    - Build product pricing analysis
+    - Implement backorder status reporting
+    - Create staff performance and sales reports
+  - Implement role-based permissions, time tracking, and task management for staff workflows
+  - Lift 25
+    Milestone 9.1 Role-Based Permission System
+    Milestone 9.2 Time Clock and Scheduling
+    Milestone 9.3 Task Management System
+    - Lift 10
+    - Design granular permission structure schema
+    - Create role and permission API endpoints
+    - Build role management interface
+    - Implement permission templates by role type
+    - Create staff user assignment to roles
+    - Build multi-location staff assignment
+    - Implement permission inheritance logic
+    - Create audit logging for security events
+    - Build active user monitoring dashboard
+    - Implement permission testing interface
+    - Lift 8
+    - Design time clock entity schema
+    - Create time tracking API endpoints
+    - Build clock in and clock out interface
+    - Implement staff scheduling system
+    - Create availability management
+    - Build hour tracking and reporting
+    - Implement overtime calculations
+    - Create staff performance monitoring
+    - Build time sheet export functionality
+    - Lift 7
+    - Design task entity schema with assignment tracking
+    - Create task CRUD API endpoints
+    - Build work list dashboard for staff
+    - Implement task assignment workflow
+    - Create task priority and status tracking
+    - Build reminder system for follow-ups
+    - Implement planning guide templates for workflows
+    - Create task completion tracking
+    - Build task performance metrics
+  - Implement recurring subscription-based wellness plans with usage tracking and automated billing
+  - Lift 22
+    Milestone 10.1 Wellness Plan Structure
+    Milestone 10.2 Subscription Billing Automation
+    Milestone 10.3 Plan Usage and Allocation
+    - Lift 8
+    - Design wellness plan entity schema
+    - Create wellness plan CRUD API endpoints
+    - Build wellness plan creation interface
+    - Implement plan customization by species and life stage
+    - Create service inclusion tracking structure
+    - Build plan pricing and billing cycle configuration
+    - Implement plan status management
+    - Create plan template library
+    - Lift 7
+    - Integrate Stripe subscription API
+    - Create recurring billing automation
+    - Build subscription payment processing
+    - Implement automatic renewal workflow
+    - Create payment failure handling
+    - Build subscription pause and resume functionality
+    - Implement proration calculations
+    - Create subscription invoice generation
+    - Lift 7
+    - Create appointment allocation for plan members
+    - Build usage tracking for included services
+    - Implement visit remaining calculations
+    - Create expiration date management
+    - Build plan utilization reports
+    - Implement automatic scheduling for wellness visits
+    - Create outstanding payment tracking
+    - Build plan member dashboard
+  - Implement remaining Tier 2 features and system refinements for portfolio presentation
+  - Lift 30
+    Milestone 11.1 UI Component Library and Storybook
+    Milestone 11.2 Advanced Search and Filtering
+    Milestone 11.3 System Configuration and Customization
+    Milestone 11.4 Attachment and File Management
+    - Lift 7
+    - Set up Storybook for component documentation
+    - Create reusable UI component library with Shadcn UI
+    - Build form component patterns
+    - Create data table components
+    - Implement modal and dialog patterns
+    - Build notification and toast components
+    - Create loading and skeleton states
+    - Document component usage in Storybook
+    - Lift 8
+    - Implement global search functionality across entities
+    - Create advanced filter builder interface
+    - Build saved search functionality
+    - Implement fuzzy search capabilities
+    - Create search result highlighting
+    - Build search performance optimization
+    - Implement recent searches tracking
+    - Create contextual search by module
+    - Lift 8
+    - Create system settings management interface
+    - Build appointment type and status configuration
+    - Implement department and location management
+    - Create service fee setup interface
+    - Build document template management
+    - Implement email template customization
+    - Create branding and logo upload
+    - Build practice information configuration
+    - Lift 7
+    - Implement file upload to Backblaze B2
+    - Create attachment viewer component
+    - Build file type validation and security
+    - Implement file size limits and compression
+    - Create thumbnail generation for images
+    - Build file download functionality
+    - Implement attachment linking to records
+    - Create file management interface
+  - Advanced features that enhance demonstration value but are not critical for core functionality
+  - Lift 35
+    Milestone 12.1 In-Hospital Patient Management Whiteboard

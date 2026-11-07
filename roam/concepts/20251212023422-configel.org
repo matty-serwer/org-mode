@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       325547f2-6d81-4cbe-8afd-beb727016687
+:REFLECT_ID: 5dba5cd737db48af85dc741fe0651cac
+:CREATED:  [2025-12-12 Fri 02:34]
+:MODIFIED: [2025-12-12 Fri 02:34]
+:END:
+#+title: config.el
+#+filetags: :concept:
+#+date: 2025-12-12
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6f427d68-0ecc-4e4a-a0a1-9ebcd673d3d9
+:REFLECT_ID: ce2ab11214f844a5b4b306cf5a7e84fa
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-11-25 Tue 10:15]
+:END:
+#+title: vterm
+#+filetags: :concept:
+#+date: 2025-10-25
+

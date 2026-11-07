@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       05e26e54-93de-4a9c-8814-fbf57a49e0ee
+:REFLECT_ID: 677b6876770c444291ae46ce2bc0c53e
+:CREATED:  [2025-11-12 Wed 21:50]
+:MODIFIED: [2025-11-12 Wed 21:51]
+:END:
+#+title: iOS App
+#+filetags: :concept:
+#+date: 2025-11-12
+

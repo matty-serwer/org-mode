@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bb6971b4-974b-4abf-8778-fde0b38dec97
+:REFLECT_ID: 320f1046d11d4d83b01f7a2b881ae1f0
+:CREATED:  [2026-04-16 Thu 06:59]
+:MODIFIED: [2026-04-16 Thu 06:59]
+:END:
+#+title: guide
+#+filetags: :concept:
+#+date: 2026-04-16
+

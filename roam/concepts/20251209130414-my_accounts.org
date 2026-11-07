@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       5756d740-6bd5-4859-8680-3b5bdb092205
+:REFLECT_ID: fef0cfccd0d0421b8aaecf578110de62
+:CREATED:  [2025-12-09 Tue 13:04]
+:MODIFIED: [2026-04-08 Wed 20:22]
+:END:
+#+title: 🗄️ My Accounts
+#+filetags: :concept:
+#+date: 2025-12-09
+- [[id:6ab15631-8909-402a-9cdb-083b0c73ef9d][Headway]]
+  - Two Accounts
+    - [[mailto:Matthew.Serwer@gmail.com][Matthew.Serwer@gmail.com]]
+      - Old one, for [[id:537901a4-f1a3-421d-947e-d281bed9faaf][Heriberto Sierra]]
+    - [[mailto:Matthew.Serwer@proton.me][Matthew.Serwer@proton.me]]
+      - [[id:4d1186d5-6bb4-48ce-88d1-1c9edae5ef38][Eric Rubenstein]]
+- [[id:48eba0a5-625e-4deb-8cac-c8bdf947d843][Vercel]]
+  - Login
+    - Through github account
+- [[id:54c4187c-731f-4f1e-922d-b65655715d81][Tiimo]]
+  - Login
+  - 
+  - iCloud Calendar
+    - App Specific Password
+      - =tmhb-zedt-msvl-oaqa=
+      - 

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e068744a-9fdf-457e-a2e6-d75f0b3d5d76
+:REFLECT_ID: 436c5dac3ee04e4e805e2cda0fba95b1
+:CREATED:  [2025-11-12 Wed 21:24]
+:MODIFIED: [2025-11-12 Wed 21:25]
+:END:
+#+title: Apt 2
+#+filetags: :concept:
+#+date: 2025-11-12
+

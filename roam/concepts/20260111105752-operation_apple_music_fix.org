@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       b3709430-d2d7-4ab8-afa6-2507f3c1da39
+:REFLECT_ID: a797ea3ba1e04948b09391e55b96f452
+:CREATED:  [2026-01-11 Sun 10:57]
+:MODIFIED: [2026-01-11 Sun 21:55]
+:END:
+#+title: Operation: Apple Music Fix
+#+filetags: :concept:
+#+date: 2026-01-11
+- Export and Collect Playlists
+  - Export Playlists from Spotify
+- Add a ton of albums
+- 

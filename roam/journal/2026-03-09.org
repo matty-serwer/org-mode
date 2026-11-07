@@ -1,0 +1,65 @@
+:PROPERTIES:
+:ID:       c92bd201-9b0d-4b6f-a86c-c00afa5dbf34
+:REFLECT_ID: 09032026
+:CREATED:  [2026-03-09 Mon 15:56]
+:MODIFIED: [2026-03-13 Fri 03:09]
+:END:
+#+title: Mon, March 9th, 2026
+#+filetags: :daily:
+#+date: 2026-03-09
+- [[id:619793d3-cc2b-4d19-a4ae-8d2c3c088746][PEQ Settings]]
+  - [[id:92bad583-de65-43f2-9728-1d2dbbeb1f47][Shure LAV]]
+    - Male Voice
+      ∙ Band 1 (HPF): 120Hz, 18dB/oct
+      ∙Band 2: 250Hz, -3dB, Q 1.5
+      
+      #+begin_src markup
+      Band 2: 900Hz, -1.5dB, Q 1.5
+      #+end_src
+      - Band 2: 500Hz, -2dB, Q 1.5
+        ∙ Band 3: 2.5kHz, +2dB, Q 1.5
+        ∙ Band 4: 8kHz, +1.5dB, Q 1.0
+        Female Voice
+        ∙ Band 1 (HPF): 160Hz, 18dB/oct
+        ∙ Band 2: 350Hz, -2dB, Q 1.5
+∙ Band 3: 3kHz, +2dB, Q 1.5
+∙ Band 4: 10kHz, +2dB, Q 1.0​​​​​​​​​​​​​​​​
+
+- [[id:0161d257-ce32-4a2b-ac05-b02bdabfc46d][Walt Whitman]]
+  - When I Heard the Learn'd Astronomer
+    - When I heard the learn'd astronomer,
+    - When the proofs, the figures, were ranged in columns before me,
+    - When I was shown the charts, the diagrams, to add, divide, and measure them,
+    - When I sitting heard the learned astronomer where he lectured with much applause in the lecture room,
+    - How soon unaccountable I became tired and sick,
+    - Till rising and gliding out I wander'd off by myself,
+    - In the mystical moist night-air, and from time to time,
+    - Look'd up in perfect silence at the stars.
+- Room: 26×40×13' | Lav Mic Problem Frequencies
+  -----
+  
+  -----
+  - Critical Modes
+    - 43 Hz
+      - height fundamental (ceiling bounce, chest buildup)
+    - 86 Hz
+      - height 2nd / width 4th harmonic convergence (boomy)
+    - 107–129 Hz
+      - width/height harmonics clustering (thick, uneven)
+    - 172–215 Hz
+      - upper height harmonics (muddy/honky)
+  - EQ Action Points
+    - High-pass: 100–120 Hz
+      - unless chest warmth needed
+    - Notch watch: 160–200 Hz
+      - honk
+    - Notch watch: 300–400 Hz
+      - cardboard box / modal density
+  - Lav-Specific Risks
+    - Talent movement = sweeping through nodes → tonal swells, not fixed notches
+    - Ceiling reflection path is short & consistent → 43/86 Hz reinforcement
+    - Low-mid buildup compounds with clothing/body coupling
+  - Workflow
+    - Don't EQ for a fixed position — ride or automate low-mid reduction
+    - Treat 86–129 Hz as a range, not individual points
+    - Check mono compatibility — comb filtering hits hardest there

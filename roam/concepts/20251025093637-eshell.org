@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d3a0d0c2-2492-4163-9894-a5946f6016bb
+:REFLECT_ID: ba819b2a749e4bc2aa53e02b3a0aa26a
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:38]
+:END:
+#+title: eshell
+#+filetags: :concept:
+#+date: 2025-10-25
+

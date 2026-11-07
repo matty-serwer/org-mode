@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       97cb4b7c-ff8a-4003-b596-12db63daad71
+:REFLECT_ID: 66210114264f45f88dd728e8c368f7a7
+:CREATED:  [2025-11-11 Tue 22:38]
+:MODIFIED: [2025-11-11 Tue 22:41]
+:END:
+#+title: Anthropic\
+#+filetags: :concept:company:flag:
+#+date: 2025-11-11
+- type:  
+- domain: [[https://www.anthropic.com/][https://www.anthropic.com/]]
+- Products
+  - [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]]
+  - [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]]
+#+begin_quote
+- As of [[id:ddc013ee-a566-4e9f-9496-a7699bff329d][11/11/2025]] having lots of troubles
+- looking for a backup for claude code in particular
+-  
+#+end_quote

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       4a591457-8cbf-478d-ba60-35f72ad3663a
+:REFLECT_ID: 807b91cb2c3c40f7bf8c46807fc055ff
+:CREATED:  [2025-12-12 Fri 00:26]
+:MODIFIED: [2025-12-12 Fri 00:27]
+:END:
+#+title: 🏴‍☠️ Doom Emacs Notes
+#+filetags: :project:
+#+date: 2025-12-12
+* 🏴‍☠️ [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Notes
+- [[id:c2024c61-ce42-4d0d-b944-473c77f8fa7e][Navigating Doom Emacs Notes]]

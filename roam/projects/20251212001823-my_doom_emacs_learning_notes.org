@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       78e641cb-7279-4a0d-ba79-d0435eab6bbd
+:REFLECT_ID: eadda03ed5c246759062b483029914b7
+:CREATED:  [2025-12-12 Fri 00:18]
+:MODIFIED: [2026-01-28 Wed 05:04]
+:END:
+#+title: 💾 💥 My Doom Emacs Learning Notes
+#+filetags: :project:
+#+date: 2025-12-12
+* 💾 💥 My [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Learning Notes
+- Projects (with Helm)
+  - =SPC p f=  - Projectile Files
+    - Just start typing the filename or directory
+    - We're only looking at files in the current project
+  - =SPC f f= - find files, starts at current project
+    - =/= - to start with an absolute path
+    - =/~/= - to start at the Home Directory
+- Workspaces
+  - Supposedly they save automatically
+  - the default menu method opened a strange error workspace
+  - but then =SPC TAB 1= Opened the right one. Apparently we can have numbered workspaces?
+  - [X] Look Up [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Workspaces, and their number-ability (=SPC TAB 1=)
+- UI
+  - THEMES!
+    - =SPC h t= for load-theme menu
+    - menu does close when you pick one, but the phrase is so easy you can pop back and forth
+    - THEN in [[id:325547f2-6d81-4cbe-8afd-beb727016687][config.el]]
+      - (setq doom-theme 'doom-ephemeral)
+      - change ephemeral to .. well you get it
+- Modes
+  - Flyspell mode
+    - =SPC t s= to toggle. (Current Buffer only)
+- Spellcheck in emacs which uses the ispell 
+- File Editing
+  - Normal Mode
+    - Add A Space
+      - =[ SPC= - before 
+      - =] SPC= - after
+  - Visual Mode
+    - Delete Line
+      - =SPC R= - Delete line to dust
+      - =SPC d= - Cut, or Delete to Kill Ring (Clipboard)

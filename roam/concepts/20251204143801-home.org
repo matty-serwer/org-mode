@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       def06d31-8680-42c7-9200-df694a2acda8
+:REFLECT_ID: cee7ae6a98d8456aaf737f261a1e46d7
+:CREATED:  [2025-12-04 Thu 14:38]
+:MODIFIED: [2025-12-04 Thu 14:38]
+:END:
+#+title: Home
+#+filetags: :concept:
+#+date: 2025-12-04
+

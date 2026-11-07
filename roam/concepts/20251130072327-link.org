@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       374d4f32-87fb-48e6-baa6-4b940514c89a
+:REFLECT_ID: 0f1572b1d9b94bc183e953085ab1463d
+:CREATED:  [2025-11-30 Sun 07:23]
+:MODIFIED: [2025-11-30 Sun 07:24]
+:END:
+#+title: link
+#+filetags: :concept:
+#+date: 2025-11-30
+

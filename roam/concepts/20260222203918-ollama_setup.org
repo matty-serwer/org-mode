@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cac43c76-1f6b-49e0-9dbb-11a1642f49b0
+:REFLECT_ID: 632d01b24ae244b5b66e6e0173b99223
+:CREATED:  [2026-02-22 Sun 20:39]
+:MODIFIED: [2026-02-22 Sun 20:39]
+:END:
+#+title: Ollama Setup
+#+filetags: :concept:
+#+date: 2026-02-22
+

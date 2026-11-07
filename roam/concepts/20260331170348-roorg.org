@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2d996d12-6d76-4243-98b8-0584a702f83d
+:REFLECT_ID: 3392d785d613499eb82e9bea96646604
+:CREATED:  [2026-03-31 Tue 17:03]
+:MODIFIED: [2026-03-31 Tue 17:03]
+:END:
+#+title: RoORG
+#+filetags: :concept:
+#+date: 2026-03-31
+

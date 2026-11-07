@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       9aca374d-a41f-4d13-9de6-3a3a3350aac6
+:REFLECT_ID: bc2bb344ee6347858ac65836b503c912
+:CREATED:  [2025-10-27 Mon 07:02]
+:MODIFIED: [2025-11-30 Sun 11:19]
+:END:
+#+title: 🍰 SnipFlow
+#+filetags: :project:
+#+date: 2025-10-27
+- About
+  - A [[id:e8a5b689-875d-488f-a5e8-ea5821b7cfc1][Terminal]] snippet manager
+  - Has a Manager for [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]]
+- Official Notes
+  - [[id:769aca19-122f-4447-be44-c25b8581c50e][🍰 SnipFlow - Snippet Manager CLI Quick Reference]]
+  - [[id:4f1f7a91-eac7-41a0-9f1f-e89b8789d5b5][🍰 SnipFlow - Instant Code Snippet Manager for NeoVim]]

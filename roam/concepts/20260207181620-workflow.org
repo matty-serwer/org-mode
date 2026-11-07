@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       63053232-cd36-421c-ab94-21ab0455e313
+:REFLECT_ID: 6010c6324e7f4075bf259f06af8c2d2f
+:CREATED:  [2026-02-07 Sat 18:16]
+:MODIFIED: [2026-02-07 Sat 18:16]
+:END:
+#+title: Workflow
+#+filetags: :concept:
+#+date: 2026-02-07
+

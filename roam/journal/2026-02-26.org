@@ -1,0 +1,148 @@
+:PROPERTIES:
+:ID:       6c1baca1-8b63-408d-9e3e-38dd6aa896fe
+:REFLECT_ID: 26022026
+:CREATED:  [2026-02-26 Thu 02:53]
+:MODIFIED: [2026-03-13 Fri 23:46]
+:END:
+#+title: Thu, February 26th, 2026
+#+filetags: :daily:
+#+date: 2026-02-26
+- [[id:1ce93066-467c-4802-a268-ebe05304d6c8][Doom Emacs Org Mode]]
+  - [[id:25018822-4e0c-4d61-96b4-0f96e63d1da7][org-mode setup checklist]]
+    -----
+    
+    *1. Create your org files*
+    
+    #+begin_src bash
+    mkdir -p ~/org
+    touch ~/org/inbox.org ~/org/work.org ~/org/personal.org ~/org/music.org ~/org/journal.org ~/org/someday.org
+    
+    #+end_src
+    -----
+    
+    *2. Add skeleton headings to each file*
+    =work.org=:
+    
+    #+begin_src org
+    * LEMR
+    * Phantom Power
+    * DataAnnotation
+    * Career
+    
+    #+end_src
+    =music.org=:
+    
+    #+begin_src org
+    * Ideas
+    * Projects
+    * References
+    * Gear & Plugins
+    
+    #+end_src
+    =personal.org=:
+    
+    #+begin_src org
+    * Home
+    * Health
+    * Finance
+    * Goals
+    
+    #+end_src
+    =someday.org=:
+    
+    #+begin_src org
+    * Dev
+    * Music
+    * Personal
+    
+    #+end_src
+    -----
+    
+    *3. Update your config*
+    Replace your current capture templates and add agenda files. Your config already has most of this, just consolidate:
+    
+    #+begin_src elisp
+    ;; Tell agenda which files to scan for todos
+    (setq org-agenda-files '("~/org/inbox.org"
+                              "~/org/work.org"
+                              "~/org/personal.org"
+                              "~/org/music.org"
+                              "~/org/journal.org"))
+    
+    ;; Refile targets - any heading in these files, up to 2 levels deep
+    (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+    (setq org-refile-use-outline-path t)           ; show full path in completion
+    (setq org-outline-path-complete-in-steps nil)  ; single helm completion, not two-step
+    
+    ;; Capture templates
+    (after! org
+      (setq org-capture-templates
+            '(("i" "Inbox" entry
+               (file "~/org/inbox.org")
+               "* %?\n  %U")
+    
+              ("t" "Todo" entry
+               (file "~/org/inbox.org")
+               "* TODO %?\n  %U")
+    
+              ("m" "Music Idea" entry
+               (file+headline "~/org/music.org" "Ideas")
+               "* IDEA %?\n  %U\n  Key: \n  BPM: \n  Vibe: ")
+    
+              ("j" "Journal" entry
+               (file+datetree "~/org/journal.org")
+               "* %?\n  %U"))))
+    
+    #+end_src
+    -----
+    
+    *4. The daily workflow*
+    Capture a note:
+    Open agenda:
+    File inbox items (do this whenever, daily is ideal):
+    -----
+    
+    *5. Navigation you'll actually use*
+    What Key Jump to heading in current file =SPC s i= Search across all org files =SPC n s= Open agenda =SPC o A= Capture =SPC X= Refile current heading =C-c C-w= Fold/unfold all =S-TAB= Fold/unfold current =TAB=
+    -----
+    
+    That's the whole system. Everything else you can add later when you feel a specific need for it.
+    - =SPC X= → pick template → type → =C-c C-c=
+    - =SPC o A= → shows all todos and scheduled items across all files
+    - Open =inbox.org=
+    - Cursor on a heading
+    - =C-c C-w= → type destination (e.g. =work/LEMR=) → Enter → it's gone
+  -
+    - set up most of this
+    - ~/org/[[http://tech.org][tech.org]] for instance
+    - looking at [[id:24524799-537f-4d3c-8c8c-039cb0120522][org-Roam]] though
+      - I don't see why not jump right into this. 
+      - [X] Watch this video on [[id:24524799-537f-4d3c-8c8c-039cb0120522][org-Roam]] capture
+        [[https://www.youtube-nocookie.com/embed/YxgA5z2R08I][youtube: https://www.youtube-nocookie.com/embed/YxgA5z2R08I]]
+      - [X] and this video on [[id:24524799-537f-4d3c-8c8c-039cb0120522][org-Roam]] journaling
+        [[https://www.youtube-nocookie.com/embed/3-sLBaJAtew][youtube: https://www.youtube-nocookie.com/embed/3-sLBaJAtew]]
+  - Here’s your hour breakdown:
+    - 🥁 DRUMS — 15 min total
+      ∙ 3 min — Load empty Drum Rack template
+      ∙ 5 min — Load kick + snare samples (if you hate the kick in 3 min, move on anyway)
+      ∙ 4 min — Drop in hat/ride loops, get them sitting in the groove
+      ∙ 3 min — Quick compress/glue, basic mix level, done — don’t touch it again
+      🎹 CHORDS + BASS — 15 min total
+      ∙ 5 min — Load Diva, find a pad/stab patch (no deep editing, first decent one wins)
+      ∙ 5 min — Play in a chord loop, 4 or 8 bars, done
+      ∙ 5 min — Load bass patch, lay in a bassline that follows the chords
+      🔁 MAIN LOOP POLISH — 10 min
+      ∙ Add a fill or two, nothing crazy
+      ∙ Make sure the loop actually loops clean
+      ∙ Bounce/flatten if it helps your CPU
+      🔀 ALTERNATE LOOP — 10 min
+      ∙ Duplicate the section, strip it back (drop chords, keep beat or vice versa)
+      ∙ Add one thing that wasn’t in the main loop
+      ∙ Hard stop at 10 min — good or bad, leave it
+      🎚️ TRANSITION + ROUGH ARRANGEMENT — 7 min
+      ∙ Drop the two sections into an Underworld-style arrangement skeleton
+      ∙ Add a basic filter sweep or riser between them
+      ∙ Don’t overthink it — just connect A to B
+      ⏱️ Buffer — 3 min to save, name the project, and get out the door
+      Total: 60 min
+      Want me to set each timer as you hit each section? Just say “start drums” or “next section” and I’ll track it for you in real time.​​​​​​​​​​​​​​​​

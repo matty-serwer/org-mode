@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       60e4164b-c829-474b-baaf-2663bb24ac14
+:REFLECT_ID: a3b4673350724fefab12cc7f6a2284e7
+:CREATED:  [2025-11-06 Thu 02:06]
+:MODIFIED: [2025-11-06 Thu 02:06]
+:END:
+#+title: The Lowdown
+#+filetags: :concept:
+#+date: 2025-11-06
+

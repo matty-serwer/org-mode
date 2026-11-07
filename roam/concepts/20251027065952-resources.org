@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6839e0aa-93c0-4227-9a77-e98010e21085
+:REFLECT_ID: cf8667b3477d41879d59eb2e13180029
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: Resources
+#+filetags: :concept:
+#+date: 2025-10-27
+

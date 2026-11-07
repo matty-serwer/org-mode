@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cc50fa75-ab66-4e13-bef6-487ed3189629
+:REFLECT_ID: 5bdbec886cfe4ab887597a671875b78f
+:CREATED:  [2026-02-20 Fri 16:56]
+:MODIFIED: [2026-02-20 Fri 16:56]
+:END:
+#+title: Therapy
+#+filetags: :concept:
+#+date: 2026-02-20
+

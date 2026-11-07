@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3390a25a-e948-46a4-bce4-0daf4e77c747
+:REFLECT_ID: 2d5dcda4fcbd45aab855aa6ce21a8401
+:CREATED:  [2025-11-24 Mon 20:24]
+:MODIFIED: [2025-11-24 Mon 20:25]
+:END:
+#+title: Utility Classes
+#+filetags: :concept:
+#+date: 2025-11-24
+

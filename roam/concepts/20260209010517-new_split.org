@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b46c05d8-29f6-4cb3-9bec-25301ba909f2
+:REFLECT_ID: cf45821c12e044b2bd7cf355b01b90ae
+:CREATED:  [2026-02-09 Mon 01:05]
+:MODIFIED: [2026-02-09 Mon 01:05]
+:END:
+#+title: New Split
+#+filetags: :concept:
+#+date: 2026-02-09
+

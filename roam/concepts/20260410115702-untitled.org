@@ -1,0 +1,85 @@
+:PROPERTIES:
+:ID:       95bda547-ec02-4188-9de0-b65ae6886b45
+:REFLECT_ID: 33a2ddaf4f9a474c9529df7fd7e5f6fd
+:CREATED:  [2026-04-10 Fri 11:57]
+:MODIFIED: [2026-04-10 Fri 11:57]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-04-10
+-----
+
+** 2-Day Roadmap
+*** Day 1 — Setup & Core Pages
+*Milestone 1: Environment (1–2 hrs)*
+- Sign up for Shopify Partner account at partners.shopify.com[5]
+- Create a Development Store, add 8–10 sample products with images, prices, and collections
+- Create a new Next.js app: =npx create-next-app@latest --typescript= with Tailwind
+- Install dependencies: =@shopify/hydrogen-react=, =graphql-request=
+- Create a =.env.local= with your =SHOPIFY_STORE_DOMAIN= and =SHOPIFY_STOREFRONT_ACCESS_TOKEN= (from the dev store's Storefront API settings)
+*Milestone 2: Data Layer (1 hr)*
+- Set up a Shopify Storefront API client using =createStorefrontClient= from =hydrogen-react=
+- Write your first GraphQL queries: fetch all products, fetch single product by handle
+- Test queries in Shopify's built-in GraphiQL explorer first[3]
+*Milestone 3: Product Listing Page (1–2 hrs)*
+- Build =/= — Homepage with featured collections grid
+- Build =/products= — Product listing page with all products, filtered by collection
+- Use =<Image>= from hydrogen-react for optimized Shopify CDN images
+- Style with Tailwind (responsive grid, hover states)
+*Milestone 4: Product Detail Page (1–2 hrs)*
+- Build =/products/[handle]= — dynamic route
+- Display product images, title, price using =<Money>=, variants selector, description
+- Add to Cart button wired to =useCart()= from hydrogen-react
+- Cart drawer or cart page with line items, quantity update, remove
+-----
+
+*** Day 2 — Polish, Cart, Checkout & Portfolio Presentation
+*Milestone 5: Cart & Checkout (1–2 hrs)*
+- Implement =CartProvider= at the app root
+- Build a slide-out cart drawer using cart state from =useCart()=
+- Wire the "Checkout" button to Shopify's hosted checkout URL (Storefront API returns a =checkoutUrl=)[3]
+- Test a full add-to-cart → checkout flow in test mode using Shopify's bogus gateway
+*Milestone 6: Search & Collection Pages (1–2 hrs)*
+- Build =/collections/[handle]= — collection-filtered product grid
+- Add a search bar that queries Shopify's =search= endpoint
+- Add a simple nav with links to collections
+*Milestone 7: SEO & Performance (1 hr)*
+- Add dynamic =<Head>= meta tags per product (title, description, OG image)
+- Add =next/image= integration for LCP optimization
+- Verify Lighthouse score — headless Shopify stores regularly hit 95+[6]
+*Milestone 8: Portfolio Finishing (1–2 hrs)*
+- Add a custom font + branded color scheme (your own aesthetic — this is your portfolio piece)
+- Deploy to Vercel (free tier, 2-min deploy with =vercel --prod=)
+- Write a clean README with screenshots for your Fiverr gig images
+- Record a 60–90 second Loom walkthrough of the storefront — buyers love video previews
+-----
+
+** Day-by-Day Time Breakdown
+Block Day 1 Day 2 Morning Partner account + dev store setup, Next.js scaffold Cart & checkout flow Afternoon GraphQL data layer + product listing page Search + collection pages Evening Product detail page + cart state SEO, Vercel deploy, portfolio polish
+-----
+
+** Key Tips Going In
+- *Use the GraphiQL app in your Shopify dev store* to build and test all your queries before writing any Next.js code — it saves a ton of debugging time[3]
+- =@shopify/hydrogen-react= is framework-agnostic (works with Next.js, not just Hydrogen's Remix setup), so highlight that in your gig — it signals you understand the ecosystem[4]
+- Shopify's test checkout uses a *"Bogus Gateway"* — no real card needed, just enter =1= as the card number to simulate a successful order
+- The finished project gives you a real live URL to link from your Fiverr gig, which is a major trust signal for buyers
+Sources
+[1] Step-by-Step Guide to Creating a Shopify Development Store in 2026 [[https://appshopo.com/blog/shopify-development-store-guide/][https://appshopo.com/blog/shopify-development-store-guide/]]
+[2] A Complete Guide to Shopify App Development in 2026 - Ace Infoway [[https://www.aceinfoway.com/blog/shopify-app-development-guide][https://www.aceinfoway.com/blog/shopify-app-development-guide]]
+[3] What I Learned Building 4 Shopify Headless Stores with Next.js [[https://www.reddit.com/r/nextjs/comments/1hh4b8h/what_i_learned_building_4_shopify_headless_stores/][https://www.reddit.com/r/nextjs/comments/1hh4b8h/what_i_learned_building_4_shopify_headless_stores/]]
+[4] Shopify Hydrogen vs Next.js for Headless Store | Talk Shop [[https://www.letstalkshop.com/blog/shopify-hydrogen-vs-nextjs-for-headless-store][https://www.letstalkshop.com/blog/shopify-hydrogen-vs-nextjs-for-headless-store]]
+[5] How to Create a Shopify Development Store in 2025 | Complete Guide [[https://ecomheroes.dev/blogs/how-to/shopify-development-store-2025-guide][https://ecomheroes.dev/blogs/how-to/shopify-development-store-2025-guide]]
+[6] Shopify Headless Commerce with Hydrogen: Complete ... [[https://speedboostr.com/shopify-headless-commerce-with-hydrogen-complete-implementation-guide/][https://speedboostr.com/shopify-headless-commerce-with-hydrogen-complete-implementation-guide/]]
+[7] Shopify Developer Account Free in 2026: What You Need to Know [[https://swifttechco.com/blog/e-commerce/shopify-developer-account-free-in-2026-what-you-need-to-know][https://swifttechco.com/blog/e-commerce/shopify-developer-account-free-in-2026-what-you-need-to-know]]
+[8] How To Create Shopify Development Store 2026 - YouTube 
+[[https://www.youtube-nocookie.com/embed/4PWeEiQ5z-o][youtube: https://www.youtube-nocookie.com/embed/4PWeEiQ5z-o]]
+
+[9] How to Create Shopify Developer Account in 2026 - Meetanshi [[https://meetanshi.com/blog/how-to-create-shopify-developer-account/][https://meetanshi.com/blog/how-to-create-shopify-developer-account/]]
+[10] Building a Headless Shopify Storefront with [[Builder.io][Builder.io]] [[https://shopify.tenten.co/building-a-headless-shopify-storefront-with-builderio-a-comprehensive-tutorial][https://shopify.tenten.co/building-a-headless-shopify-storefront-with-builderio-a-comprehensive-tutorial]]
+[11] Is there an option to get free developer account with free store for ... [[https://community.shopify.com/t/is-there-an-option-to-get-free-developer-account-with-free-store-for-testing/286442][https://community.shopify.com/t/is-there-an-option-to-get-free-developer-account-with-free-store-for-testing/286442]]
+[12] How to Learn Shopify Development in 2026 - YouTube 
+[[https://www.youtube-nocookie.com/embed/IZh79SHtrKY][youtube: https://www.youtube-nocookie.com/embed/IZh79SHtrKY]]
+
+[13] How to Build a Shopify Headless Store from Scratch [[https://shopifyhydrogendeveloper.com/blog/how-to-build-a-shopify-headless-store-from-scratch][https://shopifyhydrogendeveloper.com/blog/how-to-build-a-shopify-headless-store-from-scratch]]
+[14] Step-by-Step: Creating a Shopify Development Store in 2026 [[https://swifttechco.com/blog/e-commerce/step-by-step-creating-a-shopify-development-store-in-2026][https://swifttechco.com/blog/e-commerce/step-by-step-creating-a-shopify-development-store-in-2026]]
+[15] Shopify Hydrogen: How to Create a Headless eCommerce ... [[https://www.skillshare.com/en/classes/shopify-hydrogen-how-to-create-a-headless-ecommerce-storefront-with-react/902985932][https://www.skillshare.com/en/classes/shopify-hydrogen-how-to-create-a-headless-ecommerce-storefront-with-react/902985932]]

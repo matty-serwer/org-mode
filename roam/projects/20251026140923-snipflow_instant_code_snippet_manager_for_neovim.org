@@ -1,0 +1,85 @@
+:PROPERTIES:
+:ID:       4f1f7a91-eac7-41a0-9f1f-e89b8789d5b5
+:REFLECT_ID: b67ad02feb524e348502aa9cefdb58d5
+:CREATED:  [2025-10-26 Sun 14:09]
+:MODIFIED: [2025-10-30 Thu 17:51]
+:END:
+#+title: 🍰 SnipFlow - Instant Code Snippet Manager for NeoVim
+#+filetags: :project:vim_keybindings:
+#+date: 2025-10-26
+* [[id:9aca374d-a41f-4d13-9de6-3a3a3350aac6][🍰 SnipFlow]] - Instant Code Snippet Manager for [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]]
+- /A git-backed, fzf-powered snippet library with seamless LazyVim integration./ 
+-  
+*** =Space + s + s= - Search Snippets (Primary)
+- Opens fzf picker in vertical split
+- Full interactive search with live preview
+- Arrow keys to navigate, Enter to copy
+- Close with =:q=, paste with =p=
+*** =Space + s + i= - Insert Snippet
+- Prompts for search term
+- Inserts directly at cursor position
+- Fast workflow for known snippets
+*** =Space + s + d= - Snippets Directory
+- Changes working directory to ~/snippets
+- For editing and adding new snippets
+** Terminal Commands
+*** Basic Usage
+- =snip= - Browse all snippets with fzf
+- =snip react= - Search for snippets matching "react"
+- =snip hook= - Fuzzy search for "hook"
+- =snippets= - Navigate to ~/snippets directory
+*** fzf Navigation (inside snip)
+- *Arrow keys* - Move up/down through results
+- *Enter* - Copy selected snippet to clipboard
+- *Ctrl-E* - Edit snippet in $EDITOR
+- *Ctrl-O* - Open snippet directory in Finder
+- *ESC* - Cancel and exit
+*** fzf Search Operators (type in search box)
+- ='term= - Exact match (e.g., ='useState=)
+- =^prefix= - Must start with (e.g., =^react/=)
+- =suffix$= - Must end with (e.g., =.tsx$=)
+- =!term= - Exclude (e.g., =!python=)
+- =term1 | term2= - OR operator (e.g., =react | vue=)
+- =term1 term2= - AND operator (e.g., =react hook=)
+*** Search Examples
+- =snip ary= - Finds "array-methods.js" (fuzzy)
+- =snip react hook= - React files containing "hook"
+- =snip !python= - Everything except Python
+- =snip .tsx$= - Only TypeScript React files
+- =snip middleware | route= - Express middleware or routes
+** Library Organization
+*Location:* =~/snippets/=
+*Categories:*
+- javascript - Vanilla JavaScript patterns
+- typescript - TypeScript types, interfaces, utilities
+- python - Python code patterns
+- java - Java snippets
+- react - React hooks and patterns
+- vue - Vue.js components
+- nextjs - Next.js API routes and patterns
+- express - Express.js routes and middleware
+- django - Django patterns
+- flask - Flask patterns
+- components - Reusable UI components
+- datasets - Sample data and schemas
+- sql - SQL queries and patterns
+- shell - Shell scripts and commands
+- git - Git command reference
+- docker - Docker and docker-compose templates
+** Workflows
+*** LazyVim
+1. *Browse & paste:* =Space-s-s= → search → Enter → =:q= → =p=
+1. *Quick insert:* =Space-s-i= → type search → Enter
+1. *Edit snippets:* =Space-s-d= → =:e category/file.ext= → save
+*** Terminal
+1. *Standard:* =snip= → type to search → Enter → paste
+1. *Pre-filtered:* =snip react= → browse React only → Enter
+1. *Fuzzy:* =snip ust= → finds "useState-hook" → Enter
+** Adding New Snippets
+*** Create
+#+begin_src bash
+# Create new snippet in appropriate category
+echo "your code here" > ~/snippets/react/custom-snippet.tsx
+#+end_src
+- [[id:f4b3ab2e-797a-45da-9f55-5911786e21b6][Context (Note)]]
+  - 

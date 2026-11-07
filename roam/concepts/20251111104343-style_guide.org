@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bd9a7983-acfa-4f8b-b65a-290c92617ffd
+:REFLECT_ID: a1b25fa596bc455ab7dc1be99da4017e
+:CREATED:  [2025-11-11 Tue 10:43]
+:MODIFIED: [2025-11-12 Wed 06:15]
+:END:
+#+title: Style Guide
+#+filetags: :concept:
+#+date: 2025-11-11
+

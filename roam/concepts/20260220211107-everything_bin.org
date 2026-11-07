@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c9c908d7-991c-4c52-b3e9-db21b31a7276
+:REFLECT_ID: f0cf205086b94444b6a64a6f48f965eb
+:CREATED:  [2026-02-20 Fri 21:11]
+:MODIFIED: [2026-02-20 Fri 21:11]
+:END:
+#+title: Everything Bin
+#+filetags: :concept:
+#+date: 2026-02-20
+

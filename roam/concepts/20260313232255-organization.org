@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       61373a92-a293-4e24-a38e-b4bc1a805a5f
+:REFLECT_ID: 526b408bf4834d35b7626e314a28b487
+:CREATED:  [2026-03-13 Fri 23:22]
+:MODIFIED: [2026-03-13 Fri 23:22]
+:END:
+#+title: Organization
+#+filetags: :concept:
+#+date: 2026-03-13
+

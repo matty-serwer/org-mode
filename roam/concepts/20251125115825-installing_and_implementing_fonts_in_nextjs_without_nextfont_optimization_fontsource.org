@@ -1,0 +1,90 @@
+:PROPERTIES:
+:ID:       3a62b402-6606-4931-ad6c-29915c5a6a25
+:REFLECT_ID: a9b91811fca24a7b95ce240a42df93cb
+:CREATED:  [2025-11-25 Tue 11:58]
+:MODIFIED: [2025-11-25 Tue 12:06]
+:END:
+#+title: Installing and Implementing Fonts in NextJS without next/font optimization (fontsource)
+#+filetags: :concept:
+#+date: 2025-11-25
+- You don't *have to* use Next.js Font optimization - it's optional but recommended for Google Fonts. Since you're using Fontsource instead, here's how to properly implement it:
+- Fontsource Implementation in Next.js
+  - Install the Font
+    - npm install @fontsource/ibm-plex-mono
+  - Import in Your Root Layout
+    - In your app/layout.tsx (App Router) or pages/_app.tsx (Pages Router)
+    - #+begin_src markup
+      // app/layout.tsx (App Router)
+      import '@fontsource/ibm-plex-mono/400.css'; // Regular
+      import '@fontsource/ibm-plex-mono/500.css'; // Medium
+      import '@fontsource/ibm-plex-mono/700.css'; // Bold
+      // Import only the weights you need
+      
+      export default function RootLayout({
+        children,
+      }: {
+        children: React.ReactNode
+      }) {
+        return (
+          <html lang="en">
+            <body>{children}</body>
+          </html>
+        )
+      }
+      #+end_src
+  - Apply the Font in CSS
+    - You have several options:
+    - Option A: Global CSS
+      - #+begin_src markup
+        /* globals.css */
+        body {
+          font-family: 'IBM Plex Mono', monospace;
+        }
+        
+        /* Or for specific elements */
+        .monospace {
+          font-family: 'IBM Plex Mono', monospace;
+        }
+        #+end_src
+    - Option B: CSS Variables (Recommended)
+      - #+begin_src markup
+        /* globals.css */
+        body {
+          font-family: 'IBM Plex Mono', monospace;
+        }
+        
+        /* Or for specific elements */
+        .monospace {
+          font-family: 'IBM Plex Mono', monospace;
+        }
+        
+        #+end_src
+    - Option C: Tailwind CSS
+      - #+begin_src markup
+             // tailwind.config.js
+        module.exports = {
+          theme: {
+            extend: {
+              fontFamily: {
+                'mono': ['IBM Plex Mono', 'monospace'],
+              }
+            }
+          }
+        }
+        #+end_src
+- Best Practices with Fontsource
+  - Import only needed weights - Don't import all 7 weights if you only use 2-3
+  - Consider font-display - Fontsource uses font-display: swap by default
+  - Preload critical fonts if needed:
+    - #+begin_src markup
+      // In your layout head
+      <link
+        rel="preload"
+        href="/path/to/font.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+          - Fontsource is perfectly valid for Next.js and often preferred when you need fonts not available through Google Fonts or want more control over font loading.
+      #+end_src
+-----

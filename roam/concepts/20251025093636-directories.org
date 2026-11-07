@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3c711d21-673c-4055-853a-f9802ab182ac
+:REFLECT_ID: 7f80484eab7d4b02aba8969a8ee78794
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: directories
+#+filetags: :concept:
+#+date: 2025-10-25
+

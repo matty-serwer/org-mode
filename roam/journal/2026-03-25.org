@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       c7462c3b-6b5a-4a26-b012-6d4b5ace1cd1
+:REFLECT_ID: 25032026
+:CREATED:  [2026-03-23 Mon 12:30]
+:MODIFIED: [2026-03-25 Wed 14:49]
+:END:
+#+title: Wed, March 25th, 2026
+#+filetags: :daily:
+#+date: 2026-03-23
+- [[id:a833eac2-59ef-42b4-b8c6-cebe37eb1d08][Tallon Pfizer Week 2]]
+  - Wednesday Session One
+    - Executional Workshop - Ashley Lewis
+    -
+      - Two sessions of group discussion
+      - There was a handheld mic per table
+      - This time they used the table mics.
+  - 

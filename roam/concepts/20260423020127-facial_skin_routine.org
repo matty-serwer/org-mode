@@ -1,0 +1,48 @@
+:PROPERTIES:
+:ID:       2df84021-c2f1-4080-9b43-8579c84fa153
+:REFLECT_ID: 7b9f48f85715448fbf880cc251759382
+:CREATED:  [2026-04-23 Thu 02:01]
+:MODIFIED: [2026-04-23 Thu 02:07]
+:END:
+#+title: Facial Skin Routine
+#+filetags: :concept:
+#+date: 2026-04-23
+** Daily
+*Every Morning*
+- CeraVe Hydrating Cleanser
+- The Ordinary Niacinamide 10% + Zinc
+- VaniCream
+- EltaMD UV Clear SPF 46
+*Every Evening (non-IPL days)*
+- Shave
+- CeraVe Hydrating Cleanser
+- The Ordinary Azelaic Acid Suspension 10%
+- VaniCream
+*Every Other Evening (IPL days)*
+- Shave close
+- Do Ulike session
+- CeraVe Hydrating Cleanser
+- VaniCream only — no actives tonight
+*2-3x per week (non-IPL evenings only)*
+- Swap azelaic acid for The Ordinary Glycolic Acid 7% on a cotton pad
+- VaniCream
+-----
+
+** Individual
+*Niacinamide 10% + Zinc — every morning after cleansing*
+- Apply a few drops to dry face
+- Pat in, don't rub
+- Moisturizer goes on top
+-----
+
+*Azelaic Acid 10% — every non-IPL evening after cleansing*
+- Pump a small amount onto fingertips
+- Spread evenly across face
+- VaniCream goes on top
+-----
+
+*Glycolic Acid 7% — 2-3x per week, non-IPL evenings, replaces azelaic acid*
+- Soak a cotton pad
+- Swipe across face, avoid eye area
+- Wait 5 minutes
+- VaniCream goes on top

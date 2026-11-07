@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       b8e6b0c6-0cc8-447a-85c5-901eb9b6f759
+:REFLECT_ID: 09012026
+:CREATED:  [2026-01-08 Thu 17:49]
+:MODIFIED: [2026-01-09 Fri 23:33]
+:END:
+#+title: Fri, January 9th, 2026
+#+filetags: :daily:
+#+date: 2026-01-08
+- [[id:3627192e-95ac-496a-99b2-f4d8f0a0dea8][Ableton Live 12 Minimal Setup 2025]]
+  - created Drum Machine Rack (empty) in device-build-001 project in 2026 folder
+  - 
+    - 64 PAD SSD PUSH to drum TRIGGER LT standard MIDI
+- [[id:64678f28-ad48-483b-b9d7-c73aa49a6b4d][Mac OS]] [[id:85efabf6-b7cb-4a70-b122-f3874a10e48e][File Storage]] Issue
+  - Why is my hard drive full?
+  - Checked Backblaze and our B2 buckets look good (backup)
+  - Checking [[id:182a65a5-d4d4-4762-82f8-6323b350231b][Disk Analyzer Pro]]

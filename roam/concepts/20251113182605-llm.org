@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       775bdfad-4e61-4c2a-9139-ea01f1e8514d
+:REFLECT_ID: 67d8a89671424a4282e29805121c078d
+:CREATED:  [2025-11-13 Thu 18:26]
+:MODIFIED: [2026-03-14 Sat 01:04]
+:END:
+#+title: LLM
+#+filetags: :concept:
+#+date: 2025-11-13
+

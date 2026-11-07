@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d7c7631a-4bef-4a3f-9795-a736c70a287f
+:REFLECT_ID: 170560d684974a108c9f271c02cb2bc5
+:CREATED:  [2026-04-08 Wed 02:23]
+:MODIFIED: [2026-04-08 Wed 02:27]
+:END:
+#+title: Microsoft 365
+#+filetags: :concept:
+#+date: 2026-04-08
+

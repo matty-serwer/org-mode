@@ -1,0 +1,324 @@
+:PROPERTIES:
+:ID:       e2a711ee-83de-4610-a720-da8c7b865dbb
+:REFLECT_ID: 15032026
+:CREATED:  [2026-03-13 Fri 23:35]
+:MODIFIED: [2026-03-17 Tue 05:40]
+:END:
+#+title: Sun, March 15th, 2026
+#+filetags: :daily:song:
+#+date: 2026-03-13
+- Remote Disk Imaging
+  - The Core Technical Challenge
+    - "Remote disk imaging" is actually a harder problem than it sounds, and here's why it matters for Alex: a true disk image restore requires the machine to boot from something other than its own drive — because you can't rewrite the drive the OS is currently running from.
+    - Locally, that "something" is a USB or a PXE network boot server. Remotely, over the internet, that boot handoff is the hard part. Most solutions work around this rather than solving it directly.
+  - Remote Disk Image Solutions
+    - Windows Autopilot + Intune (Microsoft's intended answer)
+      - Remotely triggers a full Windows reset and re-enrollment from the cloud — machine wipes itself, reinstalls Windows, pulls software and config from Intune automatically; no USB, no server, no physical access needed; laptops just need internet
+      - Setup
+        - Intune configuration + Autopilot profile setup 2–4 days
+        - Hardware hash registration for all 50 machines 1 day
+        - $8/user/mo standalone Intune, or included in M365 Business Premium ($22/user/mo)
+      - Maintenance
+        - ~$400/mo standalone; low ongoing hours once golden config is defined
+        - Image "updates" are just config and app policy changes in the Intune console — no re-imaging required
+      - Note: this is a Windows reinstall + software redeploy, not a byte-for-byte image restore — but for Alex's use case the end result is functionally identical
+    - *Acronis Cyber Protect Cloud* — Remote Imaging
+      - Full disk image stored in Acronis cloud, restore can be triggered remotely via management console
+      - Agent runs on each laptop, receives restore command over internet, reboots into recovery environment and restores image without physical access
+      - Setup
+        - Agent install on 50 machines 4–8hrs
+        - Initial image upload per machine 2–4hrs total
+        - ~$50–100/machine/yr depending on storage tier
+      - Maintenance
+        - $2,500–5,000/yr for 50 machines; low hours, Acronis handles the infrastructure
+        - Image updates 2–4hrs when software changes
+    - Clonezilla + VPN + PXE Server (LAN-over-VPN) — requires server + VPN setup
+      - Laptops connect to a VPN when remote, which puts them on Alex's virtual local network — PXE boot server at the shop serves the image exactly as if they were physically there; free software, proven method
+      - Setup
+        - VPN server config + Clonezilla PXE setup 2–3 days — solidly in your wheelhouse
+        - $0 software, ~$10–20/mo VPS or a machine at the shop
+      - Maintenance
+        - ~$120–240/yr; moderate hours, community support only
+        - Requires techs to connect to VPN before imaging which adds a step
+      - Note: LAN-speed imaging, but VPN throughput is the bottleneck — over internet this is slower than local
+    - FOG Project + VPN — requires server, open source, free
+      - Open source imaging server purpose-built for fleet deployment — stores images centrally, pushes to machines over network
+      - Pair with VPN for remote capability; used widely in schools and enterprises for exactly this use case
+      - Setup
+        - ~2–3 days server config + image capture; free, runs on Linux (your territory)
+        - Requires a dedicated machine at the shop or a VPS
+      - Maintenance
+        - Free (or $10–20/mo VPS); community supported, no vendor
+        - Moderate ongoing hours — more DIY than Acronis but very capable
+    - NinjaOne RMM + Scripted Reset — not true imaging, but close
+      - NinjaOne can remotely trigger a Windows Reset (built-in Windows feature) via script, which returns the machine to factory/clean Windows state
+      - Software can then be re-pushed via NinjaOne's software deployment; not a byte-for-byte image but achieves the same clean baseline
+      - Setup
+        - 1–2 days; $190/mo for 50 devices
+      - Maintenance
+        - ~$190/mo; low hours; handles Task 2 natively as well ★
+    - Tactical RMM + Imaging Script — self-hosted, free software
+      - Same concept as NinjaOne above but self-hosted; pair with a scripted Windows Reset or a custom reimaging script; most flexible option technically, highest setup bar
+      - Setup
+        - 3–4 days including server; $0 software + ~$10–20/mo VPS hosting
+      - Maintenance
+        - ~$120–240/yr; highest ongoing maintenance of any option — no vendor support
+  - In the Meantime — 3 Options That Just Get It Done Now
+    - While you're scoping the right long-term solution, these three require the least runway and can start solving Alex's problem within a day or two
+    - *Reboot Restore Rx* (free)
+      - Install on all machines at the shop next time they're home, every reboot resets them automatically from that point forward
+      - Zero infrastructure, zero cost, buys time immediately
+    - PowerShell Cleanup Script
+      - Can be written and deployed in an afternoon, handles the documented folders
+      - Starts building a paper trail of what files are actually landing where — which will inform the imaging strategy
+    - Clonezilla USB
+      - Low-tech but gets a true golden image workflow started right now
+      - Build the image, make the USBs, and you have a repeatable restore process while the remote solution is being built out
+-----
+
+- [[id:309fd4f4-67c8-466a-992d-dd5f28fb7298][418 Audio Laptop Fleet Sync]]
+  -----
+  - *General Roadmap for Setting Up Microsoft Intune (For a Competent Programmer with Some IT Experience)*
+    - *Phase 1: Subscription and Account Setup* /(estimated 4–6 hours)/
+      - Sign up for Microsoft Intune standalone or Microsoft 365 Business Premium (Business Premium is recommended as it bundles Entra ID P1, Intune, and Defender for Business — all relevant to this use case).
+      - Verify that your chosen license tier includes Windows Autopilot and remote wipe/reset features before committing; Intune Plan 1 (included in M365 Business Premium) covers all of this, but confirm for your specific SKU.
+      - Create an Azure AD (Entra ID) tenant and global admin account in the Microsoft 365 admin center.
+      - Configure multi-factor authentication for the admin account and assign yourself the Intune Administrator role.
+      - Assign Intune licenses to the 50 device slots via the Microsoft 365 admin center license dashboard (device licenses, not user licenses, for a shared fleet like this).
+      - Review and set the MDM authority to Intune (required if the tenant has ever had Configuration Manager co-management configured).
+    - *Phase 2: Device Enrollment Preparation / Hash collection & distribution (Machine Id)* /(estimated 8–12 hours)/
+      - Set up Windows Autopilot for automatic enrollment by exporting hardware hashes from each laptop using the =Get-WindowsAutopilotInfo= PowerShell script (run with the =-Online= flag to import directly to Intune, or export to CSV for batch upload):
+        
+        #+begin_src powershell
+        Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope ProcessInstall-Script Get-WindowsAutopilotInfoGet-WindowsAutopilotInfo.ps1 -GroupTag AV-Fleet -Online
+        
+        #+end_src
+      - If procuring new hardware, request OEM/reseller pre-registration in Autopilot via the Microsoft Partner Center — this eliminates the need to run the script on each machine individually and is strongly preferred for fleets of 50+.
+      - Upload the hardware hash CSV to Intune (Devices → Windows → Windows Enrollment → Devices) if not using the =-Online= flag.
+      - Create a deployment profile in Autopilot: configure it to Azure AD join, skip OOBE steps (privacy, EULA, etc.), and set the device naming template (e.g., =LTD-AV-%RAND:3%=) — consistent naming is critical for bulk monitoring and targeted wipes.
+      - *Assign the deployment profile to a device group* — this step is required and easy to overlook; without it, Autopilot will not trigger on reset.
+      - Create a dynamic Azure AD device group using the Autopilot ZTD tag to automatically capture all fleet devices:
+        
+        #+begin_src markup
+        (device.devicePhysicalIDs -any _ -startsWith "[ZTDId]")
+        
+        #+end_src
+      - Test on 1–2 pilot laptops: factory reset one, confirm it auto-joins Azure AD, receives baseline policies, and comes back named correctly.
+    - *Phase 3: Policy and App Configuration* /(estimated 8–10 hours)/
+      - Create a device naming convention and document it before configuring any profiles (e.g., =LTD-AV-001= through =LTD-AV-050=); apply via the Autopilot deployment profile naming template.
+      - In the Intune dashboard, create device configuration profiles for security baselines, Wi-Fi settings, and any event-specific restrictions.
+      - Set up app management: upload common software installers as Win32 apps (=.intunewin= format using the Win32 Content Prep Tool) or link store apps, then assign them to the fleet device group.
+      - Define compliance policies (e.g., require BitLocker encryption, minimum OS version) so the compliance dashboard accurately reflects device health.
+      - Create dynamic device subgroups using Autopilot Group Tags (set during hash import) to support per-show or per-client targeted policy assignments without manually managing group membership.
+      - Configure Remote Help: deploy it as a Win32 app to all fleet devices, and assign the Help Desk Operator RBAC role to any technician who will need to initiate remote sessions during events.
+    - *Phase 4: Testing and Rollout* /(estimated 6–8 hours)/
+      - Stage hash collection and enrollment for all 50 laptops (remotely via the =-Online= PowerShell script if devices are online, or physically if needed for first-time setup).
+      - Simulate a full show cycle on a single device: apply policies, run a remote Autopilot Reset, and verify the device re-enrolls automatically, receives the correct name, baseline apps, and compliance status.
+      - *This full-cycle test is the single most important validation step* — do not skip it or rush it. Autopilot re-enrollment failures during this test are far cheaper to debug than failures during an actual post-gig cleanup.
+      - Troubleshoot common Autopilot issues: devices must be able to reach Microsoft's Autopilot endpoints during OOBE; venue or corporate networks that block these endpoints will cause enrollment failures. Test on the same type of network the laptops will use at events.
+      - Use =mdmdiagnosticstool.exe -area Autopilot;DeviceEnrollment= on a test device to collect diagnostic logs if enrollment fails.
+      - Document a step-by-step runbook with screenshots for triggering bulk Autopilot Resets — Jimmy's team needs to be able to run this independently.
+    - *Phase 5: Optimization and Training* /(estimated 2–4 hours)/
+      - Enable Intune reporting and email alerts for device compliance and enrollment failures so issues surface proactively between shows.
+      - Finalize the runbook from Phase 4 into a short reference doc (not just a verbal walkthrough — the Intune UI changes periodically and screenshots help).
+      - Train Jimmy's team via a short screen-share or recorded walkthrough focused on: navigating to the device group, issuing a bulk Autopilot Reset, and reading the compliance report to confirm completion.
+      - Plan for fleet scaling: new devices just need a hardware hash import, group tag assignment, and profile assignment — the rest is automatic.
+      - *Total estimated setup time: 28–40 hours* spread over 1–2 weeks to allow for learning curve, Autopilot troubleshooting (budget an extra 4–8 hours specifically for this — first-time Autopilot setups almost always surface at least one enrollment edge case), and full-cycle testing iterations.
+  - *Common Process for Each Show Cycle*
+    - *Pre-Gig Preparation* 
+      - Verify fleet readiness
+        - Confirm all 50 laptops are online, Intune-enrolled, and showing as compliant in the dashboard
+        - Confirm each device has its Autopilot deployment profile assigned (required for post-wipe auto-reenrollment)
+        - Ensure all devices have internet connectivity
+      - Apply show-specific configuration
+        - Push or verify baseline app assignments for the event (e.g., Zoom, Teams, client AV software)
+        - Push any pending OS or app updates and confirm they complete successfully
+        - (optional) Basred on a clients needs, create a temporary dynamic device group and assign a scoped policy for the show (e.g., restricted access or additional tools)
+      - Pre-authorize on-site remote support
+        - Confirm that any technician who may need to initiate remote sessions has the Help Desk Operator RBAC role assigned in Intune — this cannot be done on the fly during the event
+    - *During the Gig* /(event runtime)/
+      - No active intervention should be needed; laptops operate under the applied profiles
+      - On-site techs handle physical usage alongside other firms as needed
+      - If issues arise, use Remote Help for remote assistance or push policy tweaks from the dashboard without physical access
+        - Remote Help sessions require the technician's RBAC role to be pre-authorized (see Pre-Gig)
+        - For software glitches not resolvable via policy, coordinate with on-site tech for a targeted device restart or re-enrollment if necessary
+    - *Post-Gig Cleanup* /(immediately after event)/
+      - Issue a bulk *Windows Autopilot Reset* from the Intune dashboard to all show devices
+        - Use Autopilot Reset (not full "Wipe") — it reinstalls Windows, removes user data and locally installed apps, and returns devices to a clean state while preserving Azure AD join and Autopilot enrollment
+        - Full "Wipe" may require physical interaction in some configurations and is better suited to device decommissioning, not fleet refresh
+        - Issue as a bulk action targeting the show's device group for efficiency
+      - Monitor and confirm reset completion
+        - Track progress via the Intune compliance dashboard and device status reports
+        - Verify each device re-enrolls automatically and returns to baseline config after reset
+        - Archive event logs if client records are required
+    - *Between Gigs* /(ongoing maintenance)/
+      - Monitor fleet health
+        - Run or schedule automated device health and compliance reports
+        - Watch for devices that drop off compliance or fail to check in — address before the next show cycle
+      - Keep configuration current
+        - Update configuration profiles as client needs evolve (e.g., new software versions, revised app assignments)
+        - Rotate or retire scoped policies used for specific shows once no longer needed
+      - Scale the fleet as needed
+        - Enroll additional laptops remotely via the same Autopilot workflow — import hardware hashes, assign to fleet device group, and the deployment profile handles the rest
+  - Microsoft Intune Plans
+    - *Intune Plan 1* — $8/user/mo · $400/mo · $4,800/yr
+      - Core MDM/MAM, Autopilot, compliance policies, app deployment
+      - No remote screen control — you can push policies and trigger resets but cannot see or touch a device's screen
+      - Minimum viable option for this fleet use case
+    - *Intune Suite* — $18/user/mo (Plan 1 + $10 add-on) · $900/mo · $10,800/yr
+      - Everything in Plan 1, plus Remote Help (live screen share/control with RBAC), Endpoint Privilege Management, Advanced Analytics, Cloud PKI
+      - Remote Help is the main draw for fleet support scenarios; consider whether Windows Quick Assist (free) covers the need before committing
+    - *M365 Business Premium* — $22/user/mo · $1,100/mo · $13,200/yr
+      - Intune included with Premium tier only — not available on Business Basic or Standard
+      - Caps at 300 users — fine for this 50-device fleet, but worth noting if the operation scales
+      - Bundles Intune Plan 1 alongside Defender for Business, Entra ID P1, and the full Office suite
+      - No Remote Help — Suite add-on still required on top if you need screen control (+$10/user/mo → $32/user/mo total)
+- *Intune Process for Each Show Cycle*
+  - *Pre-Gig Preparation* 
+    - Verify fleet readiness
+      - Confirm all 50 laptops are online, Intune-enrolled, and showing as compliant in the dashboard
+      - Confirm each device has its Autopilot deployment profile assigned (required for post-wipe auto-reenrollment)
+      - Ensure all devices have internet connectivity
+    - Apply show-specific configuration
+      - Push or verify baseline app assignments for the event (e.g., Zoom, Teams, client AV software)
+      - Push any pending OS or app updates and confirm they complete successfully
+      - (optional) Based on a clients needs, create a temporary dynamic device group and assign a scoped policy for the show (e.g., restricted access or additional tools)
+    - Pre-authorize on-site remote support
+      - Confirm that any technician who may need to initiate remote sessions has the Help Desk Operator RBAC role assigned in Intune — this cannot be done on the fly during the event
+  - *During the Gig* /(event runtime)/
+    - No active intervention should be needed; laptops operate under the applied profiles
+    - On-site techs handle physical usage alongside other firms as needed
+    - If issues arise, use Remote Help for remote assistance or push policy tweaks from the dashboard without physical access
+      - Remote Help sessions require the technician's RBAC role to be pre-authorized (see Pre-Gig)
+      - For software glitches not resolvable via policy, coordinate with on-site tech for a targeted device restart or re-enrollment if necessary
+  - *Post-Gig Cleanup* /(immediately after event)/
+    - Issue a bulk *Windows Autopilot Reset* from the Intune dashboard to all show devices
+      - Use Autopilot Reset (not full "Wipe") — it reinstalls Windows, removes user data and locally installed apps, and returns devices to a clean state while preserving Azure AD join and Autopilot enrollment
+      - Full "Wipe" may require physical interaction in some configurations and is better suited to device decommissioning, not fleet refresh
+      - Issue as a bulk action targeting the show's device group for efficiency
+    - Monitor and confirm reset completion
+      - Track progress via the Intune compliance dashboard and device status reports
+      - Verify each device re-enrolls automatically and returns to baseline config after reset
+      - Archive event logs if client records are required
+  - *Between Gigs* /(ongoing maintenance)/
+    - Monitor fleet health
+      - Run or schedule automated device health and compliance reports
+      - Watch for devices that drop off compliance or fail to check in — address before the next show cycle
+    - Keep configuration current
+      - Update configuration profiles as client needs evolve (e.g., new software versions, revised app assignments)
+      - Rotate or retire scoped policies used for specific shows once no longer needed
+    - Scale the fleet as needed
+      - Enroll additional laptops remotely via the same Autopilot workflow — import hardware hashes, assign to fleet device group, and the deployment profile handles the rest
+- [[id:72703a2a-0197-4a76-82a3-393c6954808e][Music Song Arrangement Sections]]
+  - intro
+    - The opening section that sets the mood, tempo, and sonic world before the main content begins.
+  - verse
+    - The primary narrative section that carries the lyrics and story, typically repeating with different words each time.
+  - pre-chorus
+    - A transitional build section between the verse and chorus that creates tension and anticipation.
+  - chorus
+    - The emotional and melodic peak of the song, usually the most memorable and repeated section.
+  - post-chorus
+    - A cool-down or hook extension that follows the chorus and adds a secondary melodic payoff.
+  - bridge
+    - A contrasting section that breaks the verse/chorus cycle, often shifting harmonically or lyrically.
+  - hook
+    - A short, punchy melodic or rhythmic motif, sometimes used as its own standalone section distinct from the chorus.
+  - drop
+    - The high-energy moment in dance/electronic music where the beat fully hits after a buildup, often the climactic payoff.
+  - build
+    - A rising tension section leading into a drop or chorus, typically stripping back or layering elements progressively.
+  - breakdown
+    - A stripped-down section that reduces energy and density, common in dance and DnB to create contrast before a drop.
+  - riser
+    - A short transitional section, often just a few bars, where energy and frequency content climb toward a peak moment.
+  - outro
+    - The closing section that winds the track down, sometimes fading, looping, or resolving the arrangement.
+  - interlude
+    - A brief pause or neutral section between larger parts, often instrumental or atmospheric.
+  - solo
+    - A featured instrumental passage, typically showcasing guitar, synth, or another lead voice.
+  - ad lib
+    - A loose, improvised-feeling vocal section layered over or between structured parts.
+  - skit
+    - A spoken word or dialogue segment, common in hip-hop and some experimental pop contexts.
+  - reintro
+    - A return to intro material mid-song, used to reset energy or signal a structural shift.
+  - refrain
+    - A repeated line or short phrase at the end of verses, functioning like a mini-chorus anchored to the verse.
+  - middle 8
+    - A classic term for an 8-bar contrasting section in the middle of a track, synonymous with bridge in many pop contexts.
+  - lift
+    - A pre-drop or pre-chorus variant that elevates energy specifically through harmonic or rhythmic momentum.
+  - vamp
+    - A repeating chord or groove loop used to extend a section, often under improvisation or as an outro device.
+  - stab
+    - A very short punchy section, sometimes just one or two bars, used as a transitional hit or rhythmic accent point.
+  - groove
+    - A purely rhythmic, low-melody section emphasizing the rhythm section, common in funk-influenced pop and DnB.
+  - ambient
+    - A texture-only section with no clear rhythmic pulse, used for atmosphere or transition between high-energy parts.
+  - false drop
+    - A moment that mimics a drop setup but withholds the full payoff, used to subvert listener expectations before the real drop.
+-----
+
+- [[id:732e8384-6fcd-4f52-a20b-9df8b0e23faa][Song]] [[id:31e72400-384d-4d8b-a2cb-29a3dcbc11f0][Lyrics]]
+  -----
+  - [[id:491b6990-bbc7-4d3c-addb-1818b43a13d4][Bloc Party - Flux]]
+    - Verse 1A
+      - If your right hand is causing you pain
+      - Cut it off, cut it off
+      - If your colours have started to run
+      - Let them all run, run away from you
+    - Verse 1B
+      - There is lightning in this room
+      - Above our heads waiting to strike
+      - I'm a thinker, not a talker
+      - Put your faith, your faith in God
+    - Chorus
+      - We were hoping for some romance
+      - All we found was more despair
+      - We must talk about our problems
+      - We are in a state of flux
+    - Verse 2A
+      - I'd kill for an adventure
+      - Just you and I in the Curzon Bar
+      - Dancing until we knew
+      - So all that we've learned disappeared
+    - Verse 2B
+      - When you shouted at me
+      - I saw my father in the second grade
+      - Concerned and kind
+      - Yet unable to reach me
+    - Chorus
+      - We were hoping for some romance
+      - All we found was more despair
+      - We must talk about our problems
+      - We are in a state of flux
+    - Bridge
+      - State of flux, state of flux
+      - State of flux, state of flux
+      - State of flux, state of flux
+      - State of flux, state of flux
+      - State of flux, state of flux
+      - State of flux, state of flux
+      - We need to talk, we need to talk
+      - We need to talk, we need to talk
+    - Chorus
+      - (We need to talk) We were hoping for some romance
+      - All we found was more despair
+      - (We need to talk) We must talk about our problems
+      - We are in a state of flux
+- [[id:a6553dfe-4631-4c2a-90be-331521860137][M477i3.exe]] [[id:732e8384-6fcd-4f52-a20b-9df8b0e23faa][Song]] / [[id:36406928-18b8-4ff8-b679-955fc4f90b8f][Audio Project]] / [[id:d9b82de6-3c9d-4aab-a9bd-b3c2704558f9][Cover Song]] / [[id:2e628675-cb6e-46d6-ab57-e9710a170287][Drum N Bass]]
+  - [[id:491b6990-bbc7-4d3c-addb-1818b43a13d4][Bloc Party - Flux]]
+    -  
+    - Project Folder
+      - [[hook://file/6MRGmZCFQ?p=cHJvamVjdC1yZXBvc2l0b3J5LzIwMjY=&n=2026%2D03%2D15%5FFlux%20Project][2026-03-15_Flux Project]]
+    - Current Project FIle
+      - [[https://hookmark.net/hm/hook/file/6MRN0NAzn?p=MjAyNi8yMDI2LTAzLTE1X0ZsdXggUHJvamVjdA==&n=2026%2D03%2D15%5FFlux%2Eals][2026-03-15_Flux.als]]
+        - Started chopping up the imported Reference Track
+    - [[id:1db4abae-9c04-4b36-a04f-be3f1fd9e308][Notation]]
+      - [[id:15c086b1-a040-4d1a-91d9-0a833323b210][Chords]]
+        - [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/30c4366ae20041ac9b6f2e89217584fd/66f8fa05-4655-4801-8e93-33af674fe4fd?key=89c6408e26dc0ae3bfb41e15ea521b89db1259f7b48816c4603654c52ab8d0f1][image]]
+          
+          [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/f0324aba547b48f18818704f3554a77c/fdad00fd-d995-4c7b-bf40-c52189e3f6cb?key=23e9d252a60728686d7977b4721cffa9d29601863ac538d9e45b184d77f3b2ac][image]]

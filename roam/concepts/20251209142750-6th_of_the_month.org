@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b7342484-c87e-4c6e-a122-d03fab3ed8bf
+:REFLECT_ID: 6f2b962efa7e432e828a7934036556f1
+:CREATED:  [2025-12-09 Tue 14:27]
+:MODIFIED: [2025-12-09 Tue 14:27]
+:END:
+#+title: 6th of the Month
+#+filetags: :concept:
+#+date: 2025-12-09
+

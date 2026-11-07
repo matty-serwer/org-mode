@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4e067981-46f8-43e2-8a24-0b65054d7845
+:REFLECT_ID: e5bd38efc83f4bb7ab4f3ab2311322d2
+:CREATED:  [2026-03-17 Tue 06:06]
+:MODIFIED: [2026-03-17 Tue 06:06]
+:END:
+#+title: Audio Systems
+#+filetags: :concept:
+#+date: 2026-03-17
+

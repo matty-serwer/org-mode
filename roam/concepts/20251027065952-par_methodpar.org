@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6feae3b1-3d42-45fa-bb45-d406661ec58c
+:REFLECT_ID: 1588bad2ded249809e7663af468ec89d
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: PAR Method|PAR
+#+filetags: :concept:
+#+date: 2025-10-27
+

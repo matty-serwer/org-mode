@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ac05fe49-4cbb-4c48-bbc6-09414425b721
+:REFLECT_ID: 1a62719bc82a4d04b0438c41ff94c3f8
+:CREATED:  [2026-02-15 Sun 15:24]
+:MODIFIED: [2026-04-14 Tue 16:14]
+:END:
+#+title: Record Crate
+#+filetags: :concept:
+#+date: 2026-02-15
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e8a5b689-875d-488f-a5e8-ea5821b7cfc1
+:REFLECT_ID: 5222f5dc74474f71b0096874f877ed3b
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2026-03-14 Sat 03:41]
+:END:
+#+title: Terminal
+#+filetags: :concept:
+#+date: 2025-10-25
+

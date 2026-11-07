@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       2a0c90f6-cb80-4d0e-b942-100e8fe798f7
+:REFLECT_ID: 26112025
+:CREATED:  [2025-11-24 Mon 20:14]
+:MODIFIED: [2025-11-27 Thu 00:59]
+:END:
+#+title: Wed, November 26th, 2025
+#+filetags: :daily:prompt:
+#+date: 2025-11-24
+- [[id:86479bed-caa8-4a44-b6b4-26005c049223][Sweet FIles]]  001
+  
+  #+begin_src markup
+  OK So this is a stupid simple app idea, its not even really steal-able anyway, because in my head its all about the details - the execution. . It's not high tech, and to start with no ai required. 
+  
+  It's like a Notebook, a digital sketchbook, but instead of knowledge management, or ideation, collaboration, it is focused on Files. Files on your computer in the rudimentary sense. The purpose of the application is to super simplify the user's experience when they work day in and out, and because their projects are professional, and this is business agnostic, they end up with different files, and different programs, and different bookmarks all over their system - And there's no really good way, on a mac, windows machine, linux, for people to really keep track of these things in a way they can just look at one page, one screen, and feel they have a mental handle on every single file they have ever touched in support of a particular project, initiative, learning path. There are concepts that pretend to do this, like finder tags, High concept business file management software, standard notes softwares... but if they worked well, everyone would be using them.
+  
+  But the truth is you get busy, and you just work. and 4 days later after working on another project, you spend 45 minutes looking for that one thing. 
+  
+  Or your minds sub conscious gets overwhelmed with the the idea that you have a million balls in the air for a single deadline, and you can't just look at it all like a hand written todo list.
+  
+  So the execution part -> The app has a feel of like a 
+  
+  
+  
+  real workers - everyone pro.
+  
+  #+end_src

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b228e73c-cc59-4c0e-af70-403d0e48067c
+:REFLECT_ID: 991f17d61dec4799b9bf7c7886810491
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: perspectives
+#+filetags: :concept:
+#+date: 2025-10-25
+

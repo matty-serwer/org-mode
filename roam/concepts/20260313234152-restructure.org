@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ae972f89-3e9c-4252-916b-8f8780dae7bd
+:REFLECT_ID: 011e2e9a8da748069f9a34bf11da2965
+:CREATED:  [2026-03-13 Fri 23:41]
+:MODIFIED: [2026-03-13 Fri 23:41]
+:END:
+#+title: Restructure
+#+filetags: :concept:
+#+date: 2026-03-13
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7dc16aca-8325-4d2c-9f99-d008a8ff4bdc
+:REFLECT_ID: 8c6a7466dc274cd3a27a7a1fe8816229
+:CREATED:  [2025-11-02 Sun 17:45]
+:MODIFIED: [2025-11-02 Sun 17:45]
+:END:
+#+title: Linear[
+#+filetags: :concept:
+#+date: 2025-11-02
+

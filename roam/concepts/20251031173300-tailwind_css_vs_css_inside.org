@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0e49083f-05a1-4285-80fc-eeb1a18c936a
+:REFLECT_ID: be8a3a39e3344abd8155937e34962c45
+:CREATED:  [2025-10-31 Fri 17:33]
+:MODIFIED: [2025-10-31 Fri 17:33]
+:END:
+#+title: Tailwind CSS vs CSS inside
+#+filetags: :concept:
+#+date: 2025-10-31
+* [[id:53fea805-0c99-41dd-bd98-0ae28bae9fb9][Tailwind CSS]] vs [[id:0df3fca3-5dbf-4789-ae1f-543e33bdbafe][CSS]] inside

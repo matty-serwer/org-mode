@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       0dae7450-c6a2-41fe-80bc-42fef6768fa3
+:REFLECT_ID: fb36b30972644740bbd7a45064abe7cd
+:CREATED:  [2025-11-25 Tue 10:14]
+:MODIFIED: [2025-11-25 Tue 10:15]
+:END:
+#+title: Doom Emacs Hacks, Workarounds, WTFs and Key Bindings I should have known
+#+filetags: :ref:list:quick_ref:
+#+date: 2025-11-25
+* [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Hacks, Workarounds, WTFs and [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]] I should have known
+- [[id:e93308ff-e1aa-4ec7-b6d4-f4de692f07c5][Kill Process]] in [[id:6f427d68-0ecc-4e4a-a0a1-9ebcd673d3d9][vterm]] 
+  - Sending Raw Ctrl-c to vterm
+    - Press  C-q  (Control + q), then  C-c  (Control + c).

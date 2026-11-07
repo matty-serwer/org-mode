@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f5763f4f-8d7b-4946-b706-8b267281100f
+:REFLECT_ID: 38b01c06b9cf49dfa2edb5564ca6d43d
+:CREATED:  [2026-04-08 Wed 02:23]
+:MODIFIED: [2026-04-08 Wed 02:23]
+:END:
+#+title: Temporary Admin Account
+#+filetags: :concept:
+#+date: 2026-04-08
+

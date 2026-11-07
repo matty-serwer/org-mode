@@ -1,0 +1,118 @@
+:PROPERTIES:
+:ID:       bdad001c-85b2-4ec5-b0f4-47b40e866326
+:REFLECT_ID: 0e07ab28e0984917875cca150920841e
+:CREATED:  [2025-11-12 Wed 08:18]
+:MODIFIED: [2026-04-08 Wed 20:22]
+:END:
+#+title: 🗄️ Subscription Service
+#+filetags: :concept:bump:feedback:inactive:list:trial:
+#+date: 2025-11-12
+* 🗄️ Subscription Service
+- Monthly Subscriptions
+  - [[id:8b5d868f-2a2b-4276-995e-7479916b6dc5][LinkedIn]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:22d4fafe-1143-432e-a3ba-f07987a7b5f0][2nd of the Month]]
+    - Price: $39.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+  - [[id:5e31b89b-d832-4056-a886-c02b948b35fb][Proton Mail]]
+    - Pay Day: [[id:485ef33b-71fa-4ec8-b1fb-7a036889924e][4th of the Month]]
+    - Price: $12.99
+    - Account Info
+      - Login: [[id:499973d4-bef9-496e-845f-d67b29937d7f][M477i3.exe@Proton.me]]
+      - URL: [[https://account.proton.me/login][https://account.proton.me/login]]
+      - Payment: [[id:b5dcd507-6061-45a1-a1a2-4d3d5b8a468b][Coastline Credit Union Debit Card]]
+  - [[id:5d22f265-6012-4416-af91-d3fa62d04643][Amazon Prime]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:b7342484-c87e-4c6e-a122-d03fab3ed8bf][6th of the Month]]
+    - Price: #14.99
+    - Account Info
+      - Login: [[id:564eeb54-7dcf-4bca-a9f9-d37e670c0506][Matthew.Serwer@gmail.com]]
+      - URL: [[https://www.amazon.com/ax/account/manage][https://www.amazon.com/ax/account/manage]]
+      - Payment: [[id:b5dcd507-6061-45a1-a1a2-4d3d5b8a468b][Coastline Credit Union Debit Card]]
+  - [[id:6a9d38f4-f9b9-4e51-9d23-245cb4230c5f][Tana App]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:3464ffcd-8637-4703-ae7f-f49e1ddac912][7th Of The Month]]
+    - Price: $20
+    - Account Info
+      - Login: [[id:b143806b-89e4-46aa-95d8-cd004b2f4fbc][Gmail Login]]
+      - Email: [[id:2f33d2f3-b35a-47e3-ad7c-c292d827888e][WaveMekanix@gmail.com]]
+      - URL: [[https://app.tana.inc/][https://app.tana.inc/]]
+      - Payment: [[id:b5dcd507-6061-45a1-a1a2-4d3d5b8a468b][Coastline Credit Union Debit Card]]
+  - [[id:a799f989-5a27-49b5-bc32-7f0cd6f58e48][Grok]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Signed Up: [[id:54be7f21-1e77-4501-8741-14052b693ae8][11/12/2025]]
+    - Pay Day: [[id:f3c8a343-b77e-4249-8c63-14c9a546969a][12th of the Month]]
+    - Price: $30 
+      -
+        - Ouch, but omg, squirt
+        - but its gotta really up our output
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+  - [[id:1f4bbf0e-052b-409e-b494-a1c20e899fa3][Algoriddim DJay]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:c7e02542-c03c-4ecc-9cbf-824dfdea29d4][14th of the Month]]
+    - Price: $6.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+    - Notes
+      -  : To make useful we have to do the following:
+        - [X] Create Meaningful Playlists in [[id:0951656a-d306-4f70-88ae-a3201f68aa1f][Apple Music]]
+        - [X] See if [[id:1f4bbf0e-052b-409e-b494-a1c20e899fa3][Algoriddim DJay]] is Useful with Apple Music Playlists while we are not actually DJing 
+  - [[id:8e3df5c4-9672-43ab-8131-4cc7d854de2b][AppleCare+ iPhone 14 Pro]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:bbf082af-9ec1-47e8-9998-02c7bb76e446][15th of the Month]]
+    - Price: $13.49
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+  - [[id:3b8c9878-9929-4ef6-82a1-6be1d2be78f3][Gmail]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:bbf082af-9ec1-47e8-9998-02c7bb76e446][15th of the Month]]
+    - Price: $1.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+  - [[id:8b25c641-f991-4ba3-a223-1a7b73d72597][Actions App]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:bbf082af-9ec1-47e8-9998-02c7bb76e446][15th of the Month]]
+    - Price: $2.49
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]] 
+  - [[id:9806ecec-b260-4659-9f20-ce83f6ebeba0][Raycast]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:8922c506-7d06-4be5-83f8-ca1bb353667a][16th of the Month]]
+    - Price: $10
+    - Account Info
+      - Login: [[id:499973d4-bef9-496e-845f-d67b29937d7f][M477i3.exe@Proton.me]]
+      - Payment: [[id:b5dcd507-6061-45a1-a1a2-4d3d5b8a468b][Coastline Credit Union Debit Card]]
+  - [[id:673d49a5-01f2-453f-8ea5-9701aac150f9][AppleCare+ iPhone XR Yellow]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:85c01fed-0ccd-4ef9-8ab0-75aaab6ca426][26th of the Month]]
+    - Price: $7.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+  - [[id:1eafc4fd-64bd-4a2e-90ff-96521529c3cc][iCloud+]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:cefae0aa-a004-4426-8253-ed4639c23a28][28th of the Month]]
+    - Price: $9.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+  - [[id:0951656a-d306-4f70-88ae-a3201f68aa1f][Apple Music]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:4b548869-14a3-4964-8113-7d8b8bc5be94][29th of the Month]]
+    - Price: $10.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+- Yearly Subscritions
+  - [[id:54c4187c-731f-4f1e-922d-b65655715d81][Tiimo]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:9bbff601-f0ec-454d-8712-737d66d0d3ac][1/15/2026]]
+    - Price: $54.00
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+    - Notes
+      -  : Decide if you want this
+      - It would have to be a game changer
+  - [[id:882ba48a-17a9-4b57-8aa6-283f3b3b9455][Pro Camera App]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:fb28786c-fe7e-4ea9-9c2c-ca6ba932da57][11/2/2026]]
+    - Price: $14.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+  - [[id:bce6ccff-61a8-48c0-ba23-3a2a9d0da425][Structured - Daily Planner]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+    - Pay Day: [[id:73afd407-c284-403f-af57-2d18c821531a][9/9/2026]]
+    - Price: $19.99
+    - Account Info
+      - Login: [[id:32cf2b03-2110-4fc0-a57c-26726018737a][iCloud Login]]
+    - Notes - Should Send  on [[id:bce6ccff-61a8-48c0-ba23-3a2a9d0da425][Structured - Daily Planner]]
+      - Currently inactive due to
+        - Specificity of times
+          - (No Morning, Evening, etc. only precise times
+        - in conjunction with overlapping Blocks!
+          - When you move a block, they Always Overlap!
+          - It should prevent overlapping

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       17f3ce4c-f558-42a8-b8c7-f17bd0646d1a
+:REFLECT_ID: a6b52826c6a642988369f41654baa236
+:CREATED:  [2026-02-17 Tue 19:06]
+:MODIFIED: [2026-02-17 Tue 19:06]
+:END:
+#+title: Letter to Eric
+#+filetags: :concept:
+#+date: 2026-02-17
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ee084eaa-9997-4451-a1be-50d8e7402a30
+:REFLECT_ID: 6e725d32854c4e89b34d334dd900e10f
+:CREATED:  [2025-11-13 Thu 06:14]
+:MODIFIED: [2025-11-13 Thu 06:14]
+:END:
+#+title: Sites
+#+filetags: :concept:
+#+date: 2025-11-13
+

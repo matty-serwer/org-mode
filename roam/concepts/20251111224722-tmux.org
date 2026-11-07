@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5fb663da-f5aa-4105-b67e-7a46705b234c
+:REFLECT_ID: 7d11efab43c84ede91ee135b6e58592f
+:CREATED:  [2025-11-11 Tue 22:47]
+:MODIFIED: [2025-11-30 Sun 09:36]
+:END:
+#+title: TMUX
+#+filetags: :concept:
+#+date: 2025-11-11
+

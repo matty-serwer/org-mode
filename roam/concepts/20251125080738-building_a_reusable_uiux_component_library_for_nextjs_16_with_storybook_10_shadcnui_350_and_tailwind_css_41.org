@@ -1,0 +1,686 @@
+:PROPERTIES:
+:ID:       ba123ebe-d83e-4b17-969d-ccf2d5855bf9
+:REFLECT_ID: 2812b79f52fb449b8872330cadcca801
+:CREATED:  [2025-11-25 Tue 08:07]
+:MODIFIED: [2025-11-25 Tue 08:11]
+:END:
+#+title: Building a Reusable UI/UX Component Library for NextJS 16 with Storybook 10, shadcn/ui 3.5.0, and Tailwind CSS 4.1
+#+filetags: :concept:
+#+date: 2025-11-25
+* Building a Reusable [[id:ea0371f4-57a3-4dea-ae66-1956619c8964][UI/UX]] [[id:81b3de06-b35b-4c43-998b-5fa8977bfd19][Component Library]] for [[id:17254b57-edb8-4076-956f-2c7d5369e8e2][NextJS]] 16 with [[id:ddf0f4ba-f6bd-4172-876b-59bdcd978445][Storybook]] 10, [[id:522853c2-b75b-4bc6-b8fa-76b03dace8ab][shadcn/ui]] 3.5.0, and [[id:53fea805-0c99-41dd-bd98-0ae28bae9fb9][Tailwind CSS]] 4.1
+*Storybook 10's ESM-only architecture, combined with Tailwind CSS v4's CSS-first configuration and shadcn/ui 3.5.0's React 19 support, provides the modern foundation for building a production-ready component library.* This comprehensive guide covers the complete setup for "Vet Sweet," a veterinary practice management SaaS requiring components for patient management, scheduling, SOAP notes, and clinical workflows. The approach enables sharing components across multiple Next.js applications while maintaining design system consistency and developer experience excellence.
+-----
+
+** Storybook 10 installation and Next.js 16 framework integration
+Storybook 10 shipped in November 2025 with *ESM-only support*, reducing installation size by 29% while improving build performance. The recommended framework adapter is =@storybook/nextjs-vite=, which eliminates Webpack and Babel dependencies entirely.
+*Installation commands:*
+#+begin_src bash
+# Initialize Storybook in a Next.js 16 project
+npx storybook@latest init
+
+# Or upgrade existing installation
+npx storybook@latest upgrade
+
+# Install Vite-based adapter (recommended)
+npm install --save-dev @storybook/nextjs-vite @storybook/addon-essentials @storybook/addon-a11y @storybook/addon-interactions @storybook/addon-themes
+
+#+end_src
+The *main.ts configuration* requires explicit framework specification with Next.js 16 App Router support enabled:
+#+begin_src typescript
+// .storybook/main.ts
+import type { StorybookConfig } from '@storybook/nextjs-vite';
+
+const config: StorybookConfig = {
+  framework: '@storybook/nextjs-vite',
+  stories: [
+    '../src/**/*.mdx',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../components/**/*.stories.@(js|jsx|ts|tsx)',
+  ],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@storybook/addon-interactions',
+    '@storybook/addon-themes',
+  ],
+  staticDirs: ['../public'],
+  features: {
+    experimentalRSC: true, // React Server Components support
+  },
+  docs: {
+    defaultName: 'Documentation',
+  },
+};
+
+export default config;
+
+#+end_src
+The *preview.ts* file imports global Tailwind styles and configures Next.js App Router mocking for navigation hooks. The =withThemeByClassName= decorator from =@storybook/addon-themes= enables dark mode switching in the Storybook UI:
+#+begin_src typescript
+// .storybook/preview.ts
+import type { Preview } from '@storybook/nextjs-vite';
+import { withThemeByClassName } from '@storybook/addon-themes';
+import '../app/globals.css';
+
+const preview: Preview = {
+  parameters: {
+    nextjs: {
+      appDirectory: true, // Enable next/navigation support
+    },
+    layout: 'centered',
+    a11y: {
+      test: 'error', // Fail on accessibility violations
+    },
+  },
+  decorators: [
+    withThemeByClassName({
+      themes: { light: '', dark: 'dark' },
+      defaultTheme: 'light',
+    }),
+  ],
+  tags: ['autodocs'],
+};
+
+export default preview;
+
+#+end_src
+Next.js specific features receive automatic handling in Storybook 10: *next/image* works without configuration, *next/link* logs clicks to the Actions panel, and *next/font* (both Google and local fonts) requires only proper =staticDirs= mapping for local font files.
+-----
+
+** Tailwind CSS v4.1 CSS-first configuration with the @theme directive
+Tailwind CSS v4 introduces a *CSS-first configuration paradigm* that replaces =tailwind.config.js= with native CSS using the =@theme= directive. Theme variables defined within =@theme= automatically generate both CSS custom properties and corresponding utility classes.
+*PostCSS setup for Next.js:*
+#+begin_src bash
+npm install tailwindcss @tailwindcss/postcss
+
+#+end_src
+#+begin_src javascript
+// postcss.config.mjs
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+#+end_src
+The *globals.css* file becomes the single source of truth for design tokens. The =@theme= directive creates utilities while =:root= defines semantic variables for theming:
+#+begin_src css
+/* app/globals.css */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Dark mode variant using class selector */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light mode semantic tokens */
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.55 0.25 263);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  
+  /* Vet Sweet custom colors */
+  --success: oklch(0.72 0.19 142);
+  --warning: oklch(0.84 0.16 84);
+  --info: oklch(0.72 0.11 221);
+}
+
+/* Dark mode overrides */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --primary: oklch(0.65 0.20 260);
+  --muted: oklch(0.27 0.005 265);
+  --border: oklch(0.27 0.005 265);
+}
+
+/* Connect CSS variables to Tailwind utilities */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --radius-lg: var(--radius);
+}
+
+#+end_src
+The =@theme inline= directive is essential when referencing CSS custom properties—it ensures utilities resolve to the variable value rather than a static theme value. *OKLCH color space* replaces HSL as the default in Tailwind v4, providing wider gamut support and perceptually uniform color manipulation.
+-----
+
+** shadcn/ui v3.5.0 CLI setup and components.json configuration
+shadcn/ui 3.5.0 initializes projects with *Tailwind v4 by default* and updates all components for React 19 compatibility. The =forwardRef= pattern is replaced with =data-slot= attributes, and the animation library changed from =tailwindcss-animate= to =tw-animate-css=.
+*Initialization:*
+#+begin_src bash
+npx shadcn@latest init -b neutral --css-variables
+
+#+end_src
+The *components.json* file controls CLI behavior and path resolution:
+#+begin_src json
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "iconLibrary": "lucide"
+}
+
+#+end_src
+Note that *tailwind.config is left blank* for Tailwind v4 projects since configuration lives in CSS. Adding components for veterinary workflows:
+#+begin_src bash
+# Form components for patient intake and SOAP notes
+npx shadcn@latest add form input textarea select checkbox radio-group date-picker
+
+# Data display for patient records and schedules
+npx shadcn@latest add table card badge avatar skeleton
+
+# Overlays for booking and confirmations
+npx shadcn@latest add dialog alert-dialog popover tooltip sheet
+
+# Navigation for the practice dashboard
+npx shadcn@latest add navigation-menu sidebar tabs
+
+# Feedback components
+npx shadcn@latest add sonner
+
+#+end_src
+*Customizing components* involves modifying the CVA (class-variance-authority) variants directly in component files:
+#+begin_src typescript
+// components/ui/badge.tsx - Extended for veterinary status indicators
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-primary text-primary-foreground",
+        secondary: "border-transparent bg-secondary text-secondary-foreground",
+        destructive: "border-transparent bg-destructive text-destructive-foreground",
+        outline: "text-foreground",
+        // Custom veterinary status variants
+        healthy: "border-transparent bg-success text-white",
+        critical: "border-transparent bg-destructive text-white animate-pulse",
+        scheduled: "border-transparent bg-info text-white",
+        waiting: "border-transparent bg-warning text-warning-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
+
+#+end_src
+-----
+
+** Monorepo architecture for library distribution
+A *Turborepo-based monorepo* provides the optimal structure for sharing components across multiple Next.js applications while maintaining type safety and incremental builds.
+*Recommended directory structure:*
+#+begin_src markup
+vet-sweet/
+├── apps/
+│   ├── web/                     # Main veterinary dashboard
+│   │   ├── app/
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   ├── portal/                  # Client-facing portal
+│   └── storybook/               # Component documentation
+│       ├── .storybook/
+│       └── package.json
+├── packages/
+│   ├── ui/                      # Component library
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   │   ├── button/
+│   │   │   │   │   ├── button.tsx
+│   │   │   │   │   ├── button.stories.tsx
+│   │   │   │   │   └── index.ts
+│   │   │   │   ├── patient-card/
+│   │   │   │   ├── soap-form/
+│   │   │   │   └── index.ts
+│   │   │   ├── hooks/
+│   │   │   └── index.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   └── typescript-config/
+├── turbo.json
+├── pnpm-workspace.yaml
+└── package.json
+
+#+end_src
+The *package.json exports field* enables selective imports with proper TypeScript resolution:
+#+begin_src json
+{
+  "name": "@vet-sweet/ui",
+  "version": "0.1.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./patient-card": {
+      "import": {
+        "types": "./dist/patient-card.d.mts",
+        "default": "./dist/patient-card.mjs"
+      }
+    },
+    "./soap-form": {
+      "import": {
+        "types": "./dist/soap-form.d.mts",
+        "default": "./dist/soap-form.mjs"
+      }
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0"
+  }
+}
+
+#+end_src
+*TypeScript configuration* for the component library enables declaration generation and proper module resolution:
+#+begin_src json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx"]
+}
+
+#+end_src
+-----
+
+** Component organization and barrel exports pattern
+*Barrel exports* aggregate component exports while preserving tree-shaking capabilities. Each component folder contains its implementation, types, stories, and local export:
+#+begin_src typescript
+// src/components/patient-card/patient-card.tsx
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+import { Card, CardHeader, CardContent } from '../ui/card';
+import { Badge } from '../ui/badge';
+import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar';
+import type { PatientCardProps } from './patient-card.types';
+
+export function PatientCard({ 
+  patient, 
+  status, 
+  className, 
+  ...props 
+}: PatientCardProps) {
+  return (
+    <Card className={cn("w-full", className)} {...props}>
+      <CardHeader className="flex flex-row items-center gap-4">
+        <Avatar className="h-16 w-16">
+          <AvatarImage src={patient.photoUrl} alt={patient.name} />
+          <AvatarFallback>{patient.name.charAt(0)}</AvatarFallback>
+        </Avatar>
+        <div className="flex-1">
+          <h3 className="text-lg font-semibold">{patient.name}</h3>
+          <p className="text-sm text-muted-foreground">
+            {patient.species} • {patient.breed}
+          </p>
+        </div>
+        <Badge variant={status}>{status}</Badge>
+      </CardHeader>
+      <CardContent>
+        <dl className="grid grid-cols-2 gap-2 text-sm">
+          <dt className="text-muted-foreground">Owner</dt>
+          <dd>{patient.ownerName}</dd>
+          <dt className="text-muted-foreground">Last Visit</dt>
+          <dd>{patient.lastVisit}</dd>
+        </dl>
+      </CardContent>
+    </Card>
+  );
+}
+
+#+end_src
+#+begin_src typescript
+// src/components/patient-card/index.ts
+export { PatientCard } from './patient-card';
+export type { PatientCardProps, Patient, PatientStatus } from './patient-card.types';
+
+#+end_src
+#+begin_src typescript
+// src/components/index.ts - Components barrel
+export { Button } from './ui/button';
+export { Card } from './ui/card';
+export { Badge } from './ui/badge';
+export { PatientCard } from './patient-card';
+export { SOAPForm } from './soap-form';
+export { AppointmentCalendar } from './appointment-calendar';
+export { DataTable } from './data-table';
+
+#+end_src
+-----
+
+** CSF 3.0 story patterns with TypeScript
+*Component Story Format 3.0* eliminates boilerplate through automatic render functions and improved TypeScript inference. Stories for veterinary components follow a consistent pattern:
+#+begin_src typescript
+// src/components/patient-card/patient-card.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { PatientCard } from './patient-card';
+
+const mockPatient = {
+  id: '1',
+  name: 'Max',
+  species: 'Dog',
+  breed: 'Golden Retriever',
+  ownerName: 'Sarah Johnson',
+  photoUrl: '/patients/max.jpg',
+  lastVisit: '2025-11-20',
+};
+
+const meta = {
+  component: PatientCard,
+  title: 'Vet Sweet/Patient Card',
+  tags: ['autodocs'],
+  argTypes: {
+    status: {
+      control: 'select',
+      options: ['healthy', 'scheduled', 'waiting', 'critical'],
+      description: 'Current patient status indicator',
+    },
+  },
+  args: {
+    patient: mockPatient,
+    status: 'healthy',
+  },
+} satisfies Meta<typeof PatientCard>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};
+
+export const Scheduled: Story = {
+  args: { status: 'scheduled' },
+};
+
+export const Critical: Story = {
+  args: { 
+    status: 'critical',
+    patient: { ...mockPatient, name: 'Bella' },
+  },
+};
+
+export const Waiting: Story = {
+  args: { status: 'waiting' },
+};
+
+#+end_src
+*SOAP Notes form* demonstrates complex form component stories with interaction testing:
+#+begin_src typescript
+// src/components/soap-form/soap-form.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, userEvent, within } from '@storybook/test';
+import { SOAPForm } from './soap-form';
+
+const meta = {
+  component: SOAPForm,
+  title: 'Vet Sweet/Forms/SOAP Notes',
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'padded',
+  },
+  args: {
+    patientId: '1',
+    patientName: 'Max',
+  },
+} satisfies Meta<typeof SOAPForm>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Empty: Story = {};
+
+export const Prefilled: Story = {
+  args: {
+    defaultValues: {
+      subjective: 'Owner reports decreased appetite for 3 days',
+      objective: 'Weight: 28kg, Temp: 39.2°C, Heart rate: 90 bpm',
+      assessment: 'Possible gastroenteritis',
+      plan: 'Bland diet for 5 days, recheck if symptoms persist',
+    },
+  },
+};
+
+export const WithValidation: Story = {
+  play: async ({ canvas, userEvent }) => {
+    const submitButton = canvas.getByRole('button', { name: 'Save Notes' });
+    await userEvent.click(submitButton);
+    
+    await expect(
+      canvas.getByText('Subjective notes are required')
+    ).toBeInTheDocument();
+  },
+};
+
+export const CompleteFlow: Story = {
+  play: async ({ canvas, userEvent }) => {
+    await userEvent.type(
+      canvas.getByLabelText('Subjective'),
+      'Patient presenting with limping on right front leg'
+    );
+    await userEvent.type(
+      canvas.getByLabelText('Objective'),
+      'Mild swelling observed on right carpus'
+    );
+    await userEvent.type(
+      canvas.getByLabelText('Assessment'),
+      'Suspected sprain, radiographs recommended'
+    );
+    await userEvent.type(
+      canvas.getByLabelText('Plan'),
+      'Schedule radiographs, prescribe rest and NSAIDs'
+    );
+    
+    const submitButton = canvas.getByRole('button', { name: 'Save Notes' });
+    await userEvent.click(submitButton);
+    
+    await expect(canvas.getByText('Notes saved successfully')).toBeInTheDocument();
+  },
+};
+
+#+end_src
+*Data table stories* demonstrate handling of different states:
+#+begin_src typescript
+// src/components/data-table/data-table.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { DataTable } from './data-table';
+
+const appointmentColumns = [
+  { key: 'time', header: 'Time', sortable: true },
+  { key: 'patient', header: 'Patient' },
+  { key: 'owner', header: 'Owner' },
+  { key: 'reason', header: 'Reason' },
+  { key: 'status', header: 'Status', sortable: true },
+];
+
+const mockAppointments = [
+  { id: 1, time: '09:00', patient: 'Max', owner: 'Sarah J.', reason: 'Checkup', status: 'confirmed' },
+  { id: 2, time: '09:30', patient: 'Bella', owner: 'Mike T.', reason: 'Vaccination', status: 'waiting' },
+  { id: 3, time: '10:00', patient: 'Charlie', owner: 'Emma R.', reason: 'Dental', status: 'in-progress' },
+];
+
+const meta = {
+  component: DataTable,
+  title: 'Vet Sweet/Data Display/Appointments Table',
+  tags: ['autodocs'],
+  args: {
+    columns: appointmentColumns,
+    data: mockAppointments,
+  },
+} satisfies Meta<typeof DataTable>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};
+
+export const Empty: Story = {
+  args: { data: [] },
+};
+
+export const Loading: Story = {
+  args: { loading: true },
+};
+
+export const WithPagination: Story = {
+  args: {
+    data: Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      time: `${9 + Math.floor(i / 4)}:${(i % 4) * 15 || '00'}`,
+      patient: `Patient ${i}`,
+      owner: `Owner ${i}`,
+      reason: 'Checkup',
+      status: ['confirmed', 'waiting', 'in-progress'][i % 3],
+    })),
+    pagination: { pageSize: 10 },
+  },
+};
+
+#+end_src
+-----
+
+** Story organization and Storybook hierarchy
+Organizing stories by domain creates intuitive navigation for the veterinary component library:
+#+begin_src typescript
+// .storybook/preview.ts - Story sorting configuration
+const preview: Preview = {
+  parameters: {
+    options: {
+      storySort: {
+        order: [
+          'Introduction',
+          'Design Tokens',
+          'Vet Sweet',
+          ['Patient Card', 'SOAP Form', 'Appointment Calendar', 'Forms', 'Data Display', 'Navigation', 'Overlays', 'Feedback'],
+          'Primitives',
+          '*',
+        ],
+      },
+    },
+  },
+};
+
+#+end_src
+*Title conventions* group components logically:
+- =Vet Sweet/Patient Card= - Domain-specific composed components
+- =Vet Sweet/Forms/SOAP Notes= - Form components
+- =Vet Sweet/Data Display/Appointments Table= - Data visualization
+- =Primitives/Button= - Base shadcn/ui components
+-----
+
+** Build configuration with tsup
+*tsup* compiles the component library with support for both ESM and CommonJS outputs:
+#+begin_src typescript
+// packages/ui/tsup.config.ts
+import { defineConfig } from 'tsup';
+
+export default defineConfig({
+  entry: {
+    index: 'src/index.ts',
+    'patient-card': 'src/components/patient-card/index.ts',
+    'soap-form': 'src/components/soap-form/index.ts',
+    'data-table': 'src/components/data-table/index.ts',
+  },
+  format: ['esm', 'cjs'],
+  dts: true,
+  splitting: true,
+  sourcemap: true,
+  clean: true,
+  external: ['react', 'react-dom'],
+  treeshake: true,
+});
+
+#+end_src
+*Turborepo task configuration* enables efficient parallel builds:
+#+begin_src json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "storybook": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
+
+#+end_src
+-----
+
+** Conclusion
+Building a reusable component library for "Vet Sweet" with Next.js 16, Storybook 10, shadcn/ui 3.5.0, and Tailwind CSS 4.1 requires coordinating several modern tooling paradigms. *The CSS-first configuration approach in Tailwind v4* eliminates JavaScript configuration files, centralizing design tokens in CSS with the =@theme= directive. *shadcn/ui 3.5.0's React 19 compatibility* and OKLCH color space adoption align perfectly with this modern stack.
+The *Turborepo monorepo structure* enables sharing the =@vet-sweet/ui= package across the main dashboard, client portal, and any future applications while maintaining independent deployability. *CSF 3.0 story patterns* with play functions provide both documentation and interaction testing, ensuring components behave correctly in clinical workflows where reliability is essential.
+Key implementation priorities for veterinary practice management include building robust form components for SOAP notes entry, accessible data tables for patient records with keyboard navigation, and status badges with visual urgency indicators (including animation for critical states). The theming system using CSS custom properties with =@theme inline= enables both light and dark modes while maintaining the consistent "Vet Sweet" brand identity across all applications.

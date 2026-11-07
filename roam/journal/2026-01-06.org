@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       1ba5291b-c1b2-49bf-8bfa-741e028ef531
+:REFLECT_ID: 06012026
+:CREATED:  [2026-01-06 Tue 15:54]
+:MODIFIED: [2026-01-06 Tue 23:28]
+:END:
+#+title: Tue, January 6th, 2026
+#+filetags: :daily:
+#+date: 2026-01-06
+- [[id:8fee8dc9-268c-4ee9-9572-4da77ef34489][Resume]] Notes
+  - Managers hire “safe”
+    - Solve problems without making more.
+  - Every bullet should make you look like somebody else already done the job.
+  - Specific is safer, not vague.
+    - They’ll assume the worst and toss it
+    - Resume should briefly explain the risky stuff up front.
+  - Recruiters don’t look for potential, they look for things they already recognize
+    - Use the right language
+    - Translate your experience into their business priorities. 
+  - Your words will show how senior you seem
+    - Don’t sound like a passengers
+    - Lead with verbs that show ownership.
+  - Highlight the last 5-7 years. Cut down older experience
+    - Cut less relevant experience.
+  - Balance these 3 things to Show more than one type of strength. 
+    - Technical Credibility
+    - Business Impact
+    - Leadership
+- [[id:a2ed4822-b4be-4ca0-acab-e4e59abe45c1][Job Interview]] notes
+  - Try to get a time commitment at the end of an interview.
+    - What should next steps be?
+    - When should I expect hean update?
+- [ ] Doggy daycare
+- [ ] Cancel reflect
+- [ ] 

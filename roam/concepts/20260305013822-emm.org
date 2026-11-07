@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c9dfcb21-e661-492e-bd46-38daf354478f
+:REFLECT_ID: 133355b5cde5446e9a7aaa90d7885e7b
+:CREATED:  [2026-03-05 Thu 01:38]
+:MODIFIED: [2026-03-05 Thu 01:38]
+:END:
+#+title: emm
+#+filetags: :concept:
+#+date: 2026-03-05
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b4db707f-21f3-423c-ba18-1fcb619eb1bc
+:REFLECT_ID: c02b884a737f4a44865ad854eb6d7828
+:CREATED:  [2025-10-31 Fri 04:55]
+:MODIFIED: [2025-10-31 Fri 04:55]
+:END:
+#+title: Confluence
+#+filetags: :concept:
+#+date: 2025-10-31
+

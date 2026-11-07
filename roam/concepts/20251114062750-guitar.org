@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a18c6d21-755b-4978-9969-4d16be6cc197
+:REFLECT_ID: cb61f6d199aa480d8fdddb72bef4d5c0
+:CREATED:  [2025-11-14 Fri 06:27]
+:MODIFIED: [2025-11-14 Fri 06:27]
+:END:
+#+title: Guitar
+#+filetags: :concept:
+#+date: 2025-11-14
+

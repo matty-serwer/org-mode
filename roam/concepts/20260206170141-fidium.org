@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f0838510-41f9-4b63-bce3-ab7850b09807
+:REFLECT_ID: fb64b1932d98472887fabf8cc6177cd7
+:CREATED:  [2026-02-06 Fri 17:01]
+:MODIFIED: [2026-02-06 Fri 17:01]
+:END:
+#+title: Fidium
+#+filetags: :concept:
+#+date: 2026-02-06
+

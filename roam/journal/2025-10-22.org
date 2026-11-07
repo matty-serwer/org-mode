@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       af140656-899f-41e7-9d6d-6c4640386eb0
+:REFLECT_ID: 22102025
+:CREATED:  [2025-10-25 Sat 08:40]
+:MODIFIED: [2025-10-27 Mon 14:11]
+:END:
+#+title: Wed, October 22nd, 2025
+#+filetags: :daily:
+#+date: 2025-10-25
+- Today, elswewhere, was created this resume: [[id:7f7c55ef-4686-4940-93c0-5989d8addc0c][Matthew Serwer Resume]]

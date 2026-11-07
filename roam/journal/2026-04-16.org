@@ -1,0 +1,127 @@
+:PROPERTIES:
+:ID:       406e456e-d02d-4083-97bb-27ed42f7c34f
+:REFLECT_ID: 16042026
+:CREATED:  [2026-04-15 Wed 03:13]
+:MODIFIED: [2026-04-16 Thu 06:59]
+:END:
+#+title: Thu, April 16th, 2026
+#+filetags: :daily:
+#+date: 2026-04-15
+- How to Create an [[id:ee5dea5c-a81e-4ca1-90eb-bd4ea771ae0d][Ableton Note]]Drum Kit with Custom Sounds from MacBook
+  - Open Ableton Live 12 on your MacBook
+  - Create or open a Set
+    - Use an existing Set or create a new one via File > New Live Set
+  - Add a Drum Rack to a MIDI track
+    - Click the "+" to create a new MIDI track
+    - In the browser, navigate to Instruments > Drum Rack
+    - Drag Drum Rack onto the MIDI track
+  - Load your custom sounds into the Drum Rack
+    - Locate your samples via the Live browser or drag from Finder
+    - Drop each audio file onto an individual drum pad
+    - Assign pads to GM-standard MIDI notes for Note compatibility
+      - Kick on C1, Snare on D1, Closed Hat on F#1, Open Hat on A#1
+    - Rename each pad to identify your sounds
+  - Save the Drum Rack as a preset
+    - Click the floppy disk icon in the Drum Rack title bar
+    - Save to User Library with a clear name
+    - Confirm it appears under User Library > Drums
+  - Sync the Set to Ableton Note over WiFi
+    - Connect your iPhone and MacBook to the same WiFi network
+    - Open Ableton Note on your iPhone
+    - Tap the sync icon to open the Sets browser
+    - Select your Live Set from the available sessions
+  - Confirm the custom kit loads correctly in Note
+    - Navigate to the Drums section in Note
+    - Verify all pads appear and trigger your custom sounds
+    - Test each pad for correct mapping
+  - Optional refinements for better Note playability
+    - Limit active pads to 16 to match Note's grid layout
+    - Use short punchy samples for responsive touchscreen feel
+    - Assign choke groups for open and closed hi-hat behavior
+    - Save the Set again after changes to re-sync with Note
+- [[id:24524799-537f-4d3c-8c8c-039cb0120522][org-Roam]] common tasks in [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]]: doom emacs [[id:14339d26-b495-4a16-935a-057e8a1c230e][evil mode]] org-roam keybindings comprehensive [[id:bb6971b4-974b-4abf-8778-fde0b38dec97][guide]]
+  - Find / open a node
+    - =SPC n r f= — org-roam-node-find (your custom binding)
+    - =SPC .= — find file (fallback, navigate filesystem)
+    - =gd= — jump to definition / follow link under cursor (evil)
+  - Create a new node
+    - =SPC n r f= then type a new title → Enter → select default capture template (=d=)
+    - =SPC n r c= — org-roam-capture (your custom binding, opens capture template menu)
+    - Templates available: =d= default, =p= project, =r= reference
+  - Insert a link to another node (while inside a node)
+    - =SPC n r i= — org-roam-node-insert (your custom binding)
+    - In insert mode: type link text, then use above
+  - Open backlinks panel
+    - =SPC n r b= — org-roam-buffer-toggle (your custom binding)
+    - Note: your config auto-toggles this on org-roam file open via hook
+    - Panel opens at 50% width (your org-roam-buffer-width setting)
+  - Navigate the backlinks panel
+    - =TAB= — cycle through links in backlinks buffer
+    - =RET= — follow link under cursor
+    - =q= — close backlinks buffer
+  - Copy a link to the current heading (block-level linking)
+    - =SPC n l= — my/org-id-get-create-and-copy (your custom binding)
+    - Creates an ID on the heading and puts org-link in clipboard
+  - Go to today's daily note
+    - =SPC n r t= — org-roam-dailies-goto-today (your custom binding)
+  - Go to a specific date's daily note
+    - =SPC n r d= — org-roam-dailies-goto-date (your custom binding)
+  - Add an alias to current node
+    - =SPC n r a= — org-roam-alias-add (your custom binding)
+  - Open graph view
+    - =SPC n r g= — org-roam-graph (your custom binding)
+    - Requires graphviz installed
+  - Capture a quick task, note, music idea, or dev snippet (org-capture, not roam)
+    - =SPC X= — open org-capture menu (doom default)
+    - =t= — Quick Task → [[inbox.org][inbox.org]]
+    - =n= — Quick Note → [[inbox.org][inbox.org]]
+    - =m= — Music Idea → [[music.org][music.org]]
+    - =d= — Dev Snippet → [[work.org][work.org]]
+    - =j= — Journal entry → [[journal.org][journal.org]] (datetree)
+    - =C-c C-c= — confirm and file capture
+    - =C-c C-k= — abort capture
+  - Follow a link in a node
+    - =RET= in normal mode — not set to follow links (org-return-follows-link nil in your config)
+    - =C-c C-o= — org-open-at-point (reliable, works on any link type)
+    - =gd= — evil go-to-definition, follows org-id and file links
+  - Navigate back after following a link
+    - =C-o= — evil jump back (pop mark ring)
+    - =C-i= — evil jump forward
+  - Heading promotion / demotion
+    - Normal mode: =M-[= / =M-]= — org-metaleft / org-metaright (your bindings)
+    - Also: =s-[= / =s-]= — same via Cmd+[ / Cmd+] (your mac bindings)
+    - =>>= / =<<= — evil-style indent/unindent (works in org for list items)
+  - Fold / unfold headings
+    - =TAB= — cycle fold state on current heading (org default)
+    - =S-TAB= — cycle all headings globally
+    - =z o= / =z c= — evil open/close fold
+    - =z r= / =z m= — evil open/close all folds
+  - Move headings up / down
+    - =M-k= / =M-j= — org-metaup / org-metadown (move heading/item)
+  - Insert a new heading
+    - =M-RET= — insert new heading at same level (org-insert-heading)
+    - Note: org-M-RET-may-split-line is nil, so won't split current line
+    - In insert mode: =RET= in a list auto-creates new bullet (your my/org-return-dwim binding)
+  - Tag a heading
+    - =SPC m q= — org-set-tags-command (doom leader)
+    - =:= in normal mode on a heading — same
+  - Set TODO state
+    - =SPC m t= — org-todo (doom leader)
+    - =t= in normal mode on heading — same (evil-org)
+  - Search across all roam nodes
+    - =SPC n r f= → type search term — fuzzy-finds across node titles
+    - =SPC s r= — search in directory (ripgrep, set to org-roam dir)
+    - =SPC s d= — search current directory
+  - Rename / move a node file
+    - =SPC f r= — recently opened files (browse)
+    - Rename via =M-x org-roam-node-find= then use dired or =M-x rename-file=
+    - =SPC o p= — open project sidebar (neotree/treemacs) for visual rename
+  - Window navigation between node and backlinks
+    - =s-h= / =s-j= / =s-k= / =s-l= — evil-window-left/down/up/right (your Cmd+hjkl bindings)
+  - Copy entire buffer to clipboard
+    - =SPC m y= — my/copy-buffer-to-clipboard (your custom binding)
+  - Reload / sync org-roam database
+    - =M-x org-roam-db-sync= — rebuilds the DB (run if links/backlinks go stale)
+  - Open org-roam node in side window vs full buffer
+    - =C-c C-o= on a roam link — opens in current window
+    - =C-u SPC n r f= — with prefix, opens in other window

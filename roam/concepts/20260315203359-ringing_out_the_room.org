@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a17483b4-d190-4642-9446-099d1e43035f
+:REFLECT_ID: f91ebe6d40134dffb871240189a0056f
+:CREATED:  [2026-03-15 Sun 20:33]
+:MODIFIED: [2026-03-15 Sun 20:36]
+:END:
+#+title: Ringing out the Room
+#+filetags: :concept:
+#+date: 2026-03-15
+

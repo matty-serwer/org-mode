@@ -1,0 +1,319 @@
+:PROPERTIES:
+:ID:       06a48c4f-a35c-4c93-b702-3aeab2cc35f9
+:REFLECT_ID: 02042026
+:CREATED:  [2026-04-01 Wed 14:16]
+:MODIFIED: [2026-04-03 Fri 00:35]
+:END:
+#+title: Thu, April 2nd, 2026
+#+filetags: :daily:
+#+date: 2026-04-01
+Here’s a best-effort “actual soundtrack” tracklist for Trainspotting, in film order, with each track’s original or most-associated *non‑Trainspotting* release. I’ll flag where sources disagree or where the match is probabilistic.
+-----
+
+** 1. Lust for Life – Iggy Pop
+- Film use: Opening chase, Renton and Spud running from the police.[1][2]
+- Primary source release:
+  - Album: /Lust for Life/ (1977 studio album) by Iggy Pop.[1]
+-----
+
+** 2. Carmen: Habanera – Georges Bizet
+- Film use: Renton prepares for withdrawal; calls Mikey Forrester for opium suppositories.[2]
+- Primary source release:
+  - Work: /Carmen/, Act I, aria “L’amour est un oiseau rebelle (Habanera)”.
+  - The specific recording in some listings is by Orquesta Sinfónica de Radio Praga conducted by Pietro di La Coronna, but the canonical “source” is Bizet’s opera /Carmen/ (1875).[functions.fetch_url:0][1]
+-----
+
+** 3. Deep Blue Day – Brian Eno
+- Film use: Renton dives into the toilet to retrieve the opium suppositories.[2]
+- Primary source release:
+  - Album: /Apollo: Atmospheres and Soundtracks/ (1983) by Brian Eno (with Daniel Lanois & Roger Eno).[1]
+-----
+
+** 4. Trainspotting – Primal Scream
+- Film use: Park scene with Renton and Sick Boy shooting BB guns and the dog incident.[2]
+- Primary source release:
+  - Originally a standalone single / non‑album track recorded specifically around the time; its key early release is the “Trainspotting” single and later the Primal Scream compilation /Dirty Hits/ (2003). The “original” is the 1994–95 single, not created as a score cue.[1]
+-----
+
+** 5. Temptation – Heaven 17
+- Film use: Club scene where Renton arrives and dances; Spud and Tommy talk at a table.[2]
+- Primary source release:
+  - Album: /Penthouse and Pavement/ (1981) – the band’s debut, later re-recorded, but the commonly associated original full‑band synthpop version is the 1983 single and album‑era recording.[1]
+-----
+
+** 6. Atomic – Blondie / Sleeper
+There’s a split between “in‑film original” and “OST cover” here.
+- Film use (on-screen): Lists of film music show the /original/ “Atomic” by Blondie as what appears in the film’s diegesis.[1]
+- Soundtrack album: The OST uses Sleeper’s cover version “Atomic” (produced by Stephen Street).[1]
+- Primary source release you asked for (original, non‑Trainspotting):
+  - Original: Blondie – “Atomic” from the album /Eat to the Beat/ (1979) and released as a single in 1980.[1]
+  - Cover: Sleeper – “Atomic” (Trainspotting‑era single and b‑side; later compilations), but its “home” release is basically the single itself, not a prior album.[1]
+Given your brief (“appears elsewhere previous to the release of the film”), the Blondie original on /Eat to the Beat/ is the canonical source.
+-----
+
+** 7. Temptation – New Order
+- Film use: Dinner scene with Diane’s parents; Renton realises he has slept with a minor.[2]
+- Complete-film list: Identifies the track simply as “Temptation – New Order”.[1]
+- Versions background:
+  - 1982 original single (7" and 12") on Factory; 12" version later on the EP /1981–1982/.[3]
+  - 1987 re-recording for the compilation /Substance 1987/ (often labeled “Temptation ’87” in later releases).[3]
+- Which version in the film?
+  - The general consensus in fan and discographic notes is that the /Substance/‑era re‑recording (“Temptation ’87”) is the one used in Trainspotting, and that its subsequent prominence is due to the OST.[4][3]
+- Primary source release (non‑Trainspotting):
+  - Compilation album: /Substance 1987/ by New Order (1987); track often retitled “Temptation ’87” in reissues.[3]
+So for our list: use the /Substance 1987/ version as the “most associated” pre‑film source.
+-----
+
+** 8. Nightclubbing – Iggy Pop
+- Film use: Heroin-shooting scene in the flat.[2]
+- Primary source release:
+  - Album: /The Idiot/ (1977) by Iggy Pop.[1]
+-----
+
+** 9. Sing – Blur
+- Film use: Shoplifting/police chase; Renton gets hit by a car; trial lead‑up.[2]
+- Primary source release:
+  - Album: /Leisure/ (1991) by Blur.[1]
+-----
+
+** 10. Perfect Day – Lou Reed
+- Film use: Renton’s overdose and hospital sequence.[2]
+- Primary source release:
+  - Album: /Transformer/ (1972) by Lou Reed.[1]
+-----
+
+** 11. Dark & Long (Dark Train) – Underworld
+- Film use: Withdrawals sequence with hallucinations (Diane singing, Dawn on the ceiling, TV game show).[2]
+- Primary source release:
+  - EP/Single: “Dark & Long (Dark Train)” was released as a separate 12" / remix single derived from the /Dubnobasswithmyheadman/ era (~1994), and appears on Underworld’s single/EP releases compiling “Dark Train”.[2]
+  - Parent album for the base track “Dark & Long”: /Dubnobasswithmyheadman/ (1994).[2]
+-----
+
+** 12. Think About the Way – Ice MC
+- Film use: Renton goes to London and works as a letting agent.[2]
+- Primary source release:
+  - Album: /Ice’n’Green/ (1994) by Ice MC; the track is also a 1994 single.[1]
+-----
+
+** 13. Mile End – Pulp
+- Film use: Begbie arrives to stay in Renton’s tiny London flat.[2]
+- Complete-film list notes that the version is “Mile End – From ‘Trainspotting’ Original Motion Picture Soundtrack” for the specific master, but the song itself predates the film.[2]
+- Primary source release:
+  - Originally a b‑side to the single “Common People” (1995) and later included on Pulp compilation releases; its first association is that 1995 single rather than the OST.[1]
+-----
+
+** 14. For What You Dream Of (Full On Renaissance Mix) – Bedrock feat. KYO
+- Film use: Renton and Begbie at the club; Renton narrates about the changing drug culture.[2]
+- Primary source release:
+  - 12" single: “For What You Dream Of” (Bedrock featuring KYO), Full On Renaissance Mix, first released on Guerrilla Records (early 1990s), and was heavily associated with the /Renaissance: The Mix Collection/ era of club compilations.[1]
+-----
+
+** 15. 2:1 – Elastica
+- Film use: Sick Boy moves into Renton’s apartment; the TV has been sold.[2]
+- Primary source release:
+  - Album: /Elastica/ (1995) by Elastica.[1]
+-----
+
+** 16. Herzlich Tut Mich Verlangen – Gábor Lehotka
+- Film use: Organ music at Tommy’s funeral.[2]
+- Primary source release:
+  - This is a Lutheran chorale (“Herzlich tut mich verlangen”), best known from Bach’s harmonisations (e.g., chorale BWV 727), and often recorded under that title.
+  - The specific performance credited is organist Gábor Lehotka; discographic data points to recordings of Bach chorales/organ works on classical organ recital albums prior to the film.[functions.fetch_url:0][1]
+-----
+
+** 17. A Final Hit – Leftfield
+- Film use: Renton tests the heroin before taking it to London to sell to the Russians.[2]
+- Primary source release:
+  - Initially a non‑album track by Leftfield; pre‑film it appears on singles/promos associated with the /Leftism/ era (mid‑1990s) and then on /Trainspotting/ OST and later Leftfield compilations.
+  - Since you want a non‑Trainspotting anchor: its earliest non‑film association is as a b‑side/extra track in Leftfield’s mid‑90s single catalogue, but there is not a strongly canonical pre‑Trainspotting album home; it effectively debuts in the soundtrack ecosystem.[1]
+So here we have to accept this is one of the few pieces that is “practically” born with the film context, though not a traditional score cue.
+-----
+
+** 18. Statuesque – Sleeper
+- Film use: Pub celebration after the successful drug deal with the Russians.[2]
+- Primary source release:
+  - Album: /The It Girl/ (1996) by Sleeper.[1]
+-----
+
+** 19. Born Slippy .NUXX – Underworld
+- Film use: Final heist/walk‑away sequence where Renton takes the money and vows to “choose life”.[2]
+- Primary source release:
+  - Originally the b‑side “Born Slippy .NUXX” to the single “Born Slippy” (1995) on Junior Boy’s Own; it later appears on the compilation /1965–1995/ and on Underworld’s /Second Toughest in the Infants/ reissues, but its original home is that 1995 single.[1]
+-----
+
+** 20. Closet Romantic – Damon Albarn
+- Film use: End credits.[2]
+- Primary source release:
+  - Non‑album track recorded by Damon Albarn around the /Blur///The Great Escape/ era, first widely available via the Trainspotting OST and later some compilations.
+  - There’s no strongly documented, earlier album home; it’s essentially a standalone composition that surfaces with the film tie‑in.[1]
+-----
+
+** Additional songs appearing only on Trainspotting #2 or related releases
+These are associated with the film universe but not actually heard in the movie according to the “Complete film soundtrack” list.[1]
+- “Choose Life” – PF Project feat. Ewan McGregor (club track built around the “Choose life” monologue; originally a 1997 single).[1]
+- “The Passenger” – Iggy Pop, from /Lust for Life/ (1977).[1]
+- “Golden Years” – David Bowie, from /Station to Station/ (1976).[1]
+- “Our Lips Are Sealed” – Fun Boy Three, from /Fun Boy Three/ (1982).[1]
+- “Come Together” – Primal Scream, original version from /Screamadelica/ (1991).[1]
+- “Atmosphere” – Joy Division, originally a 1980 single (later on /Substance/).[1]
+- “Inner City Life” – Goldie, from /Timeless/ (1995).[1]
+They’re not in the film’s on‑screen music chronology but are sometimes considered part of the broader Trainspotting sound world.
+- The Real [[id:066f3594-0504-4a13-9556-698030772491][Tracklist]] for The [[id:82348d62-33d7-45a8-b643-7248ac4a79c6][Trainspotting]] [[id:c352437b-2627-424b-ba95-855e03443146][OST]]
+  1. Lust for Life
+    - Artist: Iggy Pop
+    - Film placement: Opening chase; Renton and Spud running from the police.
+    - Original / primary source:
+      - Album: Lust for Life
+      - Year: 1977
+    - Notes: Archetypal opener, anchors the “Choose life” monologue vibe.
+  1. Deep Blue Day
+    - Artist: Brian Eno
+    - Film placement: Toilet dive / “Worst Toilet in Scotland” opium suppository scene.
+    - Original / primary source:
+      - Album: Apollo: Atmospheres and Soundtracks
+      - Year: 1983
+    - Notes: Ambient, weightless counterpoint to the most grotesque visual in the film.
+  1. Trainspotting
+    - Artist: Primal Scream
+    - Film placement: Park scene with Renton and Sick Boy shooting BB guns; dog incident.
+    - Original / primary source:
+      - Release: “Trainspotting” single (mid‑1990s)
+      - Later: Primal Scream compilation Dirty Hits
+    - Notes: Not a traditional score cue, but functionally the film’s title theme.
+  1. Temptation
+    - Artist: Heaven 17
+    - Film placement: Club scene where Renton arrives and dances; Spud and Tommy at the table.
+    - Original / primary source:
+      - Album / era: Penthouse and Pavement period
+      - Core release: Early‑80s single/album version
+    - Notes: Early synthpop; sits nicely against the later New Order “Temptation” echo.
+  1. Atomic (Sleeper version)
+    - Artist: Sleeper
+    - Film placement: Club/party sequence (cover version used rather than Blondie’s original).
+    - Original / primary source (for this version):
+      - Release: Atomic (Sleeper) single / Trainspotting‑era cover
+      - Album context: The It Girl period
+    - Notes: Britpop cover of Blondie’s track; tightly associated with the film’s aesthetic.
+  1. Temptation (’87 version)
+    - Artist: New Order
+    - Film placement: Dinner at Diane’s parents; Renton realises she is underage.
+    - Original / primary source:
+      - Album: Substance 1987 (compilation)
+      - Version: Re‑recorded “Temptation ’87”
+      - Year: 1987
+    - Notes: This re‑cut, initially the least famous version, becomes the “Trainspotting” one.
+  1. Nightclubbing
+    - Artist: Iggy Pop
+    - Film placement: Heroin‑shooting scene in the flat.
+    - Original / primary source:
+      - Album: The Idiot
+      - Year: 1977
+    - Notes: Louche, sleazy groove, matches the nodding‑out imagery perfectly.
+  1. Sing
+    - Artist: Blur
+    - Film placement: Shoplifting and police chase; Renton hit by the car; trial build‑up.
+    - Original / primary source:
+      - Album: Leisure
+      - Year: 1991
+    - Notes: Deep cut compared to later Blur hits; moody, reverb‑heavy and slow‑burn.
+  1. Perfect Day
+    - Artist: Lou Reed
+    - Film placement: Overdose sequence; hospital and near‑death.
+    - Original / primary source:
+      - Album: Transformer
+      - Year: 1972
+    - Notes: Ironically romantic lyric against grim visuals; one of the most famous syncs in the film.
+  1. Dark & Long (Dark Train)
+    - Artist: Underworld
+    - Film placement: Withdrawal/hallucination montage in Renton’s room.
+    - Original / primary source:
+      - Base track album: Dubnobasswithmyheadman
+      - Year: 1994
+      - Mix: Dark & Long (Dark Train) – 12"/EP remix, club‑oriented version
+    - Notes: Hypnotic, rolling techno; structurally perfect for an extended montage.
+  1. Think About the Way
+    - Artist: Ice MC
+    - Film placement: London montage; Renton working as a letting agent, street/station scenes.
+    - Original / primary source:
+      - Album: Ice’n’Green
+      - Year: 1994
+    - Notes: Eurodance banger; very period‑specific texture that pins the mid‑90s.
+  1. Mile End
+    - Artist: Pulp
+    - Film placement: Begbie shows up to stay in Renton’s cramped London flat.
+    - Original / primary source:
+      - Release: B‑side to Common People single
+      - Year: 1995
+      - Later: Pulp compilations
+    - Notes: Shambolic, claustrophobic tune that literally names the London location.
+  1. For What You Dream Of (Full On Renaissance Mix)
+    - Artist: Bedrock feat. KYO
+    - Film placement: Club sequence with Renton and Begbie; narration about the new drug culture.
+    - Original / primary source:
+      - Release: 12" single “For What You Dream Of” (Full On Renaissance Mix)
+      - Era: Early‑90s progressive house / Renaissance club compilations
+    - Notes: Classic prog‑house; long DJ‑friendly structure, big on the UK club circuit pre‑film.
+  1. 2:1
+    - Artist: Elastica
+    - Film placement: Sick Boy staying with Renton in the flat after the TV has been sold.
+    - Original / primary source:
+      - Album: Elastica
+      - Year: 1995
+    - Notes: Minimal, taut post‑punk/alt; fits the drained, listless mood.
+  1. Herzlich Tut Mich Verlangen
+    - Performer: Gábor Lehotka (organ)
+    - Film placement: Tommy’s funeral.
+    - Original / primary source:
+      - Work: Lutheran chorale “Herzlich tut mich verlangen” (known from Bach’s harmonisations)
+      - Recording: Pre‑1996 organ‑recital album by Lehotka (Bach chorales/organ works)
+    - Notes: Solemn liturgical colour; one of the few overtly “sacred” moments in the soundtrack.
+  1. A Final Hit
+    - Artist: Leftfield
+    - Film placement: Renton testing the heroin before taking it to London for the deal.
+    - Original / primary source:
+      - Context: Mid‑90s Leftfield track from the Leftism/single era
+      - Release pattern: Non‑album/single‑era extra, essentially introduced with the Trainspotting period
+    - Notes: Feels like score but is really a Leftfield cut folded into the film world.
+  1. Statuesque
+    - Artist: Sleeper
+    - Film placement: Pub celebration after the successful drug deal with the Russians.
+    - Original / primary source:
+      - Album: The It Girl
+      - Year: 1996
+    - Notes: Archetypal Britpop; pairs nicely with the stately but fragile “we got away with it” moment.
+  1. Born Slippy .NUXX
+    - Artist: Underworld
+    - Film placement: Final heist and walk‑away; Renton taking the money and “choosing life.”
+    - Original / primary source:
+      - Release: Born Slippy single b‑side (“Born Slippy .NUXX”)
+      - Year: 1995
+      - Later: Compilations and reissues (e.g., 1965–1995, Second Toughest in the Infants reissues)
+    - Notes: Became /the/ Trainspotting anthem; structurally ideal closer for a set or playlist.
+  1. Closet Romantic
+    -----
+    - Artist: Damon Albarn
+    - Film placement: End credits.
+    - Original / primary source:
+      - Context: Standalone track recorded in the mid‑90s
+      - Release pattern: First widely circulated in connection with the Trainspotting era and OST, later comps
+    - Notes: Downbeat, slightly woozy coda to the whole film; more “epilogue” than banger.
+- [[id:01575bbd-2100-4910-8b98-a97e00428026][Bullet Journal Concept]]
+  - Someday Log
+    - This you want to do, but don’t know when 
+    - When time opens up, you can slot one in
+  - Monthly log
+    - [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/06070ec0bdaf468ca64169beaefd5308/798aa1af-f5c2-44c9-8d33-a1a686cd5c4a?key=cf29e8df36c39c3c86563950dcb49fd473a9c6f84e16a7bde7fe5696102bc1ba][image]]
+    - Timeline
+      - Past Tense calendar
+    - Action Plan
+      - What can go in
+- 5-Minute No Foundation Makeup
+  [[https://www.youtube-nocookie.com/embed/u36P_z64i4M][youtube: https://www.youtube-nocookie.com/embed/u36P_z64i4M]]
+   MY AMAZON STOREFRONT (🇺🇸 LINK): [[https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbG1QTnQzMFZueTdMY1ZJVUVPWFVobWVhQWRJd3xBQ3Jtc0ttdnNsVzFJN293bWJOLUl0NjlnVTg3M1JCM3pzLWd5MVJyeE82alc0VW1mS0dQajBISWtuRjdTeXV2ZzFhenk0RE8xQUp6S3V3N2ViOVhNVW1jb3BzTkhhdm1LXzh6bUV2UXFCZXlCYksyakZXdk5Wdw&q=https%3A%2F%2Fwww.amazon.com%2Fshop%2Felenarachitskaya&v=u36P_z64i4M][https://www.amazon.com/shop/elenarach...]]
+  - 
+  - I’m going to share my 5-minute, no-foundation makeup routine. This is my go-to for those lazy days when I want to look put together without spending too much time. PRODUCTS USED IN THIS VIDEO (INTERNATIONAL LINKS): 
+  - TARTE | Travel Size Shape Tape Concealer (29N) - [[https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3lpX0I5YnN1dFo0VkVac2ZPZThiN1htSWZFQXxBQ3Jtc0tsQ3AzaXVidzZ1QW93ZGFXc1M5SFZyNmFVeU92d29iU2V3alhYNUg5UkZNRHdRRDJvMDBGbmh0bFBuaHhOaDRTUjlTSFk0NUZSRGhURnVYZm9qbWVQLVliUG1sOHBLQkNSRWNoOGtFNFplSi1qOGxkcw&q=https%3A%2F%2Fgo.shopmy.us%2Fp-17088328&v=u36P_z64i4M][https://go.shopmy.us/p-17088328]]
+  - RARE BEAUTY | Soft Pinch Matte Bouncy Blush (Hope) - [[https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbmVzaDFhV1h6Szcyb2N3U1J0WjRwbFJxVFI2QXxBQ3Jtc0tsMEd5ZVZvQ2dUenQ2dkdacFN4d3pIZTJ3MTROeUx1YW5LYnFTY2FrOTBWZ0pVY2RXM2tvUU1vX25YLXU4a2JsbUhnWi1yM1NpNGxKWlIwaW94aUxMN0o4aU42cU1JWFVPMWVWZnNXZ3BOVEs3Q1poUQ&q=https%3A%2F%2Fgo.shopmy.us%2Fp-17285638&v=u36P_z64i4M][https://go.shopmy.us/p-17285638]]
+  - BENEFIT COSMETICS | Precisely, My Brow Detailer Waterproof Eyebrow Pencil (2) - [[https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkNDNDZhdTdHbjlmOFZTQU1pdjZKeTBhckR5UXxBQ3Jtc0trd3BJT08xWUI1T0RoSDA4cGhJX2p4TFNaeXFpN09XVFp4ZmZuc2dTOUkwQ2JtZlNmSDcyM1AwOHdvaFpSeG56Z2l0QlduUkhSOTJ6Qk16QXY5ZkxhSmI5UmJxUWRMT09uVzg0ZVNMXzF2Y2loWUxNVQ&q=https%3A%2F%2Fgo.shopmy.us%2Fp-17285102&v=u36P_z64i4M][https://go.shopmy.us/p-17285102]]
+  - LOREAL | Perfect Slim By Superliner Eyeliner (01 Intense Black) - [[https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXpRY3pUUmt2OERvOXZFRklvRW9Md1BNOC1Vd3xBQ3Jtc0treUg2bDZkVktEQVhvbkxEc0VwM3NJSnY3cVQ5M1ZoUnVIOW02U0pLdnlVbUhYdHhJVW5kMjgtNVF4REh1NkVnUGZ3OVNwRzNuT1AwYzM3Y045eFZzaEx5c2lJSlRlcTNYSXROdzloNENyWW9QLVl4VQ&q=https%3A%2F%2Fgo.shopmy.us%2Fp-18022319&v=u36P_z64i4M][https://go.shopmy.us/p-18022319]]
+  - TARTE | tartelette tubing mascara - [[https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2dDVDFISWF2UnBJRFNTSHFtX0NZZGNLdWFoZ3xBQ3Jtc0ttMlloR1hRTjVmTFBqZUN0U1k4ZTByZ293Zm51U0ZKNmg5SXE4Yk9sMXB2MFdLcWtNdkE5eXFyWGE4X3J1WlpVRHQ4YzcxLWxfNE1yb2xzR2lYSDFacC1XQWdXRkVoSTZMSHhiZkkyMnN6ZjgtUEJzaw&q=https%3A%2F%2Fgo.shopmy.us%2Fp-18022453&v=u36P_z64i4M][https://go.shopmy.us/p-18022453]]

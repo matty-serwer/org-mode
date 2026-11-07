@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d260b299-87d7-4af6-8fe3-045261e30f77
+:REFLECT_ID: a2443eacd92642dbba9aefd9e7285fba
+:CREATED:  [2025-11-13 Thu 06:14]
+:MODIFIED: [2025-11-13 Thu 06:14]
+:END:
+#+title: Design
+#+filetags: :concept:
+#+date: 2025-11-13
+

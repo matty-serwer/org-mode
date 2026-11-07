@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2de94f26-8518-4e56-8ce6-c246f6060280
+:REFLECT_ID: a9dc29c7f6a74937aeca998ae6e8f8ab
+:CREATED:  [2025-12-11 Thu 23:44]
+:MODIFIED: [2025-12-11 Thu 23:44]
+:END:
+#+title: Peter Gabriel
+#+filetags: :concept:
+#+date: 2025-12-11
+

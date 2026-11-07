@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       11a6ce5b-5f94-4da8-8194-25dd13b31779
+:REFLECT_ID: d5b1d5ed26b644b0bf7685efaa6dedb4
+:CREATED:  [2025-11-11 Tue 10:49]
+:MODIFIED: [2025-11-11 Tue 10:49]
+:END:
+#+title: Figma
+#+filetags: :concept:
+#+date: 2025-11-11
+

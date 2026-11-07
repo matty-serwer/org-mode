@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       28875403-21f9-46d4-b371-2610abd8612a
+:REFLECT_ID: b3b5afb041554f99b67eb6131781be82
+:CREATED:  [2025-10-27 Mon 06:56]
+:MODIFIED: [2025-10-27 Mon 19:33]
+:END:
+#+title: Apple Notes
+#+filetags: :concept:
+#+date: 2025-10-27
+

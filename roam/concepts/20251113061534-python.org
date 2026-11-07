@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       71e80e35-3949-4cb5-a402-38174fd87b0b
+:REFLECT_ID: ed0ec9f9ad4a4704aeef9d1ee1227dc7
+:CREATED:  [2025-11-13 Thu 06:15]
+:MODIFIED: [2025-11-13 Thu 06:15]
+:END:
+#+title: Python
+#+filetags: :concept:
+#+date: 2025-11-13
+

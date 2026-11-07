@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       af3b176a-3ec8-4af2-a884-16f737d900a6
+:REFLECT_ID: 07022026
+:CREATED:  [2026-02-07 Sat 18:16]
+:MODIFIED: [2026-02-08 Sun 07:17]
+:END:
+#+title: Sat, February 7th, 2026
+#+filetags: :daily:
+#+date: 2026-02-07
+- [[id:63053232-cd36-421c-ab94-21ab0455e313][Workflow]]
+  - [[id:c6cd801b-e33b-41bc-8d12-e572182fc4bd][Aerc]]
+    - Email client
+  - [[id:59d559db-d3f4-40bb-98ef-7fe022bab3d9][btop]]
+    - Task manager

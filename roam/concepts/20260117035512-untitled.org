@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       141b1b0b-9479-4271-9646-aae4a52a1e19
+:REFLECT_ID: af3f4aa41f4f4d61b05d185cf35d9a27
+:CREATED:  [2026-01-17 Sat 03:55]
+:MODIFIED: [2026-01-17 Sat 03:55]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-01-17
+

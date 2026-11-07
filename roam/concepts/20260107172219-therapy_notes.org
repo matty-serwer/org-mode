@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bc749ddc-3746-4007-80d6-78c65d383399
+:REFLECT_ID: 887e37e6b8fc4f87af42caa5aeb6bc26
+:CREATED:  [2026-01-07 Wed 17:22]
+:MODIFIED: [2026-02-20 Fri 16:56]
+:END:
+#+title: Therapy Notes
+#+filetags: :concept:
+#+date: 2026-01-07
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9a56e9e8-f2d8-40f9-8e06-edc924bdd99c
+:REFLECT_ID: 4a7a025db2f744199f478a58696cfdcc
+:CREATED:  [2026-01-18 Sun 08:31]
+:MODIFIED: [2026-01-18 Sun 08:31]
+:END:
+#+title: Elastica
+#+filetags: :concept:
+#+date: 2026-01-18
+

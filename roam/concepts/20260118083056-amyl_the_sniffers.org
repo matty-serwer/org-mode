@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b2c38cdf-f85d-4136-9e6f-ccd11ac97f06
+:REFLECT_ID: 5d966d11c5d442f8a599022f1fd3813d
+:CREATED:  [2026-01-18 Sun 08:30]
+:MODIFIED: [2026-01-18 Sun 08:30]
+:END:
+#+title: Amyl & The Sniffers
+#+filetags: :concept:
+#+date: 2026-01-18
+

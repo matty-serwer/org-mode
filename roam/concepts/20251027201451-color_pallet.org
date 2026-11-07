@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       687d1aaa-50fd-4477-9613-15fcd5202917
+:REFLECT_ID: cda5cac3635a49948e305bc3c3b687c9
+:CREATED:  [2025-10-27 Mon 20:14]
+:MODIFIED: [2025-10-27 Mon 20:14]
+:END:
+#+title: Color Pallet
+#+filetags: :concept:
+#+date: 2025-10-27
+

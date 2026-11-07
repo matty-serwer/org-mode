@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b3d6e288-d523-4359-9b41-ff11cde7afa4
+:REFLECT_ID: 66fff556502742dd8a5e85d3ee407633
+:CREATED:  [2025-10-27 Mon 13:13]
+:MODIFIED: [2025-11-13 Thu 17:22]
+:END:
+#+title: Measurements
+#+filetags: :concept:
+#+date: 2025-10-27
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a90da8c7-dec2-4a13-abe2-65538383b06b
+:REFLECT_ID: fdb7413df28f43cfa14995d0085a7abc
+:CREATED:  [2026-04-21 Tue 07:23]
+:MODIFIED: [2026-04-21 Tue 07:23]
+:END:
+#+title: Green Headphone Bag
+#+filetags: :concept:
+#+date: 2026-04-21
+

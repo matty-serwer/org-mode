@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e4ac1c95-4c8f-4f3d-88b6-025a04e4f58a
+:REFLECT_ID: 31f1e2c3683f489aa63d4a786bee2143
+:CREATED:  [2025-11-05 Wed 17:13]
+:MODIFIED: [2025-11-05 Wed 17:13]
+:END:
+#+title: Sam's Club
+#+filetags: :concept:company:
+#+date: 2025-11-05
+- type:  
+- domain: 

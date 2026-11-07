@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0a80946a-c26a-4b43-a4b9-b87a9285ccf6
+:REFLECT_ID: ff7c75aea29f4689b7fe06daf0625163
+:CREATED:  [2025-11-01 Sat 06:56]
+:MODIFIED: [2025-11-13 Thu 05:29]
+:END:
+#+title: ASCII Characters
+#+filetags: :concept:
+#+date: 2025-11-01
+

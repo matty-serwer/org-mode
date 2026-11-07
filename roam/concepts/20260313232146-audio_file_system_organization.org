@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c1c9c66e-93b3-4e2f-8a9f-227d20821fc7
+:REFLECT_ID: 5512b98c77b340c0a88555c18a1da1f1
+:CREATED:  [2026-03-13 Fri 23:21]
+:MODIFIED: [2026-03-13 Fri 23:21]
+:END:
+#+title: Audio File System Organization
+#+filetags: :concept:
+#+date: 2026-03-13
+

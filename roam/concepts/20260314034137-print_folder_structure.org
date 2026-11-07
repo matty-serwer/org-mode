@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       aa8cb14a-41fa-43f5-8527-be3a40525e41
+:REFLECT_ID: a50a7f52e4494fa2a511bbc1a617d49e
+:CREATED:  [2026-03-14 Sat 03:41]
+:MODIFIED: [2026-03-14 Sat 03:41]
+:END:
+#+title: Print Folder Structure
+#+filetags: :concept:
+#+date: 2026-03-14
+

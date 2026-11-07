@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c5c36e58-15dc-418f-9c9c-c12bcdc5aa3f
+:REFLECT_ID: 0810c873111240f09ac71357de4c8b84
+:CREATED:  [2025-12-10 Wed 10:12]
+:MODIFIED: [2025-12-10 Wed 10:12]
+:END:
+#+title: Project Focused Resume
+#+filetags: :concept:
+#+date: 2025-12-10
+

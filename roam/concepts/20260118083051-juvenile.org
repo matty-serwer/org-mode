@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       40ba81d0-fce0-4e99-9cf9-9b5003119738
+:REFLECT_ID: af0265a08603433e854f472464583215
+:CREATED:  [2026-01-18 Sun 08:30]
+:MODIFIED: [2026-01-18 Sun 08:30]
+:END:
+#+title: Juvenile
+#+filetags: :concept:
+#+date: 2026-01-18
+

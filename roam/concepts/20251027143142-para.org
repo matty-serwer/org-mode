@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       47d10ea0-6c74-4c5e-b9bc-0788686750fb
+:REFLECT_ID: 8b4023a214b0481da7769816a574ef7f
+:CREATED:  [2025-10-27 Mon 14:31]
+:MODIFIED: [2025-10-27 Mon 14:31]
+:END:
+#+title: PARA
+#+filetags: :concept:
+#+date: 2025-10-27
+

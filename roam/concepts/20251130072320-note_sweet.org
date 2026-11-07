@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       95ed315f-208f-40a1-97b5-325433227189
+:REFLECT_ID: a7040dbdcef644b2b3020adfa19308d3
+:CREATED:  [2025-11-30 Sun 07:23]
+:MODIFIED: [2025-11-30 Sun 09:57]
+:END:
+#+title: Note Sweet
+#+filetags: :concept:
+#+date: 2025-11-30
+

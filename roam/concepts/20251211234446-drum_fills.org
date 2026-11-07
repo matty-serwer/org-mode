@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f1ceca38-b5c3-4fd7-a5c0-9c28295da41b
+:REFLECT_ID: 999461b919f24ab1b4a975fb9f51b4dc
+:CREATED:  [2025-12-11 Thu 23:44]
+:MODIFIED: [2025-12-11 Thu 23:44]
+:END:
+#+title: Drum Fills
+#+filetags: :concept:
+#+date: 2025-12-11
+

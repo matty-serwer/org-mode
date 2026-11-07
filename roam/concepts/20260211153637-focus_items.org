@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       11888d73-20c5-42f5-97aa-d6556994b934
+:REFLECT_ID: c4b869234ae44fb6b83ca16e10f96a38
+:CREATED:  [2026-02-11 Wed 15:36]
+:MODIFIED: [2026-02-11 Wed 15:36]
+:END:
+#+title: Focus Items
+#+filetags: :concept:
+#+date: 2026-02-11
+

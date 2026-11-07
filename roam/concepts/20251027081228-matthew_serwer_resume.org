@@ -1,0 +1,64 @@
+:PROPERTIES:
+:ID:       7f7c55ef-4686-4940-93c0-5989d8addc0c
+:REFLECT_ID: e4a924b075d94cb08f98ee3d93563869
+:CREATED:  [2025-10-27 Mon 08:12]
+:MODIFIED: [2026-01-26 Mon 19:32]
+:END:
+#+title: Matthew Serwer Resume
+#+filetags: :concept:
+#+date: 2025-10-27
+* Matthew Serwer [[id:8fee8dc9-268c-4ee9-9572-4da77ef34489][Resume]]
+- Full Stack Developer
+  - South Portland, ME
+  - (631) 645-4625
+  - Matthew.Serwer@gmail.com
+  - Portfolio & Company: [[https://lupinetechdesign.com/][lupinetechdesign.com]]
+  - LinkedIn: [[linkedin.com/in/matthewserwer][linkedin.com/in/matthewserwer]]
+  - GitHub: [[http://github.com/matty-serwer][github.com/matty-serwer]]
+- Professional Summary
+  - Full Stack Developer with 5+ years building scalable enterprise web apps. Proven success modernizing legacy systems and shipping solutions to 300+ users.
+  - Expert at streamlining 15+ step workflows to 3–4 through frontend architecture, state optimization, and team collaboration.
+- Technical Skills
+  - Languages: JavaScript / TypeScript, Java, Python
+  - Frontend: React, Next.js, Angular, Redux Toolkit, HTML5, CSS3, Tailwind, Material UI, Shad/CN
+  - Backend: Java Spring Boot, Node.js/Express, RESTful APIs, JWT Authentication
+  - Databases: PostgreSQL, MongoDB, MySQL, DynamoDB
+  - Cloud/DevOps: AWS (Lambda, S3, EC2, API Gateway), Docker, Git, CI/CD
+  - Security: OKTA SSO Integration, Route Protection, HTTP Interceptors
+- Professional Experience
+  - *Full Stack Developer | Cognizant (Remote) Aug 2021 – Jul 2023*
+    - *Sam's Club - Warehouse Management System (React, Redux Toolkit, Node.js, MongoDB)*
+      - Rescued failing inventory app serving 30 distribution centers with critical user experience issues causing system reboot
+      - Reduced task complexity by 70%: Streamlined simple tasks from 6-10 steps to 2-4 steps, complex workflows from 15-25 steps to 7-10 steps
+      - Eliminated prop-drilling across 30+ components by migrating to Redux Toolkit, improving state reliability and user trust
+      - Rebuilt backend data flow with Node.js/MongoDB, resolving display inconsistencies that prevented accurate inventory tracking
+    - *Chick-fil-A Campus Reporting System (Angular, Spring Boot, PostgreSQL)*
+      - Led Angular 8 to 12 migration over 6 months for sales reporting system serving 150+ campus locations (300+ daily users)
+      - Implemented enterprise security overhaul: Replaced manual JWT handling with Okta SSO integration using @okta/okta-angular
+      - Built comprehensive route protection with OktaAuthGuard and HTTP interceptors for secure financial reporting workflows
+      - Refined daily/weekly/monthly sales report automation for licensee managers and supervisors with zero downtime migration
+  - *Freelance Full Stack Developer (South Portland, ME) Aug 2023 – Present*
+    - *Phantom Power - Music Producer Social Network (Next.js, Spring Boot, PostgreSQL)*
+      - Architected social platform MVP with comprehensive data schema covering 25 entity types for AI-powered musician matching
+      - Designed sprint planning structure with detailed GitHub Projects workflow for 2-sprint development cycle
+      - Built scalable backend foundation using Java Spring Boot with PostgreSQL for future ML integration
+    - *Rutherford Diagnostics - Veterinary Data Platform (Next.js, Spring Boot, D3.js)*
+      - Developed medical data visualization dashboard with real-time WebSocket alerts for veterinary lab analysis
+      - Created interactive charts using D3.js for hemoglobin data representation and trend analysis
+      - Built responsive frontend serving dynamic medical data with under 2 second load times
+  - *AI Data Specialist | DataAnnotation.tech (Remote Contract) 2022 – 2024*
+    - Analyzed 2,000+ AI model responses across 100+ projects for LLM quality assurance and safety validation
+    - Tested prompt engineering workflows for multiple confidential AI models, contributing to model safety and performance optimization
+    - Maintained consistent quality standards across diverse AI projects from general interactions to complex agentic workflows
+  - Education
+    - BloomTech (formerly Lambda School): Full Stack Web Development & Computer Science — 2020
+    - Northeastern University, Boston, MA: Bachelor of Science, Music Industry — 2004
+#+begin_quote
+- [[id:f4b3ab2e-797a-45da-9f55-5911786e21b6][Context]]
+  - Wednesday, October 22nd
+  - PDF File: [[https://hookmark.net/hm/hook/file/0nmvrOw2S?p=UmVzdW1lcy9PY3RvYmVyIDIwMjU=&n=Matthew%20Serwer%20POM%20Resume%202025%2D10%2D19%2Epdf][Matthew Serwer POM Resume 2025-10-19.pdf]]
+  - This was the resume that was formatted in Obsidian, for pdf Export
+  - Geoff was on the phone as we wrapped it up. 
+  - It was imported and used on [[id:9672d97b-fdc5-4b89-82c9-8c03e81f7dae][Matthew Serwer]]'s [[id:fc77293d-015b-4def-b56f-9649f3b02899][LinkedIne Page]]
+  - [X] [[https://hookmark.net/hm/hook/file/0nmvrOw2S?p=UmVzdW1lcy9PY3RvYmVyIDIwMjU=&n=Matthew%20Serwer%20POM%20Resume%202025%2D10%2D19%2Epdf][Matthew Serwer POM Resume 2025-10-19.pdf]] may not be [[id:bfb0c38b-6cbf-4b4f-a6f8-fbb29225562d][ATS Compliant]].  The text did not copy paste well. Words were brokern up. Check it out. 
+#+end_quote

@@ -1,0 +1,73 @@
+:PROPERTIES:
+:ID:       2ad14500-ba64-4cf5-93b6-1a2c9b82ce41
+:REFLECT_ID: a93518c4763e45f78b83d8445d271a03
+:CREATED:  [2025-11-13 Thu 06:21]
+:MODIFIED: [2025-12-04 Thu 17:10]
+:END:
+#+title: Matthew Serwer Resume V1, 2025-10-14, Extended
+#+filetags: :concept:
+#+date: 2025-11-13
+* Matthew Serwer
+- Full Stack Developer
+-----
+
+Portfolio
+LinkedIn: [[linkedin.com/in/matthewserwer][linkedin.com/in/matthewserwer]]
+-----
+
+- South Portland, ME | [[tel:(631) 645-4625][(631) 645-4625]] | [[mailto:Matthew.Serwer@gmail.com][Matthew.Serwer@gmail.com]]
+- Portfolio & Company: [[https://lupinetechdesign.com][lupinetechdesign.com]]
+- LinkedIn: [[linkedin.com/in/matthewserwer][linkedin.com/in/matthewserwer]]
+- GitHub: [[github.com/matty-serwer][github.com/matty-serwer]]
+- Professional Summary
+  - Full Stack Developer with 5+ years building scalable web applications for enterprise clients
+  - Experience rescuing legacy systems and shipping production applications to 300+ end users across Fortune 500 companies
+  - Expert at transforming complex user workflows from 15+ steps down to 7-10 steps through strategic frontend architecture and state management optimization
+- Technical Skills
+  - Languages: JavaScript, TypeScript, Java, Python
+  - Frontend: React, Next.js, Angular, Redux Toolkit, HTML5, CSS3, Tailwind, Material UI
+  - Backend: Java Spring Boot, Node.js/Express, RESTful APIs, JWT Authentication
+  - Databases: PostgreSQL, MongoDB, MySQL, DynamoDB
+  - Cloud/DevOps: AWS (Lambda, S3, EC2, API Gateway), Docker, Git, CI/CD
+  - Security: Okta SSO Integration, Route Protection, HTTP Interceptors
+- Professional Experience
+  - Full Stack Developer | Cognizant (Remote) Aug 2021 – Jul 2023
+    - Sam's Club - Warehouse Management System (React, Redux Toolkit, Node.js, MongoDB)
+      - Rescued failing inventory app serving 30 distribution centers with critical user experience issues causing system reboots
+      - Reduced task complexity by 70%: Streamlined simple tasks from 6-10 steps to 2-4 steps, complex workflows from 15-25 steps to 7-10 steps
+      - Eliminated prop-drilling across 30+ components by migrating to Redux Toolkit, improving state reliability and user trust
+      - Rebuilt backend data flow with Node.js/MongoDB, resolving display inconsistencies that prevented accurate inventory tracking
+    - Chick-fil-A Campus Reporting System (Angular, Spring Boot, PostgreSQL)
+      - Led Angular 8 to 12 migration over 6 months for sales reporting system serving 150+ campus locations (300+ daily users)
+      - Implemented enterprise security overhaul: Replaced manual JWT handling with Okta SSO integration using @okta/okta-angular
+      - Built comprehensive route protection with OktaAuthGuard and HTTP interceptors for secure financial reporting workflows
+      - Delivered daily/weekly/monthly sales reporting for licensed campus managers and supervisors with zero downtime migration
+  - Freelance Full Stack Developer (South Portland, ME) Aug 2023 – Present
+    - Phantom Power - Music Producer Social Network (Next.js, Spring Boot, PostgreSQL)
+      - Architected social platform MVP with comprehensive data schema covering 25 entity types for AI-powered musician matching
+      - Designed sprint planning structure with detailed GitHub Projects workflow for 2-sprint development cycle
+      - Built scalable backend foundation using Java Spring Boot with PostgreSQL for future ML integration
+    - Rutherford Diagnostics - Veterinary Data Platform (Next.js, Spring Boot, D3.js)
+      - Developed medical data visualization dashboard with real-time WebSocket alerts for veterinary lab analysis
+      - Created interactive charts using D3.js for hemoglobin data representation and trend analysis
+      - Built responsive frontend serving dynamic medical data with under 2 second load times
+  - AI Data Specialist | [[DataAnnotation.tech][DataAnnotation.tech]] (Remote Contract) 2022 – 2024
+    - Analyzed 2,000+ AI model responses across 100+ projects for LLM quality assurance and safety validation
+    - Tested prompt engineering workflows for multiple confidential AI models, contributing to model safety and performance optimization
+    - Maintained consistent quality standards across diverse AI projects from general interactions to complex agentic workflows
+  - Full Stack Developer | Lambda Alumni Network (Remote) Oct 2020 – Jan 2021
+    - Built complete profile system from scratch using React and Redux for alumni community platform
+    - Developed solo full-stack solution serving hundreds of Lambda School graduates for networking and job placement
+    - Shipped production features in fully remote, distributed development environment with async collaboration
+- Education
+  - BloomTech (formerly Lambda School)
+    - Full Stack Web Development & Computer Science — 2020
+  - Northeastern University, Boston, MA
+    - Bachelor of Science, Music Industry — 2004
+- Key Projects
+  - Phantom Power | Next.js, Spring Boot, PostgreSQL
+    - Social network for music producers with planned AI-powered collaboration matching based on musical compatibility rather than genre tags
+  - Rutherford Diagnostics | Next.js, Spring Boot, D3.js
+    - Real-time veterinary diagnostic dashboard with WebSocket alerts and interactive data visualization for medical analysis
+  - LEMR Health | Next.js, Spring Boot (Confidential)
+    - Cross-language medical communication platform for healthcare providers in underserved international regions

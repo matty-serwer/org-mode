@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       00a01346-0b1e-4bc9-bccb-7f016ef74ea6
+:REFLECT_ID: 4f6fb21e8f4f475894c248b7d43285db
+:CREATED:  [2025-12-12 Fri 22:51]
+:MODIFIED: [2025-12-12 Fri 22:51]
+:END:
+#+title: The Serpent and the Wings of Night (Crowns of Nyaxia Book 1)
+#+filetags: :ref:book:
+#+date: 2025-12-12
+- Type: 
+- ASIN: B09WRJJKXC
+- Authors: [[id:d6276a97-415b-4a0f-be4b-3c7d1c6c351d][Carissa Broadbent]]
+- Highlights
+  - 
+- Notes
+  - 

@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       e05d842a-08a3-4276-af4c-51e9513bbeb2
+:REFLECT_ID: 17012026
+:CREATED:  [2026-01-17 Sat 00:32]
+:MODIFIED: [2026-04-08 Wed 20:24]
+:END:
+#+title: Sat, January 17th, 2026
+#+filetags: :daily:
+#+date: 2026-01-17
+- [[id:d27b492f-a706-4de7-8021-70a84e262aa9][Matti3-org]]
+  - Created Directory for my principle projects.
+    - [[id:66089ec0-9f2a-437a-8153-ee903fba5164][👩🏻‍💻 Active Project Board 👩🏻‍💻]]
+  - Check this every day
+  - It's more of a focus reminder than a task list
+- Code Syntax Cheet sheets
+  - [[https://hookmark.net/hm/hook/file/42KUsFfAg?p=RGV2ZWxvcGVyL3JlZmVyZW5jZQ==&n=sheets][sheets]]
+  - Condensed code examples for personal testing purposes
+  - [[id:92c92838-9476-4086-857a-f1b7bfbb6bb4][Javascript 300 Line Cheatsheet]]
+  - [[id:a6cf6802-d908-46fc-8ed4-6086894c5d98][Java 300 Line Cheatsheet]]
+- AV Notes
+  - [[id:ee45e1c7-6d2e-45b5-8a64-bcdf1edeb36c][📼 Pfizer Convention A/V Technician Job Info, via Eric Latoure]]
+  - [[id:9b1a4822-e5e8-4c4c-bec1-295960234410][AV show world index]]
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  [[id:bc749ddc-3746-4007-80d6-78c65d383399][Therapy Notes]] today
+  Main Discussion Topic
+  Core Issue
+  Behavioral Pattern
+  Consequences
+  Key Insight
+  - Need to address pattern of perfectionism affecting task completion
+  - Feel compelled to finish all endeavors in a single day
+  - Particularly impacts creative projects
+  - Prevents sense of accomplishment
+  - *The Cycle:*
+    - Want to complete projects fully
+    - Believe won't finish in one session
+    - Avoid starting altogether
+    - Fall further behind
+    - Experience increased stress
+  - *Music projects:* Taking a week off requires a full day to catch up
+  - *Coding projects:* 2-3 days off results in significant difficulty (major headache) on day 4
+  - Projects regress without consistent attention
+  - Continuous work needed to maintain progress
+  - All-or-nothing thinking prevents incremental progress
+  - Avoidance behavior creates the exact outcome feared (falling behind)

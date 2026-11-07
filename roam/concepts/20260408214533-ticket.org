@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       df0bb3d5-1575-44ca-95e4-65ca56600691
+:REFLECT_ID: b0ac4d23da8642c89a5fe09c7a956b0b
+:CREATED:  [2026-04-08 Wed 21:45]
+:MODIFIED: [2026-04-08 Wed 21:45]
+:END:
+#+title: Ticket
+#+filetags: :concept:
+#+date: 2026-04-08
+

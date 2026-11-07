@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bfb0c38b-6cbf-4b4f-a6f8-fbb29225562d
+:REFLECT_ID: c6f0f75071024522a97ca418fede5045
+:CREATED:  [2025-10-27 Mon 14:18]
+:MODIFIED: [2025-10-27 Mon 14:18]
+:END:
+#+title: ATS Compliant
+#+filetags: :concept:
+#+date: 2025-10-27
+

@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       7dbf6860-fd19-4abf-98dc-35c2bd2579b2
+:REFLECT_ID: 94ae7d537921469f9a1644ef74bde7e6
+:CREATED:  [2026-04-10 Fri 06:32]
+:MODIFIED: [2026-04-10 Fri 06:40]
+:END:
+#+title: DJ Stem Decks
+#+filetags: :concept:
+#+date: 2026-04-10
+- [[id:36406928-18b8-4ff8-b679-955fc4f90b8f][Audio Project]]
+  - creating a DJ Deck for 4 track stemmed songs
+- Files
+  - [[https://hookmark.net/hm/hook/file/7JdCNQRlB?p=cHJvamVjdC1yZXBvc2l0b3J5LzIwMjY=&n=2026%2D04%2D10%5Ftechnical%5Fdj%2Dstem%2Ddecks%2D001%20Project][2026-04-10_technical_dj-stem-decks-001 Project]]
+- Log
+  - Created [[id:d4448113-9e31-4e30-b78e-64c58b238e5b][4/10/2026]]
+- TODO
+  - [ ] Create Template, with two decks
+  - [ ] Add any necessary Master FX
+  - [ ] Keep it Simple and Try It Out! before you keep guesing what you will need

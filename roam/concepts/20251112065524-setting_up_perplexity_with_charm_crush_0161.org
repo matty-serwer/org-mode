@@ -1,0 +1,64 @@
+:PROPERTIES:
+:ID:       ca06a77f-3c88-4f47-a5c1-c004f9cc1b3c
+:REFLECT_ID: 7621bbd9c33c4ef9a479845d8f393abb
+:CREATED:  [2025-11-12 Wed 06:55]
+:MODIFIED: [2025-11-12 Wed 06:55]
+:END:
+#+title: Setting up Perplexity with Charm Crush 0.16.1
+#+filetags: :concept:
+#+date: 2025-11-12
+- Prerequisites
+  - macOS 15, zsh in Ghostty, Crush 0.16.1 installed
+  - PERPLEXITY_API_KEY exported in ~/.zshrc
+- 1. Ensure the key is loaded
+  - Reload your shell: =source ~/.zshrc=
+  - Verify it's available: =echo $PERPLEXITY_API_KEY= should print a pplx‑ prefix key
+- 2. Create a Perplexity provider in Crush config
+  - Edit or create ~/.config/crush/crush.json
+  - Use base_url [[https://api.perplexity.ai][https://api.perplexity.ai]] and read the API key from environment
+  - Provider type must be =openai-compat=
+  - Add all your desired Perplexity models to the models array
+- 3. Example configuration
+  - #+begin_src json
+    {
+      "$schema": "https://charm.land/crush.json",
+      "providers": {
+        "perplexity": {
+          "type": "openai-compat",
+          "base_url": "https://api.perplexity.ai",
+          "api_key": "$PERPLEXITY_API_KEY",
+          "models": [
+            { "id": "sonar", "name": "Perplexity Sonar" },
+            { "id": "sonar-pro", "name": "Perplexity Sonar Pro" },
+            { "id": "sonar-reasoning", "name": "Perplexity Sonar Reasoning" },
+            { "id": "sonar-reasoning-pro", "name": "Perplexity Sonar Reasoning Pro" }
+          ]
+        }
+      }
+    }
+    #+end_src
+- 4. Launch Crush and select your provider
+  - Start Crush
+  - Choose the "perplexity" provider
+  - Pick any model from the list (e.g., sonar-pro)
+- 5. Test the connection outside Crush
+  - Use curl to confirm auth and endpoint work:
+  - #+begin_src bash
+    curl -X POST https://api.perplexity.ai/chat/completions \
+      -H "accept: application/json" \
+      -H "content-type: application/json" \
+      -H "Authorization: Bearer ${PERPLEXITY_API_KEY}" \
+      -d '{ "model":"sonar-pro","messages":[{"role":"user","content":"Hello"}] }'
+    #+end_src
+  - A 200 JSON response confirms setup is correct
+- 6. Model reference
+  - =sonar=: Fast general model for quick, grounded answers
+  - =sonar-pro=: Deeper retrieval and richer responses
+  - =sonar-reasoning=: Multi-step reasoning for complex tasks
+  - =sonar-reasoning-pro=: Enhanced reasoning performance
+- Troubleshooting
+  - If Crush "hangs": verify base_url includes =https://= and provider type is =openai-compat=
+  - If 401/403 error: ensure terminal session has key loaded (=echo $PERPLEXITY_API_KEY=) and value matches your Perplexity key
+  - If models don't appear: confirm provider type is =openai-compat= and models array has valid ids
+  - To add more models: append new entries to the models array, then re-open the model picker
+Sources

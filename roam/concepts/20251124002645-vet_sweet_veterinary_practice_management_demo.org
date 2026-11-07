@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       288b6dbf-faab-419f-8da0-7a884092747c
+:REFLECT_ID: 8da081e5f3664036abaea4b1ac583141
+:CREATED:  [2025-11-24 Mon 00:26]
+:MODIFIED: [2025-11-24 Mon 00:28]
+:END:
+#+title: Vet Sweet - Veterinary Practice Management Demo
+#+filetags: :concept:
+#+date: 2025-11-24
+* [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]] - Veterinary Practice Management Demo
+- Project Context
+  - Building a modern veterinary practice management demo application inspired by EzyVet and IDEXX
+  - This is a portfolio-quality proof-of-concept replicating essential workflows in a well-architected system
+  - Primary Reference: ezyvet-software-breakdown.docx contains all structural and feature guidance
+  - Any mentions of "EzyVet," "IDEXX," or the source application refer to this document
+- Core Scope
+  - Demo-focused: Polished proof-of-concept, not production software
+  - Modular design: Flexible, maintainable components
+  - Real workflows: Practical features used by veterinary professionals
+- Key Feature Areas
+  - Client and patient management
+  - Appointment scheduling and workflow
+  - Clinical records and treatment tracking
+  - Inventory and medication management
+  - Billing, invoicing, and payment processing
+  - Reporting and analytics
+  - Communication tools (reminders, notifications)
+- For All Requests
+  - Reference ezyvet-software-breakdown.docx for business logic, feature requirements, and structural decisions
+  - Start with core modules and expand iteratively
+  - Prioritize commonly-used veterinary workflows

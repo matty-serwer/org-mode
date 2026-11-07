@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       31f05c81-9a4f-448e-a1c3-f10293cabdee
+:REFLECT_ID: 8e410a13884342e99cb4d7c05a54b78f
+:CREATED:  [2025-10-27 Mon 18:57]
+:MODIFIED: [2025-10-27 Mon 19:00]
+:END:
+#+title: Apple Note Sort 2025
+#+filetags: :concept:
+#+date: 2025-10-27
+-
+  - 

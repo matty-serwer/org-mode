@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       eeebe0b6-4921-400c-bee7-bd03c63ced8b
+:REFLECT_ID: 71eb0bc6aeb84b6d878777c5df1353a1
+:CREATED:  [2026-03-17 Tue 18:10]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Personal Finance
+#+filetags: :concept:
+#+date: 2026-03-17
+

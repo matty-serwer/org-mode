@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       343b8ddc-7ad8-4bb0-8e8e-682bc1aa2398
+:REFLECT_ID: 4189d31c04c144cd888a8acce4bf211b
+:CREATED:  [2026-01-26 Mon 10:35]
+:MODIFIED: [2026-01-26 Mon 12:35]
+:END:
+#+title: Ableton Live MPlayer Template
+#+filetags: :concept:
+#+date: 2026-01-26
+- Concepts
+  - One drum kit
+    - kicks and snares and claps, not too much choice, just some nice nice ones ready to go
+  - Top Loops ready to go
+  - Sampler instruments ready to go
+    - can fill in later with synths
+  - Racks for specific arrangement views
+    - A build track, with 
+      - filters, 
+      - rhythmic delay, 
+      - b repeat, 
+      - giant side chained verb,l
+      - Is there a way to make an effect spit out white noise? Probably a white noise track than

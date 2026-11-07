@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       af1b1799-7e65-41af-9841-55cb7d28c2c1
+:REFLECT_ID: e92a72270e344ff0a293e330bdec4f6a
+:CREATED:  [2026-01-31 Sat 19:54]
+:MODIFIED: [2026-01-31 Sat 19:57]
+:END:
+#+title: Ableton Live Clips
+#+filetags: :concept:
+#+date: 2026-01-31
+

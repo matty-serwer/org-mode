@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       45e5be42-dfb2-40b0-b623-53ff25840d66
+:REFLECT_ID: c717d7af4f7942ecad3ec15312ff54ec
+:CREATED:  [2025-12-01 Mon 07:11]
+:MODIFIED: [2025-12-01 Mon 07:12]
+:END:
+#+title: Doom Emacs Workspaces
+#+filetags: :concept:
+#+date: 2025-12-01
+- /Doom Emacs includes built-in workspace management via persp-mode with the following capabilities:/
+- Key Commands
+  - *Create workspaces*: =SPC TAB n= or =+workspace/new=
+  - *Switch workspaces*: =SPC TAB TAB= or =+workspace/switch-to=
+  - *Save workspace session*: =SPC TAB s= or =+workspace/save-session=
+  - *Load workspace session*: =SPC TAB l= or =+workspace/load-session=
+- Session Persistence Options
+  - Enable desktop save mode: =(desktop-save-mode 1)=
+  - Use Doom's session management:
+  - #+begin_src markup
+    (after! persp-mode   (setq persp-auto-save-opt 1))  ; Auto-save every minute
+    #+end_src
+- Features
+  - Automatic periodic saving
+  - Named session saving
+  - Buffer isolation between workspaces
+  - Preservation of window layouts
+  - Restoration of open buffers, window arrangements, current buffers, and working directories
+    - This functionality is ideal for switching between different projects or workflows.

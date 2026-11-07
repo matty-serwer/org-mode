@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e8beff48-641b-47f5-9a6b-1d72a5ac6294
+:REFLECT_ID: b6b8f292b3624ecb95cede2ffea2615e
+:CREATED:  [2025-10-27 Mon 20:07]
+:MODIFIED: [2025-10-27 Mon 20:07]
+:END:
+#+title: Style
+#+filetags: :concept:
+#+date: 2025-10-27
+

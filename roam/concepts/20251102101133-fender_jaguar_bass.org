@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bb1eef74-7582-4baa-9175-8d5bd71f25b8
+:REFLECT_ID: 806a5315da1c4633a3087ccdd77875b7
+:CREATED:  [2025-11-02 Sun 10:11]
+:MODIFIED: [2025-11-30 Sun 09:56]
+:END:
+#+title: Fender Jaguar Bass
+#+filetags: :concept:
+#+date: 2025-11-02
+

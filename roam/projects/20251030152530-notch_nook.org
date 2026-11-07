@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       3bb34a9b-59b1-48e7-86b7-1f3a2ced3d91
+:REFLECT_ID: 615f1013337b4d6d96ee0d9d7ea94f19
+:CREATED:  [2025-10-30 Thu 15:25]
+:MODIFIED: [2025-10-30 Thu 15:25]
+:END:
+#+title: Notch Nook
+#+filetags: :project:application:
+#+date: 2025-10-30
+- Type:  
+- Description: Adds functionality to the Nook on a Mac
+- Manual:
+- Executable:
+- Application Support:
+- Documents Location:

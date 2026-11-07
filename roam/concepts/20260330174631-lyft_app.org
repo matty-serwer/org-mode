@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0806a561-52f5-4986-9be1-87432432281d
+:REFLECT_ID: c9e4be63aac148d5a81de4dfe8d2b7ca
+:CREATED:  [2026-03-30 Mon 17:46]
+:MODIFIED: [2026-03-30 Mon 17:46]
+:END:
+#+title: Lyft App
+#+filetags: :concept:
+#+date: 2026-03-30
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4a0c10c8-a954-4f40-9d22-de3bf2beaffe
+:REFLECT_ID: c4be5aa0f59642b89677e28ca1063395
+:CREATED:  [2026-01-28 Wed 05:06]
+:MODIFIED: [2026-01-28 Wed 05:06]
+:END:
+#+title: Reference
+#+filetags: :concept:
+#+date: 2026-01-28
+

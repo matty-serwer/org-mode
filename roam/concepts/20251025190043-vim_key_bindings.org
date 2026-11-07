@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c9dedc12-3f58-46a4-984d-998ce809fa6f
+:REFLECT_ID: e958ed5f2ab84464be53185fa6751093
+:CREATED:  [2025-10-25 Sat 19:00]
+:MODIFIED: [2025-10-30 Thu 15:03]
+:END:
+#+title: VIM Key Bindings
+#+filetags: :concept:
+#+date: 2025-10-25
+

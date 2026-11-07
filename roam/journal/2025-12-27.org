@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       ede4273b-6493-4234-8d1e-d8180f7bbf84
+:REFLECT_ID: 27122025
+:CREATED:  [2025-12-23 Tue 09:25]
+:MODIFIED: [2026-01-26 Mon 19:32]
+:END:
+#+title: Sat, December 27th, 2025
+#+filetags: :daily:
+#+date: 2025-12-23
+- work on [[id:e991bfeb-532d-42d8-a607-9217cf996745][LTD UI Style Project]]
+  - fixing buttons:
+  - todo:
+    - [X] fix "toasts" on firefox browsers
+    - [X] add proper padding to data tables
+    - [X] add "primary" variant to Navigation & Menus
+    - [X] make sure z-index is proper for menus etc.

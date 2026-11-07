@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       31e72400-384d-4d8b-a2cb-29a3dcbc11f0
+:REFLECT_ID: 5d25e8856e29481abd6f645ed59a1543
+:CREATED:  [2026-02-16 Mon 22:31]
+:MODIFIED: [2026-04-03 Fri 15:12]
+:END:
+#+title: Lyrics
+#+filetags: :concept:
+#+date: 2026-02-16
+

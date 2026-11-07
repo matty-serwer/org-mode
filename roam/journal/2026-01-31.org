@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       f113cfd1-1613-4dd5-ace1-d7b2be294aa2
+:REFLECT_ID: 31012026
+:CREATED:  [2026-01-29 Thu 04:46]
+:MODIFIED: [2026-02-01 Sun 04:27]
+:END:
+#+title: Sat, January 31st, 2026
+#+filetags: :daily:
+#+date: 2026-01-29
+- [[id:4e5b0d78-73e5-4565-9b4f-48aac9d967ea][Macbook Pro 14]] Dimensions
+  
+  #+begin_src markup
+  •	Width: 12.31 inches (31.26 cm)
+  •	Depth: 8.71 inches (22.12 cm)
+  •	Height: 0.61 inch (1.55 cm)
+  
+  #+end_src

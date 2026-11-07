@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9e984e32-01c5-4a38-93cd-881cbde63562
+:REFLECT_ID: 086b56aec1914c55b51023461a5c1a1b
+:CREATED:  [2026-01-31 Sat 19:55]
+:MODIFIED: [2026-01-31 Sat 19:55]
+:END:
+#+title: Operation: Hi Fi
+#+filetags: :concept:
+#+date: 2026-01-31
+

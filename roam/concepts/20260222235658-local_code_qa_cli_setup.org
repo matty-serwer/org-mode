@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b5ec8fef-3054-4377-9837-8d2d8a3e4d77
+:REFLECT_ID: 4bc9851d23f64f12b95eec1805e21304
+:CREATED:  [2026-02-22 Sun 23:56]
+:MODIFIED: [2026-02-22 Sun 23:57]
+:END:
+#+title: Local Code Q&A CLI Setup
+#+filetags: :concept:
+#+date: 2026-02-22
+

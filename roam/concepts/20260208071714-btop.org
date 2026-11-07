@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       59d559db-d3f4-40bb-98ef-7fe022bab3d9
+:REFLECT_ID: bf0f783f7c874ac5ac022ad1343fc70b
+:CREATED:  [2026-02-08 Sun 07:17]
+:MODIFIED: [2026-02-08 Sun 07:17]
+:END:
+#+title: btop
+#+filetags: :concept:
+#+date: 2026-02-08
+

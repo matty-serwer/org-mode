@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4388d7a5-c95f-419a-9204-827eb6c6d3a3
+:REFLECT_ID: daafd8d79870475ca307751d8c423370
+:CREATED:  [2025-11-12 Wed 21:54]
+:MODIFIED: [2025-11-12 Wed 21:54]
+:END:
+#+title: iOS Version
+#+filetags: :concept:
+#+date: 2025-11-12
+

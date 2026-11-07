@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       6488d6b4-491a-447b-a822-50504e1c402b
+:REFLECT_ID: 18122025
+:CREATED:  [2025-12-18 Thu 18:21]
+:MODIFIED: [2026-01-02 Fri 16:12]
+:END:
+#+title: Thu, December 18th, 2025
+#+filetags: :daily:guidelines:
+#+date: 2025-12-18
+[[id:00f7badb-d922-4939-9385-cd7f92b78cd8][Conflict Resoultion]]  
+- Stay calm, keep your voice low and steady.[9][1]
+- Respect personal space; don’t block exits.[4][1]
+- Use open body language, hands visible, nonthreatening.[5][1]
+- Listen more than you talk; let them vent.[6][7]
+- Acknowledge feelings: “I hear you, that’s frustrating.”[1][6]
+- Give simple choices instead of commands.[2][4]
+- Set clear, calm limits; avoid threats.[7][5]
+- If safety feels shaky, step back and get help.[8][7]
+Sources
+[1] CPI's Top 10 De-escalation Tips Revisited - Crisis Prevention Institute [[https://www.crisisprevention.com/blog/general/cpi-s-top-10-de-escalation-tips-revisited/][https://www.crisisprevention.com/blog/general/cpi-s-top-10-de-escalation-tips-revisited/]]
+[2] [PDF] You Said What_! Navigating Conflict Management & De-Escalation ... [[https://nhchc.org/wp-content/uploads/2024/06/You-Said-What_-Navigating-Conflict-Management-De-Escalation-in-Housing-Settings-Through-Harm-Redu.pdf][https://nhchc.org/wp-content/uploads/2024/06/You-Said-What_-Navigating-Conflict-Management-De-Escalation-in-Housing-Settings-Through-Harm-Redu.pdf]]
+[3] [PDF] EAR. – A Framework for De-escalation Techniques - Engagement [[https://nisonger.osu.edu/wp-content/uploads/2016/11/CIT-Framework.pdf][https://nisonger.osu.edu/wp-content/uploads/2016/11/CIT-Framework.pdf]]
+[4] [PDF] Crisis Intervention and De-escalation Techniques [[https://cit.memphis.edu/modules/De-Escalation/presentations/FL%20-%20De%20Escalation%20Techniques.pdf][https://cit.memphis.edu/modules/De-Escalation/presentations/FL%20-%20De%20Escalation%20Techniques.pdf]]
+[5] [PDF] De-escalation: Calming the Crisis [[https://www.bhclearinghouse.org/siteassets/wp-uploads/2023/02/jobaid_deescalation.pdf][https://www.bhclearinghouse.org/siteassets/wp-uploads/2023/02/jobaid_deescalation.pdf]]
+[6] The 8 most effective de-escalation techniques in corrections [[https://www.corrections1.com/corrections-training/articles/the-8-most-effective-de-escalation-techniques-in-corrections-jN0RMEriIsox1LuE/][https://www.corrections1.com/corrections-training/articles/the-8-most-effective-de-escalation-techniques-in-corrections-jN0RMEriIsox1LuE/]]
+[7] [PDF] De-escalation Toolkit [[https://nursinghomebehavioralhealth.org/wp-content/uploads/2024/01/COE-De-escalation-Toolkit-12-27-23_508.pdf][https://nursinghomebehavioralhealth.org/wp-content/uploads/2024/01/COE-De-escalation-Toolkit-12-27-23_508.pdf]]
+[8] [PDF] Crisis De-escalation Training in a Jail Setting - DSHS [[https://www.dshs.wa.gov/sites/default/files/BHSIA/OFMHS-JTA-Crisis-and-De-escalation-Training-12NOV2019.pdf][https://www.dshs.wa.gov/sites/default/files/BHSIA/OFMHS-JTA-Crisis-and-De-escalation-Training-12NOV2019.pdf]]
+[9] Crisis De-escalation Techniques | Louisville Metro PD, KY [[https://www.lmpd.gov/341/Crisis-De-escalation-Techniques][https://www.lmpd.gov/341/Crisis-De-escalation-Techniques]]
+[10] Holding the Line with Heart: Trauma-Informed De-escalation in Shelter 
+[[https://www.youtube-nocookie.com/embed/5tY4GUwK3Eo][youtube: https://www.youtube-nocookie.com/embed/5tY4GUwK3Eo]]

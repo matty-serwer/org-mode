@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a3eec4af-4e99-48ce-b2bc-987be6125579
+:REFLECT_ID: dcf8b29d02ae46a581ad71101f3205c2
+:CREATED:  [2025-10-25 Sat 09:38]
+:MODIFIED: [2025-10-25 Sat 11:20]
+:END:
+#+title: File explorer
+#+filetags: :concept:
+#+date: 2025-10-25
+

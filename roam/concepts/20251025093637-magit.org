@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4ef42f00-0571-4a76-ab3a-74cac5b84d3e
+:REFLECT_ID: 68e8fdfce40e485a92c82b3c4bba1848
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:38]
+:END:
+#+title: Magit
+#+filetags: :concept:
+#+date: 2025-10-25
+

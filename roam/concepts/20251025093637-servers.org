@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ef69fc5d-2f31-46cf-8932-579d45b9606b
+:REFLECT_ID: 2a163fb20e974c7789546cddcc5fcb67
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: servers
+#+filetags: :concept:
+#+date: 2025-10-25
+

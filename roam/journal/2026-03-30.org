@@ -1,0 +1,60 @@
+:PROPERTIES:
+:ID:       bcca608f-adb7-42d9-a416-6aa0512adcd6
+:REFLECT_ID: 30032026
+:CREATED:  [2026-03-30 Mon 16:24]
+:MODIFIED: [2026-03-31 Tue 00:03]
+:END:
+#+title: Mon, March 30th, 2026
+#+filetags: :daily:
+#+date: 2026-03-30
+- [[id:61e60138-13e9-4670-b092-467b6392ce4e][Invoice]] for [[id:a833eac2-59ef-42b4-b8c6-cebe37eb1d08][Tallon Pfizer Week 2]]
+  - [[id:0806a561-52f5-4986-9be1-87432432281d][Lyft App]] [[id:f4b0a940-8191-4853-91ca-04c48e838357][Receipts]]
+    - Rides to include
+      - March 27th 4P
+        - Rosen Centre Hotel → Orlando International Airport
+        - $33.96 before tip
+        - $40.75 after tip
+      - March 20th 4A
+        - Home (371 Preble St) → Portland Jetport (Delta Air Lines)
+        - $19.96 before tip
+        - $23.07 after tip
+      - March 20th 12P
+        - $32.91 before tip
+        - Hooters / not hotel
+Since rayon is a delicate fabric, you'll want to treat it gently — no hot water, no aggressive scrubbing, and always test any solution on a hidden seam first. Here's a prioritized outline using what you have plus a couple of alternatives:[1]
+** Using What You Have
+- *Micellar/cellular water first* — Dab directly onto the stain with a cotton pad, blotting (never rubbing) from the outside in; great as a first pass since it's designed to lift makeup pigment[2]
+- *Dish soap soak* — Apply a small amount directly to the stain, work it in gently with your fingers, let sit 15–20 minutes, then rinse with *cold* water (hot water sets stains deeper into rayon fibers)[3][4]
+- *Baking soda paste* — Mix with a little cold water into a paste, apply to the stain, let sit 10–15 minutes to absorb oils, then brush off gently and rinse[5]
+** Handy Alternatives to Grab
+- *Rubbing alcohol* — Dampen a cotton ball and blot the stain; especially effective on set/dried foundation; test on a hidden seam first since rayon can be sensitive[6][1]
+- *White shaving cream* — Apply, let sit ~10 minutes, rinse cold; works surprisingly well on pigment-heavy rouge/blush[7][2]
+- *Oil-free makeup remover* — If you have any around, it's tailor-made to dissolve foundation chemistry and is gentle enough for delicate fabrics[1]
+** Key Rules for Rayon
+- Always use *cold water only* — heat sets the stain and can warp rayon[4]
+- *Blot, don't rub* — rubbing pushes pigment deeper into the fibers[2]
+- Air dry only after treating — do not machine dry until you're sure the stain is fully out[1]
+- If the stain still won't budge after all this, rayon is one of those fabrics where a *professional dry cleaner* is worth the trip rather than risking damage[7]
+Sources
+[1] How to Remove Makeup Stains From Any Fabric | Laundry Tips [[https://www.columbiapikelaundry.com/post/how-to-remove-makeup-stains][https://www.columbiapikelaundry.com/post/how-to-remove-makeup-stains]]
+[2] Effective Ways to Remove Foundation Stains from Clothes [[https://sheetslaundryclub.com/blog/effective-ways-to-remove-foundation-stains-from-clothes][https://sheetslaundryclub.com/blog/effective-ways-to-remove-foundation-stains-from-clothes]]
+[3] How do I remove foundation stain from my white shirt? - Reddit [[https://www.reddit.com/r/Makeup/comments/1nw7wjd/how_do_i_remove_foundation_stain_from_my_white/][https://www.reddit.com/r/Makeup/comments/1nw7wjd/how_do_i_remove_foundation_stain_from_my_white/]]
+[4] Guide: How to Remove Makeup from Your Clothes | BON'A PARTE [[https://www.bonaparteshop.com/en-eu/inspiration/remove-makeup-from-clothes][https://www.bonaparteshop.com/en-eu/inspiration/remove-makeup-from-clothes]]
+[5] The Best Way to Remove Makeup Stains From White Shirts [[https://www.marthastewart.com/how-to-remove-makeup-stains-from-white-shirts-11856394][https://www.marthastewart.com/how-to-remove-makeup-stains-from-white-shirts-11856394]]
+[6] How to Get Makeup Out of Clothes: 8 Genius Hacks | Vogue [[https://www.vogue.com/article/how-to-get-makeup-out-of-clothes][https://www.vogue.com/article/how-to-get-makeup-out-of-clothes]]
+[7] How to Get Makeup Out of Clothes | Removing Makeup Stains [[https://cdonepricecleaners.com/blog/how-to-get-makeup-stains-out-of-clothes/][https://cdonepricecleaners.com/blog/how-to-get-makeup-stains-out-of-clothes/]]
+[8] How to Get Foundation Stains Out of Clothes | No7 Beauty [[https://us.no7beauty.com/blog/makeup/how-to-get-foundation-stains-out-of-clothes/][https://us.no7beauty.com/blog/makeup/how-to-get-foundation-stains-out-of-clothes/]]
+[9] How to Remove Makeup Stains from Clothes, Carpet,and Upholstery [[https://tide.com/en-us/how-to-wash-clothes/how-to-remove-stains/makeup-stains][https://tide.com/en-us/how-to-wash-clothes/how-to-remove-stains/makeup-stains]]
+[10] Unbelievable Trick to REMOVE Makeup Stains on Clothing - YouTube [[https://www.youtube.com/shorts/NkSFGPlEbQ8][https://www.youtube.com/shorts/NkSFGPlEbQ8]]
+[11] Hack - How To Remove Makeup From Clothes | Shonagh Scott 
+[[https://www.youtube-nocookie.com/embed/Pm7sXMbpqos][youtube: https://www.youtube-nocookie.com/embed/Pm7sXMbpqos]]
+
+[12] How to remove makeup stains from a cream colored shirt? - Facebook [[https://www.facebook.com/groups/951126225499216/posts/1582111135734052/][https://www.facebook.com/groups/951126225499216/posts/1582111135734052/]]
+[13] Effective Ways to Remove Makeup Stains from Fabric | TikTok [[https://www.tiktok.com/@plantbased.baby/video/7528188326340316446][https://www.tiktok.com/@plantbased.baby/video/7528188326340316446]]
+[14] How to remove makeup stains from shirts? - Facebook [[https://www.facebook.com/groups/951126225499216/posts/1526311251314041/][https://www.facebook.com/groups/951126225499216/posts/1526311251314041/]]
+[15] Effective Tips to Remove Foundation Oil Stains | TikTok [[https://www.tiktok.com/@cnnunderscored/video/7489998539523755306?lang=en][https://www.tiktok.com/@cnnunderscored/video/7489998539523755306?lang=en]]
+- [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+  - [[id:2df44f3b-323d-4730-8cb9-b2d38953085c][Mullvad VPN]]
+    - Account
+      - 2024431601200501
+    - 

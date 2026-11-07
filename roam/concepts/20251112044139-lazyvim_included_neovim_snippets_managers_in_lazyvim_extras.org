@@ -1,0 +1,109 @@
+:PROPERTIES:
+:ID:       77dbf2ce-f43e-4eab-8b6a-dc31cbba0c7f
+:REFLECT_ID: 9e213248cf84471e8eb8cd0e2f8fc573
+:CREATED:  [2025-11-12 Wed 04:41]
+:MODIFIED: [2025-11-12 Wed 05:11]
+:END:
+#+title: LazyVim Included NeoVim Snippets Managers in LazyVim Extras
+#+filetags: :concept:schema:sequence:
+#+date: 2025-11-12
+* [[id:294115ff-c1e7-433f-9ac2-c3488273a3bd][LazyVim]] Included [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] [[id:fbcb54df-14f8-41bb-8a94-1b7650d2e94b][Snippets]] Managers in [[id:4cd1e5e8-17d4-4a83-91ba-aadcf580a60c][LazyVim Extras]]
+- Snippet Manager Comparison &
+  - *LuaSnip*
+    -----
+    
+    -----
+    
+    *nvim-snippets* (native Neovim snippets)
+    *Retrieving:* Shows in completion menu automatically
+    *Limitations:*
+    -----
+    
+    *Workaround for all:*
+    In ~/.config/nvim/snippets/
+    git init
+    git remote add origin [[https://github.com/you/my-snippets][https://github.com/you/my-snippets]]
+    git pull origin main
+    -----
+    
+    *Recommendation*
+    Most nvim coders pick LuaSnip despite the learning curve because it can do everything (regex transforms, conditional expansion, nested placeholders, etc.)
+    - Configuration
+    -
+      - Enable =coding.luasnip= in LazyExtras
+      - Create =~/.config/nvim/lua/config/luasnip.lua=
+      - Add custom snippets in =~/.config/nvim/snippets/= directory
+    - Saving a snippet
+      - #+begin_src markup
+        -- In ~/.config/nvim/snippets/javascript.lua
+        return {
+          s("log", fmt("console.log({})", { i(1) })),
+          s("func", fmt("function {}({}) {{\n  {}\n}}", { i(1, "name"), i(2), i(0) }))
+        }
+        #+end_src
+    - Browsing
+      - No built-in browser; use Telescope with 
+        - =require("telescope").extensions.luasnip.luasnip{}=
+    - Retrieving
+      -  Type trigger word → Tab (or configured expand key)
+    - Limitations
+      - Complex syntax for advanced snippets
+      - No built-in snippet browser
+      - Steeper learning curve
+    - *mini.snippets*
+      - Configuration
+        - Enable =coding.mini-snippets= in LazyExtras
+        - Snippets go in =~/.config/nvim/snippets/= as JSON files
+      - *Saving a snippet:*
+        - #+begin_src markup
+          // In ~/.config/nvim/snippets/javascript.json
+          {
+            "log": {
+              "prefix": "log",
+              "body": "console.log($1)"
+            },
+            "func": {
+              "prefix": "func", 
+              "body": ["function ${1:name}($2) {", "\t$0", "}"]
+            }
+          }
+          #+end_src
+      - Browsing
+        -  Use =:Pick snippets= (if mini.pick is installed)
+      - Retrieving
+        - Type prefix → Tab
+      - Limitations
+        - Newer, less ecosystem support
+        - Fewer advanced features than LuaSnip
+        - Limited transformation capabilities
+    - *Configuration*
+    - Comes with =coding.nvim-cmp= or works with blink.cmp by default
+    - Uses VSCode format in =~/.config/nvim/snippets/=
+    - *Saving a snippet:*
+      - #+begin_src markup
+        // In ~/.config/nvim/snippets/package.json
+        {
+          "contributes": {
+            "snippets": [
+              {
+                "language": "javascript",
+                "path": "./javascript.json"
+              }
+            ]
+          }
+        }
+        #+end_src
+        
+        
+        *Browsing:* No built-in browser; relies on completion menu
+    - Basic features only
+    - No dynamic snippets
+    - Minimal documentation
+    - *Git/Gist Sync Capabilities*
+      - *None have built-in Gist sync*, but you can DIY:
+    - *LuaSnip*: Can load from any Lua file, so you could =git clone= your snippet repo to =~/.config/nvim/snippets/=
+    - *mini.snippets*: JSON files are easy to sync via git
+    - *nvim-snippets*: VSCode format makes it compatible with GitHub Codespaces snippet sync
+    - For *basic use*: *mini.snippets* - dead simple JSON format, lightweight
+    - For *power users*: *LuaSnip* - most features, best plugin ecosystem
+    - For *VSCode migrants*: *nvim-snippets* - familiar format

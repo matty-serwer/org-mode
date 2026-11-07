@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       00dd42ce-b935-4238-b51a-13c5ee52f35e
+:REFLECT_ID: b9ef6356051d42daaa586c527d3f913d
+:CREATED:  [2026-01-11 Sun 21:54]
+:MODIFIED: [2026-01-11 Sun 21:55]
+:END:
+#+title: Operation Qobuz
+#+filetags: :concept:
+#+date: 2026-01-11
+

@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       0dc20605-da5e-48ec-8055-113b68bb6f97
+:REFLECT_ID: ca56bc5c39384fecba31b1e7014f507a
+:CREATED:  [2026-01-26 Mon 12:37]
+:MODIFIED: [2026-01-26 Mon 17:39]
+:END:
+#+title: Operation 26 26
+#+filetags: :project:organization:planning:
+#+date: 2026-01-26
+-   
+- concept
+  - Plan this week
+  - Plan this month
+  - Define [[id:7aad7c0f-b75c-46f7-a245-464a30e3586d][Initiatives]]
+    - $$$ for rent
+      - more outlier tests?
+      - Other similar services
+      - Brainstorm
+      - Guitar Listing
+      - Washing Machine listing
+    - Job Search
+      - We probably have the new thing with eric, but where does that leave us for this month?
+    - Continue LEMR Code Project
+      - UI Library is usable
+      - claude project
+        - Create git issues for sprint 1
+        - new frontend backend
+    - Easy DJ Set
+      - Music to break things up
+      - Benefits
+        - Ease my anxiety
+        - Outlet for creativity, as high priority tasks likely become more mundane. 
+        - 
+  - Prioritize
+    - Give [[id:7aad7c0f-b75c-46f7-a245-464a30e3586d][Initiatives]] a ranking system based on urgency
+    - 
+  - Deadlines
+    - Set deadlines for each Intiative or sub-initiative. 
+    - Time block as much as possible
+- I just wanted to say, that I love this shit! I can do this life style all day, but I gotta be me Bay 🐝.
+  I’m sorry I caused you stress for so long now it’s coming back at me. I’m just saying i did all the important self work, and I’m ready to blast off 🚀 in whatever direction, I just need to chill, and I need to focus.
+  Stress still slows me down, but these days it’s more like tripping the breaker than frying the circuits. But if I’m always going to the basement to reset, it’ll take me forever.
+  None of this shit is your fault. I get that. It is the

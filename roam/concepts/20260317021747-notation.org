@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1db4abae-9c04-4b36-a04f-be3f1fd9e308
+:REFLECT_ID: 6dea8a4d97b443938483a94e56a365e7
+:CREATED:  [2026-03-17 Tue 02:17]
+:MODIFIED: [2026-03-17 Tue 02:18]
+:END:
+#+title: Notation
+#+filetags: :concept:
+#+date: 2026-03-17
+

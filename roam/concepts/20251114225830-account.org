@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1edef3a2-fc0f-4fd7-95f6-c814e63ab8f9
+:REFLECT_ID: 6a66bab83c2a43c683c61d08d8dd9e47
+:CREATED:  [2025-11-14 Fri 22:58]
+:MODIFIED: [2026-04-14 Tue 21:21]
+:END:
+#+title: Account
+#+filetags: :concept:
+#+date: 2025-11-14
+

@@ -1,0 +1,109 @@
+:PROPERTIES:
+:ID:       aa63367d-37be-4c75-a1df-18b866225c5e
+:REFLECT_ID: 085302326f124109b647cc75cbcea137
+:CREATED:  [2025-10-27 Mon 20:06]
+:MODIFIED: [2025-10-30 Thu 20:05]
+:END:
+#+title: Lupine Tech Design Style
+#+filetags: :ref:font:schema:
+#+date: 2025-10-27
+* [[id:aa63367d-37be-4c75-a1df-18b866225c5e][Lupine Tech Design]] [[id:e8beff48-641b-47f5-9a6b-1d72a5ac6294][Style]]
+** Fonts
+*** [[id:7676636e-f2af-469a-a12c-77b3e1ff97fd][Editorial New]]
+font-family: editorial-new;
+font-size: 27.0648px;
+font-weight: 300;
+font-style: normal;
+line-height: 27.0648px;
+letter-spacing: normal;
+font-family: "PP Editorial New Ultralight", "PP Editorial New Ultralight Placeholder", sans-serif;
+font-size: 26px;
+font-weight: 400;
+font-style: normal;
+line-height: 31.2px;
+letter-spacing: normal;
+*** [[id:36b1cd42-c30d-4089-a036-b704663d9767][Neue Montreal]]
+font-family: "PP Neue Montreal Book", "PP Neue Montreal Book Placeholder", sans-serif;
+font-size: 38px;
+font-weight: 400;
+font-style: normal;
+line-height: 41.8px;
+letter-spacing: -0.38px;
+font-family: "Neue Montreal", sans-serif;
+font-size: 19.9328px;
+font-weight: 450;
+font-style: normal;
+line-height: 25.9126px;
+letter-spacing: normal;
+font-family: "Neue Montreal", sans-serif;
+font-size: 14px;
+font-weight: 450;
+font-style: normal;
+line-height: 18.2px;
+letter-spacing: normal;
+font-family: "PP Neue Montreal Medium", "PP Neue Montreal Medium Placeholder", sans-serif;
+font-size: 11px;
+font-weight: 400;
+font-style: normal;
+line-height: 8.8px;
+letter-spacing: 0.33px;
+- Backup 
+  - font-family: Inter, "Inter Placeholder", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 14.4px;
+    letter-spacing: normal;
+** [[id:7b4786e4-f06e-4443-8c49-f921082fd213][Color Palette]]s
+- That EE Look
+  - *Black2*
+    - =#000000=
+    - =#0d0d0d=
+  - *Orange1*
+    - =#ecdfbe=
+  - *Green1*
+    - =#a8f0a5=
+  - *Blue1*
+    - =#0000ee=
+  - *Purple1*
+    - =#bb81eb=
+  - *Gray1*
+    - =#5e5e5e=
+  - *White1*
+    - =#ffffff=
+- London Fashion Week
+  - *Bran*
+    - =#a57b5d=
+  - *Crocus*
+    - =#c18bb1=
+  - *Lime Cream*
+    - =#d6e1be=
+  - *Limpet Shell*
+    - =#a7d5d8=
+  - *White Grape*
+    - =#b2c269=
+  - *Deja Vu Blue*
+    - =#48608b=
+  - *Kashmir*
+    - =#80957a=
+  - *Misted Marigold*
+    - =#e0c461=
+  - *Orangeade*
+    - =#d56c4c=
+  - *Cocoon*
+    - =#c9b98d=
+- Zaffy
+  - *Brilliant Rose*
+    - =#f054a5=
+  - *Saffron*
+    - =#fabf37=
+  - *Cornflower Blue*
+    - =#7b88fa=
+  - *Golden Fizz*
+    - =#f3ff48=
+  - *Stratos*
+    - =#000a5c=
+  - *Grey Shale*
+    - =#5f5f5f=
+  - *Almost White*
+    - =#FEFEFD=

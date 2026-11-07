@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d9b82de6-3c9d-4aab-a9bd-b3c2704558f9
+:REFLECT_ID: 99d2daf9b69149bcb2edcb86445e8b59
+:CREATED:  [2026-03-17 Tue 01:38]
+:MODIFIED: [2026-04-03 Fri 15:12]
+:END:
+#+title: Cover Song
+#+filetags: :concept:
+#+date: 2026-03-17
+

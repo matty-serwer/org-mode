@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       99346e02-c7cf-4eb7-bd60-934bc3682cbf
+:REFLECT_ID: cff9c1f7f84f49a8be7641a67ff1281a
+:CREATED:  [2025-11-13 Thu 04:19]
+:MODIFIED: [2025-11-13 Thu 04:19]
+:END:
+#+title: iOS
+#+filetags: :concept:
+#+date: 2025-11-13
+

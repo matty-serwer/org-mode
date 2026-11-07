@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8458093f-0a47-43d4-95df-3297197835bb
+:REFLECT_ID: a0e3950ffaaa4a329b7952b3e2acf470
+:CREATED:  [2026-03-12 Thu 23:10]
+:MODIFIED: [2026-03-12 Thu 23:10]
+:END:
+#+title: John Wilson
+#+filetags: :concept:
+#+date: 2026-03-12
+

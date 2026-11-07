@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       edb9ead2-d2af-4c26-97ce-e776dbdd0709
+:REFLECT_ID: e19b1bbe381b45ce9099014297b0631f
+:CREATED:  [2026-04-11 Sat 23:54]
+:MODIFIED: [2026-04-12 Sun 00:26]
+:END:
+#+title: Window Manager
+#+filetags: :concept:
+#+date: 2026-04-11
+

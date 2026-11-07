@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       52418105-2b6c-4045-9a61-5e553698b204
+:REFLECT_ID: fb8d05a2388a4daa80f87584a376d541
+:CREATED:  [2026-01-28 Wed 04:53]
+:MODIFIED: [2026-01-28 Wed 04:55]
+:END:
+#+title: Active Notes
+#+filetags: :concept:
+#+date: 2026-01-28
+-
+  - /A place for keeping current notes, without cluttering with pins/
+- 

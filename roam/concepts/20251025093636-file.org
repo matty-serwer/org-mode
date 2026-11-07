@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a6202cce-261d-468a-88ca-8aa40c2f7587
+:REFLECT_ID: a7daa388d03e45bdbb3950d39ed9bbb9
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-26 Sun 07:53]
+:END:
+#+title: File
+#+filetags: :concept:
+#+date: 2025-10-25
+

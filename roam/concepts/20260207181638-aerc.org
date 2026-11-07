@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c6cd801b-e33b-41bc-8d12-e572182fc4bd
+:REFLECT_ID: 25a2d0a45c8248da887f504b42648cf4
+:CREATED:  [2026-02-07 Sat 18:16]
+:MODIFIED: [2026-02-07 Sat 18:16]
+:END:
+#+title: Aerc
+#+filetags: :concept:
+#+date: 2026-02-07
+

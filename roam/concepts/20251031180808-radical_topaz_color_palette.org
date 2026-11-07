@@ -1,0 +1,162 @@
+:PROPERTIES:
+:ID:       16a1e804-7459-419a-a969-d636e4e77a2e
+:REFLECT_ID: 565a62aca7824ef49cfdadc995ca0ea8
+:CREATED:  [2025-10-31 Fri 18:08]
+:MODIFIED: [2025-10-31 Fri 18:14]
+:END:
+#+title: Radical Topaz Color Palette
+#+filetags: :concept:
+#+date: 2025-10-31
+* [[id:7cf339ee-ef13-4dca-a31d-ff59ea79d6df][Radical Topaz]] [[id:7b4786e4-f06e-4443-8c49-f921082fd213][Color Palette]]
+- CSS
+  
+  #+begin_src markup
+  :root {
+    /* Base colors (from bottom bar) */
+    --base-purple: #B296FE;
+    --base-pink: #FF5FFF;
+    --base-blue: #2E8DFF;
+    --base-cyan: #21BFC4;
+    --base-yellow: #D4FF00;
+  
+    /* Purple scale */
+    --purple-50: #F3EAFF;
+    --purple-100: #DAB7FF;
+    --purple-200: #C4B0FE;
+    --purple-300: #B296FE;
+    --purple-400: #8704C7;
+    --purple-500: #570181;
+    --purple-600: #2A0042;
+  
+    /* Pink/Magenta scale */
+    --pink-50: #FFEBFF;
+    --pink-100: #FFAFFF;
+    --pink-200: #FF5FFF;
+    --pink-300: #D6000E;
+    --pink-400: #A200A2;
+    --pink-500: #6B006B;
+    --pink-600: #380038;
+  
+    /* Blue scale */
+    --blue-50: #CDDBFF;
+    --blue-100: #8FB3FF;
+    --blue-200: #2E8DFF;
+    --blue-300: #006BC7;
+    --blue-400: #00478A;
+    --blue-500: #002852;
+    --blue-600: #001129;
+  
+    /* Cyan/Teal scale */
+    --cyan-50: #C0FBFF;
+    --cyan-100: #2BEAF0;
+    --cyan-200: #21EFC4;
+    --cyan-300: #15880A;
+    --cyan-400: #0E6E71;
+    --cyan-500: #06494B;
+    --cyan-600: #022728;
+  
+    /* Yellow/Lime scale */
+    --yellow-50: #D4FF00;
+    --yellow-100: #BDD400;
+    --yellow-200: #8DAB00;
+    --yellow-300: #6C8300;
+    --yellow-400: #4D5E00;
+    --yellow-500: #2F3B00;
+    --yellow-600: #141B00;
+  
+    /* Gray scale */
+    --gray-50: #EEEDEE;
+    --gray-100: #C6C5C8;
+    --gray-200: #A09DA3;
+    --gray-300: #7C7880;
+    --gray-400: #58555C;
+    --gray-500: #373539;
+    --gray-600: #19171A;
+  }
+  #+end_src
+- Instructional
+  - #+begin_src markup
+    
+    /* Color system with base colors and tonal scales */
+    :root {
+      /* Base colors */
+      --base-purple: #B296FE;
+      --base-pink: #FF5FFF;
+      --base-blue: #2E8DFF;
+      --base-cyan: #21BFC4;
+      --base-yellow: #D4FF00;
+      
+      /* Each color has a scale from 50 (lightest) to 600 (darkest) */
+      /* Purple, Pink, Blue, Cyan, Yellow scales defined */
+      /* Gray scale also available from 50-600 */
+      
+      /* Example: --purple-50 (lightest) to --purple-600 (darkest) */
+      /* Same pattern for all color families */
+    }
+    #+end_src
+- OKLCH
+  
+  #+begin_src markup
+  :root {
+    /* Purple scale */
+    --purple-50: oklch(94% 0.05 300);
+    --purple-100: oklch(82% 0.15 300);
+    --purple-200: oklch(74% 0.18 295);
+    --purple-300: oklch(67% 0.21 295);
+    --purple-400: oklch(42% 0.22 295);
+    --purple-500: oklch(28% 0.16 300);
+    --purple-600: oklch(14% 0.08 300);
+  
+    /* Pink/Magenta scale */
+    --pink-50: oklch(96% 0.05 320);
+    --pink-100: oklch(82% 0.25 320);
+    --pink-200: oklch(72% 0.32 320);
+    --pink-300: oklch(52% 0.30 340);
+    --pink-400: oklch(43% 0.25 320);
+    --pink-500: oklch(30% 0.17 320);
+    --pink-600: oklch(17% 0.08 320);
+  
+    /* Blue scale */
+    --blue-50: oklch(88% 0.08 260);
+    --blue-100: oklch(75% 0.14 260);
+    --blue-200: oklch(62% 0.20 260);
+    --blue-300: oklch(48% 0.18 260);
+    --blue-400: oklch(35% 0.13 260);
+    --blue-500: oklch(24% 0.08 260);
+    --blue-600: oklch(12% 0.04 260);
+  
+    /* Cyan/Teal scale */
+    --cyan-50: oklch(94% 0.10 195);
+    --cyan-100: oklch(87% 0.18 195);
+    --cyan-200: oklch(87% 0.16 175);
+    --cyan-300: oklch(52% 0.14 155);
+    --cyan-400: oklch(43% 0.10 190);
+    --cyan-500: oklch(30% 0.06 190);
+    --cyan-600: oklch(16% 0.03 190);
+  
+    /* Yellow/Lime scale */
+    --yellow-50: oklch(92% 0.24 110);
+    --yellow-100: oklch(84% 0.20 110);
+    --yellow-200: oklch(70% 0.16 110);
+    --yellow-300: oklch(56% 0.13 110);
+    --yellow-400: oklch(42% 0.09 110);
+    --yellow-500: oklch(28% 0.06 110);
+    --yellow-600: oklch(14% 0.03 110);
+  
+    /* Gray scale */
+    --gray-50: oklch(94% 0.00 0);
+    --gray-100: oklch(82% 0.01 300);
+    --gray-200: oklch(69% 0.01 300);
+    --gray-300: oklch(56% 0.01 300);
+    --gray-400: oklch(42% 0.01 300);
+    --gray-500: oklch(29% 0.01 300);
+    --gray-600: oklch(15% 0.01 300);
+  
+    /* Base colors (from bottom bar) */
+    --base-purple: oklch(67% 0.21 295);
+    --base-pink: oklch(72% 0.32 320);
+    --base-blue: oklch(62% 0.20 260);
+    --base-cyan: oklch(72% 0.14 190);
+    --base-yellow: oklch(92% 0.24 110);
+  }
+  #+end_src

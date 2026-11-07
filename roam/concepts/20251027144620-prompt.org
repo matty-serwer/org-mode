@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b42ab017-a31b-4742-bb11-6739d926fae3
+:REFLECT_ID: 1d2452a2f3d4468289d5892cac0a1f02
+:CREATED:  [2025-10-27 Mon 14:46]
+:MODIFIED: [2026-04-10 Fri 12:57]
+:END:
+#+title: Prompt
+#+filetags: :concept:
+#+date: 2025-10-27
+

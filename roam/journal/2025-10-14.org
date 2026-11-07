@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       b002a973-0af0-405c-9ce4-0748516df6cd
+:REFLECT_ID: 14102025
+:CREATED:  [2025-10-14 Tue 01:23]
+:MODIFIED: [2025-10-14 Tue 14:44]
+:END:
+#+title: Tue, October 14th, 2025
+#+filetags: :daily:
+#+date: 2025-10-14
+- test
+  - uyeah
+#+begin_src markup
+text
+function peter(yeah){
+	
+}
+
+#+end_src
+#+begin_src markup
+private function 
+#+end_src

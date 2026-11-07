@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a4447df3-dab3-4118-a7ab-d813302ac148
+:REFLECT_ID: 483c239aed6a4b08a9d1e91d1e47d56b
+:CREATED:  [2026-02-11 Wed 17:22]
+:MODIFIED: [2026-02-11 Wed 17:22]
+:END:
+#+title: note
+#+filetags: :concept:
+#+date: 2026-02-11
+

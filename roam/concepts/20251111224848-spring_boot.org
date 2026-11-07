@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       672ad6e2-8193-4c05-b5a2-3f6cab162ede
+:REFLECT_ID: db459605783b4d9991a7f0de528ddd0d
+:CREATED:  [2025-11-11 Tue 22:48]
+:MODIFIED: [2025-11-11 Tue 22:48]
+:END:
+#+title: Spring Boot
+#+filetags: :concept:
+#+date: 2025-11-11
+

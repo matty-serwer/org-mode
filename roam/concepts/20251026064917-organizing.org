@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       460e16c0-f8b9-4877-abc0-5598a0b2a690
+:REFLECT_ID: ac42a0f28fb94a4eae1169374b2bd6cd
+:CREATED:  [2025-10-26 Sun 06:49]
+:MODIFIED: [2025-10-26 Sun 06:49]
+:END:
+#+title: organizing
+#+filetags: :concept:
+#+date: 2025-10-26
+

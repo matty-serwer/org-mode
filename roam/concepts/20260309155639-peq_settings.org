@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       619793d3-cc2b-4d19-a4ae-8d2c3c088746
+:REFLECT_ID: 85663705021d4cafba2bdca221926372
+:CREATED:  [2026-03-09 Mon 15:56]
+:MODIFIED: [2026-03-09 Mon 15:56]
+:END:
+#+title: PEQ Settings
+#+filetags: :concept:
+#+date: 2026-03-09
+

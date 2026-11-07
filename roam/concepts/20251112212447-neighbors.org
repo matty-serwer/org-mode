@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6a3aa36e-b373-4f82-905d-8da2e4e78b73
+:REFLECT_ID: 0dedcb1848d44221af76794c12f1fb6a
+:CREATED:  [2025-11-12 Wed 21:24]
+:MODIFIED: [2025-11-12 Wed 21:24]
+:END:
+#+title: Neighbors
+#+filetags: :concept:
+#+date: 2025-11-12
+

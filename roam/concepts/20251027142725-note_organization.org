@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b028ec00-9a2b-4a1d-a7d0-4fc37af6839d
+:REFLECT_ID: 64c88899981449ac9acff0ac18ce32d0
+:CREATED:  [2025-10-27 Mon 14:27]
+:MODIFIED: [2025-10-27 Mon 14:27]
+:END:
+#+title: Note Organization
+#+filetags: :concept:
+#+date: 2025-10-27
+

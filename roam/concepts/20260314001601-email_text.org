@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5555e733-cf0f-465a-9f1e-dc4f47c019dc
+:REFLECT_ID: def417389b5f467098483650a703c1fe
+:CREATED:  [2026-03-14 Sat 00:16]
+:MODIFIED: [2026-03-14 Sat 00:16]
+:END:
+#+title: Email Text
+#+filetags: :concept:
+#+date: 2026-03-14
+

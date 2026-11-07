@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       eae8aa5d-0e94-4ceb-bec6-0ca36af236f7
+:REFLECT_ID: 24012026
+:CREATED:  [2026-01-23 Fri 00:15]
+:MODIFIED: [2026-01-24 Sat 07:33]
+:END:
+#+title: Sat, January 24th, 2026
+#+filetags: :daily:
+#+date: 2026-01-23
+- added Component Registry to [[id:119f025b-6371-44c1-9866-497aea2a119a][LTD Shadcn Storybook UI]]
+  - The components are now easily added to our projects! Check the bottom of the readme
+    - I cloned and created an 002, but when I tried to add the new git repo, it synced up with the original. I actually think this might be ok.
+  - 

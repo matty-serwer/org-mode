@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       36b1cd42-c30d-4089-a036-b704663d9767
+:REFLECT_ID: 1b7280adc8f64101be74458a642dae06
+:CREATED:  [2025-10-27 Mon 20:13]
+:MODIFIED: [2025-10-27 Mon 20:13]
+:END:
+#+title: Neue Montreal
+#+filetags: :concept:
+#+date: 2025-10-27
+

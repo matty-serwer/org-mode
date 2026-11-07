@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       01ffeb0b-0491-4088-b97e-b4cdca66de81
+:REFLECT_ID: 30fd1e3b4566455fa6090cebd39eec91
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: Horizontal
+#+filetags: :concept:
+#+date: 2025-10-25
+

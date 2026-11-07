@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       24524799-537f-4d3c-8c8c-039cb0120522
+:REFLECT_ID: e71d04ca7c0d448ab1c9f3cfc51963a5
+:CREATED:  [2025-10-25 Sat 16:29]
+:MODIFIED: [2026-04-16 Thu 06:59]
+:END:
+#+title: org-Roam
+#+filetags: :concept:
+#+date: 2025-10-25
+

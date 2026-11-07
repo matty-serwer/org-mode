@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8ac83413-48be-4663-8679-6b69f2fb3d5f
+:REFLECT_ID: b7921e6b06e7415aa27d1787ba62bdfd
+:CREATED:  [2025-10-26 Sun 07:49]
+:MODIFIED: [2026-04-03 Fri 23:56]
+:END:
+#+title: Personal9
+#+filetags: :concept:
+#+date: 2025-10-26
+

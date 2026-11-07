@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f01a4aff-aa2c-4779-8613-b2693e17979e
+:REFLECT_ID: cc776aedcac941c7aaf526406eb3c373
+:CREATED:  [2026-03-24 Tue 21:24]
+:MODIFIED: [2026-03-24 Tue 21:24]
+:END:
+#+title: Kensington Lock
+#+filetags: :concept:
+#+date: 2026-03-24
+

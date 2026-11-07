@@ -1,0 +1,48 @@
+:PROPERTIES:
+:ID:       b439bba2-9033-4cb1-9497-c62860f863a5
+:REFLECT_ID: eed939aa597c4fd982b982defad9eb46
+:CREATED:  [2025-11-25 Tue 06:54]
+:MODIFIED: [2025-11-25 Tue 06:57]
+:END:
+#+title: Doom Emacs Key Bindings for beginners
+#+filetags: :ref:quick_ref:
+#+date: 2025-11-25
+* [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]] for beginners
+- *Leaving Emacs*
+  - =:qa= - Quit Emacs
+  - =:wqa= - Save all buffers and quit Emacs
+  - =SPC q q= - Quit Emacs
+  - =SPC q r= - Restart Emacs and restore session
+- *Finding/Saving Files*
+  - =SPC SPC= or =SPC p f= - Jump to file in project (like Atom/Sublime Text's goto-anywhere)
+  - =SPC .= or =SPC f f= - Explore files in current directory
+  - =SPC f S-f= - Jump to file under current directory (recursive)
+  - =SPC f s= - Save file
+  - =SPC f S-s= - Save file as (prompts for location)
+- *Buffer Management*
+  - =SPC ,= or =SPC b b= - Switch to another buffer
+  - =SPC <= or =SPC b S-b= - Switch to another buffer across workspaces
+- *Search & Replace*
+  - =SPC /= or =SPC s p= - Search across current project
+  - =SPC s S-p= - Search another project (prompts you to select one)
+  - =SPC s d= - Search in current directory (recursive)
+  - =SPC s S-d= - Search in another directory (recursive)
+  - =C-c C-e= after a search command - Activate wgrep-mode to edit results
+  - =C-c C-c= or =Z Z= (evil users) - Commit search & replace changes
+- *Scratch Buffer*
+  - =SPC x= or =SPC b x= - Open global scratch buffer in a popup
+  - =SPC b S-x= - Switch to global scratch buffer in current window
+  - =SPC p x= - Open project-local scratch buffer in a popup
+  - =SPC p S-x= - Switch to project-local scratch buffer in current window
+- *Window Management* (also available under =SPC w=)
+  - =C-w s= - Split the window horizontally
+  - =C-w v= - Split the window vertically
+  - =C-w d= - Delete current window
+  - =C-w {h,j,k,l}= - Select window in direction (left, below, above, right)
+  - =C-w {S-h,S-j,S-k,S-l}= - Swap current window with window in direction
+  - =C-w {C-S-h,C-S-j,C-S-k,C-S-l}= - Move current window to edge of frame in direction
+  - =C-w u= or =C-w C-r= - Undo or redo last change to window configuration
+  - =C-w o= - Enlarge current window (again to undo)
+  - =C-w m= - Delete other windows (again to undo)
+  - ={N} C-w |= - Change width of current window to N
+  - ={N} C-w _= - Change height of current window to N lines

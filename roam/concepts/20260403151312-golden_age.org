@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4c4230de-61e0-4c87-88ed-031b28a83919
+:REFLECT_ID: 5feedc38cc34484b92c577f18e2fbde2
+:CREATED:  [2026-04-03 Fri 15:13]
+:MODIFIED: [2026-04-03 Fri 15:13]
+:END:
+#+title: Golden Age
+#+filetags: :concept:
+#+date: 2026-04-03
+

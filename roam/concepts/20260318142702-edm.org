@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7988bcba-3407-40e4-b3dc-f621694549e7
+:REFLECT_ID: 3f9e3b6dd8e64f188d2e5be109b30081
+:CREATED:  [2026-03-18 Wed 14:27]
+:MODIFIED: [2026-03-18 Wed 14:27]
+:END:
+#+title: EDM
+#+filetags: :concept:
+#+date: 2026-03-18
+

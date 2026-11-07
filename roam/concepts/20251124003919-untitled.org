@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9ca88276-835e-4df4-aff6-25f59f7ccab8
+:REFLECT_ID: e5ec4819d8fb4ad49e468ebc56696c4e
+:CREATED:  [2025-11-24 Mon 00:39]
+:MODIFIED: [2025-11-24 Mon 00:39]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-11-24
+

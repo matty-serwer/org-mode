@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f9979302-fd1e-441b-8c55-67df610dcafe
+:REFLECT_ID: f9413c8080ef461d9c7b26bcdc58ad30
+:CREATED:  [2025-10-25 Sat 09:45]
+:MODIFIED: [2025-10-25 Sat 09:45]
+:END:
+#+title: Project Management
+#+filetags: :concept:
+#+date: 2025-10-25
+

@@ -1,0 +1,463 @@
+:PROPERTIES:
+:ID:       80098a94-9eb7-440e-8d8a-b9ad77526e46
+:REFLECT_ID: f563b7c9a25844f9b539ffae780051b9
+:CREATED:  [2025-11-23 Sun 23:59]
+:MODIFIED: [2025-11-24 Mon 07:05]
+:END:
+#+title: EzyVet Software Breakdown: Tools, Features & Functional Elements. S
+#+filetags: :concept:
+#+date: 2025-11-23
+* *EzyVet Software Breakdown: Tools, Features & Functional Elements. S*
+- [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]] Research
+- *Purpose*: Technical analysis of IDEXX EzyVet veterinary practice management system to inform development of similar software
+- *Architecture*: Cloud-based, browser-accessible, single-server (AWS infrastructure), real-time sync capabilities
+- Core System Architecture
+  - Platform Foundation
+    - Deployment: Fully cloud-based SaaS solution
+    - Access: Any device with modern web browser (Chrome recommended)
+    - Offline Mode: Local caching with automatic sync when connection restored
+    - Infrastructure: AWS (Amazon Web Services) hosting
+    - Security: Bank-level encryption, role-based access control, 2FA authentication
+    - Data Sync: Real-time updates across all connected devices
+  - Technical Integration Capabilities
+    - API: RESTful API for custom integrations and third-party connections
+    - Data Lake: Enterprise-level data warehouse service for advanced analytics
+    - Native Integrations: IDEXX diagnostic suite, Xero accounting, SmartFlow, Vet Radar
+    - Webhook Support: Event-driven architecture for real-time data exchange
+- TIER 1: Essential Core Systems
+  - 1. Client & Patient Records Management
+    - Client Database
+      - Contact information storage (email, phone, address)
+      - Financial history and credit ratings
+      - Communication preferences and opt-in/opt-out settings
+      - Multi-pet household management
+      - Referral source tracking
+    - Patient Records (Clinical Module)
+      - Patient demographics and identification
+      - Complete medical history with timestamp tracking
+      - Treatment history and prescription records
+      - Vaccination records and schedules
+      - Patient demeanor status flags
+      - Multi-user concurrent editing capability
+      - Attachment storage (documents, images, forms)
+    - Key Functional Elements
+      - Quick patient lookup without opening full record
+      - Master Problems list for diagnosis tracking
+      - Historical data access (12+ months)
+      - Patient profile snapshots
+  - 2. Appointment Scheduling System
+    - Core Scheduling Features
+      - Visual calendar dashboard (day/week/month views)
+      - Drag-and-drop appointment manipulation
+      - Customizable appointment types and durations
+      - Appointment status tracking (booked → checked in → in progress → discharged)
+      - Multi-resource scheduling (rooms, staff, equipment)
+      - Blocking and availability management
+    - Client-Facing Booking
+      - Online scheduling via Vello client portal
+      - Two modes: Direct booking or appointment requests (requires approval)
+      - Configurable time slots (15/30/60 minute increments)
+      - Provider selection by clients
+      - Wellness visits vs. sick visits differentiation
+    - Automation
+      - Automatic email/SMS appointment reminders
+      - Appointment confirmation messages
+      - Planning Guides for template-based scheduling
+      - Wellness plan subscription appointment allocation
+    - Key Functional Elements
+      - Real-time calendar availability checking
+      - Color-coded appointment statuses
+      - One-click access to patient records from appointments
+      - Notification system for new bookings (red indicator)
+  - 3. Invoicing & Payments System
+    - Invoice Management
+      - Drag-and-drop line item manipulation
+      - Customizable invoice columns and sublines
+      - Real-time invoice building during consultation
+      - Bulk discount functionality
+      - Multiple payment method support
+      - Partial payment and split billing
+      - Estimate creation and conversion to invoices
+    - Payment Processing
+      - ezyVet Payments: Integrated payment processor
+      - Automatic patient information sync to records
+      - Auto write-back to practice management system
+      - Remote payment links (email/SMS)
+      - Payment allocation to multiple invoices
+      - Credit and refund management
+    - Billing Triggers
+      - Automatic charge capture from clinical activities
+      - Template-based product bundles
+      - Service fee configuration
+      - Time-based billing rules
+      - Diagnostic test auto-billing
+    - Key Functional Elements
+      - Draft invoice preview before finalization
+      - Approval workflow for invoices
+      - Payment reconciliation automation
+      - Invoice status tracking (pending, approved, paid, overdue)
+  - 4. Inventory Management
+    - Stock Control
+      - Real-time inventory level tracking
+      - Multi-location inventory support
+      - Batch tracking and lot numbers
+      - Expiration date monitoring with alerts
+      - Automatic reorder point notifications
+      - Seasonal reorder point customization (monthly variations)
+    - Purchase Orders
+      - Automated PO generation at threshold levels
+      - Supplier integration for direct ordering
+      - Receiving workflow with auto-update
+      - Backorder management
+      - Invoice matching and reconciliation
+    - Pricing Management
+      - Product markup rules (percentage or fixed)
+      - Multi-tier pricing structures
+      - Product bundles and package deals
+      - Dynamic pricing by appointment type or client
+      - Automatic price updates from supplier integrations
+    - Mobile Inventory Tools
+      - ezyVet Scan App: Mobile barcode scanning
+      - Inventory counts on mobile devices
+      - Inventory transfers between locations
+      - Real-time sync with main system
+      - Comment/notes on inventory items
+    - Key Functional Elements
+      - FIFO (First In, First Out) rotation alerts
+      - Stock movement reporting
+      - Wastage tracking (expired products)
+      - Inventory value calculations
+  - 5. Clinical Workflow & Documentation
+    - SOAP Notes Structure
+      - Subjective, Objective, Assessment, Plan format
+      - Customizable clinical record layouts
+      - Automatic layout filtering by appointment type
+    - Clinical Templates & Picklists
+      - Pre-configured history templates
+      - Tab-through data entry (no manual typing)
+      - Variable-driven templates
+      - Procedure-specific templates (e.g., spay, neuter, dental)
+      - Automatic note population from templates
+    - Diagnostic Integration
+      - Direct diagnostic requests to equipment
+      - Real-time result integration (IDEXX VetConnect PLUS)
+      - Automatic result attachment to patient record
+      - Analyte graphs for trend spotting
+      - Differential diagnosis guidance (IDEXX DecisionIQ)
+    - Prescription Management
+      - E-prescribing capability
+      - Medication dispensing workflow
+      - Restricted Veterinary Medicine (RVM) compliance tracking
+      - Prescription refill requests from client portal
+      - Medication history tracking
+    - Key Functional Elements
+      - Clinical note approval workflow
+      - Document templates (handouts, discharge instructions)
+      - Remote signature capture
+      - Voice dictation support (device-dependent)
+      - Master Problems list for ongoing diagnosis tracking
+- TIER 2: Advanced Practice Management
+  - 6. Client Communication System
+    - Multi-Channel Messaging
+      - Automated SMS reminders
+      - Email campaigns and broadcasts
+      - Two-way SMS capabilities
+      - Custom message templates with variables
+      - Wellness reminder automation
+    - Client Portal (Vello)
+      - Self-service appointment booking
+      - Invoice viewing and payment
+      - Prescription refill requests
+      - Access to pet medical records
+      - Vaccination schedule viewing
+      - Appointment history
+      - Form completion (consent, intake forms)
+    - Form Builder (Vello Forms)
+      - Drag-and-drop form designer
+      - AI-powered form generation from prompts
+      - PDF import to auto-generate forms
+      - Form variables (auto-populate pet/owner data)
+      - Rating scales, checkboxes, text input types
+      - Multi-page forms
+      - Automatic attachment to patient/appointment records
+    - Key Functional Elements
+      - Variable-driven personalization (pet name, owner name, appointment date)
+      - Message delivery tracking
+      - SMS segment volume reporting
+      - Client communication history log
+  - 7. Financial Reporting & Analytics
+    - Built-in Reports (76+ Report Types)
+      - Financial Reports
+        - End of Day Totals
+        - Financial Summary (revenue, expenses, profit)
+        - Payment Summary by type/method
+        - Invoice Revenue by Group/Product/Staff
+        - Aged Receivables
+        - Taxable Sales
+        - Stop Credit Summary
+      - Clinical Reports
+        - Appointment Status/Type analysis
+        - Vaccination records
+        - Clinical Note Approval tracking
+        - Unbilled Consult Appointments
+        - Products Billed to Customers
+      - Inventory Reports
+        - Inventory Value and Movement
+        - Expired Inventory
+        - Inventory Ordering (reorder recommendations)
+        - Product Pricing analysis
+        - Backorder status
+      - Performance Reports
+        - Staff Sales and Commission
+        - Customer Revenue Spend and Trends
+        - Performance Summary (KPIs by staff)
+        - User Target Summary
+        - Referral Statistics
+    - Reporting Features
+      - Custom date range selection
+      - Automated report scheduling
+      - Export to Excel/CSV
+      - Real-time data (cloud advantage)
+      - Drill-down capability to source records
+      - Multi-department filtering
+    - Key Functional Elements
+      - Interactive report manipulation
+      - Visual data representation (pie charts, graphs)
+      - Comparison across time periods
+      - Role-based report access
+  - 8. Staff & Role Management
+    - User Management
+      - Role-based permissions system
+      - Granular access controls by feature/data
+      - Multi-location staff assignment
+      - Staff scheduling and availability
+    - Time Clock System
+      - Clock in/out functionality
+      - Hour tracking and reporting
+      - Overtime calculations
+      - Staff performance monitoring
+    - Task Management
+      - Work List dashboard
+      - Task assignment to staff
+      - Reminder system for follow-ups
+      - Planning Guides for workflow standardization
+    - Key Functional Elements
+      - Active user monitoring
+      - Permission templates by role
+      - Audit logging for security
+      - Staff performance metrics
+  - 9. Wellness Plans & Subscriptions
+    - Membership Management
+      - Subscription-based wellness plans
+      - Recurring billing automation
+      - Service inclusion tracking (what's used vs. available)
+      - Plan customization by species/life stage
+    - Appointment Allocation
+      - Automatic scheduling for plan members
+      - Usage tracking (visits remaining)
+      - Expiration date management
+    - Key Functional Elements
+      - Outstanding payment tracking
+      - Plan utilization reports
+      - Automatic renewal processing
+- TIER 3: Specialized Tools & Modules
+  - 10. In-Hospital Patient Management
+    - SmartFlow Integration
+      - Electronic whiteboard for hospitalized patients
+      - Treatment sheets with medication schedules
+      - Anesthetic monitoring sheets
+      - Dental charting/mapping
+      - Automated charge capture (prevents 14% revenue leakage)
+      - Two-way sync with ezyVet
+      - Real-time treatment status updates
+      - Procedure timers and vital sign tracking
+    - Vet Radar
+      - Visual patient flow tracking
+      - Task lists by staff member
+      - Patient location tracking
+      - Automated charge synchronization
+      - Clean UI for at-a-glance status
+    - Key Functional Elements
+      - Multi-patient view
+      - Color-coded status indicators
+      - Medication administration logging
+      - Discharge workflow
+  - 11. Diagnostic Imaging Integration
+    - IDEXX Web PACS
+      - Automatic image attachment to patient records
+      - Eliminates manual data entry
+      - DICOM format support
+      - X-ray and ultrasound storage
+      - Image sharing for consultations
+    - VetConnect PLUS
+      - Holistic view of all IDEXX diagnostics
+      - Historical result graphing
+      - Real-time test order status tracking
+      - Client-friendly result summaries
+      - Expert interpretive guidance
+    - IDEXX DecisionIQ
+      - Machine learning pattern detection
+      - Patient-specific interpretive assistance
+      - Cross-modality data analysis (lab, imaging, history)
+      - Next-step recommendations
+    - Key Functional Elements
+      - Automatic charge capture on image orders
+      - Pre-loaded request forms
+      - Result notification system
+  - 12. Large Animal & Mobile Veterinary Tools
+    - ezyVet Go (Mobile App)
+      - Offline appointment management
+      - Multiple patient consult tracking
+      - Voice dictation note capture
+      - Medication/vaccination/procedure logging
+      - Draft invoice preview in field
+      - Automatic sync when in range
+      - Financial history access (12 months)
+      - Group treatment for multiple patients
+    - Key Functional Elements
+      - Download appointments before leaving clinic
+      - Data persistence during offline periods
+      - Bulk patient treatment application
+  - 13. Integrations & Extended Functionality
+    - Accounting Integration (Xero)
+      - Two-way sync of customer/supplier details
+      - Automatic invoice replication
+      - Payment synchronization
+      - Bank reconciliation data
+      - Xero Management dashboard for sync monitoring
+    - Product Supplier Integrations
+      - Automated purchase order transmission
+      - Inventory price auto-updates (with approval workflow)
+      - Invoice receiving automation
+      - Stock level synchronization
+    - Third-Party Integrations
+      - Microchip registries (AKC Reunite)
+      - Insurance claim systems (eClaims)
+      - Telemedicine platforms
+      - Referral management (eReferrals)
+      - Marketing tools
+    - Key Functional Elements
+      - Real-time data exchange via API
+      - Error notification system (red indicators)
+      - Manual approval for critical changes
+      - Integration health monitoring
+  - 14. Boarding & Hospitalization
+    - Boarding Calendar
+      - Multi-pet booking management
+      - Room/kennel assignment
+      - Service add-ons (grooming, training)
+      - Boarding-specific invoicing
+    - Key Functional Elements
+      - Availability visualization
+      - Check-in/check-out workflow
+      - Boarding report generation
+- TIER 4: Administrative & Support Features
+  - 15. System Administration
+    - Configuration Tools
+      - Customizable appointment types/statuses
+      - Product catalog management
+      - Service fee setup
+      - Department and location configuration
+      - Email/SMS template builder
+      - Document template management
+    - Data Management
+      - Backup automation (cloud-based, no manual backups needed)
+      - Automatic software updates
+      - Record merging tools
+      - Data import/export
+      - Record archival (disable vs. delete)
+    - Key Functional Elements
+      - Version control (e.g., Version 30 update)
+      - Migration tools for switching from other systems
+      - Data validation and cleanup scripts
+  - 16. Customer Support & Resources
+    - 24/7 Support
+      - Email, phone, ticket support
+      - In-app help tab with searchable guides
+      - Webinars and training sessions
+      - System health checks
+      - Veterinary-experienced support staff
+    - Onboarding
+      - Comprehensive implementation plan
+      - Data migration assistance
+      - Staff training programs
+      - Custom workflow setup
+    - Key Functional Elements
+      - Step-by-step documentation
+      - Product update notifications
+      - Community user forums
+  - 17. Compliance & Security
+    - Data Protection
+      - SSL/TLS encryption
+      - Role-based data access
+      - Two-factor authentication
+      - Audit trails
+      - GDPR/privacy compliance features
+    - Clinical Compliance
+      - RVM prescription tracking (UK)
+      - Controlled drug logging
+      - Clinical note approval requirements
+    - Key Functional Elements
+      - Secure payment link generation
+      - Data access logging
+      - Permission inheritance by role
+- TIER 5: Niche & Specialty Items
+  - 18. Lost & Found Registry
+    - Lost pet record management
+    - Matching to patient records
+    - Public-facing lost pet database
+  - 19. eBookings Dashboard
+    - Standalone online booking system management
+    - Separate from Vello portal bookings
+  - 20. Dispense Cabinets (CUBEX)
+    - Automated medication dispensing cabinet integration
+    - Controlled substance tracking
+    - Usage synchronization
+  - 21. Student Verification System
+    - Consult Metrics report
+    - Veterinary education program support
+    - Clinical record tracking for students
+- Technical Implementation Insights
+  - Database Structure Implications
+    - Normalized relational database (based on reporting and record linkage capabilities)
+    - Entity relationships: Client → Patient → Appointment → Invoice → LineItems
+    - Audit tables: Track changes, user actions, timestamps
+    - Template/configuration tables: Store customizable elements
+  - UI/UX Patterns
+    - Dashboard-centric navigation: Multiple tabs for different workflows
+    - Contextual access: Click through to related records
+    - Color-coded status indicators: Visual feedback system
+- Sources
+  - [[https://software.idexx.com/products][https://software.idexx.com/products]]
+    [[https://newvetequipment.com/blog/ezyvet-veterinary-practice-software][https://newvetequipment.com/blog/ezyvet-veterinary-practice-software]]
+    [[https://www.ezyvet.com/cloud-based-software][https://www.ezyvet.com/cloud-based-software]]
+    [[https://www.ezyvet.com/blog/13-best-ezyvet-features-and-milestones-of-2021][https://www.ezyvet.com/blog/13-best-ezyvet-features-and-milestones-of-2021]]
+    [[https://www.softwareadvice.com/veterinary/ezyvet-profile/][https://www.softwareadvice.com/veterinary/ezyvet-profile/]]
+    [[https://www.ezyvet.com/features/cloud-based][https://www.ezyvet.com/features/cloud-based]]
+    [[https://software.idexx.com/integration/ezyvet-go-ezyvet][https://software.idexx.com/integration/ezyvet-go-ezyvet]]
+    
+    [[https://www.youtube-nocookie.com/embed/jtn2NFCKhQg][youtube: https://www.youtube-nocookie.com/embed/jtn2NFCKhQg]]
+    
+    [[https://www.ezyvet.com/features][https://www.ezyvet.com/features]]
+    [[https://software.idexx.com/integration/smartflow-ezyvet][https://software.idexx.com/integration/smartflow-ezyvet]]
+    [[https://www.ezyvet.com/features/scheduling][https://www.ezyvet.com/features/scheduling]]
+    [[https://www.ezyvet.com/features/inventory-management][https://www.ezyvet.com/features/inventory-management]]
+    
+    [[https://www.youtube-nocookie.com/embed/TpyqrLp90jg][youtube: https://www.youtube-nocookie.com/embed/TpyqrLp90jg]]
+    
+    [[https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/getting-started/vello-what-clients-can-see-and-use/online-scheduling-basic-workflow-for-clients][https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/getting-started/vello-what-clients-can-see-and-use/online-scheduling-basic-workflow-for-clients]]
+    [[https://www.ezyvet.com/blog/how-software-simplifies-inventory-management-for-veterinary-practices][https://www.ezyvet.com/blog/how-software-simplifies-inventory-management-for-veterinary-practices]]
+    [[https://docs.ezyvet.com/en/browse-documentation/vet-radar/workflow-templates/workflow-template-configuration/about-workflow-templates][https://docs.ezyvet.com/en/browse-documentation/vet-radar/workflow-templates/workflow-template-configuration/about-workflow-templates]]
+    [[https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/configuration/online-scheduling-configuration/about-online-scheduling-configuration][https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/configuration/online-scheduling-configuration/about-online-scheduling-configuration]]
+    [[https://www.ezyvet.com/integration/scan][https://www.ezyvet.com/integration/scan]]
+    [[https://www.ezyvet.com/video/time-saving-clinical-workflow][https://www.ezyvet.com/video/time-saving-clinical-workflow]]
+    [[https://www.ezyvet.com/features/appointment-management][https://www.ezyvet.com/features/appointment-management]]
+    [[https://www.ezyvet.com/partners/all-countries/reference-labs][https://www.ezyvet.com/partners/all-countries/reference-labs]]
+    [[https://docs.ezyvet.com/en/browse-documentation/ezyvet/getting-started/find-and-show-information/dashboard-tabs][https://docs.ezyvet.com/en/browse-documentation/ezyvet/getting-started/find-and-show-information/dashboard-tabs]]
+    [[https://www.ezyvet.com/blog/what-is-an-integration][https://www.ezyvet.com/blog/what-is-an-integration]]
+    [[https://docs.ezyvet.com/en/browse-documentation/ezyvet/getting-started/find-and-show-information/reports/available-reports-in-ezyvet][https://docs.ezyvet.com/en/browse-documentation/ezyvet/getting-started/find-and-show-information/reports/available-reports-in-ezyvet]]
+    [[https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/vello-online-access-for-clients/client-access-methods-for-vello-client-portal][https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/vello-online-access-for-clients/client-access-methods-for-vello-client-portal]]
+    [[https://www.ezyvet.com/build-a-custom-integration][https://www.ezyvet.com/build-a-custom-integration]]
+    [[https://docs.ezyvet.com/en/browse-documentation/ezyvet-data-lake/about-ezyvet-data-lake][https://docs.ezyvet.com/en/browse-documentation/ezyvet-data-lake/about-ezyvet-data-lake]]
+    [[https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/vello-beta-features/vello-forms/about-vello-forms][https://docs.ezyvet.com/en/browse-documentation/vello/vello-for-practices/vello-beta-features/vello-forms/about-vello-forms]]
+    [[https://www.ezyvet.com/partners/all-countries/all-categories][https://www.ezyvet.com/partners/all-countries/all-categories]]

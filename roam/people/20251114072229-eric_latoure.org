@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       e22eaf66-51be-4256-9773-187c16cd3215
+:REFLECT_ID: 71c6343de21e4776b619667bb415feb0
+:CREATED:  [2025-11-14 Fri 07:22]
+:MODIFIED: [2026-02-15 Sun 18:06]
+:END:
+#+title: Eric Latoure
+#+filetags: :person:
+#+date: 2025-11-14
+- Title: 
+- Company: 
+- Type:  
+- Email: 
+- Phone: 
+- Location: 

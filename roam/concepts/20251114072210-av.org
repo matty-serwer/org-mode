@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       46ec5db2-4592-42f7-890d-cc304925ce2d
+:REFLECT_ID: deea70aafdb34dfc94df0da8f9d74ac9
+:CREATED:  [2025-11-14 Fri 07:22]
+:MODIFIED: [2025-11-14 Fri 07:22]
+:END:
+#+title: A/V
+#+filetags: :concept:
+#+date: 2025-11-14
+

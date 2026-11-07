@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       055cd2a6-17b4-4b4e-bf14-fb22e9f71e7f
+:REFLECT_ID: af318dd0023e4c3ab6a17859142cf22d
+:CREATED:  [2026-04-11 Sat 22:04]
+:MODIFIED: [2026-04-11 Sat 22:04]
+:END:
+#+title: Ghostty
+#+filetags: :concept:
+#+date: 2026-04-11
+

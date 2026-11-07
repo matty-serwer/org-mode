@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       abe04a75-dc71-4bb8-a61b-6403343b4bc5
+:REFLECT_ID: f3c81434e8e542848c6cbe08a8604c4a
+:CREATED:  [2025-11-05 Wed 19:54]
+:MODIFIED: [2025-11-05 Wed 21:56]
+:END:
+#+title: LEMR Business Plan #correspondence with Aaron
+#+filetags: :concept:correspondence:
+#+date: 2025-11-05
+* [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]] Business Plan  with [[id:6df57ef6-178b-420e-b995-7a9d5d4ba65b][Aaron]]
+
+Chat Conversation
+*Aaron*: What's happenin?
+Over the last couple days I've been thinking about different features that should be included in this thing. So that's attached and copied here.
+As far as I can tell, nothing like this exists internet-based anyway. So I feel pretty good about it.
+I appreciate all the help. If nothing else, I hope it gets us a few trips to Africa out of it. Sharpen up that French, mon ami!
+A plus tard,
+*Matty*: Ok ok I getcha. I'm back I'm on this for sure. There were also some issues I had, and I came up with a few solutions, literally while typing my query to Claude
+*Aaron*: OK, so Blue Host was a waste of time... now we're AI-in' this shit.
+Try the attached thing first, if you would...
+Then they gave me this link which is all code and that's sorta where I'm stuck now, but it's miles ahead of what we had before... I also may have a start up who could really use it. They are looking to gather up and sell medical data from Africa. They're only source of data at the moment is asking nicely from hospitals that may or may not have dusty filing cabinets, Excel sheets or Word docs. So if we got this in people's hands (no small task) then we'd have something. They're saying it'd be around $1 per data point, so the idea of $100K paydays are not unreasonable.
+The other thing is, Gav is suggesting we maybe have them sign an NDA non-compete, which feels shitty; but could be the thing to do... it's not like we're taking anything, just a little lookin' out.
+Take care over there,
+*Aaron*: Wait, wait... I forgot something important. Ya know how it is... it's all there in your head, but such hard work to remember to write down every detail.
+The thing I forgot is important for the docs/nurses who use it. They want to be able to look back over their patients even when they don't have the patient's card/QR right in front of them in order to open the file. So the docs/nurses need to be able to search in the system for that one patient they're thinking about... like: "Robot Doctor, open the chart of that dumbass who came back in here for gonorrhea like the third time this year, he's 25, about this tall and weighs something like, X, in his medical background he had a dislocated shoulder around two years ago" ... then that guy's chart should pop up. That will make the docs really want to use this vs their other systems or their paper leger books.
+The only problem is, paper leger books can't be audited, so that's a nice feature with the old tech there. People can stay outta my fucken business!
+I don't mean to dump all this on you... but if you are taking a bit of time, I thought it should be all in order from the start on my side.
+*Matty*: And then I got busy just like that.
+I actually overhauled my software, accounts, etc. you'll notice I have another email up there, same name, at proton.me.
+I needed an organization so I can filter my mail and actually get meaningful notifications. My Gmail is a year one Gmail account, 2006 I think, and I never deleted an email. Lol. I could clean it up, but I just don't trust 4lphab37.
+In the meantime just reply to both. I'll be set by next week. I may change my phone number as well. Association with my mother's number from way back has left me crippled by political texts.
+Aaaaanyway. That feature is totally doable, and right up my alley. It's in as feature/person-lookup
+From now on we will refer, programmatically and in related correspondence, to the two groups of individuals who would potentially interact with our software as, user(s) and person(s). It keeps us minty green, and whomever the stakeholders lawyers are can determine which terminology should be used.
+I'll make it easy to alter the visible language of the app programmatically, and under the hood, it will just be the Swiss Army knife of users and persons. I don't want to go overboard and have us speaking pig Latin. Well actually be golden, I've always wanted to self host a Linux server.
+*Aaron*: Hey yo!
+Well, good you're busy... this thing could be cool, maybe for different reasons for each of us. I hadn't given much thought to self-hosting a Linux server before. Speaking of words I don't entirely understand, the "users" are the doctors/nurses in this case and the "persons" are the patients, right? I don't have a strong preference either way.
+Now I'm at this cafe, waiting for an email from Red Cross, I have to rehack my CPR certifications tomorrow and Friday... more complicated than that, but still very annoying. It's like the "defensive driving class" of medicine. You know how to drive, but they make you IPDE, Brian! And there are all these videos and quizzes you have to do beforehand, so that's what I'm waiting for.
+Any questions on your mind about all this stuff at the moment?
+Thanks man and talk to ya soon,

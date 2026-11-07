@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       5757d7fd-86b7-4fb0-9681-b3bbc5ad7563
+:REFLECT_ID: b01c1ae4b6ca4a86b05624088a89909f
+:CREATED:  [2025-11-02 Sun 12:08]
+:MODIFIED: [2025-11-14 Fri 12:02]
+:END:
+#+title: current_FILE_BOARD
+#+filetags: :concept:
+#+date: 2025-11-02
+/use this /[[id:3094751d-7b14-4ac7-acf1-2ecef0685829][Title Format]]/ for directories/
+- The Bucket
+  - LTD UX/UI
+    - [[https://hookmark.net/hm/hook/file/1VibudvU7?p=TFQgSEhzL0xUIEhIIFZhcmlhdGlvbnM=&n=OLIVER%5Fhihat%5Flive%5Fset%5Fvintage%5Fclosed%5F01%2Ewav][OLIVER_hihat_live_set_vintage_closed_01.wav]]
+  - [[id:39ae6e58-1e36-482e-ae28-4311c52d4138][🎸 Bass Guitar Rewire Project]]
+    - [[https://hookmark.net/hm/hook/file/12DrMAaIz?p=UGljdHVyZXMvVGVjaG5pY2FsIEdyYXBoaWNz&n=Diagram%20A%20Standard%20P%3AJ%20Bass%2Epng][Diagram A Standard P:J Bass.png]]
+    - [[https://hookmark.net/hm/hook/file/12Ds0kQVw?p=UGljdHVyZXMvVGVjaG5pY2FsIEdyYXBoaWNz&n=Diagram%20B%202017%20Fender%20Player%20Series%20Jaguar%20Bass%2Epng][Diagram B 2017 Fender Player Series Jaguar Bass.png]]

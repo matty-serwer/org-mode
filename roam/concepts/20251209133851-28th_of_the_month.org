@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cefae0aa-a004-4426-8253-ed4639c23a28
+:REFLECT_ID: 6f8e2b7964364497b9e24aca5551eea7
+:CREATED:  [2025-12-09 Tue 13:38]
+:MODIFIED: [2025-12-09 Tue 13:38]
+:END:
+#+title: 28th of the Month
+#+filetags: :concept:
+#+date: 2025-12-09
+

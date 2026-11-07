@@ -1,0 +1,296 @@
+:PROPERTIES:
+:ID:       9ec7ea81-4f81-4177-87e8-e92ed3dfe0f7
+:REFLECT_ID: 07042026
+:CREATED:  [2026-04-03 Fri 23:51]
+:MODIFIED: [2026-04-08 Wed 02:44]
+:END:
+#+title: Tue, April 7th, 2026
+#+filetags: :daily:
+#+date: 2026-04-03
+- Today's List
+  - [ ] Break Blocker for [[id:504e6b59-d0cc-4780-a880-4c18559a2545][Work Sweet]]
+    - Docker errors while migrating database with prisma
+    - Boy I'm starting to hate prisma
+  - [ ] Organize Audio Files
+    - Maybe enlist Claude help. 
+  - [ ] Resume generation project (Claude)
+  - [ ] Send those resumes, TONS, no tiime to wait for projects.
+    - [ ] Get free LinkedIn Premium if you can
+  - [ ] Finish DrumNBass track before starting a new on
+  - [ ] STEM MIX PROJECT
+  - [ ] RoomORG
+    - [ ] cosmetics
+    - [ ] hats n gloves
+    - [ ] hardware and work things
+  - [ ] C-Note
+    - Is it done and I'm afraid to use it?
+    - [ ] Get a breakdown of the file structure and actually read it. 
+    - [ ] Watch a couple vids on setups
+- [[id:309fd4f4-67c8-466a-992d-dd5f28fb7298][418 Audio Laptop Fleet Sync]]
+  - Whether all 25 of his M365 licenses are actual active staff accounts, or if some are just sitting there unused. If he's got real humans on 25 accounts, he's covered. If some are orphaned or dummy accounts, it doesn't really change anything practically — Intune just needs the licenses to exist and be assigned, not actively used by people sitting at desks. - Claude
+  - gameplan?
+    1. Alex upgrades 25 licenses from Business Standard to Business Premium
+    1. You enroll the 45 laptops into Intune via Autopilot
+    1. You configure the wipe/reset profiles
+    1. Done — Intune manages the fleet, Alex wipes from a dashboard after every gig
+  - Questions
+    - What software does a gig-ready laptop need on it?
+    - how do you want to handle access while I'm setting this up? Most clients just make you a temp admin for the duration of the job and revoke it when you're done.
+    - Does each laptop have its own License. If you're not sure, what do you pay? it should be like 12.50 per user on Busines Standard. 
+    - Are the Thinkpads newer than 2016? Assuming yes, and won't need to check for TPM. f
+  - Proposed 4-Day Breakdown
+    - *Day 1:* Licensing upgrade and Intune configuration
+    - *Day 2:* Enroll all 42 laptops
+    - *Day 3:* Software push setup and reset testing
+    - *Day 4:* Verification, handoff, and training
+      - This is where I'd show you how to add and update software, etc. 
+  - Concerns
+    *1. Wiping/resetting laptops between jobs* — fully covered by the Intune setup itself. This is the whole point of the Autopilot Reset workflow. Covered on Day 2 and 3, demo'd during handoff.
+    *2. Pushing software and updates* — covered by the Intune setup, but requires that pre-handoff conversation about what software a gig-ready laptop actually needs. Once that's configured it's self-managing. Shown to Alex during Day 4 handoff so he can change app assignments himself going forward.
+    *3. Managing everything remotely without physical access* — this is the one that's mostly covered by training rather than setup. The Intune dashboard does all of it, but Alex needs to know how to use it. That's the Day 4 walkthrough. Without that session the whole system is a black box to him and he's calling you every time something needs doing.
+    - Wiping/resetting laptops between jobs
+    - Pushing software and updates
+    - Handling the entire post-gig reset cycle remotely
+  - [[id:d7c7631a-4bef-4a3f-9795-a736c70a287f][Microsoft 365]] [[id:f5763f4f-8d7b-4946-b706-8b267281100f][Temporary Admin Account]]
+    - *Create a temporary admin account*
+      - Log into [[admin.microsoft.com][admin.microsoft.com]] with the tenant owner's credentials
+      - Go to Users > Active Users > Add a user
+      - Create a generic account (e.g. [[mailto:tempadmin@clientdomain.com][tempadmin@clientdomain.com]])
+      - Assign an available license to the account
+      - Go to Roles > Manage roles
+      - Assign the Global Administrator role to the new account
+      - Share credentials with the technician securely
+    - *Using the account*
+      - Technician logs into all required portals using the temp account
+      - Account should not be used outside the scope of the engagement
+    - *Remove the account*
+      - Log into [[admin.microsoft.com][admin.microsoft.com]] using the tenant owner's credentials
+      - Go to Users > Active Users
+      - Select the temp admin account
+      - Click Delete user and confirm
+      - Go to Billing > Licenses and confirm the license has been unassigned and is available
+      - Verify the account no longer appears under Users or Roles
+  - [[id:d7c7631a-4bef-4a3f-9795-a736c70a287f][Microsoft 365]] [[id:5cbd77e2-ab47-4b16-b7c1-2033b58eb6df][Temporary Intune Admin Account]]
+    -----
+    
+    The key difference from Global Admin is that Intune Administrator is scoped — it lives entirely inside Intune and can't wander into billing, user management, or anything else in the tenant. Cleaner and more appropriate for a contractor situation.
+    - *Create the temporary Intune Administrator account*
+      - Log into [[admin.microsoft.com][admin.microsoft.com]] with the tenant owner's credentials
+      - Go to Users > Active Users > Add a user
+      - Create a generic account (e.g. [[mailto:intuneadmin@clientdomain.com][intuneadmin@clientdomain.com]])
+      - Assign an available license to the account
+      - Go to Roles > Manage roles
+      - Assign the *Intune Administrator* role to the new account
+      - Share credentials with the technician securely
+    - *During the engagement*
+      - Technician logs into [[intune.microsoft.com][intune.microsoft.com]] using the temp account
+      - This account can access Intune fully but cannot touch billing, users, or other M365 settings
+      - If M365 Admin Center access is needed for any reason, the tenant owner will need to log in separately
+    - *Remove the account when done*
+      - Log into [[admin.microsoft.com][admin.microsoft.com]] using the tenant owner's credentials
+      - Go to Users > Active Users
+      - Select the temp Intune Administrator account
+      - Click Delete user and confirm
+      - Go to Billing > Licenses and confirm the license has been unassigned and is available
+      - Verify the account no longer appears under Users or Roles
+  - [[id:be3ff83e-4a7f-4e6f-9534-49a7badcf3e8][M365]] License Upgrade — [[id:7852ce40-3750-40d4-a87e-60cbb6cbfb93][Business Standard]] to [[id:17b04c7e-da72-4f60-b888-b581530158ba][Business Premium]] — 
+    - Price per user/month
+      - Business Standard: $12.50
+      - Business Premium: $22.00
+      - Difference: +$9.50
+    - Total per month (42 users)
+      - Business Standard: $525.00
+      - Business Premium: $924.00
+      - Difference: +$399.00
+    - Total per year (42 users)
+      - Business Standard: $6,300
+      - Business Premium: $11,088
+      - Difference: +$4,788
+  - Intune Fleet Setup — 3 Day Roadmap
+    42 Laptops | 42 Business Premium Licenses | 1 License Per Laptop | Windows 10 Pro | Autopilot Self-Deploying Mode
+    -----
+    
+    Day 1 — Backend Setup (Your Machine Only, No Laptops Needed)
+    *Morning — M365 Tenant*
+    *Mid-Morning — Intune Configuration*
+    *Afternoon — Wipe/Reset Policy*
+    -----
+    
+    Day 2 — Enrollment (All 42 Laptops In The Room)
+    *The goal today is one thing: get all 42 laptops registered in Autopilot.*
+    *Morning — Hash Harvesting*
+    
+    #+begin_src powershell
+    Install-Script -Name Get-WindowsAutoPilotInfo
+    Get-WindowsAutoPilotInfo -OutputFile C:\hash.csv
+    
+    #+end_src
+    *Midday — Upload and Assign*
+    *Afternoon — Initial Enrollment Run*
+    -----
+    
+    Day 3 — Verification and Handoff
+    *Morning — Audit The Fleet*
+    *Midday — Test The Wipe Workflow*
+    *Afternoon — Handoff*
+    -----
+    
+    Things To Have Ready Before Day 1
+    -----
+    
+    Realistic Buffer Scenarios
+    -----
+    
+    42 laptops, 42 licenses, one dashboard. Clean in, clean out.
+    - Log into Alex's M365 Admin Center
+    - Upgrade all 42 existing Business Standard licenses to Business Premium
+    - Confirm all 42 accounts are active and each has a Premium license assigned
+    - Confirm Intune is now active on the tenant (unlocks automatically with Premium)
+    - Log into Intune Admin Center ([[intune.microsoft][intune.microsoft]].com)
+    - Set Intune as the MDM authority if not already set
+    - Enable Windows automatic enrollment
+    - Create a Device Group called something like "AV Fleet" — everything gets targeted here
+    - Configure the Autopilot deployment profile:
+      - Mode: Self-Deploying
+      - Skip all OOBE screens (privacy, Cortana, etc.)
+      - Apply a device naming template (AVFLEET-001 through AVFLEET-042)
+      - Assign profile to the AV Fleet device group
+    - Create the Autopilot Reset policy in Intune
+    - Assign it to the AV Fleet device group
+    - Confirm with Alex whether any baseline software needs to be pre-installed on every laptop before you build that into the profile
+    - Set up any software push assignments if needed
+    - Boot each laptop into Windows
+    - Run the PowerShell script on each one to capture the hardware hash:
+    - Collect each CSV and append them into one master CSV as you go
+    - Use a USB drive to collect them all so you're not juggling 42 individual files
+    - Import the master CSV into Intune under Devices > Windows > Windows Enrollment > Devices
+    - Wait for all 42 devices to appear — typically 15-30 minutes
+    - Assign all imported devices to the AV Fleet device group
+    - Confirm the Autopilot deployment profile is applied to the group
+    - Begin putting laptops through their first Autopilot run in batches
+    - Reset each one and let Autopilot pull the profile, name itself, and enroll into Intune
+    - Stagger them in waves — each machine takes roughly 20-40 minutes depending on internet speed and pending updates
+    - Monitor progress from the Intune dashboard while batches run
+    - Pull up the Intune dashboard and confirm all 42 devices show as enrolled and compliant
+    - Verify every device has the correct name (AVFLEET-001 etc.)
+    - Confirm the Autopilot profile is assigned on each one
+    - Re-run any that failed enrollment individually
+    - Pick 3-4 machines, mix of Dell and Thinkpad
+    - Trigger an Autopilot Reset from the Intune dashboard on each
+    - Watch them wipe, reboot, re-enroll, and return to clean baseline automatically
+    - This is the core deliverable — you want to see this cycle complete cleanly before handoff
+    - Walk Alex through the dashboard — show him where to trigger a wipe, how to check device status, how to run a bulk reset on the whole fleet
+    - Keep it simple, he just needs to know how to operate it, not how it works
+    - Write up a one page post-gig wipe procedure so any of his techs can run it without calling you
+    - Confirm everything is good, collect your invoice
+    - Alex's M365 admin credentials or have him set you up as a global admin temporarily
+    - Confirmed internet connection at the location where the laptops will be
+    - Your own laptop for portal work
+    - Alex's confirmation on any baseline software that needs to be on every machine
+    - *A laptop fails TPM check:* Can't use self-deploying mode on that machine, handle individually and flag to Alex
+    - *Slow internet:* Day 2 afternoon enrollment runs long and spills into Day 3 morning — just adjust, not a crisis
+    - *A handful of devices don't re-enroll cleanly:* Normal, budget an hour on Day 3 morning for stragglers
+- [X] Complete Main HHS Renewal Form?
+  - [[http://www.mymaineconnection.gov][_www.mymaineconnection.gov_]]
+  - [[id:f4648b6f-1da9-47d2-b020-67a86e1748e7][David's 388]] [[id:27bb43f1-a309-4afa-b8e8-5ec678716260][income]] estimate
+      - *Weekly:* ~$780/week
+      - *Monthly:* ~$3,380/month
+    *Yearly:* ~$40,560/year
+- [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/c8b061b35320450fbd916f0d9ee35252/0da7c0be-29d6-4849-8f1f-3cb39cf7bdf9?key=4896edb40d27cc60dfd9254005831880b42c376641a3d357343f6a1166c77a0c][image]]
+  - Completed [[id:0c8ab707-4cf1-41c5-a4eb-ad511986c0b3][Maine Health]] Renewal Application
+  - I guess I'm waiting for them to either send me information with results
+  - Additional verification?
+- *The Unsupported Path: Jung's Framework for Building Psychological Autonomy*
+  -----
+  
+  -----
+  
+  -----
+  
+  -----
+  
+  -----
+  
+  -----
+  
+  -----
+  
+  -----
+  
+  -----
+  
+  -----
+  
+  *Key Vocabulary Glossary*
+  Term Definition *Scaffolding* External social/institutional structures that support and construct identity *Inherited self* A sense of self assembled gradually from others' approval and validation *Shadow* Jung's term for the unconscious sum of everything the psyche has refused to integrate *Individuation* Jung's process of psychological development toward wholeness and genuine selfhood *Solitude vs. Loneliness* Conscious interior encounter (solitude) vs. passive suffering of isolation (loneliness) *Heroic isolation* The unconscious reframing of emotional unavailability as strength or ideology *Psychological autonomy* A stable sense of self that does not require external validation to function *Necessity* The condition Jung identifies as the true engine of personality development
+  - *Core premise:* The absence of external support, when confronted consciously, can accelerate psychological development in ways that supported paths rarely achieve
+  - *I. The Pain of an Unequal Starting Line*
+    - The unnamed feeling of watching others succeed with structural advantages (connections, mentors, family backing)
+    - Same ambition, different conditions — not failure, not jealousy, but something more precise
+    - The suppressed question: /What if certain things are genuinely impossible without support?/
+    - Key reframe: this is not a resource problem — it's an *identity problem* wearing the mask of one
+  - *II. How Most People Build a Self (Without Knowing It)*
+    - *Inherited self:* The self most people carry was assembled gradually through external validation — parental approval, institutional recognition, others' belief
+    - This process is normal and functional, but it produces a self whose /foundations run outward, not inward/
+    - *The hidden cost of scaffolding:* external support accelerates progress but also removes the pressure that forces genuine interior development
+    - Key vocabulary: *scaffolding* (the social/institutional structures that hold identity in place)
+  - *III. Jung's Break with Freud as Case Study*
+    - In 1913, Jung lost his most powerful professional validator and the institutional framework that gave his work legitimacy
+    - Forced into isolation, he underwent what he called a *confrontation with the unconscious* — a period of profound disorientation
+    - What emerged was a self that knew who it was /because it had been forced to find out without anyone's help/
+    - His subsequent work became the foundation of analytical psychology
+  - *IV. The Psychology of Necessity*
+    - Jung's central claim: *genuine personality develops through necessity, not comfort or encouragement*
+    - The psyche is conservative — it will not do the hard interior work unless it /must/
+    - Without external structure to fall back on, the psyche faces a forced choice: go inward or collapse
+    - Key vocabulary:
+      - *Individuation* — Jung's term for the process by which the psyche moves toward wholeness, integrating what has been rejected, developing what has been undeveloped
+      - *Psychological autonomy* — a sense of self that does not depend on external confirmation to remain stable
+  - *V. The Shadow and the Silence*
+    - *The shadow* — Jung's term for everything the psyche has refused to integrate: repressed fears, unlived potential, the version of you buried under performed identity
+    - Noise (busyness, social obligations, endless distraction) functions as a /buffer/ that keeps the shadow encounter theoretical
+    - Those without support have a thinner buffer — the silence arrives sooner and forces an earlier confrontation
+    - *Loneliness vs. Solitude:*
+      - *Loneliness* — passive suffering of isolation; what happens when you resist being alone
+      - *Solitude* — the conscious choice to remain in interior encounter; the condition under which transformation becomes possible
+    - The unsupported person's driving force is often /defiance/, not desire — the need to prove wrong those who didn't show up. This is a wound pretending to be an engine
+  - *VI. The Two Traps*
+    - *Trap 1: Victimization*
+      - Begins as honest acknowledgment that circumstances are harder without support (which is true)
+      - Calcifies into identity: /therefore it is impossible for me/
+      - Bitterness functions as a closed system — everything incoming becomes evidence of the original wound
+      - Protects against the vulnerability of public failure, but forecloses possibility in the same motion
+    - *Trap 2: Heroic Isolation (the Heroic Refusal)*
+      - The decision — usually unconscious — to reframe /not needing anyone/ as a superpower rather than a wound
+      - Independence becomes ideology; solitude becomes armor
+      - Sophisticated avoidance of grief, risk, and the admission that connection is a genuine human requirement
+      - Jung himself, during his period of isolation, maintained real anchors (family, clinical work) — he did not romanticize solitude
+      - *Defended is not the same as developed*
+    - *What both traps share:* they bypass the actual interior work — one by making the world fully responsible, the other by making the self fully sufficient. Both are fictions.
+    - The narrow path between them requires holding two things in tension simultaneously:
+      - The genuine injustice of your circumstances
+      - The genuine agency you still possess within them
+      - /That tension is not a problem to solve — it is the condition under which the real work happens/
+  - *VII. What the Unsupported Path Actually Builds*
+    - Supported paths build faster but produce a self whose foundations can be /dismantled from the outside/, because they were constructed from the outside
+    - What sustained unsupported effort produces (unglamorous, unwitnessed):
+      - *Autonomous judgment* — the repeated proof that your decisions can function without external endorsement
+      - *Demonstrated resilience* — the lived evidence that you can be broken by circumstances and continue anyway
+      - *Signal location* — the capacity to find your own direction in the absence of external noise
+    - Jung's description of the developed personality: cannot be shaken by collective panic, cannot be reoriented by withdrawal of approval, cannot be collapsed by removal of external structure — /because it is not resting on any of those things/
+    - Key asymmetry: "They are building faster. You are building differently."
+  - *VIII. The Condition That Makes It Matter: Consciousness*
+    - Pressure alone does not produce individuation — it produces either a forged self or a fractured one
+    - The difference is *consciousness* — the willingness to understand what the process is actually doing and navigate it with intention rather than merely endure it
+    - Endurance is not the destination; it is the starting condition
+  - *IX. The Final Reframe*
+    - The self that emerges from genuine necessity — locating your own values, direction, and worth without external confirmation — is the only self that is /fully yours/
+    - Not inherited, not borrowed, not contingent on conditions that can change
+    - Most people never find out who they are in this sense, not from weakness, but because the scaffolding never fully came down
+    - What the pressure does not create — it /reveals/
+    - "The only kind of life that cannot be taken from you is the one that was never given to you in the first place"
+- [ ] Update [[id:0dde1fb6-d6cd-4faf-a61e-8a3efe9b4e2b][C-Note MCP]] to route reference docs from [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]] to the /reference directory
+  - Ticket
+    - [[http://c-note-mcp-fix-reference-routing.md][c-note-mcp-fix-reference-routing.md]]
+  - Location
+    - /Users/lupin/Developer/services-and-scripts/cnote-mcp

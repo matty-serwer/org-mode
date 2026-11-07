@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cab7b439-26c0-4ca7-85e8-ac32cc3e03bd
+:REFLECT_ID: 3dd481f108c243bd9246691697b76f43
+:CREATED:  [2025-10-29 Wed 14:04]
+:MODIFIED: [2025-10-29 Wed 14:13]
+:END:
+#+title: MKM
+#+filetags: :concept:
+#+date: 2025-10-29
+

@@ -1,0 +1,134 @@
+:PROPERTIES:
+:ID:       1b257378-3eff-4522-9334-e9e921cd5b9a
+:REFLECT_ID: 255ba496cfa140bbb2b4b4a50957a1d0
+:CREATED:  [2025-10-25 Sat 16:28]
+:MODIFIED: [2025-11-14 Fri 11:56]
+:END:
+#+title: M477i3-ORG MODE customizations and settings org-Roam
+#+filetags: :concept:
+#+date: 2025-10-25
+* M477i3-ORG MODE customizations and settings [[id:24524799-537f-4d3c-8c8c-039cb0120522][org-Roam]]
+-----
+
+- *Enable Org Mode Enhancements*
+  - In =~/.doom.d/init.el=
+    
+    #+begin_src elisp
+    (lang org +pretty +roam2)
+    #+end_src
+  - Run in terminal:
+    
+    #+begin_src bash
+    doom sync
+    #+end_src
+- *Set Org-roam Directory*
+  - In =~/.doom.d/config.el=
+    
+    #+begin_src elisp
+    (setq org-roam-directory "~/org/roam")
+    (after! org-roam
+      (org-roam-db-autosync-mode))
+    #+end_src
+  - Create directory manually if it doesn’t exist:
+    
+    #+begin_src bash
+    mkdir -p ~/org/roam
+    #+end_src
+- *Insert Inline Backlinks*
+  - Keybinding to insert links:
+    =SPC n r i= → =(org-roam-node-insert)=
+  - Automatically creates new file if node doesn’t exist.
+- *Enable org-superstar for Round Bullets*
+  - In =~/.doom.d/packages.el=
+    
+    #+begin_src elisp
+    (package! org-superstar)
+    #+end_src
+  - In =~/.doom.d/config.el=
+    
+    #+begin_src elisp
+    (use-package! org-superstar
+      :hook (org-mode . org-superstar-mode)
+      :config
+      (setq org-superstar-headline-bullets-list '("◉" "○" "✸" "✿")
+            org-superstar-item-bullet-alist '((?* . ?•) (?+ . ?➤) (?- . ?•))))
+    #+end_src
+- *Enable Perfect Outline Indentation*
+  - Turn on indented alignment visually without affecting file content:
+    
+    #+begin_src elisp
+    (add-hook 'org-mode-hook #'org-indent-mode)
+    #+end_src
+- *Make Enter Create Bullets at Same Level*
+  - Rebind Enter to =org-meta-return= (creates new bullet same depth):
+    
+    #+begin_src elisp
+    (map! :after org
+          :map org-mode-map
+          [return] #'org-meta-return
+          "RET"    #'org-meta-return)
+    #+end_src
+  - Optionally disable electric indentation to prevent sub-bullets:
+    
+    #+begin_src elisp
+    (add-hook! 'org-mode-hook (electric-indent-local-mode -1))
+    #+end_src
+- *Add Pretty Fonts*
+  - Use mixed pitch fonts for improved readability:
+    
+    #+begin_src elisp
+    (set-face-attribute 'default nil :font "JetBrains Mono" :height 130)
+    (set-face-attribute 'variable-pitch nil :font "Iosevka Aile" :height 140)
+    (add-hook 'org-mode-hook 'variable-pitch-mode)
+    #+end_src
+- *Org-roam Node Capture Template (optional)*
+  - Add to =config.el= for automatic file naming and hierarchy:
+    
+    #+begin_src elisp
+    (setq org-roam-capture-templates
+          '(("d" "default" plain "%?"
+             :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                                "#+title: ${title}\n#+date: %U\n")
+             :unnarrowed t)))
+    #+end_src
+- *Verify Setup*
+  - Reload Doom:
+    
+    #+begin_src bash
+    doom sync && doom reload
+    #+end_src
+  - In Emacs: open Org file, type a bullet, press *Enter* → continues same level.
+  - Use =SPC n r i= in any list to insert a linked Org-roam note.
+-----
+
+This configuration yields:
+- Visually clean, indented lists and round bullets
+- Smooth same-level entry creation
+- Local-first note graph via Org-roam with automatic backlink file creation
+- Full compatibility with Doom’s performance optimizations.[3][4][5][1]
+Sources
+[1] Setting up org-roam v2, [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] on a Mac - Troubleshooting [[https://org-roam.discourse.group/t/setting-up-org-roam-v2-doom-emacs-on-a-mac/3416][https://org-roam.discourse.group/t/setting-up-org-roam-v2-doom-emacs-on-a-mac/3416]]
+[2] :lang org - [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] v21.12 documentation [[https://docs.doomemacs.org/latest/modules/lang/org/][https://docs.doomemacs.org/latest/modules/lang/org/]]
+[3] Get pretty org-bullets in [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] - Marco Pas [[https://mpas.github.io/posts/2020/10/16/20201016-org-bullets-doom-emacs/][https://mpas.github.io/posts/2020/10/16/20201016-org-bullets-doom-emacs/]]
+[4] integral-dw/org-superstar-mode - GitHub [[https://github.com/integral-dw/org-superstar-mode][https://github.com/integral-dw/org-superstar-mode]]
+[5] Build a Second Brain in Emacs with Org Roam - System Crafters [[https://systemcrafters.net/build-a-second-brain-in-emacs/getting-started-with-org-roam/][https://systemcrafters.net/build-a-second-brain-in-emacs/getting-started-with-org-roam/]]
+[6] Setting up Org Roam Bibtex : r/DoomEmacs - Reddit [[https://www.reddit.com/r/DoomEmacs/comments/rxmr6d/setting_up_org_roam_bibtex/][https://www.reddit.com/r/DoomEmacs/comments/rxmr6d/setting_up_org_roam_bibtex/]]
+[7] Org Roam Setup · Emacs Doomcasts 25 - YouTube 
+[[https://www.youtube-nocookie.com/embed/rH3ZH95zjKM][youtube: https://www.youtube-nocookie.com/embed/rH3ZH95zjKM]]
+
+[8] How can I make org-roam's buffer look useful and nice like it does in ... [[https://github.com/syl20bnr/spacemacs/issues/16519][https://github.com/syl20bnr/spacemacs/issues/16519]]
+[9] Org-mode configuration for Emacs - Hugo Cisneros [[https://hugocisneros.com/org-config/][https://hugocisneros.com/org-config/]]
+[10] Configs & Setup for the home page example - How To - Org-roam [[https://org-roam.discourse.group/t/configs-setup-for-the-home-page-example/3637][https://org-roam.discourse.group/t/configs-setup-for-the-home-page-example/3637]]
+[11] Org Mode Basics In [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] - YouTube 
+[[https://www.youtube-nocookie.com/embed/34zODp_lhqg][youtube: https://www.youtube-nocookie.com/embed/34zODp_lhqg]]
+
+[12] is there an Emacs org-mode command to jump to an org heading? [[https://stackoverflow.com/questions/15011703/is-there-an-emacs-org-mode-command-to-jump-to-an-org-heading][https://stackoverflow.com/questions/15011703/is-there-an-emacs-org-mode-command-to-jump-to-an-org-heading]]
+[13] Emacs Doom E13: Org Mode, Code Snippets 101 - Reddit [[https://www.reddit.com/r/emacs/comments/cjtjox/emacs_doom_e13_org_mode_code_snippets_101/][https://www.reddit.com/r/emacs/comments/cjtjox/emacs_doom_e13_org_mode_code_snippets_101/]]
+[14] How to install org-roam declaratively (Doom Emacs) - Help [[https://discourse.nixos.org/t/how-to-install-org-roam-declaratively-doom-emacs/24459][https://discourse.nixos.org/t/how-to-install-org-roam-declaratively-doom-emacs/24459]]
+[15] Org mode on Doom Emacs: Ctrl-Enter gives "No content for ... - Reddit [[https://www.reddit.com/r/DoomEmacs/comments/k0cvw8/org_mode_on_doom_emacs_ctrlenter_gives_no_content/][https://www.reddit.com/r/DoomEmacs/comments/k0cvw8/org_mode_on_doom_emacs_ctrlenter_gives_no_content/]]
+[16] elken/doom: [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] config - GitHub [[https://github.com/elken/doom][https://github.com/elken/doom]]
+[17] Citar-org-roam for biblio module? - [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Discourse [[https://discourse.doomemacs.org/t/citar-org-roam-for-biblio-module/3036][https://discourse.doomemacs.org/t/citar-org-roam-for-biblio-module/3036]]
+[18] C-RET in org-mode should insert new heading · Issue #3306 - GitHub [[https://github.com/hlissner/doom-emacs/issues/3306][https://github.com/hlissner/doom-emacs/issues/3306]]
+[19] Prettifying Emacs Org Mode - Sophie Bosio [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][https://sophiebos.io/posts/prettifying-emacs-org-mode/]]
+[20] Emacs Doom E10: Org Mode - Links, Hyperlinks and more - YouTube 
+[[https://www.youtube-nocookie.com/embed/BRqjaN4-gGQ][youtube: https://www.youtube-nocookie.com/embed/BRqjaN4-gGQ]]

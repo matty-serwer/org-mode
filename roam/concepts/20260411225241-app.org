@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d0a22564-e72b-4599-9f98-876e14b0bf45
+:REFLECT_ID: a8007873f8ea4254a5fb6bdd9f398ffd
+:CREATED:  [2026-04-11 Sat 22:52]
+:MODIFIED: [2026-04-11 Sat 22:52]
+:END:
+#+title: App
+#+filetags: :concept:
+#+date: 2026-04-11
+

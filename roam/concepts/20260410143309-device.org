@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       57ee66df-96e2-4754-86bf-95bb0aeb5b9a
+:REFLECT_ID: 1923c5436dd745c09f29fafa6f182033
+:CREATED:  [2026-04-10 Fri 14:33]
+:MODIFIED: [2026-04-10 Fri 14:33]
+:END:
+#+title: Device
+#+filetags: :concept:
+#+date: 2026-04-10
+

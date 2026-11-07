@@ -1,0 +1,166 @@
+:PROPERTIES:
+:ID:       d60e2599-74e1-4035-a9f6-c10b0b8f7d81
+:REFLECT_ID: 24112025
+:CREATED:  [2025-11-23 Sun 20:00]
+:MODIFIED: [2025-11-24 Mon 20:27]
+:END:
+#+title: Mon, November 24th, 2025
+#+filetags: :daily:list:
+#+date: 2025-11-23
+- Thanksgiving football 1:00pm game free on Tubi
+- [[id:9806ecec-b260-4659-9f20-ce83f6ebeba0][Raycast]]
+  - Adding an [[id:e8eea4da-a54e-4465-8a03-ffe1ba5f1b55][MCP Server]] (Next JS example)
+    - To add the Next.js MCP Server to Raycast, follow these steps:
+      *Installation*
+      1. *Open Raycast* and run the *Install Server* command
+      2. *Fill in the form* with these details:
+      ▪ *Name:* next-devtools
+      ▪ *Command:* npx
+      ▪ *Arguments:* -y, next-devtools-mcp@latest
+      Alternatively, copy this JSON configuration:
+      
+      #+begin_src markup
+      {
+      
+        "next-devtools": {
+      
+          "command": "npx",
+      
+          "args": ["-y", "next-devtools-mcp\@latest"]
+      
+        }
+      
+      }
+      #+end_src
+      Then open the *Install Server* command with the JSON copied to your clipboard, and Raycast will auto-fill the form.
+      *Setup Requirements*
+      Ensure you have:
+      • *Next.js 16+* in your project
+      • *Node.js* installed on your system
+      • Your *Next.js development server running* (npm run dev)
+      *Using the Next.js MCP Server*
+      Once installed, you can use it in Raycast AI by using the @next-devtools mention:
+      • Ask questions like: @next-devtools What errors are currently in my application?
+      • Query live application state and build information
+      • Get real-time diagnostics and error detection
+      The next-devtools-mcp package automatically discovers and connects to your running Next.js instance via the built-in /_next/mcp endpoint. [[https://nextjs.org/docs/app/guides/mcp][1]] [[https://manual.raycast.com/model-context-protocol][2]]
+- of [[id:3e765a11-f9f8-4859-a37c-57f57273df8f][CSS Variables]] available for Theming with [[id:522853c2-b75b-4bc6-b8fa-76b03dace8ab][shadcn/ui]]
+  - #+begin_src markup
+    :root {
+      --radius: 0.625rem;
+      --background: oklch(1 0 0);
+      --foreground: oklch(0.145 0 0);
+      --card: oklch(1 0 0);
+      --card-foreground: oklch(0.145 0 0);
+      --popover: oklch(1 0 0);
+      --popover-foreground: oklch(0.145 0 0);
+      --primary: oklch(0.205 0 0);
+      --primary-foreground: oklch(0.985 0 0);
+      --secondary: oklch(0.97 0 0);
+      --secondary-foreground: oklch(0.205 0 0);
+      --muted: oklch(0.97 0 0);
+      --muted-foreground: oklch(0.556 0 0);
+      --accent: oklch(0.97 0 0);
+      --accent-foreground: oklch(0.205 0 0);
+      --destructive: oklch(0.577 0.245 27.325);
+      --border: oklch(0.922 0 0);
+      --input: oklch(0.922 0 0);
+      --ring: oklch(0.708 0 0);
+      --chart-1: oklch(0.646 0.222 41.116);
+      --chart-2: oklch(0.6 0.118 184.704);
+      --chart-3: oklch(0.398 0.07 227.392);
+      --chart-4: oklch(0.828 0.189 84.429);
+      --chart-5: oklch(0.769 0.188 70.08);
+      --sidebar: oklch(0.985 0 0);
+      --sidebar-foreground: oklch(0.145 0 0);
+      --sidebar-primary: oklch(0.205 0 0);
+      --sidebar-primary-foreground: oklch(0.985 0 0);
+      --sidebar-accent: oklch(0.97 0 0);
+      --sidebar-accent-foreground: oklch(0.205 0 0);
+      --sidebar-border: oklch(0.922 0 0);
+      --sidebar-ring: oklch(0.708 0 0);
+    }
+    
+    .dark {
+      --background: oklch(0.145 0 0);
+      --foreground: oklch(0.985 0 0);
+      --card: oklch(0.205 0 0);
+      --card-foreground: oklch(0.985 0 0);
+      --popover: oklch(0.269 0 0);
+      --popover-foreground: oklch(0.985 0 0);
+      --primary: oklch(0.922 0 0);
+      --primary-foreground: oklch(0.205 0 0);
+      --secondary: oklch(0.269 0 0);
+      --secondary-foreground: oklch(0.985 0 0);
+      --muted: oklch(0.269 0 0);
+      --muted-foreground: oklch(0.708 0 0);
+      --accent: oklch(0.371 0 0);
+      --accent-foreground: oklch(0.985 0 0);
+      --destructive: oklch(0.704 0.191 22.216);
+      --border: oklch(1 0 0 / 10%);
+      --input: oklch(1 0 0 / 15%);
+      --ring: oklch(0.556 0 0);
+      --chart-1: oklch(0.488 0.243 264.376);
+      --chart-2: oklch(0.696 0.17 162.48);
+      --chart-3: oklch(0.769 0.188 70.08);
+      --chart-4: oklch(0.627 0.265 303.9);
+      --chart-5: oklch(0.645 0.246 16.439);
+      --sidebar: oklch(0.205 0 0);
+      --sidebar-foreground: oklch(0.985 0 0);
+      --sidebar-primary: oklch(0.488 0.243 264.376);
+      --sidebar-primary-foreground: oklch(0.985 0 0);
+      --sidebar-accent: oklch(0.269 0 0);
+      --sidebar-accent-foreground: oklch(0.985 0 0);
+      --sidebar-border: oklch(1 0 0 / 10%);
+      --sidebar-ring: oklch(0.439 0 0);
+    }
+    #+end_src
+  - Adding New [[id:3390a25a-e948-46a4-bce4-0daf4e77c747][Utility Classes]] in [[id:53fea805-0c99-41dd-bd98-0ae28bae9fb9][Tailwind CSS]] for use with Any Component including [[id:522853c2-b75b-4bc6-b8fa-76b03dace8ab][shadcn/ui]] Components
+    - To add new colors, you need to add them to your CSS file under the =:root= and =dark= pseudo-classes. Then, use the =@theme inline= directive to make the colors available as CSS variables.
+      app/globals.css
+      
+      #+begin_src markup
+      Copy:root {  --warning: oklch(0.84 0.16 84);  --warning-foreground: oklch(0.28 0.07 46);} .dark {  --warning: oklch(0.41 0.11 46);  --warning-foreground: oklch(0.99 0.02 95);} @theme inline {  --color-warning: var(--warning);  --color-warning-foreground: var(--warning-foreground);}
+      #+end_src
+      You can now use the =warning= utility class in your components.
+      
+      #+begin_src markup
+      Copy<div className="bg-warning text-warning-foreground" />
+      #+end_src
+  - Choosing [[id:3390a25a-e948-46a4-bce4-0daf4e77c747][Utility Classes]] or [[id:3e765a11-f9f8-4859-a37c-57f57273df8f][CSS Variables]] for use with [[id:53fea805-0c99-41dd-bd98-0ae28bae9fb9][Tailwind CSS]] and, if you'd like, [[id:522853c2-b75b-4bc6-b8fa-76b03dace8ab][shadcn/ui]]
+    - You can choose between using CSS variables (recommended) or utility classes for theming.
+      *CSS Variables*
+      
+      #+begin_src markup
+      Copy<div className="bg-background text-foreground" />
+      #+end_src
+      To use CSS variables for theming set =tailwind.cssVariables= to =true= in your =components.json= file.
+      components.json
+      
+      #+begin_src markup
+      Copy{  "style": "new-york",  "rsc": true,  "tailwind": {    "config": "",    "css": "app/globals.css",    "baseColor": "neutral",    "cssVariables": true  },  "aliases": {    "components": "@/components",    "utils": "@/lib/utils",    "ui": "@/components/ui",    "lib": "@/lib",    "hooks": "@/hooks"  },  "iconLibrary": "lucide"}
+      #+end_src
+      *Utility classes*
+      
+      #+begin_src markup
+      Copy<div className="bg-zinc-950 dark:bg-white" />
+      #+end_src
+      To use utility classes for theming set =tailwind.cssVariables= to =false= in your =components.json= file.
+      components.json
+      
+      #+begin_src markup
+      Copy{  "style": "new-york",  "rsc": true,  "tailwind": {    "config": "",    "css": "app/globals.css",    "baseColor": "neutral",    "cssVariables": false  },  "iconLibrary": "lucide",  "aliases": {    "components": "@/components",    "utils": "@/lib/utils",    "ui": "@/components/ui",    "lib": "@/lib",    "hooks": "@/hooks"  }}
+      #+end_src
+      *Convention*
+      We use a simple =background= and =foreground= convention for colors. The =background= variable is used for the background color of the component and the =foreground= variable is used for the text color.
+      The =background= suffix is omitted when the variable is used for the background color of the component.
+      Given the following CSS variables:
+      
+      #+begin_src markup
+      Copy--primary: oklch(0.205 0 0);--primary-foreground: oklch(0.985 0 0);
+      #+end_src
+      The =background= color of the following component will be =var(--primary)= and the =foreground= color will be =var(--primary-foreground)=.
+      
+      #+begin_src markup
+      Copy<div className="bg-primary text-primary-foreground">Hello</div>
+      #+end_src

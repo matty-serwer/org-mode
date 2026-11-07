@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d86ace7a-497e-418d-8122-3d98ead3814c
+:REFLECT_ID: b1d40d710cb84ece9b7cff2a6f1cde13
+:CREATED:  [2025-10-27 Mon 19:03]
+:MODIFIED: [2026-01-28 Wed 05:20]
+:END:
+#+title: Directory
+#+filetags: :concept:
+#+date: 2025-10-27
+

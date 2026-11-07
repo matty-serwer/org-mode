@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       ea0371f4-57a3-4dea-ae66-1956619c8964
+:REFLECT_ID: b7b9e26be83844a19583bbeadacd5298
+:CREATED:  [2025-11-11 Tue 10:43]
+:MODIFIED: [2025-11-25 Tue 08:10]
+:END:
+#+title: UI/UX
+#+filetags: :concept:
+#+date: 2025-11-11
+- Any Styling Of Applications
+- Related Tech

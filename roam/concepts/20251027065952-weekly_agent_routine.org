@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a5a76601-efc3-4d0b-bab8-e735c749bdfe
+:REFLECT_ID: ad4f7fbb0f31449f995ad6812f221fc1
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: Weekly Agent Routine
+#+filetags: :concept:
+#+date: 2025-10-27
+

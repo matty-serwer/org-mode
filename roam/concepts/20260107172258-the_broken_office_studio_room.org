@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a28967e9-ee4d-4d96-8d59-79c125a1f2cf
+:REFLECT_ID: 5e4f5377efff407493455987a655c753
+:CREATED:  [2026-01-07 Wed 17:22]
+:MODIFIED: [2026-01-07 Wed 17:23]
+:END:
+#+title: The broken office studio room
+#+filetags: :concept:
+#+date: 2026-01-07
+

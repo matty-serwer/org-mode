@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       deb571bd-b2f3-4e9f-84cc-09bd15523340
+:REFLECT_ID: 43f29ed60d44445c8c4c52fa7e047791
+:CREATED:  [2025-11-13 Thu 09:40]
+:MODIFIED: [2026-01-28 Wed 05:14]
+:END:
+#+title: VST3
+#+filetags: :concept:
+#+date: 2025-11-13
+

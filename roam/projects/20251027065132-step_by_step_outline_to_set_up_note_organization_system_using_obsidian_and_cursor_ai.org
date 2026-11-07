@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       e1470e87-c85a-469f-8cbf-4c283f4ad518
+:REFLECT_ID: 913e573f51944de6bd6bb6a7856045c8
+:CREATED:  [2025-10-27 Mon 06:51]
+:MODIFIED: [2025-10-27 Mon 17:22]
+:END:
+#+title: Step-by-Step Outline to Set Up Note Organization System Using Obsidian and Cursor AI
+#+filetags: :project:advanced:ai:automation:best_practices:capture:connections:knowledge_management:maintenance:migration:organization:personal_development:personal_knowledge:productivity:reflection:research:review:setup:weekly_review:workflow:
+#+date: 2025-10-27
+** Step-by-Step Outline to Set Up [[id:b028ec00-9a2b-4a1d-a7d0-4fc37af6839d][Note Organization]] System Using Obsidian and [[id:834ec03f-2b44-4eb8-884e-625e03287295][Cursor AI]]
+- *Export Notes from *[[id:28875403-21f9-46d4-b371-2610abd8612a][Apple Notes]]* to *[[id:505eb1b7-1edf-4220-a1ff-ba0fe21f04ba][Obsidian]]
+  - Use Obsidian's importer plugin to export all your Apple Notes into Obsidian as markdown files, preserving the original folder structure.
+    /00:02:47/  
+- *Set Up *[[id:834ec03f-2b44-4eb8-884e-625e03287295][Cursor AI]]* Brain*
+  - Point Cursor AI at your [[id:39b7973d-ae15-4e91-aadc-c07cd3f7d1bd][Obsidian Vault]] folder containing the markdown files.
+  - Prompt Cursor to analyze your vault structure and note-taking patterns as your knowledge management assistant.
+    /00:03:30/ /00:04:06/  
+- *Organize Un-filed Notes Using *[[id:5f14467d-7eaa-496e-8716-67699262609b][PAR Method]]
+  - Instruct [[id:834ec03f-2b44-4eb8-884e-625e03287295][Cursor AI]] to suggest where unfilled notes should go based on [[id:d10c703f-7ddf-447f-8f0a-0e08386c3c39][The PARA Method]]:
+    - [[id:d35d83af-fb98-476f-be5f-2fd0a53392d1][Projects]]: active with end dates
+    - [[id:b77ab03c-8294-4d52-b00b-bc99672fddea][Areas]]: ongoing responsibilities
+    - [[id:6839e0aa-93c0-4227-9a77-e98010e21085][Resources]]: future reference
+    - [[id:43fe0578-d8b4-43ec-87a7-f68431656f2a][Archives]]: inactive items
+  - Review AI's suggested strategies, tweak edge cases if needed, and apply the organization.
+  - This step can organize hundreds of notes in seconds
+    /00:04:33/  
+- *Build *[[id:812d0f34-2e93-43fc-b071-5ff85c334908][Knowledge Graph]]* with AI*
+  - Ask [[id:834ec03f-2b44-4eb8-884e-625e03287295][Cursor AI]] to find all potential conceptual connections between notes and create bidirectional links (not just keyword matches).
+  - The AI will generate hundreds of new connections, linking related concepts across your notes.
+    /00:05:11/ /00:05:18/  
+- *Generate Reflective Questions for Personal Growth*
+  Rolling
+  - Request AI to act as an [[id:1df8d6fa-414b-45e7-aa12-f9c645bd5ec9][Executive Coach]] and generate insightful questions based on your notes, challenges, and goals.
+  - Use these questions to reflect on your work and thinking patterns.
+    /00:06:04/  
+  - *Automate *[[id:11ea11d1-830e-4ff6-a14b-06e26c284d68][Weekly Reflection]]* Workflow*
+    - Create an [[id:d9c18f76-9621-4838-8bd7-31860728b3e9][N8N]] workflow (or similar automation) that:
+      - Sends you one reflective question every Friday afternoon via email.
+      - Includes a link to create a new note in your [[id:39b7973d-ae15-4e91-aadc-c07cd3f7d1bd][Obsidian Vault]] for your reflections.
+    - Spend 10-15 minutes reflecting and capturing your thoughts, which feed back into your knowledge system.
+      /00:06:41/  
+  - [[id:234681ac-81fd-42c0-9fb0-03969ce5ac22][Daily Note]]* Capture in Obsidian*
+    - Use a daily note template in [[id:505eb1b7-1edf-4220-a1ff-ba0fe21f04ba][Obsidian]] to capture everything each day: meeting notes, random thoughts, links, etc.
+    - Do not organize or file notes immediately; just capture all information in the daily note.
+      /00:07:17/  
+  - *Run *[[id:a5a76601-efc3-4d0b-bab8-e735c749bdfe][Weekly Agent Routine]]* (Saturday Mornings)*
+    - Spend about 15 minutes running the AI agent routine that:
+      - Files all notes from your inbox into the correct [[id:6feae3b1-3d42-45fa-bb45-d406661ec58c][PAR Method|PAR]] folders.
+      - Scans notes for action items and creates [[id:2771483a-827d-4ce3-a227-03cc3a5a9ec3][Apple Reminders]] with due dates.
+      - Extracts important knowledge snippets and files them appropriately.
+      - Generates a first draft bullet list for your weekly status report.
+        /00:07:48/ /00:08:12/  
+  - [[id:9b3eb07e-7460-459b-93d2-a39d7b32a70a][Monthly Review]]* and Archiving*
+    - Ask AI to identify thinking patterns and questions you might be avoiding.
+    - Use AI to archive completed projects and clean up your vault.
+      /00:08:39/  
+  - *Maintain Personal Voice in Note Creation*
+    - Continue writing your own notes to preserve your voice and thinking process.
+    - Use AI primarily for organizing, connecting, and reflecting, not for writing notes.
+      /00:10:36/  
+  - *Optional: Explore Advanced *[[id:d9193c15-bc82-425c-9ac5-c35b22790019][AI Agents]]* for Research*
+    - Consider expanding the system with AI agents that can autonomously research topics and add insights to your vault.
+      /00:11:40/  

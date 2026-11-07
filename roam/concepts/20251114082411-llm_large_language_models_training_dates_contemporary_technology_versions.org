@@ -1,0 +1,371 @@
+:PROPERTIES:
+:ID:       f971ee90-2383-4d27-b071-c11f183a3028
+:REFLECT_ID: 370eaa9d3a704f1ab6aed408cca56444
+:CREATED:  [2025-11-14 Fri 08:24]
+:MODIFIED: [2025-11-14 Fri 08:25]
+:END:
+#+title: LLM Large Language Models: Training Dates & Contemporary Technology Versions
+#+filetags: :concept:
+#+date: 2025-11-14
+* [[id:775bdfad-4e61-4c2a-9139-ea01f1e8514d][LLM]] Large Language Models: Training Dates & Contemporary Technology Versions
+** Anthropic
+*** Claude 4.1 Opus
+- *Training Cutoff*: March 2025
+- *Next.js*: 15.2
+- *Vite*: 6.0
+- *Angular*: 19.2
+- *Tailwind CSS*: 4.0
+- *shadcn/ui*: 2.5+
+- *Chakra UI*: 3.3
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (latest non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 4.0.0
+*** Claude 4.5 Sonnet
+- *Training Cutoff*: July 2025
+- *Next.js*: 15.4
+- *Vite*: 7.0 (beta) / 6.0 (stable)
+- *Angular*: 20.1
+- *Tailwind CSS*: 4.0
+- *shadcn/ui*: Latest (August 2025: v3.0 CLI)
+- *Chakra UI*: 3.3
+- *Java SDK*: JDK 24 / JDK 21 (LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 4.0.0
+*** Claude Haiku 4.5
+- *Training Cutoff*: February 2025
+- *Next.js*: 15.2
+- *Vite*: 6.0
+- *Angular*: 19.2
+- *Tailwind CSS*: 4.0
+- *shadcn/ui*: 2.5+
+- *Chakra UI*: 3.3
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 4.0.0
+*** Claude 3.7 Sonnet
+- *Training Cutoff*: November 2024
+- *Next.js*: 15.0
+- *Vite*: 5.4
+- *Angular*: 19.0
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 3.0 (newly released Oct 22, 2024)
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 3.9 (Maven 4.0.0 Release Candidate)
+*** Claude 3.5 Sonnet
+- *Training Cutoff*: April 2024
+- *Next.js*: 14.2
+- *Vite*: 5.1
+- *Angular*: 17.4
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 22 (non-LTS, Mar 2024)
+- *Spring Boot*: 3.2
+- *Maven*: 3.9
+-----
+
+** OpenAI
+*** GPT-5
+- *Training Cutoff*: October 2024
+- *Next.js*: 15.0 (released Oct 21, 2024)
+- *Vite*: 5.4
+- *Angular*: 18.2
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8 (v3.0 released Oct 22, 2024)
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 3.9
+*** GPT-4o
+- *Training Cutoff*: October 2023
+- *Next.js*: 14.0
+- *Vite*: 5.0
+- *Angular*: 17.0
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS, released Sept 19, 2023)
+- *Spring Boot*: 3.1
+- *Maven*: 3.9
+*** GPT-4.1
+- *Training Cutoff*: June 2024
+- *Next.js*: 14.2
+- *Vite*: 5.3
+- *Angular*: 18.1
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 22 (non-LTS)
+- *Spring Boot*: 3.3 (released May 23, 2024)
+- *Maven*: 3.9
+*** o3-mini
+- *Training Cutoff*: October 2023
+- *Next.js*: 14.0
+- *Vite*: 5.0
+- *Angular*: 17.0
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS)
+- *Spring Boot*: 3.1
+- *Maven*: 3.9
+*** gpt-oss-120B
+- *Training Cutoff*: June 2024
+- *Next.js*: 14.2
+- *Vite*: 5.3
+- *Angular*: 18.1
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 22 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 3.9
+-----
+
+** xAI (Grok)
+*** Grok 4 / 4 Heavy
+- *Training Cutoff*: December 2024 (Knowledge cutoff: November 2024)
+- *Next.js*: 15.1
+- *Vite*: 5.4
+- *Angular*: 19.0
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 3.0
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 3.9
+*** Grok 3 / 3 Mini
+- *Training Cutoff*: February 2025 (Knowledge cutoff: November 2024)
+- *Next.js*: 15.2
+- *Vite*: 6.0
+- *Angular*: 19.2
+- *Tailwind CSS*: 4.0 (released Jan 22, 2025)
+- *shadcn/ui*: 2.5+
+- *Chakra UI*: 3.3
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 4.0.0
+*** Grok 2 Image
+- *Training Cutoff*: Unknown
+- *Note*: Knowledge cutoff typically aligns with Grok family; specific version unclear
+-----
+
+** Google (Gemini)
+*** Gemini 2.5 Pro
+- *Training Cutoff*: January 2025
+- *Next.js*: 15.0-15.1
+- *Vite*: 6.0
+- *Angular*: 19.1
+- *Tailwind CSS*: 4.0 (released Jan 22, 2025)
+- *shadcn/ui*: 2.0+ (January 2025 blocks released)
+- *Chakra UI*: 3.3
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 4.0.0
+*** Gemini 2.0 Flash / Pro
+- *Training Cutoff*: August 2024
+- *Next.js*: 15.0 (beta prep/early stage)
+- *Vite*: 5.4
+- *Angular*: 18.2
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 3.9
+*** Gemini 1.5 Pro
+- *Training Cutoff*: May 2024
+- *Next.js*: 14.2
+- *Vite*: 5.3
+- *Angular*: 18.0
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 22 (non-LTS)
+- *Spring Boot*: 3.3 (released May 23, 2024)
+- *Maven*: 3.9
+-----
+
+** Alibaba (Qwen)
+*** Qwen 3-235B-2507
+- *Training Cutoff*: May 2025
+- *Next.js*: 15.3
+- *Vite*: 6.0+
+- *Angular*: 20.0 (released May 2025)
+- *Tailwind CSS*: 4.0
+- *shadcn/ui*: Latest (May 2025)
+- *Chakra UI*: 3.3
+- *Java SDK*: JDK 24 / JDK 21 (LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 4.0.0
+*** Qwen 2.5
+- *Training Cutoff*: Mid 2024 (October 2023 - June 2024 range)
+- *Next.js*: 14.2
+- *Vite*: 5.3
+- *Angular*: 18.0-18.1
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 22 (non-LTS)
+- *Spring Boot*: 3.2-3.3
+- *Maven*: 3.9
+-----
+
+** Meta (Llama)
+*** Llama 4 Scout
+- *Training Cutoff*: August 2024
+- *Next.js*: 15.0 (beta prep)
+- *Vite*: 5.4
+- *Angular*: 18.2
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 3.9
+*** Llama 3.1
+- *Training Cutoff*: December 2023
+- *Next.js*: 14.1
+- *Vite*: 5.1
+- *Angular*: 17.1
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS)
+- *Spring Boot*: 3.2
+- *Maven*: 3.9
+-----
+
+** DeepSeek
+*** DeepSeek V3
+- *Training Cutoff*: July 2024 (Knowledge cutoff October 2023, but v3.1 later)
+- *Next.js*: 14.2-15.0 (depending on which version reference)
+- *Vite*: 5.3-5.4
+- *Angular*: 18.1
+- *Tailwind CSS*: 3.4
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS) / JDK 23 (non-LTS)
+- *Spring Boot*: 3.3
+- *Maven*: 3.9
+*** DeepSeek R1
+- *Training Cutoff*: October 2023 (Knowledge cutoff: October 2023)
+- *Next.js*: 14.0
+- *Vite*: 5.0
+- *Angular*: 17.0
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS)
+- *Spring Boot*: 3.1
+- *Maven*: 3.9
+-----
+
+** Mistral
+*** Mixtral Large 2
+- *Training Cutoff*: January 2024
+- *Next.js*: 14.1
+- *Vite*: 5.1
+- *Angular*: 17.1
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS)
+- *Spring Boot*: 3.2
+- *Maven*: 3.9
+-----
+
+** Microsoft
+*** Phi-3 Mini
+- *Training Cutoff*: October 2023
+- *Next.js*: 14.0
+- *Vite*: 5.0
+- *Angular*: 17.0
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS)
+- *Spring Boot*: 3.1
+- *Maven*: 3.9
+*** Phi-3 Medium
+- *Training Cutoff*: October 2023
+- *Next.js*: 14.0
+- *Vite*: 5.0
+- *Angular*: 17.0
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS)
+- *Spring Boot*: 3.1
+- *Maven*: 3.9
+-----
+
+** Databricks
+*** DBRX
+- *Training Cutoff*: December 2023
+- *Next.js*: 14.1
+- *Vite*: 5.1
+- *Angular*: 17.1
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 2.0
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 21 (LTS)
+- *Spring Boot*: 3.2
+- *Maven*: 3.9
+-----
+
+** Falcon (TII - Technology Innovation Institute)
+*** Falcon 180B
+- *Training Cutoff*: Pre-September 2023 (exact date not officially disclosed)
+- *Next.js*: 13.4 (stable) / 14.0 (early release prep)
+- *Vite*: 4.4-5.0
+- *Angular*: 16.2
+- *Tailwind CSS*: 3.3
+- *shadcn/ui*: 1.6 (early)
+- *Chakra UI*: 2.8
+- *Java SDK*: JDK 20 (released Mar 2023) / JDK 21 (LTS - Sept 2023)
+- *Spring Boot*: 3.1
+- *Maven*: 3.9
+-----
+
+** Key Notes
+*** Java SDK Notes
+- *Most Popular in 2023-2024*: JDK 21 (LTS released September 19, 2023)
+- *Current Standard for New Projects*: JDK 21 (LTS) recommended
+- *Latest Non-LTS*: JDK 23 (September 2024), JDK 24 (March 2025)
+- *Next LTS*: JDK 25 (expected September 2025)
+*** Spring Boot Notes
+- Spring Boot 3.3 (released May 23, 2024) is the stable version for most 2024 training dates
+- Spring Boot 3.4 expected November 2024
+- Spring Boot 3.2 was the previous stable for early 2024 dates
+*** Maven Notes
+- Maven 3.9.x is the standard for models trained through 2024
+- *Apache Maven 4.0.0* released December 2024
+- Maven 4.0.0 requires Java 17+ to run Maven
+- Available by end of 2024, became mainstream in early 2025
+*** Tailwind CSS Notes
+- *Tailwind CSS v4.0* released January 22, 2025 - significant update
+- v3.4 was the stable version through most of 2024
+- /Note: Models trained before Jan 22, 2025 would not have awareness of v4.0/
+*** Angular Notes
+- Major version releases typically occur May and November each year
+- Angular 20.0 expected May 2025
+- Angular 19.0 released November 2024
+*** Next.js Notes
+- Major versions released approximately twice yearly
+- Version 15.0 released October 21, 2024
+- Version 16.0 expected October 2025
+*** Vite Notes
+- *Vite 7.0* released June 24, 2025
+- Vite 6.0 was the major release before that
+- Version 5.4 was stable through 2024
+*** shadcn/ui Notes
+- *shadcn CLI 3.0* released August 2025
+- v2.x series was standard through most of 2024-2025
+- New components released regularly throughout 2025
+*** Chakra UI Notes
+- *Chakra UI v3.0* released October 22, 2024 (complete rewrite)
+- v2.8 was the standard through 2024
+- /Note: Asterisk/ - Models trained before Oct 22 would have limited awareness of v3.0

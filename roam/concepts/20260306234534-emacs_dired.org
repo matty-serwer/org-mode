@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8489bf84-66fa-449f-81b2-fd16927c99aa
+:REFLECT_ID: 1a90ed0a7c1c41bca0a45e1b5c5fc670
+:CREATED:  [2026-03-06 Fri 23:45]
+:MODIFIED: [2026-03-06 Fri 23:45]
+:END:
+#+title: Emacs Dired
+#+filetags: :concept:
+#+date: 2026-03-06
+

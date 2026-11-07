@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       446e09da-6a91-4ae5-a217-0ab3b9cf35fe
+:REFLECT_ID: 6964d24519a94940994442d46982da71
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-11-29 Sat 15:10]
+:END:
+#+title: buffers
+#+filetags: :concept:
+#+date: 2025-10-25
+

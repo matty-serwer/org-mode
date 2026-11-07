@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e9cec46c-1f9c-4fa3-8fca-27d7caeadb33
+:REFLECT_ID: fe07d2536cf34c4e8c9788e7ecba43ab
+:CREATED:  [2026-01-15 Thu 18:59]
+:MODIFIED: [2026-01-15 Thu 18:59]
+:END:
+#+title: Tech Resume
+#+filetags: :concept:
+#+date: 2026-01-15
+

@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       769aca19-122f-4447-be44-c25b8581c50e
+:REFLECT_ID: 5c622ec3acbb4a31b461f5c60559be2a
+:CREATED:  [2025-10-26 Sun 07:40]
+:MODIFIED: [2025-10-30 Thu 17:51]
+:END:
+#+title: 🍰 SnipFlow - Snippet Manager CLI Quick Reference
+#+filetags: :project:
+#+date: 2025-10-26
+* [[id:9aca374d-a41f-4d13-9de6-3a3a3350aac6][🍰 SnipFlow]] - Snippet Manager CLI Quick Reference
+** Setup Summary
+- *Location:* =~/snippets/=
+- *Command:* =snip [search]=
+- *Script:* =~/snippets/snip= (fzf-powered search)
+- *Categories:* javascript, typescript, python, java, react, vue, nextjs, express, django, flask, components, datasets, sql, shell, git, docker
+** Terminal Usage
+*** Basic Commands
+- =snip= - Browse all snippets with fzf
+- =snip react= - Search for snippets matching "react"
+- =snip hook= - Fuzzy search for "hook"
+- =snippets= - Navigate to ~/snippets directory
+*** fzf Navigation (inside snip)
+- *Arrow keys* - Move up/down through results
+- *Enter* - Copy selected snippet to clipboard
+- *Ctrl-E* - Edit snippet in $EDITOR
+- *Ctrl-O* - Open snippet directory in Finder
+- *ESC* - Cancel and exit
+*** fzf Search Operators (type in search box)
+- ='term= - Exact match (e.g., ='useState=)
+- =^prefix= - Must start with (e.g., =^react/=)
+- =suffix$= - Must end with (e.g., =.tsx$=)
+- =!term= - Exclude (e.g., =!python=)
+- =term1 | term2= - OR operator (e.g., =react | vue=)
+- =term1 term2= - AND operator (e.g., =react hook=)
+*** Search Examples
+- =snip ary= - Finds "array-methods.js" (fuzzy)
+- =snip react hook= - React files containing "hook"
+- =snip !python= - Everything except Python
+- =snip .tsx$= - Only TypeScript React files
+- =snip middleware | route= - Express middleware or routes
+** LazyVim Integration
+*** Keybindings (Space = <leader>)
+- *Space + c + s* - Open snippet picker in split (recommended)
+  - Full fzf interface with preview
+  - Select → copies to clipboard → paste with =p=
+- *Space + c + Shift-S* - Insert snippet at cursor
+  - Prompts for search term
+  - Inserts directly without opening split
+- *Space + c + d* - Change directory to ~/snippets
+  - Useful for editing/adding snippets
+*** Workflows in nvim
+1. *Browse & paste:* =Space-c-s= → search → Enter → =:q= → =p=
+1. *Quick insert:* =Space-c-S= → type search → Enter
+1. *Edit snippets:* =Space-c-d= → =:e category/file.ext= → edit → =:w=
+*** Tips
+- Press =Space-c= and wait to see WhichKey menu
+- Use visual mode paste: =V= then =p= after copying
+- Telescope alternative: =:Telescope find_files cwd=~/snippets=
+- Customize: Edit =~/.config/nvim/lua/plugins/snippets.lua=
+** Git Sync
+*** Initial Setup on New Machine
+#+begin_src bash
+git clone https://github.com/matty-serwer/para-snips ~/snippets
+chmod +x ~/snippets/snip
+echo 'export PATH="$HOME/snippets:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+#+end_src

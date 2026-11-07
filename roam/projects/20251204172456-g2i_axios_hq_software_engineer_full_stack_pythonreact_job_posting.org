@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       27751bc3-fd60-4fc1-b8da-caed9b760e73
+:REFLECT_ID: 2a3161fd66ab4a1c99b854f3059f4611
+:CREATED:  [2025-12-04 Thu 17:24]
+:MODIFIED: [2025-12-08 Mon 20:41]
+:END:
+#+title: G2i Axios HQ Software Engineer (Full-stack) - Python/React
+#+filetags: :project:job_posting:
+#+date: 2025-12-04
+* [[id:3a437311-36ab-49f4-b271-752efe0809a3][G2i]] [[id:281c7d72-eab3-4418-b6c0-c196cafdd10d][Axios HQ]] Software Engineer (Full-stack) - Python/React
+- Type: 
+  - #career 
+- Title: Software Engineer (Full-stack) - Python/React
+- Company: [[id:281c7d72-eab3-4418-b6c0-c196cafdd10d][Axios HQ]] ?
+- Link: [[https://jobs.ashbyhq.com/g2i/a53e5a49-6828-43dd-b49d-ecf11bb834d3][https://jobs.ashbyhq.com/g2i/a53e5a49-6828-43dd-b49d-ecf11bb834d3]]
+- Application Date: [[id:560b5458-ed3a-451c-88a7-bb155f8d1aef][12/4/2025]]
+- Status:
+- Posting:
+  - *Software Engineer (Full-stack)*
+    *1 big thing*: Axios HQ is an AI-powered software that helps organizations of all sizes plan, write, and send essential comms that boost trust, transparency , and alignment. Learn more about Axios
+    *Why it matters*: You’ll design and ship LLM-powered features that change how teams
+    communicate—building agentic tools, smarter workflows, and delightful UI that thousands rely on. You’ll work across the stack (Python/TypeScript/React) and shape our AI strategy alongside product and design.
+    *Go deeper*: In this role, you will make an impact to Axios HQ through the following responsibilities:
+    Framework)
+    *The details*: Ideal candidates will embody an entrepreneurial spirit and passion for Axios HQ’s mission and values - raise the bar , stay curious, be inclusive, always, and champion each other - and have the following skills/experience:
+    *Equal Opportunity Employer Statement*
+    Axios HQ is an equal opportunity employer that is committed to diversity and inclusion in the
+    workplace. We prohibit discrimination and harassment of any kind based on race, color , sex, religion, sexual orientation, age, gender identity, gender expression, veteran status, nationalorigin, disability, genetic information, pregnancy, or any other protected characteristic as outlined by federal, state, or local laws.
+    This policy applies to all employment practices within our organization, including hiring,
+    recruiting, promotion, termination, layoff, recall, leave of absence, compensation, benefits,
+    training, and apprenticeship. Axios HQ makes hiring decisions based solely on qualifications,
+    merit, and business needs at the time.
+    - Build and evolve our flagship Axios HQ product end-to-end
+    - Ship clean, well-tested code and iterate quickly with product/design
+    - Design, deploy , and operate LLM/agent applications (RAG, semantic chunking)
+    - Integrate models via AWS Bedrock, Azure OpenAI, Vertex AI, etc.
+    - Deliver production-ready UIs and APIs (React + TypeScript, FastAPI/Django Rest
+    - Apply LLMOps best practices (versioning, evals, monitoring, cost control)
+    - 5+ years of software engineering, including 1–2 years building LLM/GenAI features
+    - Strong in Python and TypeScript; comfortable full-stack.
+    - Excels in applying AI-aided development practices in development workflows.
+    - Experience with LangChain (or similar) and vector DBs (FAISS/Pinecone/pgvector)
+    - Solid REST API chops (FastAPI/Flask) and modern frontend (React + TS)
+    - Familiar with AI evaluation (RAGAS/DeepEval/FMeval) and data pipelines
+    - Experience building data pipelines.

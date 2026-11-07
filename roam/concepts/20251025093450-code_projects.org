@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f2b909aa-190a-47d2-92f4-089f6da157ca
+:REFLECT_ID: 00faa2aaf85648bba02fc6330fc74de6
+:CREATED:  [2025-10-25 Sat 09:34]
+:MODIFIED: [2025-10-25 Sat 09:34]
+:END:
+#+title: Code Projects
+#+filetags: :concept:
+#+date: 2025-10-25
+

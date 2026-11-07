@@ -1,0 +1,138 @@
+:PROPERTIES:
+:ID:       c00590b0-b41e-41d9-9734-7a15d15e4172
+:REFLECT_ID: link-12a341b39516acf36da8126a0a895dfb1efad289b7dba8022ffeef9184b25831
+:CREATED:  [2025-10-25 Sat 09:10]
+:MODIFIED: [2026-01-28 Wed 05:04]
+:END:
+#+title: 💾 💥 Doom Emacs Keybinding Cheat Sheet
+#+filetags: :project:
+#+date: 2025-10-25
+* 💾 💥 [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Keybinding Cheat Sheet
+** General
+- =SPC .= - Find file
+- =SPC ,= - Find buffer
+- =SPC := - M-x
+- =SPC ;= - Comment/uncomment
+- =SPC <= - Switch buffer
+- =SPC q q= - Quit Emacs
+- =SPC f s= - Save file
+- =SPC f S= - Save all files
+- =SPC f f= - Find file
+- =SPC f r= - Recent files
+- =SPC TAB= - Last buffer
+** Search
+- =SPC /= - Search project down
+- =SPC ?= - Search project up
+- =n= - Select next match
+- =N= - Select previous match
+- =SPC s s= - Search buffer
+- =SPC s p= - Search project
+- =SPC s d= - Search directory
+- =SPC s b= - Search all open buffers
+** Text Editor Navigation
+- =h= - Move left one character
+- =j= - Move down one line
+- =k= - Move up one line
+- =l= - Move right one character
+- =w= - Jump to next word start
+- =b= - Jump to previous word start
+- =e= - Jump to next word end
+- =0= or =Home= - Jump to line start
+- =$= or =End= - Jump to line end
+- =gg= - Jump to file top
+- =G= - Jump to file bottom
+- =/= or =?= - Incremental search forward/backward
+- =n= - Next search match
+- =N= - Previous search match
+- =SPC /= - Buffer or project search
+** Editing
+- =i= - Enter insert mode before cursor
+- =a= - Enter insert mode after cursor
+- =o= - New line below in insert
+- =O= - New line above in insert
+- =Esc= or =Ctrl-c= - Back to normal mode
+- =x= - Delete character under cursor
+- =dd= - Delete current line
+- =yy= - Yank (copy) current line
+- =p= - Paste after cursor
+- =u= - Undo
+- =Ctrl-r= - Redo
+- =dw= - Delete to word end
+- =cw= - Change to word end
+- =~= - Toggle case under cursor
+- =S= - Surround character with quotes/brackets
+- =SPC c d= - Delete trailing whitespace
+- =SPC c r= - Replace text
+- =SPC c f= - Format buffer/region
+- =SPC c w= - Count words
+** Visual Selection
+- =v= - Visual select characters
+- =V= - Visual select lines
+- =Ctrl-v= - Visual block select
+- =o= - Flip selection ends
+- =gc= - Comment selected lines
+- =~= - Toggle case in selection
+** File Explorer Navigation
+- =SPC o p=: Toggle [[id:26b60faa-68c9-469e-a596-79e5136bf998][Treemacs]] sidebar explorer
+- =SPC o n=: Toggle [[id:7de4b070-339e-4837-bb5b-0c658a2d1c0a][Neotree]] alternative explorer (if enabled)
+- =h/j/k/l= (in explorer): Move up/down/left/right through files/folders
+- =Enter=: Open selected file in current window
+- =-=: Go up one directory level
+** Windows
+- =SPC w v= - Split vertically
+- =SPC w s= - Split horizontally
+- =SPC w w= - Switch windows / Cycle windows
+- =SPC w c= - Close window
+- =SPC w m= - Maximize window
+- =SPC w == - Balance window
+- =SPC w h= - Move focus left (to explorer if adjacent)
+- =SPC w j= - Move focus down
+- =SPC w k= - Move focus up
+- =SPC w l= - Move focus right
+- =SPC w /= - Ace-window to select any window by number
+- =SPC w H/J/K/L= - Move current window in that direction
+- =SPC w q= - Close current window
+- =SPC w o= - Close other windows (focus one)
+- =SPC w == - Balance all windows evenly
+** Buffers
+- =SPC b k= - Kill buffer
+- =SPC b K= - Kill all buffers
+- =SPC b s= - Save buffer
+- =SPC b S= - Save all buffers
+- =SPC b N= - New empty buffer
+- =SPC b p= - Previous buffer
+- =SPC b n= - Next buffer
+- =SPC b b= - Switch buffer
+** Files
+- =SPC f f= - Open file
+- =SPC f s= - Save file
+- =SPC SPC= - Fuzzy find file in project
+- =SPC o p= - Toggle file explorer
+- =SPC f r= - Recent files
+** Projects
+- =SPC p p= - Switch project
+- =SPC p f= - Find file in project
+- =SPC p d= - Find directory in project
+- =SPC p b= - Switch to project buffer
+- =SPC p r= - Recent files in project
+** Help
+- =SPC h k= - Describe key
+- =SPC h f= - Describe function
+- =SPC h v= - Describe variable
+- =SPC h m= - Describe mode
+** Git
+- =SPC g g= - Magit status
+- =SPC g b= - Git blame
+- =SPC g t= - Git time machine
+- =SPC g s= - Git stage hunk
+- =SPC g S= - Git stage file
+** Org Mode
+- =SPC m l= - Org store link
+- =SPC m a= - Org agenda
+- =SPC m t= - Org todo
+- =SPC m c= - Org capture
+- =SPC m e= - Org export
+** Special
+- =SPC o E= - Fullscreen shell
+- =SPC o e= - Popup shell
+- =SPC := - Run Emacs command

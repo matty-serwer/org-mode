@@ -1,0 +1,62 @@
+:PROPERTIES:
+:ID:       f5c88680-5509-42dc-bef9-bd8705c9313b
+:REFLECT_ID: c8e9428f88c049dfb96e9cceed2dbfae
+:CREATED:  [2025-11-25 Tue 18:27]
+:MODIFIED: [2025-11-25 Tue 18:32]
+:END:
+#+title: Ableton 12 MIDI Tools
+#+filetags: :concept:
+#+date: 2025-11-25
+*MIDI Generators*
+- *Rhythm*
+-
+  - Generates a note pattern according to set parameters, repeated to fill a given time selection.
+- *Seed*
+-
+  - Randomly generates notes within specified pitch, length, and velocity ranges, with controls for the number of simultaneous notes and overall note count.
+- *Shape*
+-
+  - Generates a sequence of notes within a range of pitches, distributed following a user-defined shape in the tool’s display.
+- *Stacks*
+-
+  - Adds individual chords or creates chord progressions within a selected scale, filling the time selection or loop length.
+- *Euclidean*
+-
+  - Generates notes based on Euclidean rhythms for up to four voices at a time, within the time selection or loop.
+*MIDI Transformations*
+- *Arpeggiate*
+-
+  - Splits selected notes into arpeggiated notes based on chosen pattern settings, using transposition, steps, rate, and gate controls.
+- *Chop*
+-
+  - Divides selected MIDI notes into up to 64 parts, allowing custom patterns with gaps, emphasis, and random variation in start and end times.
+- *Connect*
+-
+  - Generates new notes to fill gaps between existing notes, with randomized placement controlled by spread, density, rate, and tie parameters.
+- *Glissando*
+-
+  - An MPE tool that connects the pitch of one note to the next along a pitch bend curve, tying them together with adjustable start and curve parameters.
+- *LFO*
+-
+  - An MPE tool that modulates pitch bend, slide, or pressure using a low-frequency oscillator with customizable shape, rate, and amplitude.
+- *Ornament*
+-
+  - Adds flam or grace notes to the beginning of selected notes, with controls for position, velocity, pitch, and chance.
+- *Quantize*
+-
+  - Adjusts the timing of selected notes by moving or stretching them according to specified quantization settings, including grid size or meter values.
+- *Recombine*
+-
+  - Rearranges note parameters (position, pitch, duration, velocity) across a selection using shuffle, mirror, or rotate modes.
+- *Span*
+-
+  - Transforms note durations using legato, tenuto, or staccato articulations, with offset and variation for added control.
+- *Strum*
+-
+  - Adjusts the start times of notes in a chord following a shape defined by strum low, strum high, and tension parameters.
+- *Time Warp*
+-
+  - Transforms selected notes according to a speed curve, enabling tempo variations like accelerando or ritardando.
+- *Velocity Shaper*
+-
+  - A Max for Live tool that shapes the velocities of selected notes using an adjustable envelope with minimum, maximum, loop, and rotate controls.

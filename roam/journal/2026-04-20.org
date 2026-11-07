@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       9732297a-d000-4b9b-98b3-64a9469b5e3e
+:REFLECT_ID: 20042026
+:CREATED:  [2026-04-18 Sat 03:00]
+:MODIFIED: [2026-04-21 Tue 03:55]
+:END:
+#+title: Mon, April 20th, 2026
+#+filetags: :daily:
+#+date: 2026-04-18
+- [[id:5c509ccf-d6a6-4092-8cbf-47718db0e386][Firefox Browser]]
+  - [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]]
+    - *⇧🌐⌃⌥⌘*
+    - *⌃ Z - *Show Sidebar (Tabs)
+    - *⌃ TAB - *Select next tab
+    - *⌃⇧ TAB - *Select previous tab

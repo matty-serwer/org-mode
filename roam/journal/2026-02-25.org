@@ -1,0 +1,109 @@
+:PROPERTIES:
+:ID:       654a6cd0-f7bd-41a7-9059-0ac88046b655
+:REFLECT_ID: 25022026
+:CREATED:  [2026-02-25 Wed 21:30]
+:MODIFIED: [2026-03-17 Tue 06:08]
+:END:
+#+title: Wed, February 25th, 2026
+#+filetags: :daily:
+#+date: 2026-02-25
+- [[id:88abc970-d31a-47f8-b6fc-6319a0d166df][Yellow 4 Dial Pad Lock]]
+  - I set the code to the Darius Number
+- Claudesidian Setup Checklist
+  Phase 1 — Prerequisites
+  -----
+  
+  Phase 2 — Get the Vault
+  
+  #+begin_src markup
+  git clone https://github.com/heyitsnoah/claudesidian.git my-vault
+  cd my-vault
+  
+  #+end_src
+  -----
+  
+  Phase 3 — Run the Setup Wizard
+  -----
+  
+  Phase 4 — Add the Index Files
+  /This is the Michael Crist addition — one line in /[[CLAUDE.md][/CLAUDE.md/]]/ plus an index in each folder./
+  
+  #+begin_src markup
+  Read the relevant folder's index.md before working on anything in it.
+  Update index.md whenever you create or delete a file in that folder.
+  
+  #+end_src
+  Don't overthink the content — something like =# Projects — Active, time-bound work= is enough. Claude will build on it.
+  -----
+  
+  Phase 5 — Add the Note Organizer
+  
+  #+begin_src markdown
+  # Note Organizer
+  
+  You are a vault hygiene agent. When invoked, do the following:
+  
+  ## Step 1 — Find duplicates
+  Search the vault for notes that cover the same topic.
+  Look for:
+  - Near-identical titles
+  - Notes with heavily overlapping content
+  - Multiple notes that should clearly be one note
+  
+  List what you find and ask me which ones to consolidate before touching anything.
+  
+  ## Step 2 — Consolidate (only after my approval)
+  For each approved consolidation:
+  - Merge content from both notes, removing redundancy
+  - Preserve any unique information from each
+  - Update all [[wikilinks]] in the vault that pointed to the old note
+  - Move the old note to 04_Archive/ rather than deleting it
+  
+  ## Step 3 — Report
+  Tell me what was merged, what was archived, and what links were updated.
+  
+  ## Rules
+  - Never delete a note — archive it instead
+  - Always ask before consolidating
+  - Never combine notes from different domains without asking
+  
+  #+end_src
+  -----
+  
+  Phase 6 — First Real Session
+  -----
+  
+  Optional Later Additions
+  -----
+  
+  That's it. The whole thing should take under an hour, and Phase 4 and 5 are maybe 10 minutes combined. Once you've run a few sessions and know what's missing, that's the right time to bring in anything from C-Note.
+  - [X] Install [[https://obsidian.md/][Obsidian]] if you haven't already
+  - [X] Install [[https://claude.ai/code][Claude Code]] (=npm install -g @anthropic/claude-code=)
+  - [X] Install [[https://nodejs.org/][Node.js]] (LTS version) if not already installed
+  - [X] Make sure =git= is available in your terminal (=git --version=)
+  - [X] Open Terminal, navigate to where you want your vault to live
+  - [X] Clone it with your preferred folder name:
+  - [X] Open Obsidian → Open Folder as Vault → select that folder
+  - [X] In Terminal, inside the vault folder, run: =claude=
+  - [X] Once Claude Code is running, type: =/init-bootstrap=
+  - [X] Follow the wizard — it will ask about your workflow, name, and preferences
+  - [X] Let it disconnect from Noah's repo and personalize to you /(this is what makes it yours)/
+  - [ ] When asked, say yes to Git initialization
+  - [ ] Skip Gemini Vision and Firecrawl for now — you can add those later
+  - [ ] Open [[CLAUDE.md][CLAUDE.md]] in your vault root and add this rule:
+  - [ ] Create a simple =index.md= in each of these folders with just a one-line description:
+    - =00_Inbox/index.md=
+    - =01_Projects/index.md=
+    - =02_Areas/index.md=
+    - =03_Resources/index.md=
+    - =04_Archive/index.md=
+  - [ ] Create this file: =.claude/commands/note-organizer.md=
+  - [ ] Paste this content into it:
+  - [ ] Verify it's there by running =/note-organizer= in Claude Code — it should respond
+  - [ ] Run =/daily-review= or =/thinking-partner= to make sure commands are working
+  - [ ] Drop a few rough notes into =00_Inbox/= and ask Claude to file them
+  - [ ] Run =/note-organizer= if you have anything to clean up
+  - Gemini Vision API key (for image/PDF analysis in vault)
+  - Firecrawl API key (for full web page capture)
+  - Shell alias via =/install-claudesidian-command= (launch vault from anywhere in Terminal)
+  - Mobile access via Tailscale + SSH

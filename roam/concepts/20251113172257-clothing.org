@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6e1bcba8-2b7d-48e2-b632-9cb6d9a41ef9
+:REFLECT_ID: 5dafb38df0874501aa3983a98f0e0a70
+:CREATED:  [2025-11-13 Thu 17:22]
+:MODIFIED: [2026-04-03 Fri 16:40]
+:END:
+#+title: Clothing
+#+filetags: :concept:
+#+date: 2025-11-13
+

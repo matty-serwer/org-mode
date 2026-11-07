@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       68e2e6dc-fe95-43c0-8116-d22194f7e8a0
+:REFLECT_ID: 97708e59997c4a1cadbae547111920d5
+:CREATED:  [2026-02-08 Sun 16:20]
+:MODIFIED: [2026-02-08 Sun 16:20]
+:END:
+#+title: The Smashing Pumpkins
+#+filetags: :concept:
+#+date: 2026-02-08
+

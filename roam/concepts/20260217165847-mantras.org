@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ac8335fc-f41f-43f3-9ed4-20c1629f47dd
+:REFLECT_ID: 3118d83e41c449b1bfcdcdbc77a24e93
+:CREATED:  [2026-02-17 Tue 16:58]
+:MODIFIED: [2026-02-17 Tue 16:58]
+:END:
+#+title: Mantras
+#+filetags: :concept:
+#+date: 2026-02-17
+

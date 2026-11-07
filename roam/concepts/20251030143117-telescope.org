@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       54afa4b5-c138-4c24-ad34-39f7e42fc94e
+:REFLECT_ID: e6de16632e7d42498d55a85d7faa2b2b
+:CREATED:  [2025-10-30 Thu 14:31]
+:MODIFIED: [2025-10-30 Thu 14:34]
+:END:
+#+title: Telescope
+#+filetags: :concept:plugin:
+#+date: 2025-10-30
+Type:  
+Plugin Category: [[id:6c704288-9dda-4cea-9c8e-01a9a794de22][File Search]], [[id:3b4b2f66-4064-4ffe-af6a-ef500dbc370b][Fuzzy Finder]]
+Host Application: [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]]

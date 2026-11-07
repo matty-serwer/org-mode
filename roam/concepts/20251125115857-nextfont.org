@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9bab1e2b-efbb-4d39-aaaf-884f076bdcb1
+:REFLECT_ID: 213bf2ba165d49778b764c01350a8521
+:CREATED:  [2025-11-25 Tue 11:58]
+:MODIFIED: [2025-11-25 Tue 11:59]
+:END:
+#+title: next/font
+#+filetags: :concept:
+#+date: 2025-11-25
+

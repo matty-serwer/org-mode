@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       61a6c52f-b9c9-431a-8be1-0bb098c6a056
+:REFLECT_ID: f8646ae8f2c4446da6b13d6e8c6c4cc4
+:CREATED:  [2026-01-14 Wed 15:34]
+:MODIFIED: [2026-01-14 Wed 15:39]
+:END:
+#+title: Crisis Intervention Councelor Video Notes
+#+filetags: :concept:
+#+date: 2026-01-14
+[[https://www.youtube-nocookie.com/embed/UHms8GYLfn8][youtube: https://www.youtube-nocookie.com/embed/UHms8GYLfn8]]
+- Define Crisis
+  - person facing untenable goals, life is disrupted
+  - person has no approppriate response
+  - don't assume crisis are the same
+- Temperment
+  - Extrovert / introvert
+  - Sensing / INtuitive
+  - Th.......

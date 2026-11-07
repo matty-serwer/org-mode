@@ -1,0 +1,77 @@
+:PROPERTIES:
+:ID:       f0791caf-f65c-4189-96ca-da0e7d7dd2b4
+:REFLECT_ID: b3b4ea47dff944d7b59e96d6491e4b75
+:CREATED:  [2025-12-17 Wed 15:45]
+:MODIFIED: [2025-12-17 Wed 15:47]
+:END:
+#+title: Helm
+#+filetags: :project:application:
+#+date: 2025-12-17
+- Type:  
+- Description: [[id:da2b4371-64cb-4a46-bf27-deb8f15281b4][Emacs]] incremental completion and selection narrowing framework
+- Documents Location: [[https://emacs-helm.github.io/helm/][https://emacs-helm.github.io/helm/]]
+- Successful config
+  - Helm is already configured to auto-resize in your config, but one line is wrong: =helm-autoresize-mode= is a minor mode and must be /enabled/, not set with =setq=. Once that is fixed, you can control the height as a percentage of the frame.
+    Fix autoresize so Helm gets taller
+    In your config you have:
+    
+    #+begin_src elisp
+    (after! helm
+      (setq helm-autoresize-mode t)
+      (setq helm-autoresize-min-height 35)
+      (setq helm-autoresize-max-height 50))
+    #+end_src
+    Change that to:
+    
+    #+begin_src elisp
+    (after! helm
+      (helm-autoresize-mode 1)       ;; enable the mode
+      (setq helm-autoresize-min-height 30   ;; min 30% of frame height (tweak to taste)
+            helm-autoresize-max-height 60)) ;; max 60% of frame height
+    #+end_src
+    =helm-autoresize-min-height= and =helm-autoresize-max-height= are percentages of the current frame height, so larger numbers make the Helm window taller. Setting them equal (e.g. both 40) forces a fixed height. [1][2][3]
+    Centering / “modal” Helm window in Doom
+    Doom’s =:ui popup= module controls how special windows (including Helm) are displayed. You can make Helm appear as a “centered” popup by adding a popup rule:
+    
+    #+begin_src elisp
+    (after! helm
+      (set-popup-rule! "^\\*helm"           ;; match Helm buffers
+        :side 'bottom                       ;; use bottom or 'center if you prefer
+        :size 0.4                           ;; 40% of frame (works with autoresize)
+        :select t
+        :quit t
+        :modeline t))
+    #+end_src
+    If you really want a centered, small “modal” window, use =:side 'center= and a smaller =:size= (e.g. =0.3=), then adjust =helm-autoresize-min-height=/=max-height= to keep it within that space. Doom’s popup docs describe these options (=SIDE=, =SIZE=, =HEIGHT=, etc.). [4]
+    Using Helm for =SPC f f= in Doom
+    By default, modern Doom uses Vertico (or Ivy, depending on modules), not Helm, so =SPC f f= is likely /not/ going through Helm unless you enabled =:completion helm=. To get a consistent Helm experience:
+    
+    #+begin_src elisp
+    (map! :leader
+          :desc "Find file (Helm)"
+          "f f" #'helm-find-files)
+    #+end_src
+    That way the same Helm configuration (autoresize, popup rule) applies to =SPC f f= as to =C-x C-f=. [5][6]
+    Sources
+    [1] A Package in a league of its own: Helm [[https://tuhdo.github.io/helm-intro.html][https://tuhdo.github.io/helm-intro.html]]
+    [2] Helm now has autoresize mode : r/emacs - Reddit [[https://www.reddit.com/r/emacs/comments/2rdcxd/helm_now_has_autoresize_mode/][https://www.reddit.com/r/emacs/comments/2rdcxd/helm_now_has_autoresize_mode/]]
+    [3] EOS: Helm Module [[https://writequit.org/eos/eos-helm.html][https://writequit.org/eos/eos-helm.html]]
+    [4] :ui popup - Doom Emacs v21.12 documentation [[https://docs.doomemacs.org/v21.12/modules/ui/popup/][https://docs.doomemacs.org/v21.12/modules/ui/popup/]]
+    [5] Why Doom Emacs - Practicalli [[https://practical.li/doom-emacs/introduction/why-doom-emacs/][https://practical.li/doom-emacs/introduction/why-doom-emacs/]]
+    [6] :completion helm - Doom Emacs v21.12 documentation [[https://docs.doomemacs.org/v21.12/modules/completion/helm/][https://docs.doomemacs.org/v21.12/modules/completion/helm/]]
+    [7] Height of helm window not fixed at beginning · Issue #1321 - GitHub [[https://github.com/emacs-helm/helm/issues/1321][https://github.com/emacs-helm/helm/issues/1321]]
+    [8] Autoresize Helm · Issue #791 · emacs-helm/helm - GitHub [[https://github.com/emacs-helm/helm/issues/791][https://github.com/emacs-helm/helm/issues/791]]
+    [9] Doom Emacs Configuration - GitHub Pages [[https://tecosaur.github.io/emacs-config/config.html][https://tecosaur.github.io/emacs-config/config.html]]
+    [10] Helm vs Ivy: What are the differences, what are the advantages? [[https://www.reddit.com/r/emacs/comments/7vcrwo/helm_vs_ivy_what_are_the_differences_what_are_the/][https://www.reddit.com/r/emacs/comments/7vcrwo/helm_vs_ivy_what_are_the_differences_what_are_the/]]
+    [11] How to make helm-related commands create a new window instead ... [[https://github.com/emacs-helm/helm/issues/947][https://github.com/emacs-helm/helm/issues/947]]
+    [12] From helm, to ivy · Samuel Barreto - Bacterial Finches [[https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/][https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/]]
+    [13] Max helm-window height · Issue #203 - GitHub [[https://github.com/emacs-helm/helm/issues/203][https://github.com/emacs-helm/helm/issues/203]]
+    [14] Helm layer - Spacemacs [[https://www.spacemacs.org/layers/+completion/helm/README.html][https://www.spacemacs.org/layers/+completion/helm/README.html]]
+    [15] Doom Emacs config (deprecated) - [[shom.dev][shom.dev]] [[https://shom.dev/posts/20211201_doom-emacs-config--deprecated/][https://shom.dev/posts/20211201_doom-emacs-config--deprecated/]]
+    [16] Why do I seem to have to define this key binding in use-package init ... [[https://stackoverflow.com/questions/50053854/why-do-i-seem-to-have-to-define-this-key-binding-in-use-package-init-versus-conf][https://stackoverflow.com/questions/50053854/why-do-i-seem-to-have-to-define-this-key-binding-in-use-package-init-versus-conf]]
+    [17] Ivy projectile find file / completion INCREDIBLY slow, CPU ... - GitHub [[https://github.com/doomemacs/doomemacs/issues/774][https://github.com/doomemacs/doomemacs/issues/774]]
+    [18] Completion and Selection - Emacs latest documentation [[https://emacs.readthedocs.io/en/latest/completion_and_selection.html][https://emacs.readthedocs.io/en/latest/completion_and_selection.html]]
+    [19] :completion ivy - Doom Emacs v21.12 documentation [[https://docs.doomemacs.org/v21.12/modules/completion/ivy/][https://docs.doomemacs.org/v21.12/modules/completion/ivy/]]
+    [20] Doom Emacs config - const? [[https://www.const.no/init/][https://www.const.no/init/]]
+    - Ensure =:completion helm= is enabled in =init.el=.
+    - Then bind Doom’s leader key to Helm find-files explicitly if desired:

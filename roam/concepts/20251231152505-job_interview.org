@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a2ed4822-b4be-4ca0-acab-e4e59abe45c1
+:REFLECT_ID: 6cb4b02109c24c8785f7945d7aede521
+:CREATED:  [2025-12-31 Wed 15:25]
+:MODIFIED: [2026-01-14 Wed 15:52]
+:END:
+#+title: Job Interview
+#+filetags: :concept:
+#+date: 2025-12-31
+

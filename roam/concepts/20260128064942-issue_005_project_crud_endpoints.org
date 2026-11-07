@@ -1,0 +1,307 @@
+:PROPERTIES:
+:ID:       7d98f496-5e09-400e-8a5a-d05f55d7e6e6
+:REFLECT_ID: a657972321614d01afc566c3d598ccf2
+:CREATED:  [2026-01-28 Wed 06:49]
+:MODIFIED: [2026-01-28 Wed 06:52]
+:END:
+#+title: Issue 005: Project CRUD Endpoints
+#+filetags: :concept:
+#+date: 2026-01-28
+*Milestone:* API Endpoints
+*Estimate:* 1.5 hours
+*Labels:* =backend=, =api=, =projects=, =day-1=
+*** Description
+Implement full CRUD operations for Projects with proper authorization.
+*** Acceptance Criteria
+- [ ] GET =/api/projects= - List user's projects
+- [ ] POST =/api/projects= - Create new project
+- [ ] PUT =/api/projects/{id}= - Update project
+- [ ] DELETE =/api/projects/{id}= - Delete project (soft delete/archive)
+- [ ] Proper authorization (users can only access their own projects)
+*** Implementation
+**** Step 1: Create Project Repository
+=backend/src/main/java/com/worksweet/repository/ProjectRepository.java=:
+#+begin_src java
+package com.worksweet.repository;
+
+import com.worksweet.model.Project;
+import com.worksweet.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ProjectRepository extends JpaRepository<Project, Long> {
+    List<Project> findByOwnerAndArchivedFalseOrderByCreatedAtDesc(User owner);
+    List<Project> findByOwnerOrderByCreatedAtDesc(User owner);
+    Optional<Project> findByIdAndOwner(Long id, User owner);
+}
+
+#+end_src
+**** Step 2: Create Project DTOs
+=backend/src/main/java/com/worksweet/dto/ProjectRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class ProjectRequest {
+    
+    @NotBlank(message = "Project name is required")
+    @Size(min = 1, max = 100, message = "Project name must be between 1 and 100 characters")
+    private String name;
+
+    @Size(max = 500, message = "Description must be less than 500 characters")
+    private String description;
+
+    @Pattern(regexp = "^#([A-Fa-f0-9]{6})$", message = "Color must be a valid hex color (e.g., #3B82F6)")
+    private String color;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/ProjectResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.Project;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProjectResponse {
+    private Long id;
+    private String name;
+    private String description;
+    private String color;
+    private Long ownerId;
+    private String ownerName;
+    private Integer taskCount;
+    private Boolean archived;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public static ProjectResponse fromEntity(Project project) {
+        return ProjectResponse.builder()
+                .id(project.getId())
+                .name(project.getName())
+                .description(project.getDescription())
+                .color(project.getColor())
+                .ownerId(project.getOwner().getId())
+                .ownerName(project.getOwner().getName())
+                .taskCount(project.getTasks() != null ? project.getTasks().size() : 0)
+                .archived(project.getArchived())
+                .createdAt(project.getCreatedAt())
+                .updatedAt(project.getUpdatedAt())
+                .build();
+    }
+}
+
+#+end_src
+**** Step 3: Create Project Service
+=backend/src/main/java/com/worksweet/service/ProjectService.java=:
+#+begin_src java
+package com.worksweet.service;
+
+import com.worksweet.dto.ProjectRequest;
+import com.worksweet.dto.ProjectResponse;
+import com.worksweet.exception.ResourceNotFoundException;
+import com.worksweet.model.Project;
+import com.worksweet.model.User;
+import com.worksweet.repository.ProjectRepository;
+import com.worksweet.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class ProjectService {
+
+    private final ProjectRepository projectRepository;
+    private final UserRepository userRepository;
+
+    private User getCurrentUser() {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    }
+
+    public List<ProjectResponse> getAllProjects(boolean includeArchived) {
+        User currentUser = getCurrentUser();
+        List<Project> projects = includeArchived 
+                ? projectRepository.findByOwnerOrderByCreatedAtDesc(currentUser)
+                : projectRepository.findByOwnerAndArchivedFalseOrderByCreatedAtDesc(currentUser);
+        
+        return projects.stream()
+                .map(ProjectResponse::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public ProjectResponse createProject(ProjectRequest request) {
+        User currentUser = getCurrentUser();
+
+        Project project = Project.builder()
+                .name(request.getName())
+                .description(request.getDescription())
+                .color(request.getColor() != null ? request.getColor() : "#3B82F6")
+                .owner(currentUser)
+                .archived(false)
+                .build();
+
+        Project savedProject = projectRepository.save(project);
+        return ProjectResponse.fromEntity(savedProject);
+    }
+
+    @Transactional
+    public ProjectResponse updateProject(Long id, ProjectRequest request) {
+        User currentUser = getCurrentUser();
+        Project project = projectRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + id));
+
+        if (request.getName() != null) {
+            project.setName(request.getName());
+        }
+        if (request.getDescription() != null) {
+            project.setDescription(request.getDescription());
+        }
+        if (request.getColor() != null) {
+            project.setColor(request.getColor());
+        }
+
+        Project updatedProject = projectRepository.save(project);
+        return ProjectResponse.fromEntity(updatedProject);
+    }
+
+    @Transactional
+    public void deleteProject(Long id) {
+        User currentUser = getCurrentUser();
+        Project project = projectRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + id));
+
+        // Soft delete - just archive it
+        project.setArchived(true);
+        projectRepository.save(project);
+    }
+
+    public ProjectResponse getProjectById(Long id) {
+        User currentUser = getCurrentUser();
+        Project project = projectRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + id));
+        
+        return ProjectResponse.fromEntity(project);
+    }
+}
+
+#+end_src
+**** Step 4: Create ResourceNotFoundException
+=backend/src/main/java/com/worksweet/exception/ResourceNotFoundException.java=:
+#+begin_src java
+package com.worksweet.exception;
+
+public class ResourceNotFoundException extends RuntimeException {
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+}
+
+#+end_src
+Update =GlobalExceptionHandler.java=:
+#+begin_src java
+// Add this method to GlobalExceptionHandler
+@ExceptionHandler(ResourceNotFoundException.class)
+public ResponseEntity<Map<String, String>> handleResourceNotFound(ResourceNotFoundException ex) {
+    Map<String, String> error = new HashMap<>();
+    error.put("error", ex.getMessage());
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+}
+
+#+end_src
+**** Step 5: Create Project Controller
+=backend/src/main/java/com/worksweet/controller/ProjectController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import com.worksweet.dto.MessageResponse;
+import com.worksweet.dto.ProjectRequest;
+import com.worksweet.dto.ProjectResponse;
+import com.worksweet.service.ProjectService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/projects")
+@RequiredArgsConstructor
+public class ProjectController {
+
+    private final ProjectService projectService;
+
+    @GetMapping
+    public ResponseEntity<List<ProjectResponse>> getAllProjects(
+            @RequestParam(required = false, defaultValue = "false") boolean includeArchived
+    ) {
+        List<ProjectResponse> projects = projectService.getAllProjects(includeArchived);
+        return ResponseEntity.ok(projects);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProjectResponse> getProjectById(@PathVariable Long id) {
+        ProjectResponse project = projectService.getProjectById(id);
+        return ResponseEntity.ok(project);
+    }
+
+    @PostMapping
+    public ResponseEntity<ProjectResponse> createProject(@Valid @RequestBody ProjectRequest request) {
+        ProjectResponse project = projectService.createProject(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(project);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ProjectResponse> updateProject(
+            @PathVariable Long id,
+            @Valid @RequestBody ProjectRequest request
+    ) {
+        ProjectResponse project = projectService.updateProject(id, request);
+        return ResponseEntity.ok(project);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<MessageResponse> deleteProject(@PathVariable Long id) {
+        projectService.deleteProject(id);
+        return ResponseEntity.ok(new MessageResponse("Project archived successfully"));
+    }
+}
+
+#+end_src
+*** Testing with Postman
+*Test 1: Create Project*  }  Expected: 200 OK 
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #5: Implement Project CRUD endpoints with authorization"
+git push origin main
+
+#+end_src
+-----

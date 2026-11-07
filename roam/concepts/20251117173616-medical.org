@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b4a0831f-116c-439b-b18f-6f3b7ead03ee
+:REFLECT_ID: e202d2cc21014a8cac784668956fd358
+:CREATED:  [2025-11-17 Mon 17:36]
+:MODIFIED: [2025-11-17 Mon 17:36]
+:END:
+#+title: Medical
+#+filetags: :concept:
+#+date: 2025-11-17
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       834ec03f-2b44-4eb8-884e-625e03287295
+:REFLECT_ID: 8270f5df91a5478f8d418a3f420d8c9d
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 14:27]
+:END:
+#+title: Cursor AI
+#+filetags: :concept:
+#+date: 2025-10-27
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f0c6b160-fe85-471d-9684-4676d8d13728
+:REFLECT_ID: 26221ad2169540ae9f91698725f8d951
+:CREATED:  [2025-10-31 Fri 12:44]
+:MODIFIED: [2026-02-15 Sun 15:26]
+:END:
+#+title: Tabled
+#+filetags: :concept:
+#+date: 2025-10-31
+

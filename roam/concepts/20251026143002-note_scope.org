@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       dbd1104c-49a2-4462-ab1e-67d872860321
+:REFLECT_ID: d8e55f3e9a1248409923936d2c2a14a7
+:CREATED:  [2025-10-26 Sun 14:30]
+:MODIFIED: [2025-10-26 Sun 14:30]
+:END:
+#+title: Note Scope
+#+filetags: :concept:
+#+date: 2025-10-26
+

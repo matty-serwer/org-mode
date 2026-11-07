@@ -1,0 +1,87 @@
+:PROPERTIES:
+:ID:       4cba6e3e-364d-4175-99b8-df4f903d8690
+:REFLECT_ID: 6507f2c7edcd4ebbb3db8dc9c3452dcc
+:CREATED:  [2025-11-12 Wed 04:24]
+:MODIFIED: [2025-11-12 Wed 04:41]
+:END:
+#+title: LazyVim NeoVim Plugin
+#+filetags: :ref:reference:
+#+date: 2025-11-12
+* [[id:294115ff-c1e7-433f-9ac2-c3488273a3bd][LazyVim]] [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] Plugin
+- Editor Tools and File Navigation Plugins
+  - editor.harpoon2
+    - Quick file navigation; mark frequently used files and jump between them instantly with hotkeys (like bookmarks on steroids)
+  - editor.illuminate
+    - Highlights all instances of the word under your cursor throughout the buffer (helps see variable usage at a glance)
+  - editor.leap
+    - Fast cursor navigation; jump anywhere visible on screen by typing 2-3 characters (alternative to mouse/repeated motions)
+  - editor.mini-diff
+    - Shows git diff indicators in sign column and provides inline diff previews (lighter alternative to gitsigns)
+  - editor.mini-files
+    - Minimal floating file explorer; edit file system like a buffer (create, delete, rename files with text editing commands)
+  - editor.mini-move
+    - Move lines and blocks of code/text up, down, left, right with Alt+hjkl
+  - editor.navic
+    - Shows code context breadcrumbs in statusline (displays current function/class/method you're in)
+  - editor.neo-tree
+    - Full-featured file explorer sidebar (alternative to nvim-tree); browse, create, delete, move files
+  - editor.outline
+    - Code outline sidebar showing file structure (classes, functions, variables); quick navigation through symbols
+  - editor.overseer
+    - Task runner and job management; run build tasks, tests, scripts with output management
+  - editor.refactoring
+    - Smart code refactoring operations (extract function/variable, inline variable, extract block)
+  - editor.telescope
+    *Most useful for general dev*: telescope, neo-tree (or mini-files), illuminate, and harpoon2
+    - Fuzzy finder for everything (files, text, git, buffers, commands); the Swiss Army knife of searching
+- AI Assistants
+  - ai.avante
+    - AI-powered code editor with chat interface; like Cursor/Windsurf but inside Neovim
+    - Provides inline AI edits, explanations, and code generation with diff previews
+  - ai.claudecode
+    - Official Claude integration for Neovim; AI coding assistant with direct Claude API access
+    - Chat with Claude, get code suggestions, and refactor code using Claude's capabilities
+  - ai.codeium
+    - Free AI code completion alternative to Copilot; provides autocomplete suggestions
+    - Supports 70+ languages with fast, context-aware completions
+  - ai.copilot-chat
+    - GitHub Copilot Chat integration; ask questions about code, get explanations
+    - Opens in sidebar panel for interactive AI conversations about your codebase
+  - ai.copilot-native
+    - Native GitHub Copilot LSP integration (requires Neovim >= 0.12)
+    - Uses official Copilot language server for inline suggestions without additional plugins
+  - ai.sidekick
+    - Next edit predictions using Copilot LSP server
+    - Shows upcoming edit suggestions based on your coding patterns
+  - ai.supermaven
+    - Fast AI code completion with 300,000 token context window
+    - Claims to be faster than Copilot with better long-context understanding
+  - ai.tabnine
+    - AI-powered code completion with team learning capabilities
+    - Can be trained on your codebase for personalized suggestions
+- Coding Tools
+  - coding.luasnip
+    - Advanced snippet engine with dynamic snippets and transformations
+    - Supports VSCode-style snippets with powerful expansion capabilities
+  - coding.mini-comment
+    - Smart commenting that respects different language syntaxes
+    - Handles JSX, Vue templates, and other complex comment contexts correctly
+  - coding.mini-snippets
+    - Lightweight snippet manager alternative to LuaSnip
+    - Simpler, faster snippet expansion with minimal overhead
+  - coding.mini-surround
+    - Add, delete, replace surrounding characters (parentheses, quotes, tags)
+    - Lightweight alternative to vim-surround with better defaults
+  - coding.neogen
+    - Generate documentation comments/annotations automatically
+    - Creates docstrings for functions, classes based on language conventions
+  - coding.nvim-cmp
+    - Traditional completion engine (alternative to default blink.cmp)
+    - More established, plugin-rich completion framework with extensive sources
+- Debugging (DAP)
+  - dap.core
+    - Debug Adapter Protocol support; enables debugging inside Neovim
+    - Set breakpoints, step through code, inspect variables for any language with a DAP server
+  - dap.nlua
+    - Lua debugging support specifically for Neovim Lua development
+    - Debug your Neovim configs and Lua plugins directly

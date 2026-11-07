@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6ee82a2e-0524-4c94-8522-b7c34204a385
+:REFLECT_ID: ff16f2a4222b4046b54b525d084c3254
+:CREATED:  [2025-11-05 Wed 22:28]
+:MODIFIED: [2025-11-11 Tue 10:49]
+:END:
+#+title: Frontend
+#+filetags: :concept:
+#+date: 2025-11-05
+

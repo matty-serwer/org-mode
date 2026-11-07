@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       77ac8cef-2a72-480c-8d2a-6aa92405a095
+:REFLECT_ID: 26102025
+:CREATED:  [2025-10-25 Sat 08:40]
+:MODIFIED: [2025-10-27 Mon 06:56]
+:END:
+#+title: Sun, October 26th, 2025
+#+filetags: :daily:
+#+date: 2025-10-25
+- Ideas to [[id:6457f63f-ed2d-4570-9d06-788e61d2607a][organize]] [[id:02d7fab6-349c-493f-ac2e-026497bbb560][Code Snippets]] from [[id:d6e97ccd-677f-40ef-aa66-5dfcd26fcc33][Warp]]
+  1. pet (Simple Snippet Manager)
+    • CLI tool specifically for snippet management
+    • Tag/search snippets easily
+    • Sync via gist backend
+    • Quick insert into terminal
+    bash
+  1. navi (Interactive Cheatsheet)
+    • Browse/search snippets interactively
+    • Supports variables/placeholders
+    • Can import from multiple sources
+    bash
+  1. snippy or snippet
+    • Lightweight snippet managers
+    • Fast fuzzy search
+    • Local storage with optional sync
+  1. Custom Git Repo + fzf
+    -Store snippets as files in a repo
+    • Use fzf for fuzzy searching
+    • Full version control
+    • Most flexible for hundreds of snippets
+  1. Gists (but organized)
+    • Use consistent naming conventions
+    • Tag via descriptions
+    • gh gist list | fzf for quick access
+    • Works, but less ideal at scale

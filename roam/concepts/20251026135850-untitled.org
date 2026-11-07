@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b070076f-965a-4aa8-82a8-c3c1273d0740
+:REFLECT_ID: 5b18a3f9b48d4c759b9cdee43c2b4830
+:CREATED:  [2025-10-26 Sun 13:58]
+:MODIFIED: [2025-10-26 Sun 14:07]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-10-26
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d2566467-ec19-4b90-bdc4-3b5deaeab156
+:REFLECT_ID: ba9946fb57394f7eb54fb101d95724a7
+:CREATED:  [2026-04-21 Tue 07:19]
+:MODIFIED: [2026-04-21 Tue 07:19]
+:END:
+#+title: Cable Bag
+#+filetags: :concept:
+#+date: 2026-04-21
+

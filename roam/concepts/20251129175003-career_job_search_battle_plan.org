@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       2eba9451-2765-495a-a160-c5ebea48a73c
+:REFLECT_ID: b2bde1cd497a4f48833ed882bc7993fd
+:CREATED:  [2025-11-29 Sat 17:50]
+:MODIFIED: [2025-11-29 Sat 17:51]
+:END:
+#+title: Career Job Search Battle Plan
+#+filetags: :concept:
+#+date: 2025-11-29
+* [[id:1ea984dd-11a6-42c4-81d0-33666882beaa][Career]] [[id:a73def42-2736-46be-888f-6fc9ec6db354][Job Search]] Battle Plan
+*Overall 6-Week Timeline (Dec 1 – mid-January)*
+Goal: Land interviews + have a vet SaaS demo that makes recruiters say “holy shit”
+- Week 1 (Dec 1–7): Portfolio site refresh + start applying aggressively
+-
+  - New portfolio live (clean, fast, mobile-friendly)
+  - Vet SaaS: basic project scaffolding + auth + DB schema done
+  - 50–70 targeted applications sent (quality > quantity)
+- Week 2 (Dec 8–14): MVP landing page for vet app + first big feature (Patient + SOAP notes)
+-
+  - Vet app looks “real” from the outside (nice landing, login, dashboard)
+  - Start getting 5–10 applications/day habit
+  - First 2–3 case studies written for portfolio
+- Week 3–4 (Dec 15–28): Core vet features + start talking about it publicly
+-
+  - Finish: Patient records, SOAP notes, basic test/results module, prescriptions
+  - Deploy to Vercel/Netlify + custom domain (e.g., vetflow.app)
+  - Post weekly progress on LinkedIn + X (Twitter) — recruiters love this
+  - 150+ total applications sent by end of Week 4
+- Week 5–6 (Dec 29–Jan 12): Polish + AI integration + interview prep
+-
+  - Add one AI feature (e.g., auto-generate SOAP subjective from voice/notes, or smart search across records)
+  - Record a 2–3 min demo video walkthrough
+  - Finish any remaining polish (mobile responsiveness, dark mode, nice charts)
+  - Easy LeetCode grind (2–3 problems/day) + system design refresh
+  - Aim for 3–6 interviews booked by mid-January
+*Daily Checklist (ADHD-Optimized)*
+Pick 3–5 of these every day — never all. The rule: once you hit 4 hours of focused work, you’re done for the day (prevents burnout).
+- Job applications (5–15 targeted ones) – takes 30–90 min
+- Vet SaaS coding (minimum 1 Pomodoro, ideally 3–4)
+- Write or post one thing publicly (LinkedIn post, tweet thread, [[dev.to][dev.to]] article about a feature you just built)
+- LeetCode / system design (2 easy or 1 medium problem)
+- Update portfolio README or case study for the vet app (even 1 paragraph)
+- Outreach: message 2–3 recruiters or connections on LinkedIn (“Hey, building a full vet practice SaaS in my spare time, would love your thoughts…”)
+- Quick win: fix one tiny UI bug or improve one page’s mobile look
+- Record a 30-second clip talking about what you built today (for future demo reel)
+Rotate them. Some days you’ll crush applications, some days you’ll only code. That’s fine.
+*Weekly “Must-Hit” Milestones (write these on a physical wall or Notion)*
+Week 1: Portfolio live + 50 applications + vet app has working login
+Week 2: Patient list + create new patient + basic SOAP form working
+Week 3: Can fully write and save a SOAP note + deployed publicly
+Week 4: Test results module + search working + 1 viral LinkedIn post (aim for 50+ likes)
+Week 5: AI feature shipped (even if it’s small)
+Week 6: 2–3 minute demo video + 200+ total applications sent
+*Pro Tips That Actually Move the Needle*
+1. Lead with the vet SaaS everywhere
+  Change your LinkedIn headline to:
+  “Full-Stack Engineer | Building VetFlow – Modern Veterinary Practice Software (React + Node + Spring Boot)”
+  Put the live link in your profile from Day 1 (even if it’s ugly).
+1. Application volume hack
+  Use [[simplify.jobs][simplify.jobs]] or lazyapply (paid) to autofill, but always customize the first 2–3 sentences.
+  Target: startups, health-tech, pet-tech, Series A–B companies — they move faster and care more about what you’ve built.
+1. Make the vet app your “golden ticket”
+  Once it’s decent, email vet clinics cold: “I’m a developer building the next-gen vet software — can Ihi offer you 6 months free if you give me feedback?”
+  Even 2–3 real users = insane credibility.
+1. ADHD hacks that work
+-
+  - Work in public — stream on Twitch or post daily screenshots. Accountability > motivation.
+  - Use the “2-minute rule”: if you sit down and only write one line of code, that still counts as a win.
+  - Body double: jump on a 1-hour Discord focus room (there are dev ones daily).
+You’re in the perfect spot: 5 years exp + building something legitimately hard and niche. If you ship the vet SaaS to a presentable state and apply consistently, you’ll have offers by February, maybe sooner.
+You got this. Start tomorrow with just the portfolio refresh and 10 applications — that’s enough.
+DM me in two weeks and tell me how many interviews you have. I want to hear it. 🚀

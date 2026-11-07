@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d9f651d6-6369-4da7-946a-485b0ebf35f9
+:REFLECT_ID: 713fb772cd7541cabc52c7d625ba2264
+:CREATED:  [2025-11-13 Thu 06:11]
+:MODIFIED: [2025-11-13 Thu 06:11]
+:END:
+#+title: GitHub
+#+filetags: :concept:
+#+date: 2025-11-13
+

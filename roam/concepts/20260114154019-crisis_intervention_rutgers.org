@@ -1,0 +1,77 @@
+:PROPERTIES:
+:ID:       96fd8dc1-33ca-4478-8f84-e362f1a75c2f
+:REFLECT_ID: d7e6cec61522447f92afbf98dcc289dc
+:CREATED:  [2026-01-14 Wed 15:40]
+:MODIFIED: [2026-01-14 Wed 17:41]
+:END:
+#+title: Crisis Intervention (Rutgers)
+#+filetags: :concept:
+#+date: 2026-01-14
+- Video
+  [[https://www.youtube-nocookie.com/embed/hAQ6cs_vih4][youtube: https://www.youtube-nocookie.com/embed/hAQ6cs_vih4]]
+- Introduction To Crisis Intervention
+  - Ken Kinter
+  - Crisis
+    - unexpected
+    - threat to person and goals
+    - must *change*
+    - Characteristics
+      - disorienting
+      - internal or external
+      - potential for danger
+  - Stages of Crisis
+    - Vulnerable
+    - Active
+    - Resolution
+      - crisis resolution is prevention
+  - Levels of Anxiety
+    - Moderate
+      - Sympathetic
+    - Severe
+      - Tunnel vision
+      - focus irrelevant
+    - Panic
+      - Fight or Flight
+      - Decreased ability to communicate
+  - Recognizing a Crisis
+  - Possible Outcomes
+    - Suicidality
+    - Aggressiveness
+    - Homicidality
+    - *RESOLUTION* - hopefully
+  - Factors
+    - Environmental
+      - Volume
+      - Space
+      - People
+      - Newness
+    - Staff
+      - Consistent and Familiar
+      - Supportive as opposed to confrontational
+    - Client
+      - History of Violence?
+      - Person's Diagnosis
+        - substance
+        - personality
+        - psychosis
+    - Situational
+      - Recurring or singular?
+      - What could be lost? How is that important?
+      - What are they going to do?
+      - Emotions
+        - anger, fear, joy sadness, shame
+  - Actions
+    - Find previous solutions
+      - What has worked in the past
+      - "What usually helps you feel calm?"
+      - "How have you managed in the past?"
+    - Reinforce adaptive coping strategies
+    - Recognizing that the client is dealing with extraordinary circumstances
+    - Don't
+      - "It will be ok"
+      - "I know how you feel"
+    - Talk to them about what they already know about solving their problems
+    - Then help problem solve
+    - Begin
+      - working on what that person wants as a goal.
+- 

@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       5d17b842-2cff-4f10-b193-083af43545ee
+:REFLECT_ID: 22012026
+:CREATED:  [2026-01-22 Thu 10:21]
+:MODIFIED: [2026-01-22 Thu 22:58]
+:END:
+#+title: Thu, January 22nd, 2026
+#+filetags: :daily:
+#+date: 2026-01-22
+- Created NPM Library
+  - @lupine-tech-design/pedal-ui
+  - NPM Login
+    - [[mailto:matti3.accounts@proton.me][matti3.accounts@proton.me]]
+    - password in passwords
+    - 2FA Created (finger print)
+  - =npm install @lupine-tech-design/pedal-ui=
+  - tentative [[id:fcfc4539-0119-4882-a49b-8dc9c1824148][@lupine-tech-design/pedal-ui instructions]]
+  - [[id:7019769a-769d-4fbe-b803-2f8020aee3c6][Update (Patch) An NPM Library]];[ g[
+  - 
+- Geoffrey payroll
+  - AMS Software
+    - problem
+      - the client - people like Glen McDowell
+        - they need to put the information
+      - has to be live.
+  - glen says
+    - Tony salary is $2000
+    - McDowell Pays in gross $2000. What is his net pay?
+      - calculate be
+- TODO
+  - [ ] 

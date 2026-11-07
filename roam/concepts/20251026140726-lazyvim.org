@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       294115ff-c1e7-433f-9ac2-c3488273a3bd
+:REFLECT_ID: f232ffbd84014fa08e4149e600297dc1
+:CREATED:  [2025-10-26 Sun 14:07]
+:MODIFIED: [2026-02-11 Wed 02:53]
+:END:
+#+title: LazyVim
+#+filetags: :concept:
+#+date: 2025-10-26
+- LazyVim is my NeoVim distribution. See [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] for general notes.

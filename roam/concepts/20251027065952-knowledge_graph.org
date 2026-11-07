@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       812d0f34-2e93-43fc-b071-5ff85c334908
+:REFLECT_ID: 37d20440cb0e43eaab881f8416ee894f
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: Knowledge Graph
+#+filetags: :concept:
+#+date: 2025-10-27
+

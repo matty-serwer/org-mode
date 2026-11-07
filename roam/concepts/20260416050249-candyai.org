@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ad300af7-e684-439d-acb6-9ffec744d657
+:REFLECT_ID: 726bf564316b4495bd6495b97f064f7c
+:CREATED:  [2026-04-16 Thu 05:02]
+:MODIFIED: [2026-04-16 Thu 05:02]
+:END:
+#+title: candy.ai
+#+filetags: :concept:
+#+date: 2026-04-16
+- 

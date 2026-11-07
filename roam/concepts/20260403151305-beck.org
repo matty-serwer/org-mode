@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2baa1a17-d89f-4b78-a98b-90ada934611c
+:REFLECT_ID: 943bc18ff9bf4f85a6e4fe3d2a6e3f54
+:CREATED:  [2026-04-03 Fri 15:13]
+:MODIFIED: [2026-04-03 Fri 15:13]
+:END:
+#+title: Beck
+#+filetags: :concept:
+#+date: 2026-04-03
+

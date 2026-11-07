@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c3010f6a-b3a4-4f7a-b0db-0094dbbe8a34
+:REFLECT_ID: 965051a62fce410f85b36d113b283a90
+:CREATED:  [2026-03-06 Fri 04:49]
+:MODIFIED: [2026-03-06 Fri 04:49]
+:END:
+#+title: Bullet Journal
+#+filetags: :concept:
+#+date: 2026-03-06
+

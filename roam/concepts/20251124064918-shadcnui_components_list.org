@@ -1,0 +1,132 @@
+:PROPERTIES:
+:ID:       08fc11ca-e392-4527-8b94-a0580df26527
+:REFLECT_ID: 7bde8295e36d41fabaeb26c3b00d5c4f
+:CREATED:  [2025-11-24 Mon 06:49]
+:MODIFIED: [2025-11-24 Mon 06:56]
+:END:
+#+title: shadcn/ui Components
+#+filetags: :concept:list:
+#+date: 2025-11-24
+* [[id:522853c2-b75b-4bc6-b8fa-76b03dace8ab][shadcn/ui]] [[id:719631ff-1591-45d2-939c-822c8afb9d8c][Components]]
+- Essential UI Components (core building blocks used in almost every project)
+  - Button
+    - Primary action trigger; used in nearly all interfaces
+  - Input
+    - Text entry field; ubiquitous for user data capture
+  - Label
+    - Associates text with form elements; key for accessibility
+  - Select
+    - Dropdown for single/multiple choices; common in forms
+  - Textarea
+    - Multi-line text input; essential for comments or descriptions
+  - Checkbox
+    - Boolean selection; standard for lists or preferences
+  - Radio Group
+    - Exclusive selection; used for mutually exclusive options
+  - Switch
+    - Toggle for on/off states; frequent in settings
+  - Tooltip
+    - Hover info; improves usability without clutter
+  - Badge
+    - Small status labels; common for tags or notifications
+  - Card
+    - Container for content sections; versatile for dashboards
+  - Separator
+    - Visual dividers; used to organize sections cleanly
+- Common UI Components (widely used in most moderate-complexity apps)
+  - Dialog
+    - Modal popups; common for confirmations or details
+  - Tabs
+    - Tabbed navigation; frequent for organizing related content
+  - Table
+    - Data grids; essential for lists but not every app needs one
+  - Form
+    - Wrapper for validation/handling; common in CRUD apps
+  - Progress
+    - Loading indicators; used for async operations
+  - Toast
+    - Non-intrusive notifications; popular for feedback
+  - Avatar
+    - User profile images; common in social or user-centric UIs
+  - Breadcrumb
+    - Path navigation; useful in hierarchical sites
+  - Pagination
+    - Page controls; standard for large datasets
+  - Skeleton
+    - Placeholder loaders; enhances perceived performance
+  - Spinner
+    - Simple loading animation; often paired with buttons
+  - Kbd
+    - Keyboard key styling; common in docs or tutorials
+  - Typography
+    - Text styling utilities; ensures consistent headings/paragraphs
+- Advanced / Utility UI Components (specialized interactions, added as needed)
+  - Accordion
+    - Expandable sections; great for FAQs or dense info
+  - Alert
+    - Inline warnings/notices; used for errors or tips
+  - Alert Dialog
+    - Modal alerts; for critical user decisions
+  - Aspect Ratio
+    - Maintains image/video proportions; useful for responsive media
+  - Calendar
+    - Standalone date grid; often used in scheduling
+  - Collapsible
+    - Simple collapse/expand; lighter alternative to accordion
+  - Command
+    - Searchable command palette (Cmd+K style)
+  - Context Menu
+    - Right-click menus; enhances desktop-like interactions
+  - Data Table
+    - Advanced sortable/filterable tables with pagination, selection, etc.
+  - Date Picker
+    - Popover calendar input; pairs with forms
+  - Drawer
+    - Slide-in side panel; mobile-friendly modal alternative
+  - Dropdown Menu
+    - Contextual dropdowns; for actions on items
+  - Empty
+    - “No data” placeholder state component
+  - Hover Card
+    - Rich preview cards on hover (like Twitter/X cards)
+  - Menubar
+    - Desktop-style top menu bar (File, Edit, View…)
+  - Navigation Menu
+    - Vertical or horizontal link-based navigation
+  - Popover
+    - Anchored floating overlay; very versatile
+  - Sheet
+    - Bottom or side slide-in panel (similar to Drawer)
+  - Sidebar
+    - Persistent side navigation; common in admin panels
+  - Slider
+    - Range selector; used for price filters, volume, etc.
+  - Toggle Group
+    - Segmented controls with multiple toggles
+  - Toggle
+    - Single toggle button (often icon-only)
+- Niche / Specialized UI Components (specific use-cases or integrations)
+  - Button Group
+    - Grouped buttons acting as a toolbar or segmented control
+  - Carousel
+    - Sliding image/content rotator; common in marketing pages
+  - Chart
+    - Wrapper/integration for chart libraries (Recharts, Chart.js, etc.)
+  - Combobox
+    - Autocomplete + dropdown hybrid
+  - Field
+    - Form field wrapper for custom validation & error handling
+  - Input Group
+    - Input with add-ons (icons, buttons, etc.)
+  - Input OTP
+    - One-time password / verification code input (6-digit boxes)
+  - Item
+    - Primitive list item (building block for custom lists)
+  - Native Select
+    - Uses browser-native <select>; useful when you need native behavior
+  - Resizable
+    - Panels or areas with draggable resize handles
+  - Scroll Area
+    - Custom-styled scrollable container with thumb
+  - Sonner
+    - Beautiful, highly customizable toast library

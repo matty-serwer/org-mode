@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1f4bbf0e-052b-409e-b494-a1c20e899fa3
+:REFLECT_ID: 4b61e36521d7476fb7e6020f532125b7
+:CREATED:  [2025-12-09 Tue 13:35]
+:MODIFIED: [2026-04-21 Tue 17:37]
+:END:
+#+title: Algoriddim DJay
+#+filetags: :concept:
+#+date: 2025-12-09
+

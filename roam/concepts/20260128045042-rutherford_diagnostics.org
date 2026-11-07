@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3f718396-42e7-4714-9bca-3b863c6ef8e6
+:REFLECT_ID: 04a2d21a0e6c48a3961a62265c1fcfcd
+:CREATED:  [2026-01-28 Wed 04:50]
+:MODIFIED: [2026-01-28 Wed 04:50]
+:END:
+#+title: Rutherford Diagnostics
+#+filetags: :concept:
+#+date: 2026-01-28
+

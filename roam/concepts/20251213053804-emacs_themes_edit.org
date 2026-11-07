@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       1ab0b486-5c8e-4e4f-8657-139e632a6df3
+:REFLECT_ID: a024c2328660464aac5220db802519f7
+:CREATED:  [2025-12-13 Sat 05:38]
+:MODIFIED: [2026-01-18 Sun 07:53]
+:END:
+#+title: Emacs Themes Edit
+#+filetags: :concept:
+#+date: 2025-12-13
+- .garbage
+  - /hard to find files/
+  - emacs
+    - Install. App.
+      - file:///opt/homebrew/opt/emacs-plus/[[http://Emacs.app/][Emacs.app/]]
+      - Link: [[http://Emacs.app][Emacs.app]]
+    - Themes
+      - Link: [[https://hookmark.net/hm/hook/file/2eESWJheh?p=cmVwb3MvdGhlbWVz&n=themes][themes]]

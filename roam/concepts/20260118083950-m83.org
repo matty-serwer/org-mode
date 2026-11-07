@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cb6519f1-6de2-4d4f-bd60-0ddec4b22e62
+:REFLECT_ID: 29aa87b8b9a843ab96de9210acee2de6
+:CREATED:  [2026-01-18 Sun 08:39]
+:MODIFIED: [2026-01-18 Sun 08:39]
+:END:
+#+title: M83
+#+filetags: :concept:
+#+date: 2026-01-18
+

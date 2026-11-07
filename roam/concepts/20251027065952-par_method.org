@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5f14467d-7eaa-496e-8716-67699262609b
+:REFLECT_ID: 566b8e39fe1f4754a4221f11bf114133
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: PAR Method
+#+filetags: :concept:
+#+date: 2025-10-27
+

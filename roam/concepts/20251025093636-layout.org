@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e81e6066-e820-423e-b8f0-f78503ebac33
+:REFLECT_ID: 82139ab4f43c4adf95179854f6eac077
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: Layout
+#+filetags: :concept:
+#+date: 2025-10-25
+

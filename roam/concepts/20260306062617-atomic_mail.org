@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8a047f75-c457-46a4-a613-0e198c96c995
+:REFLECT_ID: 2e1c5670d01d4dfaa2de78044f9575da
+:CREATED:  [2026-03-06 Fri 06:26]
+:MODIFIED: [2026-03-06 Fri 06:26]
+:END:
+#+title: Atomic Mail
+#+filetags: :concept:
+#+date: 2026-03-06
+

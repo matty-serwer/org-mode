@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       d0a072e5-cbb2-497c-959e-9e0010b5097b
+:REFLECT_ID: 1b126ce12af24e72baf35020f7c508f5
+:CREATED:  [2026-01-28 Wed 19:53]
+:MODIFIED: [2026-01-28 Wed 19:57]
+:END:
+#+title: Christmas Tree Drop-off Locations in Distance Order To Preble Street
+#+filetags: :concept:
+#+date: 2026-01-28
+- *Eastern Promenade "Treecycling" lot*
+  - Upper right Cutter Street lot
+  - Eastern Promenade, Portland, ME
+  - About 10–15 minutes from Willard Square
+  - Across the Casco Bay Bridge into Portland's East End
+- *Payson Park "Treecycling" site*
+  - Salt shed area near Little League field
+  - Edward Payson Park, Ocean Avenue, Portland, ME
+  - Roughly 15–20 minutes from Willard Square
+  - Up through downtown/Back Cove
+- *Riverside Golf Course "Treecycling" site*
+  - North Course area
+  - Riverside Golf Course, 1158 Riverside Street, Portland, ME
+  - Around 20–25 minutes from Willard Square
+  - Up I-295 or Forest Ave/Riverside
+- *Orchard Ridge Farm (goats)*
+  - 236 Sebago Lake Road (Route 237), Gorham, ME 04038
+  - About 25–30 minutes from Willard Square
+  - Heading inland through South Portland/Scarborough or Westbrook toward Gorham

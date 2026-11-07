@@ -1,0 +1,195 @@
+:PROPERTIES:
+:ID:       e517dcea-a230-4f9d-aaaa-c80b82dcda44
+:REFLECT_ID: 053122813fc94b4d99a9685980b881c9
+:CREATED:  [2026-01-28 Wed 06:28]
+:MODIFIED: [2026-01-28 Wed 06:40]
+:END:
+#+title: Issue 002: User Entity & Authentication Models
+#+filetags: :concept:
+#+date: 2026-01-28
+*Milestone:* Spring Boot API Setup
+*Estimate:* 1 hour
+*Labels:* =setup=, =backend=, =day-1=
+*** Description
+Set up Spring Boot project with dependencies, database configuration, and basic security setup.
+*** Acceptance Criteria
+- [ ] Spring Boot project created with correct dependencies
+- [ ] PostgreSQL database running locally
+- [ ] Application connects to database successfully
+- [ ] Basic security configuration in place
+- [ ] Application starts without errors on =http://localhost:8080=
+*** Technical Specifications
+*Dependencies Required:*
+- Spring Web
+- Spring Security
+- Spring Data JPA
+- PostgreSQL Driver
+- Lombok
+- JWT (jjwt)
+- Validation
+*** Implementation Steps
+**** Step 1: Create Spring Boot Project
+Go to [[https://start.spring.io/][start.spring.io]] or use Spring Initializr in IntelliJ:
+*Settings:*
+- Project: Maven
+- Language: Java
+- Spring Boot: 3.2.x (latest stable)
+- Java: 17
+- Packaging: Jar
+- Group: com.worksweet
+- Artifact: backend
+- Name: Work Sweet API
+- Package name: com.worksweet
+*Dependencies:*
+- Spring Web
+- Spring Security
+- Spring Data JPA
+- PostgreSQL Driver
+- Lombok
+- Validation
+Download, extract to =backend/= directory.
+**** Step 2: Add JWT Dependency
+Add to =backend/pom.xml=:
+#+begin_src xml
+<!-- Add inside <dependencies> section -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.11.5</version>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId>
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>
+
+#+end_src
+**** Step 3: Configure Database Connection
+Create =backend/src/main/resources/application.properties=:
+#+begin_src properties
+# Application
+spring.application.name=Work Sweet API
+server.port=8080
+
+# Database
+spring.datasource.url=jdbc:postgresql://localhost:5432/worksweet
+spring.datasource.username=worksweet
+spring.datasource.password=worksweet_dev_pass
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA/Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# JWT Configuration
+app.jwt.secret=WorkSweetSuperSecretKeyThatIsAtLeast256BitsLongForHS256Algorithm
+app.jwt.expiration=86400000
+
+# CORS (allow frontend)
+app.cors.allowed-origins=http://localhost:3000
+
+# Logging
+logging.level.com.worksweet=DEBUG
+logging.level.org.springframework.security=DEBUG
+
+#+end_src
+**** Step 4: Start Database
+#+begin_src bash
+# From project root
+docker-compose up -d
+
+# Verify it's running
+docker ps
+
+# Check logs
+docker logs worksweet-db
+
+#+end_src
+**** Step 5: Create Base Package Structure
+#+begin_src bash
+cd backend/src/main/java/com/worksweet
+
+# Create package structure
+mkdir -p config controller dto exception model repository security service util
+
+#+end_src
+**** Step 6: Create Main Application Class
+=backend/src/main/java/com/worksweet/WorkSweetApplication.java=:
+#+begin_src java
+package com.worksweet;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+@SpringBootApplication
+@EnableJpaAuditing
+public class WorkSweetApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WorkSweetApplication.class, args);
+    }
+}
+
+#+end_src
+**** Step 7: Create Basic Health Check Controller
+=backend/src/main/java/com/worksweet/controller/HealthController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/health")
+public class HealthController {
+
+    @GetMapping
+    public Map<String, Object> health() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "UP");
+        response.put("service", "Work Sweet API");
+        response.put("timestamp", LocalDateTime.now());
+        return response;
+    }
+}
+
+#+end_src
+*** Testing
+#+begin_src bash
+# Start the application
+cd backend
+./mvnw spring-boot:run
+
+# In another terminal, test health endpoint
+curl http://localhost:8080/api/health
+
+# Expected response:
+# {
+#   "status": "UP",
+#   "service": "Work Sweet API",
+#   "timestamp": "2025-01-28T..."
+# }
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #1: Initial Spring Boot setup with PostgreSQL connection"
+git push origin main
+
+#+end_src

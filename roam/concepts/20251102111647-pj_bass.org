@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       127ce9a0-7dd3-4033-977e-af03d9055a89
+:REFLECT_ID: a964f0a296124dad9b70a2711b1d1cd3
+:CREATED:  [2025-11-02 Sun 11:16]
+:MODIFIED: [2025-11-30 Sun 09:56]
+:END:
+#+title: P/J Bass
+#+filetags: :concept:
+#+date: 2025-11-02
+- Standard Fender P/J Bass Diagram
+  - [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/87368e22e6df4fcdb61bb6a91147f0f0/d45330e0-e4b5-4ba2-828e-3cb945d4df5f?key=f488606592c922428f71cfe77036a963290ee22a8d63867e4110defc9237c21a][image]]
+    - -  

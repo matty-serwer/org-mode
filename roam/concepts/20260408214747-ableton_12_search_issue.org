@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8efb44f3-06da-4484-8fbc-325c3710e7f4
+:REFLECT_ID: 4b1cf8ac47fa4e1ea378601f14e9d0ad
+:CREATED:  [2026-04-08 Wed 21:47]
+:MODIFIED: [2026-04-08 Wed 21:47]
+:END:
+#+title: Ableton 12 Search Issue
+#+filetags: :concept:
+#+date: 2026-04-08
+

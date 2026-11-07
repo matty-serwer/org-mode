@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       264948e0-2757-45a3-80f6-ab79b7f52a9d
+:REFLECT_ID: b4268cc6a4554e4d9fc6e3aa801c3014
+:CREATED:  [2026-03-18 Wed 14:27]
+:MODIFIED: [2026-03-18 Wed 14:27]
+:END:
+#+title: Build Concepts
+#+filetags: :concept:
+#+date: 2026-03-18
+

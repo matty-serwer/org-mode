@@ -1,0 +1,79 @@
+:PROPERTIES:
+:ID:       2c87dac9-cc85-4066-a7e9-9f2b42a2af27
+:REFLECT_ID: de139d056d764a1a966081587febaafa
+:CREATED:  [2025-11-05 Wed 17:10]
+:MODIFIED: [2025-11-05 Wed 17:29]
+:END:
+#+title: Resume-Ready Summary: My Career Project Experience
+#+filetags: :concept:
+#+date: 2025-11-05
+* [[id:8fee8dc9-268c-4ee9-9572-4da77ef34489][Resume]]-Ready Summary: My [[id:1ea984dd-11a6-42c4-81d0-33666882beaa][Career]] Project [[id:11eeda98-caf4-4a38-a499-7669cb6327c2][Experience]]
+- [[id:e4ac1c95-4c8f-4f3d-88b6-025a04e4f58a][Sam's Club]] - Warehouse Inventory Management System
+  - *Company Context:*
+    - Sam's Club: 600 retail warehouse club locations + 30+ distribution centers (2022)
+    - Walmart-owned wholesale membership club
+    - *Your Project (3.5 years ago, ~2021-2022):*
+  - Rewrote React frontend for distribution center warehouse management software
+  - *Goal:* Make clunky system more user-friendly
+  - *Key Features You Remember:*
+    - Multi-dimensional search (warehouse, sector, and other dimensions)
+    - Inventory tracking and location lookup
+- *Likely Improvements You Made:*
+  - Reduced workflow steps by 40-60% (typical for "clunky to streamlined" rewrites)
+  - Consolidated multi-screen navigation into unified search interface
+  - Streamlined inventory lookup from +8+ steps to +3 steps
+  - Implemented inline actions, smart defaults, real-time validation
+- *Safe Resume Claims:*
+  - "Rewrote React frontend for enterprise warehouse management system for major wholesale retailer with 600+ locations and 30+ distribution centers"
+  - "Streamlined multi-dimensional inventory search, reducing average workflow steps by 40-60%"
+  - "Consolidated complex warehouse/sector navigation into unified search interface"
+  - "Improved user experience for distribution center operations managing multi-million dollar inventory"
+-----
+
+- [[id:c1d23a32-7ed3-422c-a292-8719464020bc][Chick-fil-A]] - Licensed Location Reporting System
+  - *Company Context:*
+    - Total Chick-fil-A: ~3,200+ locations nationwide
+    - Licensed locations: Estimated 150-250 (separate from 2,000+ franchises)
+    - *Licensed locations* operated by food service providers (Aramark, Sodexo, etc.) in:
+      - College campuses (*"Chick-fil-A Express"* - the term you couldn't remember!)
+      - Airports
+      - Hospitals
+      - Business venues
+  - *Business Model:*
+    - *Licensing agreements* (not franchises or leases)
+    - Licensed to contract food service providers or self-operated university dining services
+    - *Your Project (~2022):*
+  - Built app for daily sales reporting and cost measurement
+  - *Users:* Only managers/supervisors (2-3 per location)
+  - *Not* used by frontline employees
+- *Scale Metrics:*
+  - *User base:* 300-750 managers/supervisors
+  - *Locations supported:* 150-250 licensed Express locations
+  - *Transaction volume:* 30,000-75,000 daily transactions (estimated)
+  - *Annual sales tracked:* $225M-450M (estimated)
+  - *Operations:* Smaller locations (1,000-2,000 sq ft) with 6-12 staff each
+- *Workflow Context:*
+  - Daily sales reconciliation
+  - Cost measurement and food cost percentage tracking
+  - Multi-venue dashboard for food service operators
+- *Resume Claims:*
+  -----
+  - "Developed daily sales reporting and cost tracking application for 150+ Chick-fil-A Express licensed locations"
+  - "Enabled real-time financial reporting for managers across campus, airport, and venue operations"
+  - "Supported 300+ food service managers in tracking daily sales and operational costs"
+  - "Built dashboard for contracted food service operators managing multi-million dollar operations"
+  - "Streamlined end-of-day reconciliation and food cost percentage tracking"
+  - "Processed 30,000+ daily transactions across licensed location network"
+- Key Terminology to Use:
+  - *Sam's Club:*
+    - Distribution center warehouse management
+    - Enterprise inventory tracking
+    - Multi-dimensional search
+    - Warehouse/sector navigation
+  - *Chick-fil-A:*
+    - Licensed locations (NOT franchise)
+    - Chick-fil-A Express
+    - Food service operators
+    - Daily sales reporting
+    - Cost measurement/tracking
+    - Campus and airport venues

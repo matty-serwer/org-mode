@@ -1,0 +1,94 @@
+:PROPERTIES:
+:ID:       4f489ff1-efad-477d-83c3-9f474f3964cb
+:REFLECT_ID: 6572acdee2ef4cb1bc910815870a2ae3
+:CREATED:  [2025-11-15 Sat 00:51]
+:MODIFIED: [2025-11-15 Sat 00:53]
+:END:
+#+title: Words & Phrases to Avoid on Resume and Cover Letter
+#+filetags: :concept:
+#+date: 2025-11-15
+* Words & Phrases to Avoid on [[id:8fee8dc9-268c-4ee9-9572-4da77ef34489][Resume]] and [[id:8d50a124-82a1-4631-8f3a-dd5f5deb6a68][Cover Letter]]
+-
+  - [[id:043278c0-6df3-46a0-9235-8334fa765738][11/14/2025]]
+- THE ABSOLUTE WORST OFFENDERS
+  - *Self-Descriptive Buzzwords (Empty Claims)*
+    - Team player
+    - Results-driven / Results-oriented
+    - Detail-oriented
+    - Hard worker / Hardworking
+    - Self-motivated / Highly motivated
+    - Go-getter
+    - Passionate
+    - Out-of-the-box thinker
+    - Dynamic
+    - Innovative / Innovation-minded
+    - People person
+    - Problem solver
+    - Fast learner / Quick learner
+    - Proven track record
+- VAGUE SKILL CLAIMS
+  - *Communication & Interpersonal*
+    - Strong communication skills
+    - Excellent written and verbal communication
+    - Great communicator
+    - Interpersonal skills
+  - *Work Style Descriptors*
+    - Works well under pressure
+    - Works well independently
+    - Multitasker
+    - Flexible
+    - Adaptable
+- MEANINGLESS BUSINESS JARGON
+  - Synergy
+  - Think outside the box
+  - Best of breed
+  - Best in class
+  - Strategic thinker
+  - Bottom-line focused
+  - Value-added
+  - Leverage
+  - Touch base
+  - Circle back
+  - Deep dive
+- EMPTY LEADERSHIP CLAIMS
+  - Natural leader
+  - Leadership skills
+  - Proven leader
+  - Born leader
+- OVERUSED ACTION PHRASES
+  - Responsible for...
+  - Duties included...
+  - Tasked with...
+  - Helped with...
+  - Worked on...
+- USELESS FILLER
+  - Proficient in Microsoft Office (unless you're truly advanced with Excel/Access)
+  - Expert (without proof)
+  - Specialist
+  - Professional (redundant)
+  - Experienced (show it, don't say it)
+  - Guru / Ninja / Rockstar / Wizard
+  - Dedicated
+  - Seasoned
+- SUBJECTIVE CLAIMS
+  - Creative
+  - Unique
+  - Best
+  - Perfect
+  - Superior
+  - Exceptional
+- WHY THESE ARE PROBLEMATIC
+  - They're generic: Every single candidate uses them, so you blend in rather than stand out
+  - They lack proof: Saying you're "detail-oriented" means nothing if there are typos in your resume
+  - They waste space: Recruiters spend 6-7 seconds on a resume initially—don't waste it on fluff
+  - They trigger skepticism: Overuse makes recruiters question your actual abilities
+  - ATS concerns: Some systems flag resumes with too many generic buzzwords as low-quality
+- WHAT TO DO INSTEAD
+  - Use specific metrics: "Increased productivity by 48%" not "results-driven"
+  - Show, don't tell: Instead of "team player," write "Collaborated with cross-functional team of 8 to deliver project 2 weeks ahead of schedule"
+  - Use strong action verbs: Architected, optimized, spearheaded, launched, transformed, streamlined
+  - Provide concrete examples: "Implemented new QA process reducing errors by 30%" not "detail-oriented"
+  - Pull keywords from job descriptions: Use industry-specific terms that match the role
+  - Quantify everything possible: Numbers, percentages, time frames, team sizes, dollar amounts
+  - The key principle: Your resume should PROVE your skills through achievements, not just claim them through buzzwords.
+-----

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1ce6cbfc-9789-4c67-af84-767ad837ea43
+:REFLECT_ID: 3e734d7270154976a50860974d7a0b5a
+:CREATED:  [2025-10-27 Mon 20:43]
+:MODIFIED: [2025-10-27 Mon 20:43]
+:END:
+#+title: Comic
+#+filetags: :concept:
+#+date: 2025-10-27
+

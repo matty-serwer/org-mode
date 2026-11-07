@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       aeefafa8-d6b3-4689-88af-de9714c5b8f1
+:REFLECT_ID: ca80165b928e4580aba6090fab62a66d
+:CREATED:  [2026-01-17 Sat 14:47]
+:MODIFIED: [2026-04-08 Wed 20:10]
+:END:
+#+title: Alex Triana
+#+filetags: :person:
+#+date: 2026-01-17
+- Title: Chief
+- Company: [[id:75c392dd-3b65-4fa7-a6df-64d3fea41ba5][418 Productions]]
+- Type:  
+- Email: [[mailto:alextriana@418productions.com][alextriana@418productions.com]]
+- Phone: 310-433-6709
+- Location: 271 E Redondo Beach Blvd, Gardena, CA 90248, USA

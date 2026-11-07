@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c8e8746b-faee-4d3b-81ad-c82edb39725a
+:REFLECT_ID: 19f7455233d6415fa7a1e886e2e554a9
+:CREATED:  [2026-02-09 Mon 21:37]
+:MODIFIED: [2026-02-09 Mon 21:37]
+:END:
+#+title: Homemade Cleaner
+#+filetags: :concept:
+#+date: 2026-02-09
+

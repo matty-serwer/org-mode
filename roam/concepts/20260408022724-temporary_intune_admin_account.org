@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5cbd77e2-ab47-4b16-b7c1-2033b58eb6df
+:REFLECT_ID: f639331b9d164098976c4a787981958a
+:CREATED:  [2026-04-08 Wed 02:27]
+:MODIFIED: [2026-04-08 Wed 02:27]
+:END:
+#+title: Temporary Intune Admin Account
+#+filetags: :concept:
+#+date: 2026-04-08
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       25018822-4e0c-4d61-96b4-0f96e63d1da7
+:REFLECT_ID: 01f7ec541ffb4a6f8b8a7119c65bd512
+:CREATED:  [2026-02-26 Thu 09:06]
+:MODIFIED: [2026-02-26 Thu 09:06]
+:END:
+#+title: org-mode setup checklist
+#+filetags: :concept:
+#+date: 2026-02-26
+

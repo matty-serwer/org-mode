@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       90f34d06-33a5-4389-b656-af764256c1db
+:REFLECT_ID: d84806f97ddb4ed7be9fa268dd6724d6
+:CREATED:  [2026-02-26 Thu 10:29]
+:MODIFIED: [2026-02-26 Thu 10:29]
+:END:
+#+title: Doom Emacs Org Mode Setup
+#+filetags: :concept:
+#+date: 2026-02-26
+

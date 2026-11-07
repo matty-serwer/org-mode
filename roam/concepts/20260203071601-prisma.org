@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d34be374-cad6-4eae-8b8c-c317ab044250
+:REFLECT_ID: ccbb1c20d6df4bc0b47dad405b977722
+:CREATED:  [2026-02-03 Tue 07:16]
+:MODIFIED: [2026-02-03 Tue 07:16]
+:END:
+#+title: Prisma
+#+filetags: :concept:
+#+date: 2026-02-03
+

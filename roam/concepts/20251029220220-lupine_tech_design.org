@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0844b62c-f496-457e-94ea-6c1b4407441f
+:REFLECT_ID: e65dd5a874844234b90cbea348cdd7d5
+:CREATED:  [2025-10-29 Wed 22:02]
+:MODIFIED: [2025-11-30 Sun 09:14]
+:END:
+#+title: Lupine Tech Design
+#+filetags: :concept:
+#+date: 2025-10-29
+

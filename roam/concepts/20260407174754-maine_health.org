@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0c8ab707-4cf1-41c5-a4eb-ad511986c0b3
+:REFLECT_ID: 84014d71f4b84912a8bc1c5b0b01e141
+:CREATED:  [2026-04-07 Tue 17:47]
+:MODIFIED: [2026-04-07 Tue 17:47]
+:END:
+#+title: Maine Health
+#+filetags: :concept:
+#+date: 2026-04-07
+

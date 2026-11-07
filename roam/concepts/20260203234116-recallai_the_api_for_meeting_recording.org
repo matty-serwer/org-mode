@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       26035103-2a55-4ce7-9f91-ceca49a1ae9d
+:REFLECT_ID: link-96d60106213783e72eb57bc6acbe15de63d00d63301e2a24648d9300e022f482
+:CREATED:  [2026-02-03 Tue 23:41]
+:MODIFIED: [2026-02-03 Tue 23:41]
+:END:
+#+title: Recall.ai - The API for Meeting Recording
+#+filetags: :concept:link:
+#+date: 2026-02-03
+- URL: [[https://www.recall.ai/][https://www.recall.ai/]]
+- Description: Recall.ai provides an API to get recordings, transcripts and metadata from video conferencing platforms like Zoom, Google Meet Microsoft Teams, and more. Get this data with our Meeting Bot API, Desktop Recording SDK, or Mobile Recording SDK.
+- Type: 
+- Highlights
+  - 
+- Summary
+  - Recall.ai is an API solution designed for extracting transcripts, recordings, and metadata from popular video conferencing platforms such as Zoom, Google Meet, and Microsoft Teams. Targeted at developers and businesses, it provides tools including the Meeting Bot API and Desktop Recording SDK for seamless integration into applications, enhancing productivity and meeting intelligence. Users report significant efficiency gains, noting it saved time in development cycles and improved user experiences. Notable client testimonials highlight its scalability and reliability in enterprise environments, making it a go-to choice for companies needing comprehensive meeting insights. The service is available for a free trial, with demo options visible on the site.

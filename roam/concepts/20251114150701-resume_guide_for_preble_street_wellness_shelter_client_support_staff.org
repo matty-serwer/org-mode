@@ -1,0 +1,53 @@
+:PROPERTIES:
+:ID:       7b102d21-1bc4-4ba4-9432-6ff2b895e271
+:REFLECT_ID: 50bf9cbc317547bdae7a4f46f494fb1e
+:CREATED:  [2025-11-14 Fri 15:07]
+:MODIFIED: [2025-11-14 Fri 15:53]
+:END:
+#+title: Resume #guide for Preble Street Wellness Shelter Client Support Staff
+#+filetags: :concept:guide:
+#+date: 2025-11-14
+* [[id:8fee8dc9-268c-4ee9-9572-4da77ef34489][Resume]]  for [[id:fbdd7685-ffb3-47da-8689-477255745edc][Preble Street]] *Wellness Shelter Client Support Staff*
+- Why a Specialized Resume Makes Sense
+  - Different evaluation criteria
+    - A halfway house isn't evaluating you on GitHub contributions or technical architecture decisions. They're looking for:
+      - Reliability and trustworthiness
+      - Interpersonal skills and empathy
+      - Ability to handle crisis situations calmly
+      - Consistency and follow-through
+      - Community-oriented mindset
+    - Your tech resume emphasizes things that don't matter to them (and might even raise concerns—why would a programmer take a $23/hour job?).
+  - How to Reframe Your Experience
+    - Your hostel management is GOLD for this application:
+      - You managed vulnerable populations (travelers, often in unfamiliar situations)
+      - You handled conflict resolution, safety concerns, and rule enforcement
+      - You demonstrated reliability (2-year commitment shows stability)
+      - You built community and helped people navigate difficult transitions
+      - You managed operations, budgets, and logistics
+    - Restaurant/bar experience shows:
+      - Ability to work under pressure
+      - Customer service and de-escalation skills
+      - Following protocols and procedures
+      - Teamwork in high-stress environments
+  - Resume Structure for This Role
+    - Instead of "Technical Skills" and "Projects," organize around:
+      - Summary
+        - Your genuine interest in helping others, stability, reliability
+      - Relevant Experience
+        - Hostel management (lead with this), restaurant/bar roles
+      - Skills
+        - Communication, problem-solving, crisis management, attention to detail, reliability, empathy
+      - Education
+        - Include it, but don't lead with it
+  - Specific Language to Use
+    - Instead of: "Managed hostel operations"
+    - Try: "Provided safe, supportive environment for 50+ residents; resolved conflicts and enforced house policies while maintaining compassionate approach"
+    - Instead of: "Worked in fast-paced restaurant"
+    - Try: "Remained calm and professional during high-stress situations; supported team members and guests through challenging moments"
+  - What NOT to Do
+    - Don't mention you're "between jobs" or frame it as temporary
+    - Don't emphasize the study-while-working benefit (frame it as: you value continuous learning and self-improvement)
+    - Don't include a lengthy tech background unless it's relevant (like if they need basic computer skills)
+  - The Cover Letter is Your MVP
+    - This is where you explain /why/ you're genuinely interested in this work. Be honest: What draws you to community service? What did you learn from the hostel experience that shaped your values? Why now? This matters more than the resume itself.
+    - The fact that you're asking this question thoughtfully suggests you'll be good at this work. Good luck! 🙌

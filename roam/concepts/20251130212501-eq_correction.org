@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6ff9c8fa-dc92-4390-a8dd-8d92f9eb22a6
+:REFLECT_ID: c2dbc2af35b943ae9d56f16fc79a51d8
+:CREATED:  [2025-11-30 Sun 21:25]
+:MODIFIED: [2026-03-17 Tue 09:07]
+:END:
+#+title: EQ Correction
+#+filetags: :concept:
+#+date: 2025-11-30
+

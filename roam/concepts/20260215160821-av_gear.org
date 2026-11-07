@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       981ff139-dc97-4639-b03b-b1429b22ce73
+:REFLECT_ID: 5357de1cb243449a9fe1a09c8d2bae3d
+:CREATED:  [2026-02-15 Sun 16:08]
+:MODIFIED: [2026-02-15 Sun 16:08]
+:END:
+#+title: AV Gear
+#+filetags: :concept:
+#+date: 2026-02-15
+

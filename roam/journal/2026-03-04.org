@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       87c278f8-4429-461f-9a9e-468dbc249f7b
+:REFLECT_ID: 04032026
+:CREATED:  [2026-03-04 Wed 14:08]
+:MODIFIED: [2026-03-04 Wed 20:34]
+:END:
+#+title: Wed, March 4th, 2026
+#+filetags: :daily:
+#+date: 2026-03-04
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - I have a supplement that I take to support my medication. It's not a life or death thing, but it helps. It's just an amino acid combination in a white powder form.
+    I'm packing for a flight right now and I don't have any capsules for it. Is there a non-incriminating way to pack this? I don't want it to look like drugs, but I don't think it would be a problem because I feel like the x-rays don't detect drugs as much as the dogs do. And that's not what this is anyway.
+    - [[id:1f4bbf0e-052b-409e-b494-a1c20e899fa3][Algoriddim DJay]]
+      - Added [[id:b472af07-8126-4f44-8832-250af42fcc01][DJ Transition]] [[id:dc61e1ca-9841-45bf-807e-3452e4b06546][DJay Keyboard Shortcuts]]
+        - =SHIFT + <= : Transition Left
+        - =SHIFT + >= : Transition Center
+        - =SHIFT + /= : Transition Right
+        - =CNTRL + <= : Transition 

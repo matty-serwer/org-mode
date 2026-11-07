@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       2a2b67eb-e285-42f3-800e-168ff86db69c
+:REFLECT_ID: 8884ed77570e413e81a766f42f067533
+:CREATED:  [2026-02-15 Sun 19:07]
+:MODIFIED: [2026-02-15 Sun 19:29]
+:END:
+#+title: INTRO ALEX
+#+filetags: :concept:
+#+date: 2026-02-15
+Hello there alex
+- Matty, Eric Latour's associate
+- looking forward to working with you on the pfizer gig in orlando
+- hoping to pin down travel arangments
+- answer any questions. 
+*** 1. Audio Engineering & Console Operation
+- *Live Mix & Processing (SQ-5 & Analog):* Direct experience with the *SQ-5* and various analog boards for live bands in Boston/LI. I understand how to manage high-pressure gain staging and use EQ/compression to carve out vocal clarity in rooms with difficult acoustics.
+- *Complex Monitoring & Aux Routing (Studio):* At *Sabella Studios*, I built discrete cue mixes for multiple musicians simultaneously. This translates directly to managing the multiple monitor/IEM sends and "business" feeds (livestreams, green rooms) required for this corporate setup.
+- *System Stabilization (Club/DJ):* 20+ years of *professional DJing* in NYC and Boston venues. I specialize in "fixing the room"—re-tuning house EQs, troubleshooting ground loops/hum, and normalizing signal chains that were left in shambles by previous techs.
+*** 2. Video Fundamentals & Technical Acumen
+- *Mission-Critical Media Handling (Broadway Video):* Worked as a *digital video librarian* and interned with the duplication/format team. I am disciplined in labeling, asset management, and the exact procedures required to ensure no data is lost and the correct "roll-ins" are ready for the editors/producers.
+- *Zero-Failure Operations (AMC Fenway):* As an *analog projectionist*, I operated high-stakes changeovers with expensive 35mm prints. This established my "no-snafus" mindset; I understand that in live events, there are no retakes, and the mechanical/technical prep must be 100% before the first frame rolls.
+- *Signal Control & Software Bridging (OSC/Par):* Developed custom *OSC/Par* DJ rigs to bridge software and hardware. This gives me a structural understanding of the 2-way signal logic used in the *ATEM switcher* environment for macros, triggers, and remote control surfaces like the Stream Deck.
+*** 3. Corporate Utility & Professional Reliability
+- *High-Stakes Event Support (Gemini/Intrepid):* Worked directly with planners for large-scale NYC promos (e.g., *DJ Jazzy Jeff at the Intrepid*). I am comfortable navigating high-security venues, managing VIP talent audio, and maintaining a professional "business-ready" demeanor around clients.
+- *RF & Frequency Management (A2/Utility):* Extensive experience in the NYC/Boston club circuit managing wireless mics and interference on the fly. I can support *Carlos* in deploying frequencies, managing battery rotations, and ensuring the "money mics" never go dark.
+- *Communication & Presence (NYC Bartending):* 15 years in high-volume NYC environments. I am trained to read a room, de-escalate technical stress, and provide concise status updates to leadership (like *Alex*) without over-talking or needing hand-holding.
+*** Key Technical Proficiencies
+- *Mixers:* Allen & Heath SQ-5 (Expert), QSC TouchMix (Strong UI/logic foundation).
+- *Video:* ATEM signal flow, alpha channels/keying, digital format standards.
+- *Control:* Bitfocus Companion, OSC, Stream Deck macro integration.
+- *Troubleshooting:* Signal path tracing, RF stability, ground-loop isolation, feedback suppression.
+  - Dates?
+    - 3/4 to Ft. Meyers, 3/13 orlando
+    - 3/20 - 3/27 - orlando

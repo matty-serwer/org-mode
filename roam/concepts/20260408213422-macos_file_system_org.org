@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       6d0ef264-36c0-4cf2-b32a-cc6179c08926
+:REFLECT_ID: c5a524b9fb6442ccbbabe28843810fc9
+:CREATED:  [2026-04-08 Wed 21:34]
+:MODIFIED: [2026-04-08 Wed 21:36]
+:END:
+#+title: MacOS File System Org
+#+filetags: :concept:
+#+date: 2026-04-08
+- Ongoing
+- Audio
+  - [ ] Consolidate Audio Samples
+    - [ ] Consolidate Auto-Sampled material
+- Legislative
+  - [ ] Clean Up and consolidate "Docs" folder
+  - [ ] Create a map of the filesystem

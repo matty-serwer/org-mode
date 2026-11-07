@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       51eed210-1896-4dd9-b50e-d71de1dc1d9c
+:REFLECT_ID: 20de47722b7f4ab19229ece295b7c81f
+:CREATED:  [2026-03-04 Wed 02:40]
+:MODIFIED: [2026-03-04 Wed 02:40]
+:END:
+#+title: Rule 1
+#+filetags: :concept:
+#+date: 2026-03-04
+

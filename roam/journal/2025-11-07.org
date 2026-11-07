@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       eb478571-00ee-4fbb-b4fd-9206dde718c3
+:REFLECT_ID: 07112025
+:CREATED:  [2025-11-07 Fri 16:22]
+:MODIFIED: [2025-11-07 Fri 16:22]
+:END:
+#+title: Fri, November 7th, 2025
+#+filetags: :daily:
+#+date: 2025-11-07
+- [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] [[id:1153ecd1-e7e3-43ad-96d2-cda2a643cc2a][Dashboard]] [[id:5e76b3cf-64c2-461a-bc7d-f8bf26c38c31][Package]]

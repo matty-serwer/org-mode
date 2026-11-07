@@ -1,0 +1,369 @@
+:PROPERTIES:
+:ID:       222d6c9d-18a2-42fd-b745-94b7925de632
+:REFLECT_ID: c6ffec6e46f441748515f867fb8e3d8a
+:CREATED:  [2026-01-28 Wed 06:44]
+:MODIFIED: [2026-01-28 Wed 06:45]
+:END:
+#+title: Issue 004: Authentication Endpoints (Register & Login)
+#+filetags: :concept:
+#+date: 2026-01-28
+*Milestone:* Spring Boot API Setup
+*Estimate:* 1 hour
+*Labels:* =backend=, =auth=, =api=, =day-1=
+*** Description
+Create DTOs and endpoints for user registration and login with JWT token response.
+*** Acceptance Criteria
+- [ ] POST =/api/auth/register= creates new user
+- [ ] POST =/api/auth/login= returns JWT token
+- [ ] Proper validation and error handling
+- [ ] Password is hashed before storage
+- [ ] Can test with Postman successfully
+*** Implementation
+**** Step 1: Create DTOs
+=backend/src/main/java/com/worksweet/dto/SignupRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class SignupRequest {
+    
+    @NotBlank(message = "Name is required")
+    @Size(min = 2, max = 100, message = "Name must be between 2 and 100 characters")
+    private String name;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email must be valid")
+    @Size(max = 100)
+    private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, max = 40, message = "Password must be between 6 and 40 characters")
+    private String password;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/LoginRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class LoginRequest {
+    
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email must be valid")
+    private String email;
+
+    @NotBlank(message = "Password is required")
+    private String password;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/JwtResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class JwtResponse {
+    private String token;
+    private String type = "Bearer";
+    private Long id;
+    private String name;
+    private String email;
+    private String avatarColor;
+
+    public JwtResponse(String token, Long id, String name, String email, String avatarColor) {
+        this.token = token;
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.avatarColor = avatarColor;
+    }
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/MessageResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class MessageResponse {
+    private String message;
+}
+
+#+end_src
+**** Step 2: Create Auth Service
+=backend/src/main/java/com/worksweet/service/AuthService.java=:
+#+begin_src java
+package com.worksweet.service;
+
+import com.worksweet.dto.JwtResponse;
+import com.worksweet.dto.LoginRequest;
+import com.worksweet.dto.SignupRequest;
+import com.worksweet.exception.EmailAlreadyExistsException;
+import com.worksweet.model.User;
+import com.worksweet.repository.UserRepository;
+import com.worksweet.security.JwtUtils;
+import com.worksweet.security.UserDetailsImpl;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Random;
+
+@Service
+@RequiredArgsConstructor
+public class AuthService {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
+    private final JwtUtils jwtUtils;
+
+    private static final String[] AVATAR_COLORS = {
+            "#EF4444", "#F97316", "#F59E0B", "#10B981", 
+            "#3B82F6", "#6366F1", "#8B5CF6", "#EC4899"
+    };
+
+    @Transactional
+    public User registerUser(SignupRequest signupRequest) {
+        if (userRepository.existsByEmail(signupRequest.getEmail())) {
+            throw new EmailAlreadyExistsException("Email already in use: " + signupRequest.getEmail());
+        }
+
+        User user = User.builder()
+                .name(signupRequest.getName())
+                .email(signupRequest.getEmail())
+                .password(passwordEncoder.encode(signupRequest.getPassword()))
+                .avatarColor(getRandomAvatarColor())
+                .active(true)
+                .build();
+
+        return userRepository.save(user);
+    }
+
+    public JwtResponse authenticateUser(LoginRequest loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        loginRequest.getEmail(),
+                        loginRequest.getPassword()
+                )
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = jwtUtils.generateJwtToken(authentication);
+
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+
+        return new JwtResponse(
+                jwt,
+                userDetails.getId(),
+                userDetails.getName(),
+                userDetails.getEmail(),
+                userRepository.findById(userDetails.getId())
+                        .map(User::getAvatarColor)
+                        .orElse(AVATAR_COLORS[0])
+        );
+    }
+
+    private String getRandomAvatarColor() {
+        return AVATAR_COLORS[new Random().nextInt(AVATAR_COLORS.length)];
+    }
+}
+
+#+end_src
+**** Step 3: Create Custom Exception
+=backend/src/main/java/com/worksweet/exception/EmailAlreadyExistsException.java=:
+#+begin_src java
+package com.worksweet.exception;
+
+public class EmailAlreadyExistsException extends RuntimeException {
+    public EmailAlreadyExistsException(String message) {
+        super(message);
+    }
+}
+
+#+end_src
+**** Step 4: Create Global Exception Handler
+=backend/src/main/java/com/worksweet/exception/GlobalExceptionHandler.java=:
+#+begin_src java
+package com.worksweet.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(EmailAlreadyExistsException.class)
+    public ResponseEntity<Map<String, String>> handleEmailAlreadyExists(EmailAlreadyExistsException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<Map<String, String>> handleBadCredentials(BadCredentialsException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "Invalid email or password");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, String>> handleGenericException(Exception ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "An unexpected error occurred");
+        error.put("details", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    }
+}
+
+#+end_src
+**** Step 5: Create Auth Controller
+=backend/src/main/java/com/worksweet/controller/AuthController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import com.worksweet.dto.JwtResponse;
+import com.worksweet.dto.LoginRequest;
+import com.worksweet.dto.MessageResponse;
+import com.worksweet.dto.SignupRequest;
+import com.worksweet.service.AuthService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthController {
+
+    private final AuthService authService;
+
+    @PostMapping("/register")
+    public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signupRequest) {
+        authService.registerUser(signupRequest);
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(new MessageResponse("User registered successfully"));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+        JwtResponse jwtResponse = authService.authenticateUser(loginRequest);
+        return ResponseEntity.ok(jwtResponse);
+    }
+}
+
+#+end_src
+*** Testing with Postman
+#+begin_src bash
+# Start application
+./mvnw spring-boot:run
+
+#+end_src
+*Test 1: Register User*
+#+begin_src markup
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Mattie",
+  "email": "mattie@worksweet.dev",
+  "password": "password123"
+}
+
+Expected: 201 Created
+{
+  "message": "User registered successfully"
+}
+
+#+end_src
+*Test 2: Login*
+#+begin_src markup
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "mattie@worksweet.dev",
+  "password": "password123"
+}
+
+Expected: 200 OK
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "type": "Bearer",
+  "id": 1,
+  "name": "Mattie",
+  "email": "mattie@worksweet.dev",
+  "avatarColor": "#3B82F6"
+}
+
+#+end_src
+*Test 3: Protected Endpoint*
+#+begin_src markup
+GET http://localhost:8080/api/health
+Authorization: Bearer [paste token from login]
+
+Expected: 200 OK
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #4: Implement register and login endpoints with JWT"
+git push origin main
+
+#+end_src
+-----
+
+** 🎯 CHECKPOINT - Milestone 1 Complete!
+At this point you should have:
+- ✅ Spring Boot application running
+- ✅ PostgreSQL database connected
+- ✅ User authentication working
+- ✅ JWT tokens generating
+- ✅ Can register and login via Postman
+*Take a 15-minute break. Stretch. Hydrate. You're crushing it!* 💪

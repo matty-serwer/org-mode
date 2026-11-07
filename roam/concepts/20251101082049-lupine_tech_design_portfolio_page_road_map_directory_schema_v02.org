@@ -1,0 +1,414 @@
+:PROPERTIES:
+:ID:       caed5d15-e17f-4b3a-86ac-146676927d9a
+:REFLECT_ID: f7bad9791f9f4068bea7ef0e327e1476
+:CREATED:  [2025-11-01 Sat 08:20]
+:MODIFIED: [2025-11-01 Sat 08:21]
+:END:
+#+title: Lupine Tech Design 🌐 Portfolio Page Road Map & Directory & #schema v0.2
+#+filetags: :concept:schema:
+#+date: 2025-11-01
+* [[id:0844b62c-f496-457e-94ea-6c1b4407441f][Lupine Tech Design]]* *[[id:2270ec16-0a33-4195-ad0b-3845ead5fe5a][🌐 Portfolio Page]]* *[[id:ba430817-d7ff-487b-8a65-15899e5111cc][Road Map]]* & *[[id:d86ace7a-497e-418d-8122-3d98ead3814c][Directory]]* & ** v0.2*
+** Revised Directory Structure with MDX
+#+begin_src markup
+lupine-tech-design/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── globals.css
+│   ├── providers.tsx
+│   ├── about/
+│   │   └── page.tsx
+│   ├── services/
+│   │   └── page.tsx
+│   ├── applications/
+│   │   └── page.tsx
+│   ├── phantom-power/
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── blog/
+│   │   ├── page.tsx
+│   │   └── [slug]/
+│   │       └── page.tsx
+│   └── api/
+│       └── contact/
+│           └── route.ts
+├── content/
+│   ├── pages/
+│   │   ├── home.mdx
+│   │   ├── about.mdx
+│   │   ├── services.mdx
+│   │   └── phantom-power.mdx
+│   ├── services/
+│   │   ├── web-design.mdx
+│   │   ├── data-services.mdx
+│   │   └── design-to-data-bridge.mdx
+│   ├── applications/
+│   │   ├── phantom-power.mdx
+│   │   └── index.mdx
+│   ├── blog/
+│   │   ├── first-post.mdx
+│   │   └── second-post.mdx
+│   └── case-studies/
+│       ├── client-project-1.mdx
+│       └── client-project-2.mdx
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navigation.tsx
+│   ├── sections/
+│   │   ├── Hero.tsx
+│   │   ├── Features.tsx
+│   │   ├── Services.tsx
+│   │   └── CTA.tsx
+│   ├── mdx/
+│   │   ├── MDXComponents.tsx
+│   │   ├── CodeBlock.tsx
+│   │   ├── Callout.tsx
+│   │   ├── ImageWithCaption.tsx
+│   │   └── VideoEmbed.tsx
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   └── Container.tsx
+│   └── animations/
+│       └── FadeIn.tsx
+├── lib/
+│   ├── chakra/
+│   │   └── theme.ts
+│   ├── mdx/
+│   │   ├── mdx.ts
+│   │   ├── get-content.ts
+│   │   └── serialize.ts
+│   ├── fonts.ts
+│   └── utils.ts
+├── hooks/
+│   ├── useScrollPosition.ts
+│   └── useMediaQuery.ts
+├── types/
+│   ├── index.ts
+│   ├── api.ts
+│   └── content.ts
+├── styles/
+│   └── fonts.css
+├── public/
+│   ├── fonts/
+│   │   ├── PPMontrealRegular.woff2
+│   │   ├── PPMontrealMedium.woff2
+│   │   ├── PPMontrealBold.woff2
+│   │   ├── PPAdditionRegular.woff2
+│   │   └── PPAdditionBold.woff2
+│   ├── images/
+│   │   ├── blog/
+│   │   ├── services/
+│   │   └── phantom-power/
+│   └── icons/
+├── config/
+│   ├── site.ts
+│   └── navigation.ts
+├── utils/
+│   ├── animations.ts
+│   ├── formatting.ts
+│   └── content-helpers.ts
+├── animations/
+│   └── variants.ts
+└── features/
+    ├── phantom-power/
+    │   └── components/
+    └── data-services/
+        └── components/
+
+#+end_src
+** Updated Week 1 Roadmap with MDX Integration
+*** *Day 1-2: Project Initialization & MDX Setup*
+*Tasks:*
+1. Initialize Next.js 16 project with TypeScript
+1. Install core dependencies:
+  
+  #+begin_src bash
+  npm install @chakra-ui/react @emotion/react @emotion/styled framer-motionnpm install @tanstack/react-query lodashnpm install next-mdx-remote gray-matter reading-timenpm install -D @types/lodash
+  
+  #+end_src
+1. Set up Tailwind CSS 4.1.16
+1. *Configure MDX in *=next.config.mjs=:
+  
+  #+begin_src javascript
+  /** @type {import('next').NextConfig} */const nextConfig = {  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],  experimental: {    mdxRs: true,  },}export default nextConfig
+  
+  #+end_src
+*Deliverables:*
+- Project structure with =/content/= directory
+- MDX processing configured
+- All core dependencies installed
+-----
+
+*** *Day 3: Typography & Font Implementation*
+/(Same as before - no changes needed)/
+-----
+
+*** *Day 4: Chakra UI + MDX Components Integration*
+*Tasks:*
+1. Set up Chakra UI with App Router
+1. Create custom theme with PP fonts
+1. *Create *=/components/mdx/MDXComponents.tsx=:
+  
+  #+begin_src typescript
+  import { Box, Heading, Text, Code, Link } from '@chakra-ui/react'
+  import { CodeBlock } from './CodeBlock'
+  import { Callout } from './Callout'
+  import { ImageWithCaption } from './ImageWithCaption'
+  
+  export const MDXComponents = {
+    h1: (props: any) => <Heading as="h1" size="2xl" mb={4} {...props} />,
+    h2: (props: any) => <Heading as="h2" size="xl" mt={8} mb={4} {...props} />,
+    h3: (props: any) => <Heading as="h3" size="lg" mt={6} mb={3} {...props} />,
+    p: (props: any) => <Text mb={4} lineHeight="tall" {...props} />,
+    code: (props: any) => <Code {...props} />,
+    pre: CodeBlock,
+    a: (props: any) => <Link color="brand.500" {...props} />,
+    // Custom components
+    Callout,
+    ImageWithCaption,
+    // Add more as needed
+  }
+  
+  #+end_src
+1. *Create *=/lib/mdx/mdx.ts= for MDX utilities:
+  
+  #+begin_src typescript
+  import fs from 'fs'
+  import path from 'path'
+  import matter from 'gray-matter'
+  import { serialize } from 'next-mdx-remote/serialize'
+  import readingTime from 'reading-time'
+  
+  const contentDirectory = path.join(process.cwd(), 'content')
+  
+  export async function getContentBySlug(folder: string, slug: string) {
+    const realSlug = slug.replace(/\.mdx$/, '')
+    const fullPath = path.join(contentDirectory, folder, `${realSlug}.mdx`)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    
+    const { data, content } = matter(fileContents)
+    const mdxSource = await serialize(content)
+    const readTime = readingTime(content)
+    
+    return {
+      slug: realSlug,
+      frontmatter: data,
+      content: mdxSource,
+      readingTime: readTime.text,
+    }
+  }
+  
+  export function getAllContent(folder: string) {
+    const folderPath = path.join(contentDirectory, folder)
+    const files = fs.readdirSync(folderPath)
+    
+    return files
+      .filter(file => file.endsWith('.mdx'))
+      .map(file => {
+        const slug = file.replace(/\.mdx$/, '')
+        const fullPath = path.join(folderPath, file)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const { data } = matter(fileContents)
+        
+        return {
+          slug,
+          ...data,
+        }
+      })
+  }
+  
+  #+end_src
+*Deliverables:*
+- Chakra UI integrated with custom MDX components
+- MDX processing utilities ready
+- Styled markdown rendering
+-----
+
+*** *Day 5: Core Layout + Content Structure*
+*Tasks:*
+1. Build Header, Footer, Navigation /(same as before)/
+1. *Create initial MDX content files*:
+  =/content/pages/home.mdx=:
+  
+  #+begin_src mdx
+  ---
+  title: "Lupine Tech Design"
+  description: "Bridging the gap between design and data"
+  hero:
+    title: "Where Design Meets Data"
+    subtitle: "We create beautiful digital experiences powered by intelligent data"
+  featured:
+    - phantom-power
+  ---
+  
+  ## Welcome to Lupine Tech
+  
+  We specialize in web design and data services that work together seamlessly.
+  
+  <Callout type="info">
+  Check out our flagship application: Phantom Power
+  </Callout>
+  
+  #+end_src
+  =/content/pages/phantom-power.mdx=:
+  
+  #+begin_src mdx
+  ---
+  title: "Phantom Power"
+  description: "Our flagship application"
+  status: "In Development"
+  features:
+    - Real-time data processing
+    - Beautiful UI
+    - Seamless integration
+  ---
+  
+  # Phantom Power
+  
+  The next generation of data-driven applications.
+  
+  ## Features
+  
+  - **Fast**: Lightning-quick processing
+  - **Intuitive**: Designed for ease of use
+  - **Powerful**: Enterprise-grade capabilities
+  
+  #+end_src
+1. *Create *=/types/content.ts=:
+  
+  #+begin_src typescript
+  export interface PageFrontmatter {
+    title: string
+    description: string
+    author?: string
+    date?: string
+    tags?: string[]
+    featured?: boolean
+    hero?: {
+      title: string
+      subtitle: string
+    }
+  }
+  
+  export interface BlogPost extends PageFrontmatter {
+    slug: string
+    readingTime: string
+  }
+  
+  #+end_src
+*Deliverables:*
+- Layout components
+- Initial MDX content files with frontmatter
+- Type definitions for content
+-----
+
+*** *Day 6-7: Pages Rendering MDX Content*
+*Tasks:*
+1. *Update *=/app/page.tsx= to load home.mdx:
+  
+  #+begin_src typescript
+  import { MDXRemote } from 'next-mdx-remote/rsc'
+  import { getContentBySlug } from '@/lib/mdx/mdx'
+  import { MDXComponents } from '@/components/mdx/MDXComponents'
+  
+  export default async function HomePage() {
+    const { frontmatter, content } = await getContentBySlug('pages', 'home')
+    
+    return (
+      <Box>
+        <Hero {...frontmatter.hero} />
+        <MDXRemote 
+          source={content} 
+          components={MDXComponents}
+        />
+      </Box>
+    )
+  }
+  
+  #+end_src
+1. *Create *=/app/phantom-power/page.tsx=:
+  
+  #+begin_src typescript
+  import { getContentBySlug } from '@/lib/mdx/mdx'
+  import { MDXRemote } from 'next-mdx-remote/rsc'
+  import { MDXComponents } from '@/components/mdx/MDXComponents'
+  
+  export default async function PhantomPowerPage() {
+    const { frontmatter, content } = await getContentBySlug('pages', 'phantom-power')
+    
+    return (
+      <Container>
+        <MDXRemote 
+          source={content}
+          components={MDXComponents}
+        />
+      </Container>
+    )
+  }
+  
+  #+end_src
+1. *Create *=/app/blog/[slug]/page.tsx= for dynamic MDX blog posts:
+  
+  #+begin_src typescript
+  import { getAllContent, getContentBySlug } from '@/lib/mdx/mdx'
+  import { MDXRemote } from 'next-mdx-remote/rsc'
+  
+  export async function generateStaticParams() {
+    const posts = getAllContent('blog')
+    return posts.map(post => ({ slug: post.slug }))
+  }
+  
+  export default async function BlogPost({ params }: { params: { slug: string } }) {
+    const { frontmatter, content, readingTime } = await getContentBySlug('blog', params.slug)
+    
+    return (
+      <article>
+        <h1>{frontmatter.title}</h1>
+        <p>{readingTime}</p>
+        <MDXRemote source={content} components={MDXComponents} />
+      </article>
+    )
+  }
+  
+  #+end_src
+1. *Create sample MDX files* for:
+  - Services (web-design.mdx, data-services.mdx)
+  - Applications (phantom-power.mdx)
+  - Blog posts (2-3 sample posts)
+*Deliverables:*
+- All pages rendering MDX content
+- Dynamic blog routing
+- Content organized in =/content/= folders
+-----
+
+** Additional MDX-Specific Configurations
+=tsconfig.json=* path aliases*:
+#+begin_src json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/components/*": ["./components/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/content/*": ["./content/*"],
+      "@/types/*": ["./types/*"]
+    }
+  }
+}
+
+#+end_src
+-----
+
+** Content Organization Benefits
+1. *Easy editing*: Non-developers can edit MDX files
+1. *Version control*: Track content changes in Git
+1. *Frontmatter*: Rich metadata for SEO, organization
+1. *Custom components*: Use React components in markdown
+1. *Type safety*: TypeScript types for frontmatter
+1. *Performance*: Static generation at build time
+-----
+
+*Does this better match your content strategy?* I can help you set up the MDX pipeline, create initial content templates, or build out those custom MDX components.

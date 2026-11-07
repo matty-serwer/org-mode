@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       dd0e7bda-3acd-4c7e-8207-38a85b184760
+:REFLECT_ID: b498abefd00b49fbbd2ad75bb67ef93f
+:CREATED:  [2025-11-30 Sun 09:46]
+:MODIFIED: [2026-04-08 Wed 20:22]
+:END:
+#+title: 💾 💥 Doom Emacs Directory
+#+filetags: :project:
+#+date: 2025-11-30
+* 💾 💥 [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] [[id:d86ace7a-497e-418d-8122-3d98ead3814c][Directory]]
+- Cheatsheets
+  - [[id:78e641cb-7279-4a0d-ba79-d0435eab6bbd][💾 💥 My Doom Emacs Learning Notes]]
+  - [[id:0eb9d8bb-110a-4294-b8a6-6620842becf7][💾 💥 Doom Emacs (Evil Mode) Code Navigation]]
+  - [[id:9bf8f353-bd1f-4392-bcf2-ba438ea8d9c9][💾 💥 Doom Emacs Custom Key Bindings]]
+  - [[id:c00590b0-b41e-41d9-9734-7a15d15e4172][💾 💥 Doom Emacs Keybinding Cheat Sheet]]
+- Code Projects
+  - [[id:b531653a-302d-4032-8282-b9c992a9c782][💾 💥 Working with Code Projects in Doom Emacs]]
+- Work-Along
+  - 

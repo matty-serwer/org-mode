@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1e7de44d-3bc2-45ca-9ba4-24a67b2a77e1
+:REFLECT_ID: 49c7c6a345fc4cb4b6117f10ceedc463
+:CREATED:  [2026-03-13 Fri 23:20]
+:MODIFIED: [2026-03-13 Fri 23:20]
+:END:
+#+title: Serum
+#+filetags: :concept:
+#+date: 2026-03-13
+

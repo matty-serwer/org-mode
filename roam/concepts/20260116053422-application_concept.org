@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       40571aed-6eee-4172-aeb1-2637c61c3d18
+:REFLECT_ID: 257dc43f140b45f0a269116b00eae739
+:CREATED:  [2026-01-16 Fri 05:34]
+:MODIFIED: [2026-04-11 Sat 22:52]
+:END:
+#+title: Application Concept
+#+filetags: :concept:
+#+date: 2026-01-16
+

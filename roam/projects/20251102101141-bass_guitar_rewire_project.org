@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       39ae6e58-1e36-482e-ae28-4311c52d4138
+:REFLECT_ID: fe2d39db45b643f8bd12bf3ce9acf2d1
+:CREATED:  [2025-11-02 Sun 10:11]
+:MODIFIED: [2026-03-17 Tue 06:04]
+:END:
+#+title: 🎸 Bass Guitar Rewire Project
+#+filetags: :project:schema:
+#+date: 2025-11-02
+/This project will see us Troubleshoot and Rewire the /[[id:bb1eef74-7582-4baa-9175-8d5bd71f25b8][Fender Jaguar Bass]]
+- Issues:
+  - Low Volume from [[id:b3ff0950-bc6e-40cf-af4b-7bff1a38028c][Bridge Pickup]], that cuts off right around the Peak (10)
+  - Phasey Sound
+  - Wiring oddities
+    - The Jack only has one cable attacked to it. 
+    - The Flow is minimal and less Linear than the [[id:b28844b4-535c-4d33-a01d-3df6df19d638][Old American Fender Jaguar Bass]]
+- Documents:
+  - [[id:bb1eef74-7582-4baa-9175-8d5bd71f25b8][Fender Jaguar Bass]] 014-9302(3)-XXX
+    - [[id:0f8e63e4-fe3f-47a2-9d28-26d7ef8420c5][Manual]] with  
+      - [[https://www.fmicassets.com/Damroot/Original/10001/SM_014930XXXX_Player_Jaguar_Bass_Rev_A.pdf][https://www.fmicassets.com/Damroot/Original/10001/SM_014930XXXX_Player_Jaguar_Bass_Rev_A.pdf]]
+    - [[id:c0ada2f9-690e-41e4-a486-ea1af828c5e6][Pickup Specifications]]
+      
+      [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/b9a2fd17615e4965a8072b7ea79dda21/d765a9a8-ba65-4c7e-b283-9cc5c25ef36b?key=d8f224f1e84ff26b3fb2645a75fce635a37d9a68b59c5c79a939861faa4253ed][image]]
+    - Diagram, Frustratingly Bottom up, as if the bass was face down on your lap, and you were magically looking through the wood, like that super-cat from the [[id:525343e1-733e-41c3-8a5b-4de74aac73f4][Tom Green]] Show. 
+      [[https://www.fmicassets.com/Damroot/Original/10001/SM_014930XXXX_Player_Jaguar_Bass_Rev_A.pdf][https://www.fmicassets.com/Damroot/Original/10001/SM_014930XXXX_Player_Jaguar_Bass_Rev_A.pdf]]
+    - 
+- (dia. A) [[id:127ce9a0-7dd3-4033-977e-af03d9055a89][P/J Bass]] Rotated, Top Up, Player Position, as if resting on your lap, neck to the left.
+  
+  [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/fe393a07039d4a3084ff56d843700352/7fd74205-3bd6-481c-8dd9-b762c60a4e86?key=517a271df41796a9350c2b278100caedb47206550307068fca71996f0bb570f3][image]]
+- [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/f5d444301875420f8e5d3b6711ef1fb1/d158fc33-ea54-4363-8065-1d189ef744f1?key=fe283a8a72e7373643bfb0a572d3e120ecb9a9bd620c44cecbdd2fc969a1219e][Brave Browser.app]]
+  
+  [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/004b469dece2488c8bd24652faa47aca/5e0cd438-ef72-4b73-a228-956f9428ef98?key=be9a57840aae61c07bf950ead96d9064527efce12bc587fabbf66433a1794727][image]]
+- (dia. B) My [[id:bb1eef74-7582-4baa-9175-8d5bd71f25b8][Fender Jaguar Bass]], Rotated, Top Up, Player Position, as if resting on your lap, neck to the left.
+  
+  [[https://reflect-assets.app/v1/users/IOPbOsCY3ngO02wCaCgY0oSjlTM2/dc214f8b4bbc4cbe903b23290c93f0f5/53b6868d-f732-4269-be48-0d57b8da4f5f?key=fa1ef1513f58c4db3e1498c78fa06b20c09dac5b1484a770a4d5bb14c20a50da][image]]

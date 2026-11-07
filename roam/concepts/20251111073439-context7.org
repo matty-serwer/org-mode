@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       8f3586f7-8e2a-4427-8722-d05c820d3b1d
+:REFLECT_ID: 0085fd067c3f446c88a149dd8d601360
+:CREATED:  [2025-11-11 Tue 07:34]
+:MODIFIED: [2025-11-12 Wed 08:01]
+:END:
+#+title: Context7
+#+filetags: :concept:plugin:
+#+date: 2025-11-11
+Type:  
+Plugin Category: MCP Server
+Host Application: [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]], [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]], [[id:a319687b-1181-436e-baba-89e08e8a2ff6][Plexi]]
+Website (API Keys): [[https://context7.com/dashboard][https://context7.com/dashboard]]
+- ctx7sk-b4284143-45f0-412c-ac20-b6334a5e4bd9

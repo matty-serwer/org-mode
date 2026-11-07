@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8a894305-a28e-4ac7-a444-f3c37154eb04
+:REFLECT_ID: d4dbeb62ffbf4a859a8ca30c71d6f976
+:CREATED:  [2026-04-08 Wed 22:04]
+:MODIFIED: [2026-04-08 Wed 22:04]
+:END:
+#+title: LX480 Essentials
+#+filetags: :concept:
+#+date: 2026-04-08
+

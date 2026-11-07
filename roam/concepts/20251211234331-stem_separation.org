@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       512918b0-24ae-42bb-88fb-a18090e08bc3
+:REFLECT_ID: 77dea50833a64db58d10d50585be0147
+:CREATED:  [2025-12-11 Thu 23:43]
+:MODIFIED: [2026-03-17 Tue 06:06]
+:END:
+#+title: Stem Separation
+#+filetags: :concept:
+#+date: 2025-12-11
+

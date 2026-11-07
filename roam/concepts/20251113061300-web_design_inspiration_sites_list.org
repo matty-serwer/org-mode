@@ -1,0 +1,91 @@
+:PROPERTIES:
+:ID:       6eb21d0e-f98b-4211-9215-23b5f7dbef57
+:REFLECT_ID: d514a8cd0b3c48b1979737c03c3032d7
+:CREATED:  [2025-11-13 Thu 06:13]
+:MODIFIED: [2025-11-13 Thu 06:14]
+:END:
+#+title: Web Design Inspiration Sites
+#+filetags: :concept:list:
+#+date: 2025-11-13
+* Web [[id:d260b299-87d7-4af6-8fe3-045261e30f77][Design]] [[id:d689500e-c27c-48c1-85db-58ad37086d7e][Inspiration]] [[id:ee084eaa-9997-4451-a1be-50d8e7402a30][Sites]]
+/Here are all 38 web design inspiration sites featured in the video, each with a clickable link and a short bullet about its general focus or value[1]:/
+*** [[id:11a581d9-e53a-439a-b9ae-16ffa8fef347][Web Design Inspiration Sites]]
+1. [[http://muz.li/][Muzli]]
+  - Provides curated, daily design inspiration through a Chrome extension[1].
+1. [[https://www.landingpicks.com/][Landing Picks]]
+  - Focuses exclusively on unique landing page designs for conversion-driven sites[1].
+1. [[https://maxibestof.one/][Maxi Best Of]]
+  - Curates inspiring sites categorized by font pairings for design reference[1].
+1. [[https://www.siteofsites.co/][Site of Sites]]
+  - Offers detailed showcases of standout websites, including creator and platform information[1].
+1. [[https://land-book.com/][Landbook]]
+  - Features searchable inspiration for various website components like testimonials and contacts[1].
+1. [[https://onepagelove.com/][One Page Love]]
+  - Highlights exceptional one-page websites and minimal multi-page projects[1].
+1. [[https://www.cssdesignawards.com/][CSS Design Awards]]
+  - Awards sites based on UI, UX, and innovation with user voting[1].
+1. [[https://www.unsection.com/][Unsection]]
+  - Focuses on inspiring individual sections and components of websites rather than entire sites[1].
+1. [[https://minimal.gallery/][Minimal Gallery]]
+  - Presents minimal and visually clean websites for simple modern inspiration[1].
+1. [[https://godly.website/][Godly]]
+  - Showcases cutting-edge interactive sites with video scroll previews[1].
+1. [[https://www.lapa.ninja/][Lapa Ninja]]
+  - Provides an ad-heavy archive of creative landing and full websites for inspiration and learning[1].
+1. [[https://landings.dev/][Landings]]
+  - Displays screenshots of notable landing pages as well as full websites[1].
+1. [[https://www.landingfolio.com/][Landing Folio]]
+  - Offers subscription-based collections of Webflow, Tailwind, and Figma design components[1].
+1. [[https://www.killerportfolio.com/][Killer Portfolio]]
+  - Specializes in curated, high-quality personal portfolio site inspiration[1].
+1. [[https://www.csswinner.com/][CSS Winner]]
+  - Recognizes professionally coded sites judged by an expert panel[1].
+1. [[https://thefwa.com/][FWA]]
+  - Awards innovative digital projects, not just websites, including site of the day and year contests[1].
+1. [[https://commercecream.com/][Commerce Cream]]
+  - Showcases mobile-first e-commerce web design inspirations, with a focus on Shopify[1].
+1. [[https://ecomm.design/][Ecomm Design]]
+  - Displays inspiring e-commerce sites across various platforms with a focus on conversion[1].
+1. [[https://www.awwwards.com/][Awwwards]]
+  - Features educational resources and innovative, award-winning web designs[1].
+1. [[https://cssnectar.com/][CSS Nectar]]
+  - Requires paid submissions and features user-voted, creative web design examples[1].
+1. [[https://www.webdesign-inspiration.com/][Webdesign-Inspiration]]
+  - Aggregates diverse styles with lots of ads, aiming for broad SEO reach[1].
+1. [[https://brutalistwebsites.com/][Brutalist Websites]]
+  - Focuses exclusively on bold, rule-breaking websites in the brutalist design style[1].
+1. [[https://www.hoverstat.es/][Hover States]]
+  - Provides video showcases of interactive states and animated web elements[1].
+1. [[https://www.wix.com/studio/inspiration][Wix Inspiration]]
+  - Curates standout sites built on the Wix platform for platform-specific inspiration[1].
+1. [[https://tympanus.net/codrops/][Codrops]]
+  - Offers creative code tutorials and interactive design inspiration for implementation[1].
+1. [[https://abduzeedo.com/][Abduzeedo]]
+  - Presents branding inspiration alongside web design and creative tutorials[1].
+1. [[https://fontsinuse.com/][Fonts In Use]]
+  - Catalogs real-world font pairings and typography, including web examples[1].
+1. [[https://www.underconsideration.com/brandnew][Brand New]]
+  - Features in-depth branding case studies and design inspiration for brand identity[1].
+1. [[https://dribbble.com/][Dribbble]]
+  - Popular community for sharing and discovering snapshots of design projects[1].
+1. [[https://www.behance.net/][Behance]]
+  - Adobe's platform for diverse creative portfolios with powerful filtering[1].
+1. [[https://www.pinterest.com/][Pinterest]]
+  - Versatile inspiration platform for visual design, including curated web design pins[1].
+1. [[https://savee.it/][Savee.it]]
+  - Pinterest-like, but focused solely on creative inspiration including web and photography[1].
+1. [[https://cosmos.so/][Cosmos]]
+  - Fresh creative platform for UX, UI, and design inspiration for modern creators[1].
+1. [[https://www.designspiration.com/][Design Inspiration]]
+  - Lets users search by color, style, or keyword for tailored design visuals[1].
+1. [[https://store.showit.com][Showit Store]]
+  - Marketplace for Showit templates, including free and paid inspirational designs[1].
+1. [[https://webflow.com/templates][Webflow Templates]]
+  - Curated library of inspiring templates for Webflow-powered sites[1].
+1. [[https://www.curated.design/][Curated Design]]
+  - UI8's subscription service and showcase for trending design assets and web projects[1].
+1. [[https://www.squarespace.com/templates/browse/][SquareSpace Templates]]
+  - Directory of minimal, professionally designed Squarespace templates for inspiration[1].
+Sources
+[1] 38 Must-Visit Web Design Inspiration Resources [2025] 
+[[https://www.youtube-nocookie.com/embed/llYWhiB6LMU][youtube: https://www.youtube-nocookie.com/embed/llYWhiB6LMU]]

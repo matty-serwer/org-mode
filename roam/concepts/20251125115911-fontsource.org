@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5c6b7ae0-6133-4340-83ee-146263691370
+:REFLECT_ID: 8a7d7131574a4e5db5c2e82f4b47d545
+:CREATED:  [2025-11-25 Tue 11:59]
+:MODIFIED: [2025-11-25 Tue 11:59]
+:END:
+#+title: fontsource
+#+filetags: :concept:
+#+date: 2025-11-25
+

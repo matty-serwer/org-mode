@@ -1,0 +1,300 @@
+:PROPERTIES:
+:ID:       b8e19261-56b5-494d-a62c-05d8de0cb442
+:REFLECT_ID: 56488c1105d740578ddd0e02c80c3865
+:CREATED:  [2025-11-13 Thu 09:40]
+:MODIFIED: [2026-04-08 Wed 22:04]
+:END:
+#+title: Audio Plug-ins: Active VST3s as of 11/13/2025
+#+filetags: :concept:
+#+date: 2025-11-13
+* [[id:2f3b4a8e-fcf3-44b4-b53d-e5301c309e44][Audio Plug-ins]]: Active [[id:deb571bd-b2f3-4e9f-84cc-09bd15523340][VST3]]s as of [[id:a486d836-9471-48ab-bdaa-44b1cd98a7f1][11/13/2025]]
+- Ableton Live
+  -----
+  - Instruments
+    - Collision
+    - Electric
+    - Impulse
+    - Instrument Rack
+    - Operator
+    - Sampler
+    - Simpler
+    - Wavetable
+  - Audio Effects
+    - Dynamics & Compression
+      - Compressor
+      - Gate
+      - Glue Compressor
+      - Limiter
+      - Lookahead Limiter
+      - Multiband Dynamics
+      - Amp Follower
+    - Delay & Echo
+      - Echo
+      - Delay
+      - Simple Delay
+      - Filter Delay
+      - Ping Pong Delay
+      - Delay Maker
+    - Reverb & Space
+      - Reverb
+      - Reverb Pro
+      - Convolver
+      - Corpus
+    - Spectral Effects
+      - Spectral Time
+      - Spectral Resonator
+      - Spectral Analyzer
+      - Spectral Mask
+      - Spectral Blur
+    - Modulation
+      - Auto Pan
+      - Phaser
+      - Flanger
+      - Chorus
+      - Tremolo
+    - Distortion & Saturation
+      - Saturator
+      - Overdrive
+      - Pedal
+      - Redux
+      - Erosion
+      - Soft Tube
+      - Drift
+    - Amp & Cabinet Simulation
+      - Amp
+      - Cabinet
+    - EQ & Filtering
+      - EQ Eight
+      - EQ Three
+    - Vocal & Special Processing
+      - Vocoder
+      - Reverse
+    - Analysis & Utility
+      - Spectrum
+      - Spectral Analyzer
+      - Tuner
+      - Utility
+      - Audio Effect Rack
+    - MIDI Effects
+      - Arpeggiator
+      - Chord
+      - Note Length
+      - Pitch
+      - Random
+      - Scale
+      - Velocity
+      - MIDI Effect Rack
+  - Instruments and MIDI Effects
+    - Wavetable
+    - Sampler
+    - Electric
+    - Collision
+    - Operator
+    - Impulse
+    - Simppler
+- Arturia
+  - Instrument Plugins
+    - ARP 2600 V3
+    - Analog Lab 4
+    - Analog Lab V
+    - Buchla Easel V
+    - B-3 V2
+    - CMI V
+    - CS-80 V3
+    - CZ V
+    - Clavinet V
+    - DX7 V
+    - Emulator II V
+    - Farfisa V
+    - Jun-6 V
+    - Jup-8 V3
+    - Jup-8 V4
+    - Matrix-12 V2
+    - Mellotron V
+    - Mini V3
+    - Modular V3
+    - OP-Xa V
+    - Piano V2
+    - Pigments
+    - Prophet V3
+    - Prophet-5 V
+    - SEM V2
+    - Solina V2
+    - Stage-73 V
+    - Stage-73 V2
+    - Synclavier V
+    - Synthi V
+    - Vocoder V
+    - Wurli V2
+  - Effect Plugins
+    - Bus FORCE
+    - Chorus DIMENSION-D
+    - Chorus JUN-6
+    - Comp DIODE-609
+    - Comp FET-76
+    - Comp TUBE-STA
+    - Comp VCA-65
+    - Delay BRIGADE
+    - Delay ETERNITY
+    - Delay TAPE-201
+    - Dist COLDFIRE
+    - Dist OPAMP-21
+    - Dist TUBE-CULTURE
+    - EQ SITRAL-295
+    - Efx FRAGMENTS
+    - Filter M12
+    - Filter MINI
+    - Filter MS-20
+    - Filter SEM
+    - Flanger BL-20
+    - Rev INTENSITY
+    - Rev PLATE-140
+    - Rev SPRING-636
+    - Rotary CLS-222
+    - Tape MELLO-FI
+- AudioGridder
+  - AudioGridder
+  - AudioGridderInst
+  - AudioGridderMidi
+- BFD
+  - BFD3
+  - BFDPlayer
+- Black Box Analog Design
+  - HG-2
+  - HG-2MS
+- Brainworx
+  - bx_cleansweep V2
+  - bx_masterdesk Classic
+  - bx_masterdesk Pro
+  - bx_solo
+  - bx_subfilter
+  - Triaz
+- DECAP
+  - KNOCK
+- Elysia
+  - niveau filter
+- Kilohearts
+  - Komplete Kontrol
+- Loopcloud
+  - Loopcloud
+  - Loopcloud Drum
+  - Loopcloud Play
+- Native Instruments
+  - Primary
+    - Battery 4
+    - Guitar Rig 6
+    - Kontakt
+    - Kontakt 7
+    - Massive X
+  - Secondary Plug-ins
+    - Phasis
+    - Raum
+    - Reaktor 6
+    - Replika
+    - Supercharger
+    - Supercharger GT
+    - Transient Master
+- Neural DSP
+  - NeuralAmpModeler
+- OekSound
+  - Soothe2
+- Plugin Alliance
+  - Vertigo VSC-2
+- Reason
+  - Reason Rack Plugin
+- Relab Development
+  - [[id:8a894305-a28e-4ac7-a444-f3c37154eb04][LX480 Essentials]]
+- Scaler
+  - Scaler2
+  - ScalerAudio2
+- Softube
+  - Saturation Knob
+- Sonnox
+  - Oxford Inflator
+  - Oxford Limiter
+- Sound Toys
+  - Crystallizer
+  - Decapitator
+  - Devil-Loc
+  - Devil-Loc Deluxe
+  - EchoBoy
+  - EchoBoyJr
+  - EffectRack
+  - FilterFreak1
+  - FilterFreak2
+  - LittleAlterBoy
+  - LittleMicroShift
+  - LittlePlate
+  - LittlePrimalTap
+  - LittleRadiator
+  - MicroShift
+  - PanMan
+  - PhaseMistress
+  - PrimalTap
+  - Radiator
+  - SieQ
+  - SuperPlate
+  - Tremolator
+- SPL
+  - Free Ranger
+- TDR
+  - Nova
+- Universal Audio
+  - 175_b
+  - 176
+  - ampex_atr-102_tape
+  - api_2500
+  - api_vision_channel_strip
+  - avalon_vt-737sp
+  - brigade_chorus
+  - capitol_chambers
+  - capitol_compressor
+  - century_channel_strip
+  - dbx_160
+  - distressor
+  - electra
+  - fairchild_660
+  - fairchild_670
+  - galaxy_tape_echo
+  - hitsville_chambers
+  - hitsville_eq
+  - hitsville_eq_mastering
+  - la3a
+  - lexicon_224
+  - manley_massive_passive
+  - manley_massive_passive_m
+  - manley_preamp
+  - manley_voxbox
+  - minimoog
+  - opal
+  - oxide_tape
+  - polymax
+  - pultec_eqp-1a
+  - pultec_hlf-3c
+  - pultec_meq-5
+  - pure_plate
+  - ravel
+  - sound_city_studios
+  - ssl_e_channel_strip
+  - ssl_g_bus_compressor
+  - studer_a800
+  - studio_d_chorus
+  - teletronix_la-2
+  - teletronix_la-2a_gray
+  - teletronix_la-2a_silver
+  - ua_1176ae
+  - ua_1176ln_rev_e
+  - ua_1176_rev_a
+  - waterfall_b3
+  - waterfall_rotary_speaker
+- Valhalla
+  - ValhallaFreqEcho
+  - ValhallaShimmer
+  - ValhallaSpaceModulator
+  - ValhallaSupermassive
+  - ValhallaVintageVerb
+- Xfer Records
+  - OTT
+  - Serum
+  - Serum2
+  - SerumFX

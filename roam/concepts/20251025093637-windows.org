@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f13363b5-7f66-4731-b083-c1934596de57
+:REFLECT_ID: 5939c1cdb2234e1aaa8ed4be57861108
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: windows
+#+filetags: :concept:
+#+date: 2025-10-25
+

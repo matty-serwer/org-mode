@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       71dcc91e-f9cc-46e6-b3f5-aeef8e2433dc
+:REFLECT_ID: 08012026
+:CREATED:  [2025-12-31 Wed 14:29]
+:MODIFIED: [2026-01-08 Thu 17:50]
+:END:
+#+title: Thu, January 8th, 2026
+#+filetags: :daily:
+#+date: 2025-12-31
+- Created a Feedback Post for [[id:bce6ccff-61a8-48c0-ba23-3a2a9d0da425][Structured - Daily Planner]] at [[https://structured.featurebase.app/p/auto-prevent-task-overlap-with-configurable-buffer-setting][https://structured.featurebase.app/p/auto-prevent-task-overlap-with-configurable-buffer-setting]]
+  *Auto-Prevent Task Overlap with Configurable Buffer Setting*
+  /Building on previous overlap management requests with a specific ADHD-friendly solution/
+  -----
+  
+  *The Problem*
+  The app has great drag-and-drop motion and /almost/ has the logic right—tasks bump out of the way when you drag between them. But after a few adjustments, I end up with 5-6 overlapping tasks showing "Tasks are *overlapping*" flags everywhere.
+  *Clicking "overlapping" doesn't fix anything.* It just opens the full task editor where you're adjusting times blind, can't see what you're conflicting with, and it's nearly impossible to resolve without starting over.
+  For ADHD time-blocking workflows, this breaks the entire experience. If it's not easy in a brand new way, I can't get through all the "what-ifs" suggested by these seemingly ‘automatic errors’ without abandoning structured time-blocking entirely. And I know, there are ADHD-centric apps, but I think this style of hangup might affect up to 50% of all users to some degree. 
+  -----
+  
+  *Proposed Solution*
+  Let users set a default gap between tasks:
+  *Benefits:*
+  This transforms drag behavior from creating problems into maintaining realistic, achievable schedules with built-in breathing room.
+  -----
+  
+  *Does this already exist somewhere? If not, it would make Structured genuinely usable for ADHD users who desperately want time-blocking to work. For me the app is otherwise gorgeous and beautiful. *
+  - *Dragging tasks creates cascading overlaps instead of preventing them.*
+  - *Add a configurable overlap tolerance/buffer setting.*
+  - *Current behavior:* Allows ~10min overlap (represents an impossibility)
+  - *Proposed:* Allow *-5min or -10min buffer* (negative overlap = mandatory gap)
+  - ✅ Prevents impossible scheduling automatically
+  - ✅ Accounts for transition time, bathroom breaks, context switching
+  - ✅ Eliminates the cascading overlap problem entirely
+  - ✅ Reduces cognitive load and uncertainty
+- [[id:fb6359e9-01e5-4c0d-97b4-eb0d5838783b][2026 Rig]]
+  - [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] Two setups
+    1. Creative synth stack, like vintage Reason Rack
+    1. Mixing Station
+      - we’re mixing loops, sound mixing, dj sets. All in one free form. No sound gen?67 

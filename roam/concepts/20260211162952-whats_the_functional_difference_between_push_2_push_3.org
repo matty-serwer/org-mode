@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5c4079d5-2c84-4087-a0ca-60545a39c724
+:REFLECT_ID: 802cf9c064eb4c3885e6c3d04f9e6a7f
+:CREATED:  [2026-02-11 Wed 16:29]
+:MODIFIED: [2026-02-11 Wed 16:29]
+:END:
+#+title: What's The Functional Difference Between Push 2 & Push 3
+#+filetags: :concept:
+#+date: 2026-02-11
+

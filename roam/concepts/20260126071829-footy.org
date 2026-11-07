@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1dd43b8b-5091-41a3-9254-6f00416e15ed
+:REFLECT_ID: f07d242237f94411adad4f6effbd70b6
+:CREATED:  [2026-01-26 Mon 07:18]
+:MODIFIED: [2026-01-26 Mon 07:18]
+:END:
+#+title: Footy
+#+filetags: :concept:
+#+date: 2026-01-26
+

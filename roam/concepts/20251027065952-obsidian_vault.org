@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       39b7973d-ae15-4e91-aadc-c07cd3f7d1bd
+:REFLECT_ID: 51a0026f840f4b8cb97aae1fce848010
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: Obsidian Vault
+#+filetags: :concept:
+#+date: 2025-10-27
+

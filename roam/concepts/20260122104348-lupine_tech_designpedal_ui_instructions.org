@@ -1,0 +1,81 @@
+:PROPERTIES:
+:ID:       fcfc4539-0119-4882-a49b-8dc9c1824148
+:REFLECT_ID: c5314f441dfb4a018b6359a0b287e7c9
+:CREATED:  [2026-01-22 Thu 10:43]
+:MODIFIED: [2026-01-22 Thu 10:44]
+:END:
+#+title: @lupine-tech-design/pedal-ui instructions
+#+filetags: :concept:
+#+date: 2026-01-22
+** 1. Basic usage pattern in Next.js
+In your existing Next.js app:
+1. Install your package:
+  
+  #+begin_src bash
+  npm install @lupine-tech-design/pedal-ui
+  #+end_src
+1. Import and use components:
+  
+  #+begin_src tsx
+  // e.g. app/page.tsx or src/app/page.tsx (App Router)
+  import { Button } from '@lupine-tech-design/pedal-ui';
+  
+  export default function Page() {
+    return <Button>Test button</Button>;
+  }
+  #+end_src
+This is the standard “download a package from the registry and use it in your project” flow described under *Getting packages from the registry* and *Using npm packages in your projects*.[2][1]
+** 2. Things your package.json should support
+For a smooth experience in a Next.js consumer, your published =package.json= (of =@lupine-tech-design/pedal-ui=) ideally has:
+- A ="main"= field pointing to the CommonJS build (e.g. ="dist/index.js"=).
+- A ="module"= or ESM export pointing to ="dist/index.mjs"= (or using ="exports"=).
+- ="types"= pointing to ="dist/index.d.ts"= (or =index.d.mts=).[1]
+- ="peerDependencies"= that include at least:
+  - ="react"=
+  - ="react-dom"=
+  - optionally ="next"= if you rely on Next-specific APIs.[3][4]
+If you paste your =package.json=, it becomes possible to confirm or tweak these fields so Next.js can resolve the module cleanly.
+** 3. Client components and Next.js specifics
+Because your build log shows ="use client"= being stripped during bundling, the library effectively ships as regular React components.[5]
+In a Next.js app (especially App Router):
+- If components should always run on the client, import them into a client component file that starts with:
+  
+  #+begin_src tsx
+  "use client";
+  
+  import { Button } from '@lupine-tech-design/pedal-ui';
+  #+end_src
+- If your library internally uses things like browser APIs or React hooks, they will work as long as they are only rendered in client components in the consumer app.[6]
+If your library itself imports =next/link= or =next/image=, then adding =next= as a *peerDependency* (not bundled) is recommended so the consuming Next app provides it.[7][3]
+** 4. Styles from the library
+Your tarball includes =src/styles/theme.css=, so the consumer needs a way to load those styles:
+- Either you expose a top-level CSS entry to import:
+  
+  #+begin_src ts
+  import '@lupine-tech-design/pedal-ui/styles.css';
+  #+end_src
+- Or your README instructs users to import =theme.css= in their =app/layout.tsx= or =_app.tsx=:
+  
+  #+begin_src ts
+  import '@lupine-tech-design/pedal-ui/dist/theme.css';
+  #+end_src
+Next.js supports importing global CSS from certain entry files; this is part of its third-party library guidance.[6]
+If you paste your current =package.json=, a concrete example can be given for the exact ="main"=, ="module"=, ="types"=, ="exports"=, and ="peerDependencies"= fields tailored to this library.
+Sources
+[1] About packages and modules - npm Docs [[https://docs.npmjs.com/about-packages-and-modules/][https://docs.npmjs.com/about-packages-and-modules/]]
+[2] Packages and modules - npm Docs [[https://docs.npmjs.com/packages-and-modules/][https://docs.npmjs.com/packages-and-modules/]]
+[3] Adding next.js into a component library to make use of Next.js features [[https://stackoverflow.com/questions/64162147/adding-next-js-into-a-component-library-to-make-use-of-next-js-features][https://stackoverflow.com/questions/64162147/adding-next-js-into-a-component-library-to-make-use-of-next-js-features]]
+[4] How to package your React Component for distribution via NPM [[https://itnext.io/how-to-package-your-react-component-for-distribution-via-npm-d32d4bf71b4f][https://itnext.io/how-to-package-your-react-component-for-distribution-via-npm-d32d4bf71b4f]]
+[5] How to publish a React component package, using NextJS as the ... [[https://blacksheepcode.com/posts/publish_a_react_package_using_nextjs_as_a_base][https://blacksheepcode.com/posts/publish_a_react_package_using_nextjs_as_a_base]]
+[6] Guides: Third Party Libraries | Next.js [[https://nextjs.org/docs/pages/guides/third-party-libraries][https://nextjs.org/docs/pages/guides/third-party-libraries]]
+[7] Using Next.js components in a custom npm library : r/nextjs - Reddit [[https://www.reddit.com/r/nextjs/comments/10y6oig/using_nextjs_components_in_a_custom_npm_library/][https://www.reddit.com/r/nextjs/comments/10y6oig/using_nextjs_components_in_a_custom_npm_library/]]
+[8] React Foundations: Installing Next.js [[https://nextjs.org/learn/react-foundations/installation][https://nextjs.org/learn/react-foundations/installation]]
+[9] From Zero to NPM: How to Publish a React Component Library with ... [[https://javascript.plainenglish.io/from-zero-to-npm-how-to-publish-a-react-component-library-with-nextjs-fecb37dff566][https://javascript.plainenglish.io/from-zero-to-npm-how-to-publish-a-react-component-library-with-nextjs-fecb37dff566]]
+[10] Can't import named exports from an external NPM library ... - GitHub [[https://github.com/vercel/next.js/discussions/11631][https://github.com/vercel/next.js/discussions/11631]]
+[11] An introduction to the npm package manager - Node.js [[https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager][https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager]]
+[12] Create react component library and import into a next js application [[https://stackoverflow.com/questions/76168482/create-react-component-library-and-import-into-a-next-js-application][https://stackoverflow.com/questions/76168482/create-react-component-library-and-import-into-a-next-js-application]]
+[13] Allow importing CSS modules from other NPM packages #32219 [[https://github.com/vercel/next.js/discussions/32219][https://github.com/vercel/next.js/discussions/32219]]
+[14] How to Import Browser Only Libraries Into Your Next.js Application ... 
+[[https://www.youtube-nocookie.com/embed/DA0ie1RPP6g][youtube: https://www.youtube-nocookie.com/embed/DA0ie1RPP6g]]
+
+[15] Setting up next/router in react component library #17554 - GitHub [[https://github.com/vercel/next.js/discussions/17554][https://github.com/vercel/next.js/discussions/17554]]

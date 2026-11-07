@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a738813b-a357-42cd-9b92-5a40f153d01c
+:REFLECT_ID: c8d70ebb8919488395cb5f4161629e7c
+:CREATED:  [2025-11-29 Sat 15:14]
+:MODIFIED: [2025-11-29 Sat 15:14]
+:END:
+#+title: window split
+#+filetags: :concept:
+#+date: 2025-11-29
+

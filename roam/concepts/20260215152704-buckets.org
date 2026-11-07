@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       02d76b73-3356-4c0f-9557-c25cb42bff08
+:REFLECT_ID: a8022e7aea584da6a6c78cd392f230b2
+:CREATED:  [2026-02-15 Sun 15:27]
+:MODIFIED: [2026-02-15 Sun 15:27]
+:END:
+#+title: Buckets
+#+filetags: :concept:
+#+date: 2026-02-15
+

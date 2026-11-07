@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       15c086b1-a040-4d1a-91d9-0a833323b210
+:REFLECT_ID: 1a6d2e7f80044c2fa65f81a13ecc3623
+:CREATED:  [2026-03-17 Tue 02:19]
+:MODIFIED: [2026-03-17 Tue 02:19]
+:END:
+#+title: Chords
+#+filetags: :concept:
+#+date: 2026-03-17
+

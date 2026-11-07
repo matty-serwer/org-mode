@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0df3fca3-5dbf-4789-ae1f-543e33bdbafe
+:REFLECT_ID: fcc36a52d3544204a264c6174f907e6e
+:CREATED:  [2025-10-31 Fri 17:33]
+:MODIFIED: [2025-10-31 Fri 17:33]
+:END:
+#+title: CSS
+#+filetags: :concept:
+#+date: 2025-10-31
+

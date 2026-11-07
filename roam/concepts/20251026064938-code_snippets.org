@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       02d7fab6-349c-493f-ac2e-026497bbb560
+:REFLECT_ID: b88d3022d42749a2af350dce8cf93d76
+:CREATED:  [2025-10-26 Sun 06:49]
+:MODIFIED: [2025-10-26 Sun 06:49]
+:END:
+#+title: Code Snippets
+#+filetags: :concept:
+#+date: 2025-10-26
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       df370c6c-d32c-44a8-9408-949946fe6e65
+:REFLECT_ID: ecf2560e053840fba589b0313ec122ed
+:CREATED:  [2026-04-08 Wed 22:22]
+:MODIFIED: [2026-04-08 Wed 22:22]
+:END:
+#+title: Active Pro
+#+filetags: :concept:
+#+date: 2026-04-08
+

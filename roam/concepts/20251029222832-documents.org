@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3c140738-5fe5-4f9e-b538-5398c0ca17be
+:REFLECT_ID: 724bb79b758d4256ae81f1e0610551d9
+:CREATED:  [2025-10-29 Wed 22:28]
+:MODIFIED: [2025-10-29 Wed 22:28]
+:END:
+#+title: Documents
+#+filetags: :concept:
+#+date: 2025-10-29
+

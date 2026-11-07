@@ -1,0 +1,289 @@
+:PROPERTIES:
+:ID:       d4448113-9e31-4e30-b78e-64c58b238e5b
+:REFLECT_ID: 10042026
+:CREATED:  [2026-04-08 Wed 00:10]
+:MODIFIED: [2026-04-10 Fri 22:09]
+:END:
+#+title: Fri, April 10th, 2026
+#+filetags: :daily:
+#+date: 2026-04-08
+- [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] [[id:36406928-18b8-4ff8-b679-955fc4f90b8f][Audio Project]]
+  - [[id:aaa440bb-9b43-4481-af4a-7e994bbdacb3][Stem DJ Decks]] Ableton templay and rack units to start building our [[id:3ac3df5a-79f4-4573-b362-b88160306df1][M477i3.wav]] setup 
+  - [[id:7e3bd1c3-bc37-44d7-9ee6-a4c5e45cbb87][Project File]]
+    - [[https://hookmark.net/hm/hook/file/7JdCNQRlB?p=cHJvamVjdC1yZXBvc2l0b3J5LzIwMjY=&n=2026%2D04%2D10%5Ftechnical%5Fdj%2Dstem%2Ddecks%2D001%20Project][2026-04-10_technical_dj-stem-decks-001 Project]]
+  -
+    - yesterday created the 4 channel grouped system, with a [[id:2a621780-8960-42d2-a33d-df577e9dc1a4][DJ Filter]] and custom [[id:ac185314-f619-48fb-a339-fc573acf2082][EQ Channel]]
+- Free Shopify Access — Your Options
+  The best path is a *Shopify Partner Account + Development Store* — it's completely free:[1]
+  *TL;DR:* Sign up at [[partners.shopify.com][partners.shopify.com]] → create a dev store → you're fully set up at $0.
+  -----
+  
+  The Stack You're Building
+  *Next.js + Shopify Storefront API (GraphQL) + Tailwind CSS + *=@shopify/hydrogen-react=
+  Hydrogen-React gives you pre-built headless components (=<Money>=, =<CartForm>=, =<Image>=) that wire directly to the Storefront API, without locking you into Shopify's Remix-based Hydrogen framework. This is the sweet spot for a Fiverr gig — maximum flexibility, still shows deep Shopify integration.[4]
+  - Go to [[partners.shopify.com][*partners.shopify.com*]] and sign up (free)
+  - From the Partner Dashboard, create unlimited *Development Stores* — these are fully functional Shopify stores with real products, collections, cart, and checkout in test mode[1]
+  - Development stores never expire and don't require a paid plan unless you transfer to a client or enable live transactions[1]
+  - You get full access to the *Storefront API (GraphQL)*, the *Admin API*, and Shopify's *GraphiQL explorer* — everything you need to build headless[2][3]
+  - 
+- [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]]
+  - Ecosystem
+    - 
+  - System Functionality
+    - _Must Have_
+      - A fast way to LINK TO FILES on the user's local machine
+        - Files In 
+          1. BEST: When the user drags a FILE ITEM from Finder, etc., into a [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]] page, it automatically creates a LINK to the file. 
+          1. GOOD: If the user selects a FILE ITEM in Finder, right clicks to open the right click file menu, there should be an option to either:
+            - add a link to the file directly to [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]], where it creats a link at the last Cursor Position
+            - copy the file location to the Clipboard, in a format that is instantly recognizable and parsible by [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]], where the user can then either select to add the Link via a [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]] menu or button, or worst case, press CNTRL V to paste it in. 
+          - MAYBE OK: From the [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]] Application, the user can enter into a dialog, or finder open file modal, in order to add a Link to a File. 
+        - Traffic Out
+          1. When the user clicks on a File Link on File Sweet Page, either by Command Clicking the File Name, or by clicking some kind of "Open" Button, it should open the file
+          1. When the User Does another particular type of click, or button press, context would switch to Finder, and reveal the File Item in Finder. 
+          - It would be nice to have both of these. I'd settle for one. 
+      - Pages and Notes
+        - The user should be able to easily create organizational pages, to allow for easily accessing Files based on Projects, Type, or whatever the user thinks of how they actually work with the files. 
+        - Each File Link, when created in File Sweet will have it's own note, where the user can add a description, a log, tags, colors. . 
+    - _Should Have_
+      - Some kind of File Location Update
+        - Most importantly, we are talking about an update to the file location inside the File Sweet Link metadata, so that if the file is moved, outside of the app, most likely using finder, then when the user switches back to the [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]] app, the link should still work.
+        - Methods? 
+          - Some kind of listener, that will update File Sweet as Finder makes changes
+          - Some kind of automatic updating, either after a certain amount of time, or on a refresh, or app open. 
+          - Some kind of user activated repopulation of Link Metadata? 
+        - Basically I am open to ideas, as I am unsure how we should try to accomplish this, but the application wont be useful if it can't keep up with file locations as the filesystem evolvers. 
+  - Interactive Functionality.
+    - The user should be able to manage File Links inside [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]] within Organizational Pages and Navigation. 
+    - Metadata will be added to the Links, in order that they can be represented visually in various ways
+    - [[id:83fe2dfb-b24c-4925-b223-7250d7b5659e][File Sweet]] should not itself affect the actual Files or FIle Items. No action the user takes on a File Sweet File Link should affect the File itself (in more than a nominal way). 
+    - The File Sweet interace should be very Colorful and Visual, almost in a childish or Gamified way. The user should feel that they are 
+- [[id:c97d2873-a2ed-4904-bb99-a662b3aa6e5d][Files]]
+  - [[id:5d0d91fb-d879-4e88-aa50-73b8a76584e3][Samples]]
+    - [[https://hookmark.net/hm/hook/file/1qxLow0ra?p=c2FtcGxlLXN0YWNrcy9BMSAtIE00NyBEUlVNUw==&n=LT%20Live%20Collection][LT Live Collection]] Drums
+      - Multi-tracked, round-robin, velocity-ranged, live recorded drum kits
+Your plan is solid, and the cleanest way to do it is: *use OB‑Xa V’s internal MIDI Learn + a dedicated MPK249 preset, and tell Ableton to ignore the MPK for global “Remote” control.*
+Below is how I’d set it up, step by step.
+-----
+
+** 1. Make Live ignore the MPK for mixer/track stuff
+You want the MPK to talk /only/ to OB‑Xa V, not to Live’s mixer, sends, etc.
+1. In Ableton, go to *Preferences → Link/Tempo/MIDI → MIDI*.
+1. In the *Control Surfaces* section, remove any MPK249 entry (set it to =None=) so Live doesn’t use the Akai remote script or auto‑mapping.[1][2]
+1. In the *MIDI Ports* section, for the *MPK249 Input*:
+  - Turn *Track = On* (so notes and CCs go into tracks/devices).[3][1]
+  - Turn *Remote = Off* (this stops Live from using those CCs to map to track volumes, sends, etc.).[4][1]
+  - Leave *Sync = Off* unless you explicitly need clock.[1]
+Now Live will pass the MPK’s MIDI /into/ instrument tracks, but won’t try to map its knobs/faders to the GUI.
+-----
+
+** 2. Create a dedicated MPK249 preset for OB‑Xa V
+On the MPK249, you want a preset where *all knobs/faders/buttons send CCs on a chosen MIDI channel*, and you never reuse this preset for anything else.
+From the MPK249 manual: presets store how the faders, knobs, buttons, and pads behave, including MIDI channel and CC assignments.[5]
+1. Put the MPK249 into *Preset Mode* and pick an empty slot (e.g. Preset 20).[5]
+1. Edit the *Assignable Knobs*:
+  - Type: set to *MIDI CC*.
+  - Choose a *MIDI channel* (e.g. channel 2) for all of them.
+  - Assign CC numbers you’re unlikely to use elsewhere (e.g. 20–31).[5]
+1. Edit the *Assignable Faders* similarly (type = MIDI CC, same MIDI channel, different CC range, e.g. 40–47).[5]
+1. Optionally set the *Assignable Switches* to CCs (for on/off parameters: sync, unison, etc.).[5]
+1. Save the preset with a name like =OBXa_ONLY= on the MPK.[5]
+This gives you a “hard‑wired” OB‑Xa layout that you won’t accidentally repurpose.
+-----
+
+** 3. Set up the OB‑Xa V track in Ableton
+1. Create a *new MIDI track* in Live.
+1. Drop *OB‑Xa V* on that track.
+1. In the track’s I/O:
+  - =MIDI From=: select *MPK249* and, if you used a specific MIDI channel, set it to that (e.g. =MPK249 / Ch. 2=).[6][1]
+  - =Monitor=: set to *In* (or Arm the track) so the plugin always hears the MPK.[3][1]
+At this point, OB‑Xa V is getting the raw CC and note data from the MPK, and Live itself is not using those CCs for anything else.
+-----
+
+** 4. Use OB‑Xa V’s internal MIDI Learn
+OB‑Xa V has a dedicated *MIDI tab* with a Learn system: when you enable it, all MIDI‑assignable controls turn purple, and existing assignments are red.[7][8]
+1. Open OB‑Xa V’s side panel and go to the *MIDI tab*.[7]
+1. Click the *Learn* button to enter MIDI Learn mode:
+  - Assignable controls turn *purple*, assigned ones are *red*.[7]
+1. Click a *purple* parameter you want to control (e.g. filter cutoff).[7]
+1. Move the corresponding knob or fader on the MPK249.
+  - The control in OB‑Xa V turns red and the assigned CC number shows in the list.[7]
+1. Repeat for each parameter you care about:
+  - Knobs for filter, envelopes, LFO, etc.
+  - Faders for mixer levels, oscillator levels, etc.
+1. To unassign something, right‑click / ctrl‑click it and choose the unassign option.[7]
+OB‑Xa V also lets you set a specific *MIDI channel* it listens on (or ALL/omni), so you can match the channel you used on the MPK249.[7]
+-----
+
+** 5. Save the OB‑Xa V MIDI configuration (so it’s reusable)
+Arturia instruments let you save and manage *MIDI controller configurations* separate from presets, and you can export/import or set one as default.[9][10][7]
+1. In the OB‑Xa V MIDI tab, open the *MIDI Config* menu (usually a dropdown in that tab).[10][7]
+1. Use *Save As* to store your mappings under a clear name like =MPK249_OBXa=.[9][10]
+1. If available, choose *Set as Default* so every new OB‑Xa V instance starts with this mapping.[10][9]
+1. Optionally *Export* the config file as a backup.[10]
+Now switching patches inside OB‑Xa V won’t mess with your hardware mapping; the MIDI config stays consistent across presets and instances (subject to the DAW saving plugin state).[10][7]
+-----
+
+** 6. Save a Live preset/template so you don’t redo routing
+Because Live doesn’t save “MIDI mappings to Configure Mode parameters” globally, it’s better to save the plugin + routing as a device preset or rack.[11][12]
+1. On that OB‑Xa V track (with routing set up and your MIDI config saved in the plugin):
+  - Option A: Drag the *OB‑Xa V device title bar* to the User Library to save a device preset.
+  - Option B: Put OB‑Xa V in an *Instrument Rack* and drag the rack to the User Library (useful if you add FX/macros later).[12][11]
+1. Optionally save a full *Live Set* called something like =OBXa_Controller_Template.als= with this track preconfigured.[11]
+Then, whenever you want that “dedicated OB‑Xa controller” behavior, you just load this preset/rack or template set; no extra mapping in Live itself.
+-----
+
+** 7. Physical labeling & workflow
+Now you can do your console‑tape plan:
+- Put the MPK249 on the =OBXa_ONLY= preset.[5]
+- Label each knob/fader with its assigned OB‑Xa V parameter (cutoff, res, env amt, etc.).
+- If you run out of controls, consider mapping OB‑Xa V’s *Macro knobs* as “meta” controls (e.g., macro = “brighten”, controlling cutoff + env + osc mix) and give those prime real estate on the MPK.[7]
+From here, your workflow is:
+1. Open Ableton.
+1. Load your OB‑Xa V preset/rack or template track.
+1. Put MPK249 into =OBXa_ONLY=.
+1. Jam — all controls talk only to OB‑Xa V, not to Live’s mixer or global UI.
+If you want, tell me roughly how you’d like to distribute controls (e.g. “all 8 faders for oscillator + filter levels, knobs for envelopes/LFO”) and I can propose a concrete control layout that will feel good under the hands.
+Sources
+[1] Live's MIDI Settings - Ableton [[https://help.ableton.com/hc/en-us/articles/209774205-Live-s-MIDI-Settings][https://help.ableton.com/hc/en-us/articles/209774205-Live-s-MIDI-Settings]]
+[2] Disabling the auto-mapping on a midi keyboard? : r/ableton - Reddit [[https://www.reddit.com/r/ableton/comments/43yh9b/disabling_the_automapping_on_a_midi_keyboard/][https://www.reddit.com/r/ableton/comments/43yh9b/disabling_the_automapping_on_a_midi_keyboard/]]
+[3] How To Set Up Your MIDI Controller In Ableton Live (The EASY Way) 
+[[https://www.youtube-nocookie.com/embed/tCwBxW-p0Uo][youtube: https://www.youtube-nocookie.com/embed/tCwBxW-p0Uo]]
+
+[4] Ableton Live Tutorial- How to use a MIDI Keyboard - YouTube 
+[[https://www.youtube-nocookie.com/embed/fCDJDMDZ1Ho][youtube: https://www.youtube-nocookie.com/embed/fCDJDMDZ1Ho]]
+
+[5] [PDF] MPK249 User Guide - inMusic [[https://cdn.inmusicbrands.com/akai/attachments/MPK249/MPK249%20-%20User%20Guide%20-%20v1.0.pdf][https://cdn.inmusicbrands.com/akai/attachments/MPK249/MPK249%20-%20User%20Guide%20-%20v1.0.pdf]]
+[6] Akai Mpk249 Ableton tutorial - connect, setup & midi map - [[Remotify.io][Remotify.io]] [[https://remotify.io/ableton-controllers/akai-mpk249-ableton/][https://remotify.io/ableton-controllers/akai-mpk249-ableton/]]
+[7] [PDF] User Manual OB-Xa V - Your Push Zone has been created. [[https://dl.arturia.net/products/op-xa-v/manual/obxa-v_Manual_1_2_EN.pdf][https://dl.arturia.net/products/op-xa-v/manual/obxa-v_Manual_1_2_EN.pdf]]
+[8] [PDF] User Manual OB-Xa V - [[downloads.arturia.com][downloads.arturia.com]] [[https://downloads.arturia.net/products/ob-xa-v/manual/obxa-v_Manual_1_0_EN.pdf][https://downloads.arturia.net/products/ob-xa-v/manual/obxa-v_Manual_1_0_EN.pdf]]
+[9] Controlling Arturia's V-collection synths from your keyboard - YouTube 
+[[https://www.youtube-nocookie.com/embed/syZcAgUsB1c][youtube: https://www.youtube-nocookie.com/embed/syZcAgUsB1c]]
+
+[10] Cannot save MIDI config - Pigments - Arturia users forum [[https://forum.arturia.com/t/cannot-save-midi-config/2473][https://forum.arturia.com/t/cannot-save-midi-config/2473]]
+[11] Retain Ableton Live 9 'Configure Mode' MIDI Mappings Across ... [[https://cycling74.com/forums/retain-ableton-live-9-configure-mode-midi-mappings-across-sessions][https://cycling74.com/forums/retain-ableton-live-9-configure-mode-midi-mappings-across-sessions]]
+[12] How to get automap in Ableton Live with any controller | VI-CONTROL [[https://vi-control.net/community/threads/how-to-get-automap-in-ableton-live-with-any-controller.115494/][https://vi-control.net/community/threads/how-to-get-automap-in-ableton-live-with-any-controller.115494/]]
+[13] [PDF] OBXa MIDI KIT User's Manual - Encore Electronics [[http://www.encoreelectronics.com/obxamk.pdf][http://www.encoreelectronics.com/obxamk.pdf]]
+[14] Arturia Oberheim OB-Xa V Tutorial Ep.7 - MIDI & Macros Pages 
+[[https://www.youtube-nocookie.com/embed/dye9ek0HCVw][youtube: https://www.youtube-nocookie.com/embed/dye9ek0HCVw]]
+
+[15] Arturia OP-Xa V User Manual [[https://manuals.plus/m/9ba669a7223a10549687415ab79fae66e24cbc7a41e8def87b6bf4fa0197f0e4][https://manuals.plus/m/9ba669a7223a10549687415ab79fae66e24cbc7a41e8def87b6bf4fa0197f0e4]]
+[16] Anyone using MIDI controllers? - OP-Xa V [[https://forum.arturia.com/t/anyone-using-midi-controllers/8619][https://forum.arturia.com/t/anyone-using-midi-controllers/8619]]
+[17] [PDF] Setting up the MPK49 and MPD32 with Ableton Live [[https://cdn.inmusicbrands.com/akai/mpk49/mpd_and_mpk_series___setup_with_ableton_live_03.pdf_238cc1a0b3ba55c68338bb837fa256c5.pdf][https://cdn.inmusicbrands.com/akai/mpk49/mpd_and_mpk_series___setup_with_ableton_live_03.pdf_238cc1a0b3ba55c68338bb837fa256c5.pdf]]
+[18] Arturia OB-Xa V - Page 41 - Instruments Forum - KVR Audio [[https://www.kvraudio.com/forum/viewtopic.php?t=545901&start=600][https://www.kvraudio.com/forum/viewtopic.php?t=545901&start=600]]
+[19] [PDF] OB-X8 User's Guide - Oberheim [[https://oberheim.com/wp-content/uploads/2022/08/OB-X8-Users-Guide-1.1.pdf][https://oberheim.com/wp-content/uploads/2022/08/OB-X8-Users-Guide-1.1.pdf]]
+[20] AKAI MPK249 COMPLETE TUTORIAL AND REVIEW FOR FL ... 
+[[https://www.youtube-nocookie.com/embed/xftf2_ZviVg][youtube: https://www.youtube-nocookie.com/embed/xftf2_ZviVg]]
+
+[21] KVR Forum: Retrologue 2 - howto permanently save MIDI settings? [[https://www.kvraudio.com/forum/viewtopic.php?t=482131][https://www.kvraudio.com/forum/viewtopic.php?t=482131]]
+[22] How to set up your Akai MPK 249 - YouTube 
+[[https://www.youtube-nocookie.com/embed/mQk4gVJ_LLw][youtube: https://www.youtube-nocookie.com/embed/mQk4gVJ_LLw]]
+
+[23] [[MPK249.py][MPK249.py]] - GitHub Gist [[https://gist.github.com/mlegore/477741b6b6a2c8f658d81d2c02de0974][https://gist.github.com/mlegore/477741b6b6a2c8f658d81d2c02de0974]]
+[24] [PDF] User Manual of Product 1: AKAI Professional MPK249 [[https://m.media-amazon.com/images/I/A1R4cxklSPL.pdf][https://m.media-amazon.com/images/I/A1R4cxklSPL.pdf]]
+[25] How to stop Keyboard control Ableton while playing - Arturia Forums [[https://legacy-forum.arturia.com/index.php?topic=100594.0][https://legacy-forum.arturia.com/index.php?topic=100594.0]]
+[26] Arturia Stage-73 V doesn't store midi config - Plugins [[https://community.gigperformer.com/t/arturia-stage-73-v-doesnt-store-midi-config/9712][https://community.gigperformer.com/t/arturia-stage-73-v-doesnt-store-midi-config/9712]]
+[27] Setup Akai MPK 249 Transport Controls In 5 Clicks (Play ... - YouTube 
+[[https://www.youtube-nocookie.com/embed/QoPBSQlfpmw][youtube: https://www.youtube-nocookie.com/embed/QoPBSQlfpmw]]
+- [[id:52149591-e1bf-4263-aa98-86470b8db981][Operation: Directory Map]]
+  - [[id:b42ab017-a31b-4742-bb11-6739d926fae3][Prompt]]
+    
+    #+begin_src markup
+    ## Can you give me instructions, so that I can get a general Directory Map of the Folders on the SSD of my Mac?
+    
+    ## It Needs To Contain:
+    
+    - Folder Names
+    - Folder Relations represented in some kind of hierarchy that I can parse visually. 
+    
+    ## Nice To Haves
+    
+    - Size of all Files within each Folder
+    - A tally of types of audio files
+    
+    I'm thinking I could run a script or two or three in the terminal, that will save the pertinent information to a text file. Then I could give that to you, and you could draw up the map. 
+    
+    OR perhaps you can write instructions for Claude Code, and I could have Claude Code collect the information. 
+    
+    Of the top of my head, I was thinking the map would be a Bullet Outline or similar text file, but I am open to ideas, based on what you know about how you can and should best represent such Directory Map. 
+    
+    ## We Don't Want the Directory Map to be overly thorough, because if we include every technical folder all the way to the bottom, it will take forever, and it will not make sense on the page. So I was thinking we would stop at certain types of folder and no go any deeper. For instance, we should stop digging once we hit a folder that represents a code application, So not only should we not dig into a "node_modules" dicretory, but that should tell us to stop digging at that poing. 
+    
+    Come up with any other rules along these lines. Ask me a few questions if you have an idea for types of folders to stop at but aren't sure. 
+    #+end_src
+
+- [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] [[id:57ee66df-96e2-4754-86bf-95bb0aeb5b9a][Device]]
+  - [[id:46be4f54-7c0a-4dbd-83eb-df2a123a5162][X25 KIT MEGA2]]
+    - An Ableton Drum Rack made form the DS Samples Collection
+    - [ ] Samples need to be synced up better. I.E. make sure Kick samples of Close, OH, and Room are in phase with each other
+  - 
+    - Identity
+      -  don’t know who I am.
+    - Safety
+      - I don’t feel socially safe.
+    - Control
+      -  I can’t control this.
+      - 
+  - I think you really are a good person. I don’t think you would want 
+  - I just want to say, that deep down I think you are a good person.
+  - It’s just a disagreement. It’s not an attack. That will throw you into their imagined realities
+  - Never explain yourself under pressure
+    - Your submitting to n their frame
+  - Never argue about your motive
+  - Never take the bate in character questions
+    - Always a trap
+  - Never Appologize to de-escalate.
+    - a false appology is an admision of guilt
+    - can't appologize just to make it go away
+  - Never match emotion to prove your point
+    - emotional surrender
+    - we all do it. 
+  - Never Accept their language without Precision
+    - disrespect
+    - betreyal
+    - those words carry a lot of weight, so you can't speak to them without clarity
+  - Never answer binary traps
+    -
+      - yes / no, and both are wrong
+  - You can't win by Logic
+    -
+      - it isn't about facts
+  - Never argue their feelings are wrong
+  - Never try to fix the person mid conflict
+    - you all think you can do this
+    - no one ever does
+    - only humiliation and shame 
+- Todo
+  9 Vulnerability pre-frame
+  
+  #+begin_src markup
+  Everytime I've been upset, or confused, or wildly defensive, or reactionary - and in each of these there is always a lot of factors,,, it was always built ontop of an understanding that at your core, you are a good person. 
+  
+  
+  #+end_src
+  1. Pre-Frame identity
+    - Thanks, you've always been one to handle straight talk
+  1. set the frame
+    - I'm going to get right into this. No blame, or anything else
+  1. Pre-Frame the sides
+    - Same team here. A lot in common
+  1. Set boundaries
+    - No insults
+    - not what kind of people we are
+  1. See reputation
+    - You've always been fair
+    - id hack
+  1. Imporove tone
+  1. Pre-Frame ownership
+    - Grant them agency
+    - you decide
+    - i wont tell you what to think
+  1. Time and scope
+    - Wont be a 3 hour marathon
+    - i just want to
+  - I might get this wrong
+  - If their question is outrageous, "what were you thinking!"
+    
+    #+begin_src markup
+    Well, what conclusion were you hoping for? How should it have gone for you?
+    #+end_src

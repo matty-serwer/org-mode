@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       f4b3ab2e-797a-45da-9f55-5911786e21b6
+:REFLECT_ID: 5d66bccad88446dda53e8859f4b243cf
+:CREATED:  [2025-10-26 Sun 14:26]
+:MODIFIED: [2025-11-24 Mon 01:09]
+:END:
+#+title: Context (Note)
+#+filetags: :concept:
+#+date: 2025-10-26
+/Add Personal Context an Emotion to a Note/
+1. *Why *was this item created? action taken? note created?
+1. *What *is your physical context? 
+1. *How *do you feel about this topic?
+- Notes:
+  - any or all three can be relevant
+  - The idea being that we will struggle to place notes as time goes by. 
+  - Emotion is semi-optional, and can range from 'optimistic' or 'work mode' to 'I was devistate'
+- Practice:
+  - Personal Context should be at the bottom of a note
+  - Use backlinks, as tags are [[id:dbd1104c-49a2-4462-ab1e-67d872860321][Note Scope]]
+  - Header is = - [[Personal Context]] =
+  - Body in lace in quote block
+- Example: 
+  - Personal Context
+    - [[id:0ee4a81c-8ee3-447d-9572-b2a54201c562][Alex MacCaw]] said it would be useful for placing notes contextually, and I feel like he really knows his stuff. It also seems like that emotional & situational context can trigger the technical understanding of what the note is meant to be about. 

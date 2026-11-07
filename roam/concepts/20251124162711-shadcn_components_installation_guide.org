@@ -1,0 +1,52 @@
+:PROPERTIES:
+:ID:       f4b0a7f6-6f99-4b29-a340-b0a8272d2790
+:REFLECT_ID: aef20923b9c0400c90b27199202d8ca2
+:CREATED:  [2025-11-24 Mon 16:27]
+:MODIFIED: [2025-12-10 Wed 20:21]
+:END:
+#+title: Shadcn Components Installation Guide
+#+filetags: :concept:
+#+date: 2025-11-24
+- Core Components
+  - button
+  - input
+  - select
+  - dropdown-menu
+  - table
+  - dialog
+  - form
+  - sonner
+  - skeleton
+  - avatar
+  - card
+  - tabs
+  - navigation-menu
+- Feature-Specific Components
+  - calendar
+  - checkbox
+  - radio-group
+  - slider
+  - table
+  - progress
+  - tooltip
+  - alert
+  - badge
+  - sheet
+- Additional Components (if available)
+  - date-picker
+  - drawer
+- Installation Commands
+  - Each component can be installed using:
+  - =npx shadcn-ui@latest add [component-name]=
+- Notes
+  - Input types (Text, Email, Password, Numeric) all use the same input component
+  - Modal/Dialog is installed as dialog
+  - Notification/Toast is toast
+  - Avatar/User icon is avatar
+  - Card & List Item - list items are typically built with existing components, so just card is needed
+  - Tabs/Navigation split into tabs and navigation-menu
+  - Tag/Chip is typically badge in shadcn
+  - Drawer may be sheet or drawer depending on the implementation
+  - Some components like drag-and-drop, file upload, stepper/wizard, barcode scanner, charts, and timeline may not be available as standard shadcn components and would need custom implementation or third-party libraries
+  - Install Core Components:
+    - =npx shadcn@latest add button input select dropdown-menu table dialog form sonner skeleton avatar card tabs navigation-menu=

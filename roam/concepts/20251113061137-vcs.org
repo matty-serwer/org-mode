@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a1ab112a-ec70-4bf9-ad94-39555378fecb
+:REFLECT_ID: 98b8705162bb4fe8afb351a6250130a0
+:CREATED:  [2025-11-13 Thu 06:11]
+:MODIFIED: [2025-11-13 Thu 06:11]
+:END:
+#+title: VCS
+#+filetags: :concept:
+#+date: 2025-11-13
+

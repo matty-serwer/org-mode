@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       3e034156-5257-4087-96b8-01bbd5218a18
+:REFLECT_ID: 84652f48361b49f69a38eb7a680d8fef
+:CREATED:  [2025-12-11 Thu 23:43]
+:MODIFIED: [2026-01-28 Wed 11:19]
+:END:
+#+title: Songs
+#+filetags: :concept:
+#+date: 2025-12-11
+- dm stripped cover
+  - Hardcore shoe gaze version
+  - 

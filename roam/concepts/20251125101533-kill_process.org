@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e93308ff-e1aa-4ec7-b6d4-f4de692f07c5
+:REFLECT_ID: e394c2ec621b4dda89033eb120df2955
+:CREATED:  [2025-11-25 Tue 10:15]
+:MODIFIED: [2025-11-25 Tue 10:15]
+:END:
+#+title: Kill Process
+#+filetags: :concept:
+#+date: 2025-11-25
+

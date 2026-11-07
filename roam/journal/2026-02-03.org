@@ -1,0 +1,425 @@
+:PROPERTIES:
+:ID:       abc308ab-6722-4023-8128-9e11b7967999
+:REFLECT_ID: 03022026
+:CREATED:  [2026-02-03 Tue 05:01]
+:MODIFIED: [2026-02-03 Tue 23:41]
+:END:
+#+title: Tue, February 3rd, 2026
+#+filetags: :daily:
+#+date: 2026-02-03
+- [[id:31c2403f-5868-41ce-9459-2fce3e692af1][Links]]
+  - [[id:26035103-2a55-4ce7-9f91-ceca49a1ae9d][Recall.ai - The API for Meeting Recording]]
+- [[id:68357279-fe09-44b2-8901-0c6a050bfa00][Claude Desktop on Film]]
+- [[id:1273dc0b-45d1-428d-ace7-33e2d666cf9f][Understanding Errors]] - [[id:705433af-8517-4836-9200-fe5c91b7f2ce][node.js]]
+  Breaking Down This Error Message
+  Let me walk you through the anatomy of this error so you can decode similar issues in the future.
+  *1. The Error Header*
+  
+  #+begin_src markup
+  node:internal/modules/cjs/loader:1383
+    const err = new Error(message);
+                ^
+  Error: Cannot find module '.prisma/client/default'
+  
+  #+end_src
+  *What this tells you:*
+  *2. The Require Stack (Critical for Debugging)*
+  
+  #+begin_src markup
+  Require stack:
+  - /Users/lupin/.../node_modules/@prisma/client/default.js
+  - .../src/config/prisma.ts
+  - .../src/services/authService.ts
+  - .../src/controllers/authController.ts
+  - .../src/routes/authRoutes.ts
+  - .../src/index.ts
+  
+  #+end_src
+  *How to read this (bottom to top):*
+  This is like a breadcrumb trail showing exactly how Node got to the failing point.
+  *3. The Stack Trace*
+  
+  #+begin_src markup
+  at node:internal/modules/cjs/loader:1383:15
+  at nextResolveSimple (...)
+  at /Users/lupin/.../tsx/dist/register-...
+  
+  #+end_src
+  *What this shows:*
+  *4. The Error Code*
+  
+  #+begin_src markup
+  code: 'MODULE_NOT_FOUND'
+  
+  #+end_src
+  *Why this matters:*
+  -----
+  
+  *Key Troubleshooting Questions This Error Answers:*
+  -----
+  
+  *Pattern Recognition for Future Errors:*
+  *Always look for:*
+  *For this specific error pattern:*
+  This methodical reading means you'd know: "Ah, Prisma generates code into =.prisma/client=, it's missing, I need to run =npx prisma generate=" before even Googling.
+  - =node:internal/modules/cjs/loader= - This is Node's module loading system catching the error
+  - =Cannot find module '.prisma/client/default'= - *This is your core problem* - Node can't locate a specific file/module
+  1. =index.ts= imports/requires something
+  1. Which needs =authRoutes.ts=
+  1. Which needs =authController.ts=
+  1. Which needs =authService.ts=
+  1. Which needs =prisma.ts=
+  1. Which needs =@prisma/client/default.js=
+  1. *Which fails trying to find *=.prisma/client/default=
+  - The exact code path through Node's internals
+  - Notice =tsx= appears multiple times - this tells you your TypeScript runtime (tsx) is involved in the loading process
+  - Less useful for understanding /what/ failed, more useful for understanding /how/ the system tried to load it
+  - Node categorizes errors with codes
+  - =MODULE_NOT_FOUND= is different from =EACCES= (permission denied) or =ENOENT= (file doesn't exist)
+  - You can search for this specific code to find targeted solutions
+  1. *What's broken?* =.prisma/client/default= module is missing
+  1. *Where does the problem originate?* =src/config/prisma.ts= (first place in /your/ code)
+  1. *What's trying to use it?* The entire auth flow chain
+  1. *What type of problem?* Missing generated code (Prisma Client hasn't been generated)
+  - The actual error message at the top (your "what")
+  - The require stack (your "where" and "why")
+  - The first file in the require stack that's *in your src/* (your entry point to debug)
+  - The error code (helps narrow down the category)
+  - Anything mentioning =.prisma/client= = Prisma generated code issue
+  - =MODULE_NOT_FOUND= + generated code directory = forgot to run generator
+  - Require stack showing your source files = it's not a npm package problem, it's a build/generation step
+- [[id:d34be374-cad6-4eae-8b8c-c317ab044250][Prisma]] DB [[id:acbe6e18-669c-462f-a597-b1056114e402][Tutorial]]
+  Step-by-Step Guide to Set Up Prisma with Next.js (with Code Snippets)
+  This guide walks you through setting up Prisma in a Next.js project, covering CRUD operations, development and production workflows, relations, and indexes, based on the video tutorial.
+  -----
+  
+  1. Initialize Next.js Project with TypeScript
+  
+  #+begin_src bash
+  npx create-next-app@latest my-nextjs-prisma-app --typescript
+  cd my-nextjs-prisma-app
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=600][(00:10:00)]]
+  -----
+  
+  2. Install Prisma CLI and Client
+  
+  #+begin_src bash
+  npm install prisma --save-dev
+  npm install @prisma/client
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=630][(00:10:30)]]
+  -----
+  
+  3. Initialize Prisma and Configure Database
+  
+  #+begin_src bash
+  npx prisma init --datasource-provider sqlite
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=660][(00:11:00)]]
+  -----
+  
+  4. Define Your Prisma Schema
+  
+  #+begin_src prisma
+  model Post {
+    id        Int      @id @default(autoincrement())
+    title     String
+    content   String
+    published Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+  }
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=720][(00:12:00)]]
+  -----
+  
+  5. Push Schema to Database and Generate Prisma Client
+  
+  #+begin_src bash
+  npx prisma db push
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=780][(00:13:00)]]
+  -----
+  
+  6. Instantiate Prisma Client in Next.js
+  
+  #+begin_src typescript
+  import { PrismaClient } from '@prisma/client';
+  
+  const globalForPrisma = global as unknown as { prisma: PrismaClient };
+  
+  export const prisma =
+    globalForPrisma.prisma ||
+    new PrismaClient({
+      log: ['query'],
+    });
+  
+  if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=1200][(00:20:00)]]
+  -----
+  
+  7. Fetch Data (Read) in Server Components
+  
+  #+begin_src typescript
+  import { prisma } from '../lib/prisma';
+  
+  export default async function PostsPage() {
+    const posts = await prisma.post.findMany();
+  
+    return (
+      <ul>
+        {posts.map(post => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    );
+  }
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=1320][(00:22:00)]]
+  -----
+  
+  8. Fetch Single Post by ID or Slug
+  
+  #+begin_src typescript
+  import { prisma } from '../lib/prisma';
+  
+  export default async function PostPage({ params }: { params: { id: string } }) {
+    const post = await prisma.post.findUnique({
+      where: { id: Number(params.id) },
+    });
+  
+    if (!post) return <p>Post not found</p>;
+  
+    return (
+      <>
+        <h1>{post.title}</h1>
+        <p>{post.content}</p>
+      </>
+    );
+  }
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=1500][(00:25:00)]]
+  -----
+  
+  9. Create New Posts (Write)
+  
+  #+begin_src tsx
+  'use server';
+  
+  import { prisma } from '../lib/prisma';
+  
+  export async function createPost(data: FormData) {
+    'use server';
+    const title = data.get('title')?.toString() || '';
+    const content = data.get('content')?.toString() || '';
+    const slug = title.toLowerCase().replace(/\s+/g, '-');
+  
+    await prisma.post.create({
+      data: {
+        title,
+        content,
+        slug,
+        published: false,
+      },
+    });
+  }
+  
+  #+end_src
+  
+  #+begin_src tsx
+  <form action={createPost}>
+    <input name="title" type="text" placeholder="Title" required />
+    <textarea name="content" placeholder="Content" required />
+    <button type="submit">Create Post</button>
+  </form>
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=1800][(00:30:00)]]
+  -----
+  
+  10. Update and Delete Posts
+  
+  #+begin_src typescript
+  await prisma.post.update({
+    where: { id: postId },
+    data: { title: 'Updated Title', content: 'Updated content' },
+  });
+  
+  #+end_src
+  
+  #+begin_src typescript
+  await prisma.post.delete({
+    where: { id: postId },
+  });
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=1980][(00:33:00)]]
+  -----
+  
+  11. Define Relations (One-to-Many Example)
+  
+  #+begin_src prisma
+  model User {
+    id       Int     @id @default(autoincrement())
+    email    String  @unique
+    password String
+    posts    Post[]
+  }
+  
+  model Post {
+    id        Int      @id @default(autoincrement())
+    title     String
+    content   String
+    published Boolean  @default(false)
+    authorId  Int
+    author    User     @relation(fields: [authorId], references: [id])
+  }
+  
+  #+end_src
+  
+  #+begin_src bash
+  npx prisma db push
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=2400][(00:40:00)]]
+  -----
+  
+  12. Use Indexes for Performance
+  
+  #+begin_src prisma
+  model Post {
+    id        Int      @id @default(autoincrement())
+    title     String
+    slug      String   @unique
+    content   String
+    published Boolean  @default(false)
+  
+    @@index([slug])
+  }
+  
+  #+end_src
+  
+  #+begin_src bash
+  npx prisma db push
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=2700][(00:45:00)]]
+  -----
+  
+  13. Seed the Database
+  
+  #+begin_src typescript
+  import { PrismaClient } from '@prisma/client';
+  
+  const prisma = new PrismaClient();
+  
+  async function main() {
+    const user = await prisma.user.upsert({
+      where: { email: 'john@example.com' },
+      update: {},
+      create: {
+        email: 'john@example.com',
+        password: 'hashedpassword',
+      },
+    });
+  
+    await prisma.post.create({
+      data: {
+        title: 'First Post',
+        slug: 'first-post',
+        content: 'This is the first post',
+        published: true,
+        authorId: user.id,
+      },
+    });
+  }
+  
+  main()
+    .catch(e => {
+      console.error(e);
+      process.exit(1);
+    })
+    .finally(async () => {
+      await prisma.$disconnect();
+    });
+  
+  #+end_src
+  
+  #+begin_src json
+  "scripts": {
+    "prisma:seed": "ts-node prisma/seed.ts"
+  }
+  
+  #+end_src
+  
+  #+begin_src bash
+  npm run prisma:seed
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=2520][(00:42:00)]]
+  -----
+  
+  14. Development vs Production Workflow
+  
+  #+begin_src json
+  "scripts": {
+    "postinstall": "prisma generate"
+  }
+  
+  #+end_src
+  [[https://www.youtube.com/watch?v=QXxy8Uv1LnQ&t=3000][(00:50:00)]]
+  -----
+  
+  Summary
+  This setup provides a robust, type-safe, and efficient way to manage your database in Next.js using Prisma.
+  -----
+  
+  If you want to watch the full detailed tutorial, here is the video link:
+  
+  [[https://www.youtube-nocookie.com/embed/QXxy8Uv1LnQ][youtube: https://www.youtube-nocookie.com/embed/QXxy8Uv1LnQ]]
+  - Use =create-next-app= to create a new Next.js project with TypeScript support (already included by default).
+  - Install Prisma CLI and Prisma Client as dependencies.
+  - Initialize Prisma with SQLite for development.
+  - This creates a =prisma= folder with =schema.prisma= and a =.env= file with =DATABASE_URL= pointing to a SQLite file.
+  - Edit =prisma/schema.prisma= to define your data models. Example for a simple blog post:
+  - Run the following command to create the database and generate the Prisma client:
+  - This creates the SQLite database file and generates the Prisma client for use in your code.
+  - Create a file =lib/prisma.ts= to instantiate Prisma client following best practices to avoid multiple instances:
+  - Use Prisma client in Next.js server components to fetch all posts:
+  - Use =findUnique= to fetch a single post by ID or slug from dynamic route params:
+  - Add a form and use a server action to create new posts:
+  - Form component example:
+  - Update a post by ID:
+  - Delete a post by ID:
+  - Add a =User= model and relate posts to users:
+  - Push changes and regenerate client:
+  - Add an index on a frequently queried field (e.g., slug):
+  - Push schema changes:
+  - Create a =prisma/seed.ts= script to insert initial data:
+  - Add seed script to =package.json=:
+  - Run seed script:
+  - Use SQLite for development (local file-based DB).
+  - Use PostgreSQL or another production-ready DB in production.
+  - Set =DATABASE_URL= in =.env= accordingly.
+  - Add Prisma generate to =postinstall= in =package.json= for production:
+  - Run migrations or =db push= on production database during deployment.
+  - Initialize Next.js + TypeScript project.
+  - Install Prisma CLI and client.
+  - Initialize Prisma with SQLite.
+  - Define schema models and relations.
+  - Push schema and generate client.
+  - Instantiate Prisma client safely.
+  - Perform CRUD operations in server components and server actions.
+  - Use indexes for performance.
+  - Seed database with initial data.
+  - Configure environment for development and production.

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cfc77fd4-86a2-4e98-a825-5105f3b0d52f
+:REFLECT_ID: 4eb51010a1544565bc94701229bb7a97
+:CREATED:  [2026-01-02 Fri 16:14]
+:MODIFIED: [2026-01-02 Fri 16:14]
+:END:
+#+title: Becky
+#+filetags: :concept:
+#+date: 2026-01-02
+

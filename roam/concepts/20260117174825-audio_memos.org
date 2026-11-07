@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       49109eba-4eb6-4e2e-8661-bb6c1e26f2f7
+:REFLECT_ID: 2f6cf7cf34fd477f8a1e3b4a4d0e610e
+:CREATED:  [2026-01-17 Sat 17:48]
+:MODIFIED: [2026-04-23 Thu 16:58]
+:END:
+#+title: Audio memos
+#+filetags: :concept:
+#+date: 2026-01-17
+

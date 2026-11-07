@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5c509ccf-d6a6-4092-8cbf-47718db0e386
+:REFLECT_ID: d6dcfa3e1c20427daf051e39c1c44e93
+:CREATED:  [2026-04-21 Tue 03:50]
+:MODIFIED: [2026-04-21 Tue 03:50]
+:END:
+#+title: Firefox Browser
+#+filetags: :concept:
+#+date: 2026-04-21
+

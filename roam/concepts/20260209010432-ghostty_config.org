@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d3e88702-5e09-4e8e-ad52-966b7c55cf7d
+:REFLECT_ID: 3090ed0f734f493a9cfc6a1def3b7eba
+:CREATED:  [2026-02-09 Mon 01:04]
+:MODIFIED: [2026-04-11 Sat 22:04]
+:END:
+#+title: Ghostty Config
+#+filetags: :concept:
+#+date: 2026-02-09
+

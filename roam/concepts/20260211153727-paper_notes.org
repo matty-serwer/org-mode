@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f5cf331d-81bc-4c54-9198-f345fc89b1d1
+:REFLECT_ID: a84b5070a49944529488d2ac999639a4
+:CREATED:  [2026-02-11 Wed 15:37]
+:MODIFIED: [2026-02-11 Wed 15:38]
+:END:
+#+title: Paper Notes
+#+filetags: :concept:
+#+date: 2026-02-11
+

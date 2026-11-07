@@ -1,0 +1,487 @@
+:PROPERTIES:
+:ID:       5f3a1dbc-5203-4255-ab1c-b2a6913cfe83
+:REFLECT_ID: 7d5a78b4ef7b44ee848ce603bae7008f
+:CREATED:  [2026-01-28 Wed 06:50]
+:MODIFIED: [2026-01-28 Wed 06:50]
+:END:
+#+title: Issue 006: Task CRUD Endpoints with Filters
+#+filetags: :concept:
+#+date: 2026-01-28
+*Milestone:* API Endpoints
+*Estimate:* 2.5 hours
+*Labels:* =backend=, =api=, =tasks=, =day-1=
+*** Description
+Implement full CRUD operations for Tasks with filtering by status, priority, project, and assignee.
+*** Acceptance Criteria
+- [ ] GET =/api/tasks= - List tasks with filters (status, priority, projectId, assignedTo)
+- [ ] GET =/api/tasks/{id}= - Get single task with checklist items
+- [ ] POST =/api/tasks= - Create new task
+- [ ] PUT =/api/tasks/{id}= - Update task
+- [ ] DELETE =/api/tasks/{id}= - Delete task
+- [ ] PUT =/api/tasks/{id}/position= - Update task position (for drag & drop)
+*** Implementation
+**** Step 1: Create Task Repository
+=backend/src/main/java/com/worksweet/repository/TaskRepository.java=:
+#+begin_src java
+package com.worksweet.repository;
+
+import com.worksweet.model.Task;
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import com.worksweet.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface TaskRepository extends JpaRepository<Task, Long> {
+    
+    @Query("SELECT t FROM Task t WHERE t.project.owner = :user " +
+           "AND (:projectId IS NULL OR t.project.id = :projectId) " +
+           "AND (:status IS NULL OR t.status = :status) " +
+           "AND (:priority IS NULL OR t.priority = :priority) " +
+           "AND (:assignedToId IS NULL OR t.assignedTo.id = :assignedToId) " +
+           "ORDER BY t.position ASC, t.createdAt DESC")
+    List<Task> findTasksWithFilters(
+            @Param("user") User user,
+            @Param("projectId") Long projectId,
+            @Param("status") TaskStatus status,
+            @Param("priority") TaskPriority priority,
+            @Param("assignedToId") Long assignedToId
+    );
+
+    @Query("SELECT t FROM Task t WHERE t.project.owner = :user AND t.id = :id")
+    Optional<Task> findByIdAndOwner(@Param("id") Long id, @Param("user") User user);
+
+    @Query("SELECT MAX(t.position) FROM Task t WHERE t.project.id = :projectId AND t.status = :status")
+    Integer findMaxPositionByProjectAndStatus(@Param("projectId") Long projectId, @Param("status") TaskStatus status);
+}
+
+#+end_src
+**** Step 2: Create Task DTOs
+=backend/src/main/java/com/worksweet/dto/TaskRequest.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+import java.time.LocalDate;
+
+@Data
+public class TaskRequest {
+    
+    @NotBlank(message = "Title is required")
+    @Size(min = 1, max = 255, message = "Title must be between 1 and 255 characters")
+    private String title;
+
+    private String description;
+
+    private TaskStatus status;
+
+    private TaskPriority priority;
+
+    @NotNull(message = "Project ID is required")
+    private Long projectId;
+
+    private Long assignedToId;
+
+    private LocalDate dueDate;
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/TaskResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.Task;
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class TaskResponse {
+    private Long id;
+    private String title;
+    private String description;
+    private TaskStatus status;
+    private TaskPriority priority;
+    private Long projectId;
+    private String projectName;
+    private String projectColor;
+    private Long assignedToId;
+    private String assignedToName;
+    private String assignedToAvatarColor;
+    private Long createdById;
+    private String createdByName;
+    private LocalDate dueDate;
+    private Integer position;
+    private List<ChecklistItemResponse> checklistItems;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public static TaskResponse fromEntity(Task task) {
+        return TaskResponse.builder()
+                .id(task.getId())
+                .title(task.getTitle())
+                .description(task.getDescription())
+                .status(task.getStatus())
+                .priority(task.getPriority())
+                .projectId(task.getProject().getId())
+                .projectName(task.getProject().getName())
+                .projectColor(task.getProject().getColor())
+                .assignedToId(task.getAssignedTo() != null ? task.getAssignedTo().getId() : null)
+                .assignedToName(task.getAssignedTo() != null ? task.getAssignedTo().getName() : null)
+                .assignedToAvatarColor(task.getAssignedTo() != null ? task.getAssignedTo().getAvatarColor() : null)
+                .createdById(task.getCreatedBy().getId())
+                .createdByName(task.getCreatedBy().getName())
+                .dueDate(task.getDueDate())
+                .position(task.getPosition())
+                .checklistItems(task.getChecklistItems() != null 
+                        ? task.getChecklistItems().stream()
+                                .map(ChecklistItemResponse::fromEntity)
+                                .collect(Collectors.toList())
+                        : List.of())
+                .createdAt(task.getCreatedAt())
+                .updatedAt(task.getUpdatedAt())
+                .build();
+    }
+}
+
+#+end_src
+=backend/src/main/java/com/worksweet/dto/ChecklistItemResponse.java=:
+#+begin_src java
+package com.worksweet.dto;
+
+import com.worksweet.model.ChecklistItem;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ChecklistItemResponse {
+    private Long id;
+    private String text;
+    private Boolean completed;
+    private Integer position;
+
+    public static ChecklistItemResponse fromEntity(ChecklistItem item) {
+        return ChecklistItemResponse.builder()
+                .id(item.getId())
+                .text(item.getText())
+                .completed(item.getCompleted())
+                .position(item.getPosition())
+                .build();
+    }
+}
+
+#+end_src
+**** Step 3: Create Task Service
+=backend/src/main/java/com/worksweet/service/TaskService.java=:
+#+begin_src java
+package com.worksweet.service;
+
+import com.worksweet.dto.TaskRequest;
+import com.worksweet.dto.TaskResponse;
+import com.worksweet.exception.ResourceNotFoundException;
+import com.worksweet.model.*;
+import com.worksweet.repository.ProjectRepository;
+import com.worksweet.repository.TaskRepository;
+import com.worksweet.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class TaskService {
+
+    private final TaskRepository taskRepository;
+    private final ProjectRepository projectRepository;
+    private final UserRepository userRepository;
+
+    private User getCurrentUser() {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    }
+
+    public List<TaskResponse> getAllTasks(Long projectId, TaskStatus status, TaskPriority priority, Long assignedToId) {
+        User currentUser = getCurrentUser();
+        List<Task> tasks = taskRepository.findTasksWithFilters(
+                currentUser,
+                projectId,
+                status,
+                priority,
+                assignedToId
+        );
+
+        return tasks.stream()
+                .map(TaskResponse::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    public TaskResponse getTaskById(Long id) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        return TaskResponse.fromEntity(task);
+    }
+
+    @Transactional
+    public TaskResponse createTask(TaskRequest request) {
+        User currentUser = getCurrentUser();
+
+        // Verify project belongs to user
+        Project project = projectRepository.findByIdAndOwner(request.getProjectId(), currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + request.getProjectId()));
+
+        // Get assigned user if specified
+        User assignedTo = null;
+        if (request.getAssignedToId() != null) {
+            assignedTo = userRepository.findById(request.getAssignedToId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + request.getAssignedToId()));
+        }
+
+        // Calculate position (add to end of column)
+        TaskStatus status = request.getStatus() != null ? request.getStatus() : TaskStatus.TODO;
+        Integer maxPosition = taskRepository.findMaxPositionByProjectAndStatus(project.getId(), status);
+        int newPosition = (maxPosition != null) ? maxPosition + 1 : 0;
+
+        Task task = Task.builder()
+                .title(request.getTitle())
+                .description(request.getDescription())
+                .status(status)
+                .priority(request.getPriority() != null ? request.getPriority() : TaskPriority.NORMAL)
+                .project(project)
+                .assignedTo(assignedTo)
+                .createdBy(currentUser)
+                .dueDate(request.getDueDate())
+                .position(newPosition)
+                .build();
+
+        Task savedTask = taskRepository.save(task);
+        return TaskResponse.fromEntity(savedTask);
+    }
+
+    @Transactional
+    public TaskResponse updateTask(Long id, TaskRequest request) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        if (request.getTitle() != null) {
+            task.setTitle(request.getTitle());
+        }
+        if (request.getDescription() != null) {
+            task.setDescription(request.getDescription());
+        }
+        if (request.getStatus() != null) {
+            // If status changed, recalculate position
+            if (!task.getStatus().equals(request.getStatus())) {
+                Integer maxPosition = taskRepository.findMaxPositionByProjectAndStatus(
+                        task.getProject().getId(),
+                        request.getStatus()
+                );
+                task.setPosition((maxPosition != null) ? maxPosition + 1 : 0);
+            }
+            task.setStatus(request.getStatus());
+        }
+        if (request.getPriority() != null) {
+            task.setPriority(request.getPriority());
+        }
+        if (request.getAssignedToId() != null) {
+            User assignedTo = userRepository.findById(request.getAssignedToId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+            task.setAssignedTo(assignedTo);
+        }
+        if (request.getDueDate() != null) {
+            task.setDueDate(request.getDueDate());
+        }
+
+        Task updatedTask = taskRepository.save(task);
+        return TaskResponse.fromEntity(updatedTask);
+    }
+
+    @Transactional
+    public void deleteTask(Long id) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        taskRepository.delete(task);
+    }
+
+    @Transactional
+    public TaskResponse updateTaskPosition(Long id, Integer newPosition, TaskStatus newStatus) {
+        User currentUser = getCurrentUser();
+        Task task = taskRepository.findByIdAndOwner(id, currentUser)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
+
+        if (newStatus != null && !task.getStatus().equals(newStatus)) {
+            task.setStatus(newStatus);
+        }
+        
+        task.setPosition(newPosition);
+        Task updatedTask = taskRepository.save(task);
+        return TaskResponse.fromEntity(updatedTask);
+    }
+}
+
+#+end_src
+**** Step 4: Create Task Controller
+=backend/src/main/java/com/worksweet/controller/TaskController.java=:
+#+begin_src java
+package com.worksweet.controller;
+
+import com.worksweet.dto.MessageResponse;
+import com.worksweet.dto.TaskRequest;
+import com.worksweet.dto.TaskResponse;
+import com.worksweet.model.TaskPriority;
+import com.worksweet.model.TaskStatus;
+import com.worksweet.service.TaskService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/tasks")
+@RequiredArgsConstructor
+public class TaskController {
+
+    private final TaskService taskService;
+
+    @GetMapping
+    public ResponseEntity<List<TaskResponse>> getAllTasks(
+            @RequestParam(required = false) Long projectId,
+            @RequestParam(required = false) TaskStatus status,
+            @RequestParam(required = false) TaskPriority priority,
+            @RequestParam(required = false) Long assignedToId
+    ) {
+        List<TaskResponse> tasks = taskService.getAllTasks(projectId, status, priority, assignedToId);
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TaskResponse> getTaskById(@PathVariable Long id) {
+        TaskResponse task = taskService.getTaskById(id);
+        return ResponseEntity.ok(task);
+    }
+
+    @PostMapping
+    public ResponseEntity<TaskResponse> createTask(@Valid @RequestBody TaskRequest request) {
+        TaskResponse task = taskService.createTask(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(task);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TaskResponse> updateTask(
+            @PathVariable Long id,
+            @Valid @RequestBody TaskRequest request
+    ) {
+        TaskResponse task = taskService.updateTask(id, request);
+        return ResponseEntity.ok(task);
+    }
+
+    @PutMapping("/{id}/position")
+    public ResponseEntity<TaskResponse> updateTaskPosition(
+            @PathVariable Long id,
+            @RequestBody Map<String, Object> updates
+    ) {
+        Integer newPosition = (Integer) updates.get("position");
+        String statusStr = (String) updates.get("status");
+        TaskStatus newStatus = statusStr != null ? TaskStatus.valueOf(statusStr) : null;
+
+        TaskResponse task = taskService.updateTaskPosition(id, newPosition, newStatus);
+        return ResponseEntity.ok(task);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<MessageResponse> deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
+        return ResponseEntity.ok(new MessageResponse("Task deleted successfully"));
+    }
+}
+
+#+end_src
+*** Testing with Postman
+*Test 1: Create Task*
+#+begin_src markup
+POST http://localhost:8080/api/tasks
+Authorization: Bearer [your-token]
+Content-Type: application/json
+
+{
+  "title": "Implement QuickTaskInput component",
+  "description": "The signature frictionless task creation feature",
+  "status": "TODO",
+  "priority": "HIGH",
+  "projectId": 1
+}
+
+Expected: 201 Created
+
+#+end_src
+*Test 2: List Tasks with Filters*
+#+begin_src markup
+GET http://localhost:8080/api/tasks?status=TODO&priority=HIGH
+Authorization: Bearer [your-token]
+
+Expected: 200 OK with filtered tasks
+
+#+end_src
+*Test 3: Update Task Status (Drag & Drop)*
+#+begin_src markup
+PUT http://localhost:8080/api/tasks/1/position
+Authorization: Bearer [your-token]
+Content-Type: application/json
+
+{
+  "position": 0,
+  "status": "IN_PROGRESS"
+}
+
+Expected: 200 OK
+
+#+end_src
+*** Commit
+#+begin_src bash
+git add .
+git commit -m "Issue #6: Implement Task CRUD endpoints with filtering and positioning"
+git push origin main
+
+#+end_src
+-----

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       da6c065f-449b-45b6-b899-3b302b6ce5c6
+:REFLECT_ID: 02e9bfc38c644f4eba0c9095424827b2
+:CREATED:  [2025-10-31 Fri 07:44]
+:MODIFIED: [2025-10-31 Fri 07:44]
+:END:
+#+title: Shortie Table
+#+filetags: :concept:
+#+date: 2025-10-31
+

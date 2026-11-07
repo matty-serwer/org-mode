@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d6e97ccd-677f-40ef-aa66-5dfcd26fcc33
+:REFLECT_ID: 54cd74ceb22a48bdbc7d75ccc6105505
+:CREATED:  [2025-10-26 Sun 06:49]
+:MODIFIED: [2025-10-26 Sun 06:49]
+:END:
+#+title: Warp
+#+filetags: :concept:
+#+date: 2025-10-26
+

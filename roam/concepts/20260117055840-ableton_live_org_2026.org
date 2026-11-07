@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       2a0e069e-82be-42ac-9ea6-82b345d1f9cb
+:REFLECT_ID: 83451fda664b495289072ba62af5c1c2
+:CREATED:  [2026-01-17 Sat 05:58]
+:MODIFIED: [2026-04-08 Wed 21:51]
+:END:
+#+title: 👩🏻‍🎤 Ableton Live Org 2026
+#+filetags: :concept:
+#+date: 2026-01-17
+- TODO
+  - [ ] Solve [[id:8efb44f3-06da-4484-8fbc-325c3710e7f4][Ableton 12 Search Issue]]
+    - Search All not default and not seemingly possibly
+    - Most (not all) systems I see in tutorial have an "All" Folder in the middle section. Ours doesn't. 
+    - Everyone things "All" is the default search. WTF?
+  - [ ] Look into the custom Ableton Folder
+    - I think they are just tag searchs.. but we could use special tags, for say
+      - LTD-EQs
+      - LTD-COMPs
+    - and then we could take those things out of the [[id:4f9b5954-bbc2-4f13-af39-10f36b136d4d][Ableton Live Collections]]
+  - [ ] Create 3 Minimal Ableton Templates
+  - [ ] DRUM LOOP SAMPLING
+  - [ ] RECORD STEM SAMPLING
+  - [ ] Which Synth?
+  - [[id:5d55e7ce-1a0b-4737-8c82-7ed45cd6e732][U-he Diva Synth]]
+    - PRO: Possibly the best sounding
+    - PRO: Diverse Feature Set
+    - CON: Massive CPU
+    - CON: Too Diverse?
+    - CON: Possibly Too Difficult to program intentionally
+  - [[id:7025a490-1ed0-4b81-ae0e-9e5021b74a1b][Serum 2 Synth]]
+    - PRO: Easy Sweet Spot
+    - PRO: Easy to make sounds
+    - CON: Overused
+    - CON: A lot of distracting features
+  - [[id:bc3887ae-ed1b-40d2-8ca2-31b1bc47d3ba][Arturia OB-Xa]] and/or [[id:27772bc9-3534-47d2-bb3f-c7492c61e281][Arturia Prophet 5]]
+    - PRO: I like em
+    - CON: Sound is critisized
+    - MAYBE: Who cares?
+  - Test or implement the following possible systems
+    - [ ] Maybe just bring in the best of our synth settings from the previous version of Ableton & Serum
+    - [ ] Create Expressive Chords presets
+  - [[id:343b8ddc-7ad8-4bb0-8e8e-682bc1aa2398][Ableton Live MPlayer Template]]

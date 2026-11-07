@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       0ee4a81c-8ee3-447d-9572-b2a54201c562
+:REFLECT_ID: alexmaccaw
+:CREATED:  [2025-10-14 Tue 01:25]
+:MODIFIED: [2025-10-26 Sun 14:53]
+:END:
+#+title: Alex MacCaw
+#+filetags: :person:
+#+date: 2025-10-14
+- Title: CEO
+- Company: [[id:56254a81-4ae8-45d0-a0b3-c61f2e847161][Reflect]]
+- Type: 
+- Emails
+  - [[mailto:alex@reflect.app][alex@reflect.app]]

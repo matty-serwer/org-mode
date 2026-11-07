@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       e4937767-7962-433a-947c-13ab68c38c71
+:REFLECT_ID: 1833fba9c18949e594aef073b3260937
+:CREATED:  [2026-01-28 Wed 06:20]
+:MODIFIED: [2026-04-08 Wed 20:21]
+:END:
+#+title: 💾 Work Sweet Sprint 1
+#+filetags: :project:
+#+date: 2026-01-28
+* [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]] Sprint 1
+*Project:* Work Sweet (Keyboard-first Project Management)
+*Sprint:* Day 1 - Backend Foundation
+*Duration:* 8-10 hours
+*Stack:* Java Spring Boot 3.x + PostgreSQL
+-----
+
+- [[id:38f05256-cc71-4727-b43e-84a617b7ba7b][Repository Setup]]
+- Milestone 1: Spring Boot API Setup
+  -
+    - *Goal:* Running authenticated Spring Boot API with database connection
+    - *Duration:* 4 hours
+    - *Outcome:* Can register/login via Postman, JWT working
+  - [[id:61b7f6cf-eabe-47a1-80dd-b1faccd6eb71][Issue #1: Project Scaffolding & Configuration]]
+  - [[id:e517dcea-a230-4f9d-aaaa-c80b82dcda44][Issue 002: User Entity & Authentication Models]]
+  - [[id:9f4b85d3-0b16-4e5e-9f48-fa3fb622544f][Issue 003: JWT Configuration & Authentication Service]]
+  - [[id:222d6c9d-18a2-42fd-b745-94b7925de632][Issue 004: Authentication Endpoints (Register & Login)]]
+- Milestone 2: API Endpoints
+  -
+    - *Goal:* Full CRUD operations for Projects and Tasks
+    - *Duration:* 4 hours
+    - *Outcome:* Can create projects, create tasks, update tasks, filter tasks
+  - [[id:7d98f496-5e09-400e-8a5a-d05f55d7e6e6][Issue 005: Project CRUD Endpoints]]
+  - [[id:5f3a1dbc-5203-4255-ab1c-b2a6913cfe83][Issue 006: Task CRUD Endpoints with Filters]]
+  - [[id:c2fe7370-1a27-4abf-9763-fc8bd2434a4d][Issue 007: Testing & Deployment Prep]]
+- Overview
+  - Day 1 Includes:
+    ✅ *Spring Boot API* running on =http://localhost:8080=
+    ✅ *PostgreSQL database* with full schema
+    ✅ *JWT Authentication* with register/login
+    ✅ *Project Management* - Full CRUD
+    ✅ *Task Management* - Full CRUD with filters
+    ✅ *Drag & Drop Support* - Position updates
+    ✅ *Authorization* - Users can only see their own data
+    ✅ *Seed Data* - Demo content for testing
+    ✅ *Postman Collection* - Full API documentation
+    ✅ *Ready for Deployment* - Railway config included
+  - Tomorrow (Day 2):
+    - Next.js 16 frontend
+    - Your component library integration
+    - QuickTaskInput (the showpiece)
+    - Slash command menu
+    - Kanban board with drag & drop
+    - Visual color system
+    - Deploy to Vercel

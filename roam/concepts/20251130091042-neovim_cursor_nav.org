@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0672c0c6-5dc7-470e-be9a-506043f43e7a
+:REFLECT_ID: c814e90622a9402ebb1e5d44eda9bb40
+:CREATED:  [2025-11-30 Sun 09:10]
+:MODIFIED: [2025-11-30 Sun 09:10]
+:END:
+#+title: Neovim cursor Nav
+#+filetags: :concept:
+#+date: 2025-11-30
+

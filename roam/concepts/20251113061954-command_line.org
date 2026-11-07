@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       02188762-9453-436f-8845-b3d6e9c14c03
+:REFLECT_ID: 054c93170e0c4e5bb056999403b87977
+:CREATED:  [2025-11-13 Thu 06:19]
+:MODIFIED: [2025-11-13 Thu 06:19]
+:END:
+#+title: Command Line
+#+filetags: :concept:
+#+date: 2025-11-13
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a46f281b-74cd-4318-a277-0200633b5c34
+:REFLECT_ID: 0fe116aef76f4cc9813b0811145bb820
+:CREATED:  [2026-01-28 Wed 04:43]
+:MODIFIED: [2026-04-08 Wed 20:28]
+:END:
+#+title: 🈺 Resume & Interview Master Source
+#+filetags: :project:
+#+date: 2026-01-28
+- /Claude Project: Tech Position Resume & Reference Materials/

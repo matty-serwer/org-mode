@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       996bf856-b6e7-43aa-8495-5a8f02805292
+:REFLECT_ID: 047d86d17f22404d896b5c237705a51f
+:CREATED:  [2026-03-04 Wed 16:59]
+:MODIFIED: [2026-03-04 Wed 16:59]
+:END:
+#+title: Job Info
+#+filetags: :concept:
+#+date: 2026-03-04
+

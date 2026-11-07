@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       32eaa7be-6dd9-4675-8b05-ca82833cb5e6
+:REFLECT_ID: 1f62ca8f6fe2460bbd760d0f9ec2aef7
+:CREATED:  [2026-04-21 Tue 17:37]
+:MODIFIED: [2026-04-21 Tue 17:37]
+:END:
+#+title: Apollo Twin
+#+filetags: :concept:
+#+date: 2026-04-21
+

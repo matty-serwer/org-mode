@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       07173ce7-5343-4b6e-b0a7-38f8a8f7e7f6
+:REFLECT_ID: 6aadac3d38bf4441aff26a1a11799600
+:CREATED:  [2025-11-11 Tue 22:36]
+:MODIFIED: [2026-03-26 Thu 14:49]
+:END:
+#+title: Anthem
+#+filetags: :concept:
+#+date: 2025-11-11
+

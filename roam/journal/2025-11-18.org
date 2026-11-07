@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2a0ee8f1-2d87-47b6-b116-115f009133ed
+:REFLECT_ID: 18112025
+:CREATED:  [2025-11-18 Tue 02:33]
+:MODIFIED: [2025-11-30 Sun 09:32]
+:END:
+#+title: Tue, November 18th, 2025
+#+filetags: :daily:
+#+date: 2025-11-18
+- 

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1f3f04cf-bc62-4fe7-8e77-f7b7103dfd7d
+:REFLECT_ID: f50203655e484d31aceaeb1d017fee08
+:CREATED:  [2026-04-21 Tue 07:17]
+:MODIFIED: [2026-04-21 Tue 07:17]
+:END:
+#+title: Locations
+#+filetags: :concept:
+#+date: 2026-04-21
+

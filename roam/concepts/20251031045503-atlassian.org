@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       53a4d002-1bf0-415c-ad07-c50e764a7f0a
+:REFLECT_ID: d5a561afe9db454dbb615d2daec63919
+:CREATED:  [2025-10-31 Fri 04:55]
+:MODIFIED: [2025-10-31 Fri 04:55]
+:END:
+#+title: Atlassian
+#+filetags: :concept:
+#+date: 2025-10-31
+

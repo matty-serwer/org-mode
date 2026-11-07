@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1ec57823-df3f-499a-916f-81f2e8ff48a1
+:REFLECT_ID: 0787fbafdbe14c6bb0059fffd07d30d7
+:CREATED:  [2025-11-16 Sun 17:38]
+:MODIFIED: [2026-04-21 Tue 07:17]
+:END:
+#+title: Morg
+#+filetags: :concept:
+#+date: 2025-11-16
+

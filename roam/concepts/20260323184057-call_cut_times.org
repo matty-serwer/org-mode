@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       54aed35a-040a-4cf4-98a8-ec4d498c5d58
+:REFLECT_ID: eb205e90a5f545aa97e57faac2566044
+:CREATED:  [2026-03-23 Mon 18:40]
+:MODIFIED: [2026-03-23 Mon 18:40]
+:END:
+#+title: Call Cut Times
+#+filetags: :concept:
+#+date: 2026-03-23
+

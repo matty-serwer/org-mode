@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7b47690f-f898-4324-a217-808fe12499fa
+:REFLECT_ID: b44256f42ee64c4897b034666b2256f3
+:CREATED:  [2026-01-28 Wed 06:26]
+:MODIFIED: [2026-01-28 Wed 06:26]
+:END:
+#+title: Milestone 1: Spring Boot API Setup
+#+filetags: :concept:
+#+date: 2026-01-28
+

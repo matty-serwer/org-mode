@@ -1,0 +1,70 @@
+:PROPERTIES:
+:ID:       77c7e499-72d1-402e-ae03-40c28779ed5e
+:REFLECT_ID: 25102025
+:CREATED:  [2025-10-25 Sat 08:40]
+:MODIFIED: [2026-01-26 Mon 19:32]
+:END:
+#+title: Sat, October 25th, 2025
+#+filetags: :daily:organize2025:sequence:
+#+date: 2025-10-25
+* [[id:127951a4-6681-41ad-aa01-546d6bcd9bbf][Notion]] AI Database Setup Instructions
+- [[id:31c2403f-5868-41ce-9459-2fce3e692af1][Links]]
+  - [[id:c00590b0-b41e-41d9-9734-7a15d15e4172][Doom Emacs Keybinding Cheat Sheet]]
+-
+  -  
+- *Overall Setup Notes*
+  - Follow these steps sequentially to create the four databases with Phase 1 properties.
+  - Use Notion AI by typing "/database" or selecting "Build with AI" when creating each database, then specify the properties as detailed.
+  - For relations, ensure bidirectional linking where noted by enabling "Show on [related database]".
+  - Colors for Select properties should use Notion's default color options (green for Low, yellow for Medium, red/orange for High/Critical) [11][12].
+- *Database 1: Projects*
+  - Create a database called "Projects".
+  - Add the following properties:
+    - Name - Title property (default, already exists).
+    - Status - Select property with options: Planning, Active, On Hold, Complete.
+    - Priority - Select property with options: Low (green), Medium (yellow), High (red).
+    - Start Date - Date property.
+    - End Date - Date property.
+    - Owner - Person property [11][12].
+- *Database 2: Project Docs*
+  - Create a database called "Project Docs".
+  - Add the following properties:
+    - Title - Title property (default, already exists).
+    - Type - Select property with options: Requirements, Design, Technical, Meeting Notes, Research.
+    - Project - Relation property connecting to the Projects database, with "Show on Projects" enabled to create bidirectional link.
+    - Status - Select property with options: Draft, Review, Approved.
+    - Last Updated - Last Edited Time property [11][12].
+- *Database 3: Epics*
+  - Create a database called "Epics".
+  - Add the following properties:
+    - Name - Title property (default, already exists).
+    - Project - Relation property connecting to the Projects database, with "Show on Projects" enabled to create bidirectional link.
+    - Status - Select property with options: Backlog, Planning, In Progress, Done.
+    - Priority - Select property with options: Low (green), Medium (yellow), High (red).
+    - Target Date - Date property [11][12].
+- *Database 4: Issues*
+  - Create a database called "Issues".
+  - Add the following properties:
+    - Title - Title property (default, already exists).
+    - Type - Select property with options: Story, Bug, Task, Sub-Task.
+    - Epic - Relation property connecting to the Epics database, with "Show on Epics" enabled to create bidirectional link.
+    - Status - Select property with options: Backlog, To Do, In Progress, Review, Done.
+    - Priority - Select property with options: Low (green), Medium (yellow), High (orange), Critical (red).
+    - Assignee - Person property.
+    - Due Date - Date property [11][12].
+- [[id:76bcdf71-c4fd-43f1-b9ff-7dd726f8d9bf][Daily Log]]
+  - Started organizing Workflowy
+  - Researched and began format for [[id:127951a4-6681-41ad-aa01-546d6bcd9bbf][Notion]] [[id:f9979302-fd1e-441b-8c55-67df610dcafe][Project Management]]
+  - Washed work clothes forever
+  - Actually got into Reflect. This might be the app, because:
+    - It's super clean out of the box
+    - No messing around
+    - I think the web clipper is legit
+    - The AI ACTUALLY formats. done.
+    - The AI is supposed to do the backlinking but we might need to adjust it a bit because:
+      - It was trying to link to much, like the lowercase word 'project' mid sentence, or the words horizontal and vertical. 
+      - [X] See if we can adjust or create our own tag decoration prompt in settings
+    - I really like the Reflect dude. He talks a lot of sense. 
+  - [X] Combine The Pinned Files and Directories Folders   as something like Faves [[id:d60e2599-74e1-4035-a9f6-c10b0b8f7d81][11/24/2025]]
+  - [X] Push up  the [[id:9bd64272-628e-4461-bf38-b8269ba4c67f][Table Folder]] as the place for work to be currently happening   
+  - [X] Make Icons with Labels built in (Table folder icon that says "Table")   [[id:d60e2599-74e1-4035-a9f6-c10b0b8f7d81][11/24/2025]]

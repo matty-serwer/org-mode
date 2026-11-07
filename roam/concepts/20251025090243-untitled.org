@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ebb328ca-d6de-4eb7-9cdc-6c4deecfa766
+:REFLECT_ID: 6f88c744487446c1a5c79c8e733ee202
+:CREATED:  [2025-10-25 Sat 09:02]
+:MODIFIED: [2025-10-25 Sat 09:02]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-10-25
+

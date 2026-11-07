@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b030adb1-1b27-4e04-a6f0-3266d7dc0dd3
+:REFLECT_ID: 016ba26455da4cffa7bf4b69ded9baf6
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: development
+#+filetags: :concept:
+#+date: 2025-10-25
+

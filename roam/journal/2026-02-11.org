@@ -1,0 +1,147 @@
+:PROPERTIES:
+:ID:       4d0ded9e-cd9e-45c6-9bf0-4711cd7527a1
+:REFLECT_ID: 11022026
+:CREATED:  [2026-02-11 Wed 13:17]
+:MODIFIED: [2026-02-13 Fri 04:50]
+:END:
+#+title: Wed, February 11th, 2026
+#+filetags: :daily:
+#+date: 2026-02-11
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - you
+- [[id:86c00c9f-f24a-4270-91ce-ba000527ef03][👩🏻‍🎤 Audio Sampling TrackList]]
+  - [[id:84eef2c7-5f4b-46bd-9b63-56e897072638][The specials]]
+    - A message to you drum full
+- An *Object-Relational Mapper (ORM)* is a programming tool that bridges object-oriented code and relational databases, allowing developers to interact with databases using their programming language instead of writing raw SQL.
+  - It maps *objects* (like classes and attributes in code) to *database tables and columns*, enabling CRUD operations (Create, Read, Update, Delete) through familiar code syntax.
+  - ORMs *automatically generate SQL* behind the scenes, reducing boilerplate code and speeding up development.
+  - They offer *database abstraction*, making applications more portable across different databases (e.g., switching from SQLite to PostgreSQL with minimal changes).
+  - Common ORMs include *Drizzle ORM* (TypeScript/JavaScript), *SQLAlchemy* (Python), *Hibernate* (Java), and *Entity Framework* (.NET).
+  - While ORMs improve productivity and maintainability, they can introduce performance overhead in complex queries and may obscure underlying database behavior.
+- [[id:d27b492f-a706-4de7-8021-70a84e262aa9][Matti3-org]]
+  - Need to refocus the overarching strategies and file in the details of our organizational and planning system
+  - Existing elements to refine
+    - [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]] information entry
+    - [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]] data organization
+      - [ ] [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]] AI Organizational Strategies
+    - [[id:f5cf331d-81bc-4c54-9198-f345fc89b1d1][Paper Notes]]
+      - Strict organizational method & entry process
+      - Rules for when to enter
+        - These must be fluid. We use [[id:f5cf331d-81bc-4c54-9198-f345fc89b1d1][Paper Notes]] to support our [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]], but when the mood strikes, to support [[id:15cf34c2-2ea0-4054-8e71-af76fa1e291b][ADHD Motivation]]
+    - [[id:d27b492f-a706-4de7-8021-70a84e262aa9][Matti3-org]] [[id:3426426e-fa7a-4001-bc5e-590e60450e2f][Task System]]
+      - These can live in different places
+      - Should I condense to one task source?
+      - Possible [[id:3426426e-fa7a-4001-bc5e-590e60450e2f][Task System]] Concept
+        - A Reflect Note Created for each task with background information
+        - Tasks created in [[id:2771483a-827d-4ce3-a227-03cc3a5a9ec3][Apple Reminders]] or similar
+        - A Link for this Reflect Note can be created by
+          - [[id:a11f8576-8de5-4f8c-8491-1591f08cf099][Share with private link]] in [[id:f4a5ab99-c1a1-4210-a10e-c6c5070ec11a][Note Actions]]
+            - Pros
+              - Creates a universal link.
+              - Doesn't require login.
+              - External Links inside the note are valid
+            - Cons
+              - Backlinks not visible, so task notes would have to be checked and written out.
+              - Is not a gateway into our app system. 
+          - =⌘⌥ + L= : Copy current note linke
+            - Creates a link directly to the actual note.
+            - Currently loading in browser.
+              - This may require constant logins, which currently also require one time email codes
+            - Pros
+              - The Link pipes us into our Notes
+              - Backlinks are visible
+              - External and Internal Links valid
+            - Cons
+              - Login is annoying. Solutions:
+                - can we get a straight password login for relfect? 
+                - Perhaps 2 factor auth? 
+                - Can we set it so that these links open the app, not the browser app?
+              - No create button. have to remember shortcut.
+  - Elements to create or start
+    - An immutible or less mutible shortlist of [[id:11888d73-20c5-42f5-97aa-d6556994b934][Focus Items]]
+      - Whiteboard?
+      - Large Oaktag & Marker?
+    - Daily braindump
+      - completely freeform?
+      - provide a structure + template to help get it started?
+- [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]]
+  - [[id:5c4079d5-2c84-4087-a0ca-60545a39c724][What's The Functional Difference Between Push 2 & Push 3]]
+- [[id:dd123c64-8432-4eaa-90e0-70f707972e26][Prisma 7]]
+- [[id:fb120f70-a618-4786-bdec-bbfba041c30c][Ultimate Work Notes & Task Manager]]
+  - Concepts
+    - Taking from the best (let's not reinvent the wheel)
+      - Items from Logseq / Roam Research
+        - Bullets for each block
+        - Any block can be a note
+          - In logseq you focus on a block by clicking on the bullet
+          - Then what is the difference between any block, and a "note" created with double square brackets 
+          - Can we just have every block be a note, or every note with children? will this make search too slow, or too poor?
+      - slash menu
+      - code blocks with language based syntax highlighting
+        - possible code view, like task view, were we search and view only code blocks (with immediate parent)
+      - Easy Tables
+        - Nothing crazy
+        - Tables copied form an LLM response should paste in as our desired table
+        - Tables should be easily creatable, with rows and columns easily added with buttons or keys
+    - Defined and Obvious Indent Hierarchy
+      - [[id:af8a1fe1-e935-4efc-97a4-bc18cb2d5a57][Indent Level]] (by Number)
+        - =0= - Note Title
+        - =1= - First indent (Automatically one past the note title)
+        - =2, 3, 4= - Every further indent up to 8? 6? no Limit?
+    - Block Types
+      - List Item
+        - Any item with siblings beneath the same parent block
+        - List Item Node
+          - End of the line, no children
+        - List Item Header
+          - has children
+          - styling defined by [[id:af8a1fe1-e935-4efc-97a4-bc18cb2d5a57][Indent Level]]
+    - Styling done automatically
+      - No Markdown headers
+      - Font styles applied based on situation & context
+        - Items can just be styled by [[id:af8a1fe1-e935-4efc-97a4-bc18cb2d5a57][Indent Level]] possibly, with only nodes being the default font size, text style.
+        - In practice does this work? Are there other ways we need to detect if the user i just writing some text?
+        - Should things happen automatically as the user goes like a live update, or
+        - Should it update when we're done somehow?
+    - Full featured tasks
+      - Why do these have to be ugly?
+      - You should be able to create a task inline with just a key or two. 
+      - Task options should become available while editing this block. 
+        - Time Duration
+        - Scheduling
+          - Inbox
+            - A general area for tasks
+          - Day
+          - Morning, Afternoon, Night
+          - or Specific Time
+      - Task View
+        - There should be a task view, that looks more like apple reminders. Let's use Apple reminders as a guide, but make it actually work intuitively. 
+        - Heavy Lift. Probably in [[id:7b95d942-47a0-4f28-82e0-e25931f33e35][Version 2]]
+    - File Format
+      - Notes stored in Accessible Text Files, with a very basic format
+    - CLI Version
+      - Notes should be accessible and creatable in a Terminal App, or NVIM plugin.
+    - Inclusive Notes
+      - Instead of every note in a certain folder being included
+      - Any note created will be added to a master account index
+      - note files can exist anywhere, like Emacs Org Mode
+        - Caveats?
+    - Sync should be done as easily and universally as possible
+      - Github, with handholding built in instructions. 
+      - Why don't apps have actual built in instructions, instead of clumsy tooltips or nothing?
+      - So peopke don't cry, we pitch this as "keeping it free" or "keeping it cheap"
+  - Mac Only for now. We are looking at either Mac OS + iOS, or just web based. 
+- [[id:fb9a5244-df2b-417b-b7cd-3b82fa08cfc9][Operation Mattress]]
+  - Office
+    - Queen Mattress & Frame
+      - Goes in the Office
+      - Where the Office Desk and Metal shelf currently are. 
+    - Office desk
+      - Goes against the opposite wall, where the cubes and chicky Lane currently are
+    - Other office stuff
+      - Chicky had space under the bed, and only has a week or two more of Rutherford. Everything else can stack.
+  - Bedroom
+    - King Mattress and Topper
+      -  go on floor where the queen mattress was. 
+    - Dresser (Matti3)
+      - Moves toward door.

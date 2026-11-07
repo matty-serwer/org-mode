@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       13aef10b-e4ae-4e21-8034-3abe9adffdb1
+:REFLECT_ID: 25122025
+:CREATED:  [2025-12-23 Tue 09:25]
+:MODIFIED: [2026-01-26 Mon 19:32]
+:END:
+#+title: Thu, December 25th, 2025
+#+filetags: :daily:career:code:
+#+date: 2025-12-23
+-  &  tasks to do today
+  - [X] do the research and planning for LEMR
+  - [X] Put LEMR on resume
+  - [X] Get cracking on LEMR

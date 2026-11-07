@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fb6359e9-01e5-4c0d-97b4-eb0d5838783b
+:REFLECT_ID: b05c89687b8c423c885aa2554b3c6815
+:CREATED:  [2026-01-08 Thu 11:32]
+:MODIFIED: [2026-01-08 Thu 11:32]
+:END:
+#+title: 2026 Rig
+#+filetags: :concept:
+#+date: 2026-01-08
+

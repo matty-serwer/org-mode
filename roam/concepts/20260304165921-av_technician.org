@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1569dc5d-a763-4144-8ba3-4936514eac71
+:REFLECT_ID: 5cd3ebcf2c594a6b8094fa5f001fbf0e
+:CREATED:  [2026-03-04 Wed 16:59]
+:MODIFIED: [2026-03-04 Wed 16:59]
+:END:
+#+title: A/V Technician
+#+filetags: :concept:
+#+date: 2026-03-04
+

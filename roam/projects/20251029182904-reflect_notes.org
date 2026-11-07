@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       5741fa43-fc59-44a1-980b-f66a904c6f89
+:REFLECT_ID: 343df6f2402e4859844d901eaff055af
+:CREATED:  [2025-10-29 Wed 18:29]
+:MODIFIED: [2026-04-08 Wed 22:22]
+:END:
+#+title: Reflect Notes
+#+filetags: :project:application:
+#+date: 2025-10-29
+- Type:  
+- Description: A note taking application. Likely the one you are currently using
+- Manual: [[https://reflect.academy/how-to-use-reflect][https://reflect.academy/how-to-use-reflect]]
+- Executable: [[https://hookmark.net/hm/hook/file/0t8IF5FtE?p=Ly9BcHBsaWNhdGlvbnM=&n=Reflect%2Eapp][Reflect.app]]
+- Application Support: [[https://hookmark.net/hm/hook/file/0t8Q1yU6S?p=TGlicmFyeS9BcHBsaWNhdGlvbiBTdXBwb3J0&n=Reflect][Reflect]]
+- Documents Location: [[https://reflect.app/g/org-mattie/][https://reflect.app/g/org-mattie/]]

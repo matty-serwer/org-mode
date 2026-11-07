@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       98d7dff1-eeb4-45f3-ae77-dee284df91a9
+:REFLECT_ID: 03122025
+:CREATED:  [2025-12-03 Wed 17:06]
+:MODIFIED: [2025-12-03 Wed 18:02]
+:END:
+#+title: Wed, December 3rd, 2025
+#+filetags: :daily:
+#+date: 2025-12-03
+- [[id:8bdf6d22-9bef-41a9-bf73-65d885243dc9][Anger Management]] Techniques to Not Yell
+  - The most effective way to stop yelling is to give yourself a built‑in "pause" when you feel provoked, then use simple physical and mental tools (like stepping away, breathing, and changing your self‑talk) until your body calms down enough to speak calmly again. You can absolutely reduce yelling even if your partner keeps doing things that feel disrespectful or provocative.
+  - Understand what's happening
+    - When you feel disrespected, your brain goes into fight‑or‑flight, which increases heart rate, muscle tension, and "tunnel vision," making yelling feel almost automatic. In that state, your partner often stops hearing your point and only reacts to the volume and tone, which is exactly the pattern you described.
+  - Use a specific pause skill
+    - A simple, research‑backed tool is the DBT "STOP" skill: Stop, Take a step back, Observe, Proceed mindfully. You can turn this into a personal rule, for example: "If I feel my chest tighten or my voice rising, I will stop mid‑sentence, take three breaths, and say 'I need five minutes.'"
+    - Stop: Say "stop" in your head and close your mouth, even mid‑sentence.
+    - Take a step back: Physically lean back or step into another room if you can.
+    - Observe: Notice thoughts like "she's doing this on purpose" and physical cues like clenched jaw, hot face.
+    - Proceed mindfully: Decide whether to keep talking, change the topic, or take a longer break.
+  - Regulate your body quickly
+    - Calming your nervous system makes yelling less likely because the urge literally gets weaker.
+    - Slow, deep breathing (like square breathing: inhale 4, hold 4, exhale 4, hold 4) lowers arousal and buys you a few seconds to choose not to yell.
+    - Taking a brief time‑out (5–20 minutes) from the conversation is one of the most recommended anger‑management tools; you're not avoiding the issue, just delaying it until you're calmer.
+    - Having a physical cue (hands up in a "stop" sign, sitting down, or holding a water glass before you speak) can remind you to lower your voice.
+  - Change the internal story
+    - Part of what triggers yelling is the thought "she's doing this on purpose" or "this is intolerable," which ramps anger up fast. Cognitive restructuring means intentionally replacing those thoughts with more balanced ones like "I really don't like this, but yelling will just make it worse; my goal is to stay calm so I can address this clearly."
+    - Remind yourself of your real goal: "My goal is to be heard and respected, not to win this moment."
+    - Label your emotion in your head or out loud: "I'm really angry and feeling disrespected right now," which surprisingly helps reduce intensity.
+  - Set ground rules with her
+    - It will help if you two agree when you're calm on how to handle heated moments, especially since she focuses on your yelling.
+    - Propose a shared "pause" signal both of you can use (a word or gesture) when either feels flooded, with an agreement to resume the talk after a set time.
+    - Use "I" statements when you return: "I felt disrespected when X happened, and I'm working hard not to raise my voice because that derails us."
+    - If you want, you can share what's above and say: "I'm trying to change my side of this by not yelling; can we work together on how we talk when we're upset?"
+    - If yelling feels hard to control even with these tools, or if fights are frequent, a few sessions with an individual or couples therapist who does CBT or DBT‑style work on anger and communication can make a big difference.
+  - Sources
+    - [1] Control anger before it controls you [[https://www.apa.org/topics/anger/control][https://www.apa.org/topics/anger/control]]
+    - [2] Stop Yelling at Loved Ones: Managing Anger in Relationships [[https://reachlink.com/advice/anger/stop-yelling-at-loved-ones-managing-anger-in-relationships/][https://reachlink.com/advice/anger/stop-yelling-at-loved-ones-managing-anger-in-relationships/]]
+    - [3] STOP DBT Skill: Teaching Clients to Interrupt Reactivity - Blueprint [[https://www.blueprint.ai/blog/stop-dbt-skill][https://www.blueprint.ai/blog/stop-dbt-skill]]
+    - [4] 11 Anger Management Therapy Techniques and Interventions [[https://positivepsychology.com/anger-management-therapy/][https://positivepsychology.com/anger-management-therapy/]]
+    - [5] Anger Management | Harvard Medicine Magazine [[https://magazine.hms.harvard.edu/articles/anger-management][https://magazine.hms.harvard.edu/articles/anger-management]]
+    - [6] Manage Conflict: Repair and De-Escalate - The Gottman Institute [[https://www.gottman.com/blog/manage-conflict-repair-and-de-escalate/][https://www.gottman.com/blog/manage-conflict-repair-and-de-escalate/]]
+    - [7] Understanding DBT STOP Skill and GIVE Skill - The Insight Clinic [[https://theinsightclinic.ca/dbt-stop-skill-and-give-skill-everything-you-need-to-know/][https://theinsightclinic.ca/dbt-stop-skill-and-give-skill-everything-you-need-to-know/]]
+    - [8] Mindfulness STOP Skill | DBT STOP Technique | Find Calm [[https://cogbtherapy.com/mindfulness-meditation-blog/mindfulness-stop-skill][https://cogbtherapy.com/mindfulness-meditation-blog/mindfulness-stop-skill]]
+    - [9] De-Escalating An Angry Couple-5 Shockingly Effective Ways [[https://dougnoll.com/de-escalate/de-escalate-angry-couple/][https://dougnoll.com/de-escalate/de-escalate-angry-couple/]]
+    - [10] Mindfulness [[https://psychcentral.com/health/tips-for-de-escalating-an-argument][https://psychcentral.com/health/tips-for-de-escalating-an-argument]]
+    - [11] How to De-escalate an Argument in your Relationship [[https://www.tiffanyspilove.com/main-line-psychology-blog/how-to-de-escalate-an-argument][https://www.tiffanyspilove.com/main-line-psychology-blog/how-to-de-escalate-an-argument]]
+    - [12] Tips to Keep Your Anger Under Control [[https://www.urmc.rochester.edu/encyclopedia/Content?contentTypeID=1&ContentID=4588][https://www.urmc.rochester.edu/encyclopedia/Content?contentTypeID=1&ContentID=4588]]
+    - [13] How to Stop Yelling at Your Students | Cult of Pedagogy [[https://www.cultofpedagogy.com/stop-yelling-at-students/][https://www.cultofpedagogy.com/stop-yelling-at-students/]]
+    - [14] How do I stop yelling? : r/MomForAMinute - Reddit [[https://www.reddit.com/r/MomForAMinute/comments/10uvygk/how_do_i_stop_yelling/][https://www.reddit.com/r/MomForAMinute/comments/10uvygk/how_do_i_stop_yelling/]]
+    - [15] Dialectical Behavior Therapy (DBT): Everyday Skills That Change ... [[https://www.springhealth.com/blog/dialectical-behavior-therapy-dbt-everyday-skills-that-change-lives][https://www.springhealth.com/blog/dialectical-behavior-therapy-dbt-everyday-skills-that-change-lives]]
+    - [16] [PDF] Anger management workbook - SAMHSA Library [[https://library.samhsa.gov/sites/default/files/anger_management_workbook_508_compliant.pdf][https://library.samhsa.gov/sites/default/files/anger_management_workbook_508_compliant.pdf]]
+    - [17] A meta-analytic review of anger management activities that increase ... [[https://www.sciencedirect.com/science/article/pii/S0272735824000357][https://www.sciencedirect.com/science/article/pii/S0272735824000357]]
+    - [18] Mastering the STOP Skill in Dialectical Behavior Therapy - Grouport [[https://www.grouporttherapy.com/blog/dbt-stop-skill][https://www.grouporttherapy.com/blog/dbt-stop-skill]]
+    - [19] What is the best way to de-escalate a fight with your SO? [[https://www.reddit.com/r/Marriage/comments/7dc6ft/what_is_the_best_way_to_deescalate_a_fight_with/][https://www.reddit.com/r/Marriage/comments/7dc6ft/what_is_the_best_way_to_deescalate_a_fight_with/]]
+    - [20] 10 Steps to Stop Yelling | Psychology Today [[https://www.psychologytoday.com/us/blog/peaceful-parents-happy-kids/201302/10-steps-to-stop-yelling][https://www.psychologytoday.com/us/blog/peaceful-parents-happy-kids/201302/10-steps-to-stop-yelling]]
+-----
+
+- [[id:5a7cbcfe-8458-4b31-9a6e-cf6a896fc5e8][MDX]] with [[id:17254b57-edb8-4076-956f-2c7d5369e8e2][NextJS]] [[id:968e2a21-665c-4f21-b3e3-604d9101cfb1][App Router]]
+  
+  #+begin_src markup
+  import type { NextConfig } from 'next;
+  import createMDX from '@next/mdx';
+  import postgres from 'postgres';
+  
+  
+  #+end_src
+- [[https://www.youtube-nocookie.com/embed/34bRv6cQezo][youtube: https://www.youtube-nocookie.com/embed/34bRv6cQezo]]

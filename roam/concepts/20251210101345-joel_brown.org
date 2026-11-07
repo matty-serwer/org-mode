@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a0cf61f6-d8d6-4942-a4c3-7001d9124c99
+:REFLECT_ID: 64c2376c084b4d4d943e413bc363e1e2
+:CREATED:  [2025-12-10 Wed 10:13]
+:MODIFIED: [2025-12-10 Wed 10:13]
+:END:
+#+title: Joel Brown
+#+filetags: :concept:
+#+date: 2025-12-10
+

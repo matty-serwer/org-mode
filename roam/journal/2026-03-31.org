@@ -1,0 +1,98 @@
+:PROPERTIES:
+:ID:       02d8b081-3039-499c-84d7-eec07f045a58
+:REFLECT_ID: 31032026
+:CREATED:  [2026-03-30 Mon 16:24]
+:MODIFIED: [2026-04-01 Wed 01:25]
+:END:
+#+title: Tue, March 31st, 2026
+#+filetags: :daily:
+#+date: 2026-03-30
+- [[id:289b8b64-964d-4ec0-aafe-e6c2d51aefbc][Johanna Hernandez]]
+  Interview prep: Abigail Hanson at VSC Ventures
+  *Abigail (Campbell) Hanson is a Senior Manager at VSC who oversees PR campaigns for climate tech and AI startups, and she will likely evaluate candidates on media instincts, founder-management skills, and fluency with VSC’s hybrid PR-plus-VC model.* She has 9+ years of agency experience, manages a portfolio of VC-backed startup accounts, and was recently the official press contact for VSC Ventures’ flagship Dirty Jobs Summit events. Understanding her background, VSC’s distinctive positioning, and the specific demands of the Account Manager role will give any candidate a meaningful edge in this final conversation.
+  -----
+  
+  Who Abigail Hanson is and what she cares about
+  Abigail goes by *“Abby Hanson”* professionally (friends call her “Gail”). She is based in *Denver, CO*, graduated from *Boston College*, and later earned a *Recruiting and Talent Acquisition Certificate from Cornell University*. Her LinkedIn headline reads “Senior Manager at VSC | PR for Climate & Tech Startups,” though a May 2025 press release listed her as *Senior Account Manager, VSC PR*, and one recruiting database lists her as Director — suggesting she has been promoted at least once during her tenure.
+  Her LinkedIn summary reveals her priorities clearly: she manages teams supporting VC-backed startups including *Pebble, Ample, Sesame Solar, DevRev, Bright AI, Armilla AI, Fizz, Cambium, and Vibrant Planet*. She emphasizes expertise in *sustainability and technology storytelling*, experience interviewing C-suite executives for thought leadership programs, and a passion for delivering “PR results that make a difference.” Before VSC, she worked at PR agencies in the Boston area handling clients like Avis Budget Group, Zipcar, BlueWave Solar, Too Good To Go, and WGBH, and started her career in pharmaceutical/biotech PR.
+  On LinkedIn she is active and engaged — she posted multiple times about VSC Ventures’ *Dirty Jobs Summit* in NYC (May 2025), shared client coverage wins like Ecolectro’s hydrogen production story, and occasionally posts team culture content. Her Instagram bio (@gailcampbell) tags *@vscpr* and identifies her as a “PR for climate tech startups” professional and a certified yoga sculpt instructor at CorePower Yoga. She has no detectable Twitter/X presence or published bylines, meaning LinkedIn is her primary professional platform.
+  *What this tells you for the interview:* Abby values climate tech storytelling, team leadership, and measurable media results. She manages multiple startup accounts simultaneously — exactly what the Account Manager role requires. Demonstrating genuine interest in sustainability narratives, showing you can manage founder relationships across several accounts, and proving you understand the startup communications lifecycle will resonate with her.
+  -----
+  
+  VSC’s unique model blends a PR agency with a venture fund
+  VSC was *founded in 2002 by Vijay Chattha* and is headquartered in San Francisco with a second office in New York. The firm employs *11–50 people* and operates as a fully remote “Work From Anywhere” organization spanning 13 states and 2 countries. VSC describes itself as “a band of strategists, storytellers, and data nerds obsessed with helping Davids crush a sea o f Goliaths.”
+  The critical differentiator candidates must understand is the *VSC + VSC Ventures flywheel*. In 2019 (first close 2021), the agency launched *VSC Ventures*, a *$21 million seed and Series A fund* led by General Partners *Vijay Chattha and Jay Kapoor*. The fund backs founders using AI to fix data, labor, and safety challenges across what they call *“Dirty, Dusty, Dangerous” industries* — manufacturing, construction, transportation, energy, and public safety. Portfolio companies include Condoit, Bright AI, Ceramic AI, GaeaStar, Glacier, BurnBot, CogniChip, Concrete AI, PaintJet, Sesame Solar, and others. The fund’s most recent investment was *Multitude Insights* (February 2026, Series A).
+  This dual structure means VSC portfolio companies often become PR clients, and PR clients sometimes become investment targets. The agency’s track record spans *600+ startups represented, 4 IPOs, 20 unicorns, 50+ exits, and over $67 billion in contributed value*. Landmark clients include Poshmark (IPO), Fastly (IPO), Tonal ($1.6B valuation), HoneyBook ($1B+), Mammoth Biosciences, and Tile. Current marquee accounts include *Windsurf* (agentic IDE), *Groq* (AI inference chips), *Prenuvo* (whole-body MRI), *Nova Labs* (Helium network), and *Pebble* (electric travel trailer).
+  -----
+  
+  Recent wins and campaigns worth referencing
+  VSC had a strong awards cycle in 2024 that provides concrete talking points. The firm won *two Gold Bulldog PR Awards*: Best Visual Storytelling Campaign for *BrandShield* (AI cybersecurity, achieving 1.09 billion combined reach) and Best Consumer Product Launch for *Pebble Flow* (electric RV, securing 51 feature stories across CNBC, Fast Company, TechCrunch, Bloomberg, CNET, and Electrek). They were also a *PRWeek 2024 Healthcare Awards finalist* for their Prenuvo whole-body MRI campaign, and three VSC clients — Samooha, RetailNext, and Cambium — made *Fast Company’s 2024 Most Innovative Companies* list.
+  The *Dirty Jobs Summit* is VSC Ventures’ signature event. The inaugural 2024 summit in San Francisco sold out, and the 2025 edition expanded to New York City on May 22, doubling attendance to 200 people (100 startup leaders + 100 investors) with six roundtable discussions on automation, hardware/robotics working capital, and physical AI. Abigail Hanson was the named press contact for this event and posted about it actively, so asking informed questions about the summit or the “Dirty, Dusty, Dangerous” investment thesis would demonstrate genuine preparation.
+  VSC also produces media properties including the *CLIMB Talk Show* (podcast/video series with founders and investors), *Dirty Jobs* content series, and *Sweat Equity* series — all on YouTube at @ClimbVSC.
+  -----
+  
+  What the Account Manager role actually demands
+  VSC’s current job postings (active as of early 2026) reveal exactly what they want. The *PR Account Manager role* is remote, pays *$90,000–$120,000/year*, and requires *4–6 years of PR or comms campaign experience*. The core responsibilities include leading strategy and execution across *6–7 startup accounts simultaneously*, building direct relationships with founders to shape their public voice, pitching journalists alongside podcasters, YouTubers, TikTokers, and Substack writers, co-creating short-form video and social content, and driving the firm’s *“VerticalViews” creator collaboration program*.
+  Three requirements stand out as non-negotiable:
+  The interview process at VSC typically takes about *16 days*, involves video screenings and an assignment or creative project (potentially developing PR ideas for a current client), and meetings with senior team members. Glassdoor rates the process 2.9/5 difficulty with 73% positive candidate experience.
+  -----
+  
+  Culture signals and what to expect inside VSC
+  VSC carries a *4.1/5 Glassdoor rating* across 63 reviews, with 74% of employees recommending it. The firm’s strongest marks are in *compensation and benefits (4.2)* and *career opportunities (4.2)*, while *work-life balance (3.7)* is the weakest score — consistent with a high-performance boutique agency environment. Benefits include unlimited PTO, health/dental/vision, 401K matching, and perks like team retreats and regional social events.
+  Reviewers consistently describe VSC as an *exceptional learning environment* with access to top entrepreneurs, investors, and founders. Multiple reviews call it an unparalleled training ground for PR careers. The firm promotes from within — partners Maggie Philbin, Eric Gonzalez, and Anne Sophie Hurst all rose through the ranks. The critical themes are creative intensity, startup speed, and a culture where Vijay Chattha serves as a quality filter on important work. The firm is *45% people of color* and emphasizes diversity in both its team and client portfolio (30% female-founded clients, 35% BIPOC client leadership).
+  Vijay Chattha himself — a *University of Pennsylvania grad* (noted variously as Penn and Georgetown across sources), named to *PRovoke Media’s Innovator 25* in 2020 — is worth understanding. He’s an angel investor in 24+ companies (including Poshmark, Tonal, and PAX), founded the Punjabi funk hip-hop band BlackMahal, and co-founded Project Ahimsa, a global nonprofit empowering youth through music. His philosophy centers on multimedia storytelling over traditional text-based PR, and he believes startups’ biggest challenge is no longer launching but breaking through the noise.
+  -----
+  
+  Conclusion: five strategic moves for the final interview
+  This final conversation with Abigail Hanson is likely focused on culture fit, account management approach, and whether the candidate can operate at VSC’s particular intersection of PR, venture capital, and content creation. Five preparation priorities emerge from this research:
+  *First*, demonstrate climate tech and deep-tech fluency. Abby’s portfolio skews heavily toward sustainability and AI startups — reference specific clients like Pebble, Sesame Solar, or BurnBot and articulate why their stories matter. *Second*, show you understand the PR-plus-VC flywheel by discussing how VSC Ventures’ investment thesis creates unique storytelling advantages for portfolio companies. *Third*, come with concrete examples of using AI tools in PR workflows, as this is a stated requirement, not a nice-to-have. *Fourth*, prove you think beyond traditional media pitching — discuss creator collaborations, short-form video, and building founder social presence as distribution channels. *Fifth*, acknowledge the pace and intensity honestly. VSC’s culture rewards high-agency operators who can manage 6–7 accounts simultaneously while pushing founders toward stronger narratives. Showing self-awareness about thriving in fast-moving environments will land well with someone who does exactly that work every day.
+  - [[id:76227ec7-1a94-4d5d-bb23-05f2ad59af85][VSC Ventures]] — Applicant Brief
+    - What They Are
+      - A VC firm based in San Francisco, founded by Vijay Chattha and Jay Kapoor, leveraging 20+ years of PR experience to offer a unique blend of investment and storytelling expertise
+      - Self-described as "the VC fund that builds your brand and runs a media machine" — clips, placements, and stories that move pipeline are core to their value prop
+      - Not a traditional VC — PR/comms is the differentiator, not a side service
+    - Their Core Thesis
+      - It's easier than ever to start a startup, but harder than ever to break out or get noticed — storytelling is their stated superpower
+      - They marry venture capital with traditional PR and video/content marketing, providing portfolio companies a unique investment and mentorship opportunity
+    - Investment Focus
+      - They back founders using AI to fix data, labor, and safety challenges across "Dirty, Dusty, Dangerous" industries — their current framing of industrial/hard-tech sectors
+      - Seed and Series A stage; earlier focus was Work, Wellness & Bio, and World-Saving climate tech (the "3 Dubs")
+    - Track Record
+      - Helped 600+ venture-backed startups through 53 exits, 20 unicorns, and 4 IPOs before launching the fund
+      - As of early 2026, invested in 16 companies total, with 3 new investments in the last 12 months — actively deploying
+    - Fund Size & Structure
+      - Launched October 2021 with $7M; closed debut fund at *$21M*
+      - LPs are largely former founders and clients — people VSC helped make money who came back as investors
+      - Small, tight team — around 12 people including 6 partners
+    - Why This Matters for a PR Applicant
+      - PR isn't support staff here — it's the product. You'd be expected to generate real media momentum, not just press releases
+      - They work closely with founders on messaging, go-to-market strategy, and media presence — expect cross-functional, embedded work
+      - They've secured *50+ Fast Company award wins* for clients — award nominations and recognition campaigns are likely part of the toolkit
+      - The firm is small, so you'd have broad ownership and direct portfolio exposure from day one
+      - Know their vocabulary
+        - "distribution as unfair advantage"
+        - "media machine"
+        - "Dirty/Dusty/Dangerous"
+        - these are signal phrases in how they talk about their work
+  - *AI tool proficiency* — VSC explicitly requires mastery of ChatGPT, Claude, and Perplexity, and frames AI as central to their workflows. Their tagline includes “Humans + AI.” Come prepared with specific examples of using AI in PR work.
+  - *Creator-economy fluency* — This is not a traditional media-relations-only role. VSC wants people who pitch podcasters, build founder social presence, and create content themselves. They even ask whether candidates have a strong personal social media presence, arguing “how can one advise a client if they don’t know how to do it for themselves?”
+  - *Startup and founder empathy* — The role requires the ability to push back on weak ideas from founders while delivering stronger alternatives. Understanding fundraising cycles, product launches, and how startups think is essential.
+- [[id:2d996d12-6d76-4243-98b8-0584a702f83d][RoORG]]
+  - CATEGORY LIST
+    - 
+- [[id:49109eba-4eb6-4e2e-8661-bb6c1e26f2f7][Audio memos]]
+  - Let me make a shopping list for Walmart so I can get through that big store. I need:
+    - First item
+    - Second item
+    - Third item
+  - Second list for warmer:
+    1. Pet roller Sticky tape
+    1. RX bars
+    1. Hair blowout cream
+    1. Billy razor blades
+    1. Shave oil
+    1. Deodorant?
+    1. Body mist
+    1. Body wash
+    1. 
+-----

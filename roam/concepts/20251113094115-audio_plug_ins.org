@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2f3b4a8e-fcf3-44b4-b53d-e5301c309e44
+:REFLECT_ID: a5c462d653a941f3b7b88c4fb4057ba5
+:CREATED:  [2025-11-13 Thu 09:41]
+:MODIFIED: [2026-02-15 Sun 15:28]
+:END:
+#+title: Audio Plug-ins
+#+filetags: :concept:
+#+date: 2025-11-13
+

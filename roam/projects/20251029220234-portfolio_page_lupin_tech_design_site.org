@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       2270ec16-0a33-4195-ad0b-3845ead5fe5a
+:REFLECT_ID: 9a0dc3b103c64d51b56c43eb90a5220b
+:CREATED:  [2025-10-29 Wed 22:02]
+:MODIFIED: [2026-01-28 Wed 05:10]
+:END:
+#+title: 🌐 Portfolio Page: Lupin Tech Design Site
+#+filetags: :project:
+#+date: 2025-10-29
+- [[id:3245e58b-3be2-44d8-bf38-abca730e7e66][Linear App]] Project Page
+  - [[https://linear.app/lupine-tech-design/document/lupin-tech-design-portfolio-site-roadmap-0ffbba5deb7e][https://linear.app/lupine-tech-design/document/lupin-tech-design-portfolio-site-roadmap-0ffbba5deb7e]]
+- [[id:3245e58b-3be2-44d8-bf38-abca730e7e66][Linear App]] LTDS Issues Board
+  -
+    - [[https://linear.app/lupine-tech-design/project/lupine-tech-design-portfolio-site-fa357785e3ad/issues?][https://linear.app/lupine-tech-design/project/lupine-tech-design-portfolio-site-fa357785e3ad/issues?]]

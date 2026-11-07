@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1d8492fa-4209-419b-8d11-299c909d1f86
+:REFLECT_ID: 941ef1df8ed94f95b18dae226b7e573a
+:CREATED:  [2026-02-25 Wed 01:36]
+:MODIFIED: [2026-02-25 Wed 01:36]
+:END:
+#+title: C-Note Reflect Import Claude Code Setup
+#+filetags: :concept:
+#+date: 2026-02-25
+

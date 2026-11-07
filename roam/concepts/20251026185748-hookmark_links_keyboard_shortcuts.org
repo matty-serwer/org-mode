@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       70fb033c-0c8c-423b-a8d3-9957afc2d464
+:REFLECT_ID: 9c31bdcdc56745c38f0ba0e0a7ac7d19
+:CREATED:  [2025-10-26 Sun 18:57]
+:MODIFIED: [2025-10-26 Sun 19:08]
+:END:
+#+title: Hookmark Links Keyboard Shortcuts
+#+filetags: :concept:
+#+date: 2025-10-26
+* [[id:8921660b-80b5-48c5-91b6-84f2ce8f7456][Hookmark]] [[id:31c2403f-5868-41ce-9459-2fce3e692af1][Links]] Keyboard Shortcuts
+** "Create" Keyboard Shortcuts
+- Universal Link
+  - = |⌘⌥⌃| + U =
+  - Creates an [[id:4414e360-7f18-4310-8721-f3f5bd0e3cfb][http]] Link to the Selected FIle
+  - Links are intercepted by [[id:8921660b-80b5-48c5-91b6-84f2ce8f7456][Hookmark]]
+- Markdown Link
+  - = |⌘⌥⌃| + [ = 
+  - Creates a hook:// url [[id:31c2403f-5868-41ce-9459-2fce3e692af1][Links]](hook: is registered by Hookmark)
+  - Often works with warnings, as it is known to be from an application

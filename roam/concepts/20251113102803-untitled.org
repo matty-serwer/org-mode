@@ -1,0 +1,58 @@
+:PROPERTIES:
+:ID:       aaa69e8f-4a76-4c49-91ba-c2389bdb713e
+:REFLECT_ID: f64709901aac4b588ebba43d90dc3a9e
+:CREATED:  [2025-11-13 Thu 10:28]
+:MODIFIED: [2025-11-13 Thu 10:29]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-11-13
+I'll search for information about Steve Slate's Virtual Mix Rack and its current plugins/units.
+
+I need to search for more specific information about all the modules available in the Virtual Mix Rack to get a comprehensive list organized by category.
+
+Let me search for a more comprehensive list of all VMR modules.
+
+Let me search more specifically for the complete module list:
+
+Based on my research, here's the complete list of all Steve Slate Virtual Mix Rack (VMR) modules in 2025, organized by category:
+- *EQ*
+  - FG-N (British Class A EQ - 70s)
+  - FG-S (British Console EQ - 80s)
+  - AirEQ Air (High-end brightness)
+  - AirEQ Earth (Deep sub-frequencies)
+  - CS-EQ (Custom Series Hybrid EQ)
+  - CS-Lift (Custom Series Lift Filter)
+  - FG-A (American Vintage EQ - API style)
+  - SD-PE1 (Passive EQ)
+- *Dynamics*
+  - FG-116 (FET Compressor - Classic)
+  - FG-116 Vintage (FET Compressor - Rev A Blue Stripe)
+  - FG-116 Modern (FET Compressor - Modern Version)
+  - FG-401 (VCA/British Console Compressor)
+  - FG-Stress (Empirical Labs Distressor style)
+  - FG-Bomber (Dynamic Impact Enhancer)
+  - The Monster (1176 "All Buttons In" Mode)
+  - Audified U73b (Tube Compressor)
+  - FG-2A (Optical Compressor)
+  - Custom Opto (Optical Compressor)
+  - FG-Dynamics (Dynamics Processor)
+  - FG-DS 902 (Dynamics Processor)
+- *Vibes & Character*
+  - Revival (Saturation/Harmonic Enhancer)
+  - Virtual Tube Collection - London (British Tube Circuits)
+  - Virtual Tube Collection - New York (American Solid-State Circuits)
+  - Virtual Tube Collection - Hollywood (Colorful Tube Preamp)
+  - FG-73 (British Transistor Preamp)
+  - FG-76 (German Tube Preamp)
+  - FG-36A (Vintage Preamp)
+- *Console/Mixing*
+  - Virtual Console Collection - Brit 4k E (SSL 4000E)
+  - Virtual Console Collection - Brit 4k G (SSL 4000G)
+  - Virtual Console Collection - Brit N (Neve 8048)
+  - Virtual Console Collection - RC-Tube (RCA Broadcast Tube Console)
+  - Virtual Console Collection - Ψ (Trident 80B)
+  - Virtual Console Collection - US A (API 1604)
+- *Utility & Transient*
+  - Trimmer (Gain/Phase Utility)
+  - Transient Shaper (Transient Processing)

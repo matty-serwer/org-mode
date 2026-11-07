@@ -1,0 +1,89 @@
+:PROPERTIES:
+:ID:       7578e69b-488d-4a80-b8bd-ec1415c2fe95
+:REFLECT_ID: 04022026
+:CREATED:  [2026-02-03 Tue 08:52]
+:MODIFIED: [2026-02-05 Thu 04:08]
+:END:
+#+title: Wed, February 4th, 2026
+#+filetags: :daily:
+#+date: 2026-02-03
+- [[id:a6553dfe-4631-4c2a-90be-331521860137][M477i3.exe]] Ideas
+  - [[id:86c00c9f-f24a-4270-91ce-ba000527ef03][👩🏻‍🎤 Audio Sampling TrackList]]
+    - Take lead parts and strings from Souxsie & The Banshees - Kiss For Me
+    - Can I get a jay  
+      - [[id:bce80747-69fe-43c9-9062-b1dde5ba0f39][50 Cent]]
+        - P.I.M.P.
+      - [[id:dcbd6eb5-a124-429a-8688-9e76c6119e2c][Missy Elliot]]
+        - Music Makes Me Lose Control
+      - [[id:b973f250-69bc-49c1-998e-80d9ba9dc080][Childish Gambino]]
+        - This Is America
+      - [[id:3a8664ca-bb77-48bc-b7bf-07a01efb24fc][Jay Z]]
+        - Can I Get A...
+    - Wu Tang Clan
+      - Triumph
+        - Do just the best parts. Make it banger.
+    - I'm not a woman if you dont have me.. or something
+      - remix this thing? rock harder? more dynamic
+- [[id:4dd8e0dc-4cfc-4818-9e36-dca5c68dba89][👩🏻‍🎤 💿 Operation: M477i3.exe]]
+  You can use the TP‑Link AC1200 extender with an iPhone hotspot, but it’s a bit hit‑or‑miss: the hardware supports it, yet some iPhones/carriers don’t pass traffic correctly through extenders.[1][2]
+  Basics for your TP‑Link AC1200
+  How to set it up with your iPhone
+  On your iPhone:
+  On the TP‑Link AC1200 extender (phone or laptop):
+  If it connects but there’s no internet
+  A common issue is: the extender shows connected to the iPhone, but devices on the “_EXT” network have no internet. This can be due to:[11][1]
+  Things to try:
+  If you still get “connected, no internet” on the extended network after that, it’s likely a limitation of your iPhone/carrier combo rather than the TP‑Link itself.[1][2]
+  Workable alternatives if it won’t cooperate
+  If you tell me the exact AC1200 model number (e.g., RE305, RE205, or a router like Archer A6/AC1200), I can give you model‑specific steps and what LEDs to look for to confirm it’s working.
+  Sources
+  [1] Connecting a wifi range extender to an iPhone hotspot just won't ... [[https://community.spiceworks.com/t/connecting-a-wifi-range-extender-to-an-iphone-hotspot-just-wont-work-but-why/940438][https://community.spiceworks.com/t/connecting-a-wifi-range-extender-to-an-iphone-hotspot-just-wont-work-but-why/940438]]
+  [2] Connecting tplink to iphone personal hotspot [[https://discussions.apple.com/thread/253905121][https://discussions.apple.com/thread/253905121]]
+  [3] Set Up the Extender - RE305 V4 User Guide | TP-Link [[https://www.tp-link.com/us/user-guides/re305_v4/chapter-2-set-up-internet-connection][https://www.tp-link.com/us/user-guides/re305_v4/chapter-2-set-up-internet-connection]]
+  [4] Set Up the Extender - RE205 & RE305 V3 User Guide | TP-Link [[https://www.tp-link.com/us/user-guides/re205&re305_v3/chapter-2-set-up-internet-connection][https://www.tp-link.com/us/user-guides/re205&re305_v3/chapter-2-set-up-internet-connection]]
+  [5] Connect wireless router to phone hotspot - Home Network Community [[https://community.tp-link.com/en/home/forum/topic/205584][https://community.tp-link.com/en/home/forum/topic/205584]]
+  [6] Extend mobile phone internet wifi hotspot So via TL-WR940N [[https://community.tp-link.com/en/home/forum/topic/540184][https://community.tp-link.com/en/home/forum/topic/540184]]
+  [7] How to extend signal FROM iPhone hotspot - Apple Community [[https://discussions.apple.com/thread/252300203][https://discussions.apple.com/thread/252300203]]
+  [8] How to configure Range Extender via Tether APP | TP-Link [[https://www.tp-link.com/us/support/faq/1373/][https://www.tp-link.com/us/support/faq/1373/]]
+  [9] TP-Link AC1200 WiFi Range Extender Unboxing, Setup & Review 
+  [[https://www.youtube-nocookie.com/embed/WNFuPDtb2hQ][youtube: https://www.youtube-nocookie.com/embed/WNFuPDtb2hQ]]
+  
+  [10] HOW TO SETUP TP LINK RE305 RANGE EXTENDER AC 1200 ... 
+  [[https://www.youtube-nocookie.com/embed/O_HYtRfWIfY][youtube: https://www.youtube-nocookie.com/embed/O_HYtRfWIfY]]
+  
+  [11] How to extend my phone's personal hotspot using tplink AC1200 wifi ... [[https://www.reddit.com/r/TPLinkKasa/comments/hlfo1q/how_to_extend_my_phones_personal_hotspot_using/][https://www.reddit.com/r/TPLinkKasa/comments/hlfo1q/how_to_extend_my_phones_personal_hotspot_using/]]
+  [12] ATT Hotspot --> TL-WR802N --> AC1200 --> Wired connections [[https://community.tp-link.com/us/home/forum/topic/568180][https://community.tp-link.com/us/home/forum/topic/568180]]
+  [13] TP-Link Tether - App Store - Apple [[https://apps.apple.com/us/app/tp-link-tether/id599496594][https://apps.apple.com/us/app/tp-link-tether/id599496594]]
+  [14] TP Link Range Extender Setup Through Mobile - YouTube 
+  [[https://www.youtube-nocookie.com/embed/dc5PqCJZq_M][youtube: https://www.youtube-nocookie.com/embed/dc5PqCJZq_M]]
+  
+  [15] Easy Smartphone Setup for TP-Link TL-WA850RE Wi-Fi ... - YouTube 
+  [[https://www.youtube-nocookie.com/embed/Cw0mdKu200g][youtube: https://www.youtube-nocookie.com/embed/Cw0mdKu200g]]
+  
+  [16] TP Link RE305 Wi Fi Extender Access point mode Setup - YouTube 
+  [[https://www.youtube-nocookie.com/embed/qB4TOawd0Y4][youtube: https://www.youtube-nocookie.com/embed/qB4TOawd0Y4]]
+  -
+    - Build a bass sample instrument using a single album. 
+      - Should cover all notes several times
+      - will want options for up and down on each.
+      - oooooR, don't we have that kontakt instrument? The musicman?
+  - TP‑Link AC1200 range extenders (like RE305/RE205) are designed to connect to any existing Wi‑Fi network in “Range Extender” mode, then rebroadcast it under an “_EXT” network name.[3][4]
+  - In principle, your iPhone hotspot is just another Wi‑Fi network, so the extender can join it the same way it would join a normal router SSID.[5][6]
+  1. Go to Settings → Personal Hotspot.
+  1. Turn on “Allow Others to Join” and set a strong password.
+  1. If available, enable “Maximize Compatibility” (this usually forces 2.4 GHz, which extenders tend to prefer).[7]
+  1. Plug the extender into an outlet close to your iPhone and wait for solid power LED.[3]
+  1. On your MacBook or phone, join the default TP‑Link extender Wi‑Fi (e.g., “TP‑Link_Extender” or similar).[4][8]
+  1. Open the TP‑Link Tether app or go to [[http://tplinkrepeater.net][http://tplinkrepeater.net]] in a browser, create/login to a local admin password if asked.[8][9]
+  1. Choose “Range Extender” / “Extend existing Wi‑Fi,” scan for networks, and select the iPhone hotspot SSID, then enter its password.[9][10][4]
+  1. Let it finish; it will create an extended network (e.g., “YourHotspot_EXT”).
+  1. Connect your MacBook to that extended network.
+  - iPhone or carrier limiting how hotspot traffic is routed through another NAT device (like an extender).[2][1]
+  - IP/subnet quirks where the extender and hotspot end up in incompatible address ranges.[6]
+  - Turn hotspot off and back on, then power‑cycle the extender and redo the quick setup.
+  - Make sure only a couple of devices are connected to the hotspot while testing (to avoid client‑limit issues).
+  - Move the extender closer to the iPhone so the signal strength is strong during setup.
+  - *USB tether to MacBook, then share from Mac:*
+    Plug iPhone into your MacBook with a cable, enable Personal Hotspot → “USB only” or allow USB, then on the Mac use System Settings → Sharing → Internet Sharing to share that connection over Wi‑Fi; your Mac becomes the *access point* for other devices.
+  - *Use a small travel router that supports phone tethering or hotspot repeating:*
+    Some mini routers are explicitly designed to repeat mobile hotspots or use iPhone USB tethering as WAN, which tends to be more reliable than using a generic extender in this scenario.[12][5]

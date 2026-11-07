@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e64142ee-53d3-4fa8-b19f-a39ae7d40e5b
+:REFLECT_ID: c9359829ff3442a99a13e196e1d51e87
+:CREATED:  [2026-03-13 Fri 23:49]
+:MODIFIED: [2026-03-13 Fri 23:49]
+:END:
+#+title: Audio Tech
+#+filetags: :concept:
+#+date: 2026-03-13
+

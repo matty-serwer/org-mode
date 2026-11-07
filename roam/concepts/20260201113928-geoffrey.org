@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       87b97074-7767-43cd-9220-a7726a47a935
+:REFLECT_ID: 6809d04fde3c4e6bb4b8eaab5b9cf985
+:CREATED:  [2026-02-01 Sun 11:39]
+:MODIFIED: [2026-02-01 Sun 11:39]
+:END:
+#+title: Geoffrey
+#+filetags: :concept:
+#+date: 2026-02-01
+

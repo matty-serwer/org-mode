@@ -1,0 +1,83 @@
+:PROPERTIES:
+:ID:       4af8cab9-bb34-4fa9-ad13-fa31c6c064ef
+:REFLECT_ID: 07032026
+:CREATED:  [2026-03-07 Sat 15:16]
+:MODIFIED: [2026-03-08 Sun 12:47]
+:END:
+#+title: Sat, March 7th, 2026
+#+filetags: :daily:
+#+date: 2026-03-07
+- [[id:695de0a8-ed01-4897-92fc-e7f7a99afe06][Pfizer March 2026 Orlando]]
+  - A1 - Salon 4
+    - Sq 5?
+  - [[id:528fa7c0-8c25-4bf2-ab80-155a22ff9f1a][Shure ULX-D]] Info
+    - Quad Reciever
+    - Batteries
+      - AA tech
+      - RF meter / below shows battery level on power
+      - Audio shows levels
+      - 12 hours
+    - Reciever Frequency Range
+      - 470-534 MHz
+      - 64 MHz Bandwidth
+      - Frequency Groups
+        - Each group is a curated collection of ~60+ frequencies that Shure has mathematically verified won't interfere with /each other/.
+    -  Encryption
+      - AES-256
+    - Ethernet
+      - Wireless Workbench Software?
+    - Quad only uses one pair of antennas
+    - Audio Summing? pribably not
+    - Dante?
+    - RF Level
+      - Lo - 1 mW RF Power Level
+      - Nm - 10 mW RF Power Level
+      - Hi - 20 mW RF power level
+    - Scan
+      1. Hit =Scan= Button to start
+      1. From Menu Select:
+        - Channel Scan
+          - Select a Group
+        - Group Scan
+      1. Hit =Scan= to continue
+      1. It scans
+      1. Pick a group with a high number of frequencies that are valid. The unit will auto-assign?
+- [[id:605906e2-a379-4916-be3e-8d084d3bbaed][ULXD4Q — Setting Channels from Freq Sheet]]
+  -----
+  
+  *Appendix*
+  - Power on receiver
+  - Select Ch 1 → Menu → Radio Frequency → MHz
+  - Dial to assigned frequency → ENTER
+  - Power on transmitter → align IR windows → press Sync on receiver
+  - Confirm SYNC DONE, verify freq matches on both displays
+  - Repeat for Ch 2–4
+  - IR sync pushes the frequency from receiver to transmitter — you set the MHz on the receiver side only, then sync
+  - If the transmitter shows G:-- Ch:-- after sync, that's normal — the frequency is still correctly set even if it doesn't map to a named group/channel slot
+  - Confirm your band (G50, H50, etc.) matches the frequencies on the sheet before you start — if they're out of range, nothing will work and it's not a setup error
+  - On the ULXD4Q, each of the 4 channels has its own independent menu — make sure you're in the right channel's settings before dialing
+  - If the coordinator is running Wireless Workbench on a network, they may push frequencies remotely — ask before manually setting anything so you don't conflict with their deployment
+- Receiver & Transmitter Setup
+  - Receiver (ULXD4Q)
+    - Set frequency
+      - Menu → Radio Frequency → MHz
+    - Set gain
+      - Menu → Gain
+    - Name channel
+      - Menu → Channel Name
+    - Lock front panel
+      - Menu → Device Utilities → Lock
+    - Save preset
+      - Menu → Device Utilities → System Presets → Save
+  - Transmitter (ULXD1/ULXD2)
+    - IR sync to receiver
+      - Power on → align IR windows → Sync button on receiver
+    - Set RF mute (no RF on powerup)
+      - Hold EXIT during power-on
+    - Set mute mode
+      - Menu → Mute Mode
+    - Check battery level
+      - Displayed on LCD at startup or in menu
+    - Lock controls
+      - Menu → Lock
+-----

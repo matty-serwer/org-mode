@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9df9caca-3790-4a9f-b1c7-d514dc0f3ee8
+:REFLECT_ID: 6a0a20e679d6483287d5974f8e959e15
+:CREATED:  [2025-11-12 Wed 11:10]
+:MODIFIED: [2025-11-12 Wed 11:10]
+:END:
+#+title: The 12th of the Month
+#+filetags: :concept:
+#+date: 2025-11-12
+

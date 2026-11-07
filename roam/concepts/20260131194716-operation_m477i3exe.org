@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       4dd8e0dc-4cfc-4818-9e36-dca5c68dba89
+:REFLECT_ID: 44378da4ce68476d84234fcd30d5fef3
+:CREATED:  [2026-01-31 Sat 19:47]
+:MODIFIED: [2026-03-13 Fri 23:19]
+:END:
+#+title: 👩🏻‍🎤 💿 Operation: M477i3.exe
+#+filetags: :concept:
+#+date: 2026-01-31
+* 👩🏻‍🎤 💿 Operation: [[id:a6553dfe-4631-4c2a-90be-331521860137][M477i3.exe]]
+#+begin_quote
+- /The concept is to be true to the art itself, of making music. How dare we create music from scratch, when so many of the greats have worn the path before use, with teamwork, cosmic transmission, and dilligence. /
+#+end_quote
+- [[id:86c00c9f-f24a-4270-91ce-ba000527ef03][👩🏻‍🎤 Audio Sampling TrackList]]
+- Properties
+  - Sampling
+    - Stems
+      - We're creating our own samples
+      - Tracks we love will be selected with the aid of the [[id:86c00c9f-f24a-4270-91ce-ba000527ef03][👩🏻‍🎤 Audio Sampling TrackList]]. 
+      - [ ] Create an organizational scheme for Stems created for Operation: M477i3.exe utilizing [[id:af1b1799-7e65-41af-9841-55cb7d28c2c1][Ableton Live Clips]] & and the [[id:a1ae6251-5200-4315-a995-d7bede79f53f][Mac OS Filesystem]].
+      - We will continually save tracks as the impulse arrises
+      - This process will have some overlap with [[id:9e984e32-01c5-4a38-93cd-881cbde63562][Operation: Hi Fi]], as we build our music collection of high quality audio
+    - Beats
+      - Besides being drawn form stems, beats will be drawn from our own collections
+      - [ ] Scour our [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] Projects, Exporting beats as Audio, and as [[id:af1b1799-7e65-41af-9841-55cb7d28c2c1][Ableton Live Clips]] (Audio Clips).
+      - Where we don't have the right sample, create what you have in mind. This is the key to this project. /Sample first, then Build what we don't have. /
+    - Synths & Vocals
+      - So far the same as beats. Let's see how it goes mixing and matching stems for this
+      - See how it goes creating the odd part here and there. I am confident in the success of this, but not in the difficuly level and time it will take.  

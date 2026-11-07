@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       a0b1c2d3-e4f5-6789-abcd-ef0123456789
+:END:
+#+title: Reflect Import Notes
+#+filetags: :meta:import:
+#+date: 2026-05-07
+
+* What's in here
+1,038 notes imported from Reflect (export ~v1.0~, dated 2026-04-25).
+
+| Folder      | Count | Filetag        |
+|-------------+-------+----------------|
+| concepts/   |   828 | :concept:      |
+| projects/   |    38 | :project:      |
+| people/     |     8 | :person:       |
+| refs/       |    17 | :ref:          |
+| journal/    |   147 | :daily:        |
+
+* Conventions used
+- Every node has a fresh =:ID:= UUID (org-roam style).
+- Original Reflect ID preserved in =:REFLECT_ID:= for traceability.
+- =:CREATED:= and =:MODIFIED:= properties carry Reflect's timestamps.
+- Backlinks rewritten to =[[id:UUID][label]]= using the new IDs.
+- One unresolved backlink ("Song idea") fell back to =[[roam:Song idea]]=
+  — that target didn't exist in the export.
+
+* After import — run once
+1. =M-x org-roam-db-sync= (or restart Doom). Rebuilds the DB so backlinks
+   appear in the side panel.
+2. =SPC n r f= → start finding nodes. Your top hubs (=Doom Emacs=,
+   =Claude Code=, =Subscription=, =Ableton Live=, the =Sweet= projects,
+   =Therapy Notes=) should all be there.
+3. Optional: =M-x org-roam-ui-mode= and view the imported graph in your
+   browser to spot orphan clusters worth pruning or merging.
+
+* Categorization caveats
+Reflect doesn't enforce a type system, so categorization is heuristic:
+- Notes tagged =#person= → people/
+- Notes tagged =#book/#author/#reference/#quick-ref/#bookmark/#manual=
+  → refs/
+- Notes tagged =#project/#career/#organization/#application/#job-posting=
+  → projects/
+- Titles starting with project emojis (💾 🌐 🔭 🈺 🏴‍☠️ 🍰 🎸 🌊) → projects/
+- Everything else → concepts/
+
+If a note feels misfiled, just =M-x org-roam-node-find= it, then move
+the file with =C-x C-w= to the right folder. The =:ID:= property
+guarantees no backlinks break.
+
+* Stub nodes
+~600 of the imported notes are near-empty stubs (median note size in
+Reflect was 2 words). They exist to be link targets. Don't delete them
+in bulk — they're load-bearing in the graph. If you want to clean up,
+use =M-x org-roam-node-find= and look for nodes with zero backlinks
+*and* zero content.

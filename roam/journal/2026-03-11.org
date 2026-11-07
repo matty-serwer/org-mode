@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       f389c036-2df6-4c44-a220-b132fe2bb95d
+:REFLECT_ID: 11032026
+:CREATED:  [2026-03-11 Wed 11:47]
+:MODIFIED: [2026-03-13 Fri 03:09]
+:END:
+#+title: Wed, March 11th, 2026
+#+filetags: :daily:
+#+date: 2026-03-11
+- 500-659. 700-800 Hpf at 100-125
+- [[id:695de0a8-ed01-4897-92fc-e7f7a99afe06][Pfizer March 2026 Orlando]]
+  - this is a test yeah
+  - yeah
+- [[id:695de0a8-ed01-4897-92fc-e7f7a99afe06][Pfizer March 2026 Orlando]]
+  - [[id:da696f9a-4ef0-44e9-9e6f-3d64e859c2c3][Allen & Heath QU-16]]
+    - Things to look into
+      - LR Gain stage
+        - Barely registered on the VU Meter
+      - Mixes (1, 2, 3, 4)
+        - Killed the routing
+        - Wasn't able to troubleshoot
+        - Just used LR Main ?
+    - Took EQ Pictures for Mics
+    - [[id:43c9ae75-c376-4454-a662-315359f52a31][Ringing Out The Room]]
+      - GEQ
+        - Select LR Master Channel
+        - Hit the *Fader Flip* button
+          - its in it's own GEQ section, beneath the *Gate*
+        - 

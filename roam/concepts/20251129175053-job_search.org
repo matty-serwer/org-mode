@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a73def42-2736-46be-888f-6fc9ec6db354
+:REFLECT_ID: 86f58410795049a0877822bc8edaf2d2
+:CREATED:  [2025-11-29 Sat 17:50]
+:MODIFIED: [2025-12-10 Wed 10:11]
+:END:
+#+title: Job Search
+#+filetags: :concept:
+#+date: 2025-11-29
+

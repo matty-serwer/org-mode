@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       223bb0f7-a843-4b54-9f34-2e743c86cf62
+:REFLECT_ID: da7b9082d3d141f7ba0519a47e1385ca
+:CREATED:  [2026-02-25 Wed 00:31]
+:MODIFIED: [2026-04-08 Wed 21:40]
+:END:
+#+title: C-Note Obsidian Config
+#+filetags: :concept:
+#+date: 2026-02-25
+* [[id:b42566da-4387-4def-bd67-1bf6c02a7db5][C-Note]] Obsidian Config
+- Drop this file at: =/Users/lupin/_Workspace/Docs/C-Note/.obsidian/app.json=
+- Recommended Obsidian Settings
+  - Core Plugins to Enable
+    - Templates
+    - Daily notes → set folder to =daily/=
+    - Search
+    - Backlinks
+  - Community Plugins Worth Adding
+    - Dataview (query your notes like a database)
+    - Obsidian Git (auto-commit vault to git)
+  - Folder Structure Notes
+    - The vault uses this layout:
+      - #+begin_src markup
+        C-Note/
+        ├── daily/              ← daily notes (YYYY-MM-DD.md)
+        ├── topics/
+        │   ├── dev/
+        │   │   ├── lemr/
+        │   │   ├── projects/
+        │   │   └── general/
+        │   ├── music/
+        │   ├── audio/
+        │   ├── career/
+        │   ├── home/
+        │   └── personal/
+        ├── reference/
+        │   ├── code/
+        │   ├── software/
+        │   ├── audio/
+        │   └── general/
+        └── .cnote/             ← MCP metadata (index, log, config)
+            ├── index.json
+            ├── activity.log
+            └── config.json
+        #+end_src
+  - Tag Convention
+    - Tags are inline in note bodies (not frontmatter):
+    - =#dev/lemr= =#dev/nextjs= =#dev/spring=
+    - =#music/ableton= =#music/production=
+    - =#audio/plugin= =#audio/mixing=
+    - =#career/resume= =#career/job-search=
+    - =#type/log= =#type/reference= =#type/snippet= =#type/instructions=
+    - =#daily=
+  - Daily Note Template
+    - Create =templates/daily-template.md=:
+      - #+begin_src markup
+        # Daily Note — {{date:YYYY-MM-DD}}
+        ## Focus
+        ## Notes
+        ## Tasks
+        #+end_src
+    - Set this as your daily note template in Settings → Daily Notes
+-----

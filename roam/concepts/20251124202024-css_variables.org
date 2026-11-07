@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3e765a11-f9f8-4859-a37c-57f57273df8f
+:REFLECT_ID: 907eed58f8734a3e953d5babfde92ac5
+:CREATED:  [2025-11-24 Mon 20:20]
+:MODIFIED: [2025-11-24 Mon 20:25]
+:END:
+#+title: CSS Variables
+#+filetags: :concept:
+#+date: 2025-11-24
+

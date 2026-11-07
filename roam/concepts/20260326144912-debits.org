@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8ec30b79-2a8f-4242-afd3-fcb11b907042
+:REFLECT_ID: 572823edad074df99afd68a68ff069a2
+:CREATED:  [2026-03-26 Thu 14:49]
+:MODIFIED: [2026-03-26 Thu 14:49]
+:END:
+#+title: Debits
+#+filetags: :concept:
+#+date: 2026-03-26
+

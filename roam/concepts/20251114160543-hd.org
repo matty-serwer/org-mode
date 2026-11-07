@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       a3b2c970-4654-4427-a0c0-a80d97df6f44
+:REFLECT_ID: dc3d57857ed64efe87791fa84d1d57ea
+:CREATED:  [2025-11-14 Fri 16:05]
+:MODIFIED: [2025-11-14 Fri 16:06]
+:END:
+#+title: hd
+#+filetags: :concept:
+#+date: 2025-11-14
+** This is a test
+ok
+- yeah
+- na 0
+- Pizz
+** ok then
+buc plas

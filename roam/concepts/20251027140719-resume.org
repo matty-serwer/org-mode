@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8fee8dc9-268c-4ee9-9572-4da77ef34489
+:REFLECT_ID: 2b4b9ff5dfe54759a14f9235028cf918
+:CREATED:  [2025-10-27 Mon 14:07]
+:MODIFIED: [2026-01-06 Tue 15:54]
+:END:
+#+title: Resume
+#+filetags: :concept:
+#+date: 2025-10-27
+

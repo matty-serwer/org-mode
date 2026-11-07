@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       24cbc1a9-1244-46fa-90aa-39d504219de3
+:REFLECT_ID: ec10ac2907304364bc1487e7dffbb6c3
+:CREATED:  [2026-04-21 Tue 07:19]
+:MODIFIED: [2026-04-21 Tue 07:19]
+:END:
+#+title: Portable Audio Interface
+#+filetags: :concept:
+#+date: 2026-04-21
+

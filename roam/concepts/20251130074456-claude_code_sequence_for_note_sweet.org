@@ -1,0 +1,310 @@
+:PROPERTIES:
+:ID:       6af1a42a-49f7-4cc9-ba6b-33e543afa74b
+:REFLECT_ID: 339e75178220437eb489f47c2e6a4e7d
+:CREATED:  [2025-11-30 Sun 07:44]
+:MODIFIED: [2025-11-30 Sun 09:58]
+:END:
+#+title: Claude Code #sequence for Note Sweet
+#+filetags: :concept:sequence:
+#+date: 2025-11-30
+* [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]]  for [[id:95ed315f-208f-40a1-97b5-325433227189][Note Sweet]]
+* Claude Code Setup Instructions
+Step-by-step guide to set up this Note Sweet (Roam Research) project for development with Claude Code.
+-----
+
+** Prerequisites
+Run these first if you haven't already:
+#+begin_src bash
+# Node 20+
+brew install node@20
+
+# Rust toolchain
+brew install rust
+
+# Tauri CLI
+brew install tauri-cli
+
+# Verify installations
+node --version   # Should be 20.x+
+cargo --version  # Should be 1.7x+
+
+#+end_src
+-----
+
+** Step 1: Create Project Directory
+#+begin_src bash
+mkdir note-sweet
+cd note-sweet
+
+#+end_src
+-----
+
+** Step 2: Initialize Vite + React
+#+begin_src bash
+npm create vite@latest . -- --template react-ts
+
+#+end_src
+When prompted, select the current directory (=.=).
+-----
+
+** Step 3: Install Dependencies (Version-Locked)
+#+begin_src bash
+# Core dependencies (exact versions)
+npm install \
+  react@19.1.0 \
+  react-dom@19.1.0 \
+  zustand@5.0.8 \
+  remirror@3.0.0 \
+  @remirror/react@3.0.0 \
+  @tauri-apps/api@2.0.0 \
+  -E
+
+# Dev dependencies
+npm install -D \
+  vite@7.0.0 \
+  @vitejs/plugin-react@4.2.0 \
+  typescript@5.6.2 \
+  tailwindcss@3.4.1 \
+  postcss \
+  autoprefixer \
+  @tauri-apps/cli@2.0.0 \
+  -E
+
+#+end_src
+The =-E= flag locks exact versions (no =^= prefix).
+-----
+
+** Step 4: Initialize Tauri
+#+begin_src bash
+npm run tauri init
+
+#+end_src
+When prompted:
+- App name: =note-sweet=
+- Window title: =Note Sweet=
+- Dev server URL: =http://localhost:5173=
+- Dev command: =npm run dev=
+- Build command: =npm run build=
+-----
+
+** Step 5: Initialize Tailwind
+#+begin_src bash
+npx tailwindcss init -p --ts
+
+#+end_src
+Update =tailwind.config.ts=:
+#+begin_src typescript
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} satisfies Config
+
+#+end_src
+Update =src/index.css=:
+#+begin_src css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#+end_src
+-----
+
+** Step 6: Configure TypeScript (Strict Mode)
+Replace =tsconfig.json=:
+#+begin_src json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+
+#+end_src
+-----
+
+** Step 7: Add Claude Rules File
+#+begin_src bash
+mkdir -p .claude
+
+#+end_src
+Copy the =CLAUDE.md= file into =.claude/CLAUDE.md=.
+This tells Claude Code your project conventions, locked versions, and architectural rules.
+-----
+
+** Step 8: Create Initial Directory Structure
+#+begin_src bash
+# Frontend structure
+mkdir -p src/components/Editor/extensions
+mkdir -p src/components/Sidebar
+mkdir -p src/store
+mkdir -p src/hooks
+mkdir -p src/lib
+mkdir -p src/types
+
+# Create placeholder files
+touch src/components/Editor/BulletEditor.tsx
+touch src/components/Editor/extensions/BulletExtension.ts
+touch src/components/Editor/extensions/LinkExtension.ts
+touch src/components/Sidebar/NotesTree.tsx
+touch src/components/Sidebar/BacklinksPanel.tsx
+touch src/components/Layout.tsx
+touch src/store/notesStore.ts
+touch src/store/editorStore.ts
+touch src/store/linksStore.ts
+touch src/hooks/useRemirrorEditor.ts
+touch src/lib/linkParser.ts
+touch src/lib/db.ts
+touch src/types/index.ts
+
+#+end_src
+-----
+
+** Step 9: Add Rust Dependencies
+Update =src-tauri/Cargo.toml= dependencies:
+#+begin_src toml
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.7", features = ["runtime-tokio", "sqlite"] }
+tokio = { version = "1", features = ["full"] }
+uuid = { version = "1", features = ["v4"] }
+
+#+end_src
+-----
+
+** Step 10: Create SQLite Schema
+Create =src-tauri/src/db/schema.sql=:
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS notes (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  parent_id TEXT,
+  sort_order INTEGER,
+  FOREIGN KEY (parent_id) REFERENCES notes(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS links (
+  source_id TEXT NOT NULL,
+  target_id TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (source_id, target_id),
+  FOREIGN KEY (source_id) REFERENCES notes(id) ON DELETE CASCADE,
+  FOREIGN KEY (target_id) REFERENCES notes(id) ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS idx_links_target ON links(target_id);
+CREATE INDEX IF NOT EXISTS idx_notes_parent ON notes(parent_id);
+
+#+end_src
+-----
+
+** Step 11: Verify Setup
+#+begin_src bash
+# Type check
+npx tsc --noEmit
+
+# Start dev server
+npm run tauri dev
+
+#+end_src
+You should see an empty Tauri window with the Vite React template.
+-----
+
+** Using Claude Code
+*** Basic Usage
+From your project root:
+#+begin_src bash
+claude
+
+#+end_src
+Claude Code will automatically read =.claude/CLAUDE.md= for project context.
+*** Example Prompts
+*Start with Phase 1 MVP:*
+#+begin_src markup
+Implement the BulletEditor component in src/components/Editor/BulletEditor.tsx.
+Use Remirror v3 with React 19 hooks. Start with basic bullet list support.
+
+#+end_src
+*Add Tauri commands:*
+#+begin_src markup
+Create the notes CRUD commands in src-tauri/src/commands/notes.rs.
+Include create_note, get_note, update_note, delete_note, and list_notes.
+Use sqlx for async SQLite queries.
+
+#+end_src
+*Wire up state:*
+#+begin_src markup
+Implement notesStore.ts using Zustand 5.0.8.
+It should call Tauri commands for persistence and cache notes in a Map.
+
+#+end_src
+*** Tips for Claude Code
+1. *Reference versions explicitly* - "Use Remirror v3" not just "use Remirror"
+1. *Point to specific files* - "Edit src/store/notesStore.ts"
+1. *One feature at a time* - Don't ask for the whole editor in one prompt
+1. *Test incrementally* - Run =npm run tauri dev= between major changes
+-----
+
+** npm Scripts Reference
+Add these to =package.json=:
+#+begin_src json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext ts,tsx"
+  }
+}
+
+#+end_src
+-----
+
+** Checklist
+- [ ] Node 20+ installed
+- [ ] Rust installed
+- [ ] Vite project created
+- [ ] Dependencies installed (version-locked)
+- [ ] Tauri initialized
+- [ ] Tailwind configured
+- [ ] TypeScript strict mode enabled
+- [ ] =.claude/CLAUDE.md= in place
+- [ ] Directory structure created
+- [ ] SQLite schema written
+- [ ] =npm run tauri dev= runs without errors
+Once all boxes are checked, you're ready to start building with Claude Code.

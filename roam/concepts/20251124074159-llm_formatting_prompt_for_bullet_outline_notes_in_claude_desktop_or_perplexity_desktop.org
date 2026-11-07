@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       29635f23-0c8e-44c8-8219-f4b2236dd0ad
+:REFLECT_ID: f3fb6edbd49b4fc69abafbdf96680c30
+:CREATED:  [2025-11-24 Mon 07:41]
+:MODIFIED: [2025-11-24 Mon 07:44]
+:END:
+#+title: LLM Formatting #prompt for Bullet Outline Notes in Claude Desktop or Perplexity Desktop
+#+filetags: :concept:prompt:
+#+date: 2025-11-24
+* [[id:775bdfad-4e61-4c2a-9139-ea01f1e8514d][LLM]] [[id:a16dea3a-65c0-4166-a589-2b15ef296528][Formatting]]  for Bullet Outline Notes in [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]] or [[id:bc41dbc4-6ef3-4587-a4ff-70b0ec3f4bb1][Perplexity Desktop]]
+- /adding to /[[id:9806ecec-b260-4659-9f20-ce83f6ebeba0][Raycast]] [[id:fbcb54df-14f8-41bb-8a94-1b7650d2e94b][Snippets]]
+---FORMAT: Bullet Outline (Roam-style)---
+- Response Format
+  - Use dashes (=-=) for every line; no blank lines between bullets
+  - Start response with a dash; every item becomes a bullet
+  - Hierarchy: 2-space indents per level (maximum 3 levels)
+  - End response with =---=
+- Headers
+  - Headers attach to bullets: =- # Title=, =- ## Subtitle=, =- ### Sub-subtitle=
+  - Use =- #= for singular topics; =- ##= for lists/multiple top-level items
+  - Maximum header depth: =- ###= (demote deeper headers)
+- Content Rules
+  - Infer and create natural hierarchy from content structure
+  - Remove ALL blank lines; each bullet connects directly to the next
+  - No blank lines before/after sections, lists, or code blocks
+  - Keep all content within the bullet outline (code blocks, quotes, everything)
+- Bold Style
+  - Use bold sparingly, only for genuinely important/exciting items
+  - Never use bold for repetitive labeling or subject headers
+  - If a line has bold labels + content (e.g., =**label**: content=), split into separate bullets:
+    - First bullet: the label/item name (no bold)
+    - Second bullet, indented: the description
+  - Remove existing repetitive bold styling when restructuring
+- Quality Check
+  - Starts with a dash
+  - Every item starts with a dash
+  - Hierarchy is consistent and clear through indentation
+  - No blank lines anywhere
+  - Bold used strategically, never repetitively
+  - Ends with =---=

@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       975332d2-0975-4dc8-b2d0-834aa2b1550e
+:REFLECT_ID: 05112025
+:CREATED:  [2025-11-02 Sun 21:41]
+:MODIFIED: [2025-11-06 Thu 18:01]
+:END:
+#+title: Wed, November 5th, 2025
+#+filetags: :daily:
+#+date: 2025-11-02
+- [[id:abe04a75-dc71-4bb8-a61b-6403343b4bc5][LEMR Business Plan #correspondence with Aaron]]
+- [[id:cc881a95-aa7e-4252-a6e5-d6eec35de697][LEMR Techstack #schema #app-doc]]
+- [[id:5be5c372-3e95-4173-9e49-b5737d31f155][LEMR Application Requirements Assessment #app-doc]]
+-
+  - Watched [[id:60e4164b-c829-474b-baaf-2663bb24ac14][The Lowdown]]
+    - The ethan hawk show
+    - Watched the first 3 Episodes
+    - His daughter saved the letters.
+  - 

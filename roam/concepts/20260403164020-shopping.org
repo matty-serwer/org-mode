@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       34f1b930-fa84-4b71-870a-94bffb5328fe
+:REFLECT_ID: 4b8143781cc34f4d8939aa529386259e
+:CREATED:  [2026-04-03 Fri 16:40]
+:MODIFIED: [2026-04-03 Fri 16:40]
+:END:
+#+title: Shopping
+#+filetags: :concept:
+#+date: 2026-04-03
+

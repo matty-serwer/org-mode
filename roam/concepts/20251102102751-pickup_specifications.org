@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c0ada2f9-690e-41e4-a486-ea1af828c5e6
+:REFLECT_ID: 2d904f4441fa4a358259af490949a407
+:CREATED:  [2025-11-02 Sun 10:27]
+:MODIFIED: [2025-11-02 Sun 10:27]
+:END:
+#+title: Pickup Specifications
+#+filetags: :concept:
+#+date: 2025-11-02
+

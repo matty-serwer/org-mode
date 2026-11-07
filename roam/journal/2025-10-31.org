@@ -1,0 +1,139 @@
+:PROPERTIES:
+:ID:       fc554b98-c039-4428-8b45-7f0eb357de0c
+:REFLECT_ID: 31102025
+:CREATED:  [2025-10-31 Fri 04:53]
+:MODIFIED: [2025-10-31 Fri 19:30]
+:END:
+#+title: Fri, October 31st, 2025
+#+filetags: :daily:sequence:workflow:
+#+date: 2025-10-31
+- [[id:53a4d002-1bf0-415c-ad07-c50e764a7f0a][Atlassian]] [[id:b4db707f-21f3-423c-ba18-1fcb619eb1bc][Confluence]] [[id:b1086c06-5127-4cb0-8a55-f70c1eb16d0a][Jira]] Setup  
+  Initial Setup
+  Confluence Setup
+  Jira Setup
+  Planning & Workflow
+  During Development
+  Final Checks
+  1. *Create Atlassian Account & Trial Access*
+    - Sign up for a Atlassian Cloud account if not already.
+    - Activate free trials for Jira Software (Standard plan) and Confluence (Standard plan).
+  1. *Create Your Atlassian Cloud Site*
+    - Set up your organization workspace.
+    - Invite yourself as the admin.
+  1. *Create Space for Project Documentation*
+    - Name it (e.g., "Next.js Company Site").
+    - Set permissions (private for now).
+  1. *Document Your Roadmap and Tech Stack*
+    - Create pages:
+      - Project overview
+      - Roadmap
+      - Tech stack (including directory structure)
+      - Architecture diagrams
+      - Key features and requirements
+      - Collaboration guidelines
+  1. *Integrate with Jira*
+    - Link your Jira project to your Confluence space.
+    - Embed Jira issues, dashboards, and reports.
+  1. *Create a New Jira Scrum Project*
+    - Name it (e.g., "Next.js Website Dev").
+    - Configure issue types (Task, Bug, Epic, etc.).
+    - Choose "Scrum" template.
+  1. *Configure the Scrum Board*
+    - Define columns (To Do, In Progress, Code Review, Testing, Done).
+    - Set WIP limits if desired.
+    - Enable quick filters (e.g., by Epic, priority).
+  1. *Create Epics and User Stories*
+    - Map out high-level epics (e.g., "Setup Environment", "Build Landing Page").
+    - Break down each epic into manageable user stories/tasks.
+    - Assign points or priorities if using scoring.
+  1. *Input Initial Tasks/Issues*
+    - Populate board with tasks from your tech stack, directory structure, and initial setup.
+    - Link related issues (e.g., tasks with epic).
+  1. *Schedule Sprints*
+    - Plan your first sprint (e.g., 1-2 weeks).
+    - Assign priorities and estimated effort.
+  1. *Set Up Notifications & Automations*
+    - Configure email alerts, Slack integrations, or other notification tools.
+    - Automate issue transitions if needed.
+  1. *Daily Stand-ups & Task Progress*
+    - Use the Scrum board daily.
+    - Move tasks across columns as you progress.
+    - Log time/effort if desired.
+  1. *Documentation & Updates*
+    - Keep Confluence pages updated with progress, decisions, and technical details.
+    - Link Jira issues to relevant Confluence pages.
+  1. *Review & Retrospective*
+    - At sprint end, review completed issues.
+    - Capture lessons learned in Confluence.
+  1. *Ensure Workflow Sync*
+    - Regularly update issues and sync with your documentation.
+    - Adjust workflows or board columns as needed.
+  1. *Evaluate Process & Tools*
+    - Collect feedback on usability and organization.
+    - Refine your setup for subsequent sprints.
+- Project: [[id:da6c065f-449b-45b6-b899-3b302b6ce5c6][Shortie Table]]
+  - I made a Smart Folder, put it in the doc, called “[[id:f0c6b160-fe85-471d-9684-4676d8d13728][Tabled]]” for all status flagged items
+  - Kinda works, but I think I’m missing something. 
+  - Ideas to try:
+    - Notch nook tray
+    - Org in notes
+- [[id:53fea805-0c99-41dd-bd98-0ae28bae9fb9][Tailwind CSS]] [[id:5d780e9e-e465-425e-b14f-b93f85574c95][Variables]] Referencing Other [[id:5d780e9e-e465-425e-b14f-b93f85574c95][Variables]]
+*** [[https://tailwindcss.com/docs/theme#referencing-other-variables][Referencing other variables]]
+When defining theme variables that reference other variables, use the =inline= option:
+app.css
+#+begin_src markup
+@import "tailwindcss";@theme inline {  --font-sans: var(--font-inter);}
+#+end_src
+Using the =inline= option, the utility class will use the theme variable /value/ instead of referencing the actual theme variable:
+dist.css
+#+begin_src markup
+.font-sans {  font-family: var(--font-inter);}
+#+end_src
+Without using =inline=, your utility classes might resolve to unexpected values because of how variables are resolved in CSS.
+For example, this text will fall back to =sans-serif=instead of using =Inter= like you might expect:
+HTML
+#+begin_src markup
+<div id="parent" style="--font-sans: var(--font-inter, sans-serif);">  <div id="child" style="--font-inter: Inter; font-family: var(--font-sans);">    This text will use the sans-serif font, not Inter.  </div></div>
+#+end_src
+This happens because =var(--font-sans)= is resolved where =--font-sans= is defined /(on /=#parent=/)/, and =--font-inter= has no value there since it's not defined until deeper in the tree /(on /=#child=/)/.
+*** [[https://tailwindcss.com/docs/theme#generating-all-css-variables][Generating all CSS variables]]
+By default only used CSS variables will be generated in the final CSS output. If you want to always generate all CSS variables, you can use the =static= theme option:
+app.css
+#+begin_src markup
+@import "tailwindcss";@theme static {  --color-primary: var(--color-red-500);  --color-secondary: var(--color-blue-500);}
+#+end_src
+- [[id:3245e58b-3be2-44d8-bf38-abca730e7e66][Linear App]] No AI   for Creating [[id:8d57344f-4d17-4467-8fcb-40935c51ad9f][Issues]]
+  - Certainly! Here's the updated bullet outline including specific steps and references to Linear app's interface and terminology for creating and organizing project work from your Reflect Notes documents:
+    This added detail should help you quickly translate your Reflect Notes planning into Linear’s project management interface with minimal overhead and clear structure for a two-person team.
+    Sources
+    - Create Project Planning Documents in Reflect Notes
+      - Write the project overview: scope, goals, and tech stack
+      - Outline the roadmap with high-level milestones and timeline
+      - Include detailed planning notes and requirements
+    - Prepare Content for Importing into Linear
+      - Clearly identify key components in Reflect to convert into Linear's Epics, Stories, and Issues
+      - Use consistent headings or formatting for easy reference (e.g., "Epic: User Authentication")
+    - In Linear App, Start with a New Project
+      - Go to the sidebar, click *+ New Project*
+      - Enter the project name matching your Reflect Notes software application title
+      - Adjust project settings as needed (team, workflow states)
+    - Add High-Level Groups: Epics
+      - In the sidebar, select your project, then click the *Epics* tab or use the Epics view from the top menu
+      - Click *+ New Epic*, name it after large features or milestones from your roadmap
+      - Paste or attach relevant roadmap details in the epic description for context
+    - Break Down Epics into User Stories
+      - Still inside the project, go to *Issues* tab
+      - Click *+ New Issue*, then assign the issue to an Epic from the dropdown menu in the issue details
+      - Write user stories from your planning notes as issue titles and descriptions (focus on user needs and outcomes)
+    - Create Issues for Tasks & Bugs
+      - For smaller, actionable tasks or bugs, add them as new issues but without linking to an Epic if not needed
+      - Assign issues priority, labels, and assignees for clarity
+    - Share & Collaborate
+      - Use the *Share* button on the project page to invite your teammate
+      - Comments and issue updates will keep you aligned during development
+    - Tips for Efficiency in Linear
+      - Use the *Bulk Create* option (three dots menu in Issues list) if you want to paste multiple user stories at once
+      - Tag issues with labels for easy filtering (e.g., bug, frontend, backend)
+      - Use keyboard shortcuts for faster navigation: =c= to create an issue, =/= to search, and arrow keys to navigate lists
+- Installed a bunch of shit form setapp, notchnook, setapp, sidenote, ByDesign
+  - ByDesign App Specific key *gowe-azlp-lkpb-wzsb*

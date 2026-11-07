@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       dd123c64-8432-4eaa-90e0-70f707972e26
+:REFLECT_ID: c29508e8258e4bea8a839ba2b67e5932
+:CREATED:  [2026-02-11 Wed 16:48]
+:MODIFIED: [2026-04-08 Wed 20:19]
+:END:
+#+title: Prisma 7
+#+filetags: :concept:
+#+date: 2026-02-11
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       76246dd6-91ca-4143-a71c-f6edf96ac0a1
+:REFLECT_ID: 47188d8269ac46119ef318e01f68a1e3
+:CREATED:  [2026-04-08 Wed 20:04]
+:MODIFIED: [2026-04-08 Wed 20:04]
+:END:
+#+title: 418
+#+filetags: :concept:
+#+date: 2026-04-08
+

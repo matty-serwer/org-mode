@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c97d2873-a2ed-4904-bb99-a662b3aa6e5d
+:REFLECT_ID: e31092f15ee14763965e2ceff063fe8b
+:CREATED:  [2026-04-10 Fri 06:41]
+:MODIFIED: [2026-04-10 Fri 06:41]
+:END:
+#+title: Files
+#+filetags: :concept:
+#+date: 2026-04-10
+

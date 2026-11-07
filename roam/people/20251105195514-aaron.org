@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       6df57ef6-178b-420e-b995-7a9d5d4ba65b
+:REFLECT_ID: 20525f22d4aa41a39e83032ad57a3b0a
+:CREATED:  [2025-11-05 Wed 19:55]
+:MODIFIED: [2025-11-05 Wed 22:29]
+:END:
+#+title: Aaron
+#+filetags: :person:
+#+date: 2025-11-05
+- Title: 
+- Company: 
+- Type:  
+- Email: [[mailto:aaron.hochmanzimmerman@gmail.com][aaron.hochmanzimmerman@gmail.com]]
+- Phone: 
+- Location: 

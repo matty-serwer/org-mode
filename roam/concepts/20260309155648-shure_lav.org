@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       92bad583-de65-43f2-9728-1d2dbbeb1f47
+:REFLECT_ID: edbb2533e1de4ba8bd1f6733ddaa1b1d
+:CREATED:  [2026-03-09 Mon 15:56]
+:MODIFIED: [2026-03-09 Mon 15:56]
+:END:
+#+title: Shure LAV
+#+filetags: :concept:
+#+date: 2026-03-09
+

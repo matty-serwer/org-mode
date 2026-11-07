@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       0a07eb2d-95ea-410c-bfaf-576cfa72bb51
+:REFLECT_ID: 9d7a7c8fdd3547c2becec426518941d7
+:CREATED:  [2025-11-30 Sun 09:55]
+:MODIFIED: [2026-01-28 Wed 05:20]
+:END:
+#+title: 🔭 Side Projects
+#+filetags: :project:
+#+date: 2025-11-30
+- Code
+  - [[id:95ed315f-208f-40a1-97b5-325433227189][Note Sweet]]
+    - [[id:9231d009-5dd5-4c82-b8c1-0b017abe97a5][Note Sweet #planning start]]
+    - [[id:6af1a42a-49f7-4cc9-ba6b-33e543afa74b][Claude Code #sequence for Note Sweet]]
+      - [[id:d8d41968-7b0f-4a73-a2cf-4323739999b2][Note Sweet Claude Code #rules]]
+      - [[id:6fa28969-68fc-4b6b-85b7-adeaa4a76dd2][Note Sweet Claude Code project #directory]]
+  - [[id:1ec57823-df3f-499a-916f-81f2e8ff48a1][Morg]]
+    - [[https://hookmark.net/hm/hook/file/4274LXfl2?p=QnVja2V0cy8wNjBfc2lkZS1wcm9qZWN0cyBNT1JH&n=M477i3%2Eorg%20Format%20Guidelines%2Etxt][https://hookmark.net/hm/hook/file/4274LXfl2?p=QnVja2V0cy8wNjBfc2lkZS1wcm9qZWN0cyBNT1JH&n=M477i3%2Eorg%20Format%20Guidelines%2Etxt]]
+- MacOS
+  - [[id:9aca374d-a41f-4d13-9de6-3a3a3350aac6][🍰 SnipFlow]]
+- Gear
+  - [[id:39ae6e58-1e36-482e-ae28-4311c52d4138][🎸 Bass Guitar Rewire Project]]
+    - [[id:bb1eef74-7582-4baa-9175-8d5bd71f25b8][Fender Jaguar Bass]]
+    - [[id:127ce9a0-7dd3-4033-977e-af03d9055a89][P/J Bass]]
+    - [[id:b28844b4-535c-4d33-a01d-3df6df19d638][Old American Fender Jaguar Bass]]

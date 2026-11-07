@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       5e76b3cf-64c2-461a-bc7d-f8bf26c38c31
+:REFLECT_ID: 0941975cc02445d5ac942e17c7886beb
+:CREATED:  [2025-11-07 Fri 16:22]
+:MODIFIED: [2025-11-07 Fri 16:23]
+:END:
+#+title: Package
+#+filetags: :concept:
+#+date: 2025-11-07
+- [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]] Packages
+  - 

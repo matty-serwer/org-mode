@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8d237978-0032-4830-98ea-a13aca882a11
+:REFLECT_ID: cadb320b25474d5cae217b3e3c84a7c6
+:CREATED:  [2026-04-08 Wed 21:18]
+:MODIFIED: [2026-04-08 Wed 21:18]
+:END:
+#+title: Novation LaunchControl XL
+#+filetags: :concept:
+#+date: 2026-04-08
+

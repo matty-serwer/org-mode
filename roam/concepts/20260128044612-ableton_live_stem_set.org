@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       9e874ee4-a7d7-41f6-a60c-3391c9469c9c
+:REFLECT_ID: d0b5ea12e4e84254a3c5f80dc84cdc80
+:CREATED:  [2026-01-28 Wed 04:46]
+:MODIFIED: [2026-04-08 Wed 22:22]
+:END:
+#+title: 👩🏻‍🎤 Ableton Live Stem Set
+#+filetags: :concept:
+#+date: 2026-01-28
+* 👩🏻‍🎤 [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] Stem Set
+- Actions
+  - Prep
+    - [ ] Organize Stem Folder geared towards Ableton
+  - [ ] Create Template for a 2x4 Stem Set
+    - Should match up perfect with [[id:8d237978-0032-4830-98ea-a13aca882a11][Novation LaunchControl XL]] Faders & Buttons
+  - [ ] 

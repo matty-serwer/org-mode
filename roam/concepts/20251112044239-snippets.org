@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fbcb54df-14f8-41bb-8a94-1b7650d2e94b
+:REFLECT_ID: 5e915023e0dc4b648b49f16563677e36
+:CREATED:  [2025-11-12 Wed 04:42]
+:MODIFIED: [2025-11-24 Mon 07:44]
+:END:
+#+title: Snippets
+#+filetags: :concept:
+#+date: 2025-11-12
+

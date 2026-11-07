@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       14339d26-b495-4a16-935a-057e8a1c230e
+:REFLECT_ID: 2012ac3db49c45228fdc37bba7c4cc00
+:CREATED:  [2026-04-16 Thu 06:59]
+:MODIFIED: [2026-04-16 Thu 06:59]
+:END:
+#+title: evil mode
+#+filetags: :concept:
+#+date: 2026-04-16
+

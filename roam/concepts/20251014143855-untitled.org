@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7e14959f-becc-414f-9407-a0001af01f14
+:REFLECT_ID: 92b3bf09be144bb085f2af152aee0f56
+:CREATED:  [2025-10-14 Tue 14:38]
+:MODIFIED: [2025-10-14 Tue 14:39]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-10-14
+

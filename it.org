@@ -1,0 +1,2708 @@
+#+title: IT
+#+author: Mattie Aran
+#+date: 2026-11-07
+#+filetags: :it:
+#+startup: overview
+
+* Windows
+** Windows Powershell Commands                          :dictionary:quickref:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/a2356b57701982999cc2813eaf227cb1
+:CREATED:  [2026-07-14 Tue]
+:END:
+*** General Commands
+**** Files & folders
+- Copy a single file
+
+  #+begin_src powershell
+  Copy-Item -Path "C:\Source\File.txt" -Destination "D:\Destination\"
+  #+end_src
+
+- Copy a folder and everything inside it
+
+  #+begin_src powershell
+  Copy-Item -Path "C:\Source\Logs" -Destination "D:\Backup\" -Recurse
+  #+end_src
+
+- Move a file (cut and paste)
+
+  #+begin_src powershell
+  Move-Item -Path "C:\Temp\report.pdf" -Destination "C:\Archive\"
+  #+end_src
+
+- Rename a file
+
+  #+begin_src powershell
+  Rename-Item -Path "C:\Temp\old.txt" -NewName "new.txt"
+  #+end_src
+
+- Delete a file
+
+  #+begin_src powershell
+  Remove-Item -Path "C:\Temp\junk.log"
+  #+end_src
+
+- Delete a folder and all its contents (careful)
+
+  #+begin_src powershell
+  Remove-Item -Path "C:\Temp\cache" -Recurse -Force
+  #+end_src
+
+- Create a new empty folder
+
+  #+begin_src powershell
+  New-Item -Path "C:\Projects\NewClient" -ItemType Directory
+  #+end_src
+
+- Create a new empty file
+
+  #+begin_src powershell
+  New-Item -Path "C:\Temp\notes.txt" -ItemType File
+  #+end_src
+
+- Check whether a file or folder exists (returns True/False)
+
+  #+begin_src powershell
+  Test-Path -Path "C:\Program Files\App\app.exe"
+  #+end_src
+
+**** Looking around / navigation
+- List the contents of a folder
+
+  #+begin_src powershell
+  Get-ChildItem -Path "C:\Users\lupin\Documents"
+  #+end_src
+
+- List everything, including subfolders
+
+  #+begin_src powershell
+  Get-ChildItem -Path "C:\Logs" -Recurse
+  #+end_src
+
+- Change to a different folder
+
+  #+begin_src powershell
+  Set-Location -Path "C:\Projects"
+  #+end_src
+
+- Show which folder you're currently in
+
+  #+begin_src powershell
+  Get-Location
+  #+end_src
+
+**** Reading & writing text
+- Show the contents of a text file
+
+  #+begin_src powershell
+  Get-Content -Path "C:\Logs\install.log"
+  #+end_src
+
+- Show just the last 20 lines of a file (great for logs)
+
+  #+begin_src powershell
+  Get-Content -Path "C:\Logs\install.log" -Tail 20
+  #+end_src
+
+- Overwrite a file with new text
+
+  #+begin_src powershell
+  Set-Content -Path "C:\Temp\status.txt" -Value "Complete"
+  #+end_src
+
+- Add a line to the end of a file without erasing it
+
+  #+begin_src powershell
+  Add-Content -Path "C:\Temp\log.txt" -Value "Run finished at 3pm"
+  #+end_src
+
+- Search inside files for a word (like grep)
+
+  #+begin_src powershell
+  Select-String -Path "C:\Logs\*.log" -Pattern "error"
+  #+end_src
+
+**** Processes & services
+- See what programs are running
+
+  #+begin_src powershell
+  Get-Process
+  #+end_src
+
+- Find one specific running program
+
+  #+begin_src powershell
+  Get-Process -Name "chrome"
+  #+end_src
+
+- Force-close a program
+
+  #+begin_src powershell
+  Stop-Process -Name "notepad" -Force
+  #+end_src
+
+- See the status of a Windows service
+
+  #+begin_src powershell
+  Get-Service -Name "Spooler"
+  #+end_src
+
+- Restart a service (e.g. the print spooler after a jam)
+
+  #+begin_src powershell
+  Restart-Service -Name "Spooler"
+  #+end_src
+
+**** System info & getting help
+- Get basic info about the computer
+
+  #+begin_src powershell
+  Get-ComputerInfo
+  #+end_src
+
+- Find a command when you don't remember its name
+
+  #+begin_src powershell
+  Get-Command -Name "*network*"
+  #+end_src
+
+- Read the help/manual for any command
+
+  #+begin_src powershell
+  Get-Help Copy-Item -Examples
+  #+end_src
+
+- See all the properties and methods an object has
+
+  #+begin_src powershell
+  Get-Process | Get-Member
+  #+end_src
+
+**** Filtering & shaping results (the pipeline)
+- Keep only items that match a condition
+
+  #+begin_src powershell
+  Get-ChildItem "C:\Logs" | Where-Object { $_.Length -gt 1MB }
+  #+end_src
+
+- Show only the columns you care about
+
+  #+begin_src powershell
+  Get-Process | Select-Object Name, CPU, Id
+  #+end_src
+
+- Sort results (here, biggest files first)
+
+  #+begin_src powershell
+  Get-ChildItem "C:\Logs" | Sort-Object Length -Descending
+  #+end_src
+
+- Count how many items you got back
+
+  #+begin_src powershell
+  Get-ChildItem "C:\Logs" | Measure-Object
+  #+end_src
+
+- Do something to each item in a list
+
+  #+begin_src powershell
+  Get-ChildItem "C:\Temp\*.tmp" | ForEach-Object { Remove-Item $_ }
+  #+end_src
+
+- *Get Device Serial Number*
+
+  #+begin_src powershell
+  Get-CimInstance
+  #+end_src
+
+  →
+
+  #+begin_src powershell
+  Win32_BIOS
+  #+end_src
+
+**** Local Users
+- List all local user accounts
+
+#+begin_src powershell
+Get-LocalUser
+#+end_src
+
+- View details for a specific local user account
+
+#+begin_src powershell
+Get-LocalUser -Name "username" | Format-List *
+#+end_src
+
+- Create a new local user account
+
+#+begin_src powershell
+New-LocalUser -Name "username" -FullName "Full Name" -Description "Description" -Password (Read-Host -AsSecureString "Password")
+#+end_src
+
+- Create a local user account with no password expiration
+
+#+begin_src powershell
+New-LocalUser -Name "username" -Password (Read-Host -AsSecureString "Password") -PasswordNeverExpires
+#+end_src
+
+- Set or reset a local user's password
+
+#+begin_src powershell
+Set-LocalUser -Name "username" -Password (Read-Host -AsSecureString "New Password")
+#+end_src
+
+- Rename a local user account
+
+#+begin_src powershell
+Rename-LocalUser -Name "oldname" -NewName "newname"
+#+end_src
+
+- Enable a local user account
+
+#+begin_src powershell
+Enable-LocalUser -Name "username"
+#+end_src
+
+- Disable a local user account
+
+#+begin_src powershell
+Disable-LocalUser -Name "username"
+#+end_src
+
+- Delete a local user account
+
+#+begin_src powershell
+Remove-LocalUser -Name "username"
+#+end_src
+
+- List all local groups
+
+#+begin_src powershell
+Get-LocalGroup
+#+end_src
+
+- List members of a local group
+
+#+begin_src powershell
+Get-LocalGroupMember -Group "Administrators"
+#+end_src
+
+- Add a user to a local group
+
+#+begin_src powershell
+Add-LocalGroupMember -Group "Administrators" -Member "username"
+#+end_src
+
+- Remove a user from a local group
+
+#+begin_src powershell
+Remove-LocalGroupMember -Group "Administrators" -Member "username"
+#+end_src
+
+- Show the currently logged-on user
+
+#+begin_src powershell
+$env:USERNAME
+#+end_src
+
+- List all user profiles on the device
+
+#+begin_src powershell
+Get-CimInstance Win32_UserProfile | Select-Object LocalPath, SID, LastUseTime
+#+end_src
+
+*** Tools
+**** Robocopy
+- Copying one USB to another
+
+  #+begin_src javascript
+  robocopy F:\ G:\ /MIR
+  #+end_src
+
+  - Delete this line if our first attempt with these simple options works - copying the DF L drive to an identical USB model. Pre-formatted
+
+Notion database: Shell Command Topics
+
+** Building An MCP In Windows: Microsoft Learn - Claude Desktop :sequence:claude:mcp:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3a656b5770198056ae70dca475523aa4
+:CREATED:  [2026-07-23 Thu]
+:END:
+Endpoint: =https://learn.microsoft.com/api/mcp=\\
+Transport: Streamable HTTP (remote, Microsoft-hosted)\\
+Auth: none required\\
+Cost: free\\
+Status: GA since 2025-11-07
+
+Tools exposed:
+
+- =microsoft_docs_search= — semantic search across official Microsoft technical documentation
+- =microsoft_docs_fetch= — fetch a specific Learn URL, converted to markdown
+- =microsoft_code_sample_search= — official Microsoft/Azure code snippets, optional language filter
+
+Note: the endpoint returns =405 Method Not Allowed= in a browser. That is expected — it is not a web page.
+
+--------------
+
+**** Phase 1 — Connect Learn MCP to Claude Desktop (Windows)
+- Add the Microsoft Learn MCP server to Claude Desktop on Windows
+  - Confirm prerequisites
+    - Claude Desktop for Windows is installed and you are signed in
+    - Your Claude account is on a paid plan (Pro, Max, Team, or Enterprise) — custom connectors are gated to paid plans
+    - Outbound HTTPS to =learn.microsoft.com= is not blocked by corporate firewall or TLS inspection
+  - Open the connector settings
+    - Launch Claude Desktop
+    - Click your profile icon in the lower-left corner
+    - Select Settings
+    - Select Connectors in the left sidebar
+    - Scroll to the bottom of the connector list
+  - Add the custom connector
+    - Click "Add custom connector" (labeled "Add Integration" under Integrations in some builds)
+    - Set Name to: Microsoft Learn
+    - Set Remote MCP server URL to: https://learn.microsoft.com/api/mcp
+    - Leave OAuth Client ID and Client Secret blank — this server is unauthenticated
+    - Click Add
+  - Verify the connection
+    - Confirm the connector shows a Connected or Enabled state, not an error
+    - Click into the connector and confirm all three tools are listed and toggled on
+      - microsoft_docs_search
+      - microsoft_docs_fetch
+      - microsoft_code_sample_search
+    - Close Settings
+  - Restart Claude Desktop cleanly
+    - Right-click the Claude icon in the Windows system tray
+    - Choose Quit — closing the window alone leaves the process running
+    - Relaunch Claude Desktop from the Start menu
+  - Smoke-test the connection
+    - Start a new chat
+    - Click the tools/attachment icon in the composer and confirm Microsoft Learn appears in the tool list
+    - Ask a query that cannot be answered from training data, for example: "Use the Microsoft Learn tools to show me the current Intune enrollment restriction settings and where they live in the admin center menu today."
+    - Confirm Claude visibly invokes a Microsoft Learn tool rather than answering from memory
+  - Pin the behavior so the tools actually get used
+    - Open Settings, then Profile (or "What personal preferences should Claude consider?")
+    - Add a standing instruction along these lines:
+      - "You have Microsoft Learn MCP tools available. For any question about Microsoft 365, Intune, Entra, Defender, or Azure — especially admin center navigation, current menu paths, licensing, or policy settings — call microsoft_docs_search or microsoft_docs_fetch before answering. Do not answer from training data alone, as Microsoft admin center UI changes frequently."
+    - Save and restart Claude Desktop
+
+--------------
+
+**** Phase 1b — Fallback if the custom connector path is unavailable
+Use this only if your Claude plan or a managed policy blocks custom connectors. It proxies the remote HTTP server through a local stdio bridge.
+
+- Bridge the remote server locally with mcp-remote
+  - Install Node.js LTS
+    - Download the Windows x64 LTS MSI from nodejs.org, or run =winget install OpenJS.NodeJS.LTS= from an elevated PowerShell prompt
+    - Open a new PowerShell window and confirm with =node --version= and =npx --version=
+  - Locate the Claude Desktop config file
+    - Press Win+R, paste =%APPDATA%\Claude=, press Enter
+    - If =claude_desktop_config.json= does not exist, create it
+    - Alternatively reach it via Settings, then Developer, then Edit Config
+  - Edit the config
+    - Open =claude_desktop_config.json= in a text editor
+
+    - Insert the following, merging into an existing =mcpServers= block if one is present
+
+      #+begin_src json
+      {
+        "mcpServers": {
+          "microsoft-learn": {
+            "command": "npx",
+            "args": ["-y", "mcp-remote", "https://learn.microsoft.com/api/mcp"]
+          }
+        }
+      }
+      #+end_src
+
+    - Save the file and validate that the JSON is well-formed — a trailing comma will cause a silent failure
+
+  - Restart and verify
+    - Quit Claude Desktop from the system tray, then relaunch
+    - Confirm microsoft-learn appears in the tool list in a new chat
+    - If it does not appear, check logs at =%APPDATA%\Claude\logs\mcp-server-microsoft-learn.log=
+
+--------------
+
+**** Phase 2 — Optional: live tenant data via Microsoft MCP Server for Enterprise
+This is a separate server from Learn MCP. Learn MCP gives you documentation. This gives you read access to your actual Entra tenant — users, groups, applications, device insights, admin reporting. Public preview, read-only, no additional license beyond what you already hold for the data being accessed.
+
+Do this only on a machine and tenant where you are authorized to register applications, and register it as a public client so no secret is stored on the workstation.
+
+- Stand up Enterprise MCP for Claude Desktop
+  - Confirm you hold sufficient Entra role to register an application and grant consent (Global Admin or Application Administrator plus Privileged Role Administrator)
+  - Register the client application
+    - Sign in to the Microsoft Entra admin center with your Global Admin account
+    - Navigate to Identity, then Applications, then App registrations, then New registration
+    - Name it something identifiable, for example: Claude Desktop MCP Client
+    - Under Redirect URI, select the "Mobile and desktop applications" platform — this makes it a public client using authorization code flow with PKCE, which is the correct shape for a desktop app that cannot protect a secret
+    - Record the Application (client) ID and Directory (tenant) ID
+  - Grant the MCP permissions
+    - Open API permissions for the new registration
+    - Add the =MCP.<Microsoft_Graph_Scope>= permissions matching the read scopes you actually need — grant least privilege, not blanket Directory.Read.All
+    - Click Grant admin consent for your tenant
+  - Connect it in Claude Desktop
+    - Consult the current setup instructions at github.com/microsoft/EnterpriseMCP for the live endpoint URL and OAuth parameters, as the preview endpoint has changed during rollout
+    - In Claude Desktop, go to Settings, then Connectors, then Add custom connector
+    - Enter the endpoint URL and the OAuth Client ID from your app registration
+    - Complete the browser sign-in prompt with your Global Admin credentials
+  - Set up auditing before you rely on it
+    - All Enterprise MCP operations run under a fixed Microsoft app ID: =e8c77dc2-69b3-43f4-bc51-3213c9d915b4=
+
+    - Filter Microsoft Graph activity logs on that AppId to review what was queried
+
+    - Sample Kusto query for Log Analytics:
+
+      #+begin_src text
+      MicrosoftGraphActivityLogs
+      | where TimeGenerated >= ago(30d)
+      | where AppId == "e8c77dc2-69b3-43f4-bc51-3213c9d915b4"
+      | project RequestId, TimeGenerated, UserId, RequestMethod, RequestUri, ResponseStatusCode
+      #+end_src
+
+--------------
+
+**** Troubleshooting
+| Symptom                               | Cause / fix                                                                                                                                                                            |
+|---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Connector added but tools never fire  | Model is answering from training data. Add the system-prompt nudge in Phase 1, final step.                                                                                             |
+| =405 Method Not Allowed=              | You opened the endpoint in a browser. Expected — the URL only works inside an MCP client.                                                                                            |
+| Connection error on a work machine    | Corporate proxy or TLS inspection breaking the streamable HTTP session. Test =learn.microsoft.com= reachability, then check whether the proxy allows long-lived streaming connections. |
+| "Add custom connector" button missing | Free plan, or an org-managed policy disabling custom connectors. Use the Phase 1b fallback.                                                                                            |
+| Empty search results                  | Rephrase with narrower, more specific technical terms.                                                                                                                                 |
+| Config edits have no effect           | Claude Desktop was closed but not quit. Exit from the system tray icon.                                                                                                                |
+| Response payloads too large           | Append a token cap to the URL: =https://learn.microsoft.com/api/mcp?maxTokenBudget=2000=                                                                                               |
+
+--------------
+
+**** Reference links
+- Learn MCP product docs — https://learn.microsoft.com/training/support/mcp
+- Learn MCP repository — https://github.com/MicrosoftDocs/mcp
+- Release notes — https://learn.microsoft.com/en-us/training/support/mcp-release-notes
+- Claude remote MCP guide — https://modelcontextprotocol.io/docs/develop/connect-remote-servers
+- Enterprise MCP overview — https://learn.microsoft.com/en-us/graph/mcp-server/overview
+- Enterprise MCP repository — https://github.com/microsoft/EnterpriseMCP
+
+**** Bonus: terminal access without an MCP client
+Microsoft ships a CLI hitting the same knowledge service — useful for quick lookups from PowerShell without leaving the terminal.
+
+#+begin_src powershell
+npx @microsoft/learn-cli search "intune enrollment restrictions"
+
+# or install globally
+npm install -g @microsoft/learn-cli
+mslearn search "entra conditional access policy" --json
+#+end_src
+
+#dev/general #type/reference #career
+
+** Windows Command Prompt (CMD) Commands                :dictionary:quickref:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3a656b5770198002bae0e33242021b8d
+:CREATED:  [2026-07-23 Thu]
+:END:
+**** Local User
+- List all local user accounts
+
+#+begin_src text
+net user
+#+end_src
+
+- View details for a specific local user account
+
+#+begin_src text
+net user username
+#+end_src
+
+- Create a new local user account
+
+#+begin_src text
+net user username Password123 /add
+#+end_src
+
+- Set or reset a local user's password
+
+#+begin_src text
+net user username NewPassword123
+#+end_src
+
+- Prompt for the password instead of typing it inline
+
+#+begin_src text
+net user username *
+#+end_src
+
+- Enable a local user account
+
+#+begin_src text
+net user username /active:yes
+#+end_src
+
+- Disable a local user account
+
+#+begin_src text
+net user username /active:no
+#+end_src
+
+- Delete a local user account
+
+#+begin_src text
+net user username /delete
+#+end_src
+
+- List all local groups
+
+#+begin_src text
+net localgroup
+#+end_src
+
+- List members of a local group
+
+#+begin_src text
+net localgroup Administrators
+#+end_src
+
+- Add a user to a local group
+
+#+begin_src text
+net localgroup Administrators username /add
+#+end_src
+
+- Remove a user from a local group
+
+#+begin_src text
+net localgroup Administrators username /delete
+#+end_src
+
+- Show the currently logged-on user
+
+#+begin_src text
+whoami
+#+end_src
+
+- Show the current user's group memberships and privileges
+
+#+begin_src text
+whoami /all
+#+end_src
+
+- Copy Entire Contents of Directory or Drive
+
+  #+begin_src javascript
+  xcopy E:\*.* R:\ /E /H /Y
+  #+end_src
+
+  - Options
+    - /Y — overwrite existing files without prompting
+    - /E — include subdirectories, empty ones too
+    - /H — include hidden and system files (xcopy skips them otherwise)
+
+** Powershell: Disabling Spotlight Via CloudContent Policy         :sequence:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3c756b57701980a98cf6ccae76b62685
+:CREATED:  [2026-08-25 Tue]
+:END:
+**** Minimum: current user
+#+begin_src powershell
+$p = 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent'
+New-Item -Path $p -Force | Out-Null
+New-ItemProperty -Path $p -Name 'DisableWindowsSpotlightFeatures' -Value 1 -PropertyType DWord -Force | Out-Null
+#+end_src
+
+This kills Spotlight on the lock screen along with Windows Tips and consumer feature content. Takes effect after sign-out/reboot.
+
+If you want the lock screen only (leaving tips/desktop Spotlight alone), add these instead of — or alongside — the above:
+
+#+begin_src powershell
+$p = 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent'
+New-Item -Path $p -Force | Out-Null
+'DisableWindowsSpotlightOnSettings','DisableSpotlightCollectionOnDesktop' | ForEach-Object {
+    New-ItemProperty -Path $p -Name $_ -Value 1 -PropertyType DWord -Force | Out-Null
+}
+#+end_src
+
+**** Also flip the live state
+The policy stops Microsoft from turning it back on, but the currently-applied background comes from ContentDeliveryManager. Clear it so the change is visible immediately:
+
+#+begin_src powershell
+$cdm = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+@{
+    'RotatingLockScreenEnabled'        = 0
+    'RotatingLockScreenOverlayEnabled' = 0
+    'SubscribedContent-338387Enabled'  = 0   # lock screen spotlight
+    'SubscribedContent-338388Enabled'  = 0   # suggested content
+} .GetEnumerator() | ForEach-Object {
+    Set-ItemProperty -Path $cdm -Name $_.Key -Value $_.Value -Type DWord -Force
+}
+#+end_src
+
+**** Machine-wide / new profiles
+Elevated, so it applies regardless of who logs in — write the policy into =HKLM= and into the default user hive so freshly created profiles inherit it:
+
+#+begin_src powershell
+# All-machine consumer content off
+$hklm = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent'
+New-Item -Path $hklm -Force | Out-Null
+'DisableWindowsConsumerFeatures','DisableCloudOptimizedContent','DisableConsumerAccountStateContent' |
+    ForEach-Object { New-ItemProperty -Path $hklm -Name $_ -Value 1 -PropertyType DWord -Force | Out-Null }
+
+# Seed the default profile
+reg load HKU\DefUser C:\Users\Default\NTUSER.DAT | Out-Null
+reg add "HKU\DefUser\SOFTWARE\Policies\Microsoft\Windows\CloudContent" /v DisableWindowsSpotlightFeatures /t REG_DWORD /d 1 /f | Out-Null
+[gc]::Collect()
+reg unload HKU\DefUser | Out-Null
+#+end_src
+
+To apply to every existing profile on a box, loop =HKU\<SID>= for each loaded hive plus each =NTUSER.DAT= under =C:\Users=.
+
+**** Pin the image while you're at it
+If you want a fixed lock screen picture that Spotlight can't displace (Enterprise/Education SKUs honor this):
+
+#+begin_src powershell
+$pz = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization'
+New-Item -Path $pz -Force | Out-Null
+Set-ItemProperty -Path $pz -Name 'LockScreenImage' -Value 'C:\ProgramData\Branding\lock.jpg' -Type String -Force
+Set-ItemProperty -Path $pz -Name 'LockScreenOverlaysDisabled' -Value 1 -Type DWord -Force
+#+end_src
+
+For Intune, the equivalent CSP is =./User/Vendor/MSFT/Policy/Config/Experience/AllowWindowsSpotlightOnLockScreen= set to 0 — same registry target, just delivered as policy so it re-applies on every sync.
+
+** Powershell: Pin Windows 11 Underline Access Keys Permanently    :sequence:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3c756b5770198091b1c7fa695c2a6313
+:CREATED:  [2026-08-25 Tue]
+:END:
+**** Fix: pin cues on permanently
+GUI path is Settings → Accessibility → Keyboard → *Underline access keys*. From PowerShell:
+
+#+begin_src powershell
+$sig = @'
+[DllImport("user32.dll", SetLastError=true)]
+public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, IntPtr pvParam, uint fWinIni);
+'@
+$spi = Add-Type -MemberDefinition $sig -Name Spi -Namespace Win32 -PassThru
+
+# SPI_SETKEYBOARDCUES = 0x100B; SPIF_UPDATEINIFILE|SPIF_SENDCHANGE = 0x03
+$spi::SystemParametersInfo(0x100B, 0, [IntPtr]1, 0x03)
+#+end_src
+
+Effective immediately, no sign-out, and it persists — the API writes through to =HKCU\Control Panel\Desktop\UserPreferencesMask= (byte 0, bit =0x20=) for you rather than making you get the polarity right by hand.
+
+To verify it took:
+
+#+begin_src powershell
+$sigGet = @'
+[DllImport("user32.dll", SetLastError=true)]
+public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, ref bool pvParam, uint fWinIni);
+'@
+$get = Add-Type -MemberDefinition $sigGet -Name SpiGet -Namespace Win32 -PassThru
+$cues = $false
+$get::SystemParametersInfo(0x100A, 0, [ref]$cues, 0) | Out-Null   # SPI_GETKEYBOARDCUES
+$cues
+#+end_src
+
+Since you're doing this across machines anyway, the same =UserPreferencesMask= bit seeds into =C:\Users\Default\NTUSER.DAT= the same way as the Spotlight values, so new profiles come up with underlines already on.
+
+** Powershell network scan                               :reference:quickref:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3e356b5770198002af6fd4d110a3e4ff
+:CREATED:  [2026-09-22 Tue]
+:END:
+#+begin_src powershell
+$Subnet = "192.168.1."
+1..254 | ForEach-Object {
+    Start-Process -WindowStyle Hidden ping.exe -ArgumentList "-n 1 -w 50 -4$($Subnet)$_"
+}
+Start-Sleep -Seconds 2
+arp -a | Select-String "$Subnet"
+#+end_src
+
+** 2026-10-20 418 Laptop Image Update          :prep_notes:418:frozen_clones:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3ff56b577019805d8a7adbeb43d56ce4
+:CREATED:  [2026-10-20 Tue]
+:END:
+[2026-10-20 Tue]
+**** To Add
+- Pfizer Fonts
+
+** 418 Laptop Image Update                     :prep_notes:418:frozen_clones:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/40256b5770198064bb02c756cdc7aae0
+:CREATED:  [2026-10-23 Fri]
+:END:
+*** Items to add
+- Pfizer Fonts
+- Spotify
+
+*** Fixes
+- Check all automatic driver updates, and make sure all drivers are installed
+  - There was an intel video one, I think, that the Dells would install on first connect.
+- Run through Chrome for updates and features pushes to click through.
+
+** Connect To Tallen Printer                       :sequence:tallen:quickref:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/40a56b577019807bbe16efca65ffdee9
+:CREATED:  [2026-10-31 Sat]
+:END:
+**** Connect to the WiFi Network
+***** Name: Tallen-Print-HP-03
+***** Password: mapletigercloud47
+**** or Scan QR Code
+/[Image in Notion: Screenshot_2026-11-04_at_11.36.18_am.png]/
+
+**** Add Printer (Windows)
+***** Settings > Bluetooth & devices > Printers & scanners
+***** Click “Add device”
+***** Click “Tallen-Print-03” > “Add Device”
+- May take about 5 minutes
+
+* MacOS
+** Apple Mac Modifier Key Characters                     :reference:quickref:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/39e56b577019804580fbe15104456108
+:CREATED:  [2026-07-15 Wed]
+:END:
+- ⌘ = Cmd (Mac) / Ctrl (Windows)
+- ⌥ = Option/Alt (Mac) / Alt (Windows)
+- ⇧ = Shift
+- ⌃ = Ctrl (Mac)
+- ⇧⌃⌥⌘
+
+** MacOS Keyboard Shortcuts                             :tech_sheet:quickref:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3af56b57701980b7aab8e984cf02fa16
+:CREATED:  [2026-08-01 Sat]
+:END:
+**** App and window switching
+- *⌘ Tab* — cycle forward through open apps. Hold ⌘ and keep tapping Tab; add *Shift* to go backward. While the switcher is up you can also use ← / → , press *Q* to quit the highlighted app, or *H* to hide it.
+- *⌘ `* (backtick) — cycle between windows of the /front app/. *⇧⌘ `* goes backward.
+- *⌃ ↑* — Mission Control (all windows, all apps).
+- *⌃ ↓* — App Exposé (all windows of the current app only).
+- *⌃ ← / ⌃ →* — move between Spaces and full-screen apps.
+
+*With Stage Manager on:* ⌘Tab and ⌘` both still work and pull the relevant window set into the center. ⌃↓ (App Exposé) becomes more useful than usual, since an app's windows can be scattered across different sets. Stage Manager has no built-in toggle shortcut — you can make one in the Shortcuts app ("Set Stage Manager" action) and assign a key, or use Raycast/BetterTouchTool.
+
+**** Other system-wide shortcuts
+*Windows and apps*
+
+- *⌘ H* — hide front app; *⌥⌘ H* — hide all others
+- *⌘ M* — minimize; *⌥⌘ M* — minimize all windows of front app
+- *⌘ W* — close window; *⌥⌘ W* — close all windows of app
+- *⌘ Q* — quit; *⌥⌘ Esc* — Force Quit dialog
+- *⌃⌘ F* — toggle full screen
+- *fn ⌃ ← / →* — tile window left/right half; *fn ⌃ ↑* — fill screen; *fn ⌃ ↓* — restore previous size (more layouts under Window → Move & Resize)
+- *⌥⌘ D* — toggle Dock auto-hide
+
+*Launch and search*
+
+- *⌘ Space* — Spotlight
+- *⌥⌘ Space* — Finder search window
+- *fn E* — emoji and symbols picker
+- *⇧⌘ /* — jump to Help menu search (fast way to fire any menu item by name)
+
+*Screenshots*
+
+- *⇧⌘ 3* — full screen; *⇧⌘ 4* — selection; *⇧⌘ 4* then *Space* — a specific window
+- *⇧⌘ 5* — capture/recording panel
+- Add *⌃* to any of the above to copy to clipboard instead of saving a file
+
+*System*
+
+- *⌃⌘ Q* — lock screen
+- *⌥⌘ ⏏/Power* — sleep
+- *⌃ F2* — focus the menu bar; *⌃ F3* — focus the Dock; *⌃ F8* — focus the status menus (add *fn* if your function keys default to media controls)
+- *⌘ ,* — Settings/Preferences in nearly any app
+
+*Finder*
+
+- *⇧⌘ .* — show hidden files
+- *⇧⌘ G* — Go to Folder
+- *⌘ ↑ / ⌘ ↓* — up a directory / open selection
+
+** Zen Browser — macOS Keyboard Shortcuts      :tech_sheet:quickref:software:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3c956b57701980bcabecd1f4f47c8821
+:CREATED:  [2026-08-27 Thu]
+:END:
+**** 1. Tabs & Windows — the everyday ones
+| Action                    | Shortcut                                            |
+|---------------------------+-----------------------------------------------------|
+| New tab                   | =⌘T=                                                |
+| Close tab                 | =⌘W=                                                |
+| Reopen last closed tab    | =⇧⌘T=                                               |
+| Next tab                  | =⌃Tab= or =⌥⌘→= / =⌥⌘↓=                             |
+| Previous tab              | =⌃⇧Tab= or =⌥⌘←= / =⌥⌘↑=                            |
+| Jump to tab 1–8          | =⌘1= ... =⌘8= (also =⌥1=...=⌥8=)                    |
+| Jump to last tab          | =⌘9=                                                |
+| Show all tabs             | =⌃⇧Tab= (when "cycle in recently used order" is on) |
+| New window                | =⌘N=                                                |
+| Close window              | =⇧⌘W=                                               |
+| Reopen last closed window | =⇧⌘N=                                               |
+| New private window        | =⇧⌘P=                                               |
+| Quit Zen                  | =⌘Q=                                                |
+
+- *Tab numbering*
+  - =⌘1=–=⌘3= hit Essentials
+  - =⌘4=–=⌘7= hit pinned
+  - =⌘8= is your first regular tab.
+
+--------------
+
+**** 2. Zen-only features — workspaces, compact mode, split view
+| Action                               | Shortcut                                                                 |
+|--------------------------------------+--------------------------------------------------------------------------|
+| Toggle Compact Mode                  | =⌥⌘C=                                                                    |
+| Toggle floating sidebar (in compact) | =⌥⌘S=                                                                    |
+| Toggle floating toolbar (in compact) | =⌥⌘T=                                                                    |
+| Previous workspace                   | =⌥⌘Q=                                                                    |
+| Next workspace                       | =⌥⌘E=                                                                    |
+| Jump to workspace 1–10              | /unbound by default/ — assign in Settings                              |
+| Split view: vertical                 | =⌥⌘V=                                                                    |
+| Split view: horizontal               | =⌥⌘H= ⚠️ collides with macOS "Hide Others" — rebind if it doesn't fire |
+| Split view: grid                     | =⌥⌘G=                                                                    |
+| Unsplit everything                   | =⌥⌘U=                                                                    |
+| Glance (link preview overlay)        | =⌥= + click a link                                                       |
+| Toggle sidebar width                 | =⌥B=                                                                     |
+| Copy current URL                     | =⇧⌘C=                                                                    |
+| Copy current URL as Markdown         | =⌥⇧⌘C=                                                                   |
+| Toggle AI chatbot sidebar            | =⌥⌘X=                                                                    |
+| Toggle Firefox sidebar               | =⌥⌘Z=                                                                    |
+| Reset pinned tab to its pinned URL   | /unbound by default/                                                     |
+
+--------------
+
+**** 3. Address Bar & Search
+| Action                           | Shortcut    |
+|----------------------------------+-------------|
+| Focus address bar / command bar  | =⌘L=        |
+| Focus address bar in search mode | =⌘K=        |
+| Find on page                     | =⌘F=        |
+| Find next                        | =⌘G=        |
+| Find previous                    | =⇧⌘G=       |
+| Quick find                       | =/=         |
+| Quick find, links only           | ='=         |
+| Close find bar                   | =Esc=       |
+| Open typed address in new tab    | =⌥Return=   |
+| Switch search engine mid-query   | =⌥↓= / =⌥↑= |
+
+**** 4. Navigation & Page Actions
+| Action                   | Shortcut           |
+|--------------------------+--------------------|
+| Back                     | =⌘[= or =⌘←=       |
+| Forward                  | =⌘]= or =⌘→=       |
+| Reload                   | =⌘R=               |
+| Hard reload (skip cache) | =⇧⌘R=              |
+| Stop loading             | =⌘.= or =Esc=      |
+| Home                     | =⌥Home=            |
+| Reader Mode              | =⌥⌘R=              |
+| Picture-in-Picture       | =⇧⌘]=              |
+| Full screen              | =⇧⌘F=              |
+| Zoom in / out / reset    | =⌘+= / =⌘-= / =⌘0= |
+| Mute or unmute tab       | =⌃M=               |
+| Print                    | =⌘P=               |
+| Save page                | =⌘S=               |
+| Screenshot               | =⇧⌘S=              |
+| Top / bottom of page     | =⌘↑= / =⌘↓=        |
+| Page down / up           | =Space= / =⇧Space= |
+
+--------------
+
+**** 5. Bookmarks, History, Downloads
+| Action                            | Shortcut |
+|-----------------------------------+----------|
+| Bookmark this page                | =⌘D=     |
+| Bookmark all tabs                 | =⇧⌘D=    |
+| Bookmarks sidebar                 | =⌘B=     |
+| Bookmarks toolbar show/hide       | =⇧⌘B=    |
+| Bookmarks library (all bookmarks) | =⇧⌘O=    |
+| History sidebar                   | =⇧⌘H=    |
+| Downloads                         | =⌘J=     |
+| Add-ons manager                   | =⇧⌘A=    |
+| Open a local file                 | =⌘O=     |
+| Clear browsing data               | =⇧⌘⌫=    |
+
+--------------
+
+**** 6. Developer Tools
+| Action                         | Shortcut                                                                    |
+|--------------------------------+-----------------------------------------------------------------------------|
+| Toggle DevTools                | =⌥⌘I=                                                                       |
+| Inspector                      | =⌥⌘C= ⚠️ same chord Zen uses for Compact Mode — whichever you rebind wins |
+| Web console                    | =⌥⌘K=                                                                       |
+| Network monitor                | =⌥⌘E=                                                                       |
+| Responsive design mode         | =⌥⌘M=                                                                       |
+| Browser console                | =⇧⌘J=                                                                       |
+| Browser toolbox                | =⌥⇧⌘I=                                                                      |
+| JavaScript debugger            | =⇧⌘Z=                                                                       |
+| Style editor                   | =⇧F7=                                                                       |
+| Performance / profiler         | =⇧F5=                                                                       |
+| Storage                        | =⇧F9=                                                                       |
+| Accessibility                  | =⇧F12=                                                                      |
+| View page source               | =⌘U=                                                                        |
+| Page info                      | =⌘I=                                                                        |
+| Task manager (about:processes) | =⇧Esc=                                                                      |
+
+* Device Management
+** Sli-Pad Hexnode Setup V2 :sequence:418:tallen:hexnode:ipad:configurator:slido:kiosk:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3b956b57701980bb944cf34013d9dad6
+:CREATED:  [2026-08-11 Tue]
+:END:
+[2026-08-11 Tue]
+*** Sli-Pad Hexnode Setup
+**** Hexnode Pro + Apple Configurator — first supervised iPad
+*Version:* v03\\
+*Owner:* Mattie Aran (Lupine Tech Design)\\
+*Project:* 418 Productions / Tallon — Interactive Event iPad Service
+
+*Scope:* takes one iPad from factory state to a working, client-handable Slido kiosk. This is the tethered Apple Configurator path. See /What changes with Apple Business Manager/ at the end for the zero-touch version.
+
+*Changed in v03:* Web Content Filtering is now part of v1 with a working domain list. Console navigation paths corrected against the live portal.
+
+--------------
+
+**** Requirements
+- *A Mac* with Apple Configurator 2 from the Mac App Store (free)
+- *A good USB-C cable* — a data cable, not a charge-only one
+- *A powered USB hub* if preparing more than one device at a time
+- *The Wi-Fi SSID and password* the iPad will join after the wipe
+- *The 418 Zoho Apple Account* — needed for the APNs (Apple Push Notification service) certificate, and this matters more than it sounds
+- *Your Slido event join URL* (or the permanent redirect URL — see Part 5)
+- *Branding assets:* a square app icon and a wallpaper image
+
+*Turn off Find My on the iPad first.* Find My iPhone/iPad must be off to prevent activation lock errors. Settings → your name → Find My → Find My iPad → off. Then sign out of iCloud entirely. Skipping this makes Apple Configurator fail partway through the wipe.
+
+--------------
+
+**** Part 1 — Stand up Hexnode
+*1. Start the trial.* Sign up at Hexnode. The 14-day free trial provides an Ultra license, so every feature is visible during evaluation. You'll pick a portal name — this becomes =yourportal.hexnodemdm.com=. Use something 418-flavored, not Lupine.
+
+*2. Generate the APNs (Apple Push Notification service) certificate.* Non-optional — a valid APNs (Apple Push Notification service) certificate must exist in the portal before any iOS device can be managed. Admin → APNs. Hexnode gives you a CSR, you upload it at identity.apple.com/pushcert, download the resulting =.pem=, upload it back to Hexnode.
+
+#+begin_quote
+*Use the 418 Zoho Apple Account for this. Write down which one you used.* The certificate expires annually and must be renewed with the /same/ Apple Account. Renew with a different one and every enrolled device silently drops out of management.
+
+#+end_quote
+
+*3. Copy the Apple Configurator enrollment URL.* Admin → Configurator Enrollment, or Enroll → Platform-Specific → iOS → Apple Configurator. It looks like [[https://ltd.uem.hexnode.com/configuratorenroll/?authtoken=194003e836a141a6aa852ba1a872a0ef][https://ltd.uem.hexnode.com:443/configuratorenroll/?authtoken=194003e836a141a6aa852ba1a872a0ef]]. Keep it handy.
+
+--------------
+
+**** Part 2 — Build the Configurator blueprint
+*4. Create the Wi-Fi profile.* In Apple Configurator: File → New Profile. Name it "418 Event SSID." Select Wi-Fi from the left menu, click Configure, enter the SSID, select Auto Join, add the password. Save.
+
+This profile is what lets the iPad get online /by itself/ after the wipe. Without it the device reboots into Setup Assistant with no network and can't reach Hexnode.
+
+*5. Create the blueprint.* Blueprint → Edit Blueprints → create new. Name it "Sli-Pad Base." Select it, click Add → Profiles, and select the Wi-Fi profile.
+
+*6. Prepare the blueprint.* Right-click the blueprint → Prepare. Walk the wizard:
+
+- *Configuration:* Manual
+- *Server:* New Server, name it, paste the Hexnode enrollment URL
+- *Certificates:* anchor certificates fetch automatically — click Next
+- *Apple Business Manager sign-in:* Skip. You're not doing ADE (Automated Device Enrollment) here
+- *Supervision:* confirm *Supervise devices is checked.* Everything downstream depends on this
+- *Organization:* select the existing 418 Productions organization if one exists — reuse it rather than creating duplicates, so the fleet shares one supervision identity
+- *Identity:* generate a new supervision identity (first time only; reuse thereafter)
+- *Setup Assistant:* skip nearly everything — Apple Account, Diagnostics, Siri, Touch ID, Screen Time. Leave Wi-Fi visible as a fallback
+
+--------------
+
+**** Part 3 — Wipe and enroll
+*7. Connect the iPad.* Plug it in. It appears in Apple Configurator. Tap Trust on the iPad if prompted.
+
+*8. Apply the blueprint.* Select the device, apply the blueprint, confirm the erase warning. Then leave it alone — it wipes, reboots, and reprovisions. Several minutes.
+
+*9. Watch it enroll itself.* The device restarts, joins the pre-configured Wi-Fi, and the Hexnode UEM (Unified Endpoint Management) profile downloads and installs over the air.
+
+*10. Verify both ends.*
+
+- On the iPad: Settings → General → VPN & Device Management shows the Hexnode UEM (Unified Endpoint Management) profile
+- In the portal: the device appears under Manage, listed as *Supervised*
+
+If it says Enrolled but not Supervised, the supervision checkbox didn't take. Wipe and redo Part 2 — supervision cannot be added after the fact.
+
+*11. Rename the device.* Manage → device → Actions → Rename. Use the asset tag or a fleet number. Thirty-five identically named iPads is a problem you only create once.
+
+--------------
+
+**** Part 4 — Get the apps in place
+*12. Confirm the Hexnode UEM (Unified Endpoint Management) app installed.* It deploys automatically on enrollment. Browser Lite — the single-tab browser the kiosk runs in — is delivered through it. Open the app on the device once to force a check-in.
+
+#+begin_quote
+*App installs and Apple Accounts:* with VPP (Volume Purchase Program) configured through ABM (Apple Business Manager), app deployment is silent and needs no Apple Account on the device. Without VPP (Volume Purchase Program), an Apple Account must be signed in to the App Store for MDM (Mobile Device Management)-pushed installs to authorize. Configure VPP (Volume Purchase Program) before fleet deployment — signing in to 35 devices by hand is not a workflow.
+
+#+end_quote
+
+*Never push a kiosk policy naming an app that isn't installed yet.* The device can land in an unrecoverable state requiring profile removal.
+
+--------------
+
+**** Part 5 — Create the Slido web app
+*13. Apps → +Add Apps → Web App.*
+
+- *Name:* keep it generic — =Slido Event=. The name stays; only the URL changes between clients
+- *URL:* full =https://= URL
+- *Icon:* square, 418 or Tallon mark
+- *Category:* optional
+
+#+begin_quote
+*Recommended:* point this at the *permanent redirect URL* rather than a client's event URL directly. The redirect lets the event target change without touching the kiosk policy or waiting on a device push. See the separate redirect runbook. If the redirect isn't built yet, use the event URL directly and swap it here per event.
+
+#+end_quote
+
+--------------
+
+**** Part 6 — Build the kiosk policy
+The policy editor has three top-level tabs: *iOS*, *Kiosk Lockdown*, and *Policy Targets*. Configured sections show a green check in the left navigation, which is the fastest way to confirm nothing got missed.
+
+*14. Policies → New Policy → New Blank Policy.* Name it with a version suffix — =418-slido-kiosk-001=. Put what changed in the Description field; that field is the changelog.
+
+***** The kiosk itself
+*15. Kiosk Lockdown tab → iOS Kiosk Lockdown → Web App.*
+
+- *Open web app with:* Hexnode Browser Lite
+- Then: *Single web app kiosk*
+- Click *+* and select your Slido web app
+
+Browser Lite gives a single tab with no address bar — the correct participant experience. Safari Browser is the alternative but presents web apps as bookmarks, which adds a tap for the attendee.
+
+The panel renders a device preview showing the selected web app, which is a quick sanity check that the right app is attached.
+
+*16. Kiosk Lockdown tab → Advanced Website Kiosk Settings.*
+
+This is its own item in the Kiosk Lockdown navigation, a sibling of Web App rather than a sub-setting of it. These options only apply when the web app opens in Hexnode Browser Lite.
+
+- *Disable back button* — on. Stops an attendee reversing out of a poll
+- *Pinch-to-zoom* — on. Accessibility for the room
+- *Allowed / whitelisted websites* — see step 19; Browser Lite enforces its own list here, separate from the policy-level filter
+- *Idle refresh / return to homepage* — optional. Reloads the start page after a period of no touch. Valuable if devices are shared or passed between people; largely unnecessary when each seated attendee holds one iPad for the whole session
+- *Disable Auto Lock* — on. An event kiosk should not sleep mid-session, and a sleeping kiosk introduces wake behavior you don't want in front of a client
+
+***** Supporting payloads (iOS tab)
+*17. iOS tab → Network → Wi-Fi.*
+
+- *Service Set Identifier:* the event SSID (currently =418-G-Mesh= for shop testing)
+- *Auto join:* checked
+- *Security Type:* Any (Personal) unless the venue uses enterprise authentication
+- *Password:* as applicable
+- *Proxy:* None
+
+The blueprint Wi-Fi profile got the device enrolled. This payload is what keeps it connected in the field and survives a wipe-and-reapply cycle.
+
+*18. iOS tab → Restrictions.* Split into *Basic* and *Advanced Restrictions*.
+
+#+begin_quote
+*Read the checkboxes as "Allow."* Checked means the feature is permitted. Unchecked means blocked. It is easy to invert this mentally and lock down the opposite of what you intended.
+
+#+end_quote
+
+Working baseline — fine-tune per client:
+
+*Basic — Allow Device Functionality:* Camera, FaceTime, Screen capture, Remote Screen Observation, Touch ID, Siri, and Automatic sync while roaming all left allowed. Voice dialing blocked.
+
+*Basic — Allow Application Settings:* Install apps blocked. iTunes Store blocked. In-app purchases blocked. Trust enterprise app allowed.
+
+*Advanced Restrictions — blocked:* AirDrop, apps modifying cellular data usage, iMessage, RCS messaging, Game Center, multiplayer gaming, installing configuration profiles, Handoff, USB Drive Access in Files App, Network Drive Access in Files App.
+
+*Advanced Restrictions — left allowed:* Add or remove Touch ID/Face ID, definition lookup, predictive keyboard, auto-correct, spelling suggestions, QuickPath keyboard, keyboard shortcuts. These are typing and accessibility conveniences with no lockdown downside.
+
+*19. iOS tab → Security → Web Content Filtering.*
+
+- *Filter Type:* Allowlist
+- Add each URL with its full protocol (=https://=), then click *Add*
+
+*Two lists must both be populated.* The policy-level Web Content Filtering payload and Browser Lite's own allowed-websites field are separate enforcement layers, and each requires entries once enabled. Populate both with the same list. An empty list in either place is not "unrestricted."
+
+Working domain list:
+
+#+begin_src text
+https://sli.do
+https://*.sli.do
+https://slido.com
+https://*.slido.com
+https://*.webex.com
+https://*.wbx2.com
+https://*.ciscospark.com
+https://*.sentry.io
+https://log-api.newrelic.com
+https://log-api.eu.newrelic.com
+#+end_src
+
+*Why the Cisco domains matter:* Slido is a Cisco product and its authentication chain routes through Webex infrastructure. Allowlisting only =slido.com= and =sli.do= produces a Forbidden error at login that looks like a Slido problem but is not. The =webex.com=, =wbx2.com=, and =ciscospark.com= wildcards are what make login work.
+
+*Why the wildcards matter:* subdomains are treated as distinct hosts. =https://slido.com= does not cover =https://auth.slido.com=. Every domain needs both the bare entry and the =*.= wildcard.
+
+- =.sentry.io= and the New Relic hosts are error-reporting and telemetry rather than functional dependencies. They can likely be removed if a tighter list is ever wanted. The Cisco entries cannot.
+
+*20. iOS tab → Configurations → Wallpaper.* 418 or client branding, lock and home screens.
+
+*21. iOS tab → Configurations → Lock Screen Message.* "Property of 418 Productions — please return to staff."
+
+*22. Do not add a Passcode payload.* A handout kiosk should have no passcode. If a device already carries one, clear it with Manage → device → Actions → Clear Passcode.
+
+--------------
+
+**** Part 7 — Deploy
+*23. Create a device group* before targeting — Manage → Device Groups. Target the group, not individual devices. You will have 35 of these.
+
+*24. Policy Targets tab → +Add Devices* (or the device group) → OK → *Save.*
+
+*25. The policy pushes within a minute or two* while the device is online and awake. If it sits pending, open the Hexnode UEM (Unified Endpoint Management) app on the device or use Actions → Scan Device to force a check-in.
+
+#+begin_quote
+Only one kiosk policy applies to a device at a time. When promoting a new policy version, disassociate the old one first.
+
+#+end_quote
+
+--------------
+
+**** Part 8 — Verify it actually holds
+Run all of these before any device goes in front of a client:
+
+- *Escape attempts:* home gesture, app switcher, Control Center, back gesture — all dead-end
+- *Reboot:* power cycle → returns straight to the Slido page
+- *Sleep:* manually lock, wake → returns to the kiosk cleanly
+- *Wi-Fi drop:* disconnect and reconnect → rejoins and recovers
+- *Full login flow:* complete a Slido authentication from a cold start, not just a page load — this is what the allowlist breaks
+- *Live participation:* actually vote in the event from the kiosk while driving Slido from the host device
+- *URL swap:* change the event target, reload, confirm it follows
+
+*To get out yourself:* remove the policy association in the portal, or use Manage → device → Actions → Disable Kiosk Mode. There is no on-device escape from supervised Single App Mode, which is the point.
+
+--------------
+
+**** Per-event operations
+- *New event:* change the redirect target (or edit the Web App URL). Devices pick it up on reload
+- *Troubleshooting a unit mid-show:* Actions → Disable Kiosk Mode, fix, re-enable. No policy edits
+- *Announcements:* Actions → Broadcast Message to the device group
+- *Wedged unit:* Actions → Restart
+- *Walk-off:* Lost Mode + Scan Device Location
+- *Teardown:* disassociate the policy, or wipe and re-enroll for rentals being returned
+
+--------------
+
+**** Conventions
+- *Policy versioning:* Hexnode has no snapshot or rollback. Clone the policy and increment the name (=001=, =002=) before making changes; record what changed in the Description field
+- *Naming:* =418-slido-kiosk-###= for policies, asset tag or fleet number for devices
+- *Web app name stays generic* so it survives client changes
+- *Allowlists live in two places.* Any domain change must be made in both the Web Content Filtering payload and Browser Lite's allowed-websites field
+- *The APNs (Apple Push Notification service) Apple Account is permanent.* Record it somewhere durable. Changing it requires re-enrolling every device
+
+--------------
+
+**** What changes with Apple Business Manager
+Once ABM (Apple Business Manager) organization verification completes, ADE (Automated Device Enrollment) replaces Parts 2 and 3 entirely:
+
+- Devices are added to ABM (Apple Business Manager) by serial number and assigned to the Hexnode MDM (Mobile Device Management) server
+- An ADE (Automated Device Enrollment) enrollment profile controls Setup Assistant and makes the MDM (Mobile Device Management) profile non-removable
+- The device supervises and enrolls itself on first boot — no Mac, no cable, no blueprint
+- VPP (Volume Purchase Program) removes the Apple Account requirement for app installs
+
+Parts 5 through 8 are unchanged. The kiosk build does not get rebuilt — only the enrollment path in front of it changes.
+
+** Configurator 2 Hexnode Enrollment over USB :sequence:418:configurator:hexnode:ipad:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3cd56b577019803885ccf6eb1572d38f
+:CREATED:  [2026-08-31 Mon]
+:END:
+[2026-08-31 Mon]
+*Hexnode portal (once)*
+
+1. Admin → Configurator Enrollment → set Default User → Save
+2. Admin → APNs → confirm cert valid
+3. Note enrollment URL: https://ltd.uem.hexnode.com/enroll
+
+*Mac prep* 4. Apple Configurator 2 → Settings → Servers → delete any stale Hexnode entry 5. iPad at Hello screen (don't run Setup Assistant), USB to MacBook, Trust
+
+*Prepare* 6. Select iPad → Prepare 7. Configuration: *Manual* 8. Check *Supervise devices*; uncheck /Allow devices to pair with other computers/ 9. Enroll in MDM Server → *New Server* → name Hexnode → URL from step 3 → Next (certs fetch) → Next 10. Organization → *New Organization* → name/phone/address/email → Next 11. Supervision identity → *Generate a new supervision identity* 12. Setup Assistant → skip Apple ID, Siri, Diagnostics, Screen Time, Passcode (leave *Wi-Fi shown*) 13. Prepare → device erases, reboots to Hello
+
+*On iPad* 14. Language/region → join Wi-Fi 15. Remote Management screen → enroll (automatic) → finish Setup Assistant
+
+*Verify* 16. Hexnode → Manage → Devices → iPad listed, Enrollment = Apple Configurator, Supervised = Yes, Last Reported recent 17. iPad → Settings → General → VPN & Device Management → Hexnode MDM profile present
+
+On your two questions:
+
+The Organization email in Configurator is metadata attached to the supervision identity only. It does not become an App Store / Apple Account on the iPad — nothing signs in during this flow.
+
+The Hexnode UEM app is not required. Enrollment completes when the MDM profile lands; the device shows up in the portal without it. The agent app only adds things like location, messenger, and remote view — none of which a single-app kiosk running Hexnode Browser needs.
+
+** Talon: Pfizer: Investigator Meeting: Slido Notes :prep_notes:tallen:slido:ipad:hexnode:configurator:vercel:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3cd56b57701980a7bd84f8535ade1dea
+:CREATED:  [2026-08-31 Mon]
+:END:
+- Slido Event 1
+
+  - [[https://app.sli.do/event/jWdLDCVHcjzGRNHRtoKN81/live/polls]]
+
+- is auth.slido. fucked as a route.
+
+  - (I don't think so)
+
+- Apple Configurator: 418 (3AE6688B-5BDE-4B7B-B25D-B3ECBE66B4F2\\
+
+- Vercel Token
+
+  - REDACTED
+
+- curl script
+
+  #+begin_src text
+  curl -X POST 'https://api.vercel.com/v1/edge-config?slug=mattys-projects-ee12d56e' \
+    -H 'Authorization: Bearer REDACTED' \
+    -H 'Content-Type: application/json' \
+    -d '{"slug":"418-slido-redirect"}'
+  #+end_src
+
+- TP-Link BE6500
+
+  - Changed SSID to
+
+    - Slido-Link
+
+  - SSID TP-Link_44B4
+
+  - SSID TP-Link_44B4_5G
+
+  - Password Remains
+
+    - 37174408
+
+- Admin Pass
+
+  - r00m
+
+**** Using
+- Hexnode Browser Lite
+- Single web app kiosk
+
+**** The Eviscerater 5000
+- /Devices stuck in/ *"Guided Access app unavailable".*
+
+- Send remote Device Wipe command from Hexnode
+
+- Re-Enroll into Hexnode
+
+- Install the required kiosk app remotely.
+
+  - Browser Lite
+
+- Apply the policy *AFTER* the kiosk app is confirmed.
+
+***** Post Show Run-Through
+- Created a [[https://ltd.uem.hexnode.com/devicedynamicgroup/][“New Dynamic Device Group”]]
+
+  - [[https://ltd.uem.hexnode.com/management/#/devicegroups][Hexnode]]
+
+- Devices Wiped via “Actions” > Security > Wipe device - in the Group view
+
+- Devices re-enroll, as per the settings chosen in the “Wipe device” dialog, but only after we manually enter the WiFi Password
+
+  - Troubleshoot the WiFi Profile in Configurator, or in the Hexnode portal. It may just be one of those things you always have to do by hand.
+
+- Attempt to install “Hexnode for Work” App via “Actions” > Install Application
+
+- Sign in to a valid iCloud account to allow the App install. Four.One.Eight@icloud.com
+
+  - [ ] Can we get this loaded from somewhere? maybe not because it exists around all the apple stuff. It's a login that's good everywhere.
+
+- Turned Location Services ON
+
+- We tried to install all of the hexnode applications. In the end it looked like we just installed MDM from the portal, and then on the pads, it was UEM.
+
+**** Slido-Link
+37174408
+
+**** Notes On Notes
+***** Renaming With Serial Number
+- I was able to bulk rename from a Device Group view > Actions, with %SerialNumber%
+
+*** Event 2 Workflow
+**** Device must be reset, at the OOBE “Hello” screen
+- Settings
+  - General > Scroll all the way down
+    - Transfer or Reset iPad
+      - Erase All Content and Settings
+
+**** Configurator 2
+- Physically connect the iPad
+- “Allow” it to Load > Right Click
+  - Prepare
+    - Click through defaults
+    - ltd uem address
+- Sign into *Slido-Link*
+  - 3717 4408 (on the back of router)
+- Sign into iCloud
+  - 4.1.8@ic
+    - I.C.Ch.T.R. (with 2 numbers)
+- Turn on *Location Services*
+
+**** Hexnode
+- *Manage*
+  - Devices
+    - Select Device(s) OR
+    - goto > Device Groups > NOT IN 418-Slido-kiosk-002
+    - Actions
+      - Install Applications
+      - Select: *Hexnode For Work*
+      - Select: *Hexnode Kiosk Browser*
+    - Actions
+      - Rename Device
+      - Sli-Pad %serialnumber%
+- *Policies*
+  - [[https://ltd.uem.hexnode.com/policy/#/31/list/][418-Slido-kiosk-002]]
+    - Manage > Modify
+      - Policy Targets
+        - Select the devices
+        - Add
+      - *Save*
+
+** Talon: Pfizer: Investigator Meeting: Schedule   :record:tallen:slido:ipad:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3cf56b577019806a9772f21f03220a3e
+:CREATED:  [2026-09-02 Wed]
+:END:
+*** Day 2 – Wednesday, September 2
+| Presentation # | Time         | Duration      | Topic                                                        | Presenter                                |
+|----------------+--------------+---------------+--------------------------------------------------------------+------------------------------------------|
+|                | 7:30–8:30   |               | Breakfast / Vendor tables Open                               |                                          |
+| Day 2 00       | 8:30–8:35   | 5 min         | Housekeeping/Logistics/Agenda                                | Shannin McCollum, RN, MHSA               |
+| Day 2 01:      | 8:35–8:55   | 20 min        | Study Timelines & Vendor Overview                            | Shannin McCollum, RN, MHSA               |
+| Day 2 02       | 8:55–10:10  | 1 hour 15 min | Importance of 'The Right Participant' & Retention Strategies | McCaulay Singer-Milnes, MA               |
+|                | 10:10–10:30 | 20 min        | Break                                                        |                                          |
+| Day 2 03       | 10:30–11:10 | 40 min        | Data Management                                              | Jennifer Chi-Stevens, RN, CDS            |
+| Day 2 04       | 11:10–11:30 | 20 min        | PRO overview and administration guide                        | Stella Stergiopoulos, DrPH, MS           |
+| Day 2 05       | 11:30–12:15 | 45 min        | ePRO-IQVIA                                                   | Catherine Zanini Ferreira                |
+| Day 2 06       | 12:15–12:25 | 10 min        | Pfizer Site Care Team                                        | Babatunde Olowoyeye, BSc, CCRP           |
+|                | 12:25–12:45 | 20 min        | Final Q&A/closing remarks                                    | Josh Levine, MD, PhD; Kelly Kincaid, MBA |
+
+4188140221
+
+** Ensure the 'Hexnode For Work' and 'Hexnode Kiosk Browser' apps are available for installation :sequence:hexnode:ipad:kiosk:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3da56b577019809d9540f4ad308deabc
+:CREATED:  [2026-09-13 Sun]
+:END:
+To ensure the 'Hexnode For Work' and 'Hexnode Kiosk Browser' apps are available for installation on your iPad device, follow these steps:
+
+1. *Check Internet Connectivity*: Ensure your device has a stable internet connection. Kiosk mode will be removed from the device once it regains connectivity.
+2. *Verify App Compatibility*: Make sure the apps are compatible with the iOS version of your device. If the apps are not compatible, update the OS or use the updated version of the apps.
+3. *Disassociate and Reassociate Kiosk Policy*: If the apps are not present on the device, disassociate the kiosk policy, install the required apps, and then reassociate the policy.
+4. *Configure Application Settings*:
+   - *Login to Hexnode Portal*: Go to the *Apps* tab.
+   - *Select the App*: Click on the app for which you want to define the configuration.
+   - *App Configuration*: Click on the *Settings* dropdown (gear icon) > *App Configuration*.
+   - *Update App Configuration*: Check the *Update App Configuration* box.
+   - *Upload XML File*: Download the sample XML file, prepare your configuration file, and upload it.
+   - *Save*: Click *Save* to apply the configuration.
+
+By following these steps, you can ensure that the required apps are available for installation on your iPad device.
+
+** Slido Onboard & Policy (Lightening iPads :sequence:tallen:sofitel:beverly_hills:slido:ipad:kiosk:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3db56b57701980f2bf03f545d75af2ac
+:CREATED:  [2026-09-14 Mon]
+:END:
+/Was doing this in sets of 3, my contextual max with all of the hands on/
+
+*** Reset iPads
+**** Connect to Wifi
+- Slido-Link
+  - 3717 4408
+
+**** Turn off “Find My”
+- Switch off
+- Enter Password for RTex@icloud
+  - *Abc06123*
+
+**** Reset iPad
+- General > scroll down
+  - Transfer or Reset iPad
+    - Erase All Content & Settings
+
+*** Enroll
+**** Configurator Enrollment
+- Plug reset iPads into Mac Ports
+- Rename in Configurator
+  - Modify
+    - Rename Device
+- Enroll
+  - Prepare
+
+**** Log In
+- Wait for the “App Installation” dialog appears
+  - Sign In
+  - Use Existing Apple ID
+  - Settings
+  - Enter
+    - Apple ID: four.one.eight@icloud.com
+    - Password: I.C.Ch.T.R. (2 num)
+- Enter Verification code
+  - Either press “Allow” on another iPad that is logged into four.one.eight for a code
+  - Or select
+    - “Didn't get code”
+    - “Can't get to devices”
+    - choose “text”
+    - Enter the texted verification code
+- Privacy & Security
+  - Location Services
+    - Switch on
+- Wait for Policy
+
+**** Add Policy
+- [[https://ltd.uem.hexnode.com/][ltd.uem.hexnode.com]]
+  - [[https://ltd.uem.hexnode.com/policy/][Policies]]
+    - [[https://ltd.uem.hexnode.com/policy/#/32/list/][418-Slido-kiosk-003-vintage]]
+      - Manage
+        - Modify
+          - Policy Targets
+            - “+Add Devices”
+              - Select the iPads by name
+              - “OK”
+          - “Save”
+          - “Ok”
+- “Allow” everything in the successive dialogues
+- Check and accept Hexnode enrollment
+
+**** Troubleshooting
+- If Hexnode loads, but the Slido Kiosk doesn't start:
+  - wait a few minutes
+  - [[https://ltd.uem.hexnode.com/][ltd.uem.hexnode.com]]
+    - [[https://ltd.uem.hexnode.com/management/#/devices][Devices]]
+    - Select Device
+    - “Actions”
+      - “Restart Device”
+
+** Minimal iPad Preparation for Safari Slido     :sequence:tallen:ipad:slido:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3dc56b57701980dd8838c6838d584738
+:CREATED:  [2026-09-15 Tue]
+:END:
+*** Setup
+/In Configurator/
+
+- create a WiFi profile
+  - Auto join
+  - Usually Wpa
+
+*** iPad Prepare
+- Connect iPads
+  - direct or through hub / adapter
+- Select All
+- Advanced
+  - Erase All Content and Settings
+- Add
+  - Profiles
+    - Select the WiFi profile
+- Prepare
+  - Manual Configuration
+  - Uncheck “Add to Apple School Manager or Apple Business”
+  - Uncheck Supervise devices
+  - Next
+    - Server: Do not enroll in device management service
+      - >
+    - Organization: Any
+      - >
+    - Setup Assistant: Don't show any of these steps
+      - Prepare
+
+** Slido web app quick set                          :sequence:418:slido:ipad:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3e356b57701980599eb9d8885d3cf49b
+:CREATED:  [2026-09-22 Tue]
+:END:
+- camera QR code
+- From Safari
+  - *Share → Add to Home Screen, set Open as Web App on, then Add.*
+- Drag it into the dock
+- Done
+
+**** Hide the questions
+1. Open the event in the Slido host view.
+2. Go to Settings → Q&A and turn on Moderation.
+3. During the seminar, leave everything in review. Don't hit Approve, because an approved question becomes visible to everyone, participants included.
+4. Get the questions to the presenter by adding them as a co-host, or handing them an iPad logged into the host interface.
+5. After a question is handled, Dismiss it to clear it from the queue. Dismissing sends it straight to the archive.
+
+** Roll up iPads using just Safari                  :sequence:418:ipad:slido:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3e556b57701980a080e0f71af0deec3c
+:CREATED:  [2026-09-24 Thu]
+:END:
+- [ ] Settings > Safari > clear > all time
+- [ ] Shut em all down
+- [ ] Pack em where they go
+  - [ ] Ask Alex where the 3rd party goes
+- [ ] Count (9 Rentex) (15 other)
+  - [ ] Ipads
+  - [ ] Blocks
+  - [ ] Cables
+
+* iOS
+** Dynamic Event URL Redirect            :sequence:418:tallen:hexnode:vercel:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3b956b57701980c3b167c000d5df3f58
+:CREATED:  [2026-08-11 Tue]
+:END:
+**** Sli-Pad Dynamic Event URL Redirect + Show-Day iPad Setup
+*Owner:* Mattie Aran (Lupine Tech Design)\\
+*Project:* 418 Productions / Tallon — Interactive Event iPad Service\\
+*Status:* Design / to build
+
+#+begin_quote
+/For URL Control without having to mess with the console mid-show/
+
+#+end_quote
+
+**** Architecture (plain language)
+1. A tiny Vercel project serves a single permanent URL — e.g. =https://418-slido.vercel.app/=
+2. That URL reads a stored value (the current event URL) and issues an HTTP redirect to it
+3. The stored value lives in *Vercel Edge Config* — a key/value store that can be edited *without redeploying*
+4. The Hexnode kiosk Web App points at the permanent URL, forever
+5. Changing events = edit one value in the Vercel dashboard (or later, via an Apple Shortcut)
+
+--------------
+
+**** Critical technical constraints
+These are not optional — getting them wrong causes field failures that are hard to diagnose.
+
+- *Use a 302 or 307 redirect, never a 301.* A 301 is a /permanent/ redirect and browsers cache it aggressively. Ship a 301 once and devices may keep going to the old event even after the value changes — with no obvious way to clear it short of wiping browser data on every unit.
+- *Send* *=Cache-Control: no-store=* on the redirect response so nothing intermediate caches it.
+- *Devices only pick up a change on reload.* The redirect is evaluated when the page loads. Changing the target mid-session does nothing until each iPad reloads — via idle-refresh if enabled, a manual pull-to-refresh, or a kiosk toggle from the console. Plan the swap for /between/ sessions, not during one.
+- *Store the full target URL*, including any query parameters the client's Slido link carries.
+- *Test with the real Slido link before show day.* Confirm Slido's auth flow behaves normally when arrived at via redirect.
+
+--------------
+
+**** Build sequence
+***** Phase A — Create the project (can be done entirely from an iPad)
+No Mac required. Create the repo in GitHub's web interface, then import it to Vercel.
+
+1. *Create a new GitHub repository* — name it something like =418-slido-redirect=. Private.
+2. *Add file:* *=package.json=*
+
+#+begin_src json
+{
+  "name": "418-slido-redirect",
+  "private": true,
+  "dependencies": {
+    "@vercel/edge-config": "latest"
+  }
+}
+#+end_src
+
+1. *Add file:* *=api/redirect.js=*
+
+#+begin_src javascript
+import { get } from '@vercel/edge-config';
+
+export const config = { runtime: 'edge' };
+
+export default async function handler() {
+  const target = await get('slidoTarget');
+
+  if (!target) {
+    return new Response('No event URL is currently set.', {
+      status: 503,
+      headers: { 'Cache-Control': 'no-store' }
+    });
+  }
+
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: target,
+      'Cache-Control': 'no-store'
+    }
+  });
+}
+#+end_src
+
+1. *Add file:* *=vercel.json=* — routes every path to the redirect handler.
+
+#+begin_src json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/redirect" }
+  ]
+}
+#+end_src
+
+***** Phase B — Deploy and wire up storage
+1. *In Vercel: New Project > Import* the GitHub repo. Accept the defaults and deploy.
+2. *Create an Edge Config store.* In the Vercel dashboard, go to Storage > Edge Config > Create. Name it =418-slido=.
+3. *Connect the store to the project.* From the Edge Config's Projects tab, link =418-slido-redirect=. This automatically injects the connection string as an environment variable — no manual config needed.
+4. *Add the item.* In the Edge Config's Items editor, add:
+   - Key: =slidoTarget=
+   - Value: a test Slido event URL (full =https://= URL)
+5. *Redeploy once* after connecting the store, so the project picks up the new environment variable.
+6. *Test in a browser:* load the Vercel URL. It should bounce straight to the Slido event.
+
+***** Phase C — Point the kiosk at it
+1. In the Hexnode UEM console: *Apps > Web Apps >* edit the Slido web app. Replace the event URL with the permanent Vercel URL. Keep the name generic.
+2. Push/re-associate the kiosk policy to the test iPad.
+3. *Validate the full loop:* confirm the iPad lands on the Slido event. Then change =slidoTarget= in Edge Config to a second test event, reload the iPad, and confirm it follows. That reload-follows-the-change behavior is the whole feature — verify it before trusting it.
+
+--------------
+
+**** Domain options
+The kiosk URL is never seen by attendees, so a branded domain is polish, not a requirement.
+
+| Option           | URL looks like               | Needs                                          | Notes                                    |
+|------------------+------------------------------+------------------------------------------------+------------------------------------------|
+| *Vercel default* | =418-slido.vercel.app=       | Nothing                                        | Works today. Recommended starting point. |
+| *Lupine domain*  | =slido.lupinetechdesign.com= | Mattie's own DNS access                        | No Alex dependency.                      |
+| *418 domain*     | =slido.418productions.com=   | A CNAME record from whoever controls 418's DNS | Cleanest for client-facing polish.       |
+
+*Important reassurance for the 418 option:* adding a subdomain CNAME record does *not* affect email. Email routing is governed by MX records; a subdomain CNAME is a separate record that touches nothing Google Workspace or Microsoft 365 rely on. This is a low-risk ask.
+
+*Practical note:* DNS for the 418 domain may be managed at the registrar rather than in Google Workspace — find out where the nameservers point before asking Alex for anything. Since the ABM (Apple Business Manager) verification also requires a domain TXT record with Alex present, *bundle both DNS asks into one conversation* rather than going back twice.
+
+Start on the Vercel default URL. Migrating to a custom domain later is a Vercel dashboard setting plus one DNS record, and does not require rebuilding anything.
+
+--------------
+
+**** Later: the one-tap swap (v2)
+Once the redirect is proven, the show-day motion can become a single tap instead of a dashboard visit.
+
+*Build it as an Apple Shortcut, not a web app.* Shortcuts does authenticated HTTP requests natively, runs from the iPad Home Screen, needs no hosting, and takes minutes rather than a weekend. Design:
+
+1. Shortcut prompts: "Paste event URL"
+2. Sends an authenticated request that writes the new value
+3. *Reads the value back and displays it for confirmation*
+
+Step 3 is not optional. A write with no read-back, executed in front of a client, is how a show breaks quietly.
+
+*Security constraints:*
+
+- The write credential must never live in anything client-facing
+- Hexnode's own API uses a /single global key for the entire portal/ — if a future version touches the Hexnode API directly rather than Vercel, that key is high-value and must be guarded accordingly
+- Prefer writing to Vercel Edge Config over writing to Hexnode; the blast radius of a leaked credential is one redirect value versus the entire MDM portal
+
+*Rehearsal rule:* swap URLs with the Shortcut cold, twice, on a non-show day before it is ever used in front of a client.
+
+--------------
+
+**** Troubleshooting
+- [ ] Confirm Slido's auth flow behaves correctly when reached via 302 redirect
+- [ ] Decide domain tier (Vercel default is fine for now)
+- [ ] Bundle the 418 DNS ask with the ABM verification TXT record conversation with Alex
+- [ ] Verify whether Hexnode's API exposes web app URL editing, if the v2 Shortcut ever targets Hexnode directly rather than Vercel
+
+** iPad Home Screen Web Clips                             :sequence:418:ipad:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3b956b57701980b988cfcbe5fab00a47
+:CREATED:  [2026-08-11 Tue]
+:END:
+**** Show-Day iPad — Home Screen Web Clips
+
+#+begin_quote
+/no typing URLs or hunting bookmarks while a client watches./
+
+#+end_quote
+
+***** Base sequence (Safari on iPad)
+1. Open Safari and navigate to the target site
+2. Sign in fully, so the saved clip opens to a working session
+3. Tap the *Share* button
+4. Scroll and tap *Add to Home Screen*
+5. Shorten the name to something scannable — long names truncate on the Home Screen
+6. Tap *Add*
+
+***** Per-site differences
+*Hexnode UEM console* — before adding the clip, set desktop mode so it persists: tap *aA* in the address bar > *Website Settings* > toggle *Request Desktop Website* on. The console is built for desktop layouts and the mobile rendering hides controls. Name it =Hexnode=.
+
+*Apple Business Manager* (business.apple.com) — sessions expire fairly aggressively, so expect to re-authenticate rather than land straight in. Keep the ABM credentials in the password manager, not in your head. Name it =ABM=.
+
+*Slido admin* — this is the one that opens in front of clients most often. Add the clip from the /admin/event dashboard/ view rather than the marketing homepage, so it lands where you actually work. Name it =Slido Admin=.
+
+*Vercel dashboard* — until the v2 Shortcut exists, this is the URL-swap tool. Consider adding the clip pointed directly at the Edge Config Items editor rather than the Vercel root, to cut taps. Name it =Event URL=.
+
+*Apple Push Certificates Portal* (identity.apple.com/pushcert) — rarely needed, but needed /urgently/ once a year at APNs (Apple Push Notification service) renewal. Worth a clip so it isn't a scramble. Name it =APNs=.
+
+***** Related iPad practices
+- *Arc for everything non-show.* Keeping Safari exclusively for show operations means no wrong-account confusion under pressure. (Already done.)
+- *Notion for the runbook* — but ensure the show-day runbook is *available offline*. The checklist you need most is the one you need when the venue network is down. (Already planned.)
+- *Out-of-band admin connectivity.* The showrunner iPad must not depend on the same network as the fleet. If venue Wi-Fi fails, that is precisely when console access matters. Use cellular or an iPhone hotspot — and /test that the admin path works while the fleet is on the event SSID/, not just in the shop.
+- *Split View* with the Hexnode console and Slido admin side by side is the show-day cockpit.
+- *Password manager* holding the Hexnode credentials, ABM account, and especially the APNs renewal Apple Account — that last one is an annual task nobody remembers unaided, and losing it means re-enrolling every device.
+
+* Gear
+** Zebra Printers: Multiple Ports Through Flex :sequence:418:office_management:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3a956b57701980ca83e2f8cf8956ea0c
+:CREATED:  [2026-07-26 Sun]
+:END:
+**** Adding Two Network Label Printers to Flex
+- [ ] Prepare each printer
+  - [ ] Load label stock, and ribbon if using thermal transfer
+  - [ ] Connect the printer to the network by Ethernet, or join it to Wi-Fi per the printer's instructions
+  - [ ] Power it on and confirm it shows a ready status
+  - [ ] Press the feed button to calibrate to the loaded label stock
+  - [ ] Write down the printer's MAC address (on a sticker on the unit, or on the config label the feed-hold prints)
+- [ ] Log into the router (Sagemcom RAC2V1S)
+  - [ ] On any device connected to that router's network, open a browser
+  - [ ] Go to http://192.168.1.1
+    - [ ] If that doesn't load, try http://192.168.0.1
+  - [ ] Log in with the admin credentials
+    - [ ] Printed on the sticker on the router
+    - [ ] Factory default is often admin / admin, or admin / password
+- [ ] Pin each printer's local IP so it never changes
+  - [ ] Preferred: DHCP reservation on the router
+    - [ ] Find the printer in the router's client/device list and note its current local IP (e.g. 192.168.1.50)
+    - [ ] Create a DHCP reservation binding the printer's MAC address to that local IP
+  - [ ] Alternative: set a static IP on the printer itself
+    - [ ] Open Zebra Setup Utilities on a computer, OR open the printer's web page in a browser by typing its current local IP (e.g. http://192.168.1.50)
+    - [ ] Go to Print Server, then TCP/IP settings
+    - [ ] Change IP protocol from DHCP to Permanent
+    - [ ] Enter the IP, subnet mask, and gateway, then save
+  - [ ] Reboot the printer and confirm it comes back on the same local IP
+- [ ] Forward a port to each printer (still in the router admin page)
+  - [ ] Open the port forwarding menu
+    - [ ] On the Sagemcom it's usually under Advanced, then Port Forwarding
+    - [ ] May instead be labeled Applications, or Gaming, depending on firmware
+  - [ ] Add a rule for printer 1
+    - [ ] External/public port: 9100
+    - [ ] Internal port: 9100
+    - [ ] Destination/local IP: printer 1's reserved local IP
+    - [ ] Protocol: Both (if it asks TCP or UDP)
+  - [ ] Add a rule for printer 2
+    - [ ] External/public port: 9101
+    - [ ] Internal port: 9100
+    - [ ] Destination/local IP: printer 2's reserved local IP
+    - [ ] Protocol: Both
+  - [ ] Save and apply
+- [ ] Verify each port is reachable from outside the network
+  - [ ] Go to https://www.yougetsignal.com/tools/open-ports/
+  - [ ] Enter the public static IP (the one Spectrum set up) and port 9100
+  - [ ] Confirm the result reads Open
+  - [ ] Repeat for port 9101
+- [ ] Add each printer in Flex
+  - [ ] Log into Flex in a browser
+    - [ ] Address is your company subdomain: https://[418-subdomain].flexrentalsolutions.com
+    - [ ] Confirm the exact subdomain with Alex or from browser history if unsure
+  - [ ] Click the Menu icon, then System Settings, then Printers
+  - [ ] Double-click "Barcode Printer" to edit printer 1
+  - [ ] Click the Plus icon along the bottom to add printer 2 as a New Printer
+  - [ ] For each printer, fill in:
+    - [ ] Name: something descriptive (e.g. ZD411 Small Labels)
+    - [ ] Printer Host Name: the public static IP — the SAME value for both printers
+    - [ ] Raw Port Number: 9100 for printer 1, 9101 for printer 2
+  - [ ] Save
+- [ ] Assign a label template preference for each printer
+  - [ ] Create a printing preference for each template that will print on that printer
+  - [ ] Without a preference, the printer will not appear as a print target
+- [ ] Test each printer
+  - [ ] Open an inventory model or serial unit
+  - [ ] Click the Print Barcode icon along the top
+  - [ ] Double-click a line to set the quantity to 1
+  - [ ] Click OK
+  - [ ] Confirm the label prints on the intended printer
+
+#reference/software #career
+
+** Google WiFi Access Points / Pucks                                 :manual:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3b256b57701980da9483f99c5be74ab9
+:CREATED:  [2026-08-04 Tue]
+:END:
+*** Our units
+- *GJ2CQ Pucks*
+  - the barrel-jack 2020 revision.
+
+*Part 1 — What to actually call them*
+
+There is no marketing name for the variants, but there *are* three distinct hardware revisions of the “Google Wifi” puck, and each has a real model number printed on the underside label. Use those.
+
+| Revision   | Model #                  | FCC ID         | External tells                              |
+|------------+--------------------------+----------------+---------------------------------------------|
+| 1st (2016) | *NLS-1304-25*            | A4RNLS-1304-25 | USB-C power, engraved “G”, 2× GbE           |
+| 2nd (2017) | *AC-1304*                | A4RAC-1304     | USB-C power, otherwise near-identical       |
+| 3rd (2020) | *GJ2CQ* (SKU GA02430-US) | —            | *Barrel* power jack, “G” is a printed label |
+
+The 2nd-gen AC-1304 dropped the Zigbee radio that was embedded in the original NLS-1304-25; the 3rd-gen revision's only notable outside change was migrating from USB-C to a barrel connector. All three are “Google Wifi” — what people call gen1 relative to Nest Wifi (gen2).
+
+*On your button question:* the unit with the hidden/soft button is almost certainly the *GJ2CQ*. There's a well-known thread from someone who couldn't find the button at all on that model — the answer was that on the sticker with the QR code there's a circle right above the words “setup network,” and the button is underneath that circle; you press the circle and feel the button beneath it. The NLS-1304-25 and AC-1304 instead have a discrete button in the recessed port area on the back/side.
+
+So: *“the GJ2CQ pucks”* or *“the barrel-jack 2020 revision.”* Flip one over and read the label to confirm.
+
+*One correction to what you were told:* the two reset procedures aren't model-specific. Google documents both for all of these — hold-while-powered is primary, and unplug, hold the button, plug the power back in while holding for ~10 seconds is the documented /fallback/ when the first doesn't take. You can use either on your GJ2CQs.
+
+*** Part 2 — Troubleshooting
+*Sequence A: get a clean reset first*
+
+Your solid-blue-that-never-pulses is the thing to fix before touching the app.
+
+1. Unplug the two problem pucks. Leave them off 60 seconds.
+2. Hold the membrane button, plug power in while holding, keep holding ~15 s past power-on. Release when it flashes blue.
+3. *Now walk away for 15 minutes.* This is the big one. The pucks take about 5 minutes to actually be ready after a factory reset, but they show a blue light after about a minute — which is a lie, and falling for it just slows you down. Google's own docs also say the reset itself can take up to 10 minutes.
+4. Watch the pattern at the 15-minute mark:
+   - *Pulsing/breathing blue* → ready, go to Sequence B.
+   - *Solid blue cycling on ~23 s, off 1–2 s, repeating* → that's a boot loop, not a reset. See the note at the bottom.
+
+*Sequence B: the QR-scan / direct-Wi-Fi handoff*
+
+Run this with *only one un-provisioned puck powered on at a time.* The setup program auto-connects to the first unconfigured puck it detects and rarely lets you choose between two, so when you scan the QR code it complains it's the wrong one. If both of your problem pucks have been plugged in simultaneously, that alone could explain the failures.
+
+1. Physically move the puck to within a few feet of the primary. During setup the two pucks must link over Wi-Fi, which refuses to work unless the signal is very strong — you can relocate it afterward and it'll report good-to-excellent.
+2. Unplug the /working satellite/ temporarily. It reduces contention and removes one more thing for the app to latch onto.
+3. On the iPhone, before scanning:
+   - Bluetooth *on* (initial handshake is BLE, not Wi-Fi)
+   - Settings → Google Home → *Local Network* enabled
+   - Turn *Airplane-mode-off but cellular data off*, so the phone can't bail to LTE mid-handoff
+   - Join your primary's SSID, then Settings → Wi-Fi → (i) → *Private Wi-Fi Address off*
+4. Force-quit and reopen Google Home. Scan.
+5. If the scan resolves but the Wi-Fi join stalls: iOS sometimes silently declines the setup SSID. Manually check Settings → Wi-Fi for a network beginning with setup or the puck's name and join it by hand, then return to Home.
+6. If the QR won't take at all, use the *manual setup key* on the label instead of the camera.
+
+*Sequence C: fallbacks*
+
+- *Wired*: plug the point into a LAN port on the primary before adding it. Sometimes gets past a flaky wireless handshake.
+- *Different phone*, ideally Android. The iOS Home app setup path for these older pucks is meaningfully flakier and this is worth 10 minutes before you write a unit off.
+- *New Wi-Fi network test*: set the problem puck up as a /primary/ on a throwaway network. If it can create a network, the radio and flash are fine and the issue is the add-a-point flow. If it can't, it's the unit.
+
+*The unhappy possibility*
+
+If a puck boot-loops on solid blue after a proper reset and 15-minute wait, that's usually eMMC failure — the 4 GB flash module in these has a known wear-out failure mode, and it's the most common way old Google Wifi and OnHub units die. There's no field fix. Given you got four used units and two came up clean, two dead-flash pucks is entirely plausible. Run Sequence B once properly before concluding that, though — the one-at-a-time rule and the 15-minute wait resolve a surprising number of these.
+
+** Sli-Pad Powered USB Hub                 :tech_sheet:418:ipad:configurator:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3b956b577019800499d0ca99c3d29ea4
+:CREATED:  [2026-08-11 Tue]
+:END:
+/(Blank page in Notion.)/
+
+** Hacking Peloton & Running Youtube             :sequence:personal:software:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3ec56b5770198027b842c42949fc603c
+:CREATED:  [2026-10-01 Thu]
+:END:
+*** Notes
+**** OpenPelo
+OpenPelo is about as easy as the manual route, and it gives you a better chance of success for three reasons:
+
+- It bundles ADB, so you install nothing yourself. ADB setup is handled automatically, and it walks you through enabling developer mode.
+- It knows which app builds fit your tablet.
+- It includes Peloton-specific prep steps that the generic guides leave out.
+
+Use the Mac rather than a warehouse PC. Windows usually needs a separate ADB USB driver before it will see the tablet. macOS doesn't.
+
+*YouTube app: SkyTube Legacy, with NewPipe as a backup.* Your tablet is the original Bike's Gen 3 screen, and PLTN-RB1VQ runs Android 7.0. That rules out a few options:
+
+- Peloton has no Google services, so the stock YouTube app won't work.
+- The Firefox build OpenPelo offers for older tablets is from 2020. Current youtube.com runs poorly in a browser that old.
+- LibreTube needs a newer Android.
+- OpenPelo's catalog lists SkyTubeLegacy as a YouTube client for Gen 1, no Google account required. In OpenPelo, "Gen 1" means older 32-bit tablets like yours.
+
+You won't be logging in with this route. Subscriptions can be imported into SkyTube later if you want them.
+
+--------------
+
+**** What to bring
+- MacBook with internet access
+- A data-capable USB cable for each possible port on the tablet. Bring a *USB-C to USB-C* cable and a *USB-C to micro-USB* cable. OpenPelo's Peloton instructions say plug your computer into the Peloton using a micro USB-B cable, so your tablet may expect micro-USB rather than the USB-C port you spotted. Phone charging cables are often power-only, so use cables you know carry data.
+- Wi-Fi or ethernet for the bike
+
+*** Install
+**** ✅ Part 1: Prepare the Mac (5 min, can be done at home)
+1. Go to *github.com/doudar/Openpelo/releases* and open the latest release at the top. It was v1.0.69 when I checked.
+
+2. Under *Assets*, download the macOS zip. Pick the Apple Silicon build for an M-series Mac or the Intel build for an Intel Mac.
+
+3. Unzip it and move =OpenPelo= to your Desktop.
+
+4. Clear Gatekeeper's quarantine, because the app is unsigned. In Terminal, run:\\
+   If you prefer the GUI: double-click the app, dismiss the warning, then go to *System Settings → Privacy & Security* and click *Open Anyway*.
+
+   #+begin_src text
+   xattr -dr com.apple.quarantine ~/Desktop/OpenPelo*chmod +x ~/Desktop/OpenPelo
+   #+end_src
+
+5. Launch it once to confirm it opens, then quit.
+
+**** □ Part 2a: Clean the Bike
+- Do it
+
+**** □ Part 2: Prepare the tablet (15–20 min)
+These steps follow OpenPelo's Peloton sequence. Step 2 is a firmware reset, which wipes the tablet back to factory state. Since there's no subscription, there's nothing on it to lose.
+
+1. *Check the sensor cable.* Make sure the cable from the bike into the tablet is plugged in.
+2. *Power Check.* See if we even boot up.
+3. *Firmware reset.* Open *Settings → System → Firmware Reset* and confirm.
+4. *Initial setup.* After the reboot, connect to Wi-Fi and go through setup. When asked about home installation, choose *Skip Home Installation*. Don't sign in to a Peloton account.
+5. *Enable developer options.* Go to *Settings → Device Preferences* (on some builds it's *System → About tablet*). Tap *Build number* 7 times quickly, until you see "You are now a developer."
+6. *Turn on USB debugging.* Go back to Settings, open *Developer options*, turn on *USB debugging*, and turn off *Verify apps over USB* if it's there.
+7. *Force-stop Device Management.* Go to *Settings → Apps*, open the menu in the top right, and choose *Show system*. Find the Peloton-logo app named *Device Management* and tap *Force stop*. If you skip this, it can block or undo the install.
+
+**** □ Part 3: Connect and install (10 min)
+1. Launch OpenPelo on the Mac.
+2. Plug the tablet into the Mac.
+   - Try the USB-C port you identified first.
+   - If OpenPelo still says "No device detected" after about 20 seconds and a click on *Refresh*, switch to the micro-USB port and cable.
+3. A prompt appears on the tablet: "Allow USB debugging?" Check *Always allow from this computer* and tap *Allow*.
+4. Wait until OpenPelo shows *✅ Device connected*.
+5. Select these apps:
+   - *SkyTubeLegacy*, the YouTube client
+   - *Lawnchair Launcher Gen 1*, which gives you a home screen for opening apps
+   - *NewPipe Legacy*, as the backup client
+6. Click *Install Selected Apps*. Wait for every item to report success in the log panel.
+7. In OpenPelo's device tools, set *Lawnchair* as the *default launcher*. This makes the tablet boot into a normal Android home screen instead of Peloton's.
+
+**** □ Part 4: First run (5 min)
+1. Unplug the cable and press the tablet's home or power button, or reboot it. You should land on Lawnchair.
+2. To get landscape orientation, long-press the home screen and go to *Home settings → Behavior → Screen rotation*. Turn on rotation or lock it to landscape.
+3. Open *SkyTube*, search for a spin class, and play it.
+4. Ride, using the physical resistance knob.
+
+*** Troubleshoot
+- *The device isn't detected on either port.* Swap cables first, since a charge-only cable is the most common cause. Then turn USB debugging off and back on, and replug.
+- *SkyTube installs but videos won't load.* Open *NewPipe* instead. If neither plays, tell me and I'll walk you through installing a current NewPipe release by hand. Current NewPipe still supports Android 7 and gets fixed quickly when YouTube changes something.
+- *Your apps or Lawnchair disappear after a reboot or overnight.* Device Management or a Peloton update undid the setup. Repeat Part 2 step 6, then reconnect and reinstall in OpenPelo. You won't need to repeat the firmware reset.
+
+Sources:
+
+- [[https://github.com/doudar/openpelo][OpenPelo – GitHub README]]
+- [[https://raw.githubusercontent.com/doudar/Openpelo/main/usb_debug_steps.json][OpenPelo – Peloton USB debug steps]]
+- [[https://raw.githubusercontent.com/doudar/Openpelo/main/apps_config.json][OpenPelo – app catalog]]
+- [[https://github.com/doudar/Openpelo/releases][OpenPelo – releases]]
+- [[https://wellfitinsider.com/peloton/peloton-bike-generations/][wellfitinsider.com – Peloton tablet generations]]
+- [[https://fitswitch.io/blogs/learn/peloton-developer-mode][fitswitch.io – Developer mode / no Google services]]
+
+** 418 Show Printers Setup                         :sequence:418:credentials:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/40956b5770198083871afa46f0004e7b
+:CREATED:  [2026-10-30 Fri]
+:END:
+*** Reference
+**** Printers
+- Color LaserJet Pro MFP 4301fdw
+- Login
+  - Keeping PIN Number from Print Cartridge Loader
+- Network (Primary Ethernet)
+  - IP address: =10.41.8.10=
+  - Subnet mask: =255.255.255.0=
+  - Gateway: =10.41.8.1=
+  - DNS (if asked): =10.41.8.1=
+- Disabled WiFi
+- Disabled Auto Shutdown & Maxxed sleep timer at 60 min
+
+**** Routers
+***** Unit 1
+- GL-iNet
+  - GL-A1300
+- Login
+  - Admin Password
+    - Redondo4!88!4
+  - SSID
+    - Tallen-Print-HP-01
+  - User Password
+    - mapletigercloud47
+- LAN
+  - *Router IP*
+    - =10.41.8.1=
+  - DHCP Range
+    - 10.41.8.100 - 10.41.8.249
+      - Automatically Assigned based on Router IP
+
+*** Setup Procedure
+***** 1. Log in
+1. Open a browser and go to *http://192.168.8.1*
+2. If the router is fresh out of the box: pick a language, then *set the admin password*. This is the password for the whole kit fleet, so save it somewhere the team can find it.
+3. If it isn't fresh and you don't know the password, hold the reset button about 10 seconds until the LED flashes, wait for it to reboot, and start this step again.
+
+***** 2. Connect the WAN (for the firmware update)
+1. Run a cable from a warehouse network jack to the router's *WAN* port, the one set apart from the two LAN ports.
+2. In the left menu, click *Internet*. The Ethernet section should show it *connected via DHCP*. That's the default, so leave it as is.
+
+***** 3. Update the firmware
+1. Go to *System → Upgrade*.
+2. Click *Online Upgrade* and install whatever it offers.
+   - If there's no warehouse jack: download the GL-A1300 firmware from GL.iNet's download site on another connection and use *Local Upgrade* to upload it.
+3. Wait for the reboot (a few minutes) and log back in at *http://192.168.8.1*
+
+***** 4. Confirm Router mode
+1. Go to *Network → Network Mode*.
+2. Make sure *Router* is selected. Don't use AP, Extender or WDS.
+
+***** 5. Set up Wi-Fi
+1. Go to *Wireless*.
+2. *5 GHz* → *Modify*:
+   - SSID: =418-PRINT-01=
+   - Security: *WPA2-PSK*
+   - Password: something short and easy to read off a card
+   - Look for *AP Isolation* in this panel. If it's there, make sure it's *off*.
+   - Apply
+3. *2.4 GHz* → *Modify* → the *exact same* SSID, security and password → Apply.
+4. *Guest Wi-Fi* → make sure it's *disabled* on both bands.
+
+***** 6. Turn off extras
+Under *Applications* and *VPN*, make sure AdGuard Home, any VPN client/server, and parental controls are *off*. They're off by default, so this is just a check.
+
+***** 7. Change the LAN subnet (do this last)
+1. Go to *Network → LAN*.
+2. Set *Router IP* to =10.41.8.1=.
+3. Set the *DHCP range* to start at =10.41.8.100= and end at =10.41.8.200=.
+4. Apply. Your browser will lose the router at this point; that's expected.
+
+***** 8. Reconnect
+1. Unplug the dongle's network cable and plug it back in. That gets your Mac a new =10.41.8.x= address.
+   - If that doesn't work: *System Settings → Network → (your Ethernet adapter) → Details → TCP/IP → Renew DHCP Lease*.
+2. Go to *http://10.41.8.1* and log in.
+
+***** 9. Plug in the printer
+1. Connect the printer's Ethernet port to the router's *other LAN port*.
+2. Power the printer on.
+3. Check *Clients* in the router UI. The printer should appear with a =10.41.8.1xx= address. Use that address to reach the printer's web page for its own setup, where you'll set its static IP to =10.41.8.10=.
+
+**** Printer (4301fdw) config
+****** 0. Before you start
+- The printer's Ethernet cable is in the router's *other LAN port*, and your Mac is on the first one.
+- The router's *WAN* is still plugged into the warehouse jack. The printer gets internet through the router, and it needs that for the firmware update.
+- *Find the default PIN:* the printer's default PIN is printed on a sticker inside the front door, and you'll use it to log in when the web interface asks. [[https://kaas.hpcloud.hp.com/pdf-public/pdf_2963110_en-US-1.pdf][hp]]
+
+****** 1. Open the printer's web interface
+1. On the printer screen: touch the Menu icon, then Info, then Connectivity to see its IP address. It will be a =10.41.8.1xx= address. [[https://www.manualowl.com/m/Hewlett-Packard/Color-LaserJet-Pro-MFP-4301-4303dw/Manual/701296?page=86][manualowl]]
+2. On your Mac, open =https://<that IP>=.
+3. When the browser warns the site isn't safe, choose Advanced and continue; it's just the printer's self-signed certificate. [[https://www.manualowl.com/m/Hewlett-Packard/Color-LaserJet-Pro-MFP-4301-4303dw/Manual/701296?page=86][manualowl]]
+4. Log in with the PIN from the sticker.
+
+****** 2. Update the firmware
+1. In the left menu, expand General and click Firmware Update. [[https://support.hp.com/au-en/document/ish_7582388-7582482-16][hp]]
+2. Check for updates and install whatever it finds. The printer will restart.
+3. Log back in and *check again*. Repeat until it says the printer is up to date.
+   - From the printer screen instead: Menu → Settings → Printer Update → Firmware → Check.
+
+****** 3. Set the firmware update behavior
+1. On the printer screen, go to *Menu → Settings → Printer Update → Allow Updates*.
+2. The three choices for this printer are Auto Update, Notify, and Do Not Check. Pick *Notify* or *Do Not Check*. [[https://mycartridge.com/blogs/news/how-to-turn-off-hp-printer-firmware-updates][mycartridge]]
+
+****** 4. Replace the PIN with an admin password
+1. In the web interface, go to *Security*.
+2. Find the *Access Control* / admin password setting. That's where the guide says to add an admin password for the web interface. [[https://www.manualowl.com/m/Hewlett-Packard/Color-LaserJet-Pro-MFP-4301-4303dw/Manual/701296?page=85][manualowl]]
+3. Generate the password and save it in the same vault entry as the router admin password, or a sibling entry next to it.
+
+****** 5. Set the host name
+1. Go to Network → Network Settings → Identification. [[https://www.manualowl.com/m/Hewlett-Packard/Color-LaserJet-Pro-MFP-4301-4303dw/Manual/701296?page=86][manualowl]]
+2. Set *Host Name* to =418-PRINT-01=. If there's a Bonjour or service name field, set it the same.
+3. Apply.
+
+****** 6. Set the protocol to IPv4 only
+1. Go to *Network → Network Settings → IP Settings*, the page you found.
+2. The Protocols drop-down offers “IPv4 Only” or “Both IPv4 and IPv6”. Pick *IPv4 Only*. [[https://kaas.hpcloud.hp.com/pdf-public/pdf_7649962_en-US-1.pdf][hp]]
+3. Apply.
+
+****** 7. Set the static IP
+1. Go to Network → Primary Ethernet → IP Config → IPv4 Configuration. On your unit it may just say *Ethernet*. [[https://h30434.www3.hp.com/t5/Printer-Wireless-Networking-Internet/HP-laserjet-3301-fdw-goes-offline/td-p/9553370][hp]]
+2. Change the drop-down to Manual and enter the address, subnet mask and default gateway: [[https://h30434.www3.hp.com/t5/Printer-Wireless-Networking-Internet/HP-laserjet-3301-fdw-goes-offline/td-p/9553370][hp]]
+   - IP address: =10.41.8.10=
+   - Subnet mask: =255.255.255.0=
+   - Gateway: =10.41.8.1=
+   - DNS (if asked): =10.41.8.1=
+3. Apply. The current page will stop responding; wait a couple of minutes and open a new one at [[https://10.41.8.10/][*https://10.41.8.10*]]. [[https://h30434.www3.hp.com/t5/Printer-Wireless-Networking-Internet/HP-laserjet-3301-fdw-goes-offline/td-p/9553370][hp]]
+
+If you can't find it in the web interface, use the printer screen: Menu → Settings → Network → Ethernet, then *IPv4 → Manual*, and enter the same values. [[https://www.manualowl.com/m/Hewlett-Packard/Color-LaserJet-Pro-MFP-4301-4303dw/Manual/701296?page=86][manualowl]]
+
+****** 8. Check the print protocols
+1. Go to *Network → Advanced Settings*.
+2. Make sure these are *on*:
+   - AirPrint
+   - Bonjour / mDNS
+   - IPP (and IPPS if listed)
+   - WSD / Web Services Print & Discovery
+   - Port 9100 (Raw / JetDirect)
+   - Mopria is covered by IPP. If it has its own toggle, turn it on.
+
+****** 9. Turn off the radios
+1. *Network → Wi-Fi* → turn *off*.
+2. *Network → Wi-Fi Direct* → turn *off*.
+
+****** 10. Set the Bonjour Service Name
+1. In the printer's web page, look for a *Bonjour* or *Network Identification* section under Network. The Host Name you set earlier is a separate field from the Bonjour Service Name.
+2. Set *Bonjour Service Name* to =418-PRINT-01=.
+3. Apply, then *reload the page and confirm the name stuck*. Some HP users report it reverting on the first Apply and sticking on the second, so apply again if it reverted.
+4. Restart the printer and check once more.
+
+****** 11. Turn off WSD
+1. Go to *Network → Advanced Settings*.
+2. Turn *off* WSD / Web Services Print and Web Services Discovery.
+3. Leave *IPP, Bonjour, AirPrint and 9100 on*. Windows needs those to find and add the printer.
+
+****** 12. Power settings
+On the printer screen, go to *Menu → Settings* and find the energy settings. The guide lists Sleep Mode, Shutdown Mode, and Disable Shutdown settings. [[https://kaas.hpcloud.hp.com/pdf-public/pdf_2963110_en-US-1.pdf][hp]]
+
+- Leave *Sleep* as is.
+- Turn on *Disable Shutdown*, or set the shutdown timer to never.
+
+****** 11. Verify
+1. Power-cycle the printer.
+2. Check *Menu → Info → Connectivity*. It should show =10.41.8.10= and =418-PRINT-01=.
+3. Move on to the ThinkPad test from before: standard user, with and without the WAN connected.
+
+**** Client steps
+1. Join Wi-Fi *418-PRINT-01*, password ____. A Wi-Fi QR code on the card covers phones.
+2. *Mac:* File → Print → add =418-PRINT-01= (AirPrint).
+3. *Windows:* Settings → Bluetooth & devices → Printers & scanners → Add device → =418-PRINT-01=.
+   - If it doesn't show up: Add manually → “Add a printer using an IP address or hostname” → Device type *IPP Device* → =10.41.8.10=.
+
+***** Testing with the ThinkPad
+1. *No WAN connected:* join the Wi-Fi, add the printer, and print. Do this *as a standard (non-admin) user* to mimic a client machine.
+2. *WAN connected* to a warehouse jack: confirm the ThinkPad gets internet and can still print.
+3. *Both add paths:* test auto-discovery and the manual IPP-by-IP fallback, so you know the card's backup step works.
+4. *Power-cycle the whole kit:* confirm the printer comes back at =10.41.8.10= and the ThinkPad prints again without being re-added.
+
+***** 10. Back up the config (after the printer is done and tested)
+1. Go to *System → Advanced Settings* to open LuCI. Log in as =root= with the admin password.
+2. Go to *System → Backup / Flash Firmware → Generate archive*.
+3. Save the file as something like =418-print-kit-router.tar.gz=. You'll restore this onto the other routers and then change only the SSID number on each.
+
+When you get to the printer side, I can lay out that sequence the same way.
+
+* Software
+** OneDrive Frozen Clones Workbench Readme :reference:418:frozen_clones:software:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3ab56b57701980a290e2e734a76142fc
+:CREATED:  [2026-07-28 Tue]
+:END:
+[2026-07-28 Tue]
+*** Frozen Clones Workbench: Backup
+/Updated: 07-28-2026/
+
+/Created: 07-28-2026/
+
+**** 418-application-installers
+- Applications that we want installed on each laptop
+- Current
+  - Adobe Acrobat Reader
+  - MS-Teams
+  - Blackmagic Atem Switcher 10.2.1
+  - Blackmagic HyperDeck 9.0.2
+  - Blackmagic Streaming 4.2.3
+  - Google Chrome Enterprise 64-bit
+  - LocalSend
+    - No setup local filesharing application
+    - Completely free, no adds or bloat
+    - Trusted
+  - NVIDIA Control Panel Installer
+    - Was required by the Lenovos, and to be installed after drivers
+  - VLC 3.0.23 32-bit
+  - Zoom
+- Drivers
+
+** Microsoft Account Outlook Setup                       :sequence:418:email:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3b256b5770198071a7effad2a8a1cb9e
+:CREATED:  [2026-08-04 Tue]
+:END:
+*1. License the account* M365 admin center → Users → your account → Licenses & apps → assign Business Premium/Standard. Confirm the Exchange Online service plan is checked, not just the bundle.
+
+*2. Confirm mailbox provisioned* admin.exchange.microsoft.com → Recipients → Mailboxes. Takes ~15 min after licensing, sometimes up to an hour.
+
+*3. Verify domain health* M365 admin → Settings → Domains → 418productions.com should read “Healthy.” The three that matter:
+
+- MX → 418productions-com.mail.protection.outlook.com
+- CNAME autodiscover → autodiscover.outlook.com (this is what makes client setup one-click)
+- SPF TXT including spf.protection.outlook.com
+
+*4. Check UPN = primary SMTP* If they've drifted apart, autodiscover gets flaky and you'll hit token weirdness on sign-in. Fix before touching a client.
+
+*5. Register MFA before first client sign-in* If security defaults or a CA policy is on, you'll be forced into enrollment mid-setup anyway. Get Authenticator registered from a browser session first — cleaner than doing it from a phone mail client.
+
+*6. Check Conditional Access won't block you* If you've got a compliant-device or app-protection policy scoped to all users, the device you're setting Outlook up on needs to be enrolled and compliant first, or you'll get an opaque block.
+
+*7. Add the account* Outlook desktop / new Outlook / mobile → sign in with UPN → autodiscover does the rest.
+
+One flag worth raising given the role you're stepping into: Microsoft's guidance is that Global Admin accounts stay cloud-only, unlicensed, mailbox-free, and get used only when you're doing admin work. If this account is going to be your daily email, the cleaner setup is a licensed mattie@418productions.com for normal use plus a separate GA account you elevate into — with a break-glass GA excluded from CA policies and stored offline.
+
+** Migrating Email from Zoho to Fastmail          :sequence:ltd:email:vercel:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3ec56b577019800884becf1fb52f180d
+:CREATED:  [2026-10-01 Thu]
+:END:
+1. *Start the Fastmail trial.* Sign up for Individual with a temporary @fastmail.com login.
+2. *Add your domain in Fastmail.* In Settings → Domains, add =lupinetechdesign.com= and choose to manage DNS yourself. Fastmail will show the exact records to create. Don't touch DNS yet.
+3. *Recreate your address and aliases.* Set your main =@lupinetechdesign.com= address as your identity and add the 3 aliases.
+4. *Prep Zoho for export.* Turn on IMAP access in Zoho's mail settings, and create an app-specific password if you use 2FA.
+5. *First import.* In Fastmail, go to Settings → Migration → Import, choose IMAP, use server =imap.zoho.com=, and enter your Zoho login and that password. This copies all existing mail and your folder structure while Zoho is still receiving.
+6. *Cut over DNS at Vercel.* This is the actual switch:
+   - Delete Zoho's MX records and Zoho's SPF TXT record.
+   - Add Fastmail's two MX records, its SPF TXT record, and the three DKIM CNAMEs (=fm1=, =fm2=, =fm3._domainkey=), copied exactly from Fastmail's domain page.
+   - Wait for Fastmail's domain page to show the records as verified.
+7. *Send a test.* From an outside account (Gmail, say), send mail to your main address and to each alias, and confirm it all lands in Fastmail. Then reply from Fastmail to confirm sending works.
+8. *Second import.* Run the Zoho import once more to catch anything that arrived in Zoho during the switch. Fastmail skips duplicates.
+9. *Set up your clients.* Use =imap.fastmail.com= and =smtp.fastmail.com=, with an app password created in Fastmail's Settings → Privacy & Security.
+10. *Let Zoho expire.* Don't cancel early. It's your rollback until you're sure about Fastmail.
+
+** FLEX5: Serialized (itemized) Case Creation Version B  :sequence:418:flex5:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3ed56b5770198086924dea193c69ec69
+:CREATED:  [2026-10-02 Fri]
+:END:
+*** Start once per case
+1. Click the *Content Builder - 03882* tab. If it closed, go to *Warehouse* → *Content Builder* and scan the case label.
+2. Scan the camera. It already has a unit and a label, so it goes straight in.
+
+*** Repeat for each item you pull out of the case
+1. *Does the model exist?* Search the item's name. The viewfinder, focus demand and zoom demand already exist. Batteries, power, cables and lens may not.
+   - If there's no model, use *Inventory* menu → *New Inventory Model*. Pick a group, choose the *Serialized Model* preset, and click *OK*.
+2. *Add the unit.* On the model, go to *Serial Units* → *Add New Serial Unit*. Enter the manufacturer serial, leave *Barcode* blank, set *Location*, and click *ADD*.
+3. *Print the label.* Check the new unit's line, click *Print Barcode* in the bottom bar, set the quantity to 1, and click *OK*. Stick the label on the item.
+4. *Scan it into the case.* Switch back to the *Content Builder - 03882* tab and scan the new label. Without a scanner, type the barcode into the input box.
+5. *Check it landed.* The item should now show in the case's contents list.
+6. Put the item back in the foam and grab the next one.
+
+*** Finish the case
+1. When the case is physically empty of unlabeled items, check that the Content Builder list matches what's in the foam.
+2. Scan the case label to close it.
+
+*** Your first pass: the viewfinder
+1. Go to the *Blackmagic Design 7" URS...* tab. That's the model, and it's already open.
+2. *Serial Units* → *Add New Serial Unit* → enter the serial from the viewfinder → *ADD*.
+3. Print its label and stick it on.
+4. In *Content Builder - 03882*, scan it.
+
+Then do the same with the focus demand and the zoom demand.
+
+For *case 2*, run the same loop starting with that case's label. Anything the kit lists that isn't physically in case 2 goes on its missing list. Write those down as you go rather than trying to work them out afterward.
+
+** FLEX5: Serialized (itemized) Case Creation (1)        :sequence:418:flex5:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3ed56b577019801fa515ce8ec452b4d7
+:CREATED:  [2026-10-02 Fri]
+:END:
+**** Add a unit to inventory (once per physical item)
+1. Find the model in the inventory tree or search, and open it.
+2. Go to the *Serial Units* tab and click *Add New Serial Unit*.
+3. Fill in the fields:
+   - *Serial Number*: the manufacturer's number from the item.
+   - *Barcode*: leave it blank and Flex generates one.
+   - *Location*: your location.
+   - *Resource Type*: Rental.
+   - *Quantity*: 1.
+   - Optional: *Stencil*, purchase date and cost.
+
+   /[Image in Notion: Screenshot_2026-10-01_at_6.18.13_pm.png]/
+4. Click *ADD*.
+
+If the item has no model at all, create it first: *Inventory* menu → *New Inventory Model*. Put it in the group *Video > Cameras > Blackmagic Camera Kit*, choose the *Serialized Model* preset, and click *OK*. Then come back to step A.
+
+**** Print and apply the label
+1. On the model's *Serial Units* tab, select the new unit and click the *Print Barcode* icon in the bottom bar. You can also open the unit and use the icon at the top.
+2. In the dialog, double-click the line to set the quantity to 1, then click *OK*.
+3. Stick the label on the item.
+4. Scan the label once to confirm it brings up the right unit.
+
+**** Build the case (after every item in that case has a unit and a label)
+1. Go to *Warehouse* → *Content Builder* and scan the case barcode. Scanning the case barcode from the main barcode box also opens it.
+2. Scan each item that goes in the case.
+3. Check the list. If the case model has storage requirements, Content Builder shows required vs. scanned quantities.
+4. Scan the case barcode again to close it.
+
+**** Find what's missing
+The best reference list you already have is the *Blackmagic Camera Kit (00409)* model's Contents. Compare each case against it:
+
+| Kit item (00409 contents)                              | Qty    | Has a model barcode |
+|--------------------------------------------------------+--------+---------------------|
+| Blackmagic URSA G2 Camera                              | 1      | 03723               |
+| Blackmagic Design 7" URSA Studio Viewfinder G2         | 1      | 00512               |
+| Blackmagic Design Zoom Demand                          | 1      | 00514               |
+| Blackmagic Design Focus Demand                         | 1      | 00513               |
+| Teris TS150CF-Q Fluid Head & Tripod Kit (Carbon Fiber) | 1      | —                 |
+| Teris ... Control Arm                                  | 2      | —                 |
+| DexStand Camera Stand / Stand Bag / Stand Skirt        | 1 each | —                 |
+| 3'x3' Stage Platform                                   | 1      | —                 |
+
+The tripod, DexStand pieces and platform probably travel outside the case. That means the case list is the first four items plus anything that physically lives in the foam: batteries, power supply, lens, cables, cards. Physically open each case and write down what's actually in it. Then:
+
+- Anything the kit calls for that isn't in the case is a missing item.
+- Anything in the case that has no model in Flex needs step A (with a new model) before step C.
+
+**** Worked example: 7" URSA Studio Viewfinder G2
+1. *Model:* *Blackmagic Design 7" URSA Studio Viewfinder G2* already exists in *Video > Cameras > Blackmagic Camera Kit*. Its model barcode is *00512* and it's set as a Serialized Model, so you don't need to create anything.
+2. *Add the unit:* open the model, go to *Serial Units*, and click *Add New Serial Unit*.
+   - *Serial Number:* the number on the viewfinder's rating label.
+   - *Barcode:* leave blank.
+   - *Location:* your location.
+   - *Resource Type:* Rental.
+   - *Quantity:* 1.
+   - Click *ADD*. Flex shows the unit's new barcode in the grid. This is the unit's own barcode, not 00512.
+3. *Label:* select that unit, click *Print Barcode*, set the quantity to 1, and click *OK*. Stick the label somewhere it stays visible when the viewfinder is mounted or packed in foam, then scan it to confirm.
+4. *Into the case:* once the case model is set to Serialized Storage, go to *Content Builder*. Scan the case 1 barcode, then the viewfinder's new unit barcode, then the camera, the zoom demand, and the focus demand.
+5. *Case 2:* if there's a second viewfinder, repeat steps 2 and 3 for it before building case 2. If there isn't one, the viewfinder goes on case 2's missing list.
+
+A note on the barcodes: 00512, 00513 and 00514 are model barcodes, not unit barcodes. If a label with one of those numbers is ever stuck on a physical item, it would scan as the model rather than as that specific unit. Make sure each physical item gets its own unit label.
+
+Sources:
+
+- [[https://helpcenter.flexrentalsolutions.com/hc/en-us/articles/360050440334-Adding-and-Editing-Inventory-Models][Adding and Editing Serial Units]] (same Inventory article set)
+- [[https://helpcenter.flexrentalsolutions.com/hc/en-us/articles/12053032516503-Containers-and-Packages][Containers and Packages]]
+- [[https://helpcenter.flexrentalsolutions.com/hc/en-us/articles/7409126539031-Content-Builder][Content Builder]]
+- Structure / Availability Settings (Flex Manual – Inventory)
+- Barcode Printer Setup (Flex Manual – Barcoding and RFID)
+
+* AI Docs
+** 418 Productions — "Operation Deep Freeze" — Job Summary, Imaging Process, and Open Issues :context:418:ltd:claude:frozen_clones:
+:PROPERTIES:
+:NOTION:   https://app.notion.com/p/3a656b57701980ca86a4e954bfdfe000
+:CREATED:  [2026-07-23 Thu]
+:END:
+[2026-07-22 Wed]
+/Status document as of 2026-07-22. Written as a standalone context handoff — no external vault or tooling required./
+
+--------------
+
+**** 1. THE JOB
+*Client:* 418 Productions (corporate AV company, Gardena CA). Contact: Alex Triana.\\
+*Contractor:* Mattie Aran / Lupine Tech Design.
+
+418 runs a fleet of roughly *45 Windows laptops* used by AV techs on corporate event/production gigs. The machines are effectively *kiosks*: each gig, a tech picks one up, uses it (PowerPoint, Zoom/Teams, media playback, device control over ethernet), and returns it. They need to be identical, predictable, and quickly restorable to a known-good state.
+
+*The original approach was Intune/Autopilot (MDM).* It was abandoned because:
+
+- Resets required hands-on attention and waited on cloud syncs.
+- Resets could fail mid-cycle or fire at the wrong time.
+- The admin interface was too complex for the client's office staff.
+- It was designed for always-online managed office endpoints, not offline gig kiosks.
+
+*The replacement — "Operation Deep Freeze":* a DIY, offline, deep-freeze reset-to-baseline system built entirely on free Microsoft tooling (Windows ADK/WinPE, DISM, bcdedit). Each laptop stores its own master image locally on a hidden partition and can be wiped and restored to pristine on command — offline, deterministic, ~15–25 minutes, no per-seat cost, no MDM dependency.
+
+*Two hardware variants* (= two image profiles):
+
+1. *Dell* (variant 1) — reference machine built and proven.
+2. *Lenovo ThinkPad* (variant 2) — reference machine built and proven.
+
+*Current phase:* fleet rollout. *~11 machines successfully provisioned* at time of writing. Moving well.
+
+--------------
+
+**** 2. HOW THE SYSTEM WORKS
+Each laptop's disk is partitioned as:
+
+| Partition | Size      | Purpose                                 |
+|-----------+-----------+-----------------------------------------|
+| EFI (ESP) | 260 MB    | Boot files (FAT32)                      |
+| MSR       | 16 MB     | Reserved                                |
+| OS        | remainder | Windows, label =OS=                     |
+| RESET     | ~45 GB    | Hidden payload partition, label =RESET= |
+
+The *RESET partition* holds three things:
+
+- =baseline.wim= — the golden master image (~29.7 GB on Dell)
+- =winpe.wim= — the auto-run WinPE that performs the reset (~356 MB)
+- =Boot\boot.sdi= — the ramdisk descriptor
+
+A *BCD boot entry* ("Reset to Baseline") ramboots =winpe.wim= from the RESET partition. That WinPE's =startnet.cmd= calls =reset.cmd=, which formats the OS volume, re-applies =baseline.wim=, rewrites boot files with =bcdboot=, logs, and reboots into a pristine machine.
+
+*To trigger a reset* (elevated *cmd*, not PowerShell):
+
+#+begin_src text
+bcdedit /bootsequence {reset-guid}
+shutdown /r /t 0
+#+end_src
+
+=/bootsequence= is a one-shot next-boot-only override — it does not change normal boot behavior.
+
+--------------
+
+**** 3. VOCABULARY
+*Two computers:*
+
+- *WORKBENCH* — separate x64 Windows PC with the Windows ADK installed. Builds WinPE media, stores master images. Never wiped.
+- *TARGET* — the laptop being imaged.
+
+*USB sticks (always referred to by these names, physically labeled and color-coded):*
+
+| Name                  | Color        | Role                                                                                                                                                                            | Bootable? |
+|-----------------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------|
+| *WIN-INSTALLER-STICK* | Green        | Windows 11 install media (Media Creation Tool)                                                                                                                                  | Yes       |
+| *X-BOOT-STICK*        | Red          | Interactive WinPE — boots to bare =X:\>=, does nothing on its own. Capture + rescue + provisioning. *SAFE.*                                                                   | Yes       |
+| *AUTO-RESET-STICK*    | Purple       | Auto-run WinPE — boots straight into wipe+reimage. *LIVE AMMUNITION.* Mostly exists as the =winpe.wim= file on each RESET partition; the stick is a rare manual-rescue spare. | Yes       |
+| *FERRY-STICK*         | Blue         | Generic exFAT transport — drivers, installers, docs, payload files                                                                                                            | No        |
+| *IMAGE-STICK*         | Black 256 GB | Holds the golden =baseline-dell.wim= / =baseline-lenovo.wim=                                                                                                                    | No        |
+
+The three bootable sticks are *hardware-agnostic* — the same Red/Purple/Green work on Dell and Lenovo. Only the image files are variant-specific.
+
+*The two WinPE sticks look identical in a file listing.* The only difference is inside =boot.wim= at =\Windows\System32\startnet.cmd=:
+
+- =wpeinit= only → *X-BOOT-STICK* (interactive/safe)
+- =wpeinit= + =call X:\Windows\System32\reset.cmd= → *AUTO-RESET-STICK* (wipes)
+
+To verify which is which:
+
+#+begin_src text
+mkdir C:\peek
+dism /Mount-Image /ImageFile:<path-to-boot.wim> /Index:1 /MountDir:C:\peek /ReadOnly
+type C:\peek\Windows\System32\startnet.cmd
+cd C:\
+dism /Unmount-Image /MountDir:C:\peek /Discard
+rmdir C:\peek
+dism /Get-MountedImageInfo
+#+end_src
+
+--------------
+
+**** 4. CURRENT IMAGING PROCESS (fleet rollout — the fast path)
+*Key principle:* fleet machines get *no Windows install and no OOBE*. A clean install would just be scaffolding that the image apply overwrites. Everything is provisioned directly from WinPE.
+
+Per machine, hands-on time is roughly *15 minutes*; the DISM apply (15–25 min) is unattended, so 3–4 machines run staggered in parallel.
+
+***** Step 0 — BIOS prep (per machine)
+Dells often ship with storage in *RAID/Intel RST/VMD* mode, which makes the internal SSD *invisible to WinPE and diskpart*. In BIOS (F2):
+
+- *Storage → SATA/NVMe Operation → AHCI*
+- *Boot order → put USB above Windows Boot Manager* (avoids the F12 race)
+- *Fast Boot → Thorough* if available
+
+#+begin_quote
+After switching to AHCI, the existing Windows install will fail to boot and drop into recovery. This is expected and harmless — the disk is about to be wiped. Setting USB first in the boot order sidesteps it entirely.
+
+#+end_quote
+
+***** Step 1 — Boot the X-BOOT-STICK, build the partition layout
+At =X:\>=:
+
+#+begin_src text
+diskpart
+  list disk                     (CONFIRM disk 0 = internal SSD by size, NOT the USB)
+  select disk 0
+  clean
+  convert gpt
+  create partition efi size=260
+  format quick fs=fat32 label="SYSTEM"
+  assign letter=S
+  create partition msr size=16
+  create partition primary
+  shrink desired=45000
+  format quick fs=ntfs label="OS"
+  assign letter=W
+  create partition primary
+  format quick fs=ntfs label="RESET"
+  assign letter=R
+  exit
+#+end_src
+
+***** Step 2 — Stage the RESET partition from the FERRY-STICK
+Confirm letters first (=diskpart= → =list volume=), then:
+
+#+begin_src text
+robocopy D:\ R:\ /E /COPY:DAT /R:2 /W:2
+#+end_src
+
+or individually:
+
+#+begin_src text
+copy E:\baseline-<variant>.wim R:\baseline.wim
+copy E:\winpe.wim R:\winpe.wim
+mkdir R:\Boot
+copy E:\boot.sdi R:\Boot\boot.sdi
+#+end_src
+
+***** Step 3 — Apply the golden image (this is where Windows is created)
+#+begin_src text
+Dism /Apply-Image /ImageFile:R:\baseline.wim /Index:1 /ApplyDir:W:\ /CheckIntegrity
+#+end_src
+
+***** Step 4 — Write boot files
+#+begin_src text
+bcdboot W:\Windows /s S: /f UEFI
+#+end_src
+
+***** Step 5 — Reboot into the new Windows
+#+begin_src text
+wpeutil reboot
+#+end_src
+
+Remove the USB. The machine boots to the auto-logged-in =AVTech= desktop — it is now a clone.
+
+***** Step 6 — Create the reset BCD entry (from inside Windows — the proven method)
+Run =make-reset-entry.bat= as administrator. *Before running, confirm the RESET partition is mounted as* *=R:=* *in Windows* — the script hard-codes =partition=R:= and binds to whatever =R:= resolves to at run time.
+
+#+begin_src shell
+@echo off
+setlocal enabledelayedexpansion
+for /f "tokens=2 delims={}" %%A in ('bcdedit /create {ramdiskoptions} /d "Reset ramdisk"') do set RDO={%%A}
+bcdedit /set {ramdiskoptions} ramdisksdidevice partition=R:
+bcdedit /set {ramdiskoptions} ramdisksdipath \Boot\boot.sdi
+for /f "tokens=2 delims={}" %%A in ('bcdedit /create /d "Reset to Baseline" /application osloader') do set GUID={%%A}
+bcdedit /set !GUID! device ramdisk=[R:]\winpe.wim,{ramdiskoptions}
+bcdedit /set !GUID! osdevice ramdisk=[R:]\winpe.wim,{ramdiskoptions}
+bcdedit /set !GUID! path \windows\system32\boot\winload.efi
+bcdedit /set !GUID! systemroot \windows
+bcdedit /set !GUID! detecthal yes
+bcdedit /set !GUID! winpe yes
+echo !GUID! > R:\reset-entry-guid.txt
+echo === Created reset entry: !GUID! ===
+pause
+#+end_src
+
+Verify before trusting it:
+
+#+begin_src text
+bcdedit /enum osloader
+bcdedit /enum {ramdiskoptions}
+type R:\reset-entry-guid.txt
+#+end_src
+
+***** Step 7 — Acceptance test
+Fire one reset on the unit. A machine that resets clean and lands pristine is correct by definition. Then sticker it (serial + assigned M365 username) and log it on the tracking sheet.
+
+--------------
+
+**** 5. THE WORKING =reset.cmd= (lives inside =winpe.wim=)
+Uses the drive letters *WinPE assigns* (Dell and Lenovo both: OS=C, RESET=D, ESP=volume 2) and assigns the ESP *by number*, because *diskpart cannot select a volume by label*.
+
+#+begin_src shell
+@echo off
+echo ============================================
+echo   418 AV  -  RESET TO BASELINE
+echo ============================================
+echo Starting %DATE% %TIME%
+
+rem --- assign ESP a letter (by NUMBER; labels are invalid in select volume) ---
+echo select volume 2 > X:\dp.txt
+echo assign letter=S >> X:\dp.txt
+diskpart /s X:\dp.txt
+
+echo === Formatting OS volume (C:) ===
+format C: /fs:ntfs /q /y
+
+echo === Applying baseline image ===
+Dism /Apply-Image /ImageFile:D:\baseline.wim /Index:1 /ApplyDir:C:\ /CheckIntegrity
+if errorlevel 1 (
+  echo [%DATE% %TIME%] APPLY FAILED errorlevel %errorlevel% >> D:\reset-log.txt
+  echo APPLY FAILED - see D:\reset-log.txt
+  pause
+  exit /b 1
+)
+
+echo === Writing boot files (UEFI) ===
+bcdboot C:\Windows /s S: /f UEFI
+
+echo [%DATE% %TIME%] RESET COMPLETE >> D:\reset-log.txt
+echo   RESET COMPLETE - rebooting in 10s
+timeout /t 10
+wpeutil reboot
+#+end_src
+
+--------------
+
+**** 6. GOLDEN IMAGE CONFIGURATION (what's baked in)
+- Local user *AVTech*, local admin, *auto-logon*, password =418814= (same on all machines; plaintext, accepted for resettable kiosks).
+- *Generic shared hostname* =418-AV= on every machine. Per-device names would revert on every reset; per-device identity is handled by the *inventory sticker* instead.
+- *Windows Update fully disabled* — =NoAutoUpdate=, services =wuauserv=/=UsoSvc=/=WaaSMedicSvc= set Start=4, staged download cache cleared, WU/UpdateOrchestrator scheduled tasks disabled.
+- *Entra/MDM guardrails:* =BlockAADWorkplaceJoin=1= and MDM =DisableRegistration=1=. These prevent a tech accidentally joining a kiosk to the organization via the Office "Allow my organization to manage my device / sign in to all apps" dialog. Confirmed working — Teams sign-in passes through app-only. Tech instruction backup: always choose *"No, this app only."*
+- *Office via ODT* (Office Deployment Tool), product =O365BusinessRetail= (M365 Business Premium), Monthly Enterprise channel, updates off, silent install. Installed but *signed out* in the image — each tech signs in on the gig. *5 devices per M365 user*, so stickers assign users such that no user exceeds 5 devices.
+- *Teams* installed machine-wide offline via =teamsbootstrapper.exe -p -o "MSTeams-x64.msix"=.
+- *Power (deliberate):* High Performance plan; *all idle timeouts = 0* (never sleep, never blank display, never hibernate) on both AC and battery; *lid close = do nothing*; hibernation/Fast Startup off. Only the user powers the machine down, manually.
+- *Lock screen left enabled* (user can Win+L / log out) but *Spotlight disabled* — lock screen shows a static picture, never Spotlight.
+- Edge first-run/sign-in/sync/import suppressed. All consumer experiences, Widgets, tips/suggestion toasts, and automatic maintenance disabled. Dark mode. M365 Copilot/Office hub nag app removed.
+- *Vendor bloat removed:* Lenovo — SmartStandby disabled, Vantage/System Update removed if present, *BrightCtrl + Power Manager tasks +* *=setapps=* *kept*. Dell — do *not* install Dell Command Update, SupportAssist, or Trusted Device (they are updaters/telemetry, not drivers).
+- *Toolkit at* *=C:\Tools=:* Sysinternals Suite, CrystalDiskInfo Portable (Standard edition, from crystalmark.info). Portable, no services, no accounts.
+- *NVIDIA (where present):* full RTX/Quadro driver from nvidia.com, Custom → Clean install, GeForce Experience unchecked. Confirm GPU presence first with =Get-CimInstance Win32_VideoController=.
+- *Wallpaper:* must be set *manually via Settings, LAST, after a reboot*. Not policy-locked — techs need to change it to client branding.
+
+--------------
+
+**** 7. KNOWN LANDMINES (all previously hit and solved)
+1. *Autopilot re-hijack.* Wiping a disk does not clear the cloud hardware hash. A machine that reaches the internet at OOBE while still registered gets re-enrolled. Deregister the serial from Autopilot /and/ install offline. (Less relevant on the fast path, since fleet machines never run OOBE — but stale enrollments should still be cleared in bulk.)
+2. *=diskpart=* *cannot select a volume by label.* =select volume OS= is invalid syntax — only a number or a drive letter works. This caused repeated silent reset failures ("no volume selected" → format fails → apply fails).
+3. *WinPE assigns different drive letters than full Windows.* Verify with =list volume= on each new hardware type before trusting an automated reset. Both variants here came up OS=C, RESET=D, ESP=volume 2 in WinPE.
+4. *FAT32 32 GB ceiling.* =MakeWinPEMedia= cannot format a >32 GB stick as FAT32. Keep bootable sticks ≤32 GB. Does not apply to file-copy sticks (FERRY-STICK can be exFAT, any size). Also: =baseline.wim= is ~30 GB, which *exceeds FAT32's 4 GB single-file limit* — ferry sticks must be exFAT or NTFS.
+5. *DISM partial unmount.* Always run =dism /Unmount-Image= from =C:\=, never from inside the mount tree. If a mount wedges: =dism /Cleanup-Mountpoints=.
+6. *BitLocker auto-enables* on recent Windows 11. Before capture: =manage-bde -off C:= and set =HKLM\SOFTWARE\Policies\Microsoft\FVE\PreventDeviceEncryption=1=.
+7. *Image must fit the RESET partition.* A 96%-full capture failure occurred on the Dell. Trim installers, extra .NET runtimes, vendor apps, and the ODT download cache before capturing.
+8. *BCD scripting quirks.* =for /f= and ={braces}= break in PowerShell — run BCD work from *cmd* or a =.bat=. In a =.bat=, loop variables must be doubled (=%%A=) and variables read with delayed expansion (=!GUID!=), because plain =%GUID%= is evaluated at parse time and comes back empty.
+9. *Identity residue in the image.* Signing out of Office is not enough — Edge can still /suggest/ a previously-used account because it reads from the Windows account broker. Full scrub requires clearing the Edge profile, the WAM/TokenBroker account store, and Credential Manager, then confirming =dsregcmd /status= shows =AzureAdJoined : NO=.
+
+--------------
+
+**** 8. OPEN ISSUES (current, limited)
+***** 8.1 — Two Dells fail at the reset boot /(active, highest priority)/
+*Symptom:* the machines image successfully and boot into Windows fine. On restart, selecting the reset entry goes straight to an error screen about something "not being connected" and Windows being unable to load — it never reaches the WinPE =X:\>= environment. 11 previous machines worked with the identical process.
+
+*Since the method is proven, this is machine-specific. The reset entry points at three things; one is wrong on these units:*
+
+- =boot.sdi= — via =ramdisksdidevice partition=R:= + =ramdisksdipath \Boot\boot.sdi=
+- =winpe.wim= — via =ramdisk=[R:]\winpe.wim=
+- The RESET partition binding itself
+
+*Leading hypothesis:* =make-reset-entry.bat= hard-codes =partition=R:=, and bcdedit resolves that drive letter into a partition identifier *at the moment the script runs*. If the RESET partition was not mounted as =R:= in Windows at that time (different letter, or not mounted), the entry binds to the wrong partition — or to nothing — while still reporting "The operation completed successfully" for every line.
+
+*Secondary hypotheses:* =winpe.wim= or =Boot\boot.sdi= missing, zero-length, or a partial/failed copy on those two units.
+
+*Diagnostic sequence (on a failing unit, in Windows, elevated):*
+
+#+begin_src text
+diskpart
+  list volume        (what letter does RESET actually have?)
+  exit
+
+dir R:\winpe.wim          (should be ~356 MB)
+dir R:\Boot\boot.sdi      (should exist)
+dir R:\baseline.wim       (should be ~29.7 GB)
+
+bcdedit /enum osloader
+bcdedit /enum {ramdiskoptions}
+#+end_src
+
+Confirm =ramdisksdidevice= points at the correct partition and =ramdisksdipath= is =\Boot\boot.sdi=.
+
+*Fix:* ensure RESET is mounted as =R:= and both files are present and full-size → delete the bad entry (=bcdedit /delete {guid} /f=) and the misconfigured ={ramdiskoptions}= object → re-run =make-reset-entry.bat= → verify with =bcdedit /enum osloader= *before* rebooting.
+
+***** 8.2 — Orphaned duplicate reset entries
+Every run of =make-reset-entry.bat= creates a *brand-new* osloader entry. Re-running it (as happened during troubleshooting) leaves stale "Reset to Baseline" entries in the BCD store. Functionally harmless but confusing. Audit with =bcdedit /enum osloader=; delete stale ones with =bcdedit /delete {old-guid} /f=, keeping the GUID recorded in =R:\reset-entry-guid.txt=.
+
+***** 8.3 — Reset entry not visible on the boot menu
+=bcdedit /enum= only lists entries present in =displayorder=. An entry can exist and work while being invisible there. =/bootsequence= (the one-shot trigger) does *not* add anything to the menu. To expose it deliberately:
+
+#+begin_src text
+bcdedit /displayorder {current} /addfirst
+bcdedit /displayorder {reset-guid} /addlast
+bcdedit /default {current}
+bcdedit /timeout 5
+#+end_src
+
+Always verify =default= points at Windows, not the reset entry.
+
+***** 8.4 — GUIDs look identical at a glance /(resolved — not a bug)/
+BCD uses time-based (v1) GUIDs, so every GUID minted on a given machine shares the same trailing block (encoding node + clock sequence). Only the *first segment* differs. Entries that appear identical in a photo or quick scan are usually distinct. Compare the first block carefully before concluding anything is corrupted.
+
+***** 8.5 — Dell AHCI switch drops into recovery /(understood, has workaround)/
+Switching storage mode from RAID to AHCI leaves the pre-existing Windows install unbootable, so the machine lands in recovery before the USB can be selected. Harmless — the disk is about to be wiped. Workaround: while already in BIOS, set *USB above Windows Boot Manager* in the boot order and *Fast Boot → Thorough*. Alternatively reach the USB via recovery → Troubleshoot → /Use a device/, or → /UEFI Firmware Settings/.
+
+***** 8.6 — Apps fail to launch on first try after a fresh image /(minor, likely benign)/
+On a freshly applied image, some apps (Notepad, PowerShell observed) do nothing on the first click and work on the second. Most likely normal first-run initialization after a DISM apply (permission repair, execution-alias registration, Defender caching a not-yet-seen binary). Worth a line on the tech card: /"if an app doesn't open on the first click, click again — normal right after a reset."/ Would only warrant investigation if it produces an actual error, or recurs after *every* reset rather than only the first.
+
+--------------
+
+**** 9. LOCAL FILE SHARING BETWEEN LAPTOPS (tech-facing)
+All machines share the hostname =418-AV=, so *name-based* SMB discovery is ambiguous. Two supported workflows:
+
+*Primary — LocalSend* (installed on the image; open-source, LAN-only, no account, no ads, no telemetry; download only from =localsend.org= or an official app store):
+
+1. Open LocalSend on both laptops (same network).
+2. Each laptop is auto-assigned a *device name*, shown large on its own screen.
+3. On the sender: pick the file → select the receiving laptop *by its device name* → Send.
+4. On the receiver: Accept.
+
+/Caveat: some venue/guest networks use client isolation, which blocks peer discovery. If devices can't see each other, the network is the problem, not the app./
+
+*Fallback — Windows share by IP* (avoids the duplicate-hostname problem):
+
+1. On the sharing laptop: =ipconfig= → note the IPv4 address.
+2. Share the folder (Properties → Sharing → Share → add *Everyone*).
+3. From the other laptop: File Explorer address bar → =\\<IP>\<ShareName>=.
+
+/Known friction: the sharing machine's network profile must be/ /*Private*/ /(Settings → Network & internet → Ethernet/Wi-Fi → Network profile type → Private), file sharing and network discovery must be enabled, and password-protected sharing should be off. If credentials are demanded, the username must be qualified as/ /=<IP>\AVTech=, not a bare/ /=AVTech=. This friction is why LocalSend is the recommended default./
+
+--------------
+
+**** 10. REMAINING WORK
+- Resolve the two failing Dells (§8.1).
+- Continue fleet provisioning — ~11 of ~45 done.
+- Per-unit acceptance: one reset on every machine, verified clean.
+- Sample spot-checks per variant: M365 activation across 5 devices on one user, static-IP device control, HDMI/projector out (including *lid-closed driving an external display* — the common AV setup), make-a-mess-then-reset, offline operation after activation.
+- Stickers and the serial → variant → M365 user tracking sheet.
+- Archive both masters and all scripts to the WORKBENCH share plus one backup.
+- Keep one X-BOOT-STICK permanently at the imaging station as the rescue tool.
+- Client handoff: reset procedure walkthrough, tech quick-card, light-troubleshooting guide, agreed refresh cadence and escalation path.

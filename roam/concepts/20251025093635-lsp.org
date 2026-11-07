@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cf99828a-1122-49e1-80d4-d4b1193a7e0e
+:REFLECT_ID: 67f2e178e4ce44798d44bf4b5d417bae
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:37]
+:END:
+#+title: LSP
+#+filetags: :concept:
+#+date: 2025-10-25
+

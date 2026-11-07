@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a319687b-1181-436e-baba-89e08e8a2ff6
+:REFLECT_ID: 7ca98c202a2340f6be902464bb6f3d77
+:CREATED:  [2025-10-29 Wed 13:59]
+:MODIFIED: [2026-04-14 Tue 16:15]
+:END:
+#+title: Plexi
+#+filetags: :concept:
+#+date: 2025-10-29
+

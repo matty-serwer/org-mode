@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       03e03edf-4420-4147-81d0-9b5e85c209d5
+:REFLECT_ID: ced095f823ab4031806415459c7e2e12
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: mouse
+#+filetags: :concept:
+#+date: 2025-10-25
+

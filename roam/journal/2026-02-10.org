@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       b87d3663-be82-4052-bbb5-0fce19516a7e
+:REFLECT_ID: 10022026
+:CREATED:  [2026-02-06 Fri 05:31]
+:MODIFIED: [2026-02-11 Wed 02:54]
+:END:
+#+title: Tue, February 10th, 2026
+#+filetags: :daily:
+#+date: 2026-02-06
+- [[id:294115ff-c1e7-433f-9ac2-c3488273a3bd][LazyVim]]
+  - A common and LazyVim‑friendly choice is to use =<leader>uL= (or a nearby key) as the toggle for =opt.relativenumber=.[1][2]
+    Simple Lua toggle (standalone Neovim)
+    Since you already set the default to false in =options.lua=:
+    
+    #+begin_src lua
+    -- options.lua
+    local opt = vim.opt
+    opt.number = true
+    opt.relativenumber = false
+    #+end_src
+    Add a keymap like this (e.g. in the same file or your keymaps file):
+    
+    #+begin_src lua
+    vim.keymap.set("n", "<leader>uL", function()
+      vim.opt.relativenumber = not vim.opt.relativenumber:get()
+    end, { desc = "Toggle relative line numbers" })
+    #+end_src
+    This keeps absolute numbers on, and pressing =<leader>uL= flips only =relativenumber= between =false= and =true=.[3][4]
+    Using LazyVim’s toggle helpers (if available)
+    Recent LazyVim setups expose a helper that already defines =<leader>uL= for this purpose:
+    
+    #+begin_src lua
+    -- somewhere in your config (e.g. lua/config/keymaps.lua)
+    local Snacks = require("snacks")
+    
+    Snacks.toggle.option("relativenumber", { name = "Relative Number" })
+      :map("<leader>uL")
+    #+end_src
+    This integrates with LazyVim’s UI and uses the same key LazyVim documents for toggling relative numbers.[2]

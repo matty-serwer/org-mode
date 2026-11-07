@@ -1,0 +1,98 @@
+:PROPERTIES:
+:ID:       d47bc49a-0745-4ed9-bca0-f06bcd360034
+:REFLECT_ID: 05a6769409af479890c7e35073a0b96d
+:CREATED:  [2025-10-26 Sun 13:22]
+:MODIFIED: [2025-10-26 Sun 13:24]
+:END:
+#+title: Step-by-Step Guide to Implementing AI Coding Practices from "Claude FINALLY Fixed AI Coding By Releasing This"
+#+filetags: :concept:
+#+date: 2025-10-26
+-----
+
+*** 1. *Understand the Problem of Context Window Overflow*
+- AI models like Claude have a limited context window.
+- When this window fills up, the model starts hallucinating or forgetting important details.
+- Managing this context effectively is crucial for reliable AI coding sessions.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=60][(00:01:00)]]
+-----
+
+*** 2. *Use Compaction to Manage Context*
+- *Compaction* means summarizing conversation history to keep only key information and discard unnecessary details.
+- This frees up space in the context window for new inputs.
+- You can:
+  - Let Claude automatically trigger *autocompact* when the context is nearly full.
+  - Or manually trigger compaction using Claude’s compact command to control what is saved.
+- Manual compaction is preferred to avoid losing important details unexpectedly.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=240][(00:04:00)]]
+-----
+
+*** 3. *Leverage Claude Sonnet 4.5’s Advanced Context Management*
+- Use the new model with a *200K token context window*.
+- It automatically trims previous tool call results and generated outputs to reduce clutter.
+- This expands usable context before manual compaction is needed.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=360][(00:06:00)]]
+-----
+
+*** 4. *Implement the Claude Memory Tool*
+- Use file-based memory to store project state persistently.
+- Create and update files like =claude.md= to hold project details and instructions.
+- Claude can reference these files by name and path to retrieve information just-in-time.
+- Use the =hash= command to save specific instructions or reminders into memory files.
+- This avoids repeating project details in every session.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=480][(00:08:00)]]
+-----
+
+*** 5. *Create and Maintain a *=claude.md=* File*
+- Store all project instructions, overviews, and technical details in this file.
+- Update it as the project evolves.
+- This file helps Claude understand the project context deeply and produce more refined outputs.
+- Example: Projects with =claude.md= produce more complete and polished results.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=600][(00:10:00)]]
+-----
+
+*** 6. *Use Structured Note-Taking*
+- Maintain structured notes in separate files such as:
+  - =progress.md= for task progress and next steps.
+  - =decisions.md= for architectural decisions.
+  - =bugs.md= for bug tracking and resolutions.
+- Instruct Claude to update these files regularly after each run.
+- These notes persist outside the active context window but can be referenced anytime.
+- This improves long-term reliability and project management.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=720][(00:12:00)]]
+-----
+
+*** 7. *Adopt Sub-Agent Architecture for Complex Tasks*
+- Use multiple specialized agents (sub-agents), each with its own context window and instructions.
+- A lead agent coordinates task delegation and compiles results.
+- This spreads workload, keeps context windows manageable, and improves efficiency.
+- Be mindful of coordination overhead and potential delays.
+- You can use open-source sub-agent frameworks or create your own agents with Claude.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=840][(00:14:00)]]
+-----
+
+*** 8. *Combine Techniques Based on Task Needs*
+- Use *compaction* for maintaining natural conversation flow in long sessions.
+- Use *structured note-taking* for iterative development with clear goals.
+- Use *multi-agent architecture* for handling complex, multi-faceted projects.
+- Experiment with these methods to find the best fit for your workflow.
+  [[https://www.youtube.com/watch?v=oj44Vrh0XyM%3Fsi%3DMA4KSzv4feBDLfsh&t=960][(00:16:00)]]
+-----
+
+* Summary
+** Steps, Practices, and Purposes
+- *Step 1*: Understand context window limits
+  - *Purpose*: Avoid hallucinations
+- *Step 2*: Use compaction
+  - *Purpose*: Summarize and free context space
+- *Step 3*: Use Claude Sonnet 4.5
+  - *Purpose*: Benefit from advanced context trimming
+- *Step 4*: Use memory tool & =claude.md=
+  - *Purpose*: Persist project state across sessions
+- *Step 5*: Maintain =claude.md= file
+  - *Purpose*: Provide detailed project instructions
+- *Step 6*: Structured note-taking
+  - *Purpose*: Track progress, decisions, bugs
+- *Step 7*: Sub-agent architecture
+  - *Purpose*: Manage complex tasks with multiple agents
+- *Step 8*: Combine methods
+  - *Purpose*: Optimize for your project needs

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       72703a2a-0197-4a76-82a3-393c6954808e
+:REFLECT_ID: 9ad043da3f544c6b904874f4c3a45d42
+:CREATED:  [2026-03-16 Mon 02:55]
+:MODIFIED: [2026-03-18 Wed 16:05]
+:END:
+#+title: Song Arrangement Sections
+#+filetags: :concept:
+#+date: 2026-03-16
+

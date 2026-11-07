@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8441948f-f4b2-4a5d-aeb1-30b604932904
+:REFLECT_ID: 1f481d7634b342d0a38f0319c2883ba1
+:CREATED:  [2026-01-08 Thu 18:43]
+:MODIFIED: [2026-01-08 Thu 18:43]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-01-08
+

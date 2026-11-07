@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7aad7c0f-b75c-46f7-a245-464a30e3586d
+:REFLECT_ID: 550a2a5bfbc64d3388d1eb98914acceb
+:CREATED:  [2026-01-26 Mon 12:52]
+:MODIFIED: [2026-01-26 Mon 12:52]
+:END:
+#+title: Initiatives
+#+filetags: :concept:
+#+date: 2026-01-26
+

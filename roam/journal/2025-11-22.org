@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       5acb46a9-ec1c-4c9d-ad3d-43527a8d8221
+:REFLECT_ID: 22112025
+:CREATED:  [2025-11-22 Sat 14:22]
+:MODIFIED: [2025-11-23 Sun 04:51]
+:END:
+#+title: Sat, November 22nd, 2025
+#+filetags: :daily:
+#+date: 2025-11-22
+- doing some doom emacs
+  [[https://www.youtube-nocookie.com/embed/37H7bD-G7nE][youtube: https://www.youtube-nocookie.com/embed/37H7bD-G7nE]]
+  - 

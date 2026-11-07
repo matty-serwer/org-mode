@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3245e58b-3be2-44d8-bf38-abca730e7e66
+:REFLECT_ID: d47cc72eb5f3416aa3a554e3c8943710
+:CREATED:  [2025-10-31 Fri 16:19]
+:MODIFIED: [2025-11-03 Mon 02:42]
+:END:
+#+title: Linear App
+#+filetags: :concept:
+#+date: 2025-10-31
+

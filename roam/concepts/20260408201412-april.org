@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       cad7d70a-70d5-4809-a005-afb1caee9c2e
+:REFLECT_ID: 1c9f570218164edf97dfd6edb4b69ffc
+:CREATED:  [2026-04-08 Wed 20:14]
+:MODIFIED: [2026-04-08 Wed 22:22]
+:END:
+#+title: 🌱 APRIL 🍀
+#+filetags: :concept:
+#+date: 2026-04-08
+* Projects
+- [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]]
+  - Project Management Application
+  - [[id:705433af-8517-4836-9200-fe5c91b7f2ce][Node.js]] [[id:dd123c64-8432-4eaa-90e0-70f707972e26][Prisma 7]] & [[id:ff6f6a8c-fdb6-4b98-a9f7-24574b5608b4][PostgreSQL]] Backend
+- [[id:2a0e069e-82be-42ac-9ea6-82b345d1f9cb][👩🏻‍🎤 Ableton Live Org 2026]]
+  - Setting up templates and Minimizing the layout
+- [[id:9e874ee4-a7d7-41f6-a60c-3391c9469c9c][👩🏻‍🎤 Ableton Live Stem Set]]
+- [[id:a46f281b-74cd-4318-a277-0200633b5c34][🈺 Resume & Interview Master Source]]
+- [[id:81550d6c-7fc2-4eb1-93d3-d08738616019][🈺 Job Search]] (TODO: clean up, use)
+- [[id:b42566da-4387-4def-bd67-1bf6c02a7db5][C-Note]]

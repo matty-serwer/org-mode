@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b77ab03c-8294-4d52-b00b-bc99672fddea
+:REFLECT_ID: 255d07572da8417dac812783b152c290
+:CREATED:  [2025-10-27 Mon 06:59]
+:MODIFIED: [2025-10-27 Mon 06:59]
+:END:
+#+title: Areas
+#+filetags: :concept:
+#+date: 2025-10-27
+

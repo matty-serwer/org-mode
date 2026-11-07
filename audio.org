@@ -5,8 +5,31 @@
 #+startup: overview
 
 * Songs
+- Song 1
+  - PIZZA
+- Song 2
+  - less pizza :(
+* Ableton Live Projects
+** Utilities & Sounds Design
+*** Project Beat Clips
+**** Schema
+***** Beat Clips :sequence:
+1. Create the beat in an ableton project
+2. Bounce the bet to a single audio file, of the same name as the current project version
+3. The clip gets used:wwa
+4.
+**** SSD Projects
+- [[file+sys:~/_workspace/audio/projects/2026/2026-06-26-beat-clips-001-ssd-setup Project/2026-06-27-beat-clips-002-ssd-setup.als][Beat Clips 2 SSD Setup]]
 * Audio Projects
 ** Stem DJ
+** #abletonLive Beat ClipZ
+*** TODO Create basic #eDance & #drumNbass beats with #SDD
+*** DONE Create complimentary sampler beats.
+CLOSED: [2026-06-29 Mon 17:01]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-06-29 Mon 17:01]
+- State "DONE"       from "TODO"       [2026-06-29 Mon 16:28]
+:END:
 ** Ableton Live Org
 * Audio Applications
 ** Ableton Live
@@ -15,7 +38,71 @@
 *** Sequences
 ** Logic Pro
 *** Sequences
-
+** DJay
+**** Effects
+***** Main Out Effects
+- Mixer > Main Out Effect
+- #Issue : Audio Units Effects Not Loading
+  - Each instance of an AU Plugin in Mixer > Main Out Effect generates a brand new wrapper program for the plugin,
+  - These wrappers register with MacOS as applications separate from DJay.
+  - The wrappers have long names, including what looks like a random bit of string, and they continually flag Mac OS malware security protocol, leading me to believe that they are different each time, and perhaps named differently each time. (they are long enough so that there is a '...' everywhere it's mentioned, so I'm never sure of the full filename).
+  - Allowing the wrapper applications in Settings > Privacy & Security, does not allow the plugin to run successfully on the next try, either because they are newly generated, or the DJay application always crashes when MacOS flags the file.
+******* DONE Web search "Algoriddim DJay Main Out Effect AU Wrapper Issues" to see if this is a common issue, as I suspect, and #Claude Research possible solutions, if any. This may well be a wishlist feature, as has been suggested by ai opinion
+CLOSED: [2026-07-02 Thu 23:02]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-07-02 Thu 23:02] \\
+  - One the most recent try, the built in Apple AU plugins were woring in 'Main Out Effects'. This is good enough if it works going forward.
+  - Possible Issues: If the plug-in window is closed, the plug-in functionally closes. So far, it seems to work ok if minimized, and what you get is two windows that 'Stage Manager' tends to treat as separate applications. I'm worried that it will close or crash mid-set.
+- State "DONE"       from "TODO"       [2026-07-02 Thu 12:18]
+:END:
+333
+***** Effects Bar (Below Decks)
+***** X/Y Pad (Cue Points Area)
+****** Essentials
+- Reverb
+  - Use this one over the Effects Bar Reverb
+  - it's more practical to control it and release
+- Bit Crusher
+  - Nice dive effect
+  - OK Computer-ish (at it's best, almost)
+- Gate
+  - Nice sweepable gate
+  - Never misses the down & (up) beat
+****** Reverb & Echo
+- Ping-Pong Delay
+  - Usable delay effect
+  - Not practical around the full range of the pad
+  - most usefull near the middle of the pad
+- Complex Reverb
+  - Yooooo - This is a dope wash out reverb
+  - Counter clockwise circle is nice over a few bars
+- Reverb Out
+  - These "Out" Effects are probably better in the Bar, where you hit it like a button
+  - but, this one is good for a fake-out
+****** Gate & Sweep
+- Noise Gate
+  - You know, because a Noise Gate is a gate with Noise on it, lol
+  - Yah this is dope for a 'noise' effect
+  - it does freq., but not in a cheese sweep
+****** Cut
+- Tremolo Gate
+  - This would be your best practical rhythmic gate here
+- Sidechain
+  - What it reads
+  - Practical Sidechain
+****** Slice
+- Time Travel
+  - Nice Rhythm Gate
+  - Thought the rhythm seems to be fixed, with no division options
+  - The only "Slice" effect that isn't cheesy
+****** Resonate
+- Gate Masher
+  - More even than the name sounds
+  - Can Gate at various speeds and frequency depths, but with mild sweeps
+******
+- Cold Reverb
+  - Almost neverending washed out droney reverbs
+  - Good for between beat chill time
 * Audio Plugins
 ** UAD Plugins
 ** Arturia Plugins

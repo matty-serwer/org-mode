@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       8ec1d69d-8a55-46ed-8fba-5a4de1ae7e5b
+:REFLECT_ID: 8ff704ae4f334437b9c3aa70f1785a06
+:CREATED:  [2025-11-14 Fri 22:58]
+:MODIFIED: [2026-01-26 Mon 19:32]
+:END:
+#+title: Account
+#+filetags: :concept:
+#+date: 2025-11-14
+- /This is where ALL of my /[[id:c0cdf4e9-5859-454e-af6b-a9dc2a2d2e6d][Subscriptions]]/, Login Accounts, and Personal Organizations should Point/
+- DUMP EM DUMP EM DUMP EM
+- [X] Organize the Account Dump in the [[id:1edef3a2-fc0f-4fd7-95f6-c814e63ab8f9][Account]] File with Subs etc.
+
+- List
+  - [[id:9eb86b1c-0da8-456c-ad17-b8df481c0251][Raycast Account]]

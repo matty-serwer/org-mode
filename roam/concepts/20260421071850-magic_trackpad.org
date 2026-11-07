@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9ed5ba94-c9e6-4bc0-bfe2-b91b346d31f1
+:REFLECT_ID: 39e4f639bc8542aba03b2973aa0547db
+:CREATED:  [2026-04-21 Tue 07:18]
+:MODIFIED: [2026-04-21 Tue 07:18]
+:END:
+#+title: Magic Trackpad
+#+filetags: :concept:
+#+date: 2026-04-21
+

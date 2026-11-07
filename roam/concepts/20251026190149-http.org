@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4414e360-7f18-4310-8721-f3f5bd0e3cfb
+:REFLECT_ID: 149995117df642e08b002abde2e96852
+:CREATED:  [2025-10-26 Sun 19:01]
+:MODIFIED: [2025-10-26 Sun 19:06]
+:END:
+#+title: http
+#+filetags: :concept:
+#+date: 2025-10-26
+

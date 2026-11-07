@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       0b4dea54-2119-4501-bb82-91cfbe8f2dfa
+:REFLECT_ID: 01112025
+:CREATED:  [2025-10-30 Thu 15:05]
+:MODIFIED: [2025-11-01 Sat 05:42]
+:END:
+#+title: Sat, November 1st, 2025
+#+filetags: :daily:schema:
+#+date: 2025-10-30
+- [[id:0844b62c-f496-457e-94ea-6c1b4407441f][Lupine Tech Design]] [[id:2eee1bef-61e4-420f-803c-d0d187cdbd0c][Workspace]] [[id:91c71ea3-9f3f-40e3-a5c2-4f2d53bb5ff9][Git]] Branch  
+  - *Permanent Branches:*
+    - =main= (or =master=) - Production-ready code
+    - =develop= - Integration branch for features
+*Temporary Branches:*
+- Feature branches - New features or enhancements
+- Bugfix branches - Non-critical bug fixes
+- Hotfix branches - Critical production fixes
+- Release branches - Prepare for production releases
+- Chore branches - Maintenance tasks (refactoring, dependencies, tooling)
+** Professional Naming Convention
+Here's a naming scheme that scales well:
+#+begin_src markup
+<type>/<ticket-id>-<short-description>
+
+#+end_src
+*Examples:*
+#+begin_src markup
+feature/PROJ-123-user-authentication
+feature/PROJ-456-payment-gateway-integration
+feature/PROJ-789-dark-mode-toggle
+
+bugfix/PROJ-234-fix-login-redirect
+bugfix/PROJ-567-correct-date-formatting
+
+hotfix/PROJ-999-security-patch
+hotfix/PROJ-888-payment-failure
+
+release/v2.3.0
+release/v1.5.1
+
+chore/PROJ-345-update-dependencies
+chore/PROJ-678-refactor-api-service
+chore/setup-ci-pipeline
+
+#+end_src
+*Key principles:*
+- Use lowercase and hyphens (not underscores or spaces)
+- Include ticket/issue numbers when applicable
+- Keep descriptions concise but meaningful
+- Be consistent across the team
+*Branch Workflow:*
+1. Create feature branches from =develop=
+1. Merge completed features back to =develop=
+1. Create release branches from =develop=
+1. Merge releases to both =main= and back to =develop=
+1. Create hotfixes from =main=, merge to both =main= and =develop=
+This system keeps your repository organized and makes it easy to understand what each branch is for at a glance.

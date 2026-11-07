@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e1f7f302-a886-44cf-aec6-236b91d53be7
+:REFLECT_ID: feceb80fb68e4d00a77153e43cd856bb
+:CREATED:  [2026-02-15 Sun 15:24]
+:MODIFIED: [2026-02-15 Sun 15:24]
+:END:
+#+title: My Personal Samples
+#+filetags: :concept:
+#+date: 2026-02-15
+

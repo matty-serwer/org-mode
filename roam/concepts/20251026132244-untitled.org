@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       dadcfbf0-6efa-4094-84b1-8d19cb813c5e
+:REFLECT_ID: 867a952b2f064120bdc8ae16ce0def8f
+:CREATED:  [2025-10-26 Sun 13:22]
+:MODIFIED: [2025-10-26 Sun 13:22]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-10-26
+

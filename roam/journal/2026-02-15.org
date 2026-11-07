@@ -1,0 +1,360 @@
+:PROPERTIES:
+:ID:       71234940-4a6c-45e9-b021-ac6ca0a3bb37
+:REFLECT_ID: 15022026
+:CREATED:  [2026-02-11 Wed 15:33]
+:MODIFIED: [2026-02-16 Mon 03:50]
+:END:
+#+title: Sun, February 15th, 2026
+#+filetags: :daily:
+#+date: 2026-02-11
+- [[id:36db9b58-65ba-40c1-90ba-20d254700547][File Directory]]
+  - [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] 11 Library
+    - [[https://hookmark.net/hm/hook/file/1p5h3BE2S?p=X1dvcmtzcGFjZS9CYWNrdXBz&n=ableton%2D11%2Dlibrary%2Dbackup][ableton-11-library-backup]] 
+    - [[https://hookmark.net/hm/hook/file/5CC5oz6mG?p=X1dvcmtzcGFjZS9CYWNrdXBz&n=ableton%2D11%2Dair%2Duser%2Dlibrary%2Dbackup][ableton-11-air-user-library-backup]]
+  - [[id:ac05fe49-4cbb-4c48-bbc6-09414425b721][Record Crate]]
+    - [[https://hookmark.net/hm/hook/file/1Sqjx2fME?p=X1dvcmtzcGFjZS9BdWRpbw==&n=Record%20Crate][Record Crate]]
+  - [[id:e1f7f302-a886-44cf-aec6-236b91d53be7][My Personal Samples]]
+    - [[https://hookmark.net/hm/hook/file/13pbJDm7f?p=X1dvcmtzcGFjZS9BdWRpbw==&n=S4MP135%2Eexe][S4MP135.exe]]
+  - [[id:f6d9d634-64ff-454e-a8f6-096c74b373ba][Table]] [[id:02d76b73-3356-4c0f-9557-c25cb42bff08][Buckets]]
+    - [[https://hookmark.net/hm/hook/file/0o8uR79PX?p=X1dvcmtzcGFjZS9UYWJsZQ==&n=Buckets][Buckets]]
+  - [[id:2f3b4a8e-fcf3-44b4-b53d-e5301c309e44][Audio Plug-ins]]
+    - [[https://hookmark.net/hm/hook/file/3dZAXiNR4?p=TGlicmFyeS9BdWRpbw==&n=Plug%2DIns][Plug-Ins]]
+- [[id:8921660b-80b5-48c5-91b6-84f2ce8f7456][Hookmark]] [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]]
+  - Copy Link
+    - ⌃⌥⌘ + C
+      - Copy Link
+    - ⌃⌥⌘ + U
+      - Copy As Universal Link
+    - ⌃⌥⌘ + [
+      - Copy As Markdown Link
+  - Hooking
+    - ⌃⌥ + H
+      - Hook To Copied Link
+  - Application
+    - ⌘⇧ + H
+      - Show Hookmark Context Window
+- [[id:981ff139-dc97-4639-b03b-b1429b22ce73][AV Gear]]
+  - General
+    - Silver Sharpie: Standard black Sharpies are useless on black cables and road cases. A silver metallic Sharpie is the industry standard for labeling. •
+    - High-Lumen Flashlight: Do not rely on your phone’s flash. You need a dedicated, small LED flashlight (like a Streamlight MicroStream) to see into the back of dark racks and under stages. 
+    - Roll of 1” Gaffer Tape: You don’t need a full 2” roll on your hip, but a “technician’s roll” of 1” black gaffer tape is essential for quick cable management and safety.
+  - Audio & Signal “Life-Savers”
+    Presenters at corporate conventions are notorious for bringing the wrong gear.
+    - USB-C to HDMI Adapter: This is the most requested item at any tech table. Having a high-quality 4K-rated adapter will save you when a CEO shows up with a new MacBook and no ports.
+    - Sound Bullet (or similar tester): A pocket-sized signal generator and cable tester. It allows you to “ping” an XLR line to see if the signal is reaching the mixer without running back and forth to the booth.
+    - Ground Lift Adapter (IL-19): Corporate ballrooms often have “dirty” power that causes a loud hum in the speakers. An inline transformer like the Whirlwind IL-19 can instantly kill that noise.
+  - Personal “Show Site” Comfort
+    - Reusable Water Bottle: Convention centers are notoriously dry and water is expensive. A rugged bottle like a YETI or Hydro Flask is a must for 12-hour shifts.
+    - Portable Power Bank: You will be using your phone for comms, checking manuals for the TouchMix, and taking photos of signal flows. A high-capacity battery ensures you aren’t tethered to a wall outlet.
+- [[id:e22eaf66-51be-4256-9773-187c16cd3215][Eric Latoure]]
+  - Yeah, March 4 to RSW (Fort Myers). It's probably best that you leave from Orlando on 3/13.
+  - For the second gig, travel dates are 3/20 and 3/27. You should fly in and out of MCO (Orlando).
+- [[id:bc749ddc-3746-4007-80d6-78c65d383399][Therapy Notes]]
+  - when they say the thing that i never do, maybe its the the thing they got as a child.
+    - make it not about yourself. 
+    - this thing wasnt' present in her life
+    - make it overtly present in her life now. 
+Here is an updated, Mac- and zsh-specific roadmap that keeps your original intent but focuses on:
+- Running an uncensored local model via Ollama on an M2 MacBook Pro
+- Making it available everywhere in the CLI via aliases/functions
+- Optionally layering in a PrivateGPT-style RAG setup that also uses Ollama
+-----
+
+** 0. Assumptions & Goals
+- Machine: Apple Silicon MacBook Pro (M2, macOS 14+)
+- Shell: zsh (macOS default)
+- You’re comfortable with Homebrew, git, Python, and editing dotfiles.
+- Goal 1 (core): Uncensored, offline LLM available from any shell prompt.
+- Goal 2 (optional): PrivateGPT-style RAG over your local files using the same local models.
+-----
+
+** 1. Install Homebrew (if you don’t already use it)
+Check:
+#+begin_src zsh
+brew --version
+#+end_src
+If that errors, install:
+#+begin_src zsh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
+On Apple Silicon, add Homebrew to your shell environment:
+#+begin_src zsh
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+#+end_src
+This ensures =brew= is available in all new zsh sessions.[1]
+-----
+
+** 2. Install Ollama on macOS
+Use the official installer script or DMG; both work fine on M2. The simplest is:
+#+begin_src zsh
+curl -fsSL https://ollama.com/install.sh | sh
+#+end_src
+This installs the Ollama app and CLI, and configures the =ollama= command on your PATH on macOS Sonoma or later.[2]
+Verify:
+#+begin_src zsh
+ollama --version
+#+end_src
+You should also be able to hit the local API:
+#+begin_src zsh
+curl http://127.0.0.1:11434
+# => "Ollama is running"
+#+end_src
+If you prefer Homebrew:
+#+begin_src zsh
+brew update
+brew install ollama
+brew services start ollama
+ollama --version
+#+end_src
+-----
+
+** 3. Choose an Uncensored Model That Fits an M2 Mac
+For an M2 with 16–32 GB RAM, realistic “always-available” models:
+- *Llama 3 Dolphin (8B)*, uncensored general-purpose model
+  - Ollama model name: =dolphin-llama3=[3][4]
+- *Llama 2 Uncensored (7B)*, another uncensored option
+  - Ollama model name: =llama2-uncensored=[3]
+Pull at least one:
+#+begin_src zsh
+ollama pull dolphin-llama3
+ollama pull llama2-uncensored
+#+end_src
+You can list installed models:
+#+begin_src zsh
+ollama list
+#+end_src
+On a 16 GB M2 Pro, models in the 7–8B range (4–6 GB on disk) run comfortably; you can push higher if you accept slower responses and more memory pressure.[5][6]
+-----
+
+** 4. Test the Model Interactively
+Start an interactive chat:
+#+begin_src zsh
+ollama run dolphin-llama3
+#+end_src
+You’ll drop into a REPL-style chat. Type a few prompts; to exit:
+#+begin_src text
+/bye
+#+end_src
+This is already:
+- Local-only
+- Using an uncensored model
+- Not calling any external API
+Everything runs via your CPU/GPU and unified memory on the M2.[6][5]
+-----
+
+** 5. Make the Model Available Everywhere in zsh
+Now wire this into your shell so you can call it from /any/ directory with a simple command.
+*** 5.1. Add aliases and functions to =~/.zshrc=
+Open your zsh config:
+#+begin_src zsh
+nano ~/.zshrc
+#+end_src
+Add something like this:
+#+begin_src zsh
+# ----- Local AI (Ollama) -----
+
+# default chat model (change if you prefer llama2-uncensored, etc.)
+export LOCAL_AI_MODEL="dolphin-llama3"
+
+# Interactive chat session:
+alias ai-chat="ollama run $LOCAL_AI_MODEL"
+
+# One-shot Q&A: `ai "write a bash script that ..."`
+ai() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: ai \"your question here\""
+    return 1
+  fi
+  ollama run "$LOCAL_AI_MODEL" -n 512 -p "$*"
+}
+
+# Pipe mode: `some-command | ai-stdin`
+ai-stdin() {
+  # Reads stdin into a variable and sends as prompt
+  local input
+  input="$(cat)"
+  ollama run "$LOCAL_AI_MODEL" -n 512 -p "$input"
+}
+
+# List models and update Ollama (if installed via Homebrew)
+alias ai-list="ollama list"
+alias ai-ps="ollama ps"
+alias ai-update="brew upgrade ollama"
+#+end_src
+Reload your shell:
+#+begin_src zsh
+source ~/.zshrc
+#+end_src
+Now you can:
+#+begin_src zsh
+ai "Write a zsh function that prints the time."
+ai-chat            # opens an interactive session
+cat notes.txt | ai-stdin
+#+end_src
+This gives you model access “wherever in the CLI” without changing directories or running long commands.[1]
+*** 5.2. (Optional) Keyboard shortcut in zsh
+If you want a keybinding that instantly starts chat in the current terminal (example: Ctrl+A):
+#+begin_src zsh
+echo 'bindkey -s "^A" "ai-chat\n"' >> ~/.zshrc
+source ~/.zshrc
+#+end_src
+Now =Ctrl+A= launches an interactive chat session in the current shell.[1]
+-----
+
+** 6. (Optional) Simple REST Integration for Scripts
+Because Ollama exposes an HTTP API, you can script it easily.
+Example: minimal shell function using =curl=:
+#+begin_src zsh
+ai-json() {
+  local prompt="$*"
+  curl -s http://127.0.0.1:11434/api/generate \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n --arg m "$LOCAL_AI_MODEL" --arg p "$prompt" '{model:$m,prompt:$p,stream:false}')" \
+  | jq -r '.response'
+}
+#+end_src
+Requires =jq=:
+#+begin_src zsh
+brew install jq
+#+end_src
+Use it from anywhere:
+#+begin_src zsh
+ai-json "Summarize the last 10 git commits in bullet points."
+#+end_src
+Because Ollama is local, these calls never leave your machine.[7][6]
+-----
+
+** 7. Optional: Add RAG / PrivateGPT-style Document QA
+If you want the “ask questions about your own PDFs and notes” capability, use a maintained PrivateGPT-style project that already targets Mac + Ollama.
+A good option is *muquit/privategpt*, which:
+- Uses Ollama as the LLM backend
+- Works on Linux, macOS (Intel & M2), Windows
+- Provides both a CLI and a simple Streamlit web UI[6]
+*** 7.1. Clone the repo
+#+begin_src zsh
+cd ~
+git clone https://github.com/muquit/privategpt.git
+cd privategpt
+#+end_src
+*** 7.2. Ensure Python 3.12 and create a venv
+This project currently expects *Python 3.12.x* and is not yet compatible with 3.13.[6]
+Install Python 3.12 via Homebrew if needed:
+#+begin_src zsh
+brew install python@3.12
+brew unlink python@3.13 2>/dev/null || true
+brew link python@3.12
+brew pin python@3.12
+#+end_src
+Add to PATH in =~/.zshrc=:
+#+begin_src zsh
+echo 'export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+#+end_src
+Check:
+#+begin_src zsh
+python3 -V  # should show Python 3.12.x
+#+end_src
+Create and activate a venv:
+#+begin_src zsh
+cd ~/privategpt
+python3 -m venv pvenv
+source pvenv/bin/activate
+#+end_src
+Install dependencies (pinned, known-good versions):
+#+begin_src zsh
+pip3 install -r requirements_pinned.txt
+#+end_src
+*** 7.3. Ensure Ollama + models are ready
+PrivateGPT expects Ollama running locally at =http://127.0.0.1:11434= (the default). You already have that.
+You can keep using the same models as for the CLI:
+#+begin_src zsh
+ollama pull dolphin-llama3
+ollama pull llama3
+ollama pull mistral
+#+end_src
+These will appear in PrivateGPT’s model selection UI; the default CLI model in its =config.py= is =mistral=, but you can change =DEFAULT_MODEL = "mistral"= to =DEFAULT_MODEL = "dolphin-llama3"= or whatever you prefer.[6]
+*** 7.4. Ingest your documents (RAG step)
+Put files in the repo’s =documents/= folder:
+#+begin_src zsh
+cd ~/privategpt
+mkdir -p documents
+cp ~/Documents/*.pdf documents/
+#+end_src
+Then vectorize:
+#+begin_src zsh
+python3 ./ingest/ingest.py
+#+end_src
+This builds a local ChromaDB vector store in =./db= based on your documents.[6]
+*** 7.5. Query documents via CLI or Web UI
+*CLI interface:*
+#+begin_src zsh
+cd ~/privategpt
+source pvenv/bin/activate
+python3 assistant/assistant_cli.py --model dolphin-llama3
+#+end_src
+You’ll get an interactive prompt that uses RAG over your =documents/= folder, answering only from your local files.[6]
+*Web UI (Streamlit):*
+#+begin_src zsh
+cd ~/privategpt
+source pvenv/bin/activate
+streamlit run ./assistant/assistant_ui.py
+#+end_src
+Open the provided local URL (e.g. =http://localhost:8502=) to use a browser interface for document QA.[6]
+-----
+
+** 8. Make PrivateGPT Convenient from zsh
+Add shortcuts into =~/.zshrc=:
+#+begin_src zsh
+# PrivateGPT RAG assistant (CLI)
+alias pgpt="cd ~/privategpt && source pvenv/bin/activate && python3 assistant/assistant_cli.py --model $LOCAL_AI_MODEL"
+
+# PrivateGPT web UI
+alias pgpt-web="cd ~/privategpt && source pvenv/bin/activate && streamlit run ./assistant/assistant_ui.py --server.headless false"
+#+end_src
+Reload:
+#+begin_src zsh
+source ~/.zshrc
+#+end_src
+Then from /anywhere/:
+#+begin_src zsh
+pgpt       # local CLI RAG over your documents
+pgpt-web   # launch the Streamlit web UI
+#+end_src
+-----
+
+** 9. Summary / How This Meets Your Requirements
+- *Uncensored*: You are explicitly pulling uncensored models (e.g. =dolphin-llama3=, =llama2-uncensored=) via Ollama.[4][3]
+- *Local & offline*: Once models are downloaded, all inference runs via the Ollama daemon on =127.0.0.1= with no external API calls.[7][6]
+- *Mac + zsh specific*: All config uses =~/.zshrc=, Apple Silicon Homebrew paths, and macOS-native installers.[1][6]
+- *Available anywhere in the CLI*: =ai=, =ai-chat=, =ai-stdin=, =pgpt=, and =pgpt-web= aliases and functions work from any directory, in any zsh session.
+- *Model up to the task on an M2*: 7–8B class models like Dolphin Llama 3 and Llama 2 Uncensored give good performance and fit easily into M2 unified memory, with higher-parameter options available if you accept slower inference.[5][3]
+If you share your exact M2 spec (RAM, disk) and primary use cases (coding assistance vs. long-form writing vs. knowledge worker tasks), a follow-up can refine:
+- A recommended “stack” of 2–3 specific models
+- More advanced zsh functions (e.g., multi-line prompts, context files, tmux integration)
+- A stripped-down RAG path if PrivateGPT feels heavier than you want.
+Sources
+[1] Local AI on Mac: Ollama Setup for M1/M2/M3 (2025 Guide) [[https://localaimaster.com/blog/mac-local-ai-setup][https://localaimaster.com/blog/mac-local-ai-setup]]
+[2] Download Ollama on macOS [[https://ollama.com/download/mac][https://ollama.com/download/mac]]
+[3] Supported models - Ollama Operator [[https://ollama-operator.ayaka.io/pages/en/guide/supported-models][https://ollama-operator.ayaka.io/pages/en/guide/supported-models]]
+[4] dolphin-llama3 [[https://ollama.com/library/dolphin-llama3][https://ollama.com/library/dolphin-llama3]]
+[5] Running LLMs (Llama 3, etc.) locally on Mac with Ollama and WebUI [[https://zenn.dev/dara/articles/d09c62d3b55344?locale=en][https://zenn.dev/dara/articles/d09c62d3b55344?locale=en]]
+[6] muquit/privategpt: An on-premises ML-powered document ... - GitHub [[https://github.com/muquit/privategpt][https://github.com/muquit/privategpt]]
+[7] macOS - Ollama's documentation [[https://docs.ollama.com/macos][https://docs.ollama.com/macos]]
+[8] albinvar/langchain-python-rag-privategpt-ollama - GitHub [[https://github.com/albinvar/langchain-python-rag-privategpt-ollama][https://github.com/albinvar/langchain-python-rag-privategpt-ollama]]
+[9] This Llama 3 is powerful and uncensored, let's run it - YouTube 
+[[https://www.youtube-nocookie.com/embed/cTxENLLX1ho][youtube: https://www.youtube-nocookie.com/embed/cTxENLLX1ho]]
+
+[10] Private RAG app Tutorial Using Llama3.2, Ollama, PostgreSQL [[https://www.reddit.com/r/learnmachinelearning/comments/1g2y7t6/private_rag_app_tutorial_using_llama32_ollama/][https://www.reddit.com/r/learnmachinelearning/comments/1g2y7t6/private_rag_app_tutorial_using_llama32_ollama/]]
+[11] llama3 uncensored · Ollama Search [[https://ollama.com/search?q=llama3+uncensored][https://ollama.com/search?q=llama3+uncensored]]
+[12] How to Create Your Own Private GPT with Ollama + ... - YouTube 
+[[https://www.youtube-nocookie.com/embed/NP8yU1UsmMs][youtube: https://www.youtube-nocookie.com/embed/NP8yU1UsmMs]]
+
+[13] Hows your experience running Ollama on Apple Sillicon M1, M2, M3 ... [[https://www.reddit.com/r/ollama/comments/1n7uhkv/hows_your_experience_running_ollama_on_apple/][https://www.reddit.com/r/ollama/comments/1n7uhkv/hows_your_experience_running_ollama_on_apple/]]
+[14] Which of the ollama RAG examples you use is the most useful? [[https://www.reddit.com/r/LocalLLaMA/comments/1d3gv8k/which_of_the_ollama_rag_examples_you_use_is_the/][https://www.reddit.com/r/LocalLLaMA/comments/1d3gv8k/which_of_the_ollama_rag_examples_you_use_is_the/]]
+[15] library - Ollama [[https://ollama.com/library][https://ollama.com/library]]
+-
+  - Planning for tomorrow to tighten up  [[id:d27b492f-a706-4de7-8021-70a84e262aa9][Matti3-org]]
+    - [ ] Local LLM Going (above)
+    - [ ] complete outline for advice on current org system
+    - [ ] Get large Oaktag 

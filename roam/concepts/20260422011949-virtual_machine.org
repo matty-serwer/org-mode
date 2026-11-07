@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       bd7519d2-c5c8-4f65-af21-d5f82ea3e2f9
+:REFLECT_ID: bf2a2a338634409695d07df707fee266
+:CREATED:  [2026-04-22 Wed 01:19]
+:MODIFIED: [2026-04-22 Wed 01:19]
+:END:
+#+title: Virtual Machine
+#+filetags: :concept:
+#+date: 2026-04-22
+

@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       e6ac490e-e1bb-4582-a40e-d80d9ad57f1f
+:REFLECT_ID: 4e54a427c2ce46bcb5f9035af76b9d10
+:CREATED:  [2025-11-14 Fri 07:11]
+:MODIFIED: [2025-11-14 Fri 07:54]
+:END:
+#+title: Eric's Plan for Cutting Out into his own A/V Business
+#+filetags: :concept:
+#+date: 2025-11-14
+* Eric's Plan for Cutting Out into his own [[id:46ec5db2-4592-42f7-890d-cc304925ce2d][A/V]] Business
+- [[id:e22eaf66-51be-4256-9773-187c16cd3215][Eric Latoure]]
+- Video Playback servers
+  - consistent redunancy 2 x 2
+  - always needs backup, so pairs
+- Datapath ? - Cuts up the images. Pixelmaps
+  - Covers the need for a Switcher or Data Device
+  - Switching Operator? 
+- MSI Titan
+  - Control Laptop
+  - Can serve one output on its own, but not generally done, and no backup
+- 
+- NDI Networking 
+  - Network Switch
+  - Netgear Switch
+- How do I integrate managed switches into a media server
+- Ubiquity?
+- Dongles for days
+- MBox Server ? 
+- Lumen Playback Systems. 
+- GOAL
+  - Owner operator of the gear. 
+
+- Pixera
+- Disguise
+
+- figure out the viable client that will rent before buying. 
+- Microsoft Project

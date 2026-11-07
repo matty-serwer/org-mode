@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       36db9b58-65ba-40c1-90ba-20d254700547
+:REFLECT_ID: 392eabb3e15740f48d7b524dc7452a7b
+:CREATED:  [2026-02-15 Sun 14:57]
+:MODIFIED: [2026-02-15 Sun 14:57]
+:END:
+#+title: File Directory
+#+filetags: :concept:
+#+date: 2026-02-15
+

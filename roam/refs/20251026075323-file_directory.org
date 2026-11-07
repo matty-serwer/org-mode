@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       35873bf4-3d9d-43bc-93cf-5cce2aa335b5
+:REFLECT_ID: 54e87ab24a6c4738ab9cd6d7f26497ad
+:CREATED:  [2025-10-26 Sun 07:53]
+:MODIFIED: [2025-10-26 Sun 07:54]
+:END:
+#+title: File
+#+filetags: :ref:directory:
+#+date: 2025-10-26
+* [[id:a6202cce-261d-468a-88ca-8aa40c2f7587][File]]

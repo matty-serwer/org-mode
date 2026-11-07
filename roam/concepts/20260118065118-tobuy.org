@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c7ab6243-0e4d-4ec7-b1ed-d215144333f2
+:REFLECT_ID: de3622b4cab4499781e51d5e96c475f5
+:CREATED:  [2026-01-18 Sun 06:51]
+:MODIFIED: [2026-01-18 Sun 06:51]
+:END:
+#+title: ToBuy
+#+filetags: :concept:
+#+date: 2026-01-18
+

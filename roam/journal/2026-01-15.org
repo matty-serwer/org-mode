@@ -1,0 +1,442 @@
+:PROPERTIES:
+:ID:       9bbff601-f0ec-454d-8712-737d66d0d3ac
+:REFLECT_ID: 15012026
+:CREATED:  [2025-12-09 Tue 13:43]
+:MODIFIED: [2026-01-26 Mon 19:32]
+:END:
+#+title: Thu, January 15th, 2026
+#+filetags: :daily:
+#+date: 2025-12-09
+- [[id:70a7cc32-f8a1-4b60-87c7-4ba1876a6b5b][TEAM MECCA]]
+- [[id:e991bfeb-532d-42d8-a607-9217cf996745][LTD UI Style Project]]
+  - fixed our theme file
+  - fixed navigation menu popup 
+    - (z-index must be set in page though)
+  - [ ] consolidate components
+    - Everything that can easily be inside the component, should be apart of the component, not the example page.
+  - [ ] check dark mode
+- LTD Shadcn Storybook UI
+  -----
+  - Original Instructions from [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]]
+    - Next.js 16 Storybook Setup Instructions for Claude Code
+      - Initial Setup
+        - Create a new Next.js 16 project with TypeScript and Tailwind CSS
+        - Initialize shadcn/ui in the project with the default configuration
+        - Install Storybook using the latest version that supports Next.js 16 (Storybook 10 prerelease: =npx storybook@latest init=)
+        - Choose the Vite-based framework (@storybook/nextjs-vite) when prompted - it's faster and better for Next.js 16
+      - Storybook Configuration
+        - Add Tailwind CSS support to Storybook by importing globals.css in =.storybook/preview.tsx=
+        - Configure the =.storybook/main.ts= file to point to the stories directory and enable autodocs
+        - Set up the preview decorators to wrap components with proper Next.js providers if needed
+      - Install Top 20 shadcn Components
+        - Run these commands to add the most commonly used components:
+          - #+begin_src markup
+               npx shadcn@latest add button card input select form label dialog dropdown-menu tabs alert badge checkbox switch textarea table avatar progress tooltip alert-dialog sheet
+            #+end_src
+            
+            #+begin_src markup
+            
+            #+end_src
+        - Verify all components are installed in =components/ui/=
+      - Create Story Files Structure
+        - Create a =stories= directory at the project root
+        - For each component, create a =.stories.tsx= file following the naming pattern: =ComponentName.stories.tsx=
+        - Use CSF3 format (Component Story Format 3) for all stories
+        - Add the =autodocs= tag to each story's meta configuration for automatic documentation generation
+      - Story Template for Each Component
+        - Each story file should include:
+          - Import statements for the component and Storybook types
+          - Meta configuration with component, title, and tags
+          - Default export of the meta
+          - Multiple story variants showing different states (default, variants, disabled, loading, etc.)
+        - Create at least 3-5 story variants per component demonstrating different props and states
+      - Global Theme Configuration
+        - Create a =globals.css= file in the project root if not present
+        - Ensure it includes shadcn's CSS variables for theming
+        - Import this file in =.storybook/preview.tsx= so all stories inherit the theme
+        - Set up theme toggle in Storybook using =@storybook/addon-themes= if dark mode support is needed
+      - Test and Verify
+        - Run =npm run storybook= to start the Storybook dev server
+        - Verify all 20 components render correctly in various states
+        - Check that Tailwind styles are applied properly
+        - Ensure autodocs are generated for each component
+      - Claude Code Setup Guide (For You, Mattie)
+        - Before starting with Claude Code:
+          - Verify your environment:
+            - Ensure you have Node.js 18+ installed
+            - Make sure your terminal has proper permissions for package installation
+          - When using Claude Code for this task:
+            - Start Claude Code in your desired project directory
+            - Give it the full instruction set above in one message
+            - Let it complete each major section (Setup, Configuration, Components, Stories) before moving to the next
+            - If Claude Code asks for clarification on design decisions, tell it to use shadcn defaults
+          - Expected behavior:
+            - Claude Code will create the Next.js 16 project with all configurations
+            - It will install all dependencies and components
+            - It will generate all 20 story files with multiple variants
+            - Total setup time: 5-10 minutes
+  - Created [[id:bc41dbc4-6ef3-4587-a4ff-70b0ec3f4bb1][Perplexity Desktop]] Space
+    Storybook shadcn Lab – Practical Application Guide
+    - Generated a [[id:5ef36dd7-0976-4815-bbd0-5f65f6070117][List Of Claude Code Prompts For LTD Shadcn Storybook UI]]
+    - Generated a [[id:c59631d6-58f6-4982-86e0-1c5680963db9][Claude Code Rule Document for LTD Shadcn Storybook UI]]
+    - [X] Add Goromand
+    - [X] Tweek radius
+    - [X] Tweek styles!
+    - A common-sense reference for using this application to build and maintain a production-ready UI library for next year's applications.
+    - Part 1: Design & Iteration Workflow
+      - How to Tweak Designs Easily & Consistently
+        - Step 1: Iterate in Storybook (Real Code, Real-Time)
+          - Open Storybook dev server: =npm run storybook=
+          - Each story file (=Button.stories.tsx=, etc.) is a living design spec
+          - Modify component props, CSS variables, or Tailwind classes in the story
+          - Changes apply immediately in the browser (hot reload)[1][2]
+          - All variants render together, so you see the full design landscape at once
+        - Step 2: Use Storybook's Built-In Controls
+          - Each story auto-generates interactive controls for props (buttons, toggles, text inputs)
+          - Designers and developers can test edge cases without coding:
+            - Try different button states (default, hover, disabled, loading)
+            - Change input validation states live
+            - Adjust card layouts with real content
+          - This is your live design tool—no Figma export/import needed for exploration[2][3]
+        - Step 3: Document Changes in Stories
+          - Every design tweak goes into the story file as code
+          - Stories use Storybook args (parameters) for variants[3]
+          - Version control (Git) automatically tracks all design history
+          - No design drift—code is the source of truth
+        - Step 4: Use CSS Variables for Theming (Consistency Layer)
+          - All shadcn components use Tailwind CSS variables defined in =globals.css=
+          - To tweak colors globally: edit =globals.css= in one place, all stories update[4]
+          - To override a specific component: modify its Tailwind classes in that component's story[2]
+          - Example: Change =--color-primary= once, every button variant updates instantly
+        - Checkpoint Habit:
+          - After each design change, commit the modified story file with a message like:
+            - =design: update Button variant colors for accessibility=
+            - =design: add loading state to Dialog component=
+          - This keeps design decisions auditable and reversible
+    - Part 2: Sharing the Library Across Applications
+      - Multi-Repo vs. Monorepo Strategy (Pick One)
+        - Option A: Monorepo (Recommended for Your Team)
+          - Structure:
+            - #+begin_src markup
+              storybook-shadcn-lab/           (root monorepo)
+                ├── packages/
+                │   ├── ui-library/            (shared components + stories)
+                │   │   ├── components/ui/
+                │   │   ├── stories/
+                │   │   └── package.json
+                │   ├── next-app-2026a/        (your first production app)
+                │   │   └── package.json
+                │   └── next-app-2026b/        (your second production app)
+                │       └── package.json
+                └── package.json (root, with "workspaces": ["packages/*"])
+                      - Benefits:[5][6][7]
+              #+end_src
+            - All packages share dependencies (faster installs, smaller disk usage)
+            - One =npm install= syncs everything
+            - Change a component, both apps see the update immediately
+            - Single Git history for auditing changes across apps
+            - Vercel/deployments handle it natively
+        - Option B: Separate Repos (Advanced)
+          - Keep =storybook-shadcn-lab= as a standalone repo
+          - Publish components to npm (private or public registry)
+          - Install as a dependency in each app: =npm install @yourusername/ui-library=
+          - Cons: Slower iteration, version bumping overhead[8]
+        - Recommendation: Start with Option A (Monorepo) for speed.
+      - How to Share Components (Step-by-Step)
+        - Step 1: Set Up Monorepo Root (once)
+          - #+begin_src markup
+            # In the root of storybook-shadcn-lab:
+            npm init --yes
+            # Edit package.json to add:
+            {
+              "workspaces": ["packages/*"]
+            }
+            npm install
+            #+end_src
+        - Step 2: Move UI Library into a Package[6][5]
+          - #+begin_src markup
+            # Move existing components + stories into packages/ui-library/
+            mv components/ packages/ui-library/
+            mv stories/ packages/ui-library/
+            # Create a minimal package.json for ui-library:
+            {
+              "name": "@yourusername/ui-library",
+              "version": "1.0.0",
+              "exports": {
+                "./components": "./components/ui/",
+                "./styles": "./globals.css"
+              },
+              "peerDependencies": {
+                "react": "^19",
+                "tailwindcss": "^4.1"
+              }
+            }
+            #+end_src
+        - Step 3: Create App Packages[5][6]
+          - #+begin_src markup
+            mkdir -p packages/next-app-2026a
+            cd packages/next-app-2026a
+            npx create-next-app@16 .  # fresh Next.js 16 app
+            #+end_src
+        - Step 4: Import Components in Apps[6][5]
+          - #+begin_src markup
+                 // In packages/next-app-2026a/app/page.tsx
+            #+end_src
+             import { Button } from '@yourusername/ui-library/components';
+            import '@yourusername/ui-library/styles'; // Tailwind + theme vars
+            export default function Home() {
+            return <Button>Click me</Button>;
+            }
+            
+            #+begin_src markup
+            
+            #+end_src
+        - Step 5: Run All Workspaces Together
+          - #+begin_src markup
+            # At root:
+            npm run dev  # runs all apps + Storybook
+            # Or individually:
+            npm --workspace=packages/ui-library run storybook
+            npm --workspace=packages/next-app-2026a run dev
+            #+end_src
+        - Consistency Guarantee:
+          - Both apps import the same component code from =packages/ui-library/=
+          - No copy-paste, no drift
+          - Update component once, both apps see the change on next save[7][5][6]
+    - Part 3: Beyond Design – Other Uses for Storybook
+      - 1. Component Testing & Validation
+        - Use Storybook Interactions addon to test component behavior:
+          - Click a button, verify the modal opens
+          - Type in an input, verify validation works
+          - Verify keyboard navigation works[1][2]
+        - Create a "Test" variant for each story that documents expected behavior
+        - CI/CD pipelines can run visual regression tests on every story[1]
+        - Example:
+          - #+begin_src markup
+            export const ButtonClick: StoryObj = {
+              play: async ({ canvasElement }) => {
+                const button = within(canvasElement).getByRole('button');
+                await userEvent.click(button);
+                // Assert something changed
+              },
+            };
+            #+end_src
+      - 2. Accessibility (a11y) Checks
+        - Install Storybook a11y addon to check contrast, ARIA, keyboard navigation
+        - Every story variant gets a built-in accessibility report in Storybook's sidebar
+        - Catch issues early: color contrast, missing labels, etc.[1]
+      - 3. Design Token Documentation
+        - Use Storybook Design Token addon to visualize Tailwind variables[9]
+        - Show designers/PMs a living reference of:
+          - All available colors (from =globals.css=)
+          - Spacing scale (Tailwind units)
+          - Typography (font sizes, weights)[9]
+        - This becomes your Design System documentation without extra work
+      - 4. Design ↔ Code Sync (Figma Integration)
+        - If your designers use Figma:
+          - Install story.to.design plugin to auto-import Storybook components into Figma[10][3]
+          - Variants in Storybook → Variants in Figma automatically
+          - Designers see the live code alongside their designs
+          - No more "design vs. code" mismatch[3][10]
+          - Alternative: Use Builder.io Fusion to go Figma → Storybook → code[11][12]
+      - 5. Onboarding & Documentation
+        - New developers open Storybook and see:
+          - All 20+ components available[2]
+          - Every variant + prop combination (autodocs)[1]
+          - Working examples they can copy-paste
+          - No hunting through codebase or Figma
+        - Storybook Docs addon auto-generates docs from stories[1]
+      - 6. Component Review & QA
+        - Before merging a component PR:
+          - Reviewer checks it in Storybook, not in a full app
+          - Faster feedback loop (no full build needed)
+          - All variants visible in one place
+          - Catch edge cases before shipping[2][1]
+      - 7. Performance Monitoring
+        - Track bundle size of components[1]
+        - Catch accidental dependency bloat
+        - Example: "Oops, did we import all of Lodash in Button?"[2]
+    - Part 4: Practical Usage Instructions (For You, Mattie)
+      - Daily Workflow: Designing a New Component
+        - Scenario: You want to add a =Card= design variant for next year's apps.
+          -
+            1. Add the variant to the story:
+            - #+begin_src markup
+              # 1. Open stories/Card.stories.tsx in your editor
+              # 2. Add a new story variant (copy-paste + edit)
+              export const CompactCard: StoryObj = {
+                args: {
+                  title: 'Compact',
+                  description: 'A smaller card layout',
+                  padding: 'sm',  // new prop
+                },
+              };
+              #+end_src
+          -
+            1. See it live:
+            - #+begin_src markup
+              npm run storybook
+              # Navigate to Card → CompactCard in sidebar
+              # Tweak Tailwind classes in the component itself or the story
+              #+end_src
+          -
+            1. Test it in context:
+            - #+begin_src markup
+              npm --workspace=packages/next-app-2026a run dev
+              # Import and use: <Card variant="compact" />
+              # Verify it works in the real app
+              #+end_src
+          -
+            1. Commit your work:
+            - #+begin_src markup
+              git add stories/Card.stories.tsx packages/ui-library/components/ui/card.tsx
+              git commit -m "design: add compact Card variant"
+              #+end_src
+          -
+            1. Both apps auto-update:
+            - =next-app-2026a= and =next-app-2026b= use the same components
+            - No manual publishing, no version bumps
+            - Just pull the latest monorepo code[5][6]
+      - Quarterly Review: Design System Audit
+        - Every 3 months, run this checklist:
+          -
+            1. In Storybook:
+            - #+begin_src markup
+              npm run storybook
+              # Check each component:
+              # - All states documented?
+              # - Accessibility (a11y) passing?
+              # - Any unused variants? (remove them)
+              #+end_src
+          -
+            1. Review Git log of stories:
+            - #+begin_src markup
+              git log --oneline -- stories/
+              # See what's changed, any patterns?
+              #+end_src
+          -
+            1. Update design token docs:
+            - Edit =globals.css= for any new theme colors/spacing
+            - Storybook Design Token addon auto-refreshes[9]
+          -
+            1. Sync with Figma (if applicable):
+            - Re-import updated components via story.to.design[10][3]
+            - Verify designers see the latest in Figma
+      - Deployment: Publishing the Library
+        - When you're ready to share (e.g., with contractors, other teams):
+          - Option 1: Monorepo (Private or Public GitHub)
+            - Apps clone the monorepo, =npm install=, done
+            - No npm publish step needed
+            - Works for: same organization, trusted collaborators[6][5]
+          - Option 2: NPM Registry
+            - #+begin_src markup
+              # Publish from packages/ui-library:
+              npm publish --workspace=packages/ui-library
+              # Other teams install:
+              npm install @yourusername/ui-library
+              #+end_src
+          - Option 3: Chromatic (Storybook's CDN)
+            - Deploy Storybook to Chromatic (free tier exists)
+            - Share Storybook URL with stakeholders
+            - They see live components, no code access needed[10]
+            - Example: =https://your-storybook.chromatic.com/=[10]
+    - Part 5: Maintenance Checklist
+      - Monthly
+        - Run =npm update= to keep dependencies fresh
+        - Check Storybook for any build warnings
+        - Review new issues in component stories
+      - Quarterly
+        - Audit unused component variants (remove clutter)
+        - Update CSS variables in =globals.css= if brand changes
+        - Test all components in light + dark mode
+      - Annually
+        - Plan Next.js upgrade (e.g., Next.js 17 when released)
+        - Plan Storybook upgrade[1]
+        - Review components used most in production apps
+        - Retire or consolidate underused components[2]
+    - Part 6: Reference Architecture (At a Glance)
+      - #+begin_src markup
+        storybook-shadcn-lab (monorepo root)
+        │
+        ├── package.json (root, workspaces config)
+        ├── package-lock.json (synchronized across all workspaces)
+        │
+        ├── packages/
+        │   ├── ui-library/                    ← Design system source of truth
+        │   │   ├── components/ui/             ← 20 shadcn components
+        │   │   ├── stories/                   ← CSF3 stories for each component
+        │   │   │   ├── Button.stories.tsx
+        │   │   │   ├── Card.stories.tsx
+        │   │   │   └── ... (20 total)
+        │   │   ├── globals.css                ← Tailwind + theme variables
+        │   │   ├── package.json               ← Exports components & styles
+        │   │   └── .storybook/                ← Storybook config (shared for all apps)
+        │   │
+        │   ├── next-app-2026a/                ← Production app #1
+        │   │   ├── app/                       ← Next.js 16 app router
+        │   │   ├── package.json               ← Imports from @yourusername/ui-library
+        │   │   └── ...
+        │   │
+        │   └── next-app-2026b/                ← Production app #2
+        │       ├── app/
+        │       ├── package.json               ← Imports from @yourusername/ui-library
+        │       └── ...
+        │
+        └── docs/
+            ├── claude-rules.md                ← Rules to keep Claude Code on track
+            ├── claude-prompts.md              ← The 10 prompts for setup
+            └── usage-guide.md                 ← This file (usage instructions)
+          - ## Part 7: Quick Reference – Commands
+        #+end_src
+      - #+begin_src markup
+        # Root monorepo:
+        npm install                           # Install all workspaces
+        npm run dev                           # Run all dev servers (concurrent)
+        # Storybook:
+        npm --workspace=packages/ui-library run storybook
+        npm --workspace=packages/ui-library run build-storybook
+        # Apps:
+        npm --workspace=packages/next-app-2026a run dev
+        npm --workspace=packages/next-app-2026b run dev
+        # Testing:
+        npm --workspace=packages/ui-library run test  (if set up)
+        # Publishing (when ready):
+        npm publish --workspace=packages/ui-library
+        #+end_src
+    - Summary: This Application Is Your Design System Factory
+      -
+        1. Design & iterate in Storybook (live, interactive, instant feedback)
+      -
+        1. Tweak consistently using CSS variables and Tailwind
+      -
+        1. Share across apps via monorepo (one source of truth)
+      -
+        1. Test & document using Storybook addons (a11y, tokens, interactions)
+      -
+        1. Version & audit via Git (design decisions tracked)
+      -
+        1. Sync with design teams via Figma plugins (optional but powerful)
+      - When completed, this repo becomes a single command away from powering all your next year's applications with a cohesive, production-ready UI library.[8][3][5][6][10][2][1]
+    - Sources
+      - [1] Storybook 10 [[https://storybook.js.org/blog/storybook-10/][https://storybook.js.org/blog/storybook-10/]]
+      - [2] Storybook for Next.js with Vite [[https://storybook.js.org/docs/get-started/frameworks/nextjs-vite][https://storybook.js.org/docs/get-started/frameworks/nextjs-vite]]
+      - [3] Storybook to Figma - The ultimate guide - story.to.design [[https://story.to.design/blog/from-storybook-to-figma][https://story.to.design/blog/from-storybook-to-figma]]
+      - [4] Install Tailwind CSS with Next.js [[https://tailwindcss.com/docs/guides/nextjs][https://tailwindcss.com/docs/guides/nextjs]]
+      - [5] Using =npm= Workspaces for Monorepo Management - Earthly Blog [[https://earthly.dev/blog/npm-workspaces-monorepo/][https://earthly.dev/blog/npm-workspaces-monorepo/]]
+      - [6] Managing Multiple Packages with npm Workspaces - GeekyAnts [[https://geekyants.com/en-us/blog/managing-multiple-packages-with-npm-workspaces-a-complete-guide][https://geekyants.com/en-us/blog/managing-multiple-packages-with-npm-workspaces-a-complete-guide]]
+      - [7] Best approach to sharing code in Monorepo : r/Frontend - Reddit [[https://www.reddit.com/r/Frontend/comments/1dmktc7/best_approach_to_sharing_code_in_monorepo/][https://www.reddit.com/r/Frontend/comments/1dmktc7/best_approach_to_sharing_code_in_monorepo/]]
+      - [8] How to Build and Share a Component Library | by Jonathan Saring [[https://blog.bitsrc.io/how-to-build-and-share-a-component-library-8edbf1eae1f3][https://blog.bitsrc.io/how-to-build-and-share-a-component-library-8edbf1eae1f3]]
+      - [9] Storybook Design Token Addon [[https://storybook.js.org/addons/storybook-design-token][https://storybook.js.org/addons/storybook-design-token]]
+      - [10] Storybook and Figma – Figma Learn - Help Center [[https://help.figma.com/hc/en-us/articles/360045003494-Storybook-and-Figma][https://help.figma.com/hc/en-us/articles/360045003494-Storybook-and-Figma]]
+      - [11] Figma to Storybook - Builder.io [[https://www.builder.io/workflows/figma-to-storybook][https://www.builder.io/workflows/figma-to-storybook]]
+      - [12] Using AI to keep Figma in sync with Storybook in minutes (not days) [[https://www.youtube.com/watch?v=iQqmI2gCvYM][https://www.youtube.com/watch?v=iQqmI2gCvYM]]
+      - [13] Using StorybookJS in a component library package with React as ... [[https://stackoverflow.com/questions/65239096/using-storybookjs-in-a-component-library-package-with-react-as-peer-dependency][https://stackoverflow.com/questions/65239096/using-storybookjs-in-a-component-library-package-with-react-as-peer-dependency]]
+      - [14] 10 Storybook Best Practices - DEV Community [[https://dev.to/rafaelrozon/10-storybook-best-practices-5a97][https://dev.to/rafaelrozon/10-storybook-best-practices-5a97]]
+      - [15] NPM Workspaces monorepo - share local package's distribution ... [[https://stackoverflow.com/questions/66785791/npm-workspaces-monorepo-share-local-packages-distribution-folder-as-root-inst][https://stackoverflow.com/questions/66785791/npm-workspaces-monorepo-share-local-packages-distribution-folder-as-root-inst]]
+      - [16] How do you guys build and maintain a component library - Reddit [[https://www.reddit.com/r/Frontend/comments/183rke3/how_do_you_guys_build_and_maintain_a_component/][https://www.reddit.com/r/Frontend/comments/183rke3/how_do_you_guys_build_and_maintain_a_component/]]
+      - [17] How to manage multiple Front-End projects with a monorepo [[https://www.pixelmatters.com/insights/how-to-manage-multiple-front-end-projects-with-a-monorepo][https://www.pixelmatters.com/insights/how-to-manage-multiple-front-end-projects-with-a-monorepo]]
+      - file:///Users/lupin/Developer/design-projects
+- [[id:e9cec46c-1f9c-4fa3-8fca-27d7caeadb33][Tech Resume]] Work
+  - [X] add LEMR
+  - [X] Condense the resume
+- -----

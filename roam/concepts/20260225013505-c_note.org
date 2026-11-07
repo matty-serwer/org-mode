@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       b42566da-4387-4def-bd67-1bf6c02a7db5
+:REFLECT_ID: ef0a4da11a6a4103bf7b4255b0048437
+:CREATED:  [2026-02-25 Wed 01:35]
+:MODIFIED: [2026-04-08 Wed 21:47]
+:END:
+#+title: C-Note
+#+filetags: :concept:
+#+date: 2026-02-25
+-
+  -
+    - A [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]] & [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]] Integration with [[id:505eb1b7-1edf-4220-a1ff-ba0fe21f04ba][Obsidian]]

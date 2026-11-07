@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ccc4b6f5-e2be-4941-968a-8f65c5906fe8
+:REFLECT_ID: 2da8c3b6ca42472c92e7d49433c5db72
+:CREATED:  [2025-10-26 Sun 14:07]
+:MODIFIED: [2025-12-05 Fri 18:40]
+:END:
+#+title: NeoVim
+#+filetags: :concept:
+#+date: 2025-10-26
+- I use the Neovim Text editor. It is an enhanced [[id:b675ecf8-30e9-4861-bc6e-dd5a0e4bbbca][Vim]] editor in the [[id:7be240e2-d85d-495b-8826-13f3cb6c319d][Bash]] Terminal

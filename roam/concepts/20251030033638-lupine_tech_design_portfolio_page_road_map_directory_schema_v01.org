@@ -1,0 +1,429 @@
+:PROPERTIES:
+:ID:       477131ad-d059-433a-ad42-ebef78e45ac9
+:REFLECT_ID: 06ef6c5c986640208498bbdcaa982836
+:CREATED:  [2025-10-30 Thu 03:36]
+:MODIFIED: [2025-11-01 Sat 08:20]
+:END:
+#+title: Lupine Tech Design 🌐 Portfolio Page Road Map & Directory & #schema v0.1
+#+filetags: :concept:schema:
+#+date: 2025-10-30
+* [[id:0844b62c-f496-457e-94ea-6c1b4407441f][Lupine Tech Design]] [[id:2270ec16-0a33-4195-ad0b-3845ead5fe5a][🌐 Portfolio Page]] [[id:ba430817-d7ff-487b-8a65-15899e5111cc][Road Map]] & [[id:d86ace7a-497e-418d-8122-3d98ead3814c][Directory]] &  v0.1
+* Lupine Tech Design - MVP Development Roadmap
+*Project:* Marketing & Portfolio Website
+*Owner:* Matthew Serwer
+*Framework:* Next.js 16.0.1 with App Router
+*Target:* MVP in Sprint 1 (2 weeks), enhancements in Sprint 2
+-----
+
+** Effort Scale
+- *1-3:* Quick task (hours)
+- *5:* Half-day task
+- *8:* Full-day task
+- *13:* 2-3 day task
+- *21:* Full week task
+-----
+
+** SPRINT 1: MVP - CORE SITE - LIFT: 89
+*** EPIC 1: Project Foundation & Setup - LIFT: 21
+**** Block 1.1: Initial Setup - LIFT: 8
+- Initialize Next.js 16.0.1 project with TypeScript (LIFT: 2)
+- Configure Tailwind CSS 4.1 (LIFT: 2)
+- Install and configure shadcn/ui 3.5.0 (LIFT: 2)
+- Set up ESLint 9 and Prettier (LIFT: 1)
+- Configure path aliases in tsconfig.json (LIFT: 1)
+**** Block 1.2: Project Structure - LIFT: 5
+- Create complete directory structure per architecture doc (LIFT: 2)
+- Set up Git repository and connect to GitHub (LIFT: 1)
+- Configure next.config.ts for Turbopack and images (LIFT: 2)
+**** Block 1.3: Deployment Pipeline - LIFT: 8
+- Create Vercel project and connect to GitHub (LIFT: 2)
+- Configure environment variables in Vercel (LIFT: 2)
+- Set up .env.local and .env.example files (LIFT: 1)
+- Test deployment pipeline (dev, preview, production) (LIFT: 2)
+- Configure custom domain if available (LIFT: 1)
+-----
+
+*** EPIC 2: Design System & Core Components - LIFT: 21
+**** Block 2.1: Design Tokens & Theme - LIFT: 5
+- Configure Tailwind theme with brand colors (LIFT: 2)
+- Set up CSS variables in globals.css (LIFT: 2)
+- Define typography scale and spacing system (LIFT: 1)
+**** Block 2.2: shadcn/ui Components - LIFT: 8
+- Install core shadcn components: Button, Card, Badge, Separator (LIFT: 3)
+- Install form components: Input, Textarea, Label, Form (LIFT: 3)
+- Create component documentation structure (LIFT: 2)
+**** Block 2.3: Layout Components - LIFT: 8
+- Create root layout.tsx with metadata (LIFT: 2)
+- Build Header component with navigation (LIFT: 3)
+- Build Footer component with links and social (LIFT: 2)
+- Create mobile navigation menu (LIFT: 1)
+-----
+
+*** EPIC 3: Core Pages (MVP Content) - LIFT: 34
+**** Block 3.1: Homepage - LIFT: 13
+- Create page.tsx with hero section (LIFT: 3)
+- Build about preview section (LIFT: 2)
+- Create services overview grid (LIFT: 3)
+- Add tech stack icon display (LIFT: 2)
+- Implement featured project spotlight (Phantom Power) (LIFT: 2)
+- Add final CTA section (LIFT: 1)
+**** Block 3.2: About Page - LIFT: 8
+- Create about/page.tsx with page structure (LIFT: 2)
+- Write and implement company story section (LIFT: 2)
+- Build bio section with professional photo placeholder (LIFT: 2)
+- Add core values section (LIFT: 1)
+- Implement "Why Work With Me" section (LIFT: 1)
+**** Block 3.3: Projects Page - LIFT: 8
+- Create projects/page.tsx with grid layout (LIFT: 2)
+- Build ProjectCard component (LIFT: 3)
+- Create project data structure in constants/projects.ts (LIFT: 2)
+- Add 3-4 placeholder projects with real data (LIFT: 1)
+**** Block 3.4: Contact Page - LIFT: 5
+- Create contact/page.tsx with layout (LIFT: 1)
+- Add direct contact information section (LIFT: 1)
+- Add social links section (LIFT: 1)
+- Create placeholder for contact form (LIFT: 2)
+-----
+
+*** EPIC 4: Essential Pages & SEO - LIFT: 13
+**** Block 4.1: SEO Foundation - LIFT: 5
+- Add metadata to all pages (title, description, OG tags) (LIFT: 3)
+- Create robots.txt in public folder (LIFT: 1)
+- Generate basic sitemap.xml (LIFT: 1)
+**** Block 4.2: Error Pages - LIFT: 5
+- Create custom 404 page (not-found.tsx) (LIFT: 2)
+- Create error boundary page (error.tsx) (LIFT: 2)
+- Test error pages functionality (LIFT: 1)
+**** Block 4.3: Content & Copy - LIFT: 3
+- Write all copy for Homepage (LIFT: 1)
+- Write all copy for About page (LIFT: 1)
+- Write services descriptions (LIFT: 1)
+-----
+
+** SPRINT 2: ENHANCED FEATURES (2 WEEKS) - LIFT: 76
+*** EPIC 5: Contact Form Implementation - LIFT: 13
+**** Block 5.1: Form UI - LIFT: 5
+- Build ContactForm component with React Hook Form (LIFT: 3)
+- Implement Zod validation schema (LIFT: 2)
+**** Block 5.2: API Integration - LIFT: 8
+- Create API route at /api/contact/route.ts (LIFT: 3)
+- Integrate Resend email service (LIFT: 3)
+- Add rate limiting and error handling (LIFT: 2)
+-----
+
+*** EPIC 6: Phantom Power Showcase - LIFT: 21
+**** Block 6.1: Page Structure - LIFT: 8
+- Create phantom-power/page.tsx with hero (LIFT: 2)
+- Build "The Problem" section (LIFT: 2)
+- Build "The Solution" section (LIFT: 2)
+- Add status badge component (LIFT: 2)
+**** Block 6.2: Features & Content - LIFT: 8
+- Create features showcase with icons (LIFT: 3)
+- Add technology stack section (LIFT: 2)
+- Build development journey section (LIFT: 2)
+- Add GitHub repository links (LIFT: 1)
+**** Block 6.3: Visual Assets - LIFT: 5
+- Add project screenshots/wireframes (LIFT: 2)
+- Create placeholder graphics if needed (LIFT: 2)
+- Optimize all images with Next.js Image (LIFT: 1)
+-----
+
+*** EPIC 7: Projects Portfolio Expansion - LIFT: 13
+**** Block 7.1: Project Content - LIFT: 8
+- Add 4-6 additional real projects with details (LIFT: 5)
+- Create high-quality project screenshots (LIFT: 2)
+- Add GitHub and live site links (LIFT: 1)
+**** Block 7.2: Filtering & Enhancement - LIFT: 5
+- Implement basic category filtering (LIFT: 3)
+- Add technology badge display (LIFT: 1)
+- Create "Featured" project highlighting (LIFT: 1)
+-----
+
+*** EPIC 8: Blog Structure (Optional) - LIFT: 13
+**** Block 8.1: Blog Setup - LIFT: 8
+- Configure MDX in next.config.ts (LIFT: 2)
+- Create blog/page.tsx for blog list (LIFT: 2)
+- Create blog/[slug]/page.tsx for posts (LIFT: 2)
+- Build MDX processing utilities in lib/mdx.ts (LIFT: 2)
+**** Block 8.2: Sample Content - LIFT: 5
+- Create 2-3 placeholder blog posts in MDX (LIFT: 3)
+- Style MDX content (code blocks, headings) (LIFT: 2)
+-----
+
+*** EPIC 9: Analytics & Monitoring - LIFT: 5
+**** Block 9.1: Analytics Integration - LIFT: 5
+- Install and configure Vercel Analytics (LIFT: 2)
+- Set up Plausible Analytics script (LIFT: 2)
+- Test analytics tracking (LIFT: 1)
+-----
+
+*** EPIC 10: Testing & Quality Assurance - LIFT: 11
+**** Block 10.1: Testing Setup - LIFT: 5
+- Configure Jest and React Testing Library (LIFT: 2)
+- Write tests for core components (LIFT: 3)
+**** Block 10.2: QA & Performance - LIFT: 6
+- Responsive design testing (mobile, tablet, desktop) (LIFT: 2)
+- Lighthouse audit and optimization (LIFT: 2)
+- Cross-browser testing (Chrome, Firefox, Safari) (LIFT: 1)
+- Accessibility audit with axe DevTools (LIFT: 1)
+-----
+
+** SPRINT 3: POLISH & OPTIMIZATION (FLEX) - LIFT: 42
+*** EPIC 11: Content Creation - LIFT: 13
+**** Block 11.1: Professional Assets - LIFT: 8
+- Professional headshot photography (LIFT: 3)
+- Create company logo and branding (LIFT: 3)
+- Gather high-quality project screenshots (LIFT: 2)
+**** Block 11.2: Written Content - LIFT: 5
+- Write 3-5 technical blog posts (LIFT: 3)
+- Create detailed project case studies (LIFT: 2)
+-----
+
+*** EPIC 12: Advanced Features - LIFT: 21
+**** Block 12.1: Interactivity - LIFT: 8
+- Add scroll animations with Framer Motion (LIFT: 3)
+- Implement micro-interactions (LIFT: 2)
+- Add loading skeletons for async content (LIFT: 3)
+**** Block 12.2: Enhanced UX - LIFT: 8
+- Implement dark mode toggle (LIFT: 5)
+- Add project detail modals (LIFT: 3)
+**** Block 12.3: Additional Pages - LIFT: 5
+- Create Services page (if not in MVP) (LIFT: 3)
+- Add resume/CV download functionality (LIFT: 2)
+-----
+
+*** EPIC 13: Performance & SEO Optimization - LIFT: 8
+**** Block 13.1: Performance - LIFT: 5
+- Image optimization audit (LIFT: 2)
+- Bundle size analysis and reduction (LIFT: 2)
+- Core Web Vitals optimization (LIFT: 1)
+**** Block 13.2: SEO Enhancement - LIFT: 3
+- Implement structured data (JSON-LD) (LIFT: 2)
+- Add comprehensive meta tags (LIFT: 1)
+-----
+
+** DIRECTORY MAP
+#+begin_src markup
+lupine-tech-design/
+│
+├── public/                           # Public static assets
+│   ├── favicon.ico
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── images/
+│       ├── logo/
+│       │   └── lupine-tech-logo.svg
+│       ├── team/
+│       │   └── matthew-serwer.jpg
+│       ├── projects/
+│       │   ├── phantom-power/
+│       │   ├── project-1/
+│       │   └── project-2/
+│       └── tech-stack/
+│           └── (technology icons)
+│
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx                # Root layout with Header/Footer
+│   │   ├── page.tsx                  # Homepage (/)
+│   │   ├── not-found.tsx             # 404 page
+│   │   ├── error.tsx                 # Error boundary
+│   │   ├── globals.css               # Global styles
+│   │   │
+│   │   ├── about/
+│   │   │   └── page.tsx              # About page (/about)
+│   │   │
+│   │   ├── services/
+│   │   │   └── page.tsx              # Services page (/services)
+│   │   │
+│   │   ├── projects/
+│   │   │   └── page.tsx              # Projects list (/projects)
+│   │   │
+│   │   ├── phantom-power/
+│   │   │   └── page.tsx              # Phantom Power showcase (/phantom-power)
+│   │   │
+│   │   ├── blog/
+│   │   │   ├── page.tsx              # Blog list (/blog)
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx          # Individual blog post (/blog/[slug])
+│   │   │
+│   │   ├── contact/
+│   │   │   └── page.tsx              # Contact page (/contact)
+│   │   │
+│   │   └── api/
+│   │       └── contact/
+│   │           └── route.ts          # Contact form API endpoint
+│   │
+│   ├── components/
+│   │   ├── ui/                       # shadcn/ui components
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── textarea.tsx
+│   │   │   ├── label.tsx
+│   │   │   ├── badge.tsx
+│   │   │   ├── separator.tsx
+│   │   │   └── form.tsx
+│   │   │
+│   │   ├── layout/                   # Layout components
+│   │   │   ├── header.tsx
+│   │   │   ├── footer.tsx
+│   │   │   ├── navigation.tsx
+│   │   │   ├── mobile-menu.tsx
+│   │   │   └── container.tsx
+│   │   │
+│   │   └── features/                 # Feature components
+│   │       ├── hero-section.tsx
+│   │       ├── about-preview.tsx
+│   │       ├── services-overview.tsx
+│   │       ├── tech-stack-display.tsx
+│   │       ├── project-card.tsx
+│   │       ├── project-filter.tsx
+│   │       ├── contact-form.tsx
+│   │       ├── blog-post-card.tsx
+│   │       ├── phantom-features.tsx
+│   │       └── cta-section.tsx
+│   │
+│   ├── lib/
+│   │   ├── utils.ts                  # General utilities (cn(), etc.)
+│   │   ├── mdx.ts                    # MDX processing
+│   │   ├── projects.ts               # Project data utilities
+│   │   ├── email.ts                  # Email utilities (Resend)
+│   │   └── analytics.ts              # Analytics helpers
+│   │
+│   ├── types/
+│   │   ├── index.ts                  # Central type exports
+│   │   ├── project.ts                # Project interface
+│   │   ├── blog.ts                   # Blog post interface
+│   │   ├── contact.ts                # Contact form types
+│   │   └── navigation.ts             # Navigation types
+│   │
+│   ├── constants/
+│   │   ├── navigation.ts             # Navigation menu items
+│   │   ├── services.ts               # Services data
+│   │   ├── tech-stack.ts             # Technologies list
+│   │   ├── social-links.ts           # Social media links
+│   │   ├── projects.ts               # Project data
+│   │   └── site-config.ts            # Site metadata
+│   │
+│   ├── styles/
+│   │   └── mdx.css                   # MDX content styling
+│   │
+│   ├── hooks/
+│   │   ├── use-scroll-position.ts
+│   │   ├── use-media-query.ts
+│   │   └── use-mounted.ts
+│   │
+│   └── utils/
+│       ├── seo.ts                    # SEO helpers
+│       └── validation.ts             # Zod schemas
+│
+├── content/                          # MDX content
+│   ├── blog/
+│   │   ├── building-with-nextjs-16.mdx
+│   │   ├── phantom-power-journey.mdx
+│   │   └── web-dev-insights.mdx
+│   └── projects/                     # Optional project details
+│       └── (project-slug).mdx
+│
+├── tests/
+│   └── __tests__/
+│       ├── components/
+│       ├── lib/
+│       └── integration/
+│
+├── e2e/
+│   ├── homepage.spec.ts
+│   ├── navigation.spec.ts
+│   └── contact-form.spec.ts
+│
+├── next.config.ts                    # Next.js configuration
+├── tsconfig.json                     # TypeScript configuration
+├── tailwind.config.ts                # Tailwind configuration
+├── components.json                   # shadcn/ui configuration
+├── .eslintrc.json                    # ESLint configuration
+├── .prettierrc                       # Prettier configuration
+├── .env.local                        # Environment variables (local)
+├── .env.example                      # Environment variables template
+├── package.json                      # Dependencies
+└── README.md                         # Project documentation
+#+end_src
+-----
+
+** PAGE ROUTES
+*** Primary Pages
+- =/= - Homepage (Landing page)
+- =/about= - About page (Company & Matthew's story)
+- =/services= - Services page (Web development offerings)
+- =/projects= - Projects page (Portfolio showcase)
+- =/phantom-power= - Phantom Power dedicated page
+- =/blog= - Blog list page
+- =/blog/[slug]= - Individual blog post
+- =/contact= - Contact page with form
+*** Utility Pages
+- =/not-found= - 404 error page
+- Error boundary - Automatic error handling
+*** API Routes
+- =/api/contact= - POST endpoint for contact form
+-----
+
+** MVP PRIORITY CHECKLIST (SPRINT 1)
+*** Must Have for MVP
+- Homepage with hero, about preview, services grid, tech stack, featured project
+- About page with company story, bio, values
+- Projects page with 3-4 real projects and basic grid
+- Contact page with contact info and social links (form in Sprint 2)
+- Header navigation and Footer
+- Responsive mobile design
+- Basic SEO (metadata, robots.txt)
+- Deployed to Vercel with custom domain
+- Error pages (404, error boundary)
+*** Can Wait for Sprint 2
+- Fully functional contact form with email
+- Phantom Power detailed showcase page
+- 6-8 projects with filtering
+- Blog structure and content
+- Analytics integration
+- Comprehensive testing
+*** Can Wait for Sprint 3
+- Professional photography and branding
+- Dark mode
+- Animations and micro-interactions
+- Blog content (3-5 posts)
+- Advanced SEO (structured data)
+- Performance optimization deep dive
+-----
+
+** TOTAL EFFORT SUMMARY
+- Sprint 1 (MVP): 89 points (2 weeks)
+- Sprint 2 (Enhanced): 76 points (2 weeks)
+- Sprint 3 (Polish): 42 points (flex)
+- Total Project: 207 points
+-----
+
+** SUCCESS METRICS
+*** Sprint 1 MVP Complete When:
+- All 4 core pages deployed and accessible
+- Site is mobile responsive
+- Lighthouse Performance greater than 85, Accessibility greater than 90
+- No broken links or console errors
+- Professional appearance with consistent design system
+- Vercel deployment working with custom domain
+*** Sprint 2 Complete When:
+- Contact form sends emails successfully
+- Phantom Power page showcases project comprehensively
+- 6-8 projects displayed with real content
+- Blog structure operational with 2-3 posts
+- Analytics tracking visitor data
+- Lighthouse Performance greater than 90, Accessibility greater than 95
+*** Sprint 3 Complete When:
+- Professional branding and photography integrated
+- Dark mode functional
+- Core Web Vitals all in "Good" range
+- 5+ blog posts published
+- Structured data implemented
+- Site ready for public launch and marketing
+-----
+
+*Last Updated:* October 29, 2025
+*Version:* 1.0

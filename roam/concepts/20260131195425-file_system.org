@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b97b115d-34d1-427d-9677-5f4bf4a139d2
+:REFLECT_ID: 7a94915fb9f4427d816aeb3cc4cebfcf
+:CREATED:  [2026-01-31 Sat 19:54]
+:MODIFIED: [2026-03-14 Sat 03:41]
+:END:
+#+title: File System
+#+filetags: :concept:
+#+date: 2026-01-31
+

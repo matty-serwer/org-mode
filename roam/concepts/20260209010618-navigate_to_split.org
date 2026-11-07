@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       36b052ab-6991-4a90-a277-db7bf2c38d0d
+:REFLECT_ID: aa6ce993f2434e108550d7dd46e77c73
+:CREATED:  [2026-02-09 Mon 01:06]
+:MODIFIED: [2026-02-09 Mon 01:06]
+:END:
+#+title: Navigate To Split
+#+filetags: :concept:
+#+date: 2026-02-09
+

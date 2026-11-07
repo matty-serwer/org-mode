@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3b4b2f66-4064-4ffe-af6a-ef500dbc370b
+:REFLECT_ID: 242f87f6b747401dab9156ab242b05cb
+:CREATED:  [2025-10-30 Thu 14:34]
+:MODIFIED: [2025-10-30 Thu 14:34]
+:END:
+#+title: Fuzzy Finder
+#+filetags: :concept:
+#+date: 2025-10-30
+

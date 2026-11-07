@@ -1,0 +1,261 @@
+:PROPERTIES:
+:ID:       b5fc79f3-cb8e-4a7b-87e9-bc8e49c5500b
+:REFLECT_ID: 10112025
+:CREATED:  [2025-11-10 Mon 16:34]
+:MODIFIED: [2025-11-30 Sun 06:39]
+:END:
+#+title: Mon, November 10th, 2025
+#+filetags: :daily:sequence:
+#+date: 2025-11-10
+- Valerie b design lab
+- Portland trading company
+- Ableton push 2 teardown
+  - Under feet. Long screws are inner ones. Corners short. 
+  - Back shorter screws across top Orion. Right left edge middle screws
+- [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]]  Ninja Guide
+  -----
+  - Step-by-Step Bullet Outline to Use Claude Code
+    [[https://www.youtube-nocookie.com/embed/i_OHQH4-M2Y][youtube: https://www.youtube-nocookie.com/embed/i_OHQH4-M2Y]]
+    - 
+  -
+    - *Initialize Claude Code in the Project*
+      - Run the =forward/init= command in the project root.
+      - This command scans the entire codebase, including folder structure, application start method, state management, etc.
+      - It generates a =claude.md= file summarizing the project structure, frameworks, libraries, and development commands in a human-readable format.
+      - Confirm creation of the =claude.md= file when prompted.
+      - [[https://www.youtube.com/watch?v=i_OHQH4-M2Y&t=30][(00:00:30)]]
+    - *Review and Update the *[[claude.md][*claude.md*]]* File*
+      - Open the generated =claude.md= file in the project root.
+      - Check the architecture overview, project structure, data architecture, styling, testing setup, and development notes.
+      - Manually update the file if necessary, especially if starting with a new project or adding new folders (e.g., add a =hooks= folder if you plan to create hooks).
+      - Keep this file up-to-date and track it with version control so all developers share the same guidance.
+      - [[https://www.youtube.com/watch?v=i_OHQH4-M2Y&t=120][(00:02:00)]]
+    - *Add Memories to *[[claude.md][*claude.md*]]* for Project-Specific Guidance*
+      - Use the hash symbol =#= in the chat session to add memories or instructions.
+      - Choose to save memories to project memory (recommended), local project memory, or global memory.
+      - Project memory updates the =claude.md= file and is shared with the team.
+      - Example: Add a memory like "When making new page components, always add a link to that page in the header."
+      - [[https://www.youtube.com/watch?v=i_OHQH4-M2Y&t=300][(00:05:00)]]
+    - *Create New Features Using Claude Code*
+      - Ask Claude Code to create new components, hooks, or pages by typing your request in the chat.
+      - Example: Request a hook to store the user's theme preference and save it in local storage.
+      - Specify if you do not want the new feature to be used anywhere yet to avoid unwanted automatic usage.
+      - Claude Code will refer to the =claude.md= file to place new files in the correct folders (e.g., create a =hooks= folder if it doesn't exist).
+      - Review and accept the generated code changes.
+      - [[https://www.youtube.com/watch?v=i_OHQH4-M2Y&t=390][(00:06:30)]]
+    - *Test New Features and Verify Integration*
+      - After Claude Code creates new components or pages, test them in your development environment or browser.
+      - For example, create a new "About" page with a title and content, and verify that Claude Code adds a link to the header navigation automatically if instructed.
+      - Accept any additional file edits Claude Code proposes to integrate the new feature properly.
+      - [[https://www.youtube.com/watch?v=i_OHQH4-M2Y&t=510][(00:08:30)]]
+    - *Manage and Edit Memory Files*
+      - Use the =/memory= command to open and edit memory files (=claude.md= files) directly in your editor.
+      - Select which memory file to edit: project memory, local project memory, or global memory.
+      - Edit these files to add or update guidance, tooling preferences, or code style notes.
+      - Note: Local memory is being deprecated in favor of importing untracked files into project memory.
+      - [[https://www.youtube.com/watch?v=i_OHQH4-M2Y&t=600][(00:10:00)]]
+    - *Maintain *[[claude.md][*claude.md*]]* for Best Results*
+      - Regularly update the =claude.md= file whenever you change project structure, add or remove packages, or modify coding conventions.
+      - This ensures Claude Code stays aligned with the current state of your project and generates code accordingly.
+      - Share the updated =claude.md= file via version control so all team members benefit from consistent guidance.
+      - [[https://www.youtube.com/watch?v=i_OHQH4-M2Y&t=690][(00:11:30)]]
+- Steve's [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]] Tips
+  Here are Steve's tips from the video "How I use Claude Code (+ my best tips)" with simple bullet points and small code snippets:
+  These tips help maximize productivity and make working with Claude Code smoother and more efficient.
+  If you want to explore more, check the full video here:
+  
+  [[https://www.youtube-nocookie.com/embed/n7iT5r0Sl_Y][youtube: https://www.youtube-nocookie.com/embed/n7iT5r0Sl_Y]]
+  - *Use the Claude Code extension for easy launch and multiple panes*
+    Open Claude Code in multiple panes to work on different files in parallel.
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=60][(00:01:00)]]
+  - *Switch models with the "model" command*
+    Use Opus for better quality, switch to Sonnet if Opus has issues.
+    
+    #+begin_src bash
+    model opus
+    model sonnet
+    
+    #+end_src
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=150][(00:02:30)]]
+  - *Clear chat history often to save tokens*
+    
+    #+begin_src bash
+    clear
+    
+    #+end_src
+    Clear every time you start a new task to avoid token bloat.
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=180][(00:03:00)]]
+  - *Use the up arrow key to access past chats, even from prior sessions*
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=195][(00:03:15)]]
+  - *Skip annoying permission prompts with a command*
+    
+    #+begin_src bash
+    claude dangerously skip permissions
+    
+    #+end_src
+    Run this after opening Claude Code to avoid constant permission requests.
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=240][(00:04:00)]]
+  - *Use the GitHub app for automatic PR code reviews*
+    Customize the review to focus on bugs and security issues only by editing =claude_code_review.yaml=.
+    /(No direct snippet, but config file mentioned)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=300][(00:05:00)]]
+  - *Drag and drop files with Shift to reference them properly*
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=360][(00:06:00)]]
+  - *Paste images from clipboard using Control + V (not Command + V on Mac)*
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=390][(00:06:30)]]
+  - *Stop Claude processing with Escape key, not Control + C*
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=420][(00:07:00)]]
+  - *Queue multiple messages to run sequentially*
+    You can queue prompts and Claude will run them smartly when ready.
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=450][(00:07:30)]]
+  - *Add custom hooks and slash commands easily*
+    Create commands by adding markdown files in =acloud/commands= folder.
+    /(No direct snippet, but explained)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=480][(00:08:00)]]
+  - *Use *=.cloud.md=* files for project memory and preferences*
+    Store project-specific instructions or preferences hierarchically.
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=510][(00:08:30)]]
+  - *Use the *[[builder.io][*builder.io*]]* VS Code extension for a visual UI alternative*
+    Launch a visual interface with live preview and design mode from the IDE sidebar.
+    /(No code snippet)/
+    [[https://www.youtube.com/watch?v=n7iT5r0Sl_Y&t=540][(00:09:00)]]
+- [[id:35a24719-8497-4359-a239-ed1f1b96a6d2][Claude Code]] & [[id:8f3586f7-8e2a-4427-8722-d05c820d3b1d][Context7]] [[id:e8eea4da-a54e-4465-8a03-ffe1ba5f1b55][MCP Server]]
+  How to Set Up and Use Context 7 MCP Server with Cloud Code
+  Here is a step-by-step guide based on the video instructions:
+  -----
+  
+  1. Connecting to Context 7 MCP Server
+  /(Timestamp: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:01:30/]]/)/
+  -----
+  
+  2. Finding Library Documentation
+  /(Timestamp: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:02:15/]]/)/
+  -----
+  
+  3. Using Documentation to Compile Commands or Files
+  /(Timestamp: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:03:00/]]/)/
+  -----
+  
+  4. Retrieving Documentation from Other Sources (e.g., OpenAI)
+  /(Timestamp: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:04:30/]]/)/
+  -----
+  
+  5. Using Documentation in Your Project
+  /(Timestamp: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:06:00/]]/)/
+  -----
+  
+  6. Checking and Updating Project Dependencies
+  /(Timestamp: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:07:30/]]/)/
+  -----
+  
+  7. Making Code Changes with Cloud Code and Context 7
+  /(Timestamp: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:09:30/]]/)/
+  -----
+  
+  Summary
+  This setup provides a powerful, free, and up-to-date documentation resource integrated directly into your coding workflow.
+  - *Use Cloud Code as your agent tool*, which is the preferred method.
+  - Run the command to add the MCP server remotely:
+    
+    #+begin_src markup
+    cloud MCP add
+    
+    #+end_src
+  - Follow the provided link to connect to the remote Context 7 MCP server.
+  - The server is free to use and requires no additional setup or payment.
+  - To find documentation for a specific library (e.g., Cloud Code), first *search for the library ID* by querying Context 7:
+    
+    #+begin_src markup
+    find a library name code
+    
+    #+end_src
+  - From the search results, select the appropriate library (e.g., "cloud code").
+  - Then, retrieve the full documentation using:
+    
+    #+begin_src markup
+    get library docs for cloud code
+    
+    #+end_src
+  - This will provide detailed documentation that you can expand and explore.
+  - You can instruct the agent to *compile a list of slash commands or explanations* from the documentation, for example:
+    
+    #+begin_src markup
+    Do some research on code with a list of all the slash commands plus explainers saved to CC commands.mmarkdown
+    
+    #+end_src
+  - The agent will process the documentation and create a markdown file with the compiled information.
+  - You can then open and review this file to see all commands and explanations.
+  - You can also use Context 7 to get documentation for other libraries or APIs like OpenAI.
+  - Search for the library (e.g., "OpenAI Python") and retrieve relevant docs.
+  - Then, ask the agent to compile this into a markdown file for easy reference:
+    
+    #+begin_src markup
+    Make an OpenAI markdown file with information
+    
+    #+end_src
+  - This helps quickly get up-to-date API documentation for your projects.
+  - You can copy and paste documentation from Context 7 into your local project files.
+  - For example, copy Pyantic AI docs and save them as =pyanticAI.md=.
+  - Then, instruct Cloud Code to read this file to have up-to-date documentation available for coding assistance.
+  - This method saves time searching for docs manually.
+  - Use Cloud Code to analyze your project and list frameworks and versions used.
+  - Then, query Context 7 to check for updates or improvements in those libraries.
+  - For example, check Stripe documentation for webhook updates and verify your integration.
+  - The agent can analyze your code and point out issues or outdated parts.
+  - You can ask Cloud Code to make changes in your project, such as updating the front page theme.
+  - The agent will perform the changes, and you can review and accept or revert them easily.
+  - This workflow allows quick iteration and testing with minimal manual coding.
+  - Add Context 7 MCP server to Cloud Code using =cloud MCP ad=.
+  - Search and retrieve library documentation via Context 7 commands.
+  - Compile documentation into markdown files for easy reference.
+  - Use the docs to assist coding, check integrations, and update projects.
+  - Leverage Cloud Code agents to automate code changes and reviews.
+- Explanation of [[id:b8910af8-a397-43ee-812b-60acc380a959][Slash Commands]] Usage with [[id:8f3586f7-8e2a-4427-8722-d05c820d3b1d][Context7]] in [[id:dab4588e-927b-40c6-9c57-15998728d3d0][Cloud Code]]
+  -----
+  
+  What Are Slash Commands in This Context?
+  -----
+  
+  How Slash Commands Are Leveraged to Use Context 7
+  -----
+  
+  Why Have Claude Code Create the =CC commands.mmarkdown= File?
+  -----
+  
+  How the Process Works (Step-by-Step)
+  -----
+  
+  Benefits of This Approach
+  -----
+  
+  /(Timestamp reference for this explanation: /[[https://www.youtube.com/watch?v=BJX6uJHIz5U][/00:03:00/]]/)/
+  - Slash commands are predefined commands you can invoke within Cloud Code to perform specific tasks quickly.
+  - They help automate interactions, such as fetching documentation or running code snippets.
+  - *Context 7 contains up-to-date documentation for thousands of libraries*, including Cloud Code itself.
+  - Instead of manually searching or browsing documentation, you use slash commands to *query Context 7 directly from Cloud Code*.
+  - This allows you to *retrieve, compile, and organize documentation or command lists efficiently*.
+  - The user instructs Claude Code (via a slash command) to *research all available slash commands related to Cloud Code* using the Context 7 documentation.
+  - Claude Code then *automatically compiles a comprehensive list of these slash commands along with explanations* into a markdown file named =CC commands.mmarkdown=.
+  - This file serves as a *centralized, easy-to-reference resource* for all slash commands you can use in Cloud Code.
+  - It *saves time and effort* by automating the documentation gathering process instead of manually collecting and formatting the commands.
+  1. *Query Context 7 for Cloud Code documentation* to get the latest info on slash commands.
+  1. *Prompt Claude Code with a task* like:
+    
+    #+begin_src markup
+    Do some research on code with a list of all the slash commands plus explainers saved to CC commands.mmarkdown
+    
+    #+end_src
+  1. Claude Code uses the Context 7 docs to *extract relevant slash commands and explanations*.
+  1. It *compiles this information into the markdown file* =CC commands.mmarkdown=.
+  1. You can then *open and use this file as a reference* for all slash commands available in Cloud Code.
+  - *Automates documentation compilation* — no manual searching or formatting needed.
+  - *Keeps documentation up-to-date* by pulling from the latest Context 7 data.
+  - *Improves productivity* by having a ready-made command reference.
+  - *Integrates seamlessly* into your Cloud Code workflow.

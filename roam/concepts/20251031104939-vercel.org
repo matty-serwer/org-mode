@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       48eba0a5-625e-4deb-8cac-c8bdf947d843
+:REFLECT_ID: 1ba370a9f85a4e1a8134b6ba67950603
+:CREATED:  [2025-10-31 Fri 10:49]
+:MODIFIED: [2026-01-23 Fri 00:54]
+:END:
+#+title: Vercel
+#+filetags: :concept:
+#+date: 2025-10-31
+

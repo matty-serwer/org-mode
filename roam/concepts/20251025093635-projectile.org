@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       24a11107-00af-41a1-935c-ecde27f80958
+:REFLECT_ID: 0298ec9cef3f4bd4b6483163fb126756
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-11-29 Sat 14:56]
+:END:
+#+title: Projectile
+#+filetags: :concept:
+#+date: 2025-10-25
+

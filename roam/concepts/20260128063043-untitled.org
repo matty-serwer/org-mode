@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       575f93e2-3f7b-4a96-8bdd-5e396bb22f88
+:REFLECT_ID: 75f37ff194f54f76b2762f682d4dde0e
+:CREATED:  [2026-01-28 Wed 06:30]
+:MODIFIED: [2026-01-28 Wed 06:30]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-01-28
+

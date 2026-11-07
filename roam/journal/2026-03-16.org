@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       6e9f335e-0660-48fb-a81b-f00f550a46dc
+:REFLECT_ID: 16032026
+:CREATED:  [2026-03-15 Sun 20:32]
+:MODIFIED: [2026-03-15 Sun 20:36]
+:END:
+#+title: Mon, March 16th, 2026
+#+filetags: :daily:
+#+date: 2026-03-15
+- [[id:6b8f845c-ef74-4c8d-8196-67159300a5c3][AVTech]] Todo
+  - [ ] Reaffirm Cable rolling and otter techniques
+    - Audio
+    - Cat-v
+  - [ ] Study how to correctly [[id:595fb097-133b-4f46-a62b-e6869ac38401][Ring Out A Room]]
+- 

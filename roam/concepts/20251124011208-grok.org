@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a799f989-5a27-49b5-bc32-7f0cd6f58e48
+:REFLECT_ID: 23378b3835a245a59fd1dc4120abbb85
+:CREATED:  [2025-11-24 Mon 01:12]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Grok
+#+filetags: :concept:
+#+date: 2025-11-24
+

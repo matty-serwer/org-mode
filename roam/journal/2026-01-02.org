@@ -1,0 +1,56 @@
+:PROPERTIES:
+:ID:       98a57656-a909-4e63-94d5-034444957332
+:REFLECT_ID: 02012026
+:CREATED:  [2025-12-31 Wed 14:29]
+:MODIFIED: [2026-01-26 Mon 19:32]
+:END:
+#+title: Fri, January 2nd, 2026
+#+filetags: :daily:bump:therapy:
+#+date: 2025-12-31
+-  Thoughts about non-argument that occured this morning
+  - I sent this text, and then put on block. [[id:cfc77fd4-86a2-4e98-a825-5105f3b0d52f][Becky]] didn't respond by this point
+    - #+begin_src markup
+      I’m not selfish. I always do everything I can to make you more comfortable. If I talked in my sleep I’m sorry I didn’t mean to. I didn’t mean to wake you up. I was as gentle and quiet as I could be. I got out of bed 5 times though, because the food made me nauseous, sweaty and then heartburn.
+      
+      I didn’t try to wake you up. I would have done anything to not wake you up, because you are finding any chance to be mad at me. I’m scared of you.
+      
+      But you woke up and were mad at me, with no concern for my well being. I tried to make things right by kissing you. This is an act most people like from their partner. This was a mistake. I’m sorry I kissed you.
+      
+      Later when Scooty stopped barking Eric called out twice good bye, and you stared at your phone, and didn’t respond. You often do this to me, so I wasn’t surprised. Eric was confused but not upset.
+      
+      I told you what happened and purposefully maintained a neutral demeanor. You got mad at me for telling you what happened.
+      
+      I have done nothing wrong, you are guessing my intentions, and you are wrong. I want is to find a baseline. I’m trying my best to not upset you, and I’m failing.
+      
+      I don’t want a response to this. I’m not trying to get into an argument, it’s important to me that you read and understand these facts, because you are not treating me fairly.
+      #+end_src
+  - [[id:ffae779e-1d61-4a71-be6e-5687f1edcff2][Relationship TODO]]
+    - [ ] Suggest we need time apart. I will sleep in the den. When can she leave for parents
+    - [ ] I wanted to thank you for all of the groceries you bought me. Your choices were very thoughtful
+    - [ ] If I seemed disappointed, it was not that it wasn't a lovely gesture, but that I felt that I wasn't heard. I often feel that my comments are being waved off, and that you don't listen to what I say. I am being treated as redundant, when I am not being redundant. I am being dismissed too often. When I go to get you something, I check the list, because when I forget something you wanted, I undersdtand if you are upset. I have forgetten things, and I have felt rotten about them. I wouldn't want to be defensive about forgetting something that you want. 
+-  Tasks
+  - [X] Play Guitar 10 minutes a day
+  - [X] Finish UI Library
+  - [X] LEMR Starter
+  - [X] Solidify task list style
+- Made a new daily list  work in progress
+  - Today's TODO List
+    - [X] Computer Work (eMacs, Terminal, Mac Sys)
+    - [X] Code (30 Min.)
+    - [X] Career (30 Min.)
+    - [X] Guitar (10 Min.)
+    - [X] Code (30 Min.)
+    - [X] Career (30 Min.)
+    - Today's TODO List
+
+- Plans for afternoon
+  - Ask: Go early to parents?
+  - Trader Joe’s for dog treats
+  - Drug store
+    - [ ] Wax strips
+    - [ ] Billie razor blades
+    - [ ] Face lotion or after shave
+    - [ ] LEye drops
+  - ApifanyK`
+    - I finally understand that I need my own shit together first before I push the relationship.
+    - 

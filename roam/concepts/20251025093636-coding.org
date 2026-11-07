@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9bf52e07-a5d8-4e91-8281-16b69ec62541
+:REFLECT_ID: aa039d9df0c742289a2d237a623adcc2
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Coding
+#+filetags: :concept:
+#+date: 2025-10-25
+

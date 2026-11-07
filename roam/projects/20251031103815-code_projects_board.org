@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       4766e339-63a2-44bc-97d8-c39f25c2706e
+:REFLECT_ID: 987147baeef24ac6a1d3cb947624b3cc
+:CREATED:  [2025-10-31 Fri 10:38]
+:MODIFIED: [2026-01-28 Wed 05:10]
+:END:
+#+title: 💾 💻 Code Projects Board
+#+filetags: :project:task_board:
+#+date: 2025-10-31
+ 
+- [[id:1c3d470b-eb01-473a-8505-7d1bba12882e][Lupine UI Component Library #code-project]]
+  - 
+- [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]]
+  - [[id:cc881a95-aa7e-4252-a6e5-d6eec35de697][LEMR Techstack #schema #app-doc]]
+  - [[id:4b177f4e-aa41-45fb-bbe2-dbb919f2e278][LEMR Basic Data Types & Road Map]]
+- [[id:94292e8e-200e-4e96-a315-75de6842f70d][Phantom Power]]
+  - [[id:98ee4237-e1b2-4165-84c6-793f96f4710c][Phantom Power: Task Board]]
+- [[id:2270ec16-0a33-4195-ad0b-3845ead5fe5a][🌐 Portfolio Page: Lupin Tech Design Site]]
+  - [[id:77a48f9c-6fce-41af-84b1-03419c0e2269][LTD Site: Task Board]]
+  - [[id:3245e58b-3be2-44d8-bf38-abca730e7e66][Linear App]] LTDS Issues Board
+    - [[https://linear.app/lupine-tech-design/project/lupine-tech-design-portfolio-site-fa357785e3ad/issues?][https://linear.app/lupine-tech-design/project/lupine-tech-design-portfolio-site-fa357785e3ad/issues?]]
+  - 

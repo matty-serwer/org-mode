@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       491b6990-bbc7-4d3c-addb-1818b43a13d4
+:REFLECT_ID: 4fbd334714134c18a581158e2b4e1814
+:CREATED:  [2026-03-16 Mon 03:02]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Bloc Party - Flux
+#+filetags: :concept:
+#+date: 2026-03-16
+/s

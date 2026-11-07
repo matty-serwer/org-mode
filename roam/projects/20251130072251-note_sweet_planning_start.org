@@ -1,0 +1,499 @@
+:PROPERTIES:
+:ID:       9231d009-5dd5-4c82-b8c1-0b017abe97a5
+:REFLECT_ID: 7a5a5a60115f42c5bfd62ad24d194239
+:CREATED:  [2025-11-30 Sun 07:22]
+:MODIFIED: [2025-11-30 Sun 09:57]
+:END:
+#+title: Note Sweet #planning start
+#+filetags: :project:planning:
+#+date: 2025-11-30
+* [[id:95ed315f-208f-40a1-97b5-325433227189][Note Sweet]]  start
+* Roam Research Clone - Tech Stack & Setup Guide
+** Executive Summary
+This is a *macOS-first Roam Research clone* built with modern React, featuring:
+- *Bullet-based editor* with indentation-based hierarchy
+- *Two-way linking* with backlink previews
+- *Local-first storage* (SQLite via Tauri)
+- *Native macOS app* experience
+- *Low friction development* with Claude Code CLI
+-----
+
+** Tech Stack (Latest Stable Versions - November 2025)
+*** Frontend Framework
+- *React 19.1.0* (=/facebook/react= v19_1_1)
+  - Use React 19 hooks exclusively (no class components)
+  - Leverage latest hooks: =useReducer=, =useActionState=
+  - Server Components NOT needed for local-first app
+*** Build Tool
+- *Vite 7.0.0* (=/vitejs/vite= v7.0.0)
+  - Instant HMR for rapid development
+  - Lightning-fast builds
+  - Configured with =@vitejs/plugin-react= for Fast Refresh
+*** Text Editor
+- *Remirror v3* (=/remirror/remirror=)
+  - React-first, built on ProseMirror
+  - Bullet list support out-of-the-box
+  - Custom extension system for linking
+  - *Why Remirror over Tiptap 3?*
+    - Better React integration (no contentEditable-React conflicts)
+    - More mature bullet/list handling
+    - Built-in extension patterns for custom nodes (links, backlinks)
+    - Smaller bundle than Tiptap with cloud services
+*** State Management
+- *Zustand v5.0.8* (=/pmndrs/zustand= v5.0.8)
+  - Minimal boilerplate, max flexibility
+  - DevTools middleware available
+  - Middleware for localStorage sync (for macOS auto-save)
+  - Perfect for local-first apps
+*** Local Storage
+- *SQLite via Tauri*
+  - Tauri v2 (=/tauri-apps/tauri=) provides native backend
+  - Use =@tauri-apps/api= for frontend-to-Rust communication
+  - Rust backend uses =sqlx= (async SQLite with compile-time query checking)
+  - Rationale: Self-contained database, zero server overhead, native macOS integration
+*** Desktop Framework
+- *Tauri v2.x* (=/websites/v2_tauri_app=)
+  - Build single native binary for macOS (+ Linux/Windows for future)
+  - Rust backend with full filesystem + database access
+  - Secure IPC between React frontend and Rust backend
+  - No Electron overhead (~170MB native binary vs 300MB+ Electron)
+  - Native macOS features: app menu, file dialogs, notifications
+*** Styling
+- *Tailwind CSS v3.4*
+  - Utility-first CSS for rapid UI development
+  - Dark mode support out-of-the-box
+  - Minimal custom CSS needed
+*** Testing (Optional - Phase 2)
+- *Vitest* (=/websites/vitest_dev=)
+  - Unit tests for Remirror extensions
+  - Zustand store tests
+  - Native ES modules, Vite-compatible
+*** Type Safety
+- *TypeScript 5.6+*
+  - Strict mode enabled
+  - Full type safety for Tauri IPC commands
+  - Remirror extension types
+-----
+
+** Project Structure
+#+begin_src markup
+roam-clone/
+#+end_src
+#+begin_src markup
+├── src/
+│ ├── components/
+│ │ ├── Editor/
+│ │ │ ├── BulletEditor.tsx # Main editor component
+│ │ │ ├── BulletNode.tsx # Single bullet component
+│ │ │ └── extensions/
+│ │ │ ├── BulletExtension.ts # Remirror bullet list extension
+│ │ │ ├── LinkExtension.ts # link two-way link support
+│ │ │ └── BacklinksExtension.ts # Backlink tracking
+│ │ ├── Sidebar/
+│ │ │ ├── NotesTree.tsx # Hierarchical notes list
+│ │ │ └── BacklinksPanel.tsx # Backlinks preview
+│ │ └── Layout.tsx # Main app layout
+│ ├── store/
+│ │ ├── notesStore.ts # Zustand: notes state + sync
+│ │ ├── editorStore.ts # Zustand: editor UI state
+│ │ └── linksStore.ts # Zustand: link graph cache
+│ ├── hooks/
+│ │ ├── useLocalStorage.ts # Persist editor state
+│ │ └── useRemirrorEditor.ts # Remirror setup hook
+│ ├── lib/
+│ │ ├── markdown.ts # Parse/serialize bullets to MD
+│ │ ├── linkParser.ts # Extract links from text
+│ │ └── db.ts # SQLite query wrappers
+│ ├── types/
+│ │ └── index.ts # Shared types
+│ ├── App.tsx # Root component
+│ └── main.tsx # Entry point
+├── src-tauri/
+│ ├── src/
+│ │ ├── main.rs # Tauri app entry
+│ │ ├── commands/
+│ │ │ ├── notes.rs # CRUD: create/read/update/delete notes
+│ │ │ ├── links.rs # Query two-way links
+│ │ │ └── backlinks.rs # Get all backlinks to a note
+│ │ ├── db/
+│ │ │ ├── schema.sql # SQLite schema
+│ │ │ └── migrations.rs # Init database
+│ │ └── config.rs # App configuration
+│ ├── Cargo.toml # Rust dependencies
+│ └── tauri.conf.json # Tauri config (window, permissions)
+├── vite.config.ts # Vite + Tauri dev server config
+├── tsconfig.json # TypeScript strict config
+├── tailwind.config.ts # Tailwind config
+└── package.json
+#+end_src
+
+-----
+
+** Database Schema (SQLite)
+#+begin_src sql
+-- Notes table
+CREATE TABLE notes (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  parent_id TEXT,
+  sort_order INTEGER,
+  FOREIGN KEY (parent_id) REFERENCES notes(id) ON DELETE CASCADE
+);
+
+-- Two-way links (edges in the link graph)
+CREATE TABLE links (
+  source_id TEXT NOT NULL,
+  target_id TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (source_id, target_id),
+  FOREIGN KEY (source_id) REFERENCES notes(id) ON DELETE CASCADE,
+  FOREIGN KEY (target_id) REFERENCES notes(id) ON DELETE CASCADE
+);
+
+-- Full-text search index (optional, Phase 2)
+CREATE VIRTUAL TABLE notes_fts USING fts5(
+  id UNINDEXED,
+  title,
+  content,
+  content = notes,
+  content_rowid = id
+);
+#+end_src
+-----
+
+** Tauri IPC Commands
+React frontend calls Rust backend via these commands:
+#+begin_src typescript
+// Commands returned from src-tauri/src/commands/notes.rs
+interface TauriCommands {
+  // Notes CRUD
+  create_note: (title: string, content: string, parent_id?: string) => Promise<Note>,
+  get_note: (id: string) => Promise<Note>,
+  update_note: (id: string, title: string, content: string) => Promise<void>,
+  delete_note: (id: string) => Promise<void>,
+  list_notes: (parent_id?: string) => Promise<Note[]>,
+  
+  // Links & backlinks
+  get_links_from_note: (id: string) => Promise<string[]>,     // [[links]] in this note
+  get_backlinks_to_note: (id: string) => Promise<string[]>,   // Notes linking to this
+  
+  // Batch operations
+  save_note_tree: (tree: NoteTree) => Promise<void>,
+}
+#+end_src
+-----
+
+** Development Workflow with Claude Code
+*** Prerequisites
+#+begin_src bash
+# macOS requirements
+brew install node@20
+brew install rust
+brew install tauri-cli
+
+# Clone & setup
+git clone <repo>
+cd roam-clone
+npm install
+npm run tauri dev
+#+end_src
+*** Commands
+Command Purpose =npm run dev= Start Vite dev server (HMR) =npm run tauri dev= Start Tauri app with React dev server =npm run build= Build production binary =npm run type-check= TypeScript strict check =npm run lint= ESLint check
+*** Claude Code Integration
+Claude Code works via *MCP servers*. To work with Claude Code:
+1. *Edit files directly:*
+  
+  #+begin_src bash
+  claude-code --workspace=. --task="Implement bullet editor component"
+  #+end_src
+1. *Stay consistent with versions:*
+  - React 19.1.0
+  - Vite 7.0.0
+  - Remirror v3
+  - Tauri v2
+  - TypeScript 5.6+
+1. *Use Context7 for docs:*
+  - When asking Claude Code to implement features, reference exact versions
+  - Example: "Use Remirror v3 with React 19.1.0 hooks"
+1. *Test locally:*
+  
+  #+begin_src bash
+  npm run tauri dev  # Hot reload while developing
+  #+end_src
+-----
+
+** Version Locking for Claude Code
+Create =.claude-code-config.json=:
+#+begin_src json
+{
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "vite": "7.0.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "remirror": "3.0.0",
+    "zustand": "5.0.8",
+    "typescript": "5.6.2",
+    "tailwindcss": "3.4.1"
+  },
+  "strict_versions": true,
+  "typescript_mode": "strict",
+  "context7_libraries": {
+    "react": "/facebook/react/v19_1_1",
+    "vite": "/vitejs/vite/v7.0.0",
+    "zustand": "/pmndrs/zustand/v5.0.8",
+    "tauri": "/websites/v2_tauri_app"
+  }
+}
+#+end_src
+-----
+
+** Implementation Roadmap
+*** Phase 1: MVP (Weeks 1-2)
+*Goal:* Basic bullet editor with local persistence
+- [ ] Tauri setup with React 19
+- [ ] SQLite schema + migrations
+- [ ] Basic Remirror editor with bullet lists
+- [ ] Zustand store for notes
+- [ ] Tauri IPC: create_note, update_note, list_notes
+- [ ] Simple sidebar showing notes tree
+- [ ] Auto-save to SQLite on blur/interval
+- [ ] Native macOS menu (File > New Note)
+- [ ] Test: Save 5 notes, reopen app, verify persistence
+*** Phase 2: Two-Way Linking (Week 3)
+*Goal:* [[id:6a2cc726-b0ab-49da-be26-aa2ec00b6a14][Link]] syntax with backlink previews
+- [ ] LinkExtension for Remirror (detect [[id:753c7b74-7d19-4d6f-ae4d-f1d5082024e7][...]] syntax)
+- [ ] Create note on unknown [[id:374d4f32-87fb-48e6-baa6-4b940514c89a][link]] reference
+- [ ] Tauri command: get_backlinks_to_note
+- [ ] BacklinksPanel: show notes linking here with preview
+- [ ] Zustand linksStore: cache link graph
+- [ ] Test: Create Note A with [[id:57f883a5-0e8a-41f3-9a2c-1ef67524c8ec][Note B]] reference, see backlink in Note B
+*** Phase 3: Polish (Week 4)
+*Goal:* Production-ready app
+- [ ] Cmd+K command palette for quick navigation
+- [ ] Search sidebar with full-text (Tauri command)
+- [ ] Drag-to-reorder notes in sidebar
+- [ ] Themes: Light/dark mode toggle
+- [ ] Export to Markdown
+- [ ] Performance: Lazy load note content
+- [ ] Shortcuts: Cmd+N (new), Cmd+E (export), Cmd+, (settings)
+- [ ] Error handling + retry logic for SQLite
+- [ ] Code signing for macOS distribution
+- [ ] Test: Full workflow (5+ notes, links, search, export)
+*** Phase 4+: Future Features
+- Collaboration (conflict-free sync with cr-sqlite)
+- Tags + filtering
+- Templates for note types
+- Sync to cloud (iCloud, Dropbox)
+- Mobile companion (Flutter or React Native)
+-----
+
+** Key Implementation Notes
+*** Bullet Editor Architecture
+#+begin_src typescript
+// BulletEditor.tsx - Main component using Remirror
+import { useRemirrorManager, useCommands } from '@remirror/react';
+
+export function BulletEditor({ noteId }: { noteId: string }) {
+  const { manager, state, setState } = useRemirrorManager({
+    extensions: [
+      new BulletExtension(),
+      new LinkExtension(),
+    ],
+  });
+
+  const commands = useCommands();
+  const editorStore = useEditorStore((s) => s);
+  const notesStore = useNotesStore((s) => s);
+
+  const handleSave = async () => {
+    const content = JSON.stringify(state.doc);
+    await notesStore.updateNote(noteId, content);
+  };
+
+  return (
+    <RemirrorTestChain manager={manager} state={state} setState={setState}>
+      <div contentEditable className="editor" />
+    </RemirrorTestChain>
+  );
+}
+#+end_src
+*** Two-Way Links: Detection & Storage
+#+begin_src typescript
+// linkParser.ts
+export function extractLinks(content: string): string[] {
+  const regex = /\[\[([^\]]+)\]\]/g;
+  return Array.from(content.matchAll(regex), m => m[1]);
+}
+
+// When note updates, sync links table in Tauri:
+notesStore.updateNote = async (id, content) => {
+  const links = extractLinks(content);
+  await invoke('update_links_from_note', { noteId: id, targets: links });
+};
+#+end_src
+*** Tauri Command Example (Rust)
+#+begin_src rust
+// src-tauri/src/commands/backlinks.rs
+use tauri::State;
+use crate::db::Database;
+
+#[tauri::command]
+pub async fn get_backlinks_to_note(
+    note_id: String,
+    db: State<'_, Database>,
+) -> Result<Vec<String>, String> {
+    let conn = db.get_connection()
+        .map_err(|e| e.to_string())?;
+    
+    let mut stmt = conn.prepare(
+        "SELECT source_id FROM links WHERE target_id = ?"
+    ).map_err(|e| e.to_string())?;
+    
+    let backlinks: Vec<String> = stmt.query_map([note_id], |row| {
+        row.get(0)
+    }).map_err(|e| e.to_string())?
+        .collect::<Result<Vec<_>, _>>()
+        .map_err(|e| e.to_string())?;
+    
+    Ok(backlinks)
+}
+#+end_src
+*** Zustand Store with Persist Middleware
+#+begin_src typescript
+// store/notesStore.ts
+import create from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
+import { invoke } from '@tauri-apps/api';
+
+interface NotesStore {
+  notes: Map<string, Note>;
+  currentNoteId: string;
+  
+  updateNote: (id: string, content: string) => Promise<void>;
+  deleteNote: (id: string) => Promise<void>;
+  createNote: (title: string, parent?: string) => Promise<string>;
+  loadNotes: () => Promise<void>;
+}
+
+export const useNotesStore = create<NotesStore>()(
+  devtools(
+    persist(
+      (set) => ({
+        notes: new Map(),
+        currentNoteId: '',
+        
+        updateNote: async (id, content) => {
+          await invoke('update_note', { id, content });
+          set((state) => ({
+            notes: new Map(state.notes).set(id, {
+              ...state.notes.get(id)!,
+              content,
+            }),
+          }));
+        },
+        
+        // ... other methods
+      }),
+      { name: 'notes-store' }
+    )
+  )
+);
+#+end_src
+-----
+
+** Getting Started with Claude Code
+*** Step 1: Initialize Project
+#+begin_src bash
+npm create vite@latest roam-clone -- --template react-ts
+cd roam-clone
+
+# Install core deps (versions locked)
+npm install \
+  react@19.1.0 \
+  react-dom@19.1.0 \
+  zustand@5.0.8 \
+  remirror@3.0.0 \
+  typescript@5.6.2 \
+  tailwindcss@3.4.1 \
+  -E
+
+# Dev deps
+npm install -D \
+  vite@7.0.0 \
+  @vitejs/plugin-react@4.2.0 \
+  tailwindcss@3.4.1 \
+  postcss \
+  autoprefixer
+#+end_src
+*** Step 2: Initialize Tauri
+#+begin_src bash
+npm install -D @tauri-apps/cli
+npm run tauri init -- --app-name roam-clone --window-title "Roam Clone"
+#+end_src
+*** Step 3: Configure TypeScript for Strict Mode
+#+begin_src json
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "target": "ES2020",
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true
+  }
+}
+#+end_src
+*** Step 4: Use Claude Code
+#+begin_src bash
+# Example prompt for Claude Code:
+# "Create a Remirror bullet editor component in src/components/Editor/BulletEditor.tsx
+#  using React 19.1.0 hooks and TypeScript strict mode.
+#  Extensions: bullet lists, [[links]] support.
+#  Store state in Zustand v5.0.8."
+
+claude-code --workspace=. --task="<task description>"
+#+end_src
+-----
+
+** Key Resources (Context7 Links)
+Library Context7 ID Purpose React 19 =/facebook/react/v19_1_1= UI framework Vite 7 =/vitejs/vite/v7.0.0= Build tool Remirror =/remirror/remirror= Text editor Zustand =/pmndrs/zustand/v5.0.8= State management Tauri v2 =/websites/v2_tauri_app= Desktop framework TypeScript Latest stable Type safety
+-----
+
+** Troubleshooting
+*** HMR Not Working?
+- Ensure =npm run tauri dev= is running (starts both Vite + Tauri)
+- Check Tauri config: =src-tauri/tauri.conf.json=
+*** SQLite Locked?
+- Tauri handles connections via connection pool
+- Ensure Rust commands use =?= operator for error propagation
+*** Remirror Serialization?
+- Store as JSON schema (ProseMirror format)
+- Deserialize in editor with =EditorManager.create()=
+*** Claude Code Syntax Errors?
+- Verify =.claude-code-config.json= version pinning
+- Run =npm run type-check= to validate TypeScript
+-----
+
+** Performance Targets
+- Editor response time: <100ms
+- Note load: <50ms (SQLite local)
+- Backlink query: <200ms (cached in Zustand)
+- Binary size: <200MB (Tauri advantage over Electron)
+- Memory usage: <250MB (typical usage)
+-----
+
+** License & Attribution
+This tech stack combines industry-leading open-source projects:
+- React: MIT (Facebook)
+- Vite: MIT (Evan You)
+- Remirror: MIT (Remirror Contributors)
+- Tauri: MIT/Apache-2.0 (Tauri Collaborators)
+- Zustand: MIT (Poimandres)
+- Tailwind: MIT (Tailwind Labs)
+Build responsibly. Ship with â¤ï¸

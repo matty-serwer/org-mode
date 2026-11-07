@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c1e41865-a217-44fe-b475-4070d2bee835
+:REFLECT_ID: dd1babeb11154f9fbdcd3dc8acf3e7e7
+:CREATED:  [2025-10-25 Sat 09:36]
+:MODIFIED: [2025-10-25 Sat 09:36]
+:END:
+#+title: tools
+#+filetags: :concept:
+#+date: 2025-10-25
+

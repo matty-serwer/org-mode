@@ -1,0 +1,126 @@
+:PROPERTIES:
+:ID:       80a30f34-0538-4ccc-9a86-e66ab4fbfc0f
+:REFLECT_ID: 25092025
+:CREATED:  [2025-11-13 Thu 05:22]
+:MODIFIED: [2025-11-13 Thu 06:12]
+:END:
+#+title: Thu, September 25th, 2025
+#+filetags: :daily:
+#+date: 2025-11-13
+- Backblaze
+  - Backblaze B2 Setup
+    - Credentials
+      - keyID: 005595c85e38bb90000000001
+      - keyName: m47-personal-001
+      - applicationKey: K005mcGHbk2Bt11yaPM3HOj1h1nHBS4
+  - RClone
+    - keyID: 005595c85e38bb90000000002
+    - keyName: b2-rclone-key-001
+    - applicationKey: K005yncNxy96EbvhvcrxSRLs+uTel1c
+    - Backed Up Files
+      - To b2://m47-private-001/??
+        - _Workspace/Audio
+  - B2 CLI
+    - Commands:
+      - =b2 sync --skip-newer ./Docs b2://m477i3-workspace/Docs=
+      - =b2 bucket create m477i3-docs allPrivate= (ID: 0589a58cd8258e23989b0b19g)
+      - =b2 bucket create m477i3-developer allPrivate= (ID: 45c985fce8558e33989b0b19)
+  - Server Side Encryption
+    - Set during or after bucket creation
+    - Can be set at any time
+    - Files cannot be encrypted retroactively
+    - Command syntax:
+      - =b2 bucket create --default-server-side-encryption=SSE-B2 --default-server-side-encryption-algorithm=AES256 <bucketName> allPrivate=
+    - Example:
+      - =b2 bucket update m477i3-developer --default-server-side-encryption=SSE-B2=
+      - Response includes bucket details with encryption settings
+  - Backblaze B2 rclone
+    - Commands:
+      - Add a rclone remote: =rclone config=
+      - Check buckets: =rclone lsd M47-backblaze-b2:=
+      - Move files: =rclone move M47-backblaze-b2:m477i3-workspace/ M47-backblaze-b2:m477i3-workspace/Audio/ --exclude "Audio/**"=
+    - This is what I'm going to label things, starting in my paper notebooks, that are to be added to weekly tasks. So this will be a weekly task system, for upkeep of ORG-MODE. ORG-MODE is our overall system, or [[M477i3.org][M477i3.org]] Mode. The file system cleanup, plus the audio workflow cleanup, plus the new dev flow.
+- Dreams
+  - TODAY: All Dreams releated files moved to:
+    - Users/lupin/_Workspace/Audio/Song Catalog/Project Rylie/Dreams/
+    - +/Also Can we talk about how we can link local files!!!!/+
+  - [X] alter that Link script to use spaces instead of %20's because this baby does it straight up!
+  - Done!
+  - To grab a URL for the current file in Finder:
+  - *⌃⌥⌘ + C*
+    - [ ] [[hook://file/zX25vz414?p=QXVkaW8vUzRNUDEzNS5leGU=&n=A2%20%2D%20M47%20INSTRUMENTS][A2 - M47 INSTRUMENTS]]
+- [[id:64678f28-ad48-483b-b9d7-c73aa49a6b4d][Mac OS]] [[id:36496b9d-0738-4c03-80c7-feeb4e6d172a][Apple]] [[id:4b3a70ca-d1bc-4ec6-9034-1f9437781c90][Modifier Keys]] [[id:0348e3c3-e0ea-4e5d-a54b-3549ac94b83b][ASCII]] Characters
+  - column
+    - *⌘*
+    - *⌥*
+    - *⌃*
+    - *⇧*
+    - 🌐
+  - row
+    - *⌘ ⌥ ⌃ ⇧ *🌐
+-----
+
+* 2022 Fender Player Jaguar Bass - Repair Notes
+** Current Issues
+- Bridge (jazz) pickup approximately 1/3 volume of middle (P-bass) pickup
+- Jazz pickup volume drops steeply near maximum, becoming inaudible at full clockwise rotation
+- Apparent phase issues causing sonic interference between pickups
+- Symptoms consistent for over a year (not intermittent/dirty pots)
+** Current Wiring Configuration
+- Pickup Layout
+  - *Neck position*: Jazz bass pickup
+    - Yellow wire (hot) → Middle volume pot center lug
+    - Black wire (ground) → Back of leftmost pot
+  - *Middle position*: Split P-bass pickup (2 pickups wired together)
+    - White wire → Middle volume pot
+    - Ground → Back of P-bass volume pot
+  - *Control layout*: 3 knobs (P-bass volume, Jazz volume, Tone/blend)
+- Notable Wiring Details
+  - Jack has only single wire connection (from tone pot middle lug to tip)
+  - *No ground wire from jack sleeve* ⚠️
+  - All grounds currently meeting at back of P-bass volume pot
+  - Wiring matches factory 2022 Player Series schematic
+- Comparison with Other Models
+  - 2012 Jaguar Bass & Standard PJ Bass
+    - Same pickup configuration (PJ with 3 knobs)
+    - Different wiring scheme:
+      - *Two wires to jack* (tip and sleeve)
+      - Ground from jack sleeve → back of mixer/tone knob
+      - Grounds meet at tone pot instead of volume pot
+- Next Steps
+  - *Acquire multimeter* for proper diagnostics
+  - *Test pickup resistance* (Jazz should read ~7-8k ohms)
+  - *Add ground wire* from jack sleeve to back of tone pot
+  - *Consider rewiring* to match proven 2012 Jaguar/Standard PJ schematic
+  - If issues persist, try reversing jazz pickup polarity (swap yellow/black)
+- Potential Concerns
+  - Double grounding when adding jack ground (likely not an issue)
+  - Current factory wiring may be cost-reduced design
+- Claude's Take
+  - Primary Diagnosis
+    - The missing jack ground is almost certainly your main problem
+    - Without a proper ground reference at the jack, you're relying on the bridge ground through your body to complete the circuit
+    - This creates an unstable, high-impedance ground path that can cause:
+      - Volume drops and inconsistencies
+      - Phase-like interference between pickups
+      - The exact "fade to nothing at full volume" symptom you're experiencing
+  - Why This Matters
+    - The jazz pickup becoming inaudible at full volume is a telltale sign of improper grounding or reversed signal flow
+    - When you turn the volume to maximum, you should have minimum resistance in the signal path
+    - If it's cutting out completely, the signal is likely being shorted to ground through an incorrect path
+  - The Wiring Evolution Theory
+    - Fender likely "simplified" the wiring in newer Player Series models to reduce assembly time and cost
+    - The older 2012 Jaguar and Standard PJ wiring schemes are time-tested and reliable
+    - The fact that Fender changed away from a working design suggests cost-cutting rather than improvement
+  - Recommended Approach
+    - *Start with the jack ground* - This is the easiest fix and most likely culprit
+    - *Use the multimeter* to verify pickup health before any drastic rewiring
+    - *Document everything* with photos before making changes
+    - *Consider full rewire* to 2012 spec if the simple fix doesn't work - it's a proven circuit
+  - Additional Considerations
+    - The "phase issues" you're hearing could actually be impedance mismatches from the poor grounding
+    - Double grounding is generally not a problem - multiple ground paths are often beneficial
+    - If you do reverse the jazz pickup polarity, mark which configuration you tried
+    - Consider upgrading to CTS pots and switchcraft jack while you're in there (though this isn't necessary to fix your current issue)
+    - The good news: This is almost certainly a wiring issue, not a bad pickup
+    - The pickups themselves are likely fine, and this should be completely fixable with some patient troubleshooting

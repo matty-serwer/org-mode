@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9dea6161-e44e-4388-bf15-eca67f3de59e
+:REFLECT_ID: c8db356056b74b8ba21987b41e97fb52
+:CREATED:  [2026-02-22 Sun 20:39]
+:MODIFIED: [2026-02-22 Sun 20:39]
+:END:
+#+title: Ollama
+#+filetags: :concept:
+#+date: 2026-02-22
+

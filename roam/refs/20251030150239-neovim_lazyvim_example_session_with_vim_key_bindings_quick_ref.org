@@ -1,0 +1,120 @@
+:PROPERTIES:
+:ID:       eead5628-8a68-4acf-bc1c-8fcb35cdfbb7
+:REFLECT_ID: 37620839fd6c40b085426c7bd8e7c37f
+:CREATED:  [2025-10-30 Thu 15:02]
+:MODIFIED: [2025-11-30 Sun 09:12]
+:END:
+#+title: ⌘ NeoVim LazyVim Example Session with VIM Key Bindings
+#+filetags: :ref:quick_ref:
+#+date: 2025-10-30
+* ⌘ [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] [[id:294115ff-c1e7-433f-9ac2-c3488273a3bd][LazyVim]] Example Session with [[id:c9dedc12-3f58-46a4-984d-998ce809fa6f][VIM Key Bindings]]
+A typical Next.js development session using LazyVim. Let me show you the actual workflow with all the keypresses.
+** Starting the Session
+First, I open the terminal in my Next.js project directory and start nvim:
+#+begin_src bash
+cd ~/projects/my-nextjs-app
+nvim .
+
+#+end_src
+This opens nvim with the file explorer (neo-tree) visible.
+** Navigating and Opening Files
+In the neo-tree file explorer, I navigate to find a component:
+- =j= =j= =j= =k= - Move down and up through files
+- =l= or =<Enter>= - Expand a directory or open a file
+- I navigate to =app/components/Header.tsx=
+- =<Enter>= - Opens the file in the main window
+Now I'm viewing the Header component. Let me navigate within the file:
+- =gg= - Jump to the top of the file
+- =G= - Jump to the bottom
+- =15G= - Jump to line 15
+- =}= - Jump to next paragraph/block
+- ={= - Jump to previous paragraph/block
+** Searching and Editing
+I want to find and modify some text:
+- =/className<Enter>= - Search for "className"
+- =n= - Jump to next occurrence
+- =N= - Jump to previous occurrence
+Found what I need to change. I'll enter insert mode:
+- =ciw= - Change inner word (deletes word under cursor and enters insert mode)
+- I type the new class name
+- =<Esc>= - Exit insert mode back to normal mode
+Let me make another edit:
+- =$= - Jump to end of line
+- =A= - Enter insert mode at end of line
+- I type =onClick={handleClick}=
+- =<Esc>= - Back to normal mode
+** Using LSP Features (LazyVim default)
+Now I want to see the definition of a function:
+- =gd= - Go to definition (LSP feature)
+- =<C-o>= - Jump back to previous location
+- =K= - Show hover documentation (LSP)
+- =gr= - Show references
+** Opening Another File
+I want to open another file without closing this one:
+- =<space>ff= - Opens Telescope file finder (in LazyVim, leader is =<Space>= by default)
+- I type =button= to search for files
+- =<C-j>= and =<C-k>= - Navigate through results
+- =<Enter>= - Open the selected file
+** Managing Buffers
+Now I have multiple files open as buffers:
+- =<space>bb= - Show buffer list (Telescope buffers)
+- Or use: =<S-h>= - Switch to previous buffer
+- =<S-l>= - Switch to next buffer
+To close a buffer:
+- =<space>bd= - Delete/close current buffer
+** Split Windows
+I want to view two files side by side:
+- =<C-w>v= - Vertical split
+- =<C-w>s= - Horizontal split
+- =<C-w>h= - Move to left window
+- =<C-w>l= - Move to right window
+- =<C-w>j= - Move to bottom window
+- =<C-w>k= - Move to top window
+- =<C-w>== - Make splits equal size
+- =<C-w>q= - Close current window
+** Saving and Terminal
+Time to save my changes:
+- =:w<Enter>= - Write/save the file
+- Or: =<space>w= - Alternative save (LazyVim shortcut)
+I want to run the dev server. I'll open a terminal:
+- =<C-/>= or =<space>ft= - Toggle floating terminal
+- In the terminal, I type:
+  npm run dev
+- =<C-/>= again - Hide the terminal (still running in background)
+** Quick Navigation and Fuzzy Finding
+More useful navigation:
+- =<space>sg= - Search with grep (live grep in Telescope)
+- Type "handleSubmit" and =<Enter>= to find all occurrences
+- =<space>fr= - Recent files
+- =<space>fb= - File browser
+** Visual Mode and Multiple Edits
+Let me select and modify some code:
+- =V= - Enter visual line mode
+- =j= =j= =j= - Select multiple lines
+- =>= - Indent selected lines
+- =<= - Unindent
+- =<Esc>= - Exit visual mode
+For multiple cursors on similar text:
+- =*= - Search for word under cursor
+- =cgn= - Change next occurrence
+- =.= - Repeat the change on next occurrence
+** Checking the Browser
+After making changes, I want to see the result:
+- =:w<Enter>= - Save all changes
+- =<C-/>= - Open terminal
+- =<C-l>= - Clear terminal if needed
+- I can see the Next.js dev server has hot-reloaded the changes
+- =<C-/>= - Close terminal
+** Closing the Session
+When I'm done:
+- =<space>qq= - Quit all (LazyVim shortcut)
+- Or traditional: =:wqa<Enter>= - Write all buffers and quit
+-----
+
+*Key LazyVim Tips:*
+- =<leader>= is =<Space>= by default
+- =:Lazy= - Opens plugin manager
+- =<space>l= - Opens LSP info
+- =<space>sn= - Noice (notification history)
+- =<space>e= - Toggle file explorer
+- =<space>/= - Toggle comment on line/selection

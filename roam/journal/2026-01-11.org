@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       bb2ba747-0d35-4ae2-83ef-525bc8b45fae
+:REFLECT_ID: 11012026
+:CREATED:  [2026-01-11 Sun 10:57]
+:MODIFIED: [2026-01-12 Mon 02:52]
+:END:
+#+title: Sun, January 11th, 2026
+#+filetags: :daily:
+#+date: 2026-01-11
+- [[id:00dd42ce-b935-4238-b51a-13c5ee52f35e][Operation Qobuz]]
+  - (Cancelling [[id:b3709430-d2d7-4ab8-afa6-2507f3c1da39][Operation: Apple Music Fix]]?
+  - 
+- [[id:d2bb8ff7-efaf-4a1f-869c-120f1f67c236][Paid]] [[id:5e31b89b-d832-4056-a886-c02b948b35fb][Proton Mail]] [[id:6ae1584f-a2d9-4de1-8515-81695b77dc48][Subscription]]
+- [[id:76a6d0e7-146d-4539-8e55-8b5a6e7a6a04][Org Mode Quick Tutorial: Why People Love It]]
+- 

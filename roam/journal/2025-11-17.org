@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       7021fabc-ecee-45e1-b18e-43d4da2b3740
+:REFLECT_ID: 17112025
+:CREATED:  [2025-11-16 Sun 19:24]
+:MODIFIED: [2025-12-13 Sat 05:42]
+:END:
+#+title: Mon, November 17th, 2025
+#+filetags: :daily:sequence:
+#+date: 2025-11-16
+- Torrent sites for music downloads in 2025
+  •  The Pirate Bay: Evergreen site with 100+ million monthly visits; music section has verified torrents across genres. Blocks in 24+ countries, but mirrors evade them.
+  •  1337x: 39 million European visitors/month; clean interface, strong music library including remixes.
+  •  Torrent Galaxy: 320 million visits since 2023; user comments and HD audio focus.
+  •  Rutracker: Russia-based, 34 million visits/month; excels in international and lossless music.
+  •  YTS/YIFY: Movie-heavy but includes soundtracks; high-quality encodes.
+- Hard boiled egg  
+  - Boil 2 inches of water
+  - Then place eggs in
+  - Covered medium heat for 13 minutes
+  - Spoon into ice bath for 15 minutes
+    - I tend to run cold water. We’ll see.
+- [[id:da2b4371-64cb-4a46-bf27-deb8f15281b4][Emacs]] App Location 
+  - /opt/homebrew/opt/emacs-plus@30/[[http://Emacs.app/Contents/Resources][Emacs.app]]
+  - /opt/homebrew/opt/emacs-plus/[[http://Emacs.app][Emacs.app]]
+- [[id:da2b4371-64cb-4a46-bf27-deb8f15281b4][Emacs]] Icon Location
+  - /opt/homebrew/opt/emacs-plus@30/[[http://Emacs.app/Contents/Resources][Emacs.app/Contents/Resources]]
+  - /opt/homebrew/opt/emacs-plus/[[http://Emacs.app/Contents/Resources][Emacs.app/Contents/Resources]]
+-
+  - Not Sure which one we're using yet

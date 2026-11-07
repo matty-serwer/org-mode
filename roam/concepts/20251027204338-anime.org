@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       03ef3007-2ea6-4db4-9b62-0dc33c1cbb18
+:REFLECT_ID: 6b439cadf5e8476bb26210f9713142d9
+:CREATED:  [2025-10-27 Mon 20:43]
+:MODIFIED: [2025-10-27 Mon 20:43]
+:END:
+#+title: Anime
+#+filetags: :concept:
+#+date: 2025-10-27
+

@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       a1af7f76-a7af-4767-8650-e7467b62693a
+:REFLECT_ID: 25112025
+:CREATED:  [2025-11-24 Mon 20:14]
+:MODIFIED: [2025-11-26 Wed 14:32]
+:END:
+#+title: Tue, November 25th, 2025
+#+filetags: :daily:
+#+date: 2025-11-24
+- Storybook project for UI Library ready to go
+  - [[https://hookmark.net/hm/hook/file/1wjwiUX1F?p=RGV2ZWxvcGVyL2Rlc2lnbi1wcm9qZWN0cw==&n=ltd%2Dcomponents%2Dstorybook%2D002][ltd-components-storybook-002]]
+  - I think you have to run the storybook server separately and then
+  - run the next.js project
+    432
+    4

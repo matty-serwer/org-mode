@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       1c3a5111-54a8-401e-8153-79a09d8c5784
+:REFLECT_ID: 18042026
+:CREATED:  [2026-04-18 Sat 18:14]
+:MODIFIED: [2026-04-18 Sat 19:38]
+:END:
+#+title: Sat, April 18th, 2026
+#+filetags: :daily:
+#+date: 2026-04-18
+- [[id:86c00c9f-f24a-4270-91ce-ba000527ef03][👩🏻‍🎤 Audio Sampling TrackList]]
+  - The cardigans 
+    - paralyzed
+    - Drum and bass remix. Skip the verse vocals. Original chorus becomes the new Verse. The new Chorus is just “the sweetest way to die.”
+#+begin_src markup
+Skincare Product List
+#+end_src
+- Products
+  - #+begin_src markup
+    1. CeraVe Hydrating Cleanser
+    2. The Ordinary Niacinamide 10% + Zinc
+    3. VaniCream Moisturizing Cream
+    4. EltaMD UV Clear SPF 46
+       - Neutrogena Hydro Boost Water Gel Lotion SPF 50
+    5. The Ordinary Azelaic Acid Suspension 10%
+    6. The Ordinary Glycolic Acid 7% Toning Solution
+    7. Cotton pads (for the glycolic acid)
+    #+end_src
+- Notes
+  - All of these are at Ulta or Target.
+  - The three Ordinary products are usually $7–12 each.
+  - *EltaMD* is the priciest at ~$40.
+-----
+
+-----

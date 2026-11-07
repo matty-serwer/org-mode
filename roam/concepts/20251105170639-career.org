@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1ea984dd-11a6-42c4-81d0-33666882beaa
+:REFLECT_ID: 4eae03c1ec25484f9a97efe92a7fd489
+:CREATED:  [2025-11-05 Wed 17:06]
+:MODIFIED: [2026-03-17 Tue 18:15]
+:END:
+#+title: Career
+#+filetags: :concept:
+#+date: 2025-11-05
+

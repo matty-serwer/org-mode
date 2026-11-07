@@ -1,0 +1,302 @@
+:PROPERTIES:
+:ID:       2800d97d-1d4c-43bd-8650-01e648237d01
+:REFLECT_ID: 22022026
+:CREATED:  [2026-02-22 Sun 14:50]
+:MODIFIED: [2026-02-23 Mon 03:59]
+:END:
+#+title: Sun, February 22nd, 2026
+#+filetags: :daily:
+#+date: 2026-02-22
+- [[id:98cca3c3-2cac-410d-b120-02814ee6c853][Local LLM]]
+  - [[id:cac43c76-1f6b-49e0-9dbb-11a1642f49b0][Ollama Setup]]
+    - [[id:67217f35-81eb-4263-a4e5-09cdfbbac2fd][Claude Code Free Forever]]
+      [[https://www.youtube-nocookie.com/embed/gqYyZuO34x0][youtube: https://www.youtube-nocookie.com/embed/gqYyZuO34x0]]
+      - updated [[id:9dea6161-e44e-4388-bf15-eca67f3de59e][Ollama]]
+      - Installing *Qwen3-Coder-30B-A3B-Instruct*
+      - [ ] What is Qwen Code?
+  - [[id:b5ec8fef-3054-4377-9837-8d2d8a3e4d77][Local Code Q&A CLI Setup]]
+    
+    #+begin_src bash
+    # Install Ollama
+    brew install ollama
+    
+    # Start the Ollama service (in a separate terminal, or use brew services)
+    ollama serve
+    
+    # In another terminal, pull the coding model
+    ollama pull qwen2.5-coder:7b
+    
+    #+end_src
+    *Verification:*
+    
+    #+begin_src bash
+    # Test that Ollama is working
+    ollama list  # Should show qwen2.5-coder:7b
+    
+    #+end_src
+    Step 2: Install Python Dependencies
+    
+    #+begin_src bash
+    # Install the Ollama Python library
+    pip3 install ollama
+    
+    # Optional but recommended for better file reading
+    pip3 install chardet  # For encoding detection
+    
+    #+end_src
+    Step 3: Create the CLI Tool
+    Create a file called =askcode= (no extension) in a directory that's in your PATH. I recommend =~/bin/=:
+    
+    #+begin_src bash
+    # Create the bin directory if it doesn't exist
+    mkdir -p ~/bin
+    
+    # Create the script
+    touch ~/bin/askcode
+    chmod +x ~/bin/askcode
+    
+    #+end_src
+    Add this to your =~/.zshrc= if =~/bin= isn't already in your PATH:
+    
+    #+begin_src bash
+    export PATH="$HOME/bin:$PATH"
+    
+    #+end_src
+    Then =source ~/.zshrc=.
+    Step 4: The Script
+    Open =~/bin/askcode= in your editor and paste this:
+    
+    #+begin_src python
+    #!/usr/bin/env python3
+    
+    import sys
+    import os
+    import ollama
+    from pathlib import Path
+    
+    def read_file_safe(filepath):
+        """Read file with encoding detection."""
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                return f.read()
+        except UnicodeDecodeError:
+            # Try with latin-1 as fallback
+            try:
+                with open(filepath, 'r', encoding='latin-1') as f:
+                    return f.read()
+            except Exception as e:
+                return f"[Error reading file: {e}]"
+        except Exception as e:
+            return f"[Error: {e}]"
+    
+    def get_file_context(files):
+        """Build context string from multiple files."""
+        context_parts = []
+        
+        for filepath in files:
+            if not os.path.exists(filepath):
+                print(f"Warning: {filepath} not found, skipping...")
+                continue
+                
+            content = read_file_safe(filepath)
+            context_parts.append(f"--- File: {filepath} ---\n{content}\n")
+        
+        return "\n".join(context_parts)
+    
+    def ask_about_code(question, files=None, model="qwen2.5-coder:7b"):
+        """Ask a question about code files using local LLM."""
+        
+        # If no files specified, look for common code files in current directory
+        if not files:
+            cwd = Path.cwd()
+            # Common code extensions
+            extensions = ['.py', '.js', '.jsx', '.ts', '.tsx', '.java', '.go', '.rs', '.cpp', '.c', '.h']
+            files = []
+            for ext in extensions:
+                files.extend([str(f) for f in cwd.glob(f'*{ext}')])
+            
+            if not files:
+                print("No code files found in current directory.")
+                print("Usage: askcode 'your question' [file1] [file2] ...")
+                return
+            
+            print(f"Found {len(files)} code files in current directory")
+        
+        # Build context from files
+        context = get_file_context(files)
+        
+        if not context.strip():
+            print("No valid file content found.")
+            return
+        
+        # Create the prompt
+        system_prompt = """You are a code analysis assistant. Answer questions about the provided code clearly and concisely. 
+    Focus on the specific question asked. If you reference code, quote the relevant parts."""
+        
+        user_prompt = f"""Here is the code:
+    
+    {context}
+    
+    Question: {question}
+    
+    Provide a clear, focused answer."""
+    
+        print(f"\n🤔 Analyzing code with {model}...\n")
+        
+        # Stream the response
+        try:
+            stream = ollama.chat(
+                model=model,
+                messages=[
+                    {'role': 'system', 'content': system_prompt},
+                    {'role': 'user', 'content': user_prompt}
+                ],
+                stream=True
+            )
+            
+            for chunk in stream:
+                print(chunk['message']['content'], end='', flush=True)
+            
+            print("\n")  # Final newline
+            
+        except Exception as e:
+            print(f"Error: {e}")
+            print("\nMake sure Ollama is running: ollama serve")
+    
+    def main():
+        if len(sys.argv) < 2:
+            print("Usage: askcode 'your question' [file1] [file2] ...")
+            print("\nExamples:")
+            print("  askcode 'what does this code do?'")
+            print("  askcode 'explain the main function' app.py")
+            print("  askcode 'what are the API endpoints?' server.js routes.js")
+            sys.exit(1)
+        
+        question = sys.argv[1]
+        files = sys.argv[2:] if len(sys.argv) > 2 else None
+        
+        ask_about_code(question, files)
+    
+    if __name__ == "__main__":
+        main()
+    
+    #+end_src
+    Step 5: Test It
+    
+    #+begin_src bash
+    # Navigate to a directory with code files
+    cd ~/path/to/your/project
+    
+    # Ask a question about all code files in the directory
+    askcode "what does this code do?"
+    
+    # Ask about specific files
+    askcode "explain the authentication logic" auth.js middleware.js
+    
+    # Ask about a single file
+    askcode "what are the main functions?" utils.py
+    
+    #+end_src
+    Usage Patterns
+    Pattern 1: Quick file overview
+    
+    #+begin_src bash
+    cd ~/projects/work-sweet
+    askcode "summarize what this codebase does"
+    
+    #+end_src
+    Pattern 2: Specific function explanation
+    
+    #+begin_src bash
+    askcode "explain the createTask function" components/TaskForm.tsx
+    
+    #+end_src
+    Pattern 3: Find bugs or issues
+    
+    #+begin_src bash
+    askcode "are there any potential bugs or improvements?" src/api/tasks.ts
+    
+    #+end_src
+    Pattern 4: Understand dependencies
+    
+    #+begin_src bash
+    askcode "what external libraries are used and why?" package.json src/lib/*.ts
+    
+    #+end_src
+    Advanced: Create Aliases for Common Questions
+    Add these to your =~/.zshrc=:
+    
+    #+begin_src bash
+    # Quick code analysis aliases
+    alias codesum='askcode "summarize what this code does in 2-3 sentences"'
+    alias codefunc='askcode "list all functions with brief descriptions"'
+    alias codebug='askcode "identify potential bugs or code smells"'
+    alias codetest='askcode "what unit tests would be most valuable for this code?"'
+    
+    #+end_src
+    Then reload: =source ~/.zshrc=
+    Now you can do:
+    
+    #+begin_src bash
+    cd ~/projects/lemr
+    codesum  # Quick summary of all code in directory
+    codefunc components/NoteEditor.tsx  # List functions in specific file
+    
+    #+end_src
+    Performance Expectations
+    With =qwen2.5-coder:7b= on your M2 Pro:
+    *Pro tip:* For large codebases, be specific about which files to analyze rather than passing everything.
+    Troubleshooting
+    *"Model not found" error:*
+    
+    #+begin_src bash
+    ollama pull qwen2.5-coder:7b
+    
+    #+end_src
+    *"Connection refused" error:*
+    
+    #+begin_src bash
+    # Start Ollama in a separate terminal
+    ollama serve
+    
+    # Or run as background service
+    brew services start ollama
+    
+    #+end_src
+    *Slow responses:*
+    *Want to try a different model:*
+    
+    #+begin_src bash
+    # Try the smaller, faster model
+    ollama pull qwen2.5-coder:3b
+    
+    # Then modify the script to use it by default
+    # Change: model="qwen2.5-coder:7b"
+    # To: model="qwen2.5-coder:3b"
+    
+    #+end_src
+    Next Steps
+    Once you're comfortable with this:
+    Example advanced usage:
+    
+    #+begin_src bash
+    # Find all files with "authentication" and ask about them
+    rg -l "authentication" | xargs askcode "how is authentication implemented?"
+    
+    #+end_src
+    This gives you a *fast, private, free code Q&A tool* that works entirely offline and integrates naturally into your terminal workflow. Perfect for those moments when you're deep in a coding session and need quick context without breaking flow to open a browser.
+    - Step 1: Install Ollama
+    - *Small files (< 500 lines total):* ~20-30 tokens/sec, feels responsive
+    - *Medium files (500-2000 lines):* ~15-25 tokens/sec, still good
+    - *Large files (2000+ lines):* Slower, may want to target specific files
+    - Use smaller files or fewer files at once
+    - The first response is always slower (model loading)
+    - Subsequent questions in the same session are faster
+    1. *Add to your editors:* Install [[Continue.dev][Continue.dev]] extension for Doom Emacs/Neovim and configure it to use your local Ollama
+    1. *Create project-specific helpers:* Make shell scripts that ask common questions about specific parts of your codebase
+    1. *Combine with grep/ripgrep:* Use =rg= to find relevant files, pipe to =askcode=
+- Scooty is doing well. He’s in there nursing Becca who, like the rest of us, can’t ‘party like that any more’.
+  Two days of snoozes. I told her it will come payment due, with extra ram-bungles. But like everything lately, I will be the only one to pay.
+  :: sigh:: oh well. Our relationship may not survive menopause + hormones, vs my career troubles.
+  Have I asked you if you’ve heard of disorganized attachment? Or maybe I dreamt it.
+  Either way, she’s animals before everything else.

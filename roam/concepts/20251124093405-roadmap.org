@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0489f8fe-575c-4288-98df-749b7f228400
+:REFLECT_ID: bb11a1d6fee14a14adadf3154549c118
+:CREATED:  [2025-11-24 Mon 09:34]
+:MODIFIED: [2025-12-08 Mon 17:59]
+:END:
+#+title: Roadmap
+#+filetags: :concept:
+#+date: 2025-11-24
+

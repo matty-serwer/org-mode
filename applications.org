@@ -1,0 +1,79 @@
+#+title: applications
+#+author: Mattie Aran
+#+date: 2026-06-27
+#+filetags: :
+#+startup: overview
+
+* Raycast
+** Snippets
+*** Search Snippets : ⌃⌥ S
+*** Keywords
+**** ;; - Generic Commands
+- ;; > date
+***** Characters
+- ;; > command
+- ;; > control
+- ;; > shift
+- ;; > option
+- ;; > return
+* WezTerm
+** Bonny
+** Keyboard Shortcuts
+*** Custom Pane Bindings (Leader = CTRL+a)
+- LEADER - :: Split pane below
+- LEADER \ :: Split pane to the right
+- LEADER h :: Move focus to pane on the left
+- LEADER j :: Move focus to pane below
+- LEADER k :: Move focus to pane above
+- LEADER l :: Move focus to pane on the right
+- LEADER H :: Resize pane left (5 cells)
+- LEADER J :: Resize pane down (5 cells)
+- LEADER K :: Resize pane up (5 cells)
+- LEADER L :: Resize pane right (5 cells)
+- LEADER z :: Toggle pane zoom
+- LEADER x :: Close current pane (with confirm)
+- LEADER CTRL+a :: Send a literal CTRL+a to the shell
+*** Copy & Paste
+- SUPER+c / CTRL+SHIFT+c :: Copy to clipboard
+- SUPER+v / CTRL+SHIFT+v :: Paste from clipboard
+- CTRL+Insert :: Copy to primary selection
+- SHIFT+Insert :: Paste from primary selection
+*** Window & Application
+- SUPER+n / CTRL+SHIFT+n :: Spawn new window
+- SUPER+m :: Hide window
+- SUPER+h :: Hide application (macOS only)
+- ALT+Enter :: Toggle fullscreen
+- SUPER+r / CTRL+SHIFT+r :: Reload configuration
+*** Font Size
+- SUPER+= / CTRL+= :: Increase font size
+- SUPER+- / CTRL+- :: Decrease font size
+- SUPER+0 / CTRL+0 :: Reset font size
+*** Tabs
+- SUPER+t / CTRL+SHIFT+t :: New tab (current pane domain)
+- SUPER+SHIFT+T :: New tab (default domain)
+- SUPER+w / CTRL+SHIFT+w :: Close current tab (with confirm)
+- SUPER+1..8 / CTRL+SHIFT+1..8 :: Activate tab 1-8
+- SUPER+9 / CTRL+SHIFT+9 :: Activate last tab
+*** Tab Navigation
+- SUPER+SHIFT+[ / CTRL+SHIFT+Tab / CTRL+PageUp :: Previous tab
+- SUPER+SHIFT+] / CTRL+Tab / CTRL+PageDown :: Next tab
+- CTRL+SHIFT+PageUp :: Move tab left
+- CTRL+SHIFT+PageDown :: Move tab right
+*** Scrolling
+- SHIFT+PageUp :: Scroll up one page
+- SHIFT+PageDown :: Scroll down one page
+- SUPER+k / CTRL+SHIFT+K :: Clear scrollback
+*** Search, Selection & Copy Mode
+- SUPER+f / CTRL+SHIFT+F :: Search
+- CTRL+SHIFT+X :: Activate copy mode
+- CTRL+SHIFT+Space :: Quick select
+- CTRL+SHIFT+U :: Character selector
+*** Command Palette & Debug
+- CTRL+SHIFT+P :: Activate command palette
+- CTRL+SHIFT+L :: Show debug overlay
+*** Panes (Defaults)
+- CTRL+SHIFT+ALT+" :: Split pane vertically (new pane below)
+- CTRL+SHIFT+ALT+% :: Split pane horizontally (new pane to the right)
+- CTRL+SHIFT+Arrow :: Activate pane in that direction
+- CTRL+SHIFT+ALT+Arrow :: Resize pane in that direction
+- CTRL+SHIFT+Z :: Toggle pane zoom

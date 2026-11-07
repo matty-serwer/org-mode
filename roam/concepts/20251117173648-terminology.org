@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a766647b-b1b4-4162-a667-6b54b1d2ae96
+:REFLECT_ID: 2849f7025a064b1bb7a81cf66646c4d6
+:CREATED:  [2025-11-17 Mon 17:36]
+:MODIFIED: [2025-11-17 Mon 17:36]
+:END:
+#+title: Terminology
+#+filetags: :concept:
+#+date: 2025-11-17
+

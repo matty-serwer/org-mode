@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c7e02542-c03c-4ecc-9cbf-824dfdea29d4
+:REFLECT_ID: 40f106216e8844e285b9be5d6d9043e1
+:CREATED:  [2025-12-09 Tue 13:35]
+:MODIFIED: [2025-12-09 Tue 13:35]
+:END:
+#+title: 14th of the Month
+#+filetags: :concept:
+#+date: 2025-12-09
+

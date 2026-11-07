@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8e5f502b-fc76-4240-a5bf-29ce23dcf85a
+:REFLECT_ID: c2bde5d0fd994343a4940849d2fc81eb
+:CREATED:  [2026-04-02 Thu 19:04]
+:MODIFIED: [2026-04-02 Thu 19:04]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2026-04-02
+

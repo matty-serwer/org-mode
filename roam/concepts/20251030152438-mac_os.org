@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       64678f28-ad48-483b-b9d7-c73aa49a6b4d
+:REFLECT_ID: 6d2413db400843379e32e129d2340e3d
+:CREATED:  [2025-10-30 Thu 15:24]
+:MODIFIED: [2026-04-21 Tue 17:37]
+:END:
+#+title: Mac OS
+#+filetags: :concept:
+#+date: 2025-10-30
+

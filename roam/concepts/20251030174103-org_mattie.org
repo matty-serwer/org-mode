@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       91834156-f433-4f30-a647-5e0473370d39
+:REFLECT_ID: 50b6dba373724a108a0899205d240e02
+:CREATED:  [2025-10-30 Thu 17:41]
+:MODIFIED: [2025-10-30 Thu 17:41]
+:END:
+#+title: org-mattie
+#+filetags: :concept:
+#+date: 2025-10-30
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4c4f930a-65d2-4960-916e-5508accb512f
+:REFLECT_ID: 598dea2fcf3a40828cde7bab069f14f5
+:CREATED:  [2026-03-13 Fri 23:24]
+:MODIFIED: [2026-03-13 Fri 23:24]
+:END:
+#+title: Research
+#+filetags: :concept:
+#+date: 2026-03-13
+

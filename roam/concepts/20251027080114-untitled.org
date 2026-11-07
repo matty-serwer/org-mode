@@ -1,0 +1,256 @@
+:PROPERTIES:
+:ID:       4334a9e7-2947-4ba3-ba9b-c915cd7fedbc
+:REFLECT_ID: 04cf2715e1ac4e94a0a2de22deaf7101
+:CREATED:  [2025-10-27 Mon 08:01]
+:MODIFIED: [2025-10-27 Mon 08:06]
+:END:
+#+title: (untitled)
+#+filetags: :concept:
+#+date: 2025-10-27
+1. Vault Schema
+Folder Structure (Minimal)
+*📁 Vault Root*
+├──* 📁 00-Inbox # Everything starts here*
+├──* 📁 01-Review # 24hr automated move*
+├──* 📁 02-Active # Currently working threads*
+├──* 📁 03-Archive # Completed/reference threads*
+└──* 📁 99-Templates # Quick action templates*
+Tag Hierarchy System
+Each Note will have the Following:
+*Item Definition*
+*Type Class Data Type Data*
+*Subject Data Topic What is the Note's Type? What role does the note play?*
+*What class is the Data? In w*
+*hich sphere of knowledge does is reside?*
+*What type of Thing is the Subject of the note?*
+*What is the Subject of the Note?*
+*What Topic concerning the Subject does this Note address?*
+*Technical:*
+*Type Question Prompt*
+*Type Class What is the note's functional type and purpose?*
+*What knowledge domain or classification category does this belong to?Type Question Prompt*
+*Data Type What entity type or object class is being described?*
+*Data*
+*Subject What is the pri*
+*mary subject or entity being documented?*
+*Data Topic What specific aspect or attribute of the subject is addressed?*
+*Conversational:*
+*Type Question Prompt Placeholder*
+*Data*
+*Subject*
+*What's this note about? (the main*
+*topic/subject)*
+*O*
+*bsidian, Phantom Power, My*
+*Diet...*
+*Data Topic What about it? Which aspect? Menu System, Road Map, Array*
+*Methods*
+*Data Type What k*
+*ind of entity is the subject?Application, Company, Project*
+*Class Which Classification does our Subject*
+*fall under?*
+*Code, Audio, Productivity, Health*
+*Type Choose the Note Type: { 'select' }*
+*Type options: scribble, log, reference, sequence, element, schema, entity, thread*
+*The key change is using "entity" instead of "thing" for Data Type, w*
+*and aligns w*
+*ith your technical framework w*
+*hile remaining conversational.*
+*hich is more precise*
+/*These five(5) items should be inserted at the top of the note in the following form*/
+/*at. The*/
+/*words 'type' and 'class' are written explicitly at the start of their respective tags. The data*/
+/*tag, on the other hand, begins with whichever 'dataType' our subject is in*/
+Format:
+*#type/{Type} #class/{Class} #{Data Type}/{Data Subject}/{Data Topic}*Examples:
+*#type/ # What kind of note is this?*
+*#type/scribble # Quick thoughts, observations*
+*#type/log # Journal Entries, day's events, Tasks done*
+*#type/reference # Documentation*
+*#type/sequence # How-To, Instructions*
+*#type/element # The representation of a thing. (dataTopic = info)*
+*#type/schema # data structures*
+*#type/entity. # all others*
+*#type/thread # Connection/index pages*
+*#class/ # Which CL*
+*#class/code*
+*#class/audio*
+*#class/health*
+*#class/productivity*
+*#class/office*
+*#class/macOS*
+*#class/cli*
+*ASS or Category of knowledge?*
+*#data # What is the note. dataType/dataSubject/dataTopic (skip #data)*
+*#application/abletonLive/workflow*
+*#company/idexx/info*
+*#project/phantomPower/planning*
+2. Workflow & Review Process
+Daily Capture (In Inbox)
+*1. New note → Alw*
+*ays start blank*
+*in Inbox*
+*2. Brain dump → Get it out, don't think*
+*3. Quick tags → Under 3*
+*0*
+*Secs. Don't worry about hierarchy*
+*4. S*
+*ave and forget*
+24-Hour Review ProcessTag Cleaning Checklist
+*Is the type correct? (scribble→reference? log→project?)*
+*Add hierarchical depth ( #type/module #class/coding →*
+*#syntax/javaScript/arrayMethods)*
+Linking Checklist
+*Search for related notes (same topic tags)*
+*Link to relevant threads (or create new thread if 3+ related notes)*
+*Add bidirectional context ( [[thread-page]] *←* why this relates)*
+*Check for date references ( [[2024-01-15]] if relevant)*
+Thread Creation Trigger
+*Create a thread w*
+*hen you have:*
+*3+ notes on same topic*
+*A project w*
+*ith supporting notes*
+*A learning path w*
+*ith resources*
+*A problem*
+*w*
+*ith multiple solution attempts*
+Weekly Maintenance
+*Update book*
+*marks for current focus*
+*Clean out Inbox*
+3. Quick Action Templates
+Template: Quick Query*# Query: {{title}}*
+*Tags: #type/query #context/{{context}}*
+*Created: {{date}} {{time}}*
+** *What I Want to Find*
+*{{description}}*
+** *Dataview Query*
+*\```dataview*
+*TAB*
+*LE file.ctime as Created, tags as Tags*
+*FROM ""*
+*WHERE contains(tags, "#{{primary-tag}}")*
+*AN*
+*D !contains(file.path, "99-Templates")*
+*SORT file.ctime DESC*
+*LIMIT 20*
+*\```*
+** *Results Notes*
+*-*
+Template: Project Kickoff
+*# Project: {{title}}*
+*Tags: #type/project #status/active #context/{{context}} #energy/{{energy}}*
+*Created: {{date}}*
+*Thread: [[{{title}}-Thread]]*
+** *Goal*
+*{{goal}}*
+** *First Three*
+*Actions*
+*1. #energy/zombie -*
+*2. #energy/focus -*
+*3. #energy/creative -*
+** *Resources*
+*-*
+** *Log*
+*- {{date}}:*
+*Project started*
+Common Dataview QueriesAll Active Work
+*File(*
+*0*
+*) Last Modified Tags*
+*Dataview: No results to show for table query.*
+Today's Captures
+*Dataview: No results to show for list query.*
+Needs Review
+*File(*
+*0*
+*) Created*
+*Dataview: No results to show for table query.*
+Energy-Based Task View
+*Note(*
+*) Energy*
+*0*
+*Dataview: No results to show for table query.*
+4. Thread Page Example*# Thread: Learning Rust Programming*
+*Tags: #type/thread #topic/coding/rust #status/active*
+*Created: 2024-01-15*
+*Last Review: 2024-01-20*
+** *Overview*
+*Documenting my journey learning Rust, including resources, problems encountered,*
+*and solutions found.*
+** *Key Questions*
+*- [[Why Rust over C++]] - Initial motivation*
+*- [[Rust Ownership Confusion]] - Core concept struggles*
+*- [[Async Rust Complexity]] - Current blocker*
+** *Resources*
+*** *Official*
+*- [[Rust Book Notes]] #type/reference*
+*- [[Rustlings Exercises]] #status/active*
+*** *Community*
+*- [[Reddit Rust Tips Collection]] #type/reference*
+*- [[Discord Questions Log]] #type/log*
+** *Project Applications*
+*- [[Guitar Pedal DSP]] - Audio processing in Rust*
+*- [[CLI Tool Rewrite]] - Replacing Python scripts*
+** *Learning Log*
+*** *Week 1*
+*![[2024-01-15 Rust Day 1]]*
+*- Struggled with borrow checker*
+*- Finally understood difference between *=&str=* and *=String=
+*** *Week 2*
+*- [[2024-01-22 Lifetime Parameters]] - Breakthrough moment*
+*- [[2024-01-23 First Working Program]] - CLI argument parser*
+** *Open Loops*
+*- [ ] Understand trait objects vs generics [[Rust Traits Confusion]]*
+*- [ ] Build something with async/await*
+*- [ ] Contribute to open source Rust project*
+** *Patterns Noticed*
+*1.**Fighting the borrow checker = wrong approach** - When it's hard, I'm usually*
+*thinking about ownership wrong*
+*2.**Read error messages carefully** - Rust's compiler errors actually helpful*
+*unlike C++3.**Small examples first** - Don't try to build big things while learning concepts*
+** *N*
+*ext Actions*
+*- #energy/focus Review [[Smart Pointers Chapter]]*
+*- #energy/zombie Watch Rust conf talks playlist*
+*- #energy/creative Design state machine for pedal project*
+*---*
+/*Thread Navigation*/
+←* [[Programming Learning Threads]] | [[Active Projects]] *→
+Setup Checklist
+Essential Plugins Only
+*1. Templater - For quick*
+*actions*
+*2. Auto Move - Inbox → Review*
+*after 24hrs*
+*3. Tag Wrangler - Hierarchical tag management*
+*4. Dataview*
+*- Queries and collection*
+*5.*
+*O*
+*ptional: Breadcrumbs - Visuali*
+*ze tag relationships*
+Bookmarks Setup
+*Current Sprint (2-3 active threads)*
+*Quick Capture (template)*
+*Review Queue (dataview*
+*query)*
+*Energy Available (zombie/focus/creative queries)*
+Daily Practice
+*1. Morning: Check Review folder (5 m*
+*2. Throughout: Capture to Inbox*
+*3. Evening: Process 1*
+*1*
+*-3 reviews (*
+*0 m*
+*4. Weekly: Update threads and book*
+*in)*
+*in)*
+*marks*Remember
+*Perfect is the enemy of done*
+*Tags can be fixed later*
+*Links grow organically*
+*Trust the review process*
+*Your brain is for having ideas, not holding them*

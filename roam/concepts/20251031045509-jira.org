@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b1086c06-5127-4cb0-8a55-f70c1eb16d0a
+:REFLECT_ID: 81bb949c9e9849a9bc84e7a8a99aeb5a
+:CREATED:  [2025-10-31 Fri 04:55]
+:MODIFIED: [2025-10-31 Fri 04:55]
+:END:
+#+title: Jira
+#+filetags: :concept:
+#+date: 2025-10-31
+

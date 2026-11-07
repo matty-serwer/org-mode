@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       69c1d008-86b9-4a1e-b468-822e72270853
+:REFLECT_ID: 74ea1478981c40c3bc36d331e3934434
+:CREATED:  [2026-02-03 Tue 17:33]
+:MODIFIED: [2026-02-03 Tue 17:33]
+:END:
+#+title: Text Exchange
+#+filetags: :concept:
+#+date: 2026-02-03
+

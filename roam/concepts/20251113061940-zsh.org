@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       dc9c90c3-546f-408a-b643-9955942e158b
+:REFLECT_ID: c11a9fcfd89d457097a2fdddfad4693f
+:CREATED:  [2025-11-13 Thu 06:19]
+:MODIFIED: [2025-11-13 Thu 06:19]
+:END:
+#+title: ZSH
+#+filetags: :concept:
+#+date: 2025-11-13
+

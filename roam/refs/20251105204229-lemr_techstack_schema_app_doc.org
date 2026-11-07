@@ -1,0 +1,80 @@
+:PROPERTIES:
+:ID:       cc881a95-aa7e-4252-a6e5-d6eec35de697
+:REFLECT_ID: cd6f705a8c0d486f9eb1c6b40069cafa
+:CREATED:  [2025-11-05 Wed 20:42]
+:MODIFIED: [2025-11-30 Sun 09:29]
+:END:
+#+title: LEMR Techstack
+#+filetags: :ref:app_doc:schema:
+#+date: 2025-11-05
+* [[id:ed1a7a1f-dbb5-445f-b451-b447a2b9a230][LEMR]] Techstack
+To build your application using Next.js and Java Spring Boot, here is a recommended and current tech stack with the latest stable versions as of November 2025, and technologies to integrate for a full-featured, modern, scalable system.
+*** Core Framework Versions
+- Use [[https://nextjs.org/blog/next-16][Next.js 16]] for the frontend. This is the latest LTS release as of October 2025 and requires Node.js 20.9+ and TypeScript 5+.
+- Use [[https://bootify.io/spring-boot/spring-boot-latest-version.html][Spring Boot 3.5.7]] for the backend API. This version is stable as of October 2025 and up-to-date with major dependencies.
+*** Tech Stack:
+- *Frontend*
+  - Next.js 16 (React-based, SSR/SSG support)
+  - TypeScript 5+
+  - Tailwind CSS or Chakra UI (for modern UI development)
+  - shadcn/ui (or similar component library)
+  - Vercel or Netlify (frontend hosting)
+- *Authentication (Frontend)*
+  - Clerk or Auth.js (auth tooling, Next.js compatible)
+- *State Management*
+  - Zustand or Redux Toolkit
+- *API Communication*
+  - React Query or SWR
+- *Image Handling*
+  - Next.js built-in image optimization
+- *Backend*
+  - Spring Boot 3.5.7 (latest version, Java 24 support)
+  - Spring Security (authentication/authorization)
+  - JWT (stateless authentication)
+  - Spring Data JPA or Hibernate (ORM)
+  - PostgreSQL or MySQL (database)
+- *API Documentation*
+  - Swagger / OpenAPI
+- *Messaging/Queue (optional)*
+  - Apache Kafka or RabbitMQ
+- *Caching*
+  - Redis
+- *CI/CD*
+  - GitHub Actions, GitLab CI, or Jenkins
+- *Monitoring/Logging*
+  - Prometheus & Grafana (metrics)
+  - ELK stack (Elasticsearch, Logstash, Kibana) for logging
+- *Containerization*
+  - Docker, Docker Compose
+- *Infrastructure Orchestration (optional)*
+  - Kubernetes
+- *Testing*
+  - Jest (frontend)
+  - JUnit (backend)
+*** Current Versions and Resources
+- [[https://nextjs.org/blog/next-16][Next.js 16]] is the latest version, as released in October 2025. It requires Node.js 20.9+ and TypeScript 5+.
+- [[https://bootify.io/spring-boot/spring-boot-latest-version.html][Spring Boot 3.5.7]] is the current stable release, confirmed October 2025, supporting Java 24.
+This stack will offer you excellent developer ergonomics, robust API design, modern authentication, analytics, and infrastructure scalability. Choose front-end component libraries and authentication tools according to your project’s UX and security needs. If you anticipate rapid scaling or heavy concurrency, consider integrating Kubernetes and a message broker.
+Sources
+[1] Next.js 16 [[https://nextjs.org/blog/next-16][https://nextjs.org/blog/next-16]]
+[2] Next.js by Vercel - The React Framework [[https://nextjs.org/blog][https://nextjs.org/blog]]
+[3] Next.js - [[endoflife.date][endoflife.date]] [[https://endoflife.date/nextjs][https://endoflife.date/nextjs]]
+[4] When is the next stable Next.js release (v15.4.0 or higher) expected? [[https://www.reddit.com/r/nextjs/comments/1l8mvxr/when_is_the_next_stable_nextjs_release_v1540_or/][https://www.reddit.com/r/nextjs/comments/1l8mvxr/when_is_the_next_stable_nextjs_release_v1540_or/]]
+[5] Next.js - Wikipedia [[https://en.wikipedia.org/wiki/Next.js][https://en.wikipedia.org/wiki/Next.js]]
+[6] Spring And Spring Boot Versions - Marco Behler [[https://www.marcobehler.com/guides/spring-and-spring-boot-versions][https://www.marcobehler.com/guides/spring-and-spring-boot-versions]]
+[7] Why React/Next.js and Spring Boot Are the Perfect Stack for Modern ... [[https://selmir.com/blogs/react-nextjs-springboot-perfect-stack][https://selmir.com/blogs/react-nextjs-springboot-perfect-stack]]
+[8] Next.js 16 HUGE UPDATE - I Can't Believe They Changed This 
+[[https://www.youtube-nocookie.com/embed/JhFrgQjc1p8][youtube: https://www.youtube-nocookie.com/embed/JhFrgQjc1p8]]
+
+[9] Spring Boot latest version - [[Bootify.io][Bootify.io]] [[https://bootify.io/spring-boot/spring-boot-latest-version.html][https://bootify.io/spring-boot/spring-boot-latest-version.html]]
+[10] Next.js vs. Spring Boot: A Modern Web Development Comparison [[https://andamp.io/blog/next.js-vs.-spring-boot-a-modern-web-development-comparison][https://andamp.io/blog/next.js-vs.-spring-boot-a-modern-web-development-comparison]]
+[11] Releases · vercel/next.js - GitHub [[https://github.com/vercel/next.js/releases][https://github.com/vercel/next.js/releases]]
+[12] Spring Boot and Java 24: What Developers Need to Know in 2025 [[https://dev.to/initialm503/spring-boot-and-java-24-what-developers-need-to-know-in-2025-3jae][https://dev.to/initialm503/spring-boot-and-java-24-what-developers-need-to-know-in-2025-3jae]]
+[13] Seeking Advice on the Best Tech Stack : r/nextjs - Reddit [[https://www.reddit.com/r/nextjs/comments/1irsbwd/seeking_advice_on_the_best_tech_stack/][https://www.reddit.com/r/nextjs/comments/1irsbwd/seeking_advice_on_the_best_tech_stack/]]
+[14] Next.js 16: What's new, and what it means for frontend devs [[https://blog.logrocket.com/next-js-16-whats-new/][https://blog.logrocket.com/next-js-16-whats-new/]]
+[15] Spring Boot [[https://spring.io/projects/spring-boot][https://spring.io/projects/spring-boot]]
+[16] Spring Boot + React/Next.js: How to Build a Full-Stack App in 2025 [[https://dev.to/dev_tips/spring-boot-reactnextjs-how-to-build-a-full-stack-app-in-2025-906][https://dev.to/dev_tips/spring-boot-reactnextjs-how-to-build-a-full-stack-app-in-2025-906]]
+[17] Upgrading: Version 16 - Next.js [[https://nextjs.org/docs/app/guides/upgrading/version-16][https://nextjs.org/docs/app/guides/upgrading/version-16]]
+[18] Spring Boot | [[endoflife.date][endoflife.date]] [[https://endoflife.date/spring-boot][https://endoflife.date/spring-boot]]
+[19] Top 8 Tech Stacks: Choosing the Right Tech Stack - Full Scale [[https://fullscale.io/blog/top-5-tech-stacks/][https://fullscale.io/blog/top-5-tech-stacks/]]
+[20] Spring Boot 4 and Spring Framework 7: Major Java Milestone [[https://www.linkedin.com/posts/loiane_springboot-springframework-java-activity-7365382379898609665-GLj2][https://www.linkedin.com/posts/loiane_springboot-springframework-java-activity-7365382379898609665-GLj2]]

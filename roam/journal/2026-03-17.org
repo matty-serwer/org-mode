@@ -1,0 +1,186 @@
+:PROPERTIES:
+:ID:       4f1346c1-358c-44c6-aa4d-d14958929cb2
+:REFLECT_ID: 17032026
+:CREATED:  [2026-03-17 Tue 04:51]
+:MODIFIED: [2026-03-17 Tue 18:50]
+:END:
+#+title: Tue, March 17th, 2026
+#+filetags: :daily:
+#+date: 2026-03-17
+- [[id:0a2bf39a-4d2a-409b-8c3f-bb9e2823ca25][Ultimate Vocal Remover]]
+  -----
+  - Stem Separation Setup & Workflow
+    - Context
+      - Goal: extract high-quality 4-stem splits from FLAC files for electronic music production (DnB, sampling, drum replacement)
+      - System: MacBook Pro M2 16GB, macOS Sequoia, zsh
+      - Test file: Pendulum - Witchcraft (24-bit FLAC)
+    - Tool Selection
+      - Tried Demucs first — ran into torchaudio backend errors on macOS Apple Silicon (missing soundfile, FFmpeg 7.x incompatibility)
+      - Demucs archived Jan 2025, built for torchaudio ≤2.1.x — not worth fixing on modern macOS
+      - Switched to UVR5 (Ultimate Vocal Remover)
+        - Free, open-source GUI
+        - Native macOS ARM64 .dmg
+        - MPS GPU acceleration on Apple Silicon
+        - Requires the Roformer beta build (not standard v5.6) to access Roformer/MelBand models
+    - Model Landscape
+      - BS-RoFormer (ByteDance): current SOTA for vocals — 12.9 dB SDR
+        - Best model: BS-Roformer-Viperx-1297
+      - Mel-Band RoFormer: better than BS-RoFormer for drums and high-frequency content (cymbals, transients)
+        - Better mel-scale frequency handling
+      - Demucs v4 (htdemucs_ft): still best for bass/drums/other stems specifically
+      - MDX-Net: fast, great for clean vocal/instrumental splits, less strong on 4-stem
+    - Recommended Models to Download
+      - Tier 1 (core workflow)
+        - BS-Roformer-Viperx-1297 — best vocals
+        - MelBand Roformer | Vocals by Kimberley Jensen — vocal baseline reference
+        - htdemucs_ft (Demucs v4) — drums/bass/other
+      - Tier 2 (quality refinement)
+        - MelBand Roformer Kim | FT 2 Bleedless by Unwa — reduces bleed artifacts
+        - BS-Roformer-Viperx-1296 — ensemble pairing with 1297
+        - Mel-Roformer-Karaoke-Aufr33-Viperx — lead vs. backing vocal isolation
+      - Tier 3 (specialized)
+        - MelBand Roformer | Denoise-Debleed by Gabox — post-processing cleanup
+        - MelBand Roformer Kim | InstVoc Duality V2 — balanced inst + vocal output
+    - Drum Separation
+      - drumsep-aufr33-jarredou: MDX23C architecture, outputs 6 individual drum stems
+        - Kick, Snare, Hi-hat, Toms, Ride, Crash
+        - Validated on acoustic AND electronic drums (64 electronic kits in training set)
+        - Use case: drum replacement and layering triggers in Ableton
+        - Caveat: kick can bleed with sub bass in electronic music (same frequency range)
+      - Workflow: full mix → 4 stems (Roformer + Demucs), then drums stem → 6 drum stems (drumsep)
+      - ReStem (rebeatapp.com): paid alternative, bundles Drumagog for in-app drum replacement
+    - Processing Performance on M2 16GB
+      - Single model (Mel-Band RoFormer): ~3–6 min for a 5-min track
+      - Ensemble mode (2 Roformer models): ~7 min — within acceptable range
+      - BS-RoFormer ViperX alone can be slow; ensemble of two Roformer models more predictable
+    - UVR5 Setup (macOS ARM64)
+      - Download Roformer beta build from GitHub releases (not standard v5.6)
+      - Gatekeeper bypass:
+        
+        #+begin_src markup
+        sudo spctl --master-disable
+        
+        #+end_src
+      - Quarantine bypass:
+        
+        #+begin_src markup
+        sudo xattr -rd com.apple.quarantine /Applications/Ultimate\ Vocal\ Remover.app
+        
+        #+end_src
+      - Enable GPU Conversion in Settings (activates MPS)
+      - Output path: =/Users/lupin/_Workspace/Audio/record-crate/zStems=
+      - Models download on-demand via Download Center
+    - Recommended Processing Workflow
+      - Pass 1: BS-Roformer ViperX 1297 → Vocals + Instrumental
+      - Pass 2: htdemucs_ft on Instrumental → Drums, Bass, Other
+      - Pass 3 (optional): drumsep-aufr33-jarredou on Drums → 6 individual drum stems
+      - Ensemble mode: combine ViperX 1297 + ViperX 1296, Max Spec algorithm, +0.8–1.0 dB SDR improvement
+    - Importing Stems into Ableton Live
+      - Stems from same separation job are sample-accurate and phase-coherent — no relative drift
+      - Import all stems simultaneously (select all, drag to arrangement) to lock relative positions
+      - Find first kick transient on drum stem, set as clip start reference across all clips
+      - For rigidly quantized electronic music (Pendulum): turn warping off — not needed
+      - For live-recorded material with tempo drift: analyze tempo on drum stem, copy warp markers manually to other stems
+      - For tempo-flexible playback: use Complex Pro warp mode with shared warp markers across clips
+      - Group track or clip grouping keeps all stems moving together when editing
+      - Key rule: never separate/ungroup stems after initial placement
+- [[id:491b6990-bbc7-4d3c-addb-1818b43a13d4][Bloc Party - Flux]]
+  - [[id:b0103b5c-ebe7-40cf-a8d2-823b81113071][Stems]] Ensemble 
+    - [[https://hookmark.net/hm/hook/file/6N1MppA7g?p=MTAwLXJvY2stbi1yb2xsL0Jsb2MgUGFydHkgLSBJbnRpbWFjeSAoMjAwOCkgWzE2Qi00NC4xa0h6XQ==&n=block%2Dparty%2Dflux%2Dstems][block-party-flux-stems]]
+    - [[https://hookmark.net/hm/hook/file/6N1WzFb9K?p=QmxvYyBQYXJ0eSAtIEludGltYWN5ICgyMDA4KSBbMTZCLTQ0LjFrSHpdL2Jsb2NrLXBhcnR5LWZsdXgtc3RlbXM=&n=best%2EFlux%5FMelBandRoformer%5F%28Vocals%29%2Ewav][best.Flux_MelBandRoformer_(Vocals).wav]]
+- [[id:e1e967cc-de95-478e-a7e4-9af8fa051e6b][Sennheiser HD 6XX Headphones]]
+  - [[id:f06e612f-a44b-4011-b784-791e27f7014e][Harmon Curve]] [[id:6ff9c8fa-dc92-4390-a8dd-8d92f9eb22a6][EQ Correction]]
+    - *6XX EQ — Harman Curve* 
+      - Global Gain: -10.1 dB
+      - Band 1: Low Shelf
+        - 105 Hz
+        - 1.92 Width
+        - +12.0 dB
+      - Band 2: Parametric
+        - 42 Hz
+        - 1.27 Width
+        - -2.6 dB
+      - Band 3: Parametric
+        - 80 Hz
+        - 2.70 Width
+        - -5.6 dB
+      - Band 4: Parametric
+        - 1153 Hz
+        - 0.59 Width
+        - -0.9 dB
+      - Band 5: Parametric
+        - 2196 Hz
+        - 0.47 Width
+        - +1.5 dB
+      - Band 6: Parametric
+        - 2598 Hz
+        - 1.07 Width
+        - -0.3 dB
+      - Band 7: Parametric
+        - 3148 Hz
+        - 0.40 Width
+        - -1.5 dB
+      - Band 8: Parametric
+        - 5581 Hz
+        - 0.26 Width
+        - -0.7 dB
+      - Band 9: Parametric
+        - 8526 Hz
+        - 0.82 Width
+        - +6.0 dB
+      - Band 10: High Shelf
+        - 10000 Hz
+        - 1.92 Width
+        - -3.0 dB
+* [[id:6da6ddc7-0756-4645-b9ab-596d18ad0c7f][Today]]
+*** Task Management Dashboard
+** 🎧 [[id:ed0306b2-bb14-4e2c-84e6-1f1ee26d3cb8][Music Production]]
+*Total Estimated Time:* 3 hours
+- [ ] Record Vocals
+  - *Project* 
+    - [[id:a6553dfe-4631-4c2a-90be-331521860137][M477i3.exe]] - [[id:491b6990-bbc7-4d3c-addb-1818b43a13d4][Bloc Party - Flux]] ([[id:d9b82de6-3c9d-4aab-a9bd-b3c2704558f9][Cover Song]])
+  - *Scheduled*
+    - 3:00 PM
+  - *Estimate*
+    - 1.5 hours
+- [ ] Program Drums
+  - *Project:* [[id:491b6990-bbc7-4d3c-addb-1818b43a13d4][Bloc Party - Flux]]
+  - *Estimate:* 45 mins
+  - *Status:* ⚪️ Not Started
+- [ ] Program Synths
+  - *Project:* [[id:491b6990-bbc7-4d3c-addb-1818b43a13d4][Bloc Party - Flux]]
+  - *Estimate:* 45 mins
+  - *Status:* ⚪️ Not Started
+-----
+
+** 📊 [[id:eeebe0b6-4921-400c-bee7-bd03c63ced8b][Personal Finance]]
+*Total Estimated Time:* 1 hour 5 mins
+- [ ] *Analyze Spending & Subscriptions*
+  - *Task: *Feed [[id:a799f989-5a27-49b5-bc32-7f0cd6f58e48][Grok]] bank statement and Apple bill to get a breakdown of spending.
+  - *Focus:* [[id:c0cdf4e9-5859-454e-af6b-a9dc2a2d2e6d][Subscriptions]]
+  - *Estimate:* 20 mins
+  - *Status:* ⚪️ Not Started
+- [ ] *Forecast Expenses*
+  - *Task:* List [[id:0673cdb6-f373-40e7-9b21-b114865a418a][Expenses]] for the next two months.
+  - *Estimate:* 15 mins
+  - *Status:* ⚪️ Not Started
+- [ ] *Create Budget*
+  - *Task:* Form a comprehensive [[id:8913796f-06b8-4c8f-88ec-33e2ca631938][Budget]] based on the spending analysis and forecasted expenses.
+  - *Estimate:* 30 mins
+  - *Status:* ⚪️ Not Started
+-----
+
+** 💼 [[id:903b1200-b248-4839-ab7c-7b5f494e5c28][Side Hustle]] / [[id:1ea984dd-11a6-42c4-81d0-33666882beaa][Career]]
+*Total Estimated Time:* 30 mins
+- [ ] *Develop Freelance Coding Plan*
+  - *Task:* Use [[id:a799f989-5a27-49b5-bc32-7f0cd6f58e48][Grok]] to outline a strategy to make money [[id:9bf52e07-a5d8-4e91-8281-16b69ec62541][Coding]] in my free time this coming month.
+  - *Platforms to Explore:* [[id:596f5e13-4df1-4cd4-96c9-6c4db7ff934d][Fiverr]], [[id:763dc3ed-9cb7-43b9-8c4c-2f27839ca8dc][Upwork]]
+  - *Estimate:* 30 mins
+  - *Status:* ⚪️ Not Started
+- [[id:5741fa43-fc59-44a1-980b-f66a904c6f89][Reflect Notes]]
+  - [[id:ad0e234b-b749-4267-b4b2-7ac699df93ae][Key Bindings]]
+    - [[id:f2e41440-ee3f-40c2-98bb-057f345c931f][Block Type]] Toggle
+      - Checkbox / Checked Checkbox / Bullet
+        - =⌘ ⏎=
+      - Task / Checked Task 
+        - =⌘ ⇧ ⏎/=

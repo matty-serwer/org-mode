@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       be9c5657-29c2-4bb4-957a-92de7433917d
+:REFLECT_ID: e2144674a025439ebb69e5c422b37a2f
+:CREATED:  [2025-11-13 Thu 18:32]
+:MODIFIED: [2025-11-13 Thu 18:43]
+:END:
+#+title: Anthropic
+#+filetags: :concept:
+#+date: 2025-11-13
+- Claude
+  - 4.1/Opus, 4.5 Sonnet, Haiku 4.5
+  - 3.7 Sonnet, Sonnet 4
+- OpenAI
+  - GPT
+    - 5
+    - 4o
+    - 4.1
+    - o3-mini
+    - gpt-oss-120B
+- Grok (xAI)
+  - Grok
+    - 4 / 4 Heavy
+    - 3 / 3 Mini
+    - 2 Image
+- Google
+  - Gemini
+    - 2.5 Pro
+    - 2.0 Flash / Pro
+    - 1.5 Pro
+- Perpetuity / Agentic
+  - PARIS
+- Alibaba
+  - Qwen
+    - 3-235B-2507
+    - 2.5
+- Meta
+  - Llama
+    - 4 Scout
+    - 3.1
+- DeepSeek
+  - DeepSeek
+    - V3
+    - R1
+- Mistral
+  - Mixtral
+    - Large 2
+- OpenAI (Open Source)
+  - gpt-oss-120B
+- Microsoft
+  - Phi-3
+    - Mini
+    - Medium
+- Databricks
+  - DBRX
+- Falcon
+  - Falcon
+    - 180B
+
+- please research the above Specific large language models I would like to know the following information for each model. Please return this research to me in a bullet outline list that is suitable for Reflect Notes app.
+  - The date or year the model was trained.  OR when was the cutoff date for the data that the model was trained on
+  - From this date and/or year, we want to know which version of each of the following technologies was currently the latest stable and most accepted version to be using for new projects at that time. Ideally, this will translate to a the most current version of each of the software’s that the model is really well-versed on, that It doesn’t need to research in the conversation.
+  - In The rare case that it is commonly known that a particular version of these technologies goes really well with the particular model and model number you should use that version just give it an Asterix and note this fact. 
+  - Technologies to include for each model:
+    - Next JS
+    - Vite
+    - Angular
+    - Tailwind CSS
+    - Shadcn
+    - Chakra ui
+    - Java SDK (What was the most popular SDK used for new projects the year before the model was trained
+    - Spring Boot
+    - Maven

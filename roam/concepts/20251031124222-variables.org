@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5d780e9e-e465-425e-b14f-b93f85574c95
+:REFLECT_ID: f971d97e0a0d4a6a9689d287ca97077d
+:CREATED:  [2025-10-31 Fri 12:42]
+:MODIFIED: [2025-10-31 Fri 12:42]
+:END:
+#+title: Variables
+#+filetags: :concept:
+#+date: 2025-10-31
+

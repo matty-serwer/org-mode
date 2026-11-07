@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       30f66191-8177-449f-b1b8-2d56efe91f75
+:REFLECT_ID: 23112025
+:CREATED:  [2025-11-18 Tue 02:33]
+:MODIFIED: [2026-01-26 Mon 19:28]
+:END:
+#+title: Sun, November 23rd, 2025
+#+filetags: :daily:
+#+date: 2025-11-18
+- SwiftUI Tutorial
+  -  [[id:163a79c5-f30b-4a8a-9339-b2f2b667419c][SwiftUI #tutorial Screenshot App from Start to Finish]]
+  - Did most of Part 1
+  - [ ] Complete [[id:163a79c5-f30b-4a8a-9339-b2f2b667419c][SwiftUI #tutorial Screenshot App from Start to Finish]] Part 2
+- [[id:2270ec16-0a33-4195-ad0b-3845ead5fe5a][Lupin Tech Design Site]]
+  - [X] [[id:ddf0f4ba-f6bd-4172-876b-59bdcd978445][Storybook]] for UI elements
+- [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]]
+  - [X] Create Research Notes for [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]]
+  - [X] Create Planning Docs for [[id:213f83fa-e135-4ce9-86e6-248b43dbb80e][Vet Sweet]]
+- [[id:11b4987f-47fd-460c-8b2c-8a4fc0c76150][Doom Emacs]]
+  - [X] Practice
+- Work on our [[id:c0cdf4e9-5859-454e-af6b-a9dc2a2d2e6d][Subscriptions]]
+  - [X] Throw all our [[id:c0cdf4e9-5859-454e-af6b-a9dc2a2d2e6d][Subscriptions]] into Note: [[id:bdad001c-85b2-4ec5-b0f4-47b40e866326][Subscription Service #list]]
+  - [X] Come up with an organization plan next
+- 

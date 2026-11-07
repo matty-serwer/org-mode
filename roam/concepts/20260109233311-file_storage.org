@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       85efabf6-b7cb-4a70-b122-f3874a10e48e
+:REFLECT_ID: 3a9ee3a143c44aa2985094cd10abdb81
+:CREATED:  [2026-01-09 Fri 23:33]
+:MODIFIED: [2026-01-09 Fri 23:33]
+:END:
+#+title: File Storage
+#+filetags: :concept:
+#+date: 2026-01-09
+

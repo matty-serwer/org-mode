@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f4648b6f-1da9-47d2-b020-67a86e1748e7
+:REFLECT_ID: ac56382b14154383aa81bc8942b8fa28
+:CREATED:  [2026-04-07 Tue 17:37]
+:MODIFIED: [2026-04-07 Tue 17:37]
+:END:
+#+title: David's 388
+#+filetags: :concept:
+#+date: 2026-04-07
+

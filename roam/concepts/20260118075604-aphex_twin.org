@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       02798ad2-79df-4092-aebc-22538b212430
+:REFLECT_ID: 7e128a1e81794d58b64c2436bb4c0aaa
+:CREATED:  [2026-01-18 Sun 07:56]
+:MODIFIED: [2026-01-18 Sun 07:56]
+:END:
+#+title: Aphex Twin
+#+filetags: :concept:
+#+date: 2026-01-18
+

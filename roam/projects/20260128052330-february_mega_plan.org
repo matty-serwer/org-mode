@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       e404c6e3-e400-4353-9819-bd4d0ba57c12
+:REFLECT_ID: f9bb0e1902e044aa85ec58438958d7e6
+:CREATED:  [2026-01-28 Wed 05:23]
+:MODIFIED: [2026-04-08 Wed 20:21]
+:END:
+#+title: 🈺 February Mega Plan
+#+filetags: :project:
+#+date: 2026-01-28
+- /Concept/
+  - A plan to make two [[id:d05d4949-6130-4a09-8e33-70f5454cf753][Shedule]]s to maximize focus through the month of February
+  - Week One Plan
+    - [X] Build a thorough plan for the rest of the week [[id:0b872182-44ce-41d5-aca8-ca79dd658ba6][1/28/2026]]
+    - [X] Add related items to [[id:54c4187c-731f-4f1e-922d-b65655715d81][Tiimo]]
+    - [X] Plan [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]] with [[id:83ca8b6b-7b59-481c-810e-47706dcd2f51][Claude Desktop]]
+    - [X] Build [[id:925b92e6-a051-412f-8519-97dbfbd7a04e][💾 Work Sweet 🛠️]]

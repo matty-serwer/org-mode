@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7676636e-f2af-469a-a12c-77b3e1ff97fd
+:REFLECT_ID: 6ca0973821e04e0eaa2b225e772a4449
+:CREATED:  [2025-10-27 Mon 20:13]
+:MODIFIED: [2025-10-27 Mon 20:13]
+:END:
+#+title: Editorial New
+#+filetags: :concept:
+#+date: 2025-10-27
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8bdf6d22-9bef-41a9-bf73-65d885243dc9
+:REFLECT_ID: 857d582f18874604ab2fecaaa3d9ebfb
+:CREATED:  [2025-12-03 Wed 17:46]
+:MODIFIED: [2025-12-03 Wed 17:48]
+:END:
+#+title: Anger Management
+#+filetags: :concept:
+#+date: 2025-12-03
+

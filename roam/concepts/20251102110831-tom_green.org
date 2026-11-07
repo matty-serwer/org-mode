@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       525343e1-733e-41c3-8a5b-4de74aac73f4
+:REFLECT_ID: f5189bf6f6ca4cc48bc9858fcaf866cc
+:CREATED:  [2025-11-02 Sun 11:08]
+:MODIFIED: [2025-11-02 Sun 11:08]
+:END:
+#+title: Tom Green
+#+filetags: :concept:
+#+date: 2025-11-02
+

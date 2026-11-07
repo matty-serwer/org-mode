@@ -1,0 +1,83 @@
+:PROPERTIES:
+:ID:       98aedf31-6b15-4c40-a774-aa482c73bbaf
+:REFLECT_ID: 16802a44cd3d484a8a6da197afee8e65
+:CREATED:  [2026-04-21 Tue 17:36]
+:MODIFIED: [2026-04-21 Tue 17:37]
+:END:
+#+title: Sync Ableton Live and Algoriddim DJay in Mac OS & route with Apollo Twin Audio Interface
+#+filetags: :concept:
+#+date: 2026-04-21
+* Sync [[id:67889323-a4c5-48d8-91eb-d44995ce8dff][Ableton Live]] and [[id:1f4bbf0e-052b-409e-b494-a1c20e899fa3][Algoriddim DJay]] in [[id:64678f28-ad48-483b-b9d7-c73aa49a6b4d][Mac OS]] & route with [[id:32eaa7be-6dd9-4675-8b05-ca82833cb5e6][Apollo Twin]] Audio Interface
+To sync Ableton Live 12 and Algoriddim djay on your Mac (macOS Tahoe) and route djay’s audio separately into Ableton Live using your Apollo Twin, you need a two-part setup. The tempo sync is handled via *Ableton Link*, while the audio routing requires macOS’s built-in *Audio MIDI Setup* and the Apollo’s *Virtual Channels*, or alternatively a virtual audio loopback driver like *BlackHole*.[1][2][3]
+Here are the step-by-step instructions.
+*** Part 1: Tempo Sync using Ableton Link
+Ableton Link syncs the tempo and beat grids over your local network loopback.
+1. *Enable Link in Live*: Open Ableton Live 12. In the top-left corner of the transport bar, click the *Link* button to enable it. (Make sure you are connected to Wi-Fi or a local network, even if offline).[4]
+1. *Enable Link in djay*: Open djay Pro. Click the *Main Volume* button in the top-right corner, then select *Ableton Link*.[1]
+1. Once active, the volume icon in djay will change to a segmented spinning circle, and both apps will report they are connected (e.g., "1 Link" in Ableton).[1]
+*** Part 2: Audio Routing via Apollo Twin Virtual Channels
+Using the UAD Console's "Virtual Channels," you can route your Mac's system audio (or a specific app's output) into Ableton Live without latency or external cables.[2][3]
+*Step A: Configure Apollo Virtual Channels*
+1. Open the *UAD Console* application on your Mac.
+1. In the console, ensure *Virtual 1* and *Virtual 2* are visible (you may need to enable them in /Console Settings > Hardware/).[3]
+1. Link them to create a single stereo channel.[5]
+*Step B: Route djay into the Virtual Channels*
+1. Open the macOS *Audio MIDI Setup* application (found in /Applications > Utilities/).
+1. Select your *Universal Audio Apollo* in the left sidebar, click the *Output* tab, and then click *Configure Speakers* in the bottom right corner.[3]
+1. Set the speaker configuration to *Stereo*.
+1. Change the "Left" and "Right" speaker assignments from the default Monitor outputs to *Virtual 1* and *Virtual 2*. Click Apply.[6]
+1. /Note:/ Since djay primarily outputs to the system default audio device, this forces djay's main mix output straight into the Apollo’s Virtual Channels.[3]
+*Step C: Receive the Audio in Ableton Live 12*
+1. Open *Ableton Live* and go to /Settings > Audio/. Ensure your Audio Input Device is set to the Apollo Twin.
+1. Go to the *Input Config* menu and make sure the input channels corresponding to your Virtual 1/2 are enabled. (Check the UAD Console /Settings > I/O Matrix/ to see exactly which input numbers correspond to Virtual 1/2—on an Apollo Twin, they are usually inputs 5/6).[5][3]
+1. Create a new Audio Track in Ableton.
+1. Set the track's *Audio From* dropdown to *Ext. In* and select the channels (e.g., 5/6) assigned to your Virtual Channels.[7][5]
+1. Arm the track for recording or switch the monitor mode to *In*.
+Your audio from djay will now pass through the UAD Console into Ableton Live, perfectly tempo-synced via Link.
+If you prefer keeping your Mac's main system audio separate from djay, you can download *BlackHole (2ch)* (a free virtual loopback driver). You would set djay’s output to BlackHole and Ableton’s input to BlackHole, leaving the Apollo for Ableton's master output.[8][9]
+Sources
+[1] Connecting Ableton Link - Algoriddim Support [[https://help.algoriddim.com/user-manual/djay-pro-mac/dj-tools/performance-tools/ableton-link][https://help.algoriddim.com/user-manual/djay-pro-mac/dj-tools/performance-tools/ableton-link]]
+[2] Record system audio from Mac M1 into Ableton Live 11 - Reddit [[https://www.reddit.com/r/ableton/comments/w4w1vt/record_system_audio_from_mac_m1_into_ableton_live/][https://www.reddit.com/r/ableton/comments/w4w1vt/record_system_audio_from_mac_m1_into_ableton_live/]]
+[3] Routing macOS System Audio to Virtual Channels in Console [[https://help.uaudio.com/hc/en-us/articles/211122563-Routing-macOS-System-Audio-to-Virtual-Channels-in-Console][https://help.uaudio.com/hc/en-us/articles/211122563-Routing-macOS-System-Audio-to-Virtual-Channels-in-Console]]
+[4] Enabling Link in Live - Ableton [[https://help.ableton.com/hc/en-us/articles/209072789-Enabling-Link-in-Live][https://help.ableton.com/hc/en-us/articles/209072789-Enabling-Link-in-Live]]
+[5] Using Apollo Twin USB with Ableton Live (Full Version) - YouTube 
+[[https://www.youtube-nocookie.com/embed/LFsHAHgsVAM][youtube: https://www.youtube-nocookie.com/embed/LFsHAHgsVAM]]
+
+[6] Send Mac OS System Audio to Virtual Channels in Universal Audio ... 
+[[https://www.youtube-nocookie.com/embed/-SGnozMQ3_Q][youtube: https://www.youtube-nocookie.com/embed/-SGnozMQ3_Q]]
+
+[7] Setting up UA Interfaces for Ableton Live on Mac OSX - YouTube 
+[[https://www.youtube-nocookie.com/embed/9K3D7kNb5DI][youtube: https://www.youtube-nocookie.com/embed/9K3D7kNb5DI]]
+
+[8] Download BlackHole for Mac | MacUpdate [[https://blackhole.macupdate.com][https://blackhole.macupdate.com]]
+[9] Blackhole, Open Source MacOS Virtual Audio Device Solution for ... [[https://mct-master.github.io/networked-music/2022/11/29/masoudn-blackhole.html][https://mct-master.github.io/networked-music/2022/11/29/masoudn-blackhole.html]]
+[10] Ableton Link Explained: Using Launchpad with djay Pro - YouTube 
+[[https://www.youtube-nocookie.com/embed/QCWdomC61Ic][youtube: https://www.youtube-nocookie.com/embed/QCWdomC61Ic]]
+
+[11] How To Use Ableton Link With ipad - Djay Pro Tutorial - YouTube 
+[[https://www.youtube-nocookie.com/embed/17vKNRpX5Hk][youtube: https://www.youtube-nocookie.com/embed/17vKNRpX5Hk]]
+
+[12] Ableton Link not working as hoped - Algoriddim Community Forums [[https://community.algoriddim.com/t/ableton-link-not-working-as-hoped/24565][https://community.algoriddim.com/t/ableton-link-not-working-as-hoped/24565]]
+[13] Djay Pro for Mac Ableton Link Tutorial - YouTube 
+[[https://www.youtube-nocookie.com/embed/UjLMJwG6dUc][youtube: https://www.youtube-nocookie.com/embed/UjLMJwG6dUc]]
+
+[14] Apollo Console + Ableton Live: External FX Routing - YouTube 
+[[https://www.youtube-nocookie.com/embed/IcZ_pxrI18A][youtube: https://www.youtube-nocookie.com/embed/IcZ_pxrI18A]]
+
+[15] routing decks to separate tracks in Ableton Live (using Jack Audio) [[https://community.algoriddim.com/t/routing-decks-to-separate-tracks-in-ableton-live-using-jack-audio/23731][https://community.algoriddim.com/t/routing-decks-to-separate-tracks-in-ableton-live-using-jack-audio/23731]]
+[16] Djay Pro AI Ableton Link Tutorial - YouTube 
+[[https://www.youtube-nocookie.com/embed/yEQsVTph6XU][youtube: https://www.youtube-nocookie.com/embed/yEQsVTph6XU]]
+
+[17] Algoriddim Ableton Link with Mac + iPad= extended screens? - Reddit [[https://www.reddit.com/r/DJs/comments/1dhd5vf/algoriddim_ableton_link_with_mac_ipad_extended/][https://www.reddit.com/r/DJs/comments/1dhd5vf/algoriddim_ableton_link_with_mac_ipad_extended/]]
+[18] Routing Apollo Twin out of Ableton to outboard gear and printing it to ... [[https://uadforum.com/community/index.php?threads%2Frouting-apollo-twin-out-of-ableton-to-outboard-gear-and-printing-it-to-a-new-track.27049%2F][https://uadforum.com/community/index.php?threads%2Frouting-apollo-twin-out-of-ableton-to-outboard-gear-and-printing-it-to-a-new-track.27049%2F]]
+[19] How to route audio between applications - Ableton [[https://help.ableton.com/hc/en-us/articles/360010526359-How-to-route-audio-between-applications][https://help.ableton.com/hc/en-us/articles/360010526359-How-to-route-audio-between-applications]]
+[20] 36. Synchronizing with Link, Tempo Follower, and MIDI - Ableton [[https://www.ableton.com/en/manual/synchronizing-with-link-tempo-follower-and-midi/][https://www.ableton.com/en/manual/synchronizing-with-link-tempo-follower-and-midi/]]
+[21] Using Outputs with UAD Apollo and Ableton Live - Gearspace [[https://gearspace.com/board/ableton-live/796802-using-outputs-uad-apollo-ableton-live.html][https://gearspace.com/board/ableton-live/796802-using-outputs-uad-apollo-ableton-live.html]]
+[22] BlackHole: Route Audio Between Apps - Existential Audio [[https://existential.audio/blackhole/][https://existential.audio/blackhole/]]
+[23] BlackHole: Audio Loopback Driver - GitHub [[https://github.com/existentialaudio/blackhole][https://github.com/existentialaudio/blackhole]]
+[24] Tutorial: MacOS Audio Routing with Blackhole - YouTube 
+[[https://www.youtube-nocookie.com/embed/YVRijTXsyA4][youtube: https://www.youtube-nocookie.com/embed/YVRijTXsyA4]]
+
+[25] Can't route mac output into Virtual channels after upgrading to ... [[https://uadforum.com/community/index.php?threads%2Fcant-route-mac-output-into-virtual-channels-after-upgrading-to-console-2-0.18344%2F][https://uadforum.com/community/index.php?threads%2Fcant-route-mac-output-into-virtual-channels-after-upgrading-to-console-2-0.18344%2F]]
+[26] Routing Mac System Sound to Virtual Channels in Console - YouTube 
+[[https://www.youtube-nocookie.com/embed/A_VBqeAwL7w][youtube: https://www.youtube-nocookie.com/embed/A_VBqeAwL7w]]

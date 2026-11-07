@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       605906e2-a379-4916-be3e-8d084d3bbaed
+:REFLECT_ID: 23b05b51ff624caf917d7220a9679223
+:CREATED:  [2026-03-08 Sun 05:00]
+:MODIFIED: [2026-03-08 Sun 05:04]
+:END:
+#+title: ULXD4Q — Setting Channels from Freq Sheet
+#+filetags: :concept:
+#+date: 2026-03-08
+BB

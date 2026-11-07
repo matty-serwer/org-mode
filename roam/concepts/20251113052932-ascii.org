@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0348e3c3-e0ea-4e5d-a54b-3549ac94b83b
+:REFLECT_ID: 882d0e05b92140d58e33b03392ec50f5
+:CREATED:  [2025-11-13 Thu 05:29]
+:MODIFIED: [2025-11-13 Thu 05:29]
+:END:
+#+title: ASCII
+#+filetags: :concept:
+#+date: 2025-11-13
+

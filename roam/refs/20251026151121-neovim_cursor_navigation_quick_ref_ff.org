@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       93556305-3c9a-4aa6-a19a-bb3b4a6cab93
+:REFLECT_ID: d603fed6f2c44d03ad8b70cd785ab63c
+:CREATED:  [2025-10-26 Sun 15:11]
+:MODIFIED: [2025-11-30 Sun 09:12]
+:END:
+#+title: ⌘ NeoVim Cursor Navigation #quick-ref ff
+#+filetags: :ref:quick_ref:vim_keybindings:
+#+date: 2025-10-26
+* ⌘ [[id:ccc4b6f5-e2be-4941-968a-8f65c5906fe8][NeoVim]] Cursor Navigation  ff
+-  
+** Basic Movement
+=h= - left
+=j= - down
+=k= - up
+=l= - right
+** Word Movement
+=w= - next word start
+=e= - next word end
+=b= - previous word start
+=W=, =E=, =B= - same but whitespace-delimited
+** Line Movement
+=0= - start of line
+=^= - first non-blank character
+=$= - end of line
+=g_= - last non-blank character
+** Document Movement
+=gg= - top of file
+=G= - bottom of file
+={line}G= or =:{line}= - go to specific line
+=%= - matching bracket/paren
+** Screen Movement
+=H= - top of screen
+=M= - middle of screen
+=L= - bottom of screen
+=<C-u>= - scroll up half page
+=<C-d>= - scroll down half page
+=<C-b>= - scroll up full page
+=<C-f>= - scroll down full page
+** Search Movement
+=f{char}= - find next char on line
+=F{char}= - find previous char on line
+=t{char}= - until next char on line
+=T{char}= - until previous char on line
+=;= - repeat last f/F/t/T
+=,= - repeat last f/F/t/T backwards
+** Text Object Movement
+=(= / =)= - previous/next sentence
+={= / =}= - previous/next paragraph
+** Marks & Jumps
+=m{a-z}= - set mark
+=`{a-z}= - jump to mark
+=<C-o>= - jump to previous location
+=<C-i>= - jump to next location
