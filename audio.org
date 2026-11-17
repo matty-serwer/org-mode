@@ -9,7 +9,9 @@
   - PIZZA
 - Song 2
   - less pizza :(
-* Ableton Live Projects
+* Ableton Live
+** Sequences
+*** Installing a Python Script for
 ** Utilities & Sounds Design
 *** Project Beat Clips
 **** Schema

@@ -1,0 +1,13 @@
+{
+  "name": "org-notes",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "onCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.macOptionIsMeta": true,
+        "terminal.integrated.sendKeybindingsToShell": true
+      }
+    }
+  }
+}

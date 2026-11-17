@@ -35,12 +35,14 @@ Some content here
 * The "Killer Features" That Make People Rave
 ** 1. *TODO Management & Task Tracking*
 #+begin_src org
-* TODO Set up authentication for Next.js app
+* DONE Set up authentication for Next.js app
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
   DEADLINE: <2026-01-15 Wed>
   :PROPERTIES:
   :EFFORT:   2:00
   :END:
-  
+
 ** TODO Research Auth providers
 ** DONE Set up NextAuth.js
    CLOSED: [2026-01-10 Fri 14:30]
@@ -59,7 +61,9 @@ Let me show you why people lose their minds over Org Mode:
 ** 1. *Outlining & Folding* (The Gateway Drug)
 #+begin_src org
 * Project: Lupine Tech Portfolio
-** TODO Design landing page
+** DONE Design landing page
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
    DEADLINE: <2026-01-15>
 ** IN-PROGRESS Build component library
    - [X] Button components
@@ -95,7 +99,9 @@ Type this in your org file:
 - =C-c C-c= - Toggle checkbox =[ ]= to =[X]=
 Try this:
 #+begin_src org
-* TODO Fix the navbar bug
+* DONE Fix the navbar bug
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
   DEADLINE: <2026-01-15>
   - [ ] Reproduce the issue
   - [ ] Identify root cause
@@ -107,13 +113,15 @@ Try this:
 *1. TODO Management* - Press =SPC m t= (or =C-c C-t= in vanilla Emacs) to cycle through TODO states:
 #+begin_src markup
 * TODO Write documentation
-* DOING Write documentation  
+* DOING Write documentation
 * DONE Write documentation
 
 #+end_src
 *2. Scheduling & Deadlines*
 #+begin_src org
-* TODO Fix authentication bug
+* DONE Fix authentication bug
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
   SCHEDULED: <2025-01-15 Wed>
   DEADLINE: <2025-01-20 Mon>
 
@@ -149,7 +157,9 @@ Here's what makes people rave:
    - [ ] Choose color scheme
    - [ ] Draft copy
    - [X] Research competitor sites
-** TODO Implement authentication
+** DONE Implement authentication
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
    DEADLINE: <2025-01-15 Wed>
    :PROPERTIES:
    :ESTIMATED: 4h
@@ -162,15 +172,17 @@ Here's what makes people rave:
 *Why it's powerful*: Press =TAB= on any heading to fold/unfold. You can see just high-level structure or drill into details instantly.
 *** 2. *Task Management (TODO Items)*
 #+begin_src org
-* TODO Fix responsive nav on mobile
+* DONE Fix responsive nav on mobile
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
   SCHEDULED: <2025-01-15 Wed>
   :PROPERTIES:
   :EFFORT: 2:00
   :END:
-  
+
 * DONE Set up Vercel deployment
   CLOSED: [2025-01-10 Fri 14:30]
-  
+
 * IN-PROGRESS Implement Zustand store
   DEADLINE: <2026-01-15 Wed>
 
@@ -204,11 +216,11 @@ Org-mode has built-in spreadsheet capabilities:
 * Project Alpha
   [[file:~/projects/alpha/README.md][Project README]]
   [[https://github.com/mattie/project][GitHub Repo]]
-  
+
   See also: [[Related Notes]] and [[Meeting Notes 2024-01]]
-  
+
   Jump to: [[*Implementation Details][Jump to Implementation]]
-  
+
 ** Implementation Details
    ...content here...
 
@@ -224,7 +236,7 @@ Links can point to:
 - Files: =[[file:~/Documents/report.pdf]]=
 ** 4. *Tags & Properties* (Organization Superpower)
 #+begin_src org
-* Meeting with Client :work:urgent:
+* Meeting with Client                                           :work:urgent:
   :PROPERTIES:
   :CLIENT: Acme Corp
   :BUDGET: $50000
@@ -237,9 +249,11 @@ Links can point to:
 ** 5. *Agenda Views* (The Game Changer)
 This is where Org Mode becomes magical. It aggregates ALL your TODO items and scheduled tasks across ALL your org files into one unified view.
 #+begin_src org
-* TODO Finish portfolio site
+* DONE Finish portfolio site
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
   DEADLINE: <2025-01-15 Wed>
-  
+
 * MEETING Client call
   SCHEDULED: <2025-01-12 Sun 10:00-11:00>
 

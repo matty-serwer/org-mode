@@ -66,7 +66,7 @@ The friction of "which file does this go in" kills productivity.
 #+begin_src org
 * TODO Buy a new MIDI controller
 * TODO Fix the stem separation Python script
-* TODO Set up Doom Emacs                                   :personal:
+* TODO Set up Doom Emacs                                           :personal:
   CLOSED: [2024-03-12 Tue 14:00]
 #+end_src
 * TODO Eat Cereal
@@ -80,7 +80,7 @@ Your top-of-file ~#+TODO~ line (see top of this file) gives you:
 
 ** Tags and Properties
 #+begin_src org
-* TODO Write Phantom Power OAuth middleware          :dev:lemr:backend:
+* TODO Write Phantom Power OAuth middleware                :dev:lemr:backend:
   :PROPERTIES:
   :EFFORT:   3h
   :PROJECT:  PhantomPower
@@ -91,17 +91,6 @@ Your top-of-file ~#+TODO~ line (see top of this file) gives you:
 Tags (~:dev:~) filter in the agenda. Properties are structured metadata.
 
 ** Scheduling & Deadlines
-#+begin_src org
-* TODO Mix the "Cascade" demo
-  SCHEDULED: <2024-03-15 Fri>
-  DEADLINE: <2024-03-20 Wed>
-#+end_src
-
-Scheduled = when you plan to work on it.
-Deadline = when it must be done. Both show in the agenda.
-
-** Priority
-~[#A]~ / ~[#B]~ / ~[#C]~ — set with ~C-c ,~
 #+begin_src org
 * TODO [#A] Deploy LEMR staging environment
 * TODO [#B] Finish "Blue Cascade" arrangement
@@ -179,13 +168,14 @@ The magic of org is that *notes and tasks live in the same tree*.
 ** Context
    The current implementation stores tokens in localStorage which is
    insecure. Need to move to httpOnly cookies server-side.
-
-** TODO Research Next.js middleware token refresh pattern     :dev:backend:
+** DONE Research Next.js middleware token refresh pattern       :dev:backend:
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
    SCHEDULED: <2024-03-15 Fri>
 
-** TODO Write unit tests for token rotation logic            :dev:testing:
+** TODO Write unit tests for token rotation logic               :dev:testing:
 
-** TODO Update LEMR API to invalidate old refresh tokens     :dev:lemr:
+** TODO Update LEMR API to invalidate old refresh tokens           :dev:lemr:
 
 ** Notes from 2024-03-12 session
    Discovered that Next.js 14 middleware runs on the edge runtime —
@@ -224,12 +214,14 @@ the context around them.
    - Intro: reversed piano, granular pad (Granulator III)
    - Drop at bar 17: sub bass + filtered 909 kick
    - Bridge: strip everything, just vocals + reverb tail
-
-** TODO [#A] Sidechain compression on the bass              :music:mixing:
+** DONE [#A] Sidechain compression on the bass                 :music:mixing:
+CLOSED: [2026-11-08 Sun 10:28]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:28]
    DEADLINE: <2024-03-18 Mon>
    Use LFO Tool in M4L, trigger from kick track.
-
-** TODO Send rough mix to vocalist Sarah                    :music:collab:
+** DONE Send rough mix to vocalist Sarah                       :music:collab:
+CLOSED: [2026-11-08 Sun 10:27]
+- State "DONE"       from "TODO"       [2026-11-08 Sun 10:27]
    SCHEDULED: <2024-03-16 Sat>
 
 ** Reference Tracks

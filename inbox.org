@@ -3,3 +3,223 @@
 #+date: 2026-02-26
 #+filetags: :inbox:
 #+startup: overview
+
+* TODO Set up GitHub Codespace for org notes
+** TODO 1. Add the devcontainer files to the org repo
+On the laptop, in the =org-mode= repo, create two files.
+
+=.devcontainer/devcontainer.json=
+#+begin_src json
+{
+  "name": "org-notes",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "onCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.macOptionIsMeta": true,
+        "terminal.integrated.sendKeybindingsToShell": true
+      }
+    }
+  }
+}
+#+end_src
+
+=.devcontainer/setup.sh=
+#+begin_src bash
+#!/usr/bin/env bash
+set -eu
+
+# Emacs (terminal build) plus the tools Doom expects
+sudo apt-get update
+sudo apt-get install -y emacs-nox ripgrep fd-find
+
+# Doom Emacs
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install --force
+
+# Notes live in the repo; expose them at ~/org
+ln -sfn /workspaces/org-mode ~/org
+
+# Put the doom command on PATH
+echo 'export PATH="$HOME/.config/emacs/bin:$PATH"' >> ~/.bashrc
+#+end_src
+
+** TODO 2. Commit and push
+#+begin_src bash
+git add .devcontainer
+git commit -m "Add Codespace devcontainer"
+git push
+#+end_src
+
+** TODO 3. Create the codespace
+- Go to github.com/matty-serwer/org-mode
+- Code button > Codespaces tab > Create codespace on main
+- Wait for the first build (several minutes while Doom installs)
+- Bookmark the URL it opens at (=something.github.dev=); that is the web address for this machine
+
+** TODO 4. Bring in my Doom config (optional)
+If the config is in a public GitHub repo, run this in the codespace terminal:
+#+begin_src bash
+git clone https://github.com/matty-serwer/DOOM-CONFIG-REPO ~/.config/doom
+doom sync
+#+end_src
+
+If that repo is private, add this inside "customizations" in =devcontainer.json=,
+then rebuild the codespace and approve the permission prompt:
+#+begin_src json
+"codespaces": {
+  "repositories": {
+    "matty-serwer/DOOM-CONFIG-REPO": {
+      "permissions": { "contents": "read" }
+    }
+  }
+}
+#+end_src
+
+Set =org-directory= to =~/org= in the config if it points somewhere else.
+
+** TODO 5. First run check
+#+begin_src bash
+cd ~/org && git pull
+emacs
+#+end_src
+- [ ] =SPC := and =M-x= both open the command prompt
+- [ ] =SPC n a= opens the agenda with my files
+- [ ] Edit a file, then =SPC g g= to commit and push from Magit
+- [ ] Pull on the laptop and confirm the change arrived
+
+** Daily use
+1. Open the bookmark (or github.com/codespaces) from any computer and sign in to GitHub
+2. In the terminal: =cd ~/org && git pull && emacs=
+3. Work
+4. =SPC g g=, commit, push
+5. Close the tab; the codespace stops itself after 30 idle minutes
+
+Replace `DOOM-CONFIG-REPO` with wherever your Doom config lives. If it isn't in a repo yet, skip step 4 and you'll get stock Doom with Evil.
+
+* Health Insurance Carriers offered through CoveredCa.com
+- LA Care
+- Kaiser
+- Molina
+- Anthem Blue Cross
+- Blue Shield
+* Medical Coverage offered through CoveredCa.com
+- LA Care Bronze 60 HMO
+	- Carrier:: LA Care
+	- Tier:: Bronze
+	- Monthly premium:: $0.00
+	- Primary care visits:: $60 copay
+	- Generic prescription drugs:: $20 copay
+	- Yearly deductible:: $450 (prescription), $5,800 (medical)
+	- Estimated yearly cost:: $1,006.61 (A) / $367.00 (B)
+- Kaiser Bronze 60 HDHP HMO
+	- Carrier:: Kaiser
+	- Tier:: Bronze HDHP
+	- Monthly premium:: $0.00
+	- Primary care visits:: 0% coinsurance after deductible
+	- Generic prescription drugs:: 0% coinsurance after deductible
+	- Yearly deductible:: $7,800 (medical and prescription)
+	- Estimated yearly cost:: $2,241.05 (A) / $679.18 (B)
+- Kaiser Bronze 60 HMO
+	- Carrier:: Kaiser
+	- Tier:: Bronze
+	- Monthly premium:: $7.86
+	- Primary care visits:: $60 copay
+	- Generic prescription drugs:: $20 copay
+	- Yearly deductible:: $450 (prescription), $5,800 (medical)
+	- Estimated yearly cost:: $1,100.93 (A) / $461.32 (B)
+- LA Care Silver 87 HMO
+	- Carrier:: LA Care
+	- Tier:: Silver CSR
+	- Monthly premium:: $46.17
+	- Primary care visits:: $15 copay
+	- Generic prescription drugs:: $10 copay
+	- Yearly deductible:: $50 (prescription), $1,100 (hospital)
+	- Estimated yearly cost:: $1,067.96 (A) / $839.04 (B)
+- Molina Health Care Bronze 60 HMO
+	- Carrier:: Molina Health Care
+	- Tier:: Bronze
+	- Monthly premium:: $73.85
+	- Primary care visits:: $60 copay
+	- Generic prescription drugs:: $20 copay
+	- Yearly deductible:: $450 (prescription), $5,800 (medical)
+	- Estimated yearly cost:: $1,892.81 (A) / $1,253.20 (B)
+- Kaiser Silver 87 HMO
+	- Carrier:: Kaiser
+	- Tier:: Silver CSR
+	- Monthly premium:: $116.00
+	- Primary care visits:: $15 copay
+	- Generic prescription drugs:: $10 copay
+	- Yearly deductible:: $50 (prescription), $1,100 (hospital)
+	- Estimated yearly cost:: $1,905.92 (A) / $1,677.00 (B)
+- Anthem Blue Cross Bronze 60 HMO
+	- Carrier:: Anthem Blue Cross
+	- Tier:: Bronze
+	- Monthly premium:: $130.92
+	- Primary care visits:: $60 copay
+	- Generic prescription drugs:: $20 copay
+	- Yearly deductible:: $450 (prescription), $5,800 (medical)
+	- Estimated yearly cost:: $2,577.65 (A) / $1,938.04 (B)
+- Blue Shield Bronze 60 Trio HMO
+	- Carrier:: Blue Shield
+	- Tier:: Bronze
+	- Monthly premium:: $132.12
+	- Primary care visits:: $60 copay
+	- Generic prescription drugs:: $20 copay
+	- Yearly deductible:: $450 (prescription), $5,800 (medical)
+	- Estimated yearly cost:: $2,592.05 (A) / $1,952.44 (B)
+- Molina Health Care Silver 87 HMO
+	- Carrier:: Molina Health Care
+	- Tier:: Silver CSR
+	- Monthly premium:: $132.64
+	- Primary care visits:: $15 copay
+	- Generic prescription drugs:: $10 copay
+	- Yearly deductible:: $50 (prescription), $1,100 (hospital)
+	- Estimated yearly cost:: $2,105.60 (A) / $1,876.68 (B)
+- Health Net Silver 87 Ambetter HMO
+	- Carrier:: Health Net
+	- Tier:: Silver CSR
+	- Monthly premium:: $202.79
+	- Primary care visits:: $15 copay
+	- Generic prescription drugs:: $10 copay
+	- Yearly deductible:: $50 (prescription), $1,100 (hospital)
+	- Estimated yearly cost:: $2,947.40 (A) / $2,718.48 (B)
+- Anthem Blue Cross Silver 87 HMO
+	- Carrier:: Anthem Blue Cross
+	- Tier:: Silver CSR
+	- Status:: Current plan
+	- Monthly premium:: $238.43
+	- Primary care visits:: $15 copay
+	- Generic prescription drugs:: $10 copay
+	- Yearly deductible:: $50 (prescription), $1,100 (hospital)
+	- Estimated yearly cost:: $3,375.08 (A) / $3,146.16 (B)
+* Creating links inline with org roam
+        ## Learn it all at once?
+- Yes. Org-roam isn't a separate system. It's plain Org files plus an ID database. Everything you learn in Org still applies.
+- The extra learning is about four commands, which you already have bound:
+  - `SPC n r f`: find or create a note
+  - `SPC n r i`: insert a link (and create the note if it doesn't exist)
+  - `SPC n r b`: backlinks panel
+  - `SPC n r t`: today's daily note
+
+## Creating a link to a note that doesn't exist yet
+`SPC n r i` handles it in one step:
+1. In your Ableton note, press `SPC n r i`.
+2. Type `Novation LaunchControl XL`.
+3. Since there's no match, it asks which template to use (pick `c` concept).
+4. A capture buffer opens. Add a line if you want, then press `ZZ` to save, or `ZQ` to cancel.
+5. Result:
+   - A new file `concepts/2026...-novation_launchcontrol_xl.org` with an ID
+   - A link inserted where your cursor was: `[[id:...][Novation LaunchControl XL]]`
+
+### Gotchas
+- **Partial match problem:** if what you type partially matches an existing note, Vertico selects that note when you press `RET`. Press `M-RET` instead to use exactly what you typed and create a new note.
+- **Selecting existing text:** select "LaunchControl XL" in visual mode, then press `SPC n r i`. The selected text becomes the title and the link text.
+- **Turning a heading into a node:** any heading becomes a linkable node once it has an ID. Your `SPC n l` already does this: it creates the ID and copies a link to it.
+
+## Unlinked references
+- They don't create links. They're display-only.
+- When you open the LaunchControl node and press `SPC n r b`, the panel searches your roam files for its title and aliases appearing as plain text with no link. It lists those spots under "Unlinked References."
+- From there, jump to a spot and turn it into a real link by selecting the text, then `SPC n r i`.
+- This needs ripgrep with PCRE2 support. Homebrew's `rg` includes it.
